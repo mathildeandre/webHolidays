@@ -1,0 +1,31 @@
+
+Installation Linux : 
+
+	$ apt-get install git
+
+Fork the repertory :
+	$ git clone https://github.com/fabiensauce/web.git
+-W si ne marche pas avec fabiensauce essaie avec mathildeandre
+
+Créer des alias :
+	Ouvrir ~/.gitconfig ou .git/config
+	Puis ajouter
+	
+	[alias]
+		st = status
+		ci = commit
+
+
+Rappel des commandes 
+	git clone ... // clone un répertoire git déjà existant
+	git add ...   // Ajoute un fichier au répertoire local
+	git commit -am "message" // ajoute un msg à toutes les modifications depuis le dernier commit
+	git commit -m "msg" // ajoute un msg aux fichiers ajoutés (ac add) depuis le dernier commit
+	git pull // récup le répertoire
+	git push // pousse les changements sur le dépot
+
+Installer gitk pour suivre les modifications des utlisateurs
+	
+	
+
+
