@@ -13,6 +13,29 @@ body{
 	background: url("Images/bonhomme.jpg") fixed no-repeat top right, url("Images/clouds.jpg") fixed;*/
 }
 
+a
+{
+	text-decoration: none;
+	color: black;
+	font-style: italic;
+}
+
+a:hover
+{
+	text-decoration: underline;
+	color: green;
+}
+
+a:visited
+{
+	color: #AAA
+}
+
+header
+{
+/bin/bash: q : commande introuvable
+}
+
 .intro
 {
 	font-family: MaPolice;
