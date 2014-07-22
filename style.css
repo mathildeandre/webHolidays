@@ -1,0 +1,27 @@
+@font-face {
+	font-family: 'MaPolice';
+	src: url('mapolice.otf');
+}
+
+body{
+	/*background-image: url("Images/clouds.jpg");*/
+	/*background-color: rgb(200,90,200);*/
+	/*background-image: url("Images/bonhomme.jpg");
+	background-attachement: fixed;
+	background-repeat: no-repeat;
+	background-position: top right;
+	background: url("Images/bonhomme.jpg") fixed no-repeat top right, url("Images/clouds.jpg") fixed;*/
+}
+
+.intro
+{
+	font-family: MaPolice;
+	font-size: xx-large;
+	font-weight: bold;
+	color: blue;
+}
+
+.imageflottante
+{
+	float: left;
+}
