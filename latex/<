@@ -1,0 +1,256 @@
+
+\documentclass[12pt]{report}
+
+\usepackage[latin1]{inputenc}    
+\usepackage[T1]{fontenc}
+\usepackage[francais]{babel} %langue française
+\usepackage{layout} % Marges
+\usepackage{color}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{mathrsfs}
+\usepackage{boiboites}
+
+\newtheoremstyle{break}%       %1 Nom
+      {\topsep}%          %2 Espace avant
+      	{\topsep}%          %2 Espace avant
+	    {}%      %4 forme des caractères
+	       {0pt}%          %5 indentation
+	          { \sffamily \bfseries}   %6 Style de l'entête
+		     {.}%             %7
+		        {\newline}%      %8 Retour à la ligne après le titre
+			   {}%             %9 Comme dans plain ?
+\theoremstyle{break}%       %1 Nom
+
+
+
+
+
+\newtheorem{maprop}{Proposition}[chapter]
+%\newtheorem{madef}{D\'efinition}[chapter]
+\newtheorem{monexo}{Exercice}[chapter]
+\newtheorem{monex}{Exemple}[chapter]
+
+\definecolor{darkgreen}{rgb}{0.0, 0.3, 0.0}
+\definecolor{myyellow}{rgb}{1, 0.85, 0.00}
+\definecolor{mygreen}{rgb}{0.15, 0.70, 0.1}
+
+
+
+\newboxedtheorem[boxcolor=darkgreen, background=myyellow, titlebackground=mygreen!90,titleboxcolor = black, thcounter=chapter]{madef}{D\'efinition}{compteurTH}
+\renewcommand{\thecompteurTH}{\arabic{chapter}.\arabic{compteurTH}}
+
+
+\title{Cours de Math\'ematiques}
+\author{Mathilde Andre}
+\date{Vendredi 18 Juillet 2014}
+
+\begin{document}
+\maketitle
+% Table des matieres
+\renewcommand{\contentsname}{Sommaire}
+\tableofcontents
+\chapter{Rappels du lycée}
+\begin{madef}
+Soient a et b $\in \mathbb{Z} $
+\newline
+a est un multiple de b ssi $\exists k \in \mathbb{Z}$ tel que : \\
+$a = kb $
+\\ On dit aussi que  :
+\begin{itemize}
+	\item a est divisible par b 
+	\item b est un diviseur a
+	\item b divise a
+\end{itemize}
+\end{madef}
+
+\chapter{Alg\`ebre}
+Cours 1
+\section{Quelques rappels sur $\mathbb{N}$}
+\begin{maprop}
+	Tout ensemble A non vide $\subset$ $\mathbb{N}$ a un plus petit \'el\'ement
+\end{maprop}
+\begin{madef}
+	\textbf {Majorant} : On dit que M est un majorant de A $\subset$ $\mathbb{N}$ ssi $\forall$n $\in$ $\mathbb{N}$ n $\le$ M 
+	\newline
+	On dit aussi que A est major\'e
+\end{madef}
+\begin{madef}
+	\textbf {Relation d'\'equivalence} : Soit $\mathcal{R}$ une relation binaire sur A $\subset$ $\mathbb{N}$. \newline
+	$\mathcal{R}$ est une relation d'\'equivalence ssi elle est:
+	\begin{enumerate}
+		\item reflexive :  $\forall$ x $\in$ A, x$\mathcal{R}$x 
+		\item symetrique : $\forall$ (a,b) $\in$ A$^2$, si a$\mathcal{R}$b $\Rightarrow$ b$\mathcal{R}$a  
+		\item transitive : $\forall$ (a,b,c) $\in$ A$^3$, si a$\mathcal{R}$b et b$\mathcal{R}$c $\Rightarrow a\mathcal{R}c$
+	\end{enumerate}
+
+	\textbf {Classe d'\'equivalence} : La classe d'\'equivalence de x pour $\mathcal{R}$ est tous les y tel que x$\mathcal{R}$y, on la note $\overline{x}$
+
+\end{madef}
+
+
+
+
+\section{Construction de $\mathbb{Z}$} 
+\textcolor{darkgreen}{Comment construire $\mathbb{Z}$ ? }
+
+Soit $\mathcal{R}$ une relation d'\'equivalence sur $\mathbb{N} \times \mathbb{N}$  d\'efinit ainsi : \newline
+$\forall (a,b) \in A^2$ et $(a',b') \in A^2$ , $(a,b)\mathcal{R}(a',b')$ ssi $ a+b'=a'+b $
+
+\newpage
+\textcolor{darkgreen}{Quelles sont les classes d'\'equivalences de (0, 0) et (0, a) ?}
+
+\begin{enumerate}
+	\item $\overline{(0, 0)}$ = $\{(x,y) \in \mathbb{N} \times \mathbb{N}$, $(x,y)\mathcal{R}(0,0)\}$ = $\{(x,y) \in \mathbb{N} \times \mathbb{N}$, $x=y \}$ = $\{(x,x)$, $x \in \mathbb{N} \}$
+	\item $\overline{(0, a)}$ = $\{(x,y) \in \mathbb{N} \times \mathbb{N}$, $x+a=y\}$ = $\{(x, x+a)$, $x \in \mathbb{N}\}$
+\end{enumerate}
+
+On a : $\overline{(a,b)} + \overline{(c, d)}$ = $\overline{(a+c, b+d)}$
+\newline
+On a donc : $\overline{(0, a)} + \overline{(a,0)}$ = $\overline{(a,a)}$ = $\overline{(0,0)}$
+\newline
+Et on note : $\overline{(a, 0)} = -a$ 
+\newline
+
+\textbf {La d\'emonstration par r\'ecurrence : }
+\newline
+On va montrer que P(n) vraie pour tout n $\in \mathbb{N} \Leftrightarrow $ 
+\begin{enumerate}
+	\item P(0) vrai
+	\item Supposons P(n) vrai alors P(n+1) vrai
+\end{enumerate}
+Supposons $\mathcal{P}$(0) vrai et \newline
+Si $\mathcal{P}$(n) vrai $\Rightarrow \mathcal{P}$(n+1) vrai \newline
+On va faire une d\'emonstration par l'absurde : \newline
+Il existe un m $\in \mathbb{N}$, $\mathcal{P}(m)$ faux \newline
+Soit $A = \{n \in \mathbb{N}, \mathcal{P}(n) faux \}$ 
+\newline
+$A \subset \mathbb{N} \Rightarrow$ A admet un plus petit element, appelons le i.  
+\newline
+Donc $i \neq 0$ et $\mathcal{P}(i-1)$ est vrai. \newline
+D'apr\`es notre supposition on a alors $\mathcal{P}(i)$ vrai : CONTRADICTION
+
+\section{Les groupes}
+\begin{madef}
+	On dit que $(G, \ast)$ est un groupe avec G un ensemble et $\ast$ une loi sur G ssi :
+	\begin{enumerate}
+		\item $\ast$ est associative cad $\forall x, y, z \in G$ $(x\ast y)\ast z = x*(y*z)$
+		\item G admet un \'element neutre : $\exists e \in G$, $\forall x \in G$, $x*e=e*x=x $ 
+		\item Tout \'element de G admet un sym\'etrique : \newline $\forall x \in G$, $\exists x^{-1}$, $x*x^{-1}=x^{-1}*x=e$
+	\end{enumerate}
+	On dit qu'un groupe est ab\'elien ou commutatif si $\ast$ est commutative. 
+\end{madef}
+\begin{monex}
+	Exemple de groupe non ab\'elien : Les permutations \newline
+	$a=(\begin{smallmatrix}
+		1 & 2 & 3\\
+		1 & 2 & 3 
+	\end{smallmatrix})$
+	$b=(\begin{smallmatrix}
+		1 & 2 & 3\\
+		1 & 3 & 2 
+	\end{smallmatrix})$
+	$c=(\begin{smallmatrix}
+		1 & 2 & 3\\
+		2 & 1 & 3 
+	\end{smallmatrix})$
+	\newline
+	\\
+	Calculer $a\circ b $ puis $b \circ a$ 
+	\newline
+	\\
+	$b\circ c = (\begin{smallmatrix}
+		1 & 2 & 3\\
+		3 & 1 & 2 
+	\end{smallmatrix})$
+	\newline
+	$c\circ b = (\begin{smallmatrix}
+		1 & 2 & 3\\
+		2 & 3 & 1 
+	\end{smallmatrix})$
+	\newline
+	Donc l'ensembre des permutations muni de la loi de composition n'est pas un groupe ab\'elien.
+\end{monex}
+
+\subsection{Les sous groupes}
+\begin{madef}
+	On dit que $(H, \ast) \subset G$ un ensemble et $\ast$ est un sous-groupe de G ssi :
+	\begin{enumerate}
+		\item $H \neq \emptyset$
+		\item H admet le m\^eme \'el\'ement neutre que G
+		\item H est stable : $\forall x, y \in G, x*y \in H$ 
+	\end{enumerate}
+\end{madef}
+\begin{monex}
+	\textcolor{darkgreen}{Quels sont les sous-groupes de $\mathbb{Z}$ ?}
+	\newline
+	Les sous groupes de $\mathbb{Z}$ sont les $k\mathbb{Z}$
+	\newline
+	$k\mathbb{Z} = \{\forall x \in Z, kx\}$ 
+	\newline
+	\\
+	\textbf {Demo :}
+	Soit H un sous groupe de $\mathbb{Z}$ ne contenant pas 0
+	\newline
+	$H \cap \mathbb{N^*} \in \mathbb{N}$ est non vide donc il admet un plus \'el\'ement, notons le k \newline
+	Soit $h \in H \cap \mathbb{N^*}$ alors division euclidienne de h par k : $\exists (q,r) \in \mathbb{Z} \times \mathbb{H}$ tel que h = k*q+r ac $0 \le r < k$ mais k est le plus petit \'el\'ement de H donc r=0. 
+\end{monex}
+
+\subsection{Morphisme de groupe}
+\begin{madef}
+	Soient $(G_1, \ast_1) et (G_2, \ast_2)$ deux groupes, et
+	$\phi : G_1 \longrightarrow G_2$, 
+	\newline 
+	$\phi$ est un morphisme de groupe ssi:
+	$\phi(x_1*_1x_2) = \phi(x_1) *_2 \phi(x_2)$ avec $x_1, x_2 \in G_1$
+\end{madef}
+
+\subsection{Noyau}
+\begin{madef}
+	Soient $(G_1, \ast_1) et (G_2, \ast_2)$ deux groupes, et
+	$\phi : G_1 \longrightarrow G_2$, 
+	\newline
+	On note $Ker(\phi) = \{y\in G_1, \phi(y)=e_2\} $
+\end{madef}
+
+\begin{maprop}
+	$Ker(\phi)=\{\emptyset\} \Leftrightarrow \phi $ est injective 
+	\newline
+	 
+	\begin{itemize}\renewcommand{\labelitemi}{$\bullet$}
+		\item Si $\phi$ injective alors si $ x, y \in G_1$ et $\phi(x) = \phi(y) \Rightarrow x=y $
+		\begin{tabbing}
+	 	\hspace{0.5cm}$\phi(x) = \phi(y)$ \\ 
+	 	$ \Leftrightarrow \phi(x) * \phi(y)^{-1} = e_2 $ \\
+		$\Leftrightarrow \phi(x) * \phi(y^{-1}) = e_2 $ \\
+	 	$\Leftrightarrow \phi(x*y^{-1})=e_2  $ \\ 
+		Or $x=y $\\
+		\hspace{0.4cm} $x*y^{-1}=e_1$\\
+		\end{tabbing}
+		Donc $\phi(e_1) = e_2 $ et $Ker(\phi) = \{\emptyset\}$ \\
+	
+		\item Si $Ker(\phi)=\{\emptyset\}$ :\\
+		 Soient $x, y \in G_1 $ tel que $\phi(x)=\phi(y)$.
+		 \begin{tabbing}
+	 	Alors
+	 	$\phi(x) * \phi(y)^{-1} = e_2 $ \\ 
+	 	\hspace{0.4cm} $ \Leftrightarrow \phi(x) * \phi(y^{-1}) = e_2 $ \\
+		\hspace{0.4cm} $\Leftrightarrow \phi(x*y^{-1}) = e_2 $ \\
+	 	\hspace{0.4cm} $\Leftrightarrow x*y^{-1}=e_2  $ \\ 
+	 	\hspace{0.4cm} $\Leftrightarrow x = y  $
+		\end{tabbing}
+		Donc $\phi$ est injective.
+	\end{itemize}
+\end{maprop}
+
+\subsection{Groupe quotient}
+
+\newpage
+kzkzk
+
+
+
+
+
+\end{document}

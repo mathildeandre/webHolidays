@@ -33,8 +33,35 @@ a:visited
 
 header
 {
-/bin/bash: q : commande introuvable
+	font-family: MaPolice;
+	font-size: x-large;
+	font-weight: bold;
+	color: black;
+	background-color: #AAA
 }
+
+footer
+{
+	font-family: "Comic Sans ms";
+	font-size: small;
+	font-weight: italic;
+	text-align: right;
+	background-color: #AAA
+}
+
+nav
+{
+	float: left;
+	width:150px;
+	/*border: 1px solid black;*/
+
+}
+
+section
+{
+	margin-left: 170px;
+}
+
 
 .intro
 {
@@ -42,9 +69,11 @@ header
 	font-size: xx-large;
 	font-weight: bold;
 	color: blue;
+	text-align: center;
 }
 
 .imageflottante
 {
+
 	float: left;
 }
