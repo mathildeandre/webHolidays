@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" href="style.css"/> <!--mise en forme-->
+		<title>MyTitle</title> <!-- onglet -->
+	</head>
+
+	<header>
+		<div class="intro">
+		Repartition frais de ..
+		</div>
+	</header>
+	<body>
+
+	<div class="intro">
+		<form>
+		Ajouter une personneeee : <input type="text" name="name" value="nom"> <!-- textfield -->
+		<input type="button" name="ajoutTab" value="Ajouter" onclick="ajoutTab()">
+		<input type="submit" value="noting"  ></br>
+		</form>
+
+	</div>
+	<!-- <span onclick="alert('Hello !');">Cliquez-moi !</span> -->
+
+      	<!-- <script src="hello.js"></script> -->
+
+
+	
+	<input type="button" name="razTab" value="Remise a zero Tableau" onclick="RAZTab()">
+	<input type="button" name="initTab" value="Initialiser Tableau" onclick="initTab()">
+	<input type="button" name="afficherTab" value="Afficher Tableau" onclick="afficheTab()">
+	</body>
+
+<script>
+var tab;// = ["initialise"];
+function initTab(){
+	tab = [42, 'Sébastien', 12, 'Laurence'];
+	alert("tab initialisé");
+}
+
+function RAZTab(){
+	tab = [];
+	//tab.push("ludovie");
+	//alert("AIE AIE BOOM !");
+}
+function afficheTab(){
+	
+	//tab.push("ludovie");
+	var txt = "";
+	for (var i = 0; i < tab.length; i++) {
+    		txt = txt+", "+tab[i];
+	}
+	txt = txt.substr(2); // enleve les n premiers elt
+	alert(txt);
+}
+function ajoutTab(){
+	//tab.push('pierre');
+	tab = ["ajout"];
+}
+//alert(tab);
+</script>
+
+
+</html>
