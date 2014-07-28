@@ -16,12 +16,21 @@ Créer des alias :
 		ci = commit
 
 
-Rappel des commandes 
-	git clone ... // clone un répertoire git déjà existant
+Les commandes Git :
+	Très souvent faire une git status : ceci permet de savoir ou on
+	en est. C'est à dire s'il y a des fichiers modifiers depuis la derniere version. 
+
+	Tu arrives le matin : git pull (pour récupérer mes modifs)
+
+	Tu travailles sur tes fichiers. Quand tu es arrivé à un bon acheminement, tu peux associer un message à tes modifications. Pour que moi par exemple je puisse savoir sur quoi tu as travaillé ...etc Pour cela :
+
 	git add ...   // Ajoute un fichier au répertoire local
 	git commit -am "message" // ajoute un msg à toutes les modifications depuis le dernier commit
 	git commit -m "msg" // ajoute un msg aux fichiers ajoutés (ac add) depuis le dernier commit
-	git pull // récup le répertoire
+
+	Ensuite tu peux pousser toutes tes modifs pour que je puisse les voir: Toujours récupérer la dernière version avant avec 
+	git pull
+	puis faire : 
 	git push // pousse les changements sur le dépot
 	git checkout filename // annule les changement effectués du file
 Installer gitk pour suivre les modifications des utlisateurs
