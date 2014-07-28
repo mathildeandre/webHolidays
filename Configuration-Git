@@ -23,7 +23,7 @@ Rappel des commandes
 	git commit -m "msg" // ajoute un msg aux fichiers ajoutés (ac add) depuis le dernier commit
 	git pull // récup le répertoire
 	git push // pousse les changements sur le dépot
-
+	git checkout filename // annule les changement effectués du file
 Installer gitk pour suivre les modifications des utlisateurs
 	
 	
