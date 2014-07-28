@@ -6,6 +6,8 @@
 \usepackage[francais]{babel} %langue française
 \usepackage{layout} % Marges
 \usepackage{color}
+\usepackage[colorlinks=true,urlcolor=black,linkcolor=red]{hyperref}
+
 \usepackage{amssymb}
 \usepackage{amsthm}
 \usepackage{amsmath}
@@ -25,23 +27,32 @@
 			   {}%             %9 Comme dans plain ?
 \theoremstyle{break}%       %1 Nom
 
+\newenvironment{myproof}[1][\proofname]{\proof[#1]\mbox{}\\*}{\endproof}
 
 
 
-
-\newtheorem{maprop}{Proposition}[chapter]
+%\newtheorem{maprop}{Proposition}[chapter]
 %\newtheorem{madef}{D\'efinition}[chapter]
 \newtheorem{monexo}{Exercice}[chapter]
 \newtheorem{monex}{Exemple}[chapter]
 
 \definecolor{darkgreen}{rgb}{0.0, 0.3, 0.0}
+\definecolor{darkblue}{rgb}{0.0, 0.0, 0.3}
 \definecolor{myyellow}{rgb}{1, 0.85, 0.00}
-\definecolor{mygreen}{rgb}{0.15, 0.70, 0.1}
+\definecolor{mygreen}{rgb}{0.10, 0.80, 0.1}
+\definecolor{darkred}{rgb}{0.6, 0.10, 0.1}
+\definecolor{lightred}{rgb}{0.9, 0.2, 0.2}
 
 
 
-\newboxedtheorem[boxcolor=darkgreen, background=myyellow, titlebackground=mygreen!90,titleboxcolor = black, thcounter=chapter]{madef}{D\'efinition}{compteurTH}
+\newboxedtheorem[boxcolor=black, background=mygreen!60, titlebackground=darkgreen!60,titleboxcolor = black, thcounter=chapter]{madef}{D\'efinition}{compteurTH}
 \renewcommand{\thecompteurTH}{\arabic{chapter}.\arabic{compteurTH}}
+
+\newboxedtheorem[boxcolor=black, background=lightred!90, titlebackground=darkred!90,titleboxcolor = black, thcounter=chapter]{matheo}{Theoreme}{compteurTheo}
+\renewcommand{\thecompteurTheo}{\arabic{chapter}.\arabic{compteurTheo}}
+
+\newboxedtheorem[titlecolor=black, boxcolor=black, background=white, titlebackground=white,titleboxcolor = black, thcounter=chapter]{maprop}{Proposition}{compteurProp}
+\renewcommand{\thecompteurProp}{\arabic{chapter}.\arabic{compteurProp}}
 
 
 \title{Cours de Math\'ematiques}
@@ -87,12 +98,16 @@ Cours 1
 
 
 \section{Construction de $\mathbb{Z}$} 
+\begin{bf}
 \textcolor{darkgreen}{Comment construire $\mathbb{Z}$ ? }
+\end{bf}
 
 Soit $\mathcal{R}$ une relation d'\'equivalence sur $\mathbb{N} \times \mathbb{N}$  d\'efinit ainsi : \newline
-$\forall (a,b) \in A^2$ et $(a',b') \in A^2$ , $(a,b)\mathcal{R}(a',b')$ ssi $ a+b'=a'+b $
+$\forall (a,b) \in A^2$ et $(a',b') \in A^2$ , $(a,b)\mathcal{R}(a',b')$ ssi $ a+b'=a'+b $ \\
 
+\begin{bf}
 \textcolor{darkgreen}{Quelles sont les classes d'\'equivalences de (0, 0) et (0, a) ?}
+\end{bf}
 
 \begin{enumerate}
 	\item $\overline{(0, 0)}$ = $\{(x,y) \in \mathbb{N} \times \mathbb{N}$, $(x,y)\mathcal{R}(0,0)\}$ = $\{(x,y) \in \mathbb{N} \times \mathbb{N}$, $x=y \}$ = $\{(x,x)$, $x \in \mathbb{N} \}$
@@ -176,7 +191,9 @@ D'apr\`es notre supposition on a alors $\mathcal{P}(i)$ vrai : CONTRADICTION
 	\end{enumerate}
 \end{madef}
 \begin{monex}
+	\begin{bf}
 	\textcolor{darkgreen}{Quels sont les sous-groupes de $\mathbb{Z}$ ?}
+	\end{bf}
 	\newline
 	Les sous groupes de $\mathbb{Z}$ sont les $k\mathbb{Z}$
 	\newline
@@ -209,8 +226,8 @@ D'apr\`es notre supposition on a alors $\mathcal{P}(i)$ vrai : CONTRADICTION
 
 \begin{maprop}
 	$Ker(\phi)=\{\emptyset\} \Leftrightarrow \phi $ est injective 
-	\newline
-	 
+\end{maprop}
+\begin{myproof}[D\'emonstration :] 
 	\begin{itemize}\renewcommand{\labelitemi}{$\bullet$}
 		\item Si $\phi$ injective alors si $ x, y \in G_1$ et $\phi(x) = \phi(y) \Rightarrow x=y $
 		\begin{tabbing}
@@ -218,9 +235,9 @@ D'apr\`es notre supposition on a alors $\mathcal{P}(i)$ vrai : CONTRADICTION
 	 	$ \Leftrightarrow \phi(x) * \phi(y)^{-1} = e_2 $ \\
 		$\Leftrightarrow \phi(x) * \phi(y^{-1}) = e_2 $ \\
 	 	$\Leftrightarrow \phi(x*y^{-1})=e_2  $ \\ 
+		\end{tabbing}
 		Or $x=y $\\
 		\hspace{0.4cm} $x*y^{-1}=e_1$\\
-		\end{tabbing}
 		Donc $\phi(e_1) = e_2 $ et $Ker(\phi) = \{\emptyset\}$ \\
 	
 		\item Si $Ker(\phi)=\{\emptyset\}$ :\\
@@ -235,7 +252,7 @@ D'apr\`es notre supposition on a alors $\mathcal{P}(i)$ vrai : CONTRADICTION
 		\end{tabbing}
 		Donc $\phi$ est injective.
 	\end{itemize}
-\end{maprop}
+\end{myproof}
 
 \subsection{Groupe quotient}
 
