@@ -22,6 +22,128 @@ $a = b \times q + r$ avec $0 \le r < b$ \\
 On appele a le dividende, b le diviseur, q le quotient et r le reste. 
 \end{madef}
 
+\begin{madef}
+Soient a, b $\in \mathbb{N}$ \\
+\textbf{pgcd : }\\
+On appele pgcd(a,b) le plus grand commun diviseur de a et de b. \\
+\textbf{ppcm : }\\
+On appele ppcm(a,b) le plus petit commun multiple de a et de b. \\
+\end{madef}
+
+\begin{maprop}
+Soient a, b $\in \mathbb{N}$ \\
+$ ppcm(a,b) \times pgcd(a, b) = a \times b$
+\end{maprop}
+
+\begin{myproof}[Demonstration:]
+Soient $m=ppcm(a,b)$ et $\delta = pgcd(a,b)$ \\
+On a : $a|\delta$ et $b|\delta$ cad $\exists k, k' \in \mathbb{Z}$ tel
+que $a=k \times \delta$ et $b=k' \times \delta $\\
+On devrait alors avoir $m \times \delta = k \times \delta \times k' \times \delta$
+$\Leftrightarrow m=k\times k'\times \delta$\\
+Montrons donc que kk'$\delta = ppcm(a,b)$
+\begin{itemize}[label=\ding{217}, font=\color{black}]
+	\item $k k' \delta$ est un multiple de a et b cad a|m et b|m  ??\\
+	On a $a = k \times \delta$ cad $k' \times a = k' \times k \times \delta$ cad $a | k'k\delta$ \\
+	Idem pour b
+
+	\item $kk'\delta$ est le \textbf{plus petit} multiple de a, b ??	
+\end{itemize}
+\end{myproof}
+
+\begin{maprop}
+Soient a, b $\in \mathbb{N}$ \\
+$pgcd(a,b) = \delta \Leftrightarrow a\mathbb{Z}+b\mathbb{Z}=\delta\mathbb{Z}$
+\end{maprop}
+
+\begin{myproof}[D\'emonstration :]
+Aide : $a\mathbb{Z}+b\mathbb{Z}=\{ak + bk' | k, k' \in \mathbb{Z}\}$
+\begin{itemize}[label=\textbullet]
+	\item $\Rightarrow$ Si $pgcd(a,b)= \delta$, montrons que 
+	$a\mathbb{Z}+b\mathbb{Z}=\delta \mathbb{Z}$\\
+	Soit $m\in a\mathbb{Z}+b\mathbb{Z}$ donc 
+	$\exists a', b' \in \mathbb{Z}$ tel que $m=a\times a'+ b \times b'$ \\
+	Or $\delta|a$ et $\delta|b$ donc $\exists k, k' \in \mathbb{Z}$
+	tel que $a=k\times \delta$ et $b=k'\times \delta$ \\
+	Donc $m=k\times \delta \times a' + k' \times \delta \times b'$
+	$\Leftrightarrow m=\delta \times (ka'+k'b')$ cad $m \in \delta \mathbb{Z}$
+
+	\item $\Leftarrow$ Si $a\mathbb{Z}+b\mathbb{Z}=\delta \mathbb{Z}$,
+	montrons que $pgcd(a,b)=\delta$
+	\begin{enumerate}
+		\item Montrons que $\delta$ est un diviseur commun \'a a et b.\\
+		$a = a \times 1 + b \times 0 \in a\mathbb{Z}+b\mathbb{Z}$ donc $a \in \delta \mathbb{Z}$ cad $\delta | a$ \\
+		Idem pour b.
+		\item Montrons que $\delta$ est bien le \textbf{plus grand} diviseur de a et b. \\
+		Soit $\Delta$ un diviseur commun \'a a et b donc $\exists a', b' \in \mathbb{Z}$, $a=a'\Delta$ et $b=b'\Delta$\\
+	 	Nous allons montrer que $\Delta | \delta$ cad $\Delta \le \delta$ \\
+		$\delta \in \delta \mathbb{Z}$ donc $\delta \in a\mathbb{Z}+b\mathbb{Z}$ 
+		donc $\exists k, k' \in \mathbb{Z}$ tel que  
+		\begin{tabbing}
+		\hspace{0.4cm} $\delta = ak + bk'$ \\
+		$\Leftrightarrow \delta = a' \Delta k+b' \Delta k'$ \\
+		$ \Leftrightarrow \delta = \Delta \times (ka'+k'b')$\\ 
+		\end{tabbing}
+		Donc $\Delta | \delta$ cad $\Delta \le \delta$ 
+		cad $\delta = pgcd(a,b)$
+	\end{enumerate}
+\end{itemize}
+\end{myproof}
+
+
+
+\section{Nombres premiers}
+\begin{madef}
+Soit $n \in \mathbb{N}$. \\
+On dit que n est un nombre premier s'il admet exactement deux diviseurs : 1 et lui-m\^eme.
+\end{madef}
+
+\begin{maprop}
+Soit $n \in \mathbb{N} , n > 1$ 
+\begin{enumerate}
+	\item n admet au moins un diviseur premier
+	\item si n n'est pas premier, n admet au moins un diviseur premier p tel que $p \le \sqrt{n}$ 
+\end{enumerate}
+\end{maprop}
+
+\begin{myproof}[Demonstration:]
+\begin{itemize}[label=\ding{182}, font=\color{black}]
+	\item 
+	\begin{itemize}[label=\ding{217}, font=\color{black}]
+	\item Si n est premier, la propri\'et\'e est v\'erifi\'e : n|n
+	\item Si n n'est pas premier, il admet dans $\mathbb{N}$ d'autres diviseurs que 1 et n. \\
+	Soit p le plus petit diviseur de n. \\
+	\textcolor{darkgreen}{p est-il premier?} \\
+	Raisonnement par l'absurde : \\
+	Si p n'est pas premier, alors appelons p' son plus petit diviseur.\\
+	On a : $p'|p \Rightarrow p'|n $ mais $p'<p \Rightarrow $ \textbf{\textcolor{darkred}{Contradiction !}}  
+	\end{itemize}
+\end{itemize}
+\begin{itemize}[label=\ding{183}, font=\color{black}]
+	\item On a montr\'e que si n n'est pas premier il admet au moins un diviseur premier. Soit p ce diviseur. \\
+	Alors p|n donc $\exists k \in \mathbb{Z}$ tel que $n=k \times p$. Donc k est aussi un diviseur de n et $k \ge$ p d'o\'u $n=pk \ge p^2$ donc $\sqrt{n} \ge p$.
+\end{itemize}
+\end{myproof}
+
+\begin{matheo}
+Il existe une infinit\'e de nombres premiers.
+\end{matheo}
+
+\begin{myproof}[Demonstration :]
+Raisonnement par l'absurde: \\
+Supposons que $\mathcal{P}$ est finit. Donc on peut \'ecrire $\mathcal{P} = \{p_1, p_2, p_3, \ldots , p_n\}$ \\
+Consid\'erons k $\in \mathbb{N}$ tel que $k=p_1 \times p_2 \times \ldots \times p_n + 1 $ \\
+$k \ge 2$, donc d'apr\`es la proposition pr\'ecedente, k poss\`ede un diviseur premier notons le q. \\
+Le nombre q est l'un des $p_i$.\\
+ Donc q|$p_1 \times p_2 \times \ldots \times p_n$ et q|k.\\
+ Donc $q|k- p_1 \times p_2 \times \ldots \times p_n$. \\
+ Donc $q|1$ cad q=1 mais 1 n'est pas premier $\Rightarrow$ Contradiction !!
+
+
+\end{myproof}
+
+
+
 
 \section{Congruence}
 \begin{madef}
@@ -29,6 +151,15 @@ Soient $n \in \mathbb{N}, n \ge 2$ et $a, b \in \mathbb{Z}$
 On dit que deux entiers a et b sont congru modulo n ssi ils ont m\^eme restepar la division euclidienne par n. \\
 On note alors : \\
 $a \equiv b\ (\textrm{mod}\ n)$ ou $a \equiv b\ (n)$
-
 \end{madef}
+
+\begin{matheo}
+Soient $n \in \mathbb{N}, n \ge 2$ et $a, b \in \mathbb{Z}$ \\ 
+$a \equiv b\ (\textrm{mod}\ n) \Leftrightarrow (a-b) \equiv 0\ (\textrm{mod}\ n)$
+
+\end{matheo}
+\begin{proof} $\Rightarrow$
+
+\end{proof}
+
 
