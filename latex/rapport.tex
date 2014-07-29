@@ -1,0 +1,89 @@
+
+\documentclass[11pt,a4paper, twoside]{article} %style
+%\documentclass[12pt,a4paper,oneside]{book} %style en recto uniquement
+\usepackage[T1]{fontenc} %codage
+\usepackage[utf8]{inputenc} %codage
+
+\usepackage{graphicx} %pour insertion figures
+\usepackage[french]{babel}
+
+\let\origdoublepage\cleardoublepage
+\newcommand{\clearemptydoublepage}{%
+	\clearpage
+	{\pagestyle{empty}\origdoublepage}%
+}
+
+\renewcommand{\arraystretch}{1.2}
+\addto\captionsfrench{\def\tablename{{T\textsc{ableau}}}}
+
+\newenvironment{montabular}[1]{\par\vspace{0.3cm} % 4 motifs = {nom} [nombres d'argument] {début} {fin}
+	\begin{tabular}{#1}}
+{\end{tabular}
+	\vspace{0.3cm}\par}
+
+	\makeatletter
+	\def\clap#1{\hbox to 0pt{\hss #1\hss}}%
+	\def\ligne#1{%
+		\hbox to \hsize{%
+			\vbox{\centering #1}}}%
+			\def\haut#1#2#3{%
+				\hbox to \hsize{%
+					\rlap{\vtop{\raggedright #1}}%
+						\hss
+						\clap{\vtop{\centering #2}}%
+						\hss
+						\llap{\vtop{\raggedleft #3}}}}%
+						\def\bas#1#2#3{%
+							\hbox to \hsize{%
+								\rlap{\vbox{\raggedright #1}}%
+									\hss
+									\clap{\vbox{\centering #2}}%
+									\hss
+									\llap{\vbox{\raggedleft #3}}}}%
+									\def\maketitle{%
+										\thispagestyle{empty}\vbox to \vsize{%
+											\haut{}{\@blurb}{}
+											\vfill
+												\vspace{1cm}
+											\begin{flushleft}
+											\usefont{OT1}{ptm}{m}{n}
+											\huge \@title
+												\end{flushleft}
+											\par
+												\hrule height 4pt
+												\par
+												\begin{flushright}
+											\usefont{OT1}{phv}{m}{n}
+											\Large \@author
+												\par
+												\end{flushright}
+											\vspace{1cm}
+											\vfill
+												\vfill
+												\bas{}{\@location, le \@date}{}
+										}%
+										\cleardoublepage
+									}
+\def\date#1{\def\@date{#1}}
+\def\author#1{\def\@author{#1}}
+\def\title#1{\def\@title{#1}}
+\def\location#1{\def\@location{#1}}
+\def\blurb#1{\def\@blurb{#1}}
+\date{\today}
+\author{}
+\title{}
+\location{Amiens}\blurb{}
+\makeatother
+\title{Création d'un mémoire avec \LaTeX}
+\author{Jean Pierre}
+\location{Saint Tropez}
+\blurb{%
+	Université de Saint Glinglin\\
+		Faculté de mathématiques
+		\textbf{Rapport de stage en entreprise}\\[1em]
+		Maître de stage : Jean Paul\\
+		Tuteur universitaire : Jean Luc
+}%
+\begin{document}
+\maketitle
+\end{document}
