@@ -1,0 +1,141 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" href="style.css"/> <!--mise en forme-->
+	<title>MyTitle</title> <!-- onglet -->
+</head>
+
+<header>
+	<div class="intro">
+	Repartition frais de ..
+	</div>
+</header>
+
+<body>
+
+	<div class="intro">
+		Ajouter une personne : <input id="name" type="text" name="name" value="nom"> <!-- textfield -->
+		<input type="button" name="addLineTab" value="Ajouter personne" onclick="addPersonne()">
+		<input type="button" name="start_reset" value="Start/Reset" onclick="start_reset()">
+	</div>
+
+	<div>
+		<input type="button" name="addRow" value="ajouter une nouvelle ligne" onclick="addRow()">
+		<! <input type="button" name="addRow" value="affiche start" onclick="afficheStart()">
+		</br></br>
+	</div>
+
+	<TABLE id="tab" BORDER="1"> 
+		<CAPTION> Tableau de dépenses </CAPTION> 
+		<THEAD>
+			<TR> 
+			 <TH> Depense de </TH> 
+			 <TH> Montant </TH> 
+			</TR>
+		</THEAD>
+		<TBODY>
+			
+			
+		</TBODY>
+	</TABLE> 
+
+	<div>	
+		</br></br>
+		<input type="button" name="finish" value="finish => decompte!" onclick="finish()">
+	</div>
+
+
+
+</body>
+
+<!-- -------------------------------------------------------------------------------------------->
+<script>
+
+var tab=[];   // initialise;
+var isStarted = false;
+var theRowNumber = 1;
+
+
+function finish(){
+	alert("ahah !! tu n'as quand mm pas cru que j'avais aussi fait les calculs ^^");
+}
+
+function afficheStart(){
+	alert(isStarted);
+}
+function start_reset(){
+	if (!isStarted){
+		isStarted = true;
+		addRow();
+	}
+	else{
+		window.location = "file:///home/entdev3/Documents/GIT/web/accueil3.html"
+	}
+
+}
+function addRow(){
+	
+	if (isStarted){
+		var newRow = document.getElementById("tab").insertRow(-1);
+
+		// Add Select
+		var cell0 = newRow.insertCell(0);
+		cell0.innerHTML += createTextSelect(theRowNumber);
+
+		//Add Input Amount
+		var cell1 = newRow.insertCell(1);
+		cell1.innerHTML = '<input type="text" value="00,00">';
+
+		// Add checkbox for persons
+		for(i=0; i<tab.length; i++){
+			var cell = newRow.insertCell(i+2);
+			cell.innerHTML = '<input type="checkbox" >';
+		}
+		theRowNumber++;
+	}
+	else{
+		alert("veuillez cliquer demarrer l'appli 'start/reset' avant d'ajouter des lignes");
+	}
+}
+function createTextSelect(rowNumber){
+
+	//'<select name="pays" id="pays"><option value="emiel">emiel</option><option value="kirsty">kirsty</option></select>'
+	var nameSelect = 'select'+rowNumber;
+	var text = '<select name="'+nameSelect+'" id="'+nameSelect+'">';
+	for(i=0; i<tab.length; i++){
+		text += '<option value="'+tab[i]+'">'+tab[i]+'</option>';
+	}
+	text += '</select>';
+	return text;
+}
+
+function addPersonne(){
+	if (!isStarted){
+		var nameAdd = document.getElementById("name").value;
+		ajoutTab(nameAdd);
+
+		var arrayLines = document.getElementById("tab").rows;
+		var cell = arrayLines[0].insertCell(-1);
+	 /*	var table = document.getElementById ("tab");
+		var firstRow = table.rows[0];
+		var cell = firstRow.insertCell (1); */
+
+		cell.innerHTML += "<b>"+nameAdd+"</b>";
+	}
+	else{
+		alert("il n'est plus possible d'ajouter des prenom, veuillez cliquez sur reset et ajouter tout le monde avant de commencer!")
+	}
+}
+
+
+function ajoutTab(name){
+	tab.push(name);
+}
+
+</script>
+
+
+</html>
