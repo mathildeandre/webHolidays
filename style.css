@@ -61,8 +61,20 @@ section
 {
 	margin-left: 170px;
 }
+#nameGris
+{
+	color : grey;
+}
+#reset{ text-align: right; }
+#listPerson
+{
+	
+    width: 220px;
+    padding: 10px;
+    border: 5px dotted #98bf21;
+    margin: 20px;
 
-
+}
 .intro
 {
 	font-family: MaPolice;
