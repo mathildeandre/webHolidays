@@ -43,11 +43,11 @@
 
 </body>
 
-<!--<script src="js-accueil4.js" type="text/javascript"></script>-->
+
 <!-- -------------------------------------------------------------------------------------------->
 <script>
-
-var tab=[]; 
+var init = true;
+var tab=["emiel","matthijs","fabian","kiki","aina","mathilde"]; 
 
 
 function changeColor(){
@@ -57,6 +57,10 @@ function changeColor(){
 }
 
 function addPerson(){
+	if(init){
+		tab=[];
+		init=false;
+	}
 	var inputName = document.getElementById("name");
 	var name = inputName.value;
 	inputName.value = "add person"; //setAttribute("value","");
