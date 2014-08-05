@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" href="style.css"/> <!--mise en forme-->
+
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+
+	<title>MyTitle</title> <!-- onglet -->
+</head>
+
+<header>
+	<div class="intro">
+	Choisir une date de vacances... =)
+	</div>
+</header>
+
+<body>
+
+
+	<div class="intro" id="titre">
+		Veuillez ajouter les personnes concernées pour le calcul :
+		</br></br>
+		<input id="nameGris" type="text" name="name" value="add person" onfocus="changeColor()"> 
+		<input id="addPerson" type="button" name="name" value="add person" onclick="addPerson()">
+	</div>
+
+
+	<div class="duree">
+		<p> 
+		Choisir une durée de vacances </br>
+		<input type="radio" name="duree" id="jour" value="jour" onclick="choixDuree()"/> Jour<br />
+		<input type="radio" name="duree" id="semaine" value="semaine" onclick="choixDuree()"/> Semaine<br />
+		<input type="radio" name="duree" id="mois" value="mois" onclick="choixDuree()"/> Mois<br />
+		</p>
+
+	</div>
+
+	
+
+	<div>	
+		<p>
+		Person included into the calculation :
+		</p>
+
+	</div>
+	<div id="listPerson">
+	</div>
+
+	<div>	
+		<input type="button" name="startDoodle" value="START DOODLE" onclick="self.location.href='startdoodle.html'">
+	</div>
+
+
+	<script type="text/javascript" src="tab.js"></script>
+
+
+
+
+</body>
+
+
+
