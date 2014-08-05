@@ -4,8 +4,11 @@
 var tabCouple;
 var newTabCouple; 
 
-
+/*
 function calculationResult(){
+	creationTabExpense();
+
+
 	creationTabCouple();
 	//afficheTabCouple(tabCouple, "tab couple : ");
 	deleteDuplicate();
@@ -16,8 +19,9 @@ function calculationResult(){
 	cleanTab();
 	afficheTabCouple(newTabCouple, "after cleaning : ");
 	afficheResult();
-}
 
+}
+*/
 
 //tab.splice(0,1); remove 1 element at the place n°0
 function inverserCouple(cpl){

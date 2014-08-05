@@ -66,6 +66,7 @@ section
 	color : grey;
 }
 #reset{ text-align: right; }
+
 #listPerson
 {
 	
@@ -80,8 +81,10 @@ section
 	font-family: MaPolice;
 	font-size: xx-large;
 	font-weight: bold;
-	color: blue;
+	/*color: blue;*/
+	color : rgb(0,0,255);
 	text-align: center;
+	background-color: rgba(255,0,0,0.2);
 }
 
 .imageflottante
@@ -89,3 +92,40 @@ section
 
 	float: left;
 }
+
+
+.square
+{
+    border: 2px solid #000;
+    width: 200px;
+    height: 200px;
+    position: absolute;
+	
+}
+            
+/* Première div, en rouge
+(et tant qu'à faire, on révise
+le chapitre précédent :p ) */
+#s1
+{
+    background-color: rgba(255,0,0,0.4);
+    left: 130px;
+    top: 20px;
+}
+            
+/* Seconde div en vert */
+#s2
+{
+    background-color: rgba(0,255,0,0.4);
+    left: 80px;
+    top: 120px;
+}
+        
+/* Troisième div en bleu */
+#s3
+{
+    background-color: rgba(0,0,255,0.4);
+    left: 240px;
+    top: 100px;
+}
+
