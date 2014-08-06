@@ -1,0 +1,12 @@
+Prise en main d'un logiciel open source de Test de Charge.
+=> veille sur le test de charge.
+=> logiciels les plus adequats : Gatling et Jmeter.
+Choix de Jmeter.
+Installation du logiciel.
+Creation de scenarios.
+Insertion de variables d'entré (ex : differents utilisateurs)
+Developpement de resulats Graphiques.
+
+..à venir..
+Installation de JConsole afin de faire du monitoring sur la JVM pdt que JMeter effectue du test de charge.
+
