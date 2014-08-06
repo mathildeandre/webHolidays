@@ -11,45 +11,59 @@ var tabStr = url.substring(url.lastIndexOf("=")+1);
 var tabPerson = tabStr.split(",");
 
 /* start */
-for(var i=0; i<tabPerson.length; i++){
-	addPersonne(tabPerson[i]);
-}
+createTHead();
 addRow()
 /* fin start */
 
 
 
 
-/****************************************** EXTRA PERSON *******************************************/
 
-function changeColor(){
-	var inputName = document.getElementById("nameGris");
-	inputName.id = "name"; //inputName.setAttribute("id","name");
-	inputName.value = ""; //inputName.setAttribute("value","");
+function createTHead(){
+	var arrayLines = document.getElementById("tab").rows;
+	for(var i=0; i<tabPerson.length; i++){
+		var cell = arrayLines[0].insertCell(-1);
+		cell.innerHTML += "<b>"+tabPerson[i]+"</b>";
+	}
+	var cellCheckAll = arrayLines[0].insertCell(-1);
+	cellCheckAll.innerHTML += "<b>Check/Uncheck All</b>";
+
+	var cellDescrip = arrayLines[0].insertCell(-1);
+	cellDescrip.innerHTML += "<b>Description</b>"; 
 }
 
-/** a faire ... */
+
+/****************************************** EXTRA PERSON *******************************************/
 function addExtraPerson(){
+	
 	var inputName = document.getElementById("name");
 	var name = inputName.value;
-	inputName.value = "add person"; //setAttribute("value","");
-	inputName.id = "nameGris";
 
+	inputName.value = "add person"; //setAttribute("value","");
+	inputName.className = "textGrey";
 	//var div = document.getElementById("listPerson");
 	//div.innerHTML += "- "+name+" </br> ";
 
-	//tab.push(name);
-	addPersonne(name);
-	tabPerson.push(name);
-	k = tabPerson.length - 1;
-	var arrayLines = document.getElementById("tab").rows; //l'array est stocké dans une variable
-	var longueur = arrayLines.length;//on peut donc appliquer la propriété length
 
-	for(i=1; i<longueur; i++){
+	tabPerson.push(name);
+
+	
+	k = tabPerson.length - 1;
+
+	//add into THead
+	var arrayLines = document.getElementById("tab").rows;
+	var cell = arrayLines[0].insertCell(k+2);
+	cell.innerHTML += "<b>"+name+"</b>";
+
+	//add every checkbox
+	var arrayLines = document.getElementById("tab").rows; 
+	var hauteur = arrayLines.length;
+
+	for(i=1; i<hauteur; i++){
 		/* ajout des checkbox pr chaque lignes */
 		id = i + (k+2).toString();
 		var cell = arrayLines[i].insertCell(k+2);
-		cell.innerHTML = '<input id="'+id+'" type="checkbox" >';
+		cell.innerHTML = '<input id="'+id+'" type="checkbox" onclick="verifAllRow(\''+i+'\')" onmouseover="checkBoxMouseOver(\''+id+'\')">';
 		/* ajout du nom dans les select*/
 		var select = document.getElementById(i.toString()+"0");
 		select.innerHTML += '<option value="'+k+'">'+name+'</option>';
@@ -57,47 +71,10 @@ function addExtraPerson(){
 	}
 }
 
-function addPersonne(nameAdd){
-	//if (!isStarted){
-		//var nameAdd = document.getElementById("name").value;
-		//ajoutTab(nameAdd);
 
-		var arrayLines = document.getElementById("tab").rows;
-		var cell = arrayLines[0].insertCell(-1);
-	 	//var table = document.getElementById ("tab");
-		//var firstRow = table.rows[0];
-		//var cell = firstRow.insertCell (1);
-
-		cell.innerHTML += "<b>"+nameAdd+"</b>";
-	
-}
-
-/****************************************** // EXTRA PERSON *******************************************/
+/******************************** ROW ************************************/
 
 
-/******************************** done ************************************/
-
-function reset(){
-	//window.location = "accueil3.html";//"file:///home/entdev3/Documents/GIT/web/accueil3.html"
-	location.href='calculation_holiday.html?tabPerson='+tabPerson;
-}
-function checkAllOfTheRow(rowNum){
-	var hidden = document.getElementById("hidden"+rowNum);
-	var bool;
-	if(hidden.value == "true"){ //si toutes les checkbox sont deja cochees
-		bool = false;
-		hidden.value = "false";
-		
-	}
-	else{
-		bool = true;
-		hidden.value = "true";
-	}
-	for(var i=0; i<tabPerson.length; i++){
-		var id = rowNum + (i+2).toString();
-		document.getElementById(id).checked = bool;
-	}
-}
 function addRow(){
 	//if (isStarted){
 		var newRow = document.getElementById("tab").insertRow(-1);
@@ -106,24 +83,34 @@ function addRow(){
 		var cell0 = newRow.insertCell(0);
 		cell0.innerHTML += createTextSelect(theRowNumber);
 
-		//Add Input Amount
+		// Add Input Amount
 		var cell1 = newRow.insertCell(1);
 		var id = theRowNumber + "1";
-		cell1.innerHTML = '<input id="'+id+'" type="text" value="00.00">';
+		cell1.innerHTML = '<input class="textGrey" id="'+id+'" type="text" value="00.00"  onfocus="inputTextFocus(\''+id+'\')" onblur="inputTextBlur(\''+id+'\',\'00.00\')" >';
 
 		// Add checkbox for persons
 		for(i=0; i<tabPerson.length; i++){
 			id = theRowNumber + (i+2).toString();
 			var cell = newRow.insertCell(i+2);
-			cell.innerHTML = '<input id="'+id+'" type="checkbox" >';
+			cell.innerHTML = '<input  id="'+id+'" type="checkbox" onclick="verifAllRow(\''+theRowNumber+'\')" onmouseover="checkBoxMouseOver(\''+id+'\')" >';
 		}
-		var cellButtonAll = newRow.insertCell(-1);
-		cellButtonAll.innerHTML = '<input type="button" name="Checkall" value="check/uncheck all" onclick="checkAllOfTheRow('+theRowNumber+')"><input type="hidden" id="hidden'+theRowNumber+'" name="allChecked" value="false"> ';
+		
+		// Add button checkAllTheRow
+		var cellButtonAll = newRow.insertCell(tabPerson.length+2);
+		cellButtonAll.innerHTML = '<input type="checkbox" id="all'+theRowNumber+'" name="Checkall" value="check/uncheck all" onclick="checkAllRow('+theRowNumber+')"><label for="all'+theRowNumber+'" > all </label>';
+		cellButtonAll.style.backgroundColor = "#0099FF";
+
+
+		// Add Description
+		var cellDescript = newRow.insertCell(tabPerson.length+3);
+		cellDescript.innerHTML = '<textarea  class="textGrey" id="descript'+theRowNumber+'" rows="1" cols="50" onfocus="inputTextFocus(\'descript'+theRowNumber+'\')"  onblur="inputTextBlur(\'descript'+theRowNumber+'\',\'Description\')" >Description</textarea> ';
+		
 		theRowNumber++;
-	
-	/*else{
-		alert("veuillez cliquer demarrer l'appli 'start/reset' avant d'ajouter des lignes");
-	}*/
+}
+
+function textArea(){
+
+	alert(document.getElementById("descript1").value);
 }
 /* depends of "addRow()" */
 function createTextSelect(rowNumber){
@@ -137,4 +124,39 @@ function createTextSelect(rowNumber){
 	}
 	text += '</select>';
 	return text;
+}
+function verifAllRow(rowNum){
+	var boolAllChecked = true;
+	for(i=0; i<tabPerson.length; i++){
+		if(document.getElementById(rowNum.toString()+(i+2).toString()).checked == false){
+			boolAllChecked = false;
+		}
+	}
+	
+	var checkAll = document.getElementById("all"+rowNum);
+	checkAll.checked = boolAllChecked;
+}
+
+
+
+function checkAllRow(rowNum){
+	var checkAll = document.getElementById("all"+rowNum);
+	var bool = checkAll.checked;
+	/*if(hidden.value == "true"){ //si toutes les checkbox sont deja cochees
+		bool = false;
+		hidden.value = "false";
+		
+	}
+	else{
+		bool = true;
+		hidden.value = "true";
+	} */
+	for(var i=0; i<tabPerson.length; i++){
+		var id = rowNum + (i+2).toString();
+		document.getElementById(id).checked = bool;
+	}
+}
+function reset(){
+	//window.location = "accueil3.html";//"file:///home/entdev3/Documents/GIT/web/accueil3.html"
+	location.href='calculation_holiday.html?tabPerson='+tabPerson;
 }

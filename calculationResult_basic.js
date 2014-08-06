@@ -4,10 +4,8 @@
 var tabCouple;
 var newTabCouple; 
 
-/*
-function calculationResult(){
-	creationTabExpense();
 
+function calculationResult(){
 
 	creationTabCouple();
 	//afficheTabCouple(tabCouple, "tab couple : ");
@@ -21,7 +19,7 @@ function calculationResult(){
 	afficheResult();
 
 }
-*/
+
 
 //tab.splice(0,1); remove 1 element at the place n°0
 function inverserCouple(cpl){

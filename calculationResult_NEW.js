@@ -1,20 +1,17 @@
 
-/* nouveau type de calculation : remplace les fichiers "calculationResult_basic.js" & "calculationResult_optimisation.js"
+/* nouveau type de calculation : remplace les fichiers "calculationResult_basic.js" & "calculationResult_optimisation.js" */
 
-/********************************  Fonctions sur calculation results ************************************/
 var tabCouple;
-var newTabCouple; 
 var tabExpense;
 
 function calculationResult(){
-	var num=12.39;
-	//alert("num : "+num.toFixed(1));
 	creationTabExpense();
-	afficheTab(tabExpense, "tab expense : ");
-	
+	//afficheTab(tabExpense, "tab expense : ");
 
 	creationTabCouple();
-	afficheTab(tabCouple, "tab couple : ");
+	//afficheTab(tabCouple, "tab couple : ");
+	
+	afficheResult();
 }
 
 
@@ -30,13 +27,13 @@ function afficheTab(tab, str){
 
 function afficheResult(){
 	var text = '';
-	for(var k=0; k<newTabCouple.length; k++){
-		text += tabPerson[newTabCouple[k][2]] + " -> : " + newTabCouple[k][1] + "€ to "+ tabPerson[newTabCouple[k][0]] + "\n";
+	for(var k=0; k<tabCouple.length; k++){
+		text += tabPerson[tabCouple[k][2]] + " -> : " + tabCouple[k][1] + "€ to "+ tabPerson[tabCouple[k][0]] + "\n";
 	}
 	alert(text+'(-> : "owes")');
 }
 
-/********************************** fin fonctions sur calculation results ************************************/
+/********************************** calculations ************************************/
 
 
 
@@ -44,60 +41,29 @@ function creationTabCouple(){
 	tabCouple=[];
 	var indexMax = findIndexMax(tabExpense);
 	var indexMin = findIndexMin(tabExpense, (-1)*tabExpense[indexMax]);
-	alert("borne : "+((-1)*tabExpense[indexMax]));
-	alert("indexmin : "+indexMin);
 	while(indexMax != -1){ //tant qu'il y a des personne encore avec un montant payé > 0
-		
-		alert("tab expense [indexMax] : "+tabExpense[indexMax]);
-		alert("tab expense [indexMin] : "+tabExpense[indexMin]);
-		tabExpense[indexMax] += tabExpense[indexMin];
-		tabExpense[indexMin] = 0;
-		
-		alert("after , tab expense [indexMax] : "+tabExpense[indexMax]);
-		alert("after , tab expense [indexMin] : "+tabExpense[indexMin]);
+		if(indexMin == -1){ //dans le cas ou il a par ex deux positif : 2 et 1 et un negatif -3
+			indexMin = findIndexMin(tabExpense);
+			var amount = tabExpense[indexMax];
+			tabExpense[indexMin] += amount;
+			tabExpense[indexMax] = 0;
+
+			tabCouple.push([indexMax, amount.toFixed(1), indexMin]);
+
+		}
+		else{
+			var amount = tabExpense[indexMin]*(-1);
+			tabExpense[indexMax] -= amount;
+			tabExpense[indexMin] = 0;
+
+			tabCouple.push([indexMax, amount.toFixed(1), indexMin]);
+		}
 		indexMax = findIndexMax(tabExpense);
-		alert("rooo : "+(-1)*tabExpense[indexMax]);
 		indexMin = findIndexMin(tabExpense, (-1)*tabExpense[indexMax]);
-		alert("rooo2 : "+indexMin);
 	}
 
 }
 
-function findIndexMin(tab,borneMin){
-	var min = 0;
-	var index = -1;
-	if (typeof borneMin === 'undefined') { //borneMin non specifié
-		for(var i=0; i<tab.length; i++){
-			if(tab[i] < min){
-				min = tab[i];
-				index = i;
-			}
-		}
-	}
-	else{
-		for(var i=0; i<tab.length; i++){
-			if(borneMin <= tab[i] && tab[i] < min){
-				min = tab[i];
-				index = i;
-			}
-		}
-
-	}
-	
-	
-	return index;
-}
-function findIndexMax(tab){
-	var max = 0;
-	var index = -1;
-	for(var i=0; i<tab.length; i++){
-		if(tab[i] > max){
-			max = tab[i];
-			index = i;
-		}
-	}
-	return index;
-}
 
 /* construit tous les couples dans tabCouple */
 function creationTabExpense(){ 
@@ -105,11 +71,6 @@ function creationTabExpense(){
 	for(var i=0; i<tabPerson.length; i++){
 		tabExpense.push(0);
 	}
-	/*
-	var tab = document.getElementById("tab");
-	var tags = tab.getElementsByTagName("input");
-	alert("mon premier tag : "+tags[0].innerHTML);
-	*/
 	
 	var arrayLignes = document.getElementById("tab").rows; //on récupère les lignes du tableau
 	var hauteur = arrayLignes.length;//on peut donc appliquer la propriété length
@@ -119,12 +80,6 @@ function creationTabExpense(){
 
 		var idBuyer = parseInt(document.getElementById(i.toString()+"0").value);
 		var amountBuyerPayed = parseFloat(document.getElementById(i.toString()+"1").value);
-		
-		/*
-		alert("idBuyer : "+idBuyer);
-		alert("parseint idBuyer : "+parseInt(idBuyer+2));
-		alert("type : "+typeof(idBuyer));
-		*/
 
 		// on compte combien de personne sont concernees par le payement
 		var nbChecked = 0;
@@ -133,7 +88,7 @@ function creationTabExpense(){
 				nbChecked++;
 			}
 		}
-		var amountPerson = (amountBuyerPayed/nbChecked).toFixed(1); //prix par personne
+		var amountPerson = (amountBuyerPayed/nbChecked); //.toFixed(1); //prix par personne
 
 		//est ce que le buyer a payer pour lui meme?
 		if (document.getElementById(i.toString()+(idBuyer+2)).checked == true ){ //si celui qui a payé est coché
@@ -146,11 +101,35 @@ function creationTabExpense(){
 				tabExpense[k] -= amountPerson;
 			}
 		}
-
 	}
 }
 
 
+function findIndexMin(tab,borneMin){
+	var min = 0;
+	var index = -1;
+	if (typeof borneMin === 'undefined') { //borneMin non specifié
+		borneMin = -Infinity;
+	}
+	for(var i=0; i<tab.length; i++){
+		if(borneMin <= tab[i] && tab[i] < min){
+			min = tab[i];
+			index = i;
+		}
+	}
+	return index;
+}
+function findIndexMax(tab){
+	var max = 0.1;
+	var index = -1;
+	for(var i=0; i<tab.length; i++){
+		if(tab[i] > max){
+			max = tab[i];
+			index = i;
+		}
+	}
+	return index;
+}
 
 
 
