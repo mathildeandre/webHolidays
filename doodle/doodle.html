@@ -5,10 +5,15 @@
 <head>
 	<meta charset="utf-8" />
 	<link rel="stylesheet" href="style.css"/> <!--mise en forme-->
+	<link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.12/themes/smoothness/jquery-ui.css" />
 
-	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+
+	<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  	<script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
 
 	<title>MyTitle</title> <!-- onglet -->
+
+
 </head>
 
 <header>
@@ -27,6 +32,22 @@
 		<input id="addPerson" type="button" name="name" value="add person" onclick="addPerson()">
 	</div>
 
+
+	<div class="titre">
+		<p> 
+		Choisir un titre pour le doodle </br>
+		<input id="titreDoodle" type="text" name="titreDoodle" value="titre" onfocus="changeColorTitre()"> 
+		<input id="addTitre" type="button" name="titreDoodle" value="add titre" onclick="addTitre()">
+		</p>
+
+	</div>
+
+	<div class="titre">
+		<p> 
+		Date: </br>
+		<input type="text" id="debut">
+		</p>
+	</div>
 
 	<div class="duree">
 		<p> 
