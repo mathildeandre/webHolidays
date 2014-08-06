@@ -1,4 +1,6 @@
-
+jQuery(document).ready(function(){
+	    jQuery('#debut').datepicker();
+	});
 
 
 
@@ -21,6 +23,14 @@ function addPerson(){
 
 	tab.push(name);
 }
+function addTitre(){
+	var inputName = document.getElementById("titreDoodle");
+	var titre = inputName.value;
+	inputName.value = "titreDoodle"; //setAttribute("value","");
+	inputName.id = "addTitre";
+
+	$('#listPerson').before(titre);
+}
 
 function changeColor(){
 	var inputName = document.getElementById("nameGris");
@@ -28,10 +38,16 @@ function changeColor(){
 	inputName.value = ""; //inputName.setAttribute("value","");
 }
 
+function changeColorTitre(){
+	var inputName = document.getElementById("titreDoodle");
+	inputName.id = "titreDoodle"; //inputName.setAttribute("id","name");
+	inputName.value = ""; //inputName.setAttribute("value","");
+}
+
 var initDuree=false;
 function choixDuree(){
-		//$('#jour').after('<input type="text" name="nom" value="duree" size="10">');
-		$('input[type=radio][name=duree]:checked').after('<input type="text" name="nom" value="duree" size="10">');
+	//$('#jour').after('<input type="text" name="nom" value="duree" size="10">');
+	$('input[type=radio][name=duree]:checked').after('<input type="text" name="nom" value="duree" size="10">');
 
 	//$('#jour').after('<p>Nombre de jour</p>');
 	//var message = prompt($('input[type=radio][name=duree]:checked').attr('value'));
