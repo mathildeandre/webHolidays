@@ -15,7 +15,7 @@
 <nav id="nav">
 	<ul>
 	 <li><a href="../accueil.html">Accueil - Fonctionnement</a></li>
-	 <li><a href="groupe.html">Groupe</a></li>
+	 <li><a >Groupe</a></li>
 	 <li><a href="../accueil.html">Doodle</a></li>
 	 <li><a href="../accueil.html">Repas - Courses</a></li>
 	 <li><a href="../calculation/calculation.html">Calcul des dépenses</a></li>

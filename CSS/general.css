@@ -1,0 +1,127 @@
+@font-face {
+	font-family: 'MaPolice';
+	src: url('../mapolice.otf');
+}
+
+header{
+    padding:20px;/*Marge verticale*/
+    background-color: rgba(184,134,11,0.5);/*darkgoldenrod; /*Couleur de fond*/
+    text-align:center;/*texte centré*/
+    font-size: x-large;
+    font-weight: bold;
+	border-radius: 30px ;
+    font-family: Georgia, "Comic Sans ms";
+
+
+  vertical-align:middle;
+  height:200px;
+  line-height:200px;
+  display: inline;
+}
+
+footer{
+    padding:25px 0px;/*Marge verticale*/
+    background-color: darkgoldenrod; /*Couleur de fond*/
+    text-align:center;/*texte centré*/
+    font-family: "Comic Sans ms";
+    font-size: small;
+    font-weight: italic;
+	border-radius: 30px ;
+
+  display: inline;
+	
+}
+
+nav{
+	position: fixed;
+	border:3px solid #9FC6FF;/*bleu clair*/   /* blueviolet*/
+	border-radius: 30px ;
+	width:300px;
+	float: left;
+	padding: 10px;
+	margin: 0px; 
+	background-color: rgba(0,0,0,0.7);
+	
+    color: #9FC6FF;
+	/*width:150px;
+	/*border: 1px solid black;*/
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+} 
+
+
+a:hover {
+    color: orchid;
+}
+a{ /* le texte de la nav */
+	color:#9FC6FF; /* bleu clair */
+    font-family: "Comic Sans ms";
+    font-size: large;
+    font-weight: italic;
+}
+
+
+body{
+	font-family: Helvetica Narrow, sans-serif;
+	font-weight: 500;
+    /*width:930px;/*Taille de la colonne centrée moins le padding*/
+    /*background-color: limegreen;/*Couleur de fond*/
+    margin: auto; /*centrer la colonne*/
+    padding:0px 25px 0px 25px;/*margin interne*/
+	/*background-image: url("Images/clouds.jpg");*/
+	/*background-color: rgb(200,90,200);*/
+	/*background-image: url("Images/bonhomme.jpg");
+	background-attachement: fixed;
+	background-repeat: no-repeat;
+	background-position: top right;
+	background: url("Images/bonhomme.jpg") fixed no-repeat top right, url("Images/clouds.jpg") fixed;*/
+}
+h1{
+    text-align:center;/*texte centré*/
+    font-size: x-large;
+    font-weight: bold;
+}
+h2{
+	position: relative;
+	left:  20px;
+	/* text-indent: 20px;*/
+    margin-left: 30px/*texte centré*/
+    font-size: large;
+    font-weight: bold;
+}
+p{
+	margin-bottom: 30px;
+}
+section{
+	border:8px solid darkgoldenrod;/*bleu clair*/   /* blueviolet*/
+	border-radius: 30px ;
+	width:800px;
+	margin-left : 350px; 
+	background-color:rgba(184,134,11,0.5);/*darkgoldenrod; -- rgba(50,205,50,0.5); /*limegreen;*/
+}
+
+.textGrey{
+	color : grey;
+}
+
+.bigCheckbox{
+
+   width: 40px; height: 40px; 
+
+}
+
+input[type='checkbox'] {
+
+    background:red;
+}
+
+.right{ text-align: right; }
+
+
+
+
+
+
