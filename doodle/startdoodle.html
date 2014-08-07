@@ -25,8 +25,13 @@
 <body>
 
 	<div>
+		<input class="textGrey" id="titre" type="text" name="titreDoodle" value="titre" onfocus="inputTextFocus('titre')" onblur="inputTextBlur('titre','titre')" > 
+
+	</div>
+
+	<div>
 	<input type="button" name="addRow" value="add new row" onclick="addRow()">
-	<input type="button" name="addColumn" value="add new column" onclick="addColumn()">
+	<input id="addCol" type="button" name="addColumn" value="add new column" onclick="addColumn()">
 
 	<TABLE id="tab" BORDER="1"> 
 		<CAPTION> Tableau doodle </CAPTION> 
@@ -36,11 +41,6 @@
 			 <TD> Nom personnes </TD> 
 			 <TD> <p> Du : <input type="text" id="debut"> </p> 
 			      <p> au : <input type="text" id="fin"></p> </TD>
-			</TR>
-			<TR>
-			 <td> <input id="personne" type="texte"> </td>
-			 <td> <input id="box" type="checkbox"> </td>
-			 </TR>
 		</tbody>
 		</THEAD>
 		<TBODY>
@@ -48,14 +48,25 @@
 			
 		</TBODY>
 	</TABLE>
-
 	</div>
+
+	<div class="column">
+	<p>
+	Add a column </br> 
+	<input id="date" type="radio" name="date" value="Du au"/>  
+	 Du : <input type="text" id="debut">  
+	 au : <input type="text" id="fin"></br> 
+	<input id="text" type="radio" name="text" value="text"/> <input type="texte" id="textCol"/> </br>
+	</p>
+	</div>
+
 
 
 
 
 </body>
 <script src="startdoodle.js" type="text/javascript"></script>
+<script src="../calculationExpense/actionInputText.js" type="text/javascript"></script>
 
 
 
