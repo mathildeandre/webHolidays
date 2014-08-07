@@ -12,6 +12,7 @@ header{
 	border-radius: 30px ;
     font-family: Georgia, "Comic Sans ms";
 
+  width:200px;
 
   vertical-align:middle;
   height:200px;
@@ -38,7 +39,7 @@ nav{
 	border-radius: 30px ;
 	width:300px;
 	float: left;
-	padding: 10px;
+	padding: 10px ;
 	margin: 0px; 
 	background-color: rgba(184,134,11,0.5);
 	
@@ -97,13 +98,15 @@ h2{
 }
 p{
 	margin-bottom: 30px;
+	position: relative;
+	left:  10px;
 }
 section{
-	border:8px solid darkgoldenrod;/*bleu clair*/   /* blueviolet*/
+	border:8px solid darkorange;/*bleu clair*/   /* blueviolet*/
 	border-radius: 30px ;
 	width:800px;
 	margin-left : 350px; 
-	background-color:rgba(184,134,11,0.5);/*darkgoldenrod; -- rgba(50,205,50,0.5); /*limegreen;*/
+	background-color:rgba(184,134,11,1);/*darkgoldenrod; -- rgba(50,205,50,0.5); /*limegreen;*/
 }
 
 .textGrey{
