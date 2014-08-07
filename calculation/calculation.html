@@ -3,21 +3,27 @@
 <html>
 
 <head>
-	<meta charset="utf-8" />
-	<link rel="stylesheet" type="text/css" href="../CSS/general.css"/> <!--mise en forme-->
-	<title>Calculations</title> <!-- onglet -->
+    <title>J'organise mes Vacances !!</title>
+    <meta charset='utf-8' />
+    <link rel="shortcut icon" href="images/tree3.png" />
+
+	<link rel="stylesheet" type="text/css" href="../CSS/general.css"/> 
+	<link rel="stylesheet" type="text/css" href="../CSS/styleCalculation.css"/> 
 </head>
 
 
-<body>
-<header >Bienvenue dans notre calcul de répartition des frais pour vacances entre amis =) </header>
+<body id="bodyCalculation">
+<header> <img src="images/sun.png" alt="Tree" height="100" />
+ 	Bienvenue dans notre calcul de répartition des frais pour vacances entre amis =)
+	<img src="images/tree3.png" alt="Tree" height="100" />
+</header>
 <nav id="nav">
 	<ul>
 	 <li><a href="../accueil.html">Accueil - Fonctionnement</a></li>
 	 <li><a href="../groupe/groupe.html">Groupe</a></li>
 	 <li><a href="../accueil.html">Doodle</a></li>
 	 <li><a href="../accueil.html">Repas - Courses</a></li>
-	 <li><a >Calcul des dépenses</a></li>
+	 <li class="selected">Calcul des dépenses</a></li>
 	 <li><a href="../accueil.html">Loisirs</a></li>
 	</ul>
 </nav>
@@ -28,6 +34,10 @@
 		<input type="button" name="start_reset" value="Start/Reset" onclick="start_reset()">
 	</div>
 	-->
+
+<section >
+
+
 	<div>
 		</br></br>
 		<input type="button" name="addExtraPerson" value="add an extra person" onclick="addExtraPerson()">
@@ -69,6 +79,10 @@
 		</br></br>
 		<input type="button" name="calculationResult" value="SHOW RESULTS" onclick="calculationResult()">
 	</div>
+
+
+
+</section >
 
 <footer><p>Copyright fs - Tous droits réservés<br/> Nous contacter : fabiensauce@orange.fr</p></footer>
 

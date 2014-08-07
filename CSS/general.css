@@ -40,7 +40,7 @@ nav{
 	float: left;
 	padding: 10px;
 	margin: 0px; 
-	background-color: rgba(0,0,0,0.7);
+	background-color: rgba(184,134,11,0.5);
 	
     color: #9FC6FF;
 	/*width:150px;
@@ -62,7 +62,10 @@ a{ /* le texte de la nav */
     font-size: large;
     font-weight: italic;
 }
-
+.selected{
+	background-color:rgba(184,134,11,1);
+	border-radius: 10px ;
+}
 
 body{
 	font-family: Helvetica Narrow, sans-serif;
