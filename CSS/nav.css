@@ -23,7 +23,7 @@ li {
  }
 
 ul li a {
- display:block;
+display:block;
  float:left;   
  width:200px;
  height:100px;
@@ -32,22 +32,58 @@ ul li a {
  padding:5px;
  
  /*background-color:#6495ED;*/
-	background-image: url("../images/bubble.jpg");
-  color: black;
-
- border:2px solid;
- border-color:#DCDCDC ;
+	background-image: url("../images/blue.jpeg");
+    background-size: 100% 100%;
 
  text-decoration:none;
  text-align:center;
  font-family: "Times New Roman", Times, serif;
- font-size:20px;
- }
+ font-size:22px;
 
-ul li a:hover {
-	background-image: url("../images/light.jpg");
-background-position: center;
- border-color:#696969 ;
+opacity: 0.8; 
+
+ border:2px solid;
+ border-color:#DCDCDC ;
+  color: black;
+
+}
+
+ul li a[class] {
+-webkit-animation: myfirst 1s alternate infinite; /* Chrome, Safari, Opera */
+ border-color:red ;
+  color: red;
+    text-shadow:
+    -1px -1px 0 #fff,
+    1px -1px 0 #fff,
+    -1px 1px 0 #fff,
+    1px 1px 0 #fff; 
+}
+
+@-webkit-keyframes myfirst {
+from {opacity: 1;}
+to {opacity: 0.3;}
+  /*  0%   {opacity: 1; }
+    25%  {opacity: 0.6; }
+    50%  {opacity: 0.2; }
+    75%  {opacity: 0.6; }
+    100% {opacity: 1; }*/
+}
+/* NE MARCHE PAS */
+@-webkit-keyframes myRotate {
+from {-webkit-transform: rotate(0deg);}
+to {-webkit-transform: rotate(30deg);}
+}
+
+ul li a:not([class]):hover {
+
+  -webkit-transform: scale(1.5,1.5);
+
+
+	background-image: url("../images/blue3.jpeg");
+    /*background-size: 100% 100%;*/
+background-position: center; 
+
+ border-color:white ;
  color: white;
     text-shadow:
     -1px -1px 0 #000,
