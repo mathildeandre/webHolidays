@@ -1,0 +1,57 @@
+@font-face {
+	font-family: 'MaPolice';
+	src: url('../mapolice.otf');
+}
+
+header{
+    padding:20px;/*Marge verticale*/
+    background-color: rgba(184,134,11,0.5);/*darkgoldenrod; /*Couleur de fond*/
+    text-align:center;/*texte centré*/
+    font-size: x-large;
+    font-weight: bold;
+	border-radius: 30px ;
+    font-family: Georgia, "Comic Sans ms";
+
+  width:200px;
+
+  vertical-align:middle;
+  height:200px;
+  line-height:200px;
+  display: inline;
+}
+
+footer{
+    padding:25px 0px;/*Marge verticale*/
+    background-color: darkgoldenrod; /*Couleur de fond*/
+    text-align:center;/*texte centré*/
+    font-family: "Comic Sans ms";
+    font-size: small;
+    font-weight: italic;
+	border-radius: 30px ;
+
+  display: inline;
+	
+}
+
+.photo{
+float:left;
+border:1px solid black;
+margin:5px;
+padding:5px;
+text-align:center;
+}
+
+
+.images{
+	border:8px solid darkorange;
+	border-radius: 20px ;
+	margin-auto;
+	background-color:rgba(184,134,11,1);
+	text-align: center;
+}
+
+figure{
+	margin-auto;
+}
+
+
