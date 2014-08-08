@@ -46,6 +46,7 @@ text-align:center;
 	border:8px solid darkorange;
 	border-radius: 20px ;
 	margin-auto;
+	height: 100px;
 	background-color:rgba(184,134,11,1);
 	text-align: center;
 }
@@ -54,4 +55,58 @@ figure{
 	margin-auto;
 }
 
+ul {
+ padding:0;
+ margin-auto;
+ list-style-type:none;
+ }
+
+li {
+ margin-left:10%;
+ float:left; /*pour IE*/
+ }
+
+ul li a {
+ display:block;
+ float:center;   
+ width:200px;
+ height:100px;
+ border-radius: 50%;
+ line-height:100px;
+ padding:5px;
+ 
+ /*background-color:#6495ED;*/
+  color: black;
+
+ border:2px solid;
+ border-color:#DCDCDC ;
+
+ text-decoration:none;
+ text-align:center;
+ font-family: "Times New Roman", Times, serif;
+ font-size:20px;
+ }
+
+ul li a[id="entree"]{
+	background-image: url("../images/entree.jpg");
+}
+
+ul li a[id="plat"]{
+	background-image: url("../images/plat.jpg");
+}
+
+ul li a[id="dessert"]{
+	background-image: url("../images/dessert.png");
+}
+
+ul li a:hover {
+background-position: center;
+ border-color:#696969 ;
+ color: white;
+    text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000; 
+ } 
 
