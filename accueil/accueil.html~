@@ -22,7 +22,7 @@ HTML5 sont employées. -->
 
 <nav>
 	<ul>
-	 <li ><a > Accueil</a></li>
+	 <li ><a class="current" > Accueil</a></li>
 	 <li ><a href="../groupe/groupe.html">Groupe</a></li>
 	 <li ><a href="accueil.html">Doodle</a></li>
 	 <li ><a href="accueil.html">Repas - Courses</a></li>
