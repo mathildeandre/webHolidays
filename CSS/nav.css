@@ -50,6 +50,7 @@ opacity: 0.8;
 
 ul li a[class] {
 -webkit-animation: myfirst 1s alternate infinite; /* Chrome, Safari, Opera */
+-moz-animation: myfirst 1s alternate infinite; /* Chrome, Safari, Opera */
  border-color:red ;
   color: red;
     text-shadow:
@@ -59,6 +60,10 @@ ul li a[class] {
     1px 1px 0 #fff; 
 }
 
+@-moz-keyframes myfirst {
+from {opacity: 1;}
+to {opacity: 0.3;}
+}
 @-webkit-keyframes myfirst {
 from {opacity: 1;}
 to {opacity: 0.3;}
@@ -77,6 +82,7 @@ to {-webkit-transform: rotate(30deg);}
 ul li a:not([class]):hover {
 
   -webkit-transform: scale(1.5,1.5);
+  -moz-transform: scale(1.5,1.5);
 
 
 	background-image: url("../images/blue3.jpeg");
