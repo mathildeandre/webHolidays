@@ -81,21 +81,17 @@ font-size:10px;
 	/*width:150px;
 	/*border: 1px solid black;*/
 }
-a:hover {
-   /* color: orchid;*/
-}
-a{ /* le texte de la nav */
-	/*color:#9FC6FF; /* bleu clair */
-    /*font-family: "Comic Sans ms";
-    font-size: large;
-    font-weight: italic;*/
-}
+
 .selected{
 	background-color:rgba(184,134,11,1);
 	border-radius: 10px ;
 }
 
 body{
+
+background: url("../images/beach1.jpg");
+
+
 	font-family: Helvetica Narrow, sans-serif;
 	font-weight: 500;
     /*width:930px;/*Taille de la colonne centrée moins le padding*/

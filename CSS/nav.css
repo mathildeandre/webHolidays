@@ -32,7 +32,9 @@ ul li a {
  padding:5px;
  
  /*background-color:#6495ED;*/
-	background-image: url("../images/bubble.jpg");
+	background-image: url("../images/blue.jpeg");
+    background-size: 100% 100%;
+opacity: 0.8; 
   color: black;
 
  border:2px solid;
@@ -41,13 +43,35 @@ ul li a {
  text-decoration:none;
  text-align:center;
  font-family: "Times New Roman", Times, serif;
- font-size:20px;
+ font-size:22px;
  }
+@-webkit-keyframes myfirst {
+from {opacity: 1;}
+to {opacity: 0.3;}
+  /*  0%   {opacity: 1; }
+    25%  {opacity: 0.6; }
+    50%  {opacity: 0.2; }
+    75%  {opacity: 0.6; }
+    100% {opacity: 1; }*/
+}
+@-webkit-keyframes myRotate {
+from {-webkit-transform: rotate(0deg);}
+to {-webkit-transform: rotate(30deg);}
+}
 
 ul li a:hover {
-	background-image: url("../images/light.jpg");
-background-position: center;
- border-color:#696969 ;
+
+  -webkit-transform: scale(1.5,1.5);
+
+-webkit-animation: myfirst 1s; /* Chrome, Safari, Opera */
+    -webkit-animation-direction: alternate;
+    -webkit-animation-iteration-count: infinite;
+
+	background-image: url("../images/blue3.jpeg");
+    /*background-size: 100% 100%;*/
+background-position: center; 
+
+ border-color:white ;
  color: white;
     text-shadow:
     -1px -1px 0 #000,

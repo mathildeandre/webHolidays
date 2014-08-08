@@ -5,3 +5,12 @@
 
 }
 
+a:hover {
+   color: yellow;/*orchid;*/
+}
+a{ /* le texte de la nav */
+	/*color:#9FC6FF; /* bleu clair */
+    /*font-family: "Comic Sans ms";
+    font-size: large;
+    font-weight: italic;*/
+}
