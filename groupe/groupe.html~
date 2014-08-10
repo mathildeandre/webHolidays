@@ -26,7 +26,8 @@
 	 <li class="current" >Groupe</li>
 	 <li id="liDoodle" onmouseover="changeCursor('liDoodle')" onclick="location.href='../doodle/doodle.html'" >Doodle</li>
 	 <li id="liRepas" onmouseover="changeCursor('liRepas')" onclick="location.href='../repas/repas.html'">Repas - Courses</li>
-	 <li id="liCalc" onmouseover="changeCursor('liCalc')" onclick="location.href='../calculation/calculation.html'">Calcul des dépenses</li>
+	 <li id="liCalc" onmouseover="changeCursor('liCalc')" onclick="location.href='../calculation/calculation.html'">Vos dépenses</li>
+	 <li id="liAffaire" onmouseover="changeCursor('liAffaire')" onclick="location.href='../accueil/accueil.html'">Affaires</li>
 	 <li id="liLoisirs" onmouseover="changeCursor('liLoisirs')" onclick="location.href='accueil.html'">Loisirs</li>
 	</ul>
 </nav>
@@ -34,39 +35,36 @@
 
 
  <section >
-	<div class="intro">
-		Veuillez ajouter les personnes concernées pour le calcul :
-		</br></br>
-		<input class="textGrey" id="name" type="text" name="name" value="add person" onfocus="inputTextFocus('name')" onblur="inputTextBlur('name','add person')" > 
-		<input type="button" name="addPerson" value="Add person" onclick="addPerson()">
-	</div>
-
-	<div class="square" id ="s1">
-	</div>
-	<div class="square" id ="s2">
-	</div>
-	<div class="square" id ="s3">
-	</div>
-	
-	<div>	
-		</br>
-		Person included into the calculation :
-		</br>
-	</div>
+   <h1>Votre Groupe</h1>
+   <h2>Composition</h2>
+<div class="composition">
 
 	<div id="listPerson">
+	 <p>- Emiel </p> 
+	 <p>- Matthijs </p> 
+	 <p>- Fabian </p> 
+	 <p>- Kiki </p> 
 	</div>
+</div>
+
+
+   <h2>Ajout</h2>
+<div class="ajout">
+		<p>Ajouter des personnes à votre groupe :</p>
+		<input class="textGrey" id="name" type="text" name="name" value="add person" onfocus="inputTextFocus('name')" onblur="inputTextBlur('name','add person')" > 
+		<input type="button" name="addPerson" value="Add person" onclick="addPerson()">
+</div>
 
 	<div class="right">	
-		<input  type="button" name="reset" value="Delete all : restart" onclick="location.href='groupe.html';">
+		<input  type="button" name="reset" value="Clear the group" onclick="location.href='groupe.html';">
 	</div>
-	<div>	
-		</br>
-		<input type="button" name="startCalcul" value="VALIDATE" onclick="nextPage()">
-	</div>
-
+	</br>
+	<div><input type="button" name="startCalcul" value="CONFIRM" onclick="nextPage()"></div>
 
  </section >
+
+
+
 
 
 <footer><p>Copyright fs - Tous droits réservés<br/> Nous contacter : fabiensauce@orange.fr</p></footer>

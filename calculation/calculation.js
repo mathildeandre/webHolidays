@@ -26,7 +26,7 @@ function createTHead(){
 		cell.innerHTML += "<b>"+tabPerson[i]+"</b>";
 	}
 	var cellCheckAll = arrayLines[0].insertCell(-1);
-	cellCheckAll.innerHTML += "<b>Check/Uncheck All</b>";
+	cellCheckAll.innerHTML += "<b>Everybody</b>";
 
 	var cellDescrip = arrayLines[0].insertCell(-1);
 	cellDescrip.innerHTML += "<b>Description</b>"; 

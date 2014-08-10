@@ -15,7 +15,7 @@ function addPerson(){
 	inputName.className = "textGrey";
 
 	var div = document.getElementById("listPerson");
-	div.innerHTML += "- "+name+" </br> ";
+	div.innerHTML += "<p>- "+name+" </p> ";
 
 	tab.push(name);
 }

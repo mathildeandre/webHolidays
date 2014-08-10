@@ -26,7 +26,8 @@
 	 <li id="liGroupe" onmouseover="changeCursor('liGroupe')" onclick="location.href='../groupe/groupe.html'" >Groupe</li>
 	 <li id="liDoodle" onmouseover="changeCursor('liDoodle')" onclick="location.href='../doodle/doodle.html'" >Doodle</li>
 	 <li id="liRepas" onmouseover="changeCursor('liRepas')" onclick="location.href='../repas/repas.html'">Repas - Courses</li>
-	 <li class="current" >Calcul des dépenses</li>
+	 <li class="current" >Vos dépenses</li>
+	 <li id="liAffaire" onmouseover="changeCursor('liAffaire')" onclick="location.href='../accueil/accueil.html'">Affaires</li>
 	 <li id="liLoisirs" onmouseover="changeCursor('liLoisirs')" onclick="location.href='accueil.html'">Loisirs</li>
 	</ul>
 </nav>
@@ -40,21 +41,11 @@
 	-->
 
 <section >
+   <h1>Calcul de vos dépenses</h1>
+   <h2>Qui a payé quoi ?</h2>
+<div class="all">
 
-
-	<div>
-		</br></br>
-		<input type="button" name="addExtraPerson" value="add an extra person" onclick="addExtraPerson()">
-		<input class="textGrey" id="name" type="text" name="nameExtraPerson" value="add an extra person" onfocus="inputTextFocus('name')" onblur="inputTextBlur('name','add an extra person')" > 
-		</br></br>
-	</div>
-	<div class="right" >
-		<input  id="theCheckBoxMouseOver" type="checkbox" >
-		<label for="theCheckBoxMouseOver" > MouseOver actif ?</label>hauteur
-	</div>
-	<div>
-	<input type="button" name="addRow" value="add new row" onclick="addRow()">
-	<TABLE id="tab" BORDER="1"> 
+<TABLE id="tab" BORDER="1"> 
 		<CAPTION> Tableau de dépenses </CAPTION> 
 		<THEAD>
 			<TR> 
@@ -66,8 +57,24 @@
 			
 			
 		</TBODY>
-	</TABLE> 
+</TABLE> 
+
+	<div>
+	<input type="button" name="addRow" value="add new row" onclick="addRow()">
+	
 	</div>
+
+
+
+	<div>
+		</br></br>
+		<input class="textGrey" id="name" type="text" name="nameExtraPerson" value="add an extra person" onfocus="inputTextFocus('name')" onblur="inputTextBlur('name','add an extra person')" > 
+		<input type="button" name="addExtraPerson" value="add an extra person" onclick="addExtraPerson()">
+		</br></br>
+	</div>
+
+</div>
+
 	<!--
 	<div>	
 		</br></br>
@@ -76,8 +83,12 @@
 	</div>
 	-->
 
+	<div class="right" >
+		<input  id="theCheckBoxMouseOver" type="checkbox" >
+		<label for="theCheckBoxMouseOver" > MouseOver actif ?</label>
+	</div>
 	<div class="right">	
-		<input   type="button" name="reset" value="Restart All" onclick="reset()">
+		<input   type="button" name="reset" value="Empty the tab" onclick="reset()">
 	</div>
 	<div>	
 		</br></br>

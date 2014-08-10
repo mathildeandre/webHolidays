@@ -10,15 +10,36 @@
 
 section{
   border-radius: 10px ;
-  width:75%;
+  width:50%;
   margin : auto; 
   margin-top : 75px; 
   background : lightgoldenrodyellow;/*url("../images/papier-peint19.jpg");*/
-  color:#000033;
-  padding: 30px;
+  color:#803300;
+  padding: 5%;
+  padding-top: 3%;
 }
 
 
+h1{
+    text-align:center;/*texte centré*/
+    font-size: x-large;
+    font-weight: bold;
+text-shadow: 5px 5px 5px #FF6600;  /*decalage-a-droite, decalage-bas, flootage, color*/
+
+}
+
+
+section h2{
+    margin-left: 5%;
+    font-weight: bold;
+padding:3%;
+padding-top:5%;
+}
+
+section div[class]{
+
+    margin-left: 10%;
+}
 
 #listPerson
 {

@@ -5,3 +5,42 @@
 
 }
 */
+
+
+section{
+  border-radius: 10px ;
+  width:90%;
+  margin : auto; 
+  margin-top : 75px; 
+  background : lightgoldenrodyellow;/*url("../images/papier-peint19.jpg");*/
+  color:#800000;
+  padding: 3%;
+}
+
+
+h1{
+    text-align:center;/*texte centré*/
+    font-size: x-large;
+    font-weight: bold;
+text-shadow: 5px 5px 5px #FF0000;  /*decalage-a-droite, decalage-bas, flootage, color*/
+
+}
+
+
+section h2{
+    /*margin-left: 5%;*/
+    font-weight: bold;
+padding:2%;
+}
+
+#tab{
+margin:3%
+
+}
+
+
+
+
+
+
+
