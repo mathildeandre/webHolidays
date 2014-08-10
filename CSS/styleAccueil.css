@@ -22,20 +22,22 @@ body{
 	background-position: top right;
 	background: url("Images/bonhomme.jpg") fixed no-repeat top right, url("Images/clouds.jpg") fixed;*/
 }
-section{
-	background-image: url("../images/snowman.jpg");
-	background-repeat: no-repeat;
-	background-position: top right;
-}
 
 section{
   border-radius: 10px ;
   width:75%;
   margin : auto; 
   margin-top : 75px; 
-  background : lightgoldenrodyellow;/*url("../images/papier-peint19.jpg");*/
+  background : white;/*url("../images/papier-peint19.jpg");*/
   color:#000033;
   padding: 30px;
+	background-image:url("../images/parasol.jpg");
+	background-repeat:no-repeat;
+	background-size:20%;
+	background-position: top right;
+}
+
+#h2Groupe{
 }
 
 h1{

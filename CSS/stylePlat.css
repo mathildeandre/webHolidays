@@ -9,8 +9,8 @@ article{
 	border:3px solid chocolate;/*bleu clair*/   /* blueviolet*/
 	border-radius: 20px ;
 	height: 650px;
-	width: 100%;
-	margin-left: 5%;
+	width: 70%;
+	margin-left: 20%;
 	margin-top: 10px;
 	opacity:1;
 	color: white;
@@ -20,24 +20,21 @@ article{
     -0.5px 0.5px 0 #000,
     0.5px 0.5px 0 #000; 
 	font-family:Comic Sans MS;
+	background-repeat:no-repeat, repeat;
+	background-size:30%, 100%;
+	background-position:5% 15%, top left;
 }
 
 article[id="burgers"]{
 	
 	
 	background-image:url("../images/burger2.jpg"), url("../images/burger.jpg");
-	background-repeat:no-repeat;
-	background-size:30%, 100%;
-	background-position:5% 7%, top left;
 	
 }
 
 article[id="lasagne"]{
 	
 	background-image:url("../images/lasagne2.jpg"),url("../images/lasagne.jpg");
-	background-repeat:no-repeat, repeat;
-	background-size:35%, 100%;
-	background-position:5% 7%, top left;
 	
 }
 
@@ -68,8 +65,40 @@ h1{
 
 article h2{
 	text-align:center;
+	color: chocolate;
+    text-shadow:
+    -0.5px -0.5px 0 #000,
+    0.5px -0.5px 0 #000,
+    -0.5px 0.5px 0 #000,
+    0.5px 0.5px 0 #000; 
+	font-size:xx-large;
 }
 
 article h3{
 	text-decoration:underline;
 	}
+	
+	
+section[class="navPlats"] ul{
+	position: fixed;
+	float: left;
+	padding: 10px ;
+	margin: 0px; 
+    list-style-type: none;
+	margin-left:20px;
+    padding: 0;
+}
+
+section[class="navPlats"] ul li{
+	border:3px solid chocolate;/*bleu clair*/   /* blueviolet*/
+	border-radius: 30px ;
+	width:100%;
+	margin-left:20px;
+	margin-top:5px;
+
+}
+
+section[class="navPlats"] ul li a{
+	margin-left:20px;
+	color:black;
+}
