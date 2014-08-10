@@ -7,12 +7,25 @@
 }
 */
 
+
+section{
+  border-radius: 10px ;
+  width:75%;
+  margin : auto; 
+  margin-top : 75px; 
+  background : lightgoldenrodyellow;/*url("../images/papier-peint19.jpg");*/
+  color:#000033;
+  padding: 30px;
+}
+
+
+
 #listPerson
 {
-	
+    color : #FF6600;
     width: 220px;
     padding: 10px;
-    border: 5px dotted #98bf21;
+    border: 5px dotted #FF6600;
     margin: 20px;
 
 }

@@ -6,19 +6,19 @@
 	background-position: 0 0;
 
 }*/
-nav ul li a:hover {
-   color: yellow;/*orchid;*/
-}
 nav{ 
    	white-space: nowrap; 
     	margin-left: 0;
+    	padding:0px;
+	/*background:purple;*/
 }
 
 nav ul {
+	/*background:red;*/
 	display: inline-block;
     	margin-left: 0;
-    	*display: inline; /* IE7 */
-    	*zoom:1;  /* IE7 */ 
+    	/*display: inline; /* IE7 */
+    	/*zoom:1;  /* IE7 */ 
     	list-style: none;
    	width: 100%;
     	padding:0px;
@@ -26,17 +26,16 @@ nav ul {
 
 nav li {
     	display: inline-block;
-    	*display: inline;
-    	*zoom:1;
+    	/**display: inline;
+    	/*zoom:1;*/
     	width: 13%;
-	margin-left:3%;
+	margin-left:1%;
     	height:50px;
     	line-height:50px;
     	border-radius: 5%; 
 
  	border-top:2px solid;
  	border-right:2px solid;
- 	border-color:rgb(0,76,0);/*#006600;/*grey;/*#DCDCDC ;*/
 
   	color: white;
 
@@ -49,33 +48,52 @@ nav li {
 
 
 	/*background-image: url("../images/blue.jpeg");*/
- 	background-color:rgb(0,204,0);/*limegreen;/*#6495ED;*/
+ 	/*limegreen;/*#6495ED;*/
 	
     	background-size: 100% 100%;
 }
-
-
-@-moz-keyframes clignote {
-from {/*opacity: 1;*/ background-color:rgba(0,204,0,1);}
-to {/*opacity: 0.3;*/background-color:rgba(0,204,0,0.3);}
+nav li:nth-child(1) {
+background-color:#0033CC; /*blue*/
+ 	border-color:#333333;  /* dark #000066 ;*/
+}
+nav li:nth-child(2) {
+background-color:#FF6600; /*orange*/
+ 	border-color:#333333;/* dark #803300 ;*/
+}
+nav li:nth-child(3) {
+background-color:rgb(0,204,0); /*green */
+ 	border-color:#333333;/* dark rgb(0,76,0) ;*/
+}
+nav li:nth-child(4) {
+background-color:#FFCC00; /*yellow*/
+ 	border-color:#333333; /* less dark :B2B200 ;darker : #808000;*/
+}
+nav li:nth-child(5) {
+background-color:#FF0000; /*red*/
+ 	border-color:#333333; /* less dark #B20000 ;darker : #800000;*/
+}
+nav li:nth-child(6) {
+background-color:#853385; /*purple*/
+ 	border-color:#333333;/* dark #3D003D ;*/
+}
+nav li:nth-child(7) {
+background-color:pink;
+ 	border-color:#333333;
 }
 
-@-webkit-keyframes clignote {
-from { background-color:rgba(0,204,0,1);}
-to { background-color:rgba(0,204,0,0.3);}
+
+
+
+
+
+
+
+@keyframes clignote {
+from {opacity: 1; /*background-color:rgba(211,211,211,1);*/}
+to {opacity: 0.3;/*background-color:rgba(211,211,211,0.3);*/}
 }
-
-/* NE MARCHE PAS */
-@-webkit-keyframes myRotate {
-from {-webkit-transform: rotate(0deg);}
-to {-webkit-transform: rotate(30deg);}
-}
-
-
-
 nav ul li[class="current"] {
--webkit-animation: clignote 2s alternate infinite; /* Chrome, Safari, Opera */
--moz-animation: clignote 2s alternate infinite; /* firefox*/
+animation: clignote 2s alternate infinite; /* firefox*/
  /*border-color: ;*/
   color: grey;
  	font-size:large;
@@ -85,15 +103,17 @@ nav ul li[class="current"] {
     -1px 1px 0 #000,
     1px 1px 0 #000; 
 }
-@-moz-keyframes penche {
-from {-moz-transform: rotate(-10deg) scale(1.3,1.3);}
-to {-moz-transform: rotate(-7deg) scale(1.3,1.3);}
+@keyframes penche {
+from {transform: rotate(-10deg) scale(1.3,1.3);}
+to {transform: rotate(-7deg) scale(1.3,1.3);}
 }
 nav ul li:not([class="current"]):hover {
--moz-animation: penche 0.2s alternate; /* firefox*/
--moz-transform: rotate(-10deg) scale(1.3,1.3);
+animation: penche 0.2s alternate; /* firefox*/
+transform: rotate(-10deg) scale(1.3,1.3);
 
-    color: black;
+    border:2px solid;
+    border-color:#333333 ;/*green : rgb(0,50,0) */
+    color: #333333;
     text-shadow:
     -1px -1px 0 #fff,
     1px -1px 0 #fff,
