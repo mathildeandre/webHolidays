@@ -1,10 +1,10 @@
-@font-face {
+/*@font-face {
 	font-family: 'MaPolice';
 	src: url('../mapolice.otf');
 }
-
-
-#imgHeaderNav{
+*/
+#imgHeaderNav{ /* = body */
+    padding:0px;
 	/*background : url("../images/nav2.jpg") no-repeat;
 	background-size: 100% 300px;
 	background-attachment: fixed;*/
@@ -49,7 +49,7 @@ footer{
     text-align:center;/*texte centré*/
     font-family: "Comic Sans ms";
     font-size: small;
-    font-weight: italic;
+    /*font-weight: italic;*/
 	border-radius: 30px ;
 
   display: inline;
@@ -58,14 +58,10 @@ footer{
 
 
 section{
-	background : white;/* url("../images/papier-peint1.jpg");
+	/*background : white;/* url("../images/papier-peint1.jpg");
 	/*background-size: 100% 300px;
 	/*background-attachment: fixed;*/
 	/*border:8px solid grey;/*bleu clair*/   /* blueviolet*/
-	border-radius: 10px ;
-	width:1000px;
-	margin : auto; 
-	margin-top : 75px; 
 	/*background-color:rgba(184,134,11,1);/*darkgoldenrod; -- rgba(50,205,50,0.5); /*limegreen;*/
 }
 
