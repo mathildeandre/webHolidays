@@ -9,13 +9,13 @@ section[class="images"]{
 	background-image:url("../images/cuisine.jpeg");
 	background-repeat:no-repeat;
 	background-position:right top;
+	margin-top: 100px;
 	
 }
 
 section[class="images"] h1{
 	text-align:center;
 	font-style:italic;
-	
 }
 
 #navRepas{ 
@@ -40,10 +40,10 @@ section[class="images"] h1{
     *display: inline;
     *zoom:1;
     width: 20%;
-    height:150px;
+    height:120px;
     line-height:150px;
     border-radius: 10%;
-margin-left:5%; 
+margin-left:3%; 
 
  border:2px solid;
  border-color:#DCDCDC ;
@@ -51,13 +51,19 @@ margin-left:5%;
  text-decoration:none;
  text-align:center;
 	background-size:100%;
+	background-repeat:no-repeat;
  }
 
 #navRepas ul li a{
- color: black;
-    font-family: Georgia, "Comic Sans ms";
- font-size:x-large;
-	font-weight:bold;
+
+	color: white;
+    text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000; 
+	font-family:Comic Sans MS;
+	font-size:x-large;
 
 }
 
@@ -111,4 +117,42 @@ background-position: center;
 	background-repeat:no-repeat;
 }
 
+#planning{
+
+    display: inline-block;
+    *display: inline;
+    *zoom:1;
+    width: 25%;
+    height:120px;
+    line-height:120px;
+    border-radius: 10%;
+	margin-left:25%; 
+
+	border:2px solid;
+	border-color:#DCDCDC ;
+
+	text-decoration:none;
+	text-align:center;
+	background-size:100%;
+	background-repeat:no-repeat;
+
+	color: white;
+    text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000; 
+	font-family:Comic Sans MS;
+	font-size:larger;
+	
+	
+    background-image: url("../images/aliments.png");
+	background-size:100%;
+}
+
+#planning:hover{
+    background-image: url("../images/aliments.png");
+    background-position: center;
+	background-size:100%;
+}
 

@@ -13,6 +13,7 @@ body{
     /*width:930px;/*Taille de la colonne centrée moins le padding*/
     /*background-color: limegreen;/*Couleur de fond*/
     margin: auto; /*centrer la colonne*/
+    padding:0px 25px 0px 25px;/*margin interne*/
 	/*background-image: url("Images/clouds.jpg");*/
 	/*background-color: rgb(200,90,200);*/
 	/*background-image: url("Images/bonhomme.jpg");
@@ -27,9 +28,16 @@ section{
   width:75%;
   margin : auto; 
   margin-top : 75px; 
-  background : lightgoldenrodyellow;/*url("../images/papier-peint19.jpg");*/
+  background : white;/*url("../images/papier-peint19.jpg");*/
   color:#000033;
   padding: 30px;
+	background-image:url("../images/parasol.jpg");
+	background-repeat:no-repeat;
+	background-size:20%;
+	background-position: top right;
+}
+
+#h2Groupe{
 }
 
 h1{
