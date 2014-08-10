@@ -3,6 +3,18 @@
 	src: url('../mapolice.otf');
 }
 
+
+#imgHeaderNav{
+	/*background : url("../images/nav2.jpg") no-repeat;
+	background-size: 100% 300px;
+	background-attachment: fixed;*/
+}
+/* enleve soulignage des liens */
+a:link  
+{  
+ text-decoration:none;  
+}  
+
 header{
     padding:20px;/*Marge verticale*/
    /* background-color: rgba(184,134,11,0.5);/*darkgoldenrod; /*Couleur de fond*/
@@ -45,25 +57,16 @@ footer{
 }
 
 
-.circle{
-
-	float:left;
-	clear:both;
-
-
- height: 200px;
-  width: 300px;
- /* display: table-cell; /* fais qu'ils sont inline
-	margin:20px;
-cellspacing:10px;*/
-  text-align: center;
-  vertical-align: middle;
-/*line-height:100px;
-  border-radius: 50%; /* may require vendor prefixes */
-  background: yellow;
-font-size:10px;
-
-
+section{
+	background : white;/* url("../images/papier-peint1.jpg");
+	/*background-size: 100% 300px;
+	/*background-attachment: fixed;*/
+	/*border:8px solid grey;/*bleu clair*/   /* blueviolet*/
+	border-radius: 10px ;
+	width:1000px;
+	margin : auto; 
+	margin-top : 75px; 
+	/*background-color:rgba(184,134,11,1);/*darkgoldenrod; -- rgba(50,205,50,0.5); /*limegreen;*/
 }
 
 
@@ -87,48 +90,8 @@ font-size:10px;
 	border-radius: 10px ;
 }
 
-body{
 
 
-	font-family: Helvetica Narrow, sans-serif;
-	font-weight: 500;
-    /*width:930px;/*Taille de la colonne centrée moins le padding*/
-    /*background-color: limegreen;/*Couleur de fond*/
-    margin: auto; /*centrer la colonne*/
-    padding:0px 25px 0px 25px;/*margin interne*/
-	/*background-image: url("Images/clouds.jpg");*/
-	/*background-color: rgb(200,90,200);*/
-	/*background-image: url("Images/bonhomme.jpg");
-	background-attachement: fixed;
-	background-repeat: no-repeat;
-	background-position: top right;
-	background: url("Images/bonhomme.jpg") fixed no-repeat top right, url("Images/clouds.jpg") fixed;*/
-}
-h1{
-    text-align:center;/*texte centré*/
-    font-size: x-large;
-    font-weight: bold;
-}
-h2{
-	position: relative;
-	left:  20px;
-	/* text-indent: 20px;*/
-    margin-left: 30px/*texte centré*/
-    font-size: large;
-    font-weight: bold;
-}
-p{
-	margin-bottom: 30px;
-	position: relative;
-	left:  10px;
-}
-section{
-	border:8px solid darkorange;/*bleu clair*/   /* blueviolet*/
-	border-radius: 30px ;
-	width:800px;
-	margin-left : 350px; 
-	background-color:rgba(184,134,11,1);/*darkgoldenrod; -- rgba(50,205,50,0.5); /*limegreen;*/
-}
 
 .textGrey{
 	color : grey;

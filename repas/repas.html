@@ -6,12 +6,12 @@
     <meta charset='utf-8' />
     <link rel="shortcut icon" href="images/tree3.png" />
 
-    <link rel="stylesheet" type="text/css" href="../CSS/repas.css" />
+    <link rel="stylesheet" type="text/css" href="../CSS/styleRepas.css" />
     <link rel="stylesheet" type="text/css" href="../CSS/nav.css" />
     <link rel="stylesheet" type="text/css" href="../CSS/general.css" />
 </head>
-<body id="bodyGroupe">
-<div id="imgHeaderNav">
+
+<body id="imgHeaderNav" >
 <header> <!--<img src="images/sun.png" alt="Tree" height="100" /> -->
  	Organisation de vos vacances
 	<!--<img src="images/tree3.png" alt="Tree" height="100" />-->
@@ -19,24 +19,25 @@
 
 
 <nav>
-	<ul>
-	 <li ><a class="current" > Accueil</a></li>
-	 <li ><a href="../groupe/groupe.html">Groupe</a></li>
-	 <li ><a href="accueil.html">Doodle</a></li>
-	 <li ><a href="accueil.html">Repas - Courses</a></li>
-	 <li ><a href="../calculation/calculation.html">Calcul des dépenses</a></li>
-	 <li ><a href="accueil.html">Loisirs</a></li>
+	<ul >
+	 <li id="liAccueil" onmouseover="changeCursor('liAccueil')" onclick="location.href='../accueil/accueil.html'">Accueil</li>
+	 <li id="liGroupe" onmouseover="changeCursor('liGroupe')" onclick="location.href='../groupe/groupe.html'" >Groupe</li>
+	 <li id="liDoodle" onmouseover="changeCursor('liDoodle')" onclick="location.href='../doodle/doodle.html'" >Doodle</li>
+	 <li class="current" >Repas - Courses</li>
+	 <li id="liCalc" onmouseover="changeCursor('liCalc')" onclick="location.href='../calculation/calculation.html'">Calcul des dépenses</li>
+	 <li id="liLoisirs" onmouseover="changeCursor('liLoisirs')" onclick="location.href='accueil.html'">Loisirs</li>
 	</ul>
 </nav>
-</div>
+
+
 
 <section class="images">
 	<h1> Que mange t'on ce soir ?? </h1>
 	<div id="navRepas">
 	<ul>
-	 <li id="entree" ><a href="repas/entree.html">Entrées</a></li>
-	 <li id="plat" ><a href="repas/plat.html">Plats</a></li>
-	 <li id="dessert" ><a href="repas/dessert.html">Desserts</a></li>
+	 <li id="entree" ><a href="entree.html">Entrées</a></li>
+	 <li id="plat" ><a href="plat.html">Plats</a></li>
+	 <li id="dessert" ><a href="dessert.html">Desserts</a></li>
 	</ul>
 	</div>
  </section >
