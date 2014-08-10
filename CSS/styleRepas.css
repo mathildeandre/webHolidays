@@ -9,13 +9,13 @@ section[class="images"]{
 	background-image:url("../images/cuisine.jpeg");
 	background-repeat:no-repeat;
 	background-position:right top;
+	margin-top: 100px;
 	
 }
 
 section[class="images"] h1{
 	text-align:center;
 	font-style:italic;
-	
 }
 
 #navRepas{ 
