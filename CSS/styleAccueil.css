@@ -23,13 +23,17 @@ body{
     /*background-color: limegreen;/*Couleur de fond*/
     margin: auto; /*centrer la colonne*/
     padding:0px 25px 0px 25px;/*margin interne*/
-	/*background-image: url("Images/clouds.jpg");*/
 	/*background-color: rgb(200,90,200);*/
 	/*background-image: url("Images/bonhomme.jpg");
 	background-attachement: fixed;
 	background-repeat: no-repeat;
 	background-position: top right;
 	background: url("Images/bonhomme.jpg") fixed no-repeat top right, url("Images/clouds.jpg") fixed;*/
+}
+section{
+	background-image: url("../images/snowman.jpg");
+	background-repeat: no-repeat;
+	background-position: top right;
 }
 
 h1{
