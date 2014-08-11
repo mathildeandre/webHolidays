@@ -42,12 +42,13 @@
 
 <section >
    <h1>Calcul de vos dépenses</h1>
+ <article>
    <h2>Qui a payé quoi ?</h2>
-<div class="all">
+<div id="divTab">
 
 <TABLE id="tab" BORDER="1"> 
 		<CAPTION> Tableau de dépenses </CAPTION> 
-		<THEAD>
+		<THEAD id="theadd">
 			<TR> 
 			 <TH> Depense de </TH> 
 			 <TH> Montant </TH> 
@@ -59,22 +60,39 @@
 		</TBODY>
 </TABLE> 
 
-	<div>
-	<input type="button" name="addRow" value="add new row" onclick="addRow()">
-	
-	</div>
-
-
-
-	<div>
 		</br></br>
+	<!--<div>
+	<input type="button" name="addRow" value="add new row" onclick="addRow()">
+	</div>-->
+	<div class="button" onclick="addRow()"> Add new row </div>
+
+
+		</br></br>
+
+
+		<div class="line">
+		<input class="textGrey inline" id="name" type="text"  value="add an extra person" onfocus="inputTextFocus('name','Red')" onblur="inputTextBlur('name','add an extra person')" >
+		<div class="button inline" onclick="addExtraPerson()"> Add an extra person </div>
+		</div>
+<!--
+
 		<input class="textGrey" id="name" type="text" name="nameExtraPerson" value="add an extra person" onfocus="inputTextFocus('name')" onblur="inputTextBlur('name','add an extra person')" > 
 		<input type="button" name="addExtraPerson" value="add an extra person" onclick="addExtraPerson()">
-		</br></br>
-	</div>
-
+-->
+		</br>
 </div>
 
+
+	<div class="right" >
+		<input  id="theCheckBoxMouseOver" type="checkbox" >
+		<label for="theCheckBoxMouseOver" > MouseOver actif ?</label>
+	</div>
+	<div id="buttonsBottom">
+		<div class="button right" id="buttonReset" onclick="reset()"> Empty the tab </div>
+		<!--<input  type="button" name="reset" value="Clear the group" onclick="location.href='groupe.html';">-->
+	  </br>
+		<div class="button" id="showResult" onclick="calculationResult()">SHOW RESULTS</div>
+	</div>
 	<!--
 	<div>	
 		</br></br>
@@ -83,20 +101,16 @@
 	</div>
 	-->
 
-	<div class="right" >
-		<input  id="theCheckBoxMouseOver" type="checkbox" >
-		<label for="theCheckBoxMouseOver" > MouseOver actif ?</label>
-	</div>
-	<div class="right">	
+	<!--<div class="right">	
 		<input   type="button" name="reset" value="Empty the tab" onclick="reset()">
 	</div>
 	<div>	
 		</br></br>
 		<input type="button" name="calculationResult" value="SHOW RESULTS" onclick="calculationResult()">
-	</div>
+	</div>-->
 
 
-
+ </article>
 </section >
 
 <footer><p>Copyright fs - Tous droits réservés<br/> Nous contacter : fabiensauce@orange.fr</p></footer>

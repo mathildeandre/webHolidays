@@ -36,6 +36,8 @@
 
  <section >
    <h1>Votre Groupe</h1>
+
+  <article>
    <h2>Composition</h2>
 <div class="composition">
 
@@ -51,16 +53,20 @@
    <h2>Ajout</h2>
 <div class="ajout">
 		<p>Ajouter des personnes à votre groupe :</p>
-		<input class="textGrey" id="name" type="text" name="name" value="add person" onfocus="inputTextFocus('name')" onblur="inputTextBlur('name','add person')" > 
-		<input type="button" name="addPerson" value="Add person" onclick="addPerson()">
+		<div class="line">
+		<input class="textGrey inline" id="name" type="text" name="name" value="add person" onfocus="inputTextFocus('name','Orange')" onblur="inputTextBlur('name','add person')" >
+		<div class="button inline" onclick="addPerson()"> Add person </div>
+		</div>
+		<!--<input type="button" name="addPerson" value="Add person" onclick="addPerson()">-->
 </div>
 
-	<div class="right">	
-		<input  type="button" name="reset" value="Clear the group" onclick="location.href='groupe.html';">
+	<div id="buttonsBottom">
+		<div class="button right" id="buttonReset" onclick="location.href='groupe.html';"> Clear the group </div>
+		<!--<input  type="button" name="reset" value="Clear the group" onclick="location.href='groupe.html';">-->
+	  </br>
+		<div class="button" id="confirm" onclick="alert('reste plus qu\'a le faire pour de vrai ;) ');">CONFIRM</div>
 	</div>
-	</br>
-	<div><input type="button" name="startCalcul" value="CONFIRM" onclick="nextPage()"></div>
-
+  </article>
  </section >
 
 

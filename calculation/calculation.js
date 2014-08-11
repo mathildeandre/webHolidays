@@ -20,16 +20,37 @@ addRow()
 
 
 function createTHead(){
-	var arrayLines = document.getElementById("tab").rows;
+	//var arrayLines = document.getElementById("tab").rows;
+	//****************
+	var tr = document.getElementById('tab').tHead.children[0];
+	var th;	
+	//****************
+
+
 	for(var i=0; i<tabPerson.length; i++){
-		var cell = arrayLines[0].insertCell(-1);
-		cell.innerHTML += "<b>"+tabPerson[i]+"</b>";
+		//****************
+   	 	th = document.createElement('th');
+		th.innerHTML = tabPerson[i];
+		tr.appendChild(th);
+		//*************
+		/*var cell = arrayLines[0].insertCell(-1);
+		cell.innerHTML += "<b>"+tabPerson[i]+"</b>";*/
 	}
+   	 	th = document.createElement('th');
+		th.innerHTML = "Everybody";
+		tr.appendChild(th);
+   	 	th = document.createElement('th');
+		th.innerHTML = "Description";
+		tr.appendChild(th);
+/*
 	var cellCheckAll = arrayLines[0].insertCell(-1);
 	cellCheckAll.innerHTML += "<b>Everybody</b>";
 
 	var cellDescrip = arrayLines[0].insertCell(-1);
 	cellDescrip.innerHTML += "<b>Description</b>"; 
+*/
+
+
 }
 
 
@@ -86,7 +107,7 @@ function addRow(){
 		// Add Input Amount
 		var cell1 = newRow.insertCell(1);
 		var id = theRowNumber + "1";
-		cell1.innerHTML = '<input class="textGrey" id="'+id+'" type="text" value="00.00"  onfocus="inputTextFocus(\''+id+'\')" onblur="inputTextBlur(\''+id+'\',\'00.00\')" >';
+		cell1.innerHTML = '<input class="textGrey" id="'+id+'" type="text" value="00.00"  onfocus="inputTextFocus(\''+id+'\', \'Red\')" onblur="inputTextBlur(\''+id+'\',\'00.00\')" >';
 
 		// Add checkbox for persons
 		for(i=0; i<tabPerson.length; i++){
@@ -103,7 +124,7 @@ function addRow(){
 
 		// Add Description
 		var cellDescript = newRow.insertCell(tabPerson.length+3);
-		cellDescript.innerHTML = '<textarea  class="textGrey" id="descript'+theRowNumber+'" rows="1" cols="50" onfocus="inputTextFocus(\'descript'+theRowNumber+'\')"  onblur="inputTextBlur(\'descript'+theRowNumber+'\',\'Description\')" >Description</textarea> ';
+		cellDescript.innerHTML = '<textarea  class="textGrey" id="descript'+theRowNumber+'" rows="1" cols="50" onfocus="inputTextFocus(\'descript'+theRowNumber+'\', \'Red\')"  onblur="inputTextBlur(\'descript'+theRowNumber+'\',\'Description\')" >Description</textarea> ';
 		
 		theRowNumber++;
 }
@@ -125,6 +146,10 @@ function createTextSelect(rowNumber){
 	text += '</select>';
 	return text;
 }
+
+
+
+
 function verifAllRow(rowNum){
 	var boolAllChecked = true;
 	for(i=0; i<tabPerson.length; i++){
@@ -160,3 +185,18 @@ function reset(){
 	//window.location = "accueil3.html";//"file:///home/entdev3/Documents/GIT/web/accueil3.html"
 	location.href='calculation.html?tabPerson='+tabPerson;
 }
+
+
+
+
+/** ROW BACKGROUND ALTERNATE */
+
+var arrayLignes = document.getElementById("tab").rows; //on récupère les lignes du tableau
+	var hauteur = arrayLignes.length;//on peut donc appliquer la propriété length
+
+
+	for(var i=1; i<hauteur; i++){
+		arrayLignes[i].background = "red";
+		
+	}
+

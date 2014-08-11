@@ -54,7 +54,7 @@ HTML5 sont employées. -->
                 <p>Cette partie consiste à planifier des repas durant vos vacances et generer automatiquement la liste de course qu'il vous faut en fonction du nombre de personne dans votre groupe</p>
 	<h2 id="h2Calc" onmouseover="changeCursor('h2Calc')" onclick="location.href='../calculation/calculation.html'"><img src="../images/tirelire.jpg" width="6%">Calcul des dépenses</h2>
                 <p>Vous pouvez calculer qui doit combien à qui ! Et ce de manière très simple : à chaque fois qu'une personne paye quelquechose elle l'écrit. A tout moment vous pouvez voir qui doit de l'argent à qui.</p>
-	<h2 id="h2Loisirs" onmouseover="changeCursor('h2Loisirs')" onclick="location.href='../groupe/groupe.html'"><img src="../images/loisirs.jpg" width="10%">Loisirs</h2>
+	<h2 id="h2Loisirs" onmouseover="changeCursor('h2Loisirs')" onclick="location.href='../groupe/groupe.html'"><img src="../images/loisirs.jpg" width="11%">Loisirs</h2>
                 <p>Ici vous trouverez tout type de loisirs qui peuvent accompagner vos vacances : sport, jeu de societe, autres activités...</p>
 	</article>
        </section>

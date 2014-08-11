@@ -8,6 +8,32 @@
 */
 
 
+
+
+
+.button{
+width: 200px; 
+height: 30px; 
+line-height:30px;/*permet le centrage vertical*/ 
+padding:4px;
+color: #CC5200; 
+}
+
+.button:hover{ 
+color: #FF6600; 
+}
+.button:active{ 
+color: #000; 
+}
+
+
+#name{ /*input text*/
+font-family: Arial,sans-serif; 
+font-size: 1.4em;
+width: 200px; 
+height: 30px; 
+}
+
 section{
   border-radius: 10px ;
   width:50%;
@@ -20,6 +46,7 @@ section{
 }
 
 
+
 h1{
     text-align:center;/*texte centré*/
     font-size: x-large;
@@ -30,17 +57,27 @@ text-shadow: 5px 5px 5px #FF6600;  /*decalage-a-droite, decalage-bas, flootage, 
 
 
 section h2{
-    margin-left: 5%;
-    font-weight: bold;
-padding:3%;
-padding-top:5%;
+ font-weight: bold;
+ padding-top:5%;
 }
-
-section div[class]{
-
+section article{
+ margin-left: 5%;
+ padding:2%;
+}
+section div[class="composition"]{
     margin-left: 10%;
 }
 
+section div[class="ajout"]{
+    margin-left: 10%;
+}
+.right{ 
+  position: absolute;
+  right: 22%;
+}
+#buttonsBottom{
+	margin-top:8%;
+}
 #listPerson
 {
     color : #FF6600;

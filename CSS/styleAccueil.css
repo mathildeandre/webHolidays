@@ -76,7 +76,23 @@ to { line-height:0px;}*/
  75% {line-height:20px;}
  87.5% {line-height:60px;}
  100% {line-height:120px;}
+}@keyframes jumping {
+/*from {line-height:120px;}
+to { line-height:0px;}*/
+ 0% {line-height:120px;}
+ 12.5% {line-height:60px;}
+ 25% {line-height:20px;}
+ 32.5% {line-height:10px;}
+ 40% {line-height:0px;}
+ 50%{line-height:0px;}
+ 60% {line-height:0px;}
+ 67.5% {line-height:10px;}
+ 75% {line-height:20px;}
+ 87.5% {line-height:60px;}
+ 100% {line-height:120px;}
 }
+
+
 section article h2:hover{
 
     /*position: absolute;
@@ -93,7 +109,8 @@ border-radius:5px;
 
 
 
--webkit-animation: jumping 0.3s; /* firefox*/
+-webkit-animation: jumping 0.3s; /* chrome safari*/
+animation: jumping 0.3s; /* autre*/
 
 }
 

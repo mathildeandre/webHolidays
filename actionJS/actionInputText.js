@@ -5,10 +5,15 @@ function inputTextBlur(id,value){
 		inputName.className = "textGrey";
 	}
 }
-function inputTextFocus(id){
+function inputTextFocus(id, color){
+
+	if (typeof color === 'undefined') { //color non specifié
+		color = "";
+	}
 	var inputName = document.getElementById(id);
-	if(inputName.className != "text"){
-		inputName.className = "text"; //inputName.setAttribute("id","name");
+	//indexOf return la position du string trouvé, -1 si pas trouve    //if(inputName.className == "textGrey"){
+	if(inputName.className.indexOf("textGrey") > -1){  
+		inputName.className = "text"+color; //inputName.setAttribute("id","name");
 		inputName.value = ""; //inputName.setAttribute("value","");
 	}
 }

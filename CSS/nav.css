@@ -96,8 +96,13 @@ background-color:pink;
 from {opacity: 1; /*background-color:rgba(211,211,211,1);*/}
 to {opacity: 0.3;/*background-color:rgba(211,211,211,0.3);*/}
 }
+@keyframes clignote {
+from {opacity: 1; /*background-color:rgba(211,211,211,1);*/}
+to {opacity: 0.3;/*background-color:rgba(211,211,211,0.3);*/}
+}
 nav ul li[class="current"] {
--webkit-animation: clignote 2s alternate infinite; /* firefox*/
+-webkit-animation: clignote 2s alternate infinite; /* chrome*/
+animation: clignote 2s alternate infinite; /* all */
  /*border-color: ;*/
   color: grey;
  	font-size:large;
