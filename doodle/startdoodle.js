@@ -1,9 +1,9 @@
-/*
    jQuery(document).ready(function(){
-   jQuery('#debut').datepicker();
-   jQuery('#fin').datepicker();
+	var dt = {numberOfMonths: 2 };
+   	jQuery('#debut').datepicker({
+	   dateFormat: 'dd/mm/yy'});
+   	jQuery('#fin').datepicker(dt);
    });
- */
 
 /* declaration des variables */
 var theRowNumber = 1;
