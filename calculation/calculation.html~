@@ -27,7 +27,7 @@
 	 <li id="liDoodle" onmouseover="changeCursor('liDoodle')" onclick="location.href='../doodle/doodle.html'" >Doodle</li>
 	 <li id="liRepas" onmouseover="changeCursor('liRepas')" onclick="location.href='../repas/repas.html'">Repas - Courses</li>
 	 <li class="current" >Vos dépenses</li>
-	 <li id="liAffaire" onmouseover="changeCursor('liAffaire')" onclick="location.href='../accueil/accueil.html'">Affaires</li>
+	 <li id="liAffaire" onmouseover="changeCursor('liAffaire')" onclick="location.href='../affaire/affaire.html'">Affaires</li>
 	 <li id="liLoisirs" onmouseover="changeCursor('liLoisirs')" onclick="location.href='accueil.html'">Loisirs</li>
 	</ul>
 </nav>
@@ -48,13 +48,13 @@
 
 <TABLE id="tab" BORDER="1"> 
 		<CAPTION> Tableau de dépenses </CAPTION> 
-		<THEAD id="theadd">
+		<THEAD >
 			<TR> 
 			 <TH> Depense de </TH> 
 			 <TH> Montant </TH> 
 			</TR>
 		</THEAD>
-		<TBODY>
+		<TBODY id="theadd">
 			
 			
 		</TBODY>

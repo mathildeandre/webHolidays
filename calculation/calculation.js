@@ -60,7 +60,7 @@ function addExtraPerson(){
 	var inputName = document.getElementById("name");
 	var name = inputName.value;
 
-	inputName.value = "add person"; //setAttribute("value","");
+	inputName.value = "add an extra person"; //setAttribute("value","");
 	inputName.className = "textGrey";
 	//var div = document.getElementById("listPerson");
 	//div.innerHTML += "- "+name+" </br> ";
@@ -113,7 +113,7 @@ function addRow(){
 		for(i=0; i<tabPerson.length; i++){
 			id = theRowNumber + (i+2).toString();
 			var cell = newRow.insertCell(i+2);
-			cell.innerHTML = '<input  id="'+id+'" type="checkbox" onclick="verifAllRow(\''+theRowNumber+'\')" onmouseover="checkBoxMouseOver(\''+id+'\')" >';
+			cell.innerHTML = '<input  id="'+id+'" type="checkbox" onclick="verifAllRow(\''+theRowNumber+'\')" onmouseover="checkBoxMouseOver(\''+id+'\')" >';			cell.style.width= "300px";
 		}
 		
 		// Add button checkAllTheRow

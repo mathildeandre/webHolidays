@@ -11,6 +11,7 @@ html {
 }
 
 nav{ 
+	
    	white-space: nowrap; 
     	margin-left: 0;
     	padding:0px;
@@ -32,7 +33,7 @@ nav li {
     	display: inline-block;
     	/**display: inline;
     	/*zoom:1;*/
-    	width: 13%;
+    	width: 12.5%;
 	margin-left:1%;
     	height:50px;
     	line-height:50px;
@@ -84,8 +85,8 @@ background-color:#FF0000; /*red*/
  	/*border-color:#333333; /* less dark #B20000 ;darker : #800000;*/
 }
 nav li:nth-child(6) {
-background-color:#853385; /*purple*/
- 	/*border-color:#333333;/* dark #3D003D ;*/
+background-color:#B82EE6;/*853385; /*purple*/
+ 	/*border-color:#333333;/* less #7A1F99   dark #3D003D ;*/
 }
 nav li:nth-child(7) {
 background-color:pink;
