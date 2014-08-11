@@ -1,0 +1,127 @@
+﻿<!DOCTYPE html>
+<html>
+<!-- La section <head>. Nous aurons l'occasion d'en parler plus tard dans le cours ! -->
+<head>
+    <title>J'organise mes Vacances !!</title>
+    <meta charset='utf-8' />
+    <link rel="shortcut icon" href="images/tree3.png" />
+
+    <link rel="stylesheet" type="text/css" href="../CSS/stylePlat.css" />
+    <link rel="stylesheet" type="text/css" href="../CSS/nav.css" />
+    <link rel="stylesheet" type="text/css" href="../CSS/general.css" />
+</head>
+
+<body id="bodyPlat">
+<div id="imgHeaderNav">
+<header> <!--<img src="images/sun.png" alt="Tree" height="100" /> -->
+ 	Organisation de vos vacances
+	<!--<img src="images/tree3.png" alt="Tree" height="100" />-->
+</header>
+
+<nav>
+	<ul >
+	 <li id="liAccueil" onmouseover="changeCursor('liAccueil')" onclick="location.href='../accueil/accueil.html'">Accueil</li>
+	 <li id="liGroupe" onmouseover="changeCursor('liGroupe')" onclick="location.href='../groupe/groupe.html'" >Groupe</li>
+	 <li id="liDoodle" onmouseover="changeCursor('liDoodle')" onclick="location.href='../doodle/doodle.html'" >Doodle</li>
+	 <li class="current" id="liRepas" onmouseover="changeCursor('liRepas')" onclick="location.href='../repas/repas.html'">Repas - Courses</li>
+	 <li id="liCalc" onmouseover="changeCursor('liCalc')" onclick="location.href='../calculation/calculation.html'">Calcul des dépenses</li>
+	 <li id="liLoisirs" onmouseover="changeCursor('liLoisirs')" onclick="location.href='accueil.html'">Loisirs</li>
+	</ul>
+</nav>
+</div>
+
+
+
+<section class="images">
+	<h1> Nos propositions de plats </h1>
+	<div>
+	
+	</div>
+ </section >
+ 
+ <section class="navPlats">
+ <ul>
+  <li><a href="#burgers">Burgers</a></li>
+  <li><a href="#lasagne">Lasagne</a></li>
+  <li><a href="#contact">Contact</a></li>
+  <li><a href="#about">About</a></li><li><a href="#home">Home</a></li>
+  <li><a href="#news">News</a></li>
+  <li><a href="#contact">Contact</a></li>
+  <li><a href="#about">About</a></li>
+</ul>
+ 
+</section>
+ 
+ <section class="recette">
+
+ <div id="imgBurger"> </div>
+	<article id="burgers">
+	<h2> Burgers maison </h2>
+	<div class="ingredients">
+	<h3> Ingrédients</h3>
+	<ul>
+	<li > <span id="qtt"> 10 </span> <span id="painsBurger"> pains burgers <span> </li>
+	<li> <span id="qtt"> 5 </span> <span id="tomates"> tomates </span> </li>
+	<li> <span id="qtt"> 100 </span> <span id="fromageRape"> grammes fromages rapés </span></li>
+	<li > <span id="qtt"> 10 </span> <span id="steaks"> steaks hachés </span> </li>
+	<li > <span id="qtt"> 1 </span> <span id="sauceBurger"> sauce burger </span> </li>
+	<li > <span id="qtt"> 1 </span> <span id="salade"> salade </span> </li>
+
+	</ul>
+	</div>
+	
+	<div class="preparation">
+	<h3> Préparation</h3>
+	<p> Faire cuire les steaks hachés sans matière grasse dans une poele avec un couvercle. </p>
+	<p> Pendant ce temps, coupez les tomates en tranches fines et lavez la salade si besoin. </p>
+    <p> Lorsque les steaks sont prêts, préparez les burgers:
+		<ul>
+		<li> Déposez les tranches de pains burgers dans une assiète. 
+		<li> Mettre du fromage sur les deux côtés du pain. </li> 
+		<li> Les faire chauffer au micro onde 30 secondes. </li>
+		<li> Recouvrez les de sauce burger. </li>
+		<li> Mettez le steak, 3 tranches de tomates et une feuille de salade. </li>
+		</ul>
+		</p>
+	
+	</div>
+	</article>
+	
+	
+	<article id="lasagne">
+	<h2> Lasagnes </h2>
+	<div class="ingredients">
+	<h3> Ingrédients</h3>
+	<ul>
+	<li > <span id="qtt"> 10 </span> <span id="painsBurger"> pains burgers <span> </li>
+	<li> <span id="qtt"> 5 </span> <span id="tomates"> tomates </span> </li>
+	<li> <span id="qtt"> 100 </span> <span id="fromageRape"> grammes fromages rapés </span></li>
+	<li > <span id="qtt"> 10 </span> <span id="steaks"> steaks hachés </span> </li>
+	<li > <span id="qtt"> 1 </span> <span id="sauceBurger"> sauce burger </span> </li>
+	<li > <span id="qtt"> 1 </span> <span id="salade"> salade </span> </li>
+
+	</ul>
+	</div>
+	
+	<div class="preparation">
+	<h3> Préparation</h3>
+	<p> Faire cuire les steaks hachés sans matière grasse dans une poele avec un couvercle. </p>
+	<p> Pendant ce temps, coupez les tomates en tranches fines et lavez la salade si besoin. </p>
+    <p> Lorsque les steaks sont prêts, préparez les burgers:
+		<ul>
+		<li> Déposez les tranches de pains burgers dans une assiète. 
+		<li> Mettre du fromage sur les deux côtés du pain. </li> 
+		<li> Les faire chauffer au micro onde 30 secondes. </li>
+		<li> Recouvrez les de sauce burger. </li>
+		<li> Mettez le steak, 3 tranches de tomates et une feuille de salade. </li>
+		</ul>
+		</p>
+	
+	</div>
+	</article>
+ </section >
+
+
+<script src="../actionJS/navChanging.js" type="text/javascript"></script> 
+
+</body>

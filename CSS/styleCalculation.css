@@ -1,0 +1,104 @@
+/*
+#bodyCalculation{
+	background-image: url("../images/sunflower.jpg");
+	/*background-position: center;
+
+}
+*/
+
+
+section{
+  border-radius: 10px ;
+  width:90%;
+  margin : auto; 
+  margin-top : 75px; 
+  background : lightgoldenrodyellow;/*url("../images/papier-peint19.jpg");*/
+  color:#800000;
+  padding: 3%;
+}
+
+
+h1{
+    text-align:center;/*texte centré*/
+    font-size: x-large;
+    font-weight: bold;
+text-shadow: 5px 5px 5px #FF0000;  /*decalage-a-droite, decalage-bas, flootage, color*/
+
+}
+
+section h2{
+ font-weight: bold;
+ padding-top:4%;
+}
+section article{
+ margin-left: 3%;
+}
+
+
+#divTab{
+margin:3%
+
+}
+
+
+.button{
+width: 200px; 
+height: 30px; 
+line-height:30px;/*permet le centrage vertical*/ 
+padding:4px;
+color: #B20000; 
+}
+
+.button:hover{ 
+color: #FF0000; 
+}
+.button:active{ 
+color: #000; 
+}
+
+#name{ /*input text*/
+font-family: Arial,sans-serif; 
+font-size: 1.4em;
+width: 200px; 
+height: 30px; 
+}
+
+.right{ 
+  position: absolute;
+  right: 12%;
+}
+#buttonsBottom{
+	margin-top:8%;
+}
+#tab{
+	border: 4px solid #800000;
+	border-radius: 10px;
+	/*background:#FF0000;*/
+}
+
+#tab th, #tab td{
+	border: 1px solid #800000;
+	border-radius: 5px;
+}
+th{
+
+	background:#B20000;
+	color:white;
+}
+
+
+#FF9999
+
+
+
+
+
+
+
+
+
+
+
+
+
+

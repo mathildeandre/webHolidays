@@ -23,7 +23,7 @@
 		<input type="button" name="start_reset" value="Start/Reset" onclick="start_reset()">
 	</div>
 	-->
-
+<?php echo "AAAAAAAAAAAAAAAAAAAAACeci est du texte"; ?>
 	<div>
 		</br></br>
 		<input type="button" name="addExtraPerson" value="add an extra person" onclick="addExtraPerson()">
