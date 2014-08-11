@@ -107,7 +107,7 @@ function addRow(){
 		// Add Input Amount
 		var cell1 = newRow.insertCell(1);
 		var id = theRowNumber + "1";
-		cell1.innerHTML = '<input class="textGrey" id="'+id+'" type="text" value="00.00"  onfocus="inputTextFocus(\''+id+'\', \'Red\')" onblur="inputTextBlur(\''+id+'\',\'00.00\')" >';
+		cell1.innerHTML = '<input class="textGrey" id="'+id+'" type="number" value="00.00"  onfocus="inputTextFocus(\''+id+'\', \'Red\')" onblur="inputTextBlur(\''+id+'\',\'00.00\')" >';
 
 		// Add checkbox for persons
 		for(i=0; i<tabPerson.length; i++){
@@ -119,7 +119,7 @@ function addRow(){
 		// Add button checkAllTheRow
 		var cellButtonAll = newRow.insertCell(tabPerson.length+2);
 		cellButtonAll.innerHTML = '<input type="checkbox" id="all'+theRowNumber+'" name="Checkall" value="check/uncheck all" onclick="checkAllRow('+theRowNumber+')"><label for="all'+theRowNumber+'" > all </label>';
-		cellButtonAll.style.backgroundColor = "#0099FF";
+		cellButtonAll.style.backgroundColor = "#FF8080";
 
 
 		// Add Description
@@ -127,6 +127,7 @@ function addRow(){
 		cellDescript.innerHTML = '<textarea  class="textGrey" id="descript'+theRowNumber+'" rows="1" cols="50" onfocus="inputTextFocus(\'descript'+theRowNumber+'\', \'Red\')"  onblur="inputTextBlur(\'descript'+theRowNumber+'\',\'Description\')" >Description</textarea> ';
 		
 		theRowNumber++;
+		alternBackground();
 }
 
 function textArea(){
@@ -190,13 +191,14 @@ function reset(){
 
 
 /** ROW BACKGROUND ALTERNATE */
-
-var arrayLignes = document.getElementById("tab").rows; //on récupère les lignes du tableau
+function alternBackground(){
+	var arrayLignes = document.getElementById("tab").rows; //on récupère les lignes du tableau
 	var hauteur = arrayLignes.length;//on peut donc appliquer la propriété length
 
 
 	for(var i=1; i<hauteur; i++){
-		arrayLignes[i].background = "red";
-		
+		if(i%2 == 0){
+		  arrayLignes[i].style.backgroundColor= "#FF8080";
+		}
 	}
-
+}
