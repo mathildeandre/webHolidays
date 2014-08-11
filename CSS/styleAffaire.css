@@ -42,7 +42,7 @@ width: 200px;
 height: 30px; 
 line-height:30px;/*permet le centrage vertical*/ 
 padding:4px;
- box-shadow: 5px 5px 0px #EBADFF;
+ box-shadow: 5px 5px 0px #FF00FF;
 }
 
 .myButton:hover{ 

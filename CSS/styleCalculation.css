@@ -119,6 +119,13 @@ input[type="checkbox"].css-checkbox {
 
 */
 
+input[type=checkbox] {
+	
+  -moz-appearance: none;
+  width: 20px;
+  height: 20px;
+}
+
 
 
 

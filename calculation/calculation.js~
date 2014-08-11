@@ -60,7 +60,7 @@ function addExtraPerson(){
 	var inputName = document.getElementById("name");
 	var name = inputName.value;
 
-	inputName.value = "add person"; //setAttribute("value","");
+	inputName.value = "add an extra person"; //setAttribute("value","");
 	inputName.className = "textGrey";
 	//var div = document.getElementById("listPerson");
 	//div.innerHTML += "- "+name+" </br> ";
@@ -202,3 +202,13 @@ function alternBackground(){
 		}
 	}
 }
+
+.checkbox{
+
+width: 100px;
+height: 100px;
+
+}
+
+
+
