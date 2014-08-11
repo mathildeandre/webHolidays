@@ -1,19 +1,17 @@
-jQuery(document).ready(function(){
-	    jQuery('#debut').datepicker();
-	    jQuery('#fin').datepicker();
-});
-
+   jQuery(document).ready(function(){
+	var dt = {numberOfMonths: 2 };
+   	jQuery('#debut').datepicker({
+	   dateFormat: 'dd/mm/yy'});
+   	jQuery('#fin').datepicker(dt);
+   });
 
 /* declaration des variables */
 var theRowNumber = 1;
 var theColumnNumber = 1;
+var tabPerson=["emiel","matthijs","fabian","kiki","aina","mathilde"]; 
+var init = true;
 
 
-/* Recuperation du tableau */
-var url = window.location.search;
-var tabStr = url.substring(url.lastIndexOf("=")+1);
-//alert("start:"+tabStr+":finshed");
-var tabPerson = tabStr.split(",");
 
 /* start */
 for(var i=0; i<tabPerson.length; i++){
@@ -27,57 +25,22 @@ for(var i=0; i<tabPerson.length; i++){
 
 /****************************************** EXTRA PERSON *******************************************/
 
-function changeColor(){
-	var inputName = document.getElementById("nameGris");
-	inputName.id = "name"; //inputName.setAttribute("id","name");
-	inputName.value = ""; //inputName.setAttribute("value","");
-}
-
-/** a faire ... */
-function addExtraPerson(){
-	var inputName = document.getElementById("name");
-	var name = inputName.value;
-	inputName.value = "add person"; //setAttribute("value","");
-	inputName.id = "nameGris";
-
-	//var div = document.getElementById("listPerson");
-	//div.innerHTML += "- "+name+" </br> ";
-
-	//tab.push(name);
-	addPersonne(name);
-	tabPerson.push(name);
-	k = tabPerson.length - 1;
-	var arrayLines = document.getElementById("tab").rows; //l'array est stocké dans une variable
-	var longueur = arrayLines.length;//on peut donc appliquer la propriété length
-
-	for(i=1; i<longueur; i++){
-		/* ajout des checkbox pr chaque lignes */
-		id = i + (k+2).toString();
-		var cell = arrayLines[i].insertCell(k+2);
-		cell.innerHTML = '<input id="'+id+'" type="checkbox" >';
-		/* ajout du nom dans les select*/
-		var select = document.getElementById(i.toString()+"0");
-		select.innerHTML += '<option value="'+k+'">'+name+'</option>';
-		//alert(select.innerHTML);
-	}
-}
-
 function addPersonne(nameAdd){
-	//if (!isStarted){
-		//var nameAdd = document.getElementById("name").value;
-		//ajoutTab(nameAdd);
 
-		var arrayLines = document.getElementById("tab").rows;
-		var cell = arrayLines[0].insertCell(-1);
-	 	//var table = document.getElementById ("tab");
-		//var firstRow = table.rows[0];
-		//var cell = firstRow.insertCell (1);
+	var newRow = document.getElementById("tab").insertRow(-1);
+	var cell0 = newRow.insertCell(0);
+	cell0.innerHTML += "<b>"+nameAdd+"</b>";
 
-		cell.innerHTML += "<b>"+nameAdd+"</b>";
-	
+	var cell;
+	var id;
+	for(var i=1; i<=theColumnNumber; i++){
+		cell = newRow.insertCell(i);
+		id = theRowNumber + "1";
+		cell.innerHTML += '<input id="'+id+'" type="checkbox">'; 
+	}
+
 }
 
-/****************************************** // EXTRA PERSON *******************************************/
 
 
 /******************************** done ************************************/
@@ -86,47 +49,24 @@ function reset(){
 	//window.location = "accueil3.html";//"file:///home/entdev3/Documents/GIT/web/accueil3.html"
 	location.href='calculation_holiday.html?tabPerson='+tabPerson;
 }
-function checkAllOfTheRow(rowNum){
-	var hidden = document.getElementById("hidden"+rowNum);
-	var bool;
-	if(hidden.value == "true"){ //si toutes les checkbox sont deja cochees
-		bool = false;
-		hidden.value = "false";
-		
-	}
-	else{
-		bool = true;
-		hidden.value = "true";
-	}
-	for(var i=0; i<tabPerson.length; i++){
-		var id = rowNum + (i+2).toString();
-		document.getElementById(id).checked = bool;
-	}
-}
+
 function addRow(){
+	var newRow = document.getElementById("tab").insertRow(-1);
+	var cell0 = newRow.insertCell(0);
+	var id = theRowNumber + "1"; 
+	cell0.innerHTML += '<input id="'+id+'" type="text">'; 
 
-		$('#tab').append('<tr><td> <input type="texte" id="personne">  </td> <td> <input id="box" type="checkbox" </td></tr>');
-
-		theRowNumber++;
+	var cell;
+	var id;
+	for(var i=1; i<=theColumnNumber; i++){
+		cell = newRow.insertCell(i);
+		id = theRowNumber + "1";
+		cell.innerHTML += '<input id="'+id+'" type="checkbox">'; 
+	}
+	theRowNumber++;
 }
 
 function addColumn(){
 
-	$('#tab').find('tr').each(function(){
-	        $(this).find('td').eq(theColumnNumber).after('<td </td>')
-		   });
-		//theColumnNumber++;
 }
-/* depends of "addRow()" */
-function createTextSelect(rowNumber){
 
-	//'<select name="pays" id="pays"><option value="emiel">emiel</option><option value="kirsty">kirsty</option></select>'
-	var nameSelect = 'select'+rowNumber;
-	var id = rowNumber + "0";
-	var text = '<select id="'+id+'" name="'+nameSelect+'" id="'+nameSelect+'">';
-	for(i=0; i<tabPerson.length; i++){
-		text += '<option value="'+i+'">'+tabPerson[i]+'</option>';
-	}
-	text += '</select>';
-	return text;
-}
