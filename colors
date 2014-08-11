@@ -1,0 +1,34 @@
+COLOR :
+
+bleu fonce : #000066;
+bleu normal : #0033CC;
+bleu clair : #;
+
+orange foncé : #803300;
+orange normal : #FF6600;
+orange clair : #;
+
+vert foncé  : dark rgb(0,76,0);
+vert normal : rgb(0,204,0);
+vert clair : #;
+
+jaune foncé  : #808000;
+jaune moins foncé  : #B2B200;
+jaune normal : #FFCC00;
+jaune clair : #;
+
+rouge foncé  : #800000;
+rouge moins foncé  : #B20000;
+rouge normal : #FF0000;
+rouge clair : #;
+
+violet foncé  : #3D003D;
+violet moins foncé  : #7A1F99;
+violet normal : #B82EE6;
+violet clair : #EBADFF;
+
+rose foncé  : #;
+rose normal : pink;
+rose clair : #;
+
+

@@ -42,15 +42,16 @@ margin:3%
 
 
 .button{
+font-size: 1.2em;
 width: 200px; 
-height: 30px; 
-line-height:30px;/*permet le centrage vertical*/ 
+height: 25px; 
+line-height:25px;/*permet le centrage vertical*/ 
 padding:4px;
-color: #B20000; 
+color: #FF0000; 
 }
 
 .button:hover{ 
-color: #FF0000; 
+color: #FF4D4D; 
 }
 .button:active{ 
 color: #000; 
@@ -58,9 +59,12 @@ color: #000;
 
 #name{ /*input text*/
 font-family: Arial,sans-serif; 
-font-size: 1.4em;
-width: 200px; 
-height: 30px; 
+font-size: 1.2em;
+width: 200px ; 
+height: 25px; 
+/*border-radius: 8px;*/
+background: url("../images/peint-blanc.jpg");
+background-size: 200px, 25px;
 }
 
 .right{ 
@@ -68,10 +72,25 @@ height: 30px;
   right: 12%;
 }
 #buttonsBottom{
-	margin-top:8%;
+	margin-top:6%;
 }
+#tab caption{
+
+	font-size: 1.5em;
+	border: 4px solid #800000;
+	border-radius: 10px;
+	border-bottom : 1px; 
+color: white;
+    text-shadow:
+    -2px -2px 0 #800000,
+    2px -2px 0 #800000,
+    -2px 2px 0 #800000,
+    2px 2px 0 #800000; 
+}
+
 #tab{
 	border: 4px solid #800000;
+	
 	border-radius: 10px;
 	/*background:#FF0000;*/
 }
@@ -86,14 +105,19 @@ th{
 	color:white;
 }
 
+/*
+input[type="checkbox"].css-checkbox {
+							  position: absolute; 
+							overflow: hidden; 
+							clip: rect(0 0 0 0); 
+							height:1px; 
+							width:1px; 
+							margin:-1px; 
+							padding:0;
+							border:0;
+						}
 
-#FF9999
-
-
-
-
-
-
+*/
 
 
 

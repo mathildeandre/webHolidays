@@ -26,7 +26,7 @@ HTML5 sont employées. -->
 	 <li id="liDoodle" onmouseover="changeCursor('liDoodle')" onclick="location.href='../doodle/doodle.html'" >Doodle</li>
 	 <li id="liRepas" onmouseover="changeCursor('liRepas')" onclick="location.href='../repas/repas.html'">Repas - Courses</li>
 	 <li id="liCalc" onmouseover="changeCursor('liCalc')" onclick="location.href='../calculation/calculation.html?tab=emiel,matthijs,fabian,kiki'">Vos dépenses</li>
-	 <li id="liAffaire" onmouseover="changeCursor('liAffaire')" onclick="location.href='../accueil/accueil.html'">Affaires</li>
+	 <li id="liAffaire" onmouseover="changeCursor('liAffaire')" onclick="location.href='../affaire/affaire.html'">Affaires</li>
 	 <li id="liLoisirs" onmouseover="changeCursor('liLoisirs')" onclick="location.href='accueil.html'">Loisirs</li>
 	</ul>
 </nav>

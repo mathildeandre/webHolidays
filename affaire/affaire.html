@@ -8,7 +8,7 @@
     <link rel="shortcut icon" href="images/tree3.png" />
 
 	<link rel="stylesheet" type="text/css" href="../CSS/general.css"/>
-	<link rel="stylesheet" type="text/css" href="../CSS/styleGroupe.css"/>
+	<link rel="stylesheet" type="text/css" href="../CSS/styleAffaire.css"/>
     <link rel="stylesheet" type="text/css" href="../CSS/nav.css" />
 </head>
 
@@ -23,11 +23,11 @@
 <nav>
 	<ul >
 	 <li id="liAccueil" onmouseover="changeCursor('liAccueil')" onclick="location.href='../accueil/accueil.html'">Accueil</li>
-	 <li class="current" >Groupe</li>
+	 <li id="liGroupe" onmouseover="changeCursor('liGroupe')" onclick="location.href='../groupe/groupe.html'" >Groupe</li>
 	 <li id="liDoodle" onmouseover="changeCursor('liDoodle')" onclick="location.href='../doodle/doodle.html'" >Doodle</li>
 	 <li id="liRepas" onmouseover="changeCursor('liRepas')" onclick="location.href='../repas/repas.html'">Repas - Courses</li>
 	 <li id="liCalc" onmouseover="changeCursor('liCalc')" onclick="location.href='../calculation/calculation.html'">Vos dépenses</li>
-	 <li id="liAffaire" onmouseover="changeCursor('liAffaire')" onclick="location.href='../affaire/affaire.html'">Affaires</li>
+	 <li class="current" >Affaires</li>
 	 <li id="liLoisirs" onmouseover="changeCursor('liLoisirs')" onclick="location.href='accueil.html'">Loisirs</li>
 	</ul>
 </nav>
@@ -35,33 +35,29 @@
 
 
  <section >
-   <h1>Votre Groupe</h1>
+   <h1>Liste des affaires</h1>
 
   <article>
-   <h2>Composition</h2>
+   <h2>Ma liste</h2>
 <div class="composition">
 
 	<div id="listPerson">
-	 <p>- Emiel </p> 
-	 <p>- Matthijs </p> 
-	 <p>- Fabian </p> 
-	 <p>- Kiki </p> 
 	</div>
 </div>
 
 
    <h2>Ajout</h2>
 <div class="ajout">
-		<p>Ajouter des personnes à votre groupe :</p>
+		<p>Ajouter des affaires pour vos vacances :</p>
 		<div class="line">
-		<input class="textGrey inline" id="name" type="text" name="name" value="add person" onfocus="inputTextFocus('name','Orange')" onblur="inputTextBlur('name','add person')" >
-		<div class="button inline" onclick="addPerson()"> Add person </div>
+		<input class="textGrey inline" id="name" type="text" name="name" value="add stuff" onfocus="inputTextFocus('name','Purple')" onblur="inputTextBlur('name','add stuff')" >
+		<div id="but1" class="myButton inline" onclick="addPerson()" onmouseover="changeCursor('but1')" > Add stuff </div>
 		</div>
 		<!--<input type="button" name="addPerson" value="Add person" onclick="addPerson()">-->
 </div>
 
 	<div id="buttonsBottom">
-		<div class="button right" id="buttonReset" onclick="location.href='groupe.html';"> Clear the group </div>
+		<div class="button right" id="buttonReset" onclick="location.href='affaire.html';"> Clear all stuff </div>
 		<!--<input  type="button" name="reset" value="Clear the group" onclick="location.href='groupe.html';">-->
 	  </br>
 		<div class="button" id="confirm" onclick="alert('reste plus qu\'a le faire pour de vrai ;) ');">CONFIRM</div>
@@ -77,7 +73,7 @@
 
 <script src="../actionJS/navChanging.js" type="text/javascript"></script>
 <script src="../actionJS/actionInputText.js" type="text/javascript"></script>
-<script src="groupe.js" type="text/javascript"></script>
+<script src="affaire.js" type="text/javascript"></script>
 </body>
 
 </html>
