@@ -50,12 +50,17 @@ text-shadow: 5px 5px 5px #0033CC;  /*decalage-a-droite, decalage-bas, flootage, 
 section article h2{
     	width: 50%;
     margin-left: 5%;/*texte centré*/
+	padding: 5%
     	height:70px;
-    	line-height:120px;
+    	line-height:140px;
 
-	/*border:2px solid black;
+	border:2px solid black;
     	border-radius: 5%; 
-    font-weight: bold;
+
+	background: url("../images/groupe.png");
+	background-size:20%;
+	background-repeat: no-repeat;
+    /*font-weight: bold;
  	/*text-align:center;*/
 }
 
@@ -65,39 +70,38 @@ section article h2{
 @-webkit-keyframes jumping {
 /*from {line-height:120px;}
 to { line-height:0px;}*/
- 0% {line-height:120px;}
- 12.5% {line-height:60px;}
- 25% {line-height:20px;}
- 32.5% {line-height:10px;}
- 40% {line-height:0px;}
- 50%{line-height:0px;}
- 60% {line-height:0px;}
- 67.5% {line-height:10px;}
- 75% {line-height:20px;}
- 87.5% {line-height:60px;}
- 100% {line-height:120px;}
+ 0% {line-height:120px; text-shadow: 5px 10px 4px #0000FF;}
+ 12.5% {line-height:60px; text-shadow: 5px 10px 4px #0000FF;}
+ 25% {line-height:20px; text-shadow: 5px 10px 4px #0000FF;}
+ 32.5% {line-height:10px;text-shadow: 5px 10px 4px #0000FF;}
+ 40% {line-height:0px;text-shadow: 5px 10px 4px #0000FF;}
+ 50%{line-height:0px;text-shadow: 5px 10px 4px #0000FF;}
+ 60% {line-height:0px;text-shadow: 5px 10px 4px #0000FF;}
+ 67.5% {line-height:10px;text-shadow: 5px 10px 4px #0000FF;}
+ 75% {line-height:20px;text-shadow: 5px 10px 4px #0000FF;}
+ 87.5% {line-height:60px;text-shadow: 5px 10px 4px #0000FF;}
+ 100% {line-height:120px;text-shadow: 5px 10px 4px #0000FF;}
 }@keyframes jumping {
-/*from {line-height:120px;}
-to { line-height:0px;}*/
- 0% {line-height:120px;}
- 12.5% {line-height:60px;}
- 25% {line-height:20px;}
- 32.5% {line-height:10px;}
- 40% {line-height:0px;}
- 50%{line-height:0px;}
- 60% {line-height:0px;}
- 67.5% {line-height:10px;}
- 75% {line-height:20px;}
- 87.5% {line-height:60px;}
- 100% {line-height:120px;}
+from {line-height:60px;}
+to { line-height:60px;}
+/*
+ 0% {line-height:120px; text-shadow: 5px 10px 4px #0000FF;}
+ 12.5% {line-height:60px; text-shadow: 5px 10px 4px #0000FF;}
+ 25% {line-height:20px; text-shadow: 5px 10px 4px #0000FF;}
+ 32.5% {line-height:10px;text-shadow: 5px 10px 4px #0000FF;}
+ 40% {line-height:0px;text-shadow: 5px 10px 4px #0000FF;}
+ 50%{line-height:0px;text-shadow: 5px 10px 4px #0000FF;}
+ 60% {line-height:0px;text-shadow: 5px 10px 4px #0000FF;}
+ 67.5% {line-height:10px;text-shadow: 5px 10px 4px #0000FF;}
+ 75% {line-height:20px;text-shadow: 5px 10px 4px #0000FF;}
+ 87.5% {line-height:60px;text-shadow: 5px 10px 4px #0000FF;}
+ 100% {line-height:120px;text-shadow: 5px 10px 4px #0000FF;}*/
 }
-
 
 section article h2:hover{
 
     /*position: absolute;
 /*-moz-animation: saute 1s alternate; /* firefox*/
-text-shadow: 5px 10px 4px #0000FF;
 /*
 border:2px solid black;
 border-radius:5px;
@@ -111,7 +115,6 @@ border-radius:5px;
 
 -webkit-animation: jumping 0.3s; /* chrome safari*/
 animation: jumping 0.3s; /* autre*/
-
 }
 
 
