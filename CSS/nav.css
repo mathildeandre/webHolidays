@@ -6,6 +6,10 @@
 	background-position: 0 0;
 
 }*/
+html {
+    -webkit-font-smoothing: antialiased; /* permet de rendre opacity during animation en chrome possible*/
+}
+
 nav{ 
    	white-space: nowrap; 
     	margin-left: 0;
@@ -88,12 +92,12 @@ background-color:pink;
 
 
 
-@keyframes clignote {
+@-webkit-keyframes clignote {
 from {opacity: 1; /*background-color:rgba(211,211,211,1);*/}
 to {opacity: 0.3;/*background-color:rgba(211,211,211,0.3);*/}
 }
 nav ul li[class="current"] {
-animation: clignote 2s alternate infinite; /* firefox*/
+-webkit-animation: clignote 2s alternate infinite; /* firefox*/
  /*border-color: ;*/
   color: grey;
  	font-size:large;

@@ -62,7 +62,7 @@ section article h2{
 
 
 
-@keyframes jumping {
+@-webkit-keyframes jumping {
 /*from {line-height:120px;}
 to { line-height:0px;}*/
  0% {line-height:120px;}
@@ -93,7 +93,7 @@ border-radius:5px;
 
 
 
-animation: jumping 0.3s; /* firefox*/
+-webkit-animation: jumping 0.3s; /* firefox*/
 
 }
 
