@@ -84,7 +84,7 @@
 
 
 	<div class="right" >
-		<input  id="theCheckBoxMouseOver" type="checkbox" >
+		<input  id="theCheckBoxMouseOver" type="checkbox" width="200px" height="200px">
 		<label for="theCheckBoxMouseOver" > MouseOver actif ?</label>
 	</div>
 	<div id="buttonsBottom">
