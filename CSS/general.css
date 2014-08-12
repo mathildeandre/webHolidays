@@ -3,25 +3,17 @@
 	src: url('../mapolice.otf');
 }
 */
-#imgHeaderNav{ /* = body */
-    padding:0px;
-	/*background : url("../images/nav2.jpg") no-repeat;
-	background-size: 100% 300px;
-	background-attachment: fixed;*/
+
+body{
+  font-family: Helvetica Narrow, sans-serif;
+  margin: auto; /*centrer la colonne*/
 }
-/* enleve soulignage des liens */
-a:link  
-{  
- text-decoration:none;  
-}  
-
 header{
-    padding:20px;/*Marge verticale*/
-   /* background-color: rgba(184,134,11,0.5);/*darkgoldenrod; /*Couleur de fond*/
-   /* border-radius: 30px ;*/
-
-    color: white;
-    text-shadow:
+  padding:20px;/*Marge verticale*/
+  /* background-color: rgba(184,134,11,0.5);/*darkgoldenrod; /*Couleur de fond*/
+  /* border-radius: 30px ;*/
+  color: white;
+  text-shadow:
     -2px -2px 0 #000,
     2px -2px 0 #000,
     -2px 2px 0 #000,
@@ -58,6 +50,15 @@ footer{
 
 
 section{
+  border-radius: 10px ;
+  width:75%;
+  margin : auto; 
+  margin-top : 75px; 
+  background : url("../images/peint-blanc.jpg");
+  background-size:20%;
+  color:#000033;
+  padding: 30px;
+
 	/*background : white;/* url("../images/papier-peint1.jpg");
 	/*background-size: 100% 300px;
 	/*background-attachment: fixed;*/
@@ -117,6 +118,13 @@ input[type='checkbox'] {
 .inline{
 	display: inline-block;
 }
+
+/* enleve soulignage des liens */
+a:link  
+{  
+ text-decoration:none;  
+}  
+
 
 /************************** BUTTON **************************/
 
