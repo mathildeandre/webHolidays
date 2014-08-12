@@ -47,15 +47,16 @@ padding:4px;
 
 .myButton:hover{ 
 
+
+ box-shadow: 0px 0px 0px #EBADFF;
+ margin-top:5px;
+ margin-left:5px;
+}
+.myButton:active{ 
 background:white;
 border:5px solid purple;
 border-radius:10px;
 color: purple;/*#B82EE6;*/ 
-}
-.myButton:active{ 
- box-shadow: 0px 0px 0px #EBADFF;
- margin-top:5px;
- margin-left:5px;
 }
 
 

@@ -12,10 +12,11 @@ html {
 
 nav{ 
 	
+	overflow-x:scroll;
    	white-space: nowrap; 
     	margin-left: 0;
     	padding:0px;
-	/*background:purple;*/
+	/*background:purple;*/   
 }
 
 nav ul {
@@ -53,7 +54,8 @@ nav li {
 
  	text-align:center;
  	font-family: "Times New Roman", Times, serif;
- 	font-size:large;
+ 	/*font-size:large;*/
+font-size: 2vw;
 	font-weight:bold;
 
 	opacity: 1; 

@@ -38,6 +38,9 @@ section{
 }
 
 #h2Groupe{
+	background: url("../images/groupe.png");
+	background-size:20%;
+	background-repeat: no-repeat;
 }
 
 h1{
@@ -57,9 +60,6 @@ section article h2{
 	border:2px solid black;
     	border-radius: 5%; 
 
-	background: url("../images/groupe.png");
-	background-size:20%;
-	background-repeat: no-repeat;
     /*font-weight: bold;
  	/*text-align:center;*/
 }
