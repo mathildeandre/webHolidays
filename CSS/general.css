@@ -4,48 +4,47 @@
 }
 */
 
+
+/** pour centrer un texte a plusieurs lignes :
+	ecire ligne-height = 0px (ou la taille de la police ex:2vw)
+	ensuite centre avec le padding top et bottom		
+*/
+
 body{
-  font-family: Helvetica Narrow, sans-serif;
-  margin: auto; /*centrer la colonne*/
+	font-family: Helvetica Narrow, sans-serif;/*"Comic Sans ms";*/
+	margin: auto; /*centrer la colonne*/
 }
+
 header{
-  padding:20px;/*Marge verticale*/
-  /* background-color: rgba(184,134,11,0.5);/*darkgoldenrod; /*Couleur de fond*/
-  /* border-radius: 30px ;*/
-  color: white;
-  text-shadow:
+	margin: auto;
+	padding:1%;/*Marge verticale*/
+	width:80%;
+	/*border-bottom: solid;*/
+	height:100px;
+	line-height:100px; /*vertical-align:middle; ne fonctionne pas*/
+	text-align:center;/*texte centré*/
+	font-size: 40px;
+	font-weight: bold;
+	color: white;
+	text-shadow:
     -2px -2px 0 #000,
     2px -2px 0 #000,
     -2px 2px 0 #000,
     2px 2px 0 #000; 
-
-
-    text-align:center;/*texte centré*/
-    font-size: 40px;
-    font-weight: bold;
-    font-family: Georgia, "Comic Sans ms";
-
-  width:200px;
-
-  height:100px;
-  line-height:100px; /*vertical-align:middle;*/
-  /*display: inline;*/
-	width:100%;margin: auto;
-
-    /*border-bottom: solid;*/
 }
 
 footer{
-    padding:25px 0px;/*Marge verticale*/
-    background-color: darkgoldenrod; /*Couleur de fond*/
-    text-align:center;/*texte centré*/
-    font-family: "Comic Sans ms";
-    font-size: small;
-    /*font-weight: italic;*/
+	width:80%;
+	/*border-bottom: solid;*/
+	height:0px;
+	padding:4% 4% 8% 4%;/*Marge verticale*/
+	background: green;/*, darkgoldenrod; /*Couleur de fond*/
+	text-align:center;/*texte centré*/
+	font-size: 20px;
+	/*font-weight: italic;*/
+	border:10px solid blue;
 	border-radius: 30px ;
 
-  display: inline;
-	
 }
 
 
@@ -81,7 +80,6 @@ section{
 	/*width:150px;
 	/*border: 1px solid black;*/
 }
-
 
 
 
