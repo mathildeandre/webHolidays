@@ -35,8 +35,9 @@ function addPersonne(nameAdd){
 	for(var i=1; i<=theColumnNumber; i++){
 		cell = newRow.insertCell(i);
 		id = theRowNumber + "1";
-		cell.innerHTML += '<input id="'+id+'" type="checkbox"> <label for="test2"></label>  '; 
+		cell.innerHTML += '<div class="roundedTwo"> <input type="checkbox" value="None" id="'+id+'" name="check"> <label for="'+id+'"></label> </div> '; 
 	}
+	theRowNumber++;
 
 }
 
