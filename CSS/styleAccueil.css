@@ -1,5 +1,69 @@
 
 
+
+body{
+	/*font-weight: 500;*/
+    /*width:930px;/*Taille de la colonne centrée moins le padding*/
+    /*background-color: limegreen;/*Couleur de fond*/
+    /*padding:0px 25px 0px 25px;/*margin interne*/
+	/*background-image: url("Images/clouds.jpg");*/
+	/*background-color: rgb(200,90,200);*/
+	/*background-image: url("Images/bonhomme.jpg");
+	background-attachement: fixed;
+	background-repeat: no-repeat;
+	background-position: top right;
+	background: url("Images/bonhomme.jpg") fixed no-repeat top right, url("Images/clouds.jpg") fixed;*/
+}
+#myBox{
+	width:200px;
+	height:100px;
+	line-height:100px;
+	text-align:center;
+	font-size: 40px;
+    font-weight: bold;
+	/*border-top:5px solid black ;
+	border-left:5px solid black;
+	border-right:10px solid blue;*/
+	border:10px solid white;
+	border-radius:5px;
+	background:rgba(255,0,0,0);
+	
+	
+	
+	box-shadow : 0 1px 0 #eee,
+             0 2px 0 #e5e5e5,
+             -1px 3px 0 #C8C8C8,
+             -1px 4px 0 #C1C1C1,
+             -2px 5px 0 #B9B9B9,
+             -2px 6px 0 #B2B2B2,
+             -2px 7px 2px rgba(0,0,0, 0.6),
+             -2px 7px 8px rgba(0,0,0, 0.2),
+             -2px 7px 45px rgba(0,0,0, 0.4),
+             0 1px 0 #eee inset,
+             0 2px 0 #e5e5e5 inset,
+             -1px 3px 0 #C8C8C8 inset,
+             -1px 4px 0 #C1C1C1 inset,
+             -2px 5px 0 #B9B9B9 inset,
+             -2px 6px 0 #B2B2B2 inset,
+             -2px 7px 2px rgba(0,0,0, 0.6) inset,
+             -2px 7px 8px rgba(0,0,0, 0.2) inset,
+             -2px 7px 45px rgba(0,0,0, 0.4) inset;
+/*-10px 10px 5px black inset,
+-10px 10px 5px black;*/
+
+color:white;
+text-shadow: 0 1px 0 #eee,
+             0 2px 0 #e5e5e5,
+             -1px 3px 0 #C8C8C8,
+             -1px 4px 0 #C1C1C1,
+             -2px 5px 0 #B9B9B9,
+             -2px 6px 0 #B2B2B2,
+             -2px 7px 2px rgba(0,0,0, 0.6),
+             -2px 7px 8px rgba(0,0,0, 0.2),
+             -2px 7px 45px rgba(0,0,0, 0.4);
+           
+transform: rotate(-10deg) scale(1.3,1.3);  
+}
 section{
 	/*background-image:url("../images/parasol.jpg");
 	background-repeat:no-repeat;
