@@ -28,3 +28,13 @@ function checkBoxMouseOver(id){
 	}
 		
 }
+
+function emptyText(id0, id1, id2){
+			document.getElementById(id0).value = "";
+			if (typeof id1 !== 'undefined'){
+				document.getElementById(id1).value = "";
+			}
+			if (typeof id2 !== 'undefined'){
+				document.getElementById(id2).value = "";
+			}
+}

@@ -5,7 +5,7 @@ dateFormat: 'dd/mm/yy'});
 
 /* declaration des variables */
 var theRowNumber = 1;
-var theColumnNumber = 2;
+var theColumnNumber = 1;
 var tabPerson=["emiel","matthijs","fabian","kiki","aina","mathilde"]; 
 var init = true;
 
