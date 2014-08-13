@@ -10,14 +10,67 @@ color: black;
        font-size:xx-large;
 }
 
+article[class="function"]{
+	border:4px solid;
+	border-color: black ;
+	border-radius: 30px;
+}
 
-.ui-datepicker {
-background: #333;
-border: 1px solid #555;
-color: #EEE;
+.line{
+	margin-top:1%;
+	margin-left:2%;
+}
+
+.inline{
+	width: 40%;
+	border:4px solid;
+	border-color: green ;
+}
+
+.radio2{
+	margin-left:2%;
+}
+
+.namePers{
+	border:4px solid;
+	border-color: green ;
+	margin-left:20%;
+	width: 20%;
+}
+
+#debutC{
+	width: 35%;
+}
+
+#finC{
+	width: 35%;
+}
+
+#addPers{
+	width: 40%;
+}
+
+.button{
+	margin-left: 5%;
+	border:4px solid;
+	border-color: red ;
+	font-size: 1.2em;
+	width: 5%; 
+	height: 25px; 
+	line-height:25px;/*permet le centrage vertical*/ 
+	padding:4px;
+	color: #FF0000; 
+}
+
+.button:hover{ 
+	color: #FF4D4D; 
+}
+.button:active{ 
+	color: #000; 
 }
 
 
+/******* CHECKBOX *********/
 input[type=checkbox] {
 		visibility: hidden;
 }
@@ -104,22 +157,10 @@ filter: alpha(opacity=100);
 opacity: 1;
 }
 
+/******* END CHECKBOX *********/
 
 
 
-/*
-   input[type=checkbox] {
 
-   -moz-appearance: none;
-width: 20px;
-height: 20px;
-border-radius:30px;
-}
 
-input[type="checkbox"]:checked + label:before {  
-border: 1px solid #aaa;  
-background: #f8f8f8;  */
-/*
-   border-radius: 3px;*/ /* angles arrondis */  
-/*box-shadow: inset 0 1px 3px rgba(0,0,0,.3)*/ /* légère ombre interne */  
 

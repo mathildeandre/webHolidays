@@ -1,16 +1,4 @@
-body{
-	/*font-weight: 500;*/
-    /*width:930px;/*Taille de la colonne centrée moins le padding*/
-    /*background-color: limegreen;/*Couleur de fond*/
-    /*padding:0px 25px 0px 25px;/*margin interne*/
-	/*background-image: url("Images/clouds.jpg");*/
-	/*background-color: rgb(200,90,200);*/
-	/*background-image: url("Images/bonhomme.jpg");
-	background-attachement: fixed;
-	background-repeat: no-repeat;
-	background-position: top right;
-	background: url("Images/bonhomme.jpg") fixed no-repeat top right, url("Images/clouds.jpg") fixed;*/
-}
+
 
 section{
 	/*background-image:url("../images/parasol.jpg");
@@ -33,9 +21,6 @@ section{
 }
 */
 h1{
-    text-align:center;/*texte centré*/
-    font-size: x-large;
-    font-weight: bold;
 text-shadow: 5px 5px 5px #0033CC;  /*decalage-a-droite, decalage-bas, flootage, color*/
 
 }
