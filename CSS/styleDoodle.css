@@ -10,6 +10,7 @@ color: black;
        font-size:xx-large;
 }
 
+/*
 article[class="function"]{
 	border:4px solid;
 	border-color: black ;
@@ -49,7 +50,7 @@ article[class="function"]{
 #addPers{
 	width: 40%;
 }
-
+*/
 .button{
 	margin-left: 5%;
 	border:4px solid;
@@ -62,13 +63,14 @@ article[class="function"]{
 	color: #FF0000; 
 }
 
+/*
 .button:hover{ 
 	color: #FF4D4D; 
 }
 .button:active{ 
 	color: #000; 
 }
-
+*/
 
 /******* CHECKBOX *********/
 input[type=checkbox] {
@@ -160,28 +162,63 @@ opacity: 1;
 /******* END CHECKBOX *********/
 
 
-
-
-
-
-
-
+/*
 #tab{
 	border : none;
-       /*background:#FF0000;*/
        }
 thead th{
 	border : none;
 	 border-bottom: 5px solid green;
+}*/
+
+table, caption, thead, tfoot, tbody {
+	margin: 0;
+	padding: 0;
 }
 
-#tab th{
-	 width: 50%;
-	 }
-#tab td{
-	 border : none;
-	 border-bottom: 5px solid red;
+table {
+	background:white;
+	border:0;
+	border-collapse: separate;
+	border-spacing: 4px;
+	color: #333333;
+	margin-top: 5px;
+	max-width: 900px;
+	min-width: 400px;
+	/* padding: 20px 5px 5px 5px; Espcaement du border */
+	width: 100%;
 }
-th{
-	}
 
+
+
+
+thead, th, td{
+
+}
+
+th, td {
+	border: 1px solid green;
+	padding: 1px 6px;
+}
+
+th { /*texte des intitulés de colonnes et cellules*/
+	color: #31605D;
+}
+
+#tab th { /*background entete de colonne*/
+	background: #D3EDEB;
+}
+
+#tab td {
+
+	background-color: palegreen;
+}
+
+thead,td {
+	text-align: center;
+}
+
+td:empty {
+	background: #A7DBD8;
+	border: 0;
+}
