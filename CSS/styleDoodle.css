@@ -21,36 +21,51 @@ article[class="function"]{
 	margin:0%;
 }
 
+*/
 .inline{
 	/*width: 40%;*/
+	width: 10vw;
+}
+
+.addColumn{
 	border:4px solid;
 	border-color: green ;
+	width: 45vw;
+	height: 100px;
+}
+
+#addCol{
+	margin-left: -8vw;
+	margin-top: -50px;
+}
+
+#date{
+	margin-top: 10px;
 }
 
 .namePers{
 	border:4px solid;
-	border-color: green ;
-	margin-left:10%;
-	width: 20%;
-}
-
-#debutC{
-	width: 35%;
-}
-
-#finC{
-	width: 35%;
+	border-color: red ;
+	margin-left: 0;
+	margin-top: -20px;
+	width: 20vw;
+	height: 100px;
 }
 
 #addPers{
-	width: 10vw;
-	background:blue;
+	margin-left: 0;
 }
-*/
+
+.datepick{
+	width: 10vw;
+}
+
+
 .button{
 	border:4px solid;
 	border-color: red ;
 	font-size: 1.2em;
+	width: 5vw;
 	/*margin-left: 5%;
 	width: 5%; 
 	height: 25px; 
@@ -184,6 +199,7 @@ table, caption, thead, tfoot, tbody {
 }
 
 table {
+	border: 3px solid green;
 	background:white;
 	border:0;
 	border-collapse: separate;
@@ -204,7 +220,8 @@ thead, th, td{
 }
 
 th, td {
-	border: 1px solid green;
+	border:none;
+	/* border: 1px solid green; */
 	padding: 1px 6px;
 }
 
