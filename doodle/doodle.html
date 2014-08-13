@@ -9,8 +9,8 @@
 	<link rel="stylesheet" type="text/css" href="../CSS/general.css" />
 	<link rel="stylesheet" type="text/css" href="../CSS/nav.css" />
 	<link rel="stylesheet" type="text/css" href="../CSS/styleDoodle.css"/> <!--mise en forme-->
-	<link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.12/themes/smoothness/jquery-ui.css" />
-
+	<!--<link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.12/themes/smoothness/jquery-ui.css" />
+-->
 
 	<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
   	<script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
@@ -27,12 +27,13 @@
 
 
 <nav>
-	<ul >
+	<ul>
 	 <li id="liAccueil" onmouseover="changeCursor('liAccueil')" onclick="location.href='../accueil/accueil.html'">Accueil</li>
 	 <li id="liGroupe" onmouseover="changeCursor('liGroupe')" onclick="location.href='../groupe/groupe.html'" >Groupe</li>
-	 <li id="liDoodle" onmouseover="changeCursor('liDoodle')" onclick="location.href='../doodle/doodle.html'" >Doodle</li>
-	 <li class="current" >Repas - Courses</li>
-	 <li id="liCalc" onmouseover="changeCursor('liCalc')" onclick="location.href='../calculation/calculation.html'">Calcul des dépenses</li>
+	 <li  class="current" >Doodle</li>
+	 <li id="liRepas" onmouseover="changeCursor('liRepas')" onclick="location.href='../repas/repas.html'">Repas</li>
+	 <li id="liCalc" onmouseover="changeCursor('liCalc')" onclick="location.href='../calculation/calculation.html?tab=emiel,matthijs,fabian,kiki'">Dépenses</li>
+	 <li id="liAffaire" onmouseover="changeCursor('liAffaire')" onclick="location.href='../affaire/affaire.html'">Affaires</li>
 	 <li id="liLoisirs" onmouseover="changeCursor('liLoisirs')" onclick="location.href='accueil.html'">Loisirs</li>
 	</ul>
 </nav>

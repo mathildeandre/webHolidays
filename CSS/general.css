@@ -49,7 +49,7 @@ footer{
 	width:80%;
 	text-align:center;/*texte centré*/
 	font-size: 15px;
-	font-weight: italic;
+	/*font-weight: italic; ne marche pas*/
 	color: white;
 	text-shadow:
     -1px -1px 0 #000,
@@ -261,7 +261,7 @@ box-shadow: 1px 1px 10px black inset, 0 1px 0 rgba( 255, 255, 255, 0.4);
 	text-align:center;
 	font-size: 1.5vw;
 	font-weight:bold;
-	***************************** MODE RED ***************************/    
+	/***************************** MODE RED ***************************/    
 	background:white;
 	
 	/** texte shadow red **/    

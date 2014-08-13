@@ -1,34 +1,55 @@
-COLOR :
+**********COLOR ****************
 
-bleu fonce : #000066;
-bleu normal : #0033CC;
-bleu clair : #;
 
-orange foncé : #803300;
-orange normal : #FF6600;
-orange clair : #;
+BLEU :
 
-vert foncé  : dark rgb(0,76,0);
-vert normal : rgb(0,204,0);
-vert clair : #;
+fonce : #000066;
+normal : #0033CC;
+clair : #;
 
-jaune foncé  : #808000;
-jaune moins foncé  : #B2B200;
-jaune normal : #FFCC00;
-jaune clair : #;
 
-rouge foncé  : #800000;
-rouge moins foncé  : #B20000;
-rouge normal : #FF0000;
-rouge clair : #;
+ORANGE :
 
-violet foncé  : #3D003D;
-violet moins foncé  : #7A1F99;
-violet normal : #B82EE6;
-violet clair : #EBADFF;
+foncé : #803300;
+normal : #FF6600;
+clair : #;
 
-rose foncé  : #;
-rose normal : pink;
-rose clair : #;
+
+VERT:
+
+foncé  : dark rgb(0,76,0);
+normal : rgb(0,204,0);
+clair : #;
+
+
+JAUNE:
+
+foncé  : #808000;
+moins foncé  : #B2B200;
+normal : #FFCC00;
+clair : #;
+
+
+ROUGE:
+
+foncé  : #800000;
+moins foncé  : #B20000;
+normal : #FF0000;
+clair : #;
+
+
+VIOLET:
+
+foncé  : #3D003D;
+moins foncé  : #7A1F99;
+normal : #B82EE6;
+clair : #EBADFF;
+
+
+ROSE:
+
+foncé  : #;
+normal : pink;
+clair : #;
 
 

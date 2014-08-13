@@ -31,17 +31,19 @@ nav ul {
     	padding:0;
 }
 
-/******************** NAV CLASSIC **********************/
+/***********************************************************************************************************/
+/********************************************** NAV MODE CLASSIC *******************************************/
+/***********************************************************************************************************/
 nav li {
 	display: inline-block;
 	/**display: inline;
 	/*zoom:1;*/
-	width: 12.2vw;
-	margin-left:1vw;
-	height:60px;
-	line-height:60px;
+	width: 11vw;
+	margin-left:2vw;
+	height:50px;
+	line-height:50px;
 	text-align:center;
-	font-size: 2vw;
+	font-size: 1.8vw;
 	font-weight:bold;
 	/*min-width: 100px;*/
 	
@@ -82,7 +84,7 @@ nav li {
 	border-radius: 4%; 
 	border:4px solid #ffffff;
 	
-	/*** mode BORDER shadow plus petite ***/
+	/*** mode BORDER shadow plus petit ***/
 	box-shadow:-0.2px   0.8px 0 #eee,
               -0.5px   1.5px 0 #e5e5e5,
              -1px 2.3px 0 #C8C8C8,
@@ -103,7 +105,7 @@ nav li {
              -2.2px 5.3px 8px rgba(0,0,0, 0.2) inset,
              -2.2px 5.3px 20px rgba(0,0,0, 0.4) inset;
              
-	/*** mode BORDER shadow grosse ***
+	/*** mode BORDER shadow GROS text ***
 	box-shadow: 0 1px 0 #eee,
              0 2px 0 #e5e5e5,
              -1px 3px 0 #C8C8C8,
@@ -123,70 +125,126 @@ nav li {
              -2px 7px 2px rgba(0,0,0, 0.6) inset,
              -2px 7px 8px rgba(0,0,0, 0.2) inset,
              -2px 7px 45px rgba(0,0,0, 0.4) inset;*/
-
 }
-/******************** fin NAV CLASSIC **********************/
-
 
 
 nav li:nth-child(1) {
-background-color:#0033CC; /*blue*/
+background-color:#4747D1; /*blue  rgb(71,71,255)*/
  	/*border-color:#333333;  /* dark #000066 ;*/
 }
 nav li:nth-child(2) {
-background-color:#FF6600; /*orange*/
+background-color:#FF6600; /*orange  rgb(255,102,0)*/
  	/*border-color:#333333;/* dark #803300 ;*/
 }
 nav li:nth-child(3) {
-background-color:rgb(0,204,0); /*green */
+background-color:#00CC00; /*green  rgb(0,204,0)*/
  	/*border-color:#333333;/* dark rgb(0,76,0) ;*/
 }
 nav li:nth-child(4) {
-background-color:#FFCC00; /*yellow*/
+background-color:#FFCC00; /*yellow  rgb(255,204,0)*/
  	/*border-color:#333333; /* less dark :B2B200 ;darker : #808000;*/
 }
 nav li:nth-child(5) {
-background-color:#FF0000; /*red*/
+background-color:#FF1919; /*red  rgb(255,25,2)*/
  	/*border-color:#333333; /* less dark #B20000 ;darker : #800000;*/
 }
 nav li:nth-child(6) {
-background-color:#B82EE6;/*853385; /*purple*/
+background-color:#853385; /*purple  rgb(133,51,133)*/
  	/*border-color:#333333;/* less #7A1F99   dark #3D003D ;*/
 }
 nav li:nth-child(7) {
-background-color:pink;
+background-color:#FF3399; /*pink  rgb(255,51,153)*/
  	/*border-color:#333333;*/
 }
 
+/***********************************************************************************************************/
+/******************************************** fin NAV MODE CLASSIC *****************************************/
+/***********************************************************************************************************/
 
 
 
+/***********************************************************************************************************/
+/******************************************** CURRENT ******************************************************/
+/***********************************************************************************************************/
 
-
-
-
-@-webkit-keyframes clignote {
-from {opacity: 1; /*background-color:rgba(211,211,211,1);*/}
-to {opacity: 0.3;/*background-color:rgba(211,211,211,0.3);*/}
+@-webkit-keyframes clignote1 {
+from {background-color:rgba(71,71,209,1);}
+to {background-color:rgba(71,71,209,0.3);}
 }
-@keyframes clignote {
-from {opacity: 1; /*background-color:rgba(211,211,211,1);*/}
-to {opacity: 0.3;/*background-color:rgba(211,211,211,0.3);*/}
+@keyframes clignote1 {
+from {background-color:rgba(71,71,255,1);}
+to {background-color:rgba(71,71,255,0.3);}
 }
+@keyframes clignote2 {
+from {background-color:rgba(255,102,0,1);}
+to {background-color:rgba(255,102,0,0.3);}
+}
+@keyframes clignote3 {
+from {background-color:rgba(0,204,0,1);}
+to {background-color:rgba(0,204,0,0.3);}
+}
+@keyframes clignote4 {
+from {background-color:rgba(255,204,0,1);}
+to {background-color:rgba(255,204,0,0.3);}
+}
+@keyframes clignote5 {
+from {background-color:rgba(255,25,2,1);}
+to {background-color:rgba(255,25,2,0.3);}
+}
+@keyframes clignote6 {
+from {background-color:rgba(133,51,133,1);}
+to {background-color:rgba(133,51,133,0.3);}
+}
+@keyframes clignote7 {
+from {background-color:rgba(255,51,153,1);}
+to {background-color:rgba(255,51,153,0.3);}
+}
+nav li:nth-child(1)[class="current"] {
+-webkit-animation: clignote1 2s alternate infinite; /* chrome*/
+animation: clignote1 2s alternate infinite; /* all */
+}
+nav li:nth-child(2)[class="current"] {
+animation: clignote2 2s alternate infinite; /* all */
+}
+nav li:nth-child(3)[class="current"] {
+animation: clignote3 2s alternate infinite; /* all */
+}
+nav li:nth-child(4)[class="current"] {
+animation: clignote4 2s alternate infinite; /* chrome*
+animation: clignote4 2s alternate infinite; /* all */
+}
+nav li:nth-child(5)[class="current"] {
+animation: clignote5 2s alternate infinite; /* all */
+}
+nav li:nth-child(6)[class="current"] {
+animation: clignote6 2s alternate infinite; /* all */
+}
+nav li:nth-child(7)[class="current"] {
+animation: clignote7 2s alternate infinite; /* all */
+}
+
+
 nav ul li[class="current"] {
--webkit-animation: clignote 2s alternate infinite; /* chrome*/
-animation: clignote 2s alternate infinite; /* all */
- /*border-color: ;*/
-  color: grey;
- 	font-size:large;
-    text-shadow:
-    -1px -1px 0 #000,
-    1px -1px 0 #000,
-    -1px 1px 0 #000,
-    1px 1px 0 #000; 
+	transform: rotate(-10deg);
+	color:#B2B2B2;
+	border-color:#B2B2B2;
+	/*	aucun 3D
+	text-shadow: 0 0 0 rgba(0,0,0,0);
+	box-shadow: 0 0 0 rgba(0,0,0,0);
+	*/
 }
 
+/***********************************************************************************************************/
+/******************************************** fin CURRENT **************************************************/
+/***********************************************************************************************************/
 
+
+
+
+
+/***********************************************************************************************************/
+/********************************************  HOVER  ******************************************************/
+/***********************************************************************************************************/
 @keyframes penche {
 from {transform: rotate(-10deg) scale(1.3,1.3);}
 to {transform: rotate(-7deg) scale(1.3,1.3);}
@@ -195,8 +253,6 @@ to {transform: rotate(-7deg) scale(1.3,1.3);}
 from {transform: rotate(-10deg) scale(1.3,1.3);}
 to {transform: rotate(-7deg) scale(1.3,1.3);}
 }
-
-
 nav ul li:not([class="current"]):hover {
 	animation: penche 0.2s alternate; /* firefox*/
 	-webkit-animation: penche 0.2s alternate; /* firefox*/
@@ -204,89 +260,404 @@ nav ul li:not([class="current"]):hover {
 	
 	border:5px solid white;
 	border-radius:5px;
+}
+/******************** BLUE ***************************/  
+nav li:nth-child(1):not([class="current"]):hover {  
+	background:rgba(0,0,0,0);
 	
-	/*** mode BORDER shadow ***/
-	box-shadow: 0 1px 0 #eee,
-             0 2px 0 #e5e5e5,
-             -1px 3px 0 #C8C8C8,
-             -1px 4px 0 #C1C1C1,
-             -2px 5px 0 #B9B9B9,
-             -2px 6px 0 #B2B2B2,
-             -2px 7px 2px rgba(0,0,0, 0.6),
-             -2px 7px 8px rgba(0,0,0, 0.2),
-             -2px 7px 45px rgba(0,0,0, 0.4),
-             -2px 7px 45px rgba(0,0,0, 0.4),
-             0 1px 0 #eee inset,
-             0 2px 0 #e5e5e5 inset,
-             -1px 3px 0 #C8C8C8 inset,
-             -1px 4px 0 #C1C1C1 inset,
-             -2px 5px 0 #B9B9B9 inset,
-             -2px 6px 0 #B2B2B2 inset,
-             -2px 7px 2px rgba(0,0,0, 0.6) inset,
-             -2px 7px 8px rgba(0,0,0, 0.2) inset,
-             -2px 7px 45px rgba(0,0,0, 0.4) inset;
-     
-     
-     
-/***************************** MODE RED ***************************/    
-	background:#ffffff;
 	
-	/** texte shadow red **/    
-	color:#FF8080;
-	text-shadow: 0   0.8px 0 #FF4D4D,
-              0   1.5px 0 #FF1919,
-             -1px 2.3px 0 #E60000,
-             -1px 3px 0 #B20000,
-             -1.2px 3.8px 0 #800000,
-             -1.8px 4.5px 0 #660000,
-             -2px 5.3px 2px rgba(50,0,0, 0.6),
-             -2px 5.3px 8px rgba(50,0,0, 0.2),
-             -2px 5.3px 45px rgba(50,0,0, 0.4); 
+	color:#4747D1;
+	text-shadow: 0   0.8px 0 #2E2EB8,
+              0   1.5px 0 #2929A3,
+             -1px 2.3px 0 #24248F,
+             -1px 3px 0 #1F1F7A,
+             -2px 3.8px 0 #1A1A66,
+             -2.1px 4.5px 0 #141452,
+             -2.2px 5.3px 2px rgba(10,10,41, 0.4),
+             -2.2px 5.3px 8px rgba(10,10,41, 0.2),
+             -2.2px 5.3px 20px rgba(10,10,41, 0.4); 
 
 	border-radius: 4%; 
-	border:4px solid #FF8080;
+	border:4px solid #4747D1;
 	
 	/*** mode BORDER shadow plus petite ***/
-	box-shadow:-0.2px   0.8px 0 #FF4D4D,
-              -0.5px   1.5px 0 #FF1919,
-             -1px 2.3px 0 #E60000,
-             -1px 3px 0 #B20000,
+	box-shadow:-0.2px   0.8px 0 #2E2EB8,
+              -0.5px   1.5px 0 #2929A3,
+             -1px 2.3px 0 #24248F,
+             -1px 3px 0 #1F1F7A,
+             -2px 3.8px 0 #1A1A66,
+             -2.1px 4.5px 0 #141452,
+             -2.2px 5.3px 2px rgba(10,10,41, 0.4),
+             -2.2px 5.3px 8px rgba(10,10,41, 0.2),
+             -2.2px 5.3px 20px rgba(10,10,41, 0.4),
+			/* interieur */
+              -0.2px   0.8px 0 #2E2EB8 inset,
+              -0.5px   1.5px 0 #2929A3 inset,
+             -1px 2.3px 0 #24248F inset,
+             -1px 3px 0 #1F1F7A inset,
+             -2px 3.8px 0 #1A1A66 inset,
+             -2.1px 4.5px 0 #141452 inset,
+             -2.2px 5.3px 2px rgba(10,10,41, 0.4) inset,
+             -2.2px 5.3px 8px rgba(10,10,41, 0.2) inset,
+             -2.2px 5.3px 20px rgba(10,10,41, 0.4) inset;
+
+}
+/**************** fin BLUE **************************/
+
+
+/******************** ORANGE ***************************/  
+nav li:nth-child(2):not([class="current"]):hover {  
+	background:rgba(0,0,0,0);
+	
+	
+	color:#FF6600;
+	text-shadow: 0   0.8px 0 #E65C00,
+              0   1.5px 0 #CC5200,
+             -1px 2.3px 0 #CC5200,
+             -1px 3px 0 #993D00,
+             -2px 3.8px 0 #803300,
+             -2.1px 4.5px 0 #662900,
+             -2.2px 5.3px 2px rgba(51,20,0, 0.4),
+             -2.2px 5.3px 8px rgba(51,20,0, 0.2),
+             -2.2px 5.3px 20px rgba(51,20,0, 0.4); 
+
+	border-radius: 4%; 
+	border:4px solid #FF6600;
+	
+	/*** mode BORDER shadow plus petite ***/
+	box-shadow:-0.2px   0.8px 0 #E65C00,
+              -0.5px   1.5px 0 #CC5200,
+             -1px 2.3px 0 #CC5200,
+             -1px 3px 0 #993D00,
+             -2px 3.8px 0 #803300,
+             -2.1px 4.5px 0 #662900,
+             -2.2px 5.3px 2px rgba(51,20,0, 0.4),
+             -2.2px 5.3px 8px rgba(51,20,0, 0.2),
+             -2.2px 5.3px 20px rgba(51,20,0, 0.4),
+			/* interieur */
+              -0.2px   0.8px 0 #E65C00 inset,
+              -0.5px   1.5px 0 #CC5200 inset,
+             -1px 2.3px 0 #CC5200 inset,
+             -1px 3px 0 #993D00 inset,
+             -2px 3.8px 0 #803300 inset,
+             -2.1px 4.5px 0 #662900 inset,
+             -2.2px 5.3px 2px rgba(51,20,0, 0.4) inset,
+             -2.2px 5.3px 8px rgba(51,20,0, 0.2) inset,
+             -2.2px 5.3px 20px rgba(51,20,0, 0.4) inset;
+
+}
+/**************** fin ORANGE **************************/
+
+
+/******************** GREEN ***************************/  
+nav li:nth-child(3):not([class="current"]):hover {  
+	background:rgba(0,0,0,0);
+	
+	
+	color:#00CC00;
+	text-shadow: 0   0.8px 0 #00B800,
+              0   1.5px 0 #00A300,
+             -1px 2.3px 0 #008F00,
+             -1px 3px 0 #007A00,
+             -2px 3.8px 0 #006600,
+             -2.1px 4.5px 0 #005200,
+             -2.2px 5.3px 2px rgba(0,41,0, 0.4),
+             -2.2px 5.3px 8px rgba(0,41,0, 0.2),
+             -2.2px 5.3px 20px rgba(0,41,0, 0.4); 
+
+	border-radius: 4%; 
+	border:4px solid #00CC00;
+	
+	/*** mode BORDER shadow plus petite ***/
+	box-shadow:-0.2px   0.8px 0 #00B800,
+              -0.5px   1.5px 0 #00A300,
+             -1px 2.3px 0 #008F00,
+             -1px 3px 0 #007A00,
+             -2px 3.8px 0 #006600,
+             -2.1px 4.5px 0 #005200,
+             -2.2px 5.3px 2px rgba(0,41,0, 0.4),
+             -2.2px 5.3px 8px rgba(0,41,0, 0.2),
+             -2.2px 5.3px 20px rgba(0,41,0, 0.4),
+			/* interieur */
+              -0.2px   0.8px 0 #00B800 inset,
+              -0.5px   1.5px 0 #00A300 inset,
+             -1px 2.3px 0 #008F00 inset,
+             -1px 3px 0 #007A00 inset,
+             -2px 3.8px 0 #006600 inset,
+             -2.1px 4.5px 0 #005200 inset,
+             -2.2px 5.3px 2px rgba(0,41,0, 0.4) inset,
+             -2.2px 5.3px 8px rgba(0,41,0, 0.2) inset,
+             -2.2px 5.3px 20px rgba(0,41,0, 0.4) inset;
+
+}
+/**************** fin GREEN **************************/
+
+/******************** YELLOW ***************************/  
+nav li:nth-child(4):not([class="current"]):hover {  
+	background:rgba(0,0,0,0);
+	
+	
+	color:#FFCC00;
+	text-shadow:0   0.8px 0 #E6B800,
+              0   1.5px 0 #CCA300,
+             -1px 2.3px 0 #B28F00,
+             -1px 3px 0 #997A00,
+             -2px 3.8px 0 #806600,
+             -2.1px 4.5px 0 #665200,
+             -2.2px 5.3px 2px rgba(51,41,0, 0.4),
+             -2.2px 5.3px 8px rgba(51,41,0, 0.2),
+             -2.2px 5.3px 20px rgba(51,41,0, 0.4); 
+
+	border-radius: 4%; 
+	border:4px solid #FFCC00;
+	
+	/*** mode BORDER shadow plus petite ***/
+	box-shadow:-0.2px   0.8px 0 #E6B800,
+              -0.5px   1.5px 0 #CCA300,
+             -1px 2.3px 0 #B28F00,
+             -1px 3px 0 #997A00,
+             -2px 3.8px 0 #806600,
+             -2.1px 4.5px 0 #665200,
+             -2.2px 5.3px 2px rgba(51,41,0, 0.4),
+             -2.2px 5.3px 8px rgba(51,41,0, 0.2),
+             -2.2px 5.3px 20px rgba(51,41,0, 0.4),
+			/* interieur */
+              -0.2px   0.8px 0 #E6B800 inset,
+              -0.5px   1.5px 0 #CCA300 inset,
+             -1px 2.3px 0 #B28F00 inset,
+             -1px 3px 0 #997A00 inset,
+             -2px 3.8px 0 #806600 inset,
+             -2.1px 4.5px 0 #665200 inset,
+             -2.2px 5.3px 2px rgba(51,41,0, 0.4) inset,
+             -2.2px 5.3px 8px rgba(51,41,0, 0.2) inset,
+             -2.2px 5.3px 20px rgba(51,41,0, 0.4) inset;
+
+}
+/**************** fin YELLOW **************************/
+
+
+/******************** RED ***************************/  
+nav li:nth-child(5):not([class="current"]):hover {  
+	background:rgba(0,0,0,0);
+	
+	
+	color:#FF1919;/*#FF8080;*/
+	text-shadow: 0   0.8px 0 #E60000,
+              0   1.5px 0 #CC0000,
+             -1px 2.3px 0 #B20000,
+             -1px 3px 0 #990000,
+             -2px 3.8px 0 #800000,
+             -2.1px 4.5px 0 #660000,
+             -2.2px 5.3px 2px rgba(50,0,0, 0.4),
+             -2.2px 5.3px 8px rgba(50,0,0, 0.2),
+             -2.2px 5.3px 20px rgba(50,0,0, 0.4); 
+
+	border-radius: 4%; 
+	border:4px solid #FF1919;
+	
+	/*** mode BORDER shadow plus petite ***/
+	box-shadow:-0.2px   0.8px 0 #E60000,
+              -0.5px   1.5px 0 #CC0000,
+             -1px 2.3px 0 #B20000,
+             -1px 3px 0 #990000,
              -2px 3.8px 0 #800000,
              -2.1px 4.5px 0 #660000,
              -2.2px 5.3px 2px rgba(50,0,0, 0.4),
              -2.2px 5.3px 8px rgba(50,0,0, 0.2),
              -2.2px 5.3px 20px rgba(50,0,0, 0.4),
 			/* interieur */
-              -0.2px   0.8px 0 #FF4D4D inset,
-              -0.5px   1.5px 0 #FF1919 inset,
-             -1px 2.3px 0 #E60000 inset,
-             -1px 3px 0 #B20000 inset,
+              -0.2px   0.8px 0 #E60000 inset,
+              -0.5px   1.5px 0 #CC0000 inset,
+             -1px 2.3px 0 #B20000 inset,
+             -1px 3px 0 #990000 inset,
              -2px 3.8px 0 #800000 inset,
              -2.1px 4.5px 0 #660000 inset,
              -2.2px 5.3px 2px rgba(50,0,0, 0.4) inset,
              -2.2px 5.3px 8px rgba(50,0,0, 0.2) inset,
              -2.2px 5.3px 20px rgba(50,0,0, 0.4) inset;
-             
-/***************************** fin RED ***********************************/
+
+}
+/**************** fin RED **************************/
+
+/******************** PURPLE ***************************/  
+nav li:nth-child(6):not([class="current"]):hover {  
+	background:rgba(0,0,0,0);
+	
+	
+	color:#853385;
+	text-shadow:0   0.8px 0 #751975,
+              0   1.5px 0 #5C005C,
+             -1px 2.3px 0 #520052,
+             -1px 3px 0 #470047,
+             -2px 3.8px 0 #3D003D,
+             -2.1px 4.5px 0 #290029,
+             -2.2px 5.3px 2px rgba(41,0,41, 0.4),
+             -2.2px 5.3px 8px rgba(41,0,41, 0.2),
+             -2.2px 5.3px 20px rgba(41,0,41, 0.4); 
+
+	border-radius: 4%; 
+	border:4px solid #853385;
+	
+	/*** mode BORDER shadow plus petite ***/
+	box-shadow:-0.2px   0.8px 0 #751975,
+              -0.5px   1.5px 0 #5C005C,
+             -1px 2.3px 0 #520052,
+             -1px 3px 0 #470047,
+             -2px 3.8px 0 #3D003D,
+             -2.1px 4.5px 0 #290029,
+             -2.2px 5.3px 2px rgba(41,0,41, 0.4),
+             -2.2px 5.3px 8px rgba(41,0,41, 0.2),
+             -2.2px 5.3px 20px rgba(41,0,41, 0.4),
+			/* interieur */
+              -0.2px   0.8px 0 #751975 inset,
+              -0.5px   1.5px 0 #5C005C inset,
+             -1px 2.3px 0 #520052 inset,
+             -1px 3px 0 #470047 inset,
+             -2px 3.8px 0 #3D003D inset,
+             -2.1px 4.5px 0 #290029 inset,
+             -2.2px 5.3px 2px rgba(41,0,41, 0.4) inset,
+             -2.2px 5.3px 8px rgba(41,0,41, 0.2) inset,
+             -2.2px 5.3px 20px rgba(41,0,41, 0.4) inset;
+
+}
+/**************** fin PURPLE **************************/
+
+
+/******************** PINK ***************************/  
+nav li:nth-child(7):not([class="current"]):hover {  
+	background:rgba(0,0,0,0);
+	
+	
+	color:#FF3399;
+	text-shadow:0   0.8px 0 #E62E8A,
+              0   1.5px 0 #CC297A,
+             -1px 2.3px 0 #B2246B,
+             -1px 3px 0 #991F5C,
+             -2px 3.8px 0 #801A4C,
+             -2.1px 4.5px 0 #66143D,
+             -2.2px 5.3px 2px rgba(51,10,31, 0.4),
+             -2.2px 5.3px 8px rgba(51,10,31, 0.2),
+             -2.2px 5.3px 20px rgba(51,10,31, 0.4); 
+
+	border-radius: 4%; 
+	border:4px solid #FF3399;
+	
+	/*** mode BORDER shadow plus petite ***/
+	box-shadow:-0.2px   0.8px 0 #E62E8A,
+              -0.5px   1.5px 0 #CC297A,
+             -1px 2.3px 0 #B2246B,
+             -1px 3px 0 #991F5C,
+             -2px 3.8px 0 #801A4C,
+             -2.1px 4.5px 0 #66143D,
+             -2.2px 5.3px 2px rgba(51,10,31, 0.4),
+             -2.2px 5.3px 8px rgba(51,10,31, 0.2),
+             -2.2px 5.3px 20px rgba(51,10,31, 0.4),
+			/* interieur */
+              -0.2px   0.8px 0 #E62E8A inset,
+              -0.5px   1.5px 0 #CC297A inset,
+             -1px 2.3px 0 #B2246B inset,
+             -1px 3px 0 #991F5C inset,
+             -2px 3.8px 0 #801A4C inset,
+             -2.1px 4.5px 0 #66143D inset,
+             -2.2px 5.3px 2px rgba(51,10,31, 0.4) inset,
+             -2.2px 5.3px 8px rgba(51,10,31, 0.2) inset,
+             -2.2px 5.3px 20px rgba(51,10,31, 0.4) inset;
+
+}
+/**************** fin PINK **************************/
 
 
 
-/*******  Pour agrandir l'image avec un fond ecran different *****
-
-  	-webkit-transform: scale(1.5,1.5); /* agrandir l'image
-  	-moz-transform: scale(1.5,1.5);
 
 
-	background-image: url("../images/blue3.jpeg");
-    /*background-size: 100% 100%;
-	background-position: center; 
 
- 	border-color:white ;
- 	color: white;
-    	text-shadow:
-    -1px -1px 0 #000,
-    1px -1px 0 #000,
-    -1px 1px 0 #000,
-    1px 1px 0 #000; 
-*/
- } 
+/***********************************************************************************************************/
+/******************************************** fin HOVER  ***************************************************/
+/***********************************************************************************************************/
+
+
+
+ 
+ 
+ 
+ 
+/***********************************************************************************************************/
+/********************************************  ACTIVE  ******************************************************/
+/***********************************************************************************************************/
+ 
+ /* NE FONCTIONNE PAS */ 
+ nav li:nth-child(1):not([class="current"]):active{
+ 
+	margin-top:4.5px;
+	margin-right:2.2px;
+	box-shadow: 0 0 0 #000000;
+	text-shadow:0   0 0 #000000;
+	/*border:4px solid #000000;
+	background:white;*/
+ }
+  nav li:nth-child(2):not([class="current"]):active{
+ 
+	margin-top:4.5px;
+	margin-right:2.2px;
+	box-shadow: 0 0 0 #000000;
+	text-shadow:0   0 0 #000000;
+	/*border:4px solid #000000;
+	background:white;*/
+ }
+  nav li:nth-child(3):not([class="current"]):active{
+ 
+	margin-top:4.5px;
+	margin-right:2.2px;
+	box-shadow: 0 0 0 #000000;
+	text-shadow:0   0 0 #000000;
+	/*border:4px solid #000000;
+	background:white;*/
+ }
+  nav li:nth-child(4):not([class="current"]):active{
+ 
+	margin-top:4.5px;
+	margin-right:2.2px;
+	box-shadow: 0 0 0 #000000;
+	text-shadow:0   0 0 #000000;
+	/*border:4px solid #000000;
+	background:white;*/
+ }
+  nav li:nth-child(5):not([class="current"]):active{
+ 
+	margin-top:4.5px;
+	margin-right:2.2px;
+	box-shadow: 0 0 0 #000000;
+	text-shadow:0   0 0 #000000;
+	/*border:4px solid #000000;
+	background:white;*/
+ }
+  nav li:nth-child(6):not([class="current"]):active{
+ 
+	margin-top:4.5px;
+	margin-right:2.2px;
+	box-shadow: 0 0 0 #000000;
+	text-shadow:0   0 0 #000000;
+	/*border:4px solid #000000;
+	background:white;*/
+ }
+ nav li:nth-child(7):not([class="current"]):active{
+ 
+	margin-top:4.5px;
+	margin-right:2.2px;
+	box-shadow: 0 0 0 #000000;
+	text-shadow:0   0 0 #000000;
+	/*border:4px solid #000000;
+	background:white;*/
+ }
+nav ul li:not([class="current"]):active {
+ 	/*color:#000000;
+ 	border-color:#000000;
+	text-shadow: 0px  0px 0 white;
+	box-shadow: 0px  0px 0 white;*/
+	margin-top:4.5px;
+	margin-right:2.2px;
+	border:4px solid #000000;
+	background:white;
+ 
+
+}

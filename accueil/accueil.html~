@@ -10,6 +10,7 @@
     <link rel="stylesheet" type="text/css" href="../CSS/general.css" />
     <link rel="stylesheet" type="text/css" href="../CSS/nav.css" />
     <link rel="stylesheet" type="text/css" href="../CSS/styleAccueil.css" />
+    <link rel="stylesheet" type="text/css" href="../CSS/active.css" />
 </head>
 <!-- Mise en page classique avec le header, le corps, et le footer ! Les balises structurantes de
 HTML5 sont employées. -->
@@ -20,7 +21,7 @@ HTML5 sont employées. -->
 </header>
 
 <nav>
-	<ul >
+	<ul>
 	 <li class="current" >Accueil</li>
 	 <li id="liGroupe" onmouseover="changeCursor('liGroupe')" onclick="location.href='../groupe/groupe.html'" >Groupe</li>
 	 <li id="liDoodle" onmouseover="changeCursor('liDoodle')" onclick="location.href='../doodle/doodle.html'" >Doodle</li>
