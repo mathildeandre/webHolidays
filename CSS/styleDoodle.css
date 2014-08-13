@@ -17,24 +17,19 @@ article[class="function"]{
 }
 
 .line{
-	margin-top:1%;
-	margin-left:2%;
+	margin:0%;
 }
 
 .inline{
-	width: 40%;
+	/*width: 40%;*/
 	border:4px solid;
 	border-color: green ;
-}
-
-.radio2{
-	margin-left:2%;
 }
 
 .namePers{
 	border:4px solid;
 	border-color: green ;
-	margin-left:20%;
+	margin-left:10%;
 	width: 20%;
 }
 
@@ -47,19 +42,20 @@ article[class="function"]{
 }
 
 #addPers{
-	width: 40%;
+	width: 10vw;
+	background:blue;
 }
 
 .button{
-	margin-left: 5%;
 	border:4px solid;
 	border-color: red ;
 	font-size: 1.2em;
+	/*margin-left: 5%;
 	width: 5%; 
 	height: 25px; 
-	line-height:25px;/*permet le centrage vertical*/ 
+	line-height:25px;/*permet le centrage vertical*
 	padding:4px;
-	color: #FF0000; 
+	color: #FF0000; */
 }
 
 .button:hover{ 
@@ -68,6 +64,17 @@ article[class="function"]{
 .button:active{ 
 	color: #000; 
 }
+
+
+
+
+
+
+
+
+
+
+
 
 
 /******* CHECKBOX *********/
