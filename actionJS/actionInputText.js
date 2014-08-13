@@ -1,3 +1,12 @@
+
+document.addEventListener('keydown', function(event) {
+    if(event.keyCode == 13) {
+    	var focusedElement = document.activeElement;
+        alert("element who was focused : "+focusedElement.innerHTML);
+    }
+});
+
+
 function inputTextBlur(id,value){
 	var inputName = document.getElementById(id);
 	if(inputName.value == ""){
