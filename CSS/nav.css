@@ -16,7 +16,7 @@ nav{
 	overflow-y:none; */  	
 	white-space: nowrap; 
     	margin-left: 0;
-    	padding:0px;
+    	padding:0;
 	/*background:purple;*/   
 }
 
@@ -27,8 +27,8 @@ nav ul {
     	/*display: inline; /* IE7 */
     	/*zoom:1;  /* IE7 */ 
     	list-style: none;
-   	width: 100%;
-    	padding:0px;
+   	width: 100vw;
+    	padding:0;
 }
 
 /******************** NAV CLASSIC **********************/
@@ -36,13 +36,14 @@ nav li {
 	display: inline-block;
 	/**display: inline;
 	/*zoom:1;*/
-	width: 12.5%;
-	margin-left:1%;
+	width: 12.2vw;
+	margin-left:1vw;
 	height:60px;
 	line-height:60px;
 	text-align:center;
 	font-size: 2vw;
 	font-weight:bold;
+	/*min-width: 100px;*/
 	
    
    
@@ -228,7 +229,7 @@ nav ul li:not([class="current"]):hover {
      
      
 /***************************** MODE RED ***************************/    
-	background:white;
+	background:#ffffff;
 	
 	/** texte shadow red **/    
 	color:#FF8080;

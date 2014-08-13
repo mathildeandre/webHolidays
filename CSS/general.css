@@ -204,5 +204,102 @@ box-shadow: 1px 1px 10px black inset, 0 1px 0 rgba( 255, 255, 255, 0.4);
 /************************** fin BUTTON **************************/
 
 
+.red{
+	background-color:#FF0000;
+}
+.button3D{
+	
+	width: 12vw;
+	height:40px;
+	line-height:40px;
+	text-align:center;
+	font-size: 1.5vw;
+	font-weight:bold;
+	
+	
+	color:white;
+	text-shadow: 0   0.8px 0 #eee,
+              0   1.5px 0 #e5e5e5,
+             -1px 2.3px 0 #C8C8C8,
+             -1px 3px 0 #C1C1C1,
+             -1.2px 3.8px 0 #B9B9B9,
+             -1.8px 4.5px 0 #B2B2B2,
+             -2px 5.3px 2px rgba(0,0,0, 0.6),
+             -2px 5.3px 8px rgba(0,0,0, 0.2),
+             -2px 5.3px 45px rgba(0,0,0, 0.4);   
+             
+          
+	border-radius: 4%; 
+	border:4px solid #ffffff;
+	
+	/*** mode BORDER shadow plus petite ***/
+	box-shadow:-0.2px   0.8px 0 #eee,
+              -0.5px   1.5px 0 #e5e5e5,
+             -1px 2.3px 0 #C8C8C8,
+             -1px 3px 0 #C1C1C1,
+             -2px 3.8px 0 #B9B9B9,
+             -2.1px 4.5px 0 #B2B2B2,
+             -2.2px 5.3px 2px rgba(0,0,0, 0.4),
+             -2.2px 5.3px 8px rgba(0,0,0, 0.2),
+             -2.2px 5.3px 20px rgba(0,0,0, 0.4),
+			/* interieur */
+              -0.2px   0.8px 0 #eee inset,
+              -0.5px   1.5px 0 #e5e5e5 inset,
+             -1px 2.3px 0 #C8C8C8 inset,
+             -1px 3px 0 #C1C1C1 inset,
+             -2px 3.8px 0 #B9B9B9 inset,
+             -2.1px 4.5px 0 #B2B2B2 inset,
+             -2.2px 5.3px 2px rgba(0,0,0, 0.4) inset,
+             -2.2px 5.3px 8px rgba(0,0,0, 0.2) inset,
+             -2.2px 5.3px 20px rgba(0,0,0, 0.4) inset;
+}
+.button3D-red{
+	width: 12vw;
 
+	height:40px;
+	line-height:40px;
+	text-align:center;
+	font-size: 1.5vw;
+	font-weight:bold;
+	***************************** MODE RED ***************************/    
+	background:white;
+	
+	/** texte shadow red **/    
+	color:#FF8080;
+	text-shadow: 0   0.8px 0 #FF4D4D,
+              0   1.5px 0 #FF1919,
+             -1px 2.3px 0 #E60000,
+             -1px 3px 0 #B20000,
+             -1.2px 3.8px 0 #800000,
+             -1.8px 4.5px 0 #660000,
+             -2px 5.3px 2px rgba(50,0,0, 0.6),
+             -2px 5.3px 8px rgba(50,0,0, 0.2),
+             -2px 5.3px 45px rgba(50,0,0, 0.4); 
+
+	border-radius: 4%; 
+	border:4px solid #FF8080;
+	
+	/*** mode BORDER shadow plus petite ***/
+	box-shadow:-0.2px   0.8px 0 #FF4D4D,
+              -0.5px   1.5px 0 #FF1919,
+             -1px 2.3px 0 #E60000,
+             -1px 3px 0 #B20000,
+             -2px 3.8px 0 #800000,
+             -2.1px 4.5px 0 #660000,
+             -2.2px 5.3px 2px rgba(50,0,0, 0.4),
+             -2.2px 5.3px 8px rgba(50,0,0, 0.2),
+             -2.2px 5.3px 20px rgba(50,0,0, 0.4),
+			/* interieur */
+              -0.2px   0.8px 0 #FF4D4D inset,
+              -0.5px   1.5px 0 #FF1919 inset,
+             -1px 2.3px 0 #E60000 inset,
+             -1px 3px 0 #B20000 inset,
+             -2px 3.8px 0 #800000 inset,
+             -2.1px 4.5px 0 #660000 inset,
+             -2.2px 5.3px 2px rgba(50,0,0, 0.4) inset,
+             -2.2px 5.3px 8px rgba(50,0,0, 0.2) inset,
+             -2.2px 5.3px 20px rgba(50,0,0, 0.4) inset;
+             
+/***************************** fin RED ***********************************/
+}
 
