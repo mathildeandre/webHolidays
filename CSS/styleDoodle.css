@@ -42,7 +42,7 @@ article[class="function"]{
 }
 
 #addPers{
-	width: 10vw;
+	width: 15vw;
 	background:blue;
 }
 
@@ -50,6 +50,7 @@ article[class="function"]{
 	border:4px solid;
 	border-color: red ;
 	font-size: 1.2em;
+	width: 1vw;
 	/*margin-left: 5%;
 	width: 5%; 
 	height: 25px; 

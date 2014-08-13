@@ -64,7 +64,7 @@
 	<!--<div>
 	<input type="button" name="addRow" value="add new row" onclick="addRow()">
 	</div>-->
-	<div class="button" onclick="addRow()"> Add new row </div>
+	<div class="button3D" onclick="addRow()"> Add new row </div>
 
 
 		</br></br>
@@ -84,7 +84,7 @@
 
 
 	<div class="right" >
-		<input  id="theCheckBoxMouseOver" type="checkbox" width="200px" height="200px">
+		<input  id="theCheckBoxMouseOver" type="checkbox" width="100%" height="200px">
 		<label for="theCheckBoxMouseOver" > MouseOver actif ?</label>
 	</div>
 	<div id="buttonsBottom">
