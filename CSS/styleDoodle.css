@@ -164,3 +164,24 @@ opacity: 1;
 
 
 
+
+
+#tab{
+	border : none;
+       /*background:#FF0000;*/
+       }
+thead th{
+	border : none;
+	 border-bottom: 5px solid green;
+}
+
+#tab th{
+	 width: 50%;
+	 }
+#tab td{
+	 border : none;
+	 border-bottom: 5px solid red;
+}
+th{
+	}
+
