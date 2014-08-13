@@ -31,79 +31,103 @@ nav ul {
     	padding:0px;
 }
 
+/******************** NAV CLASSIC **********************/
 nav li {
-    	display: inline-block;
-    	/**display: inline;
-    	/*zoom:1;*/
-    	width: 12.5%;
+	display: inline-block;
+	/**display: inline;
+	/*zoom:1;*/
+	width: 12.5%;
 	margin-left:1%;
-    	height:50px;
-    	line-height:50px;
-    	border-radius: 5%; 
- 	border:2px solid #ffffff;
+	height:60px;
+	line-height:60px;
+	text-align:center;
+	font-size: 2vw;
+	font-weight:bold;
+	
+   
+   
+   
 /*
- 	border-top:2px solid;
- 	border-right:2px solid;
-*/
-  	/*color: white;*/
-  	
-  	 border:2px solid #333333;
-    color: #ffffff;
-    text-shadow:
-    -1.5px -1.5px 0 #000,
-    1.5px -1.5px 0 #000,
-    -1.5px 1.5px 0 #000,
-    1.5px 1.5px 0 #000; 
-    
-    /*
-    
- 	border:2px solid #ffffff;
-  color: #333333;
-    text-shadow:
+	border:2px solid #ffffff;
+	color: #333333;
+	text-shadow:
     -1px -1px 0 #fff,
     1px -1px 0 #fff,
     -1px 1px 0 #fff,
     1px 1px 0 #fff; 
 */
- 	text-align:center;
- 	/*font-size:large;*/
-	font-size: 2vw;
-	font-weight:bold;
 
-	opacity: 1; 
-	/* mode classic...*/
- 	border:3px solid #000000;
-   color: #ffffff;
-    text-shadow:
-    -2px -2px 0 #000,
-    2px -2px 0 #000,
-    -2px 2px 0 #000,
-    2px 2px 0 #000; 
-    
-
-
-	/*background-image: url("../images/blue.jpeg");*/
- 	/*limegreen;/*#6495ED;*/
-	
-    	background-size: 100% 100%;
-    	
-    	  
- 	border:2px solid #ffffff;
-	color: white;
-
-    /*border:2px solid;
-    border-color:#333333 ;/*green : rgb(0,50,0) */
-
-   /* mode classic...*/
-   color: #ffffff;
-    text-shadow:
+	/*** mode classic color white shadow black 
+	color: #ffffff;
+	text-shadow:
     -1.5px -1.5px 0 #000,
     1.5px -1.5px 0 #000,
     -1.5px 1.5px 0 #000,
-    1.5px 1.5px 0 #000; 
+    1.5px 1.5px 0 #000; */
     
-transform: rotate(-10deg) scale(1.3,1.3);
+    /*** mode 3D color White ***/
+	color:white;
+	text-shadow: 0   0.8px 0 #eee,
+              0   1.5px 0 #e5e5e5,
+             -1px 2.3px 0 #C8C8C8,
+             -1px 3px 0 #C1C1C1,
+             -1.2px 3.8px 0 #B9B9B9,
+             -1.8px 4.5px 0 #B2B2B2,
+             -2px 5.3px 2px rgba(0,0,0, 0.6),
+             -2px 5.3px 8px rgba(0,0,0, 0.2),
+             -2px 5.3px 45px rgba(0,0,0, 0.4);   
+             
+          
+	border-radius: 4%; 
+	border:4px solid #ffffff;
+	
+	/*** mode BORDER shadow plus petite ***/
+	box-shadow:-0.2px   0.8px 0 #eee,
+              -0.5px   1.5px 0 #e5e5e5,
+             -1px 2.3px 0 #C8C8C8,
+             -1px 3px 0 #C1C1C1,
+             -2px 3.8px 0 #B9B9B9,
+             -2.1px 4.5px 0 #B2B2B2,
+             -2.2px 5.3px 2px rgba(0,0,0, 0.4),
+             -2.2px 5.3px 8px rgba(0,0,0, 0.2),
+             -2.2px 5.3px 20px rgba(0,0,0, 0.4),
+			/* interieur */
+              -0.2px   0.8px 0 #eee inset,
+              -0.5px   1.5px 0 #e5e5e5 inset,
+             -1px 2.3px 0 #C8C8C8 inset,
+             -1px 3px 0 #C1C1C1 inset,
+             -2px 3.8px 0 #B9B9B9 inset,
+             -2.1px 4.5px 0 #B2B2B2 inset,
+             -2.2px 5.3px 2px rgba(0,0,0, 0.4) inset,
+             -2.2px 5.3px 8px rgba(0,0,0, 0.2) inset,
+             -2.2px 5.3px 20px rgba(0,0,0, 0.4) inset;
+             
+	/*** mode BORDER shadow grosse ***
+	box-shadow: 0 1px 0 #eee,
+             0 2px 0 #e5e5e5,
+             -1px 3px 0 #C8C8C8,
+             -1px 4px 0 #C1C1C1,
+             -2px 5px 0 #B9B9B9,
+             -2px 6px 0 #B2B2B2,
+             -2px 7px 2px rgba(0,0,0, 0.6),
+             -2px 7px 8px rgba(0,0,0, 0.2),
+             -2px 7px 45px rgba(0,0,0, 0.4),
+             -2px 7px 45px rgba(0,0,0, 0.4),
+             0 1px 0 #eee inset,
+             0 2px 0 #e5e5e5 inset,
+             -1px 3px 0 #C8C8C8 inset,
+             -1px 4px 0 #C1C1C1 inset,
+             -2px 5px 0 #B9B9B9 inset,
+             -2px 6px 0 #B2B2B2 inset,
+             -2px 7px 2px rgba(0,0,0, 0.6) inset,
+             -2px 7px 8px rgba(0,0,0, 0.2) inset,
+             -2px 7px 45px rgba(0,0,0, 0.4) inset;*/
+
 }
+/******************** fin NAV CLASSIC **********************/
+
+
+
 nav li:nth-child(1) {
 background-color:#0033CC; /*blue*/
  	/*border-color:#333333;  /* dark #000066 ;*/
@@ -160,22 +184,28 @@ animation: clignote 2s alternate infinite; /* all */
     -1px 1px 0 #000,
     1px 1px 0 #000; 
 }
+
+
 @keyframes penche {
 from {transform: rotate(-10deg) scale(1.3,1.3);}
 to {transform: rotate(-7deg) scale(1.3,1.3);}
 }
-nav ul li:not([class="current"]):hover {
-animation: penche 0.2s alternate; /* firefox*/
-transform: rotate(-10deg) scale(1.3,1.3);
-/*line-height:85px;*/
+@-webkit-keyframes penche {
+from {transform: rotate(-10deg) scale(1.3,1.3);}
+to {transform: rotate(-7deg) scale(1.3,1.3);}
+}
 
-    
-    font-weight: bold;
-	border:5px solid white;
+
+nav ul li:not([class="current"]):hover {
+	animation: penche 0.2s alternate; /* firefox*/
+	-webkit-animation: penche 0.2s alternate; /* firefox*/
+	transform: rotate(-10deg) scale(1.3,1.3);
 	
+	border:5px solid white;
 	border-radius:5px;
 	
-box-shadow: 0 1px 0 #eee,
+	/*** mode BORDER shadow ***/
+	box-shadow: 0 1px 0 #eee,
              0 2px 0 #e5e5e5,
              -1px 3px 0 #C8C8C8,
              -1px 4px 0 #C1C1C1,
@@ -194,19 +224,51 @@ box-shadow: 0 1px 0 #eee,
              -2px 7px 2px rgba(0,0,0, 0.6) inset,
              -2px 7px 8px rgba(0,0,0, 0.2) inset,
              -2px 7px 45px rgba(0,0,0, 0.4) inset;
-/*-10px 10px 5px black inset,
--10px 10px 5px black;*/
+     
+     
+     
+/***************************** MODE RED ***************************/    
+	background:white;
+	
+	/** texte shadow red **/    
+	color:#FF8080;
+	text-shadow: 0   0.8px 0 #FF4D4D,
+              0   1.5px 0 #FF1919,
+             -1px 2.3px 0 #E60000,
+             -1px 3px 0 #B20000,
+             -1.2px 3.8px 0 #800000,
+             -1.8px 4.5px 0 #660000,
+             -2px 5.3px 2px rgba(50,0,0, 0.6),
+             -2px 5.3px 8px rgba(50,0,0, 0.2),
+             -2px 5.3px 45px rgba(50,0,0, 0.4); 
 
-color:white;
-text-shadow: 0 1px 0 #eee,
-             0 2px 0 #e5e5e5,
-             -1px 3px 0 #C8C8C8,
-             -1px 4px 0 #C1C1C1,
-             -2px 5px 0 #B9B9B9,
-             -2px 6px 0 #B2B2B2,
-             -2px 7px 2px rgba(0,0,0, 0.6),
-             -2px 7px 8px rgba(0,0,0, 0.2),
-             -2px 7px 45px rgba(0,0,0, 0.4); 
+	border-radius: 4%; 
+	border:4px solid #FF8080;
+	
+	/*** mode BORDER shadow plus petite ***/
+	box-shadow:-0.2px   0.8px 0 #FF4D4D,
+              -0.5px   1.5px 0 #FF1919,
+             -1px 2.3px 0 #E60000,
+             -1px 3px 0 #B20000,
+             -2px 3.8px 0 #800000,
+             -2.1px 4.5px 0 #660000,
+             -2.2px 5.3px 2px rgba(50,0,0, 0.4),
+             -2.2px 5.3px 8px rgba(50,0,0, 0.2),
+             -2.2px 5.3px 20px rgba(50,0,0, 0.4),
+			/* interieur */
+              -0.2px   0.8px 0 #FF4D4D inset,
+              -0.5px   1.5px 0 #FF1919 inset,
+             -1px 2.3px 0 #E60000 inset,
+             -1px 3px 0 #B20000 inset,
+             -2px 3.8px 0 #800000 inset,
+             -2.1px 4.5px 0 #660000 inset,
+             -2.2px 5.3px 2px rgba(50,0,0, 0.4) inset,
+             -2.2px 5.3px 8px rgba(50,0,0, 0.2) inset,
+             -2.2px 5.3px 20px rgba(50,0,0, 0.4) inset;
+             
+/***************************** fin RED ***********************************/
+
+
 
 /*******  Pour agrandir l'image avec un fond ecran different *****
 
