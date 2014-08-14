@@ -85,7 +85,19 @@ section{
 }
 */
 h1{
-text-shadow: 5px 5px 5px #0033CC;  /*decalage-a-droite, decalage-bas, flootage, color*/
+/*text-shadow: 5px 5px 5px #0033CC;  /*decalage-a-droite, decalage-bas, flootage, color*/
+
+	color:#4747D1;
+	text-shadow: 0   0.8px 0 #2E2EB8,
+              0   1.5px 0 #2929A3,
+             -1px 2.3px 0 #24248F,
+             -1px 3px 0 #1F1F7A,
+             -2px 3.8px 0 #1A1A66,
+             -2.1px 4.5px 0 #141452,
+             -2.2px 5.3px 2px rgba(10,10,41, 0.4),
+             -2.2px 5.3px 8px rgba(10,10,41, 0.2),
+             -2.2px 5.3px 20px rgba(10,10,41, 0.4); 
+             
 
 }
 section article h2{

@@ -15,15 +15,18 @@ body{
 	margin: auto; /*centrer la colonne*/
 }
 
+
+/**** TEMPORAIRE ***************************************************************************************
+
 header{
 	margin: auto;
-	padding:1%;/*Marge verticale*/
+	padding:1%;/*Marge verticale*
 	width:80%;
-	/*border-bottom: solid;*/
+	/*border-bottom: solid;*
 	height:100px;
-	line-height:100px; /*vertical-align:middle; ne fonctionne pas*/
-	text-align:center;/*texte centré*/
-	font-size: 40px;
+	line-height:100px; /*vertical-align:middle; ne fonctionne pas*
+	text-align:center;/*texte centré*
+	font-size: 2.5vw;
 	font-weight: bold;
 	
 	color: white;
@@ -40,8 +43,11 @@ header{
     -2px -2px 0 #000,
     2px -2px 0 #000,
     -2px 2px 0 #000,
-    2px 2px 0 #000; */
+    2px 2px 0 #000; *
 }
+****************************************************************************************/
+
+
 
 footer{
 	margin: auto;
@@ -83,7 +89,7 @@ section{
 
 h1{
 	text-align:center;/*texte centré*/
-	font-size: x-large;
+	font-size: 2.5vw;
 	font-weight: bold;
 	text-shadow: 5px 5px 5px #000000;  /*decalage-a-droite, decalage-bas, flootage, color*/
 
