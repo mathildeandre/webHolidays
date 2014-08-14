@@ -50,10 +50,18 @@ section{
 
 
 h1{
-    text-align:center;/*texte centré*/
-    font-size: x-large;
-    font-weight: bold;
-text-shadow: 5px 5px 5px #FF6600;  /*decalage-a-droite, decalage-bas, flootage, color*/
+   /* text-shadow: 5px 5px 5px #FF6600;  /*decalage-a-droite, decalage-bas, flootage, color*/
+
+	color:#FF6600;
+	text-shadow: 0   0.8px 0 #E65C00,
+              0   1.5px 0 #CC5200,
+             -1px 2.3px 0 #CC5200,
+             -1px 3px 0 #993D00,
+             -2px 3.8px 0 #803300,
+             -2.1px 4.5px 0 #662900,
+             -2.2px 5.3px 2px rgba(51,20,0, 0.4),
+             -2.2px 5.3px 8px rgba(51,20,0, 0.2),
+             -2.2px 5.3px 20px rgba(51,20,0, 0.4); 
 
 }
 

@@ -30,3 +30,14 @@ javascript ouverture popup, sinon en css on propose un fond grisé avec pop cour
 recherche :jquerry popup fond grisé
 =>http://dev.howtommy.net/?d=2011/09/16/04/00/00-comment-faire-apparaitre-un-beau-popup-html-sur-son-site-avec-jquery
 
+
+
+
+
+
+
+/***************************************** MODIF mode furtif *************************************/
+-general.css : header
+- *.html : nav2.css au lieu de nav.css
+ 			  navChanging.js
+
