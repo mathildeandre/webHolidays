@@ -9,8 +9,8 @@
 	<link rel="stylesheet" type="text/css" href="../CSS/general.css" />
 	<link rel="stylesheet" type="text/css" href="../CSS/nav2.css" />
 	<link rel="stylesheet" type="text/css" href="../CSS/styleDoodle.css"/> <!--mise en forme-->
-	<!--<link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.12/themes/smoothness/jquery-ui.css" />
--->
+	<link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.12/themes/smoothness/jquery-ui.css" />
+
 
 	<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
   	<script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
@@ -21,20 +21,20 @@
 
 <body id="imgHeaderNav" >
 <header> <!--<img src="images/sun.png" alt="Tree" height="100" /> -->
- 	Organisation de vos vacances
+ 	Organisation of Holidays
 	<!--<img src="images/tree3.png" alt="Tree" height="100" />-->
 </header>
 
 
 <nav>
 	<ul>
-	 <li id="liAccueil" onmouseover="changeCursor('liAccueil')" onclick="location.href='../accueil/accueil.html'">Accueil</li>
-	 <li id="liGroupe" onmouseover="changeCursor('liGroupe')" onclick="location.href='../groupe/groupe.html'" >Groupe</li>
+	 <li id="liAccueil" onmouseover="changeCursor('liAccueil')" onclick="location.href='../accueil/accueil.html'">Homepage</li>
+	 <li id="liGroupe" onmouseover="changeCursor('liGroupe')" onclick="location.href='../groupe/groupe.html'" >Group</li>
 	 <li  class="current" >Doodle</li>
-	 <li id="liRepas" onmouseover="changeCursor('liRepas')" onclick="location.href='../repas/repas.html'">Repas</li>
-	 <li id="liCalc" onmouseover="changeCursor('liCalc')" onclick="location.href='../calculation/calculation.html?tab=emiel,matthijs,fabian,kiki'">Dépenses</li>
-	 <li id="liAffaire" onmouseover="changeCursor('liAffaire')" onclick="location.href='../affaire/affaire.html'">Affaires</li>
-	 <li id="liLoisirs" onmouseover="changeCursor('liLoisirs')" onclick="location.href='../loisirs/loisirs.html'">Loisirs</li>
+	 <li id="liRepas" onmouseover="changeCursor('liRepas')" onclick="location.href='../repas/repas.html'">Meals</li>
+	 <li id="liCalc" onmouseover="changeCursor('liCalc')" onclick="location.href='../calculation/calculation.html?tab=emiel,matthijs,fabian,kiki'">Expenses</li>
+	 <li id="liAffaire" onmouseover="changeCursor('liAffaire')" onclick="location.href='../affaire/affaire.html'">Things</li>
+	 <li id="liLoisirs" onmouseover="changeCursor('liLoisirs')" onclick="location.href='../loisirs/loisirs.html'">Hobbies</li>
 	</ul>
 </nav>
 
@@ -47,11 +47,11 @@
 			<div class="inline" id="champsDates">
 					<h4> Add a column : </h4> 
 					<input id="date" type="radio" name="text" value="Du au">  
-				 	Du : <input type="text" id="debutC" class="datepick" onfocus="checkRadio('date')">  
-				 	au : <input type="text" id="finC" class="datepick" onfocus="checkRadio('date')">
+				 	From : <input type="text" id="debutC" class="datepick" onfocus="checkRadio('date')">  
+				 	to : <input type="text" id="finC" class="datepick" onfocus="checkRadio('date')">
 				 	</br> 
 					<input id="text" type="radio" name="text" value="text"> 
-					Titre colonne : <input class="textGrey" type="texte" id="textCol" value="titre colonne" onfocus="checkRadio('text'); inputTextFocus('textCol', 'green')" onblur="inputTextBlur('textCol','titre colonne')"> 
+					Column title : <input class="textGrey" type="texte" id="textCol" value="column title" onfocus="checkRadio('text'); inputTextFocus('textCol', 'green')" onblur="inputTextBlur('textCol','column title')"> 
 			</div>
 			
 			<div class="inline" id="butAddCol">
@@ -83,10 +83,10 @@
 	
 	<article class="table">
 	<TABLE id="tab" BORDER="1"> 
-		<CAPTION> Tableau doodle </CAPTION> 
+		<CAPTION> Doodle table </CAPTION> 
 		<THEAD>
 			<TR> 
-			 <TH> Nom personnes </TH> 
+			 <TH> Names </TH> 
 		</THEAD>
 		
 		<TBODY>
@@ -106,8 +106,9 @@
 	    background: green;
 	        border: 5px solid lime;
 		border-radius:20px;
+		width: 50vw;
 		    color: black;
- 	font-size:15px;
+ 	font-size:100%;
 
   margin-left: 5px;
 }

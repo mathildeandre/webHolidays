@@ -3,7 +3,7 @@
 <html onload="changeBackground()">
 
 <head>
-    <title>J'organise mes Vacances !!</title>
+    <title>Holidays !!</title>
     <meta charset='utf-8' />
     <link rel="shortcut icon" href="images/tree3.png" />
 
@@ -15,7 +15,7 @@
 
 <body id="imgHeaderNav" >
 <header> <!--<img src="images/sun.png" alt="Tree" height="100" /> -->
- 	Organisation de vos vacances
+ 	Organisation of Holidays
 	<!--<img src="images/tree3.png" alt="Tree" height="100" />-->
 </header>
 
@@ -23,23 +23,23 @@
 <nav>
 	<ul >
 	<ul>
-	 <li id="liAccueil" onmouseover="changeCursor('liAccueil')" onclick="location.href='../accueil/accueil.html'">Accueil</li>
-	 <li id="liGroupe" onmouseover="changeCursor('liGroupe')" onclick="location.href='../groupe/groupe.html'" >Groupe</li>
+	 <li id="liAccueil" onmouseover="changeCursor('liAccueil')" onclick="location.href='../accueil/accueil.html'">Homepage</li>
+	 <li id="liGroupe" onmouseover="changeCursor('liGroupe')" onclick="location.href='../groupe/groupe.html'" >Group</li>
 	 <li id="liDoodle" onmouseover="changeCursor('liDoodle')" onclick="location.href='../doodle/doodle.html'" >Doodle</li>
-	 <li id="liRepas" onmouseover="changeCursor('liRepas')" onclick="location.href='../repas/repas.html'">Repas</li>
-	 <li id="liCalc" onmouseover="changeCursor('liCalc')" onclick="location.href='../calculation/calculation.html?tab=emiel,matthijs,fabian,kiki'">Dépenses</li>
-	 <li class="current" >Affaires</li>
-	 <li id="liLoisirs" onmouseover="changeCursor('liLoisirs')" onclick="location.href='../loisirs/loisirs.html'">Loisirs</li>
+	 <li id="liRepas" onmouseover="changeCursor('liRepas')" onclick="location.href='../repas/repas.html'">Meals</li>
+	 <li id="liCalc" onmouseover="changeCursor('liCalc')" onclick="location.href='../calculation/calculation.html?tab=emiel,matthijs,fabian,kiki'">Expenses</li>
+	 <li class="current" >Things</li>
+	 <li id="liLoisirs" onmouseover="changeCursor('liLoisirs')" onclick="location.href='../loisirs/loisirs.html'">Hobbies</li>
 	</ul>
 </nav>
 
 
 
  <section >
-   <h1>Liste des affaires</h1>
+   <h1>List of stuffs</h1>
 
   <article>
-   <h2>Ma liste</h2>
+   <h2>My list</h2>
 <div class="composition">
 
 	<div id="listPerson">
@@ -49,7 +49,7 @@
 
    <h2>Ajout</h2>
 <div class="ajout">
-		<p>Ajouter des affaires pour vos vacances :</p>
+		<p>Add stuff to bring for your trip :</p>
 		<div class="line">
 		<input class="textGrey inline" id="name" type="text" name="name" value="add stuff" onfocus="inputTextFocus('name','Purple')" onblur="inputTextBlur('name','add stuff')" >
 		<div id="but1" class="button3D b3purple inline" onmouseover="changeCursor('but1')" onclick="addPerson()"> Add stuff </div>
