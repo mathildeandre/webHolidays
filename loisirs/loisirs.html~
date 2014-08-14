@@ -8,7 +8,7 @@
 
     <!-- il est important de mettre general au dessus du style propre a la classe comme ca general est moins prioritaire-->
     <link rel="stylesheet" type="text/css" href="../CSS/general.css" />
-    <link rel="stylesheet" type="text/css" href="../CSS/nav.css" />
+    <link rel="stylesheet" type="text/css" href="../CSS/nav2.css" />
     <link rel="stylesheet" type="text/css" href="../CSS/active.css" />
 </head>
 <!-- Mise en page classique avec le header, le corps, et le footer ! Les balises structurantes de
@@ -76,7 +76,9 @@ HTML5 sont employées. -->
 
 <footer>Copyright fs - Tous droits réservés<br/> Nous contacter : fabiensauce@orange.fr</footer>
 
+<!--TEMPORAIRE
 <script src="../actionJS/navChanging.js" type="text/javascript"></script>
+-->
 <SCRIPT>
     function popup(page) {
       window.open (page, 'hello', config='height=100, width=400, toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, directories=no, status=no');
