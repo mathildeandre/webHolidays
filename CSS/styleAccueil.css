@@ -70,20 +70,9 @@ section{
 	background-size:20%;
 	background-position: top right;*/
 }
-/*
-#h2Groupe{
-	background: url("../images/groupe.png");
-	background-size:20%;
-	background-repeat: no-repeat;
 
-<img src="../images/doodle.jpg" width="10%">
-<img src="../images/chefcuisine.jpg" width="10%">
-<img src="../images/tirelire.jpg" width="6%">
-<img src="../images/loisirs.jpg" width="11%">
-<img src="../images/loisirs.jpg" width="11%">
 
-}
-*/
+
 h1{
 /*text-shadow: 5px 5px 5px #0033CC;  /*decalage-a-droite, decalage-bas, flootage, color*/
 
@@ -101,48 +90,95 @@ h1{
 
 }
 section article h2{
-    	width: 50%;
-    margin-left: 5%;/*texte centré*/
-	padding: 1%;
-	height:20px;
-	border:2px solid black;
-    	border-radius: 5%; 
-
+	width: 50vw;
+	margin-left: 1vw;/*texte centré*/
+	padding: 1vw;
+	padding-left:8vw;
+	height:60px;
+	line-height:120px;
+	/*border:2px solid black;
+	border-radius: 5%; 
     /*font-weight: bold;
  	/*text-align:center;*/
+ 	color:#4747D1;
+	text-shadow: 0   0.8px 0 #2E2EB8,
+              0   1.5px 0 #2929A3,
+             -1px 2.3px 0 #24248F,
+             -1px 3px 0 #1F1F7A,
+             -2px 3.8px 0 #1A1A66,
+             -2.1px 4.5px 0 #141452,
+             -2.2px 5.3px 2px rgba(10,10,41, 0.4),
+             -2.2px 5.3px 8px rgba(10,10,41, 0.2),
+             -2.2px 5.3px 20px rgba(10,10,41, 0.4); 
 }
+#h2Groupe{
+	background: url("../images/groupe.png");
+	background-size:7vw;
+	background-repeat: no-repeat;
+	/*
 
-
+<img src="../images/doodle.jpg" width="10%">
+<img src="../images/chefcuisine.jpg" width="10%">
+<img src="../images/tirelire.jpg" width="6%">
+<img src="../images/loisirs.jpg" width="11%">
+<img src="../images/loisirs.jpg" width="11%">
+*/
+}
+#h2Doodle{
+	background: url("../images/doodle.jpg");
+	background-size:6vw;
+	background-repeat: no-repeat;
+}
+#h2Repas{
+	background: url("../images/chefcuisine.jpg");
+	background-size:6vw;
+	background-repeat: no-repeat;
+}
+#h2Calc{
+	background: url("../images/tirelire.jpg");
+	background-size:5vw;
+	background-repeat: no-repeat;
+}
+#h2Affaire{
+	background: url("../images/doodle.jpg");
+	background-size:6vw;
+	background-repeat: no-repeat;
+}
+#h2Loisirs{
+	background: url("../images/loisirs.jpg");
+	background-size:7vw;
+	background-repeat: no-repeat;
+}
 
 
 @-webkit-keyframes jumping {
 /*from {line-height:120px;}
 to { line-height:0px;}*/
- 0% {line-height:120px; text-shadow: 5px 10px 4px #0000FF;}
- 12.5% {line-height:60px; text-shadow: 5px 10px 4px #0000FF;}
- 25% {line-height:20px; text-shadow: 5px 10px 4px #0000FF;}
- 32.5% {line-height:10px;text-shadow: 5px 10px 4px #0000FF;}
- 40% {line-height:0px;text-shadow: 5px 10px 4px #0000FF;}
- 50%{line-height:0px;text-shadow: 5px 10px 4px #0000FF;}
- 60% {line-height:0px;text-shadow: 5px 10px 4px #0000FF;}
- 67.5% {line-height:10px;text-shadow: 5px 10px 4px #0000FF;}
- 75% {line-height:20px;text-shadow: 5px 10px 4px #0000FF;}
- 87.5% {line-height:60px;text-shadow: 5px 10px 4px #0000FF;}
- 100% {line-height:120px;text-shadow: 5px 10px 4px #0000FF;}
+ 0% 		{	line-height:120px; 	text-shadow: 5px 0px 1px #0000FF;}
+ 12.5% 	{	line-height:90px; 	text-shadow: 5px 15px 4px #0000FF;}
+ 25% 		{	line-height:70px; 	text-shadow: 5px 25px 6px #0000FF;}
+ 32.5% 	{	line-height:65px;		text-shadow: 5px 27px 9px #0000FF;}
+ 40% 		{	line-height:60px;		text-shadow: 5px 30px 12px #0000FF;}
+ 50%		{	line-height:60px;		text-shadow: 5px 30px 12px #0000FF;}
+ 60% 		{	line-height:60px;		text-shadow: 5px 30px 12px #0000FF;}
+ 67.5% 	{	line-height:65px;		text-shadow: 5px 27px 9px #0000FF;}
+ 75% 		{	line-height:70px;		text-shadow: 5px 25px 6px #0000FF;}
+ 87.5% 	{	line-height:90px;		text-shadow: 5px 15px 4px #0000FF;}
+ 100% 	{	line-height:120px;	text-shadow: 5px 0px 1px #0000FF;}
 }
 
 @keyframes jumping {
- 0% {line-height:120px; }
- 12.5% {line-height:60px;}
- 25% {line-height:20px;}
- 32.5% {line-height:10px;}
- 40% {line-height:0px;}
- 50%{line-height:0px;}
- 60% {line-height:0px;}
- 67.5% {line-height:10px;}
- 75% {line-height:20px;}
- 87.5% {line-height:60px;}
- 100% {line-height:120px;}
+ 0% 		{	line-height:120px; 	text-shadow: 5px 0px 1px #0000FF;}
+ 12.5% 	{	line-height:90px; 	text-shadow: 5px 15px 4px #0000FF;}
+ 25% 		{	line-height:70px; 	text-shadow: 5px 25px 6px #0000FF;}
+ 32.5% 	{	line-height:65px;		text-shadow: 5px 27px 9px #0000FF;}
+ 40% 		{	line-height:60px;		text-shadow: 5px 30px 12px #0000FF;}
+ 50%		{	line-height:60px;		text-shadow: 5px 30px 12px #0000FF;}
+ 60% 		{	line-height:60px;		text-shadow: 5px 30px 12px #0000FF;}
+ 67.5% 	{	line-height:65px;		text-shadow: 5px 27px 9px #0000FF;}
+ 75% 		{	line-height:70px;		text-shadow: 5px 25px 6px #0000FF;}
+ 87.5% 	{	line-height:90px;		text-shadow: 5px 15px 4px #0000FF;}
+ 100% 	{	line-height:120px;	text-shadow: 5px 0px 1px #0000FF;}
 /*
  0% {line-height:120px; text-shadow: 5px 10px 4px #0000FF;}
  12.5% {line-height:60px; text-shadow: 5px 10px 4px #0000FF;}
@@ -159,6 +195,8 @@ to { line-height:0px;}*/
 
 section article h2:hover{
 
+-webkit-animation: jumping 1s; /* chrome safari*/
+animation: jumping 1s; /* autre*/
     /*position: absolute;
 /*-moz-animation: saute 1s alternate; /* firefox*/
 /*
@@ -172,8 +210,6 @@ border-radius:5px;
 
 
 
--webkit-animation: jumping 1s; /* chrome safari*/
-animation: jumping 1s; /* autre*/
 }
 /*
 
