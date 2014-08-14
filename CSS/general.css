@@ -71,8 +71,8 @@ section{
 	margin-top : 3vw; 
 	background : url("../images/peint-blanc.jpg");
 	background-size:20vw;
-	color:#000033;
 	padding: 2vw;
+	/*color:#000033;
 	/*background-attachment: fixed;*/
 	/*border:8px solid grey;/*bleu clair*/   /* blueviolet*/
 }
@@ -81,8 +81,12 @@ h1{
 	text-align:center;/*texte centré*/
 	font-size: 2.5vw;
 	font-weight: bold;
-	text-shadow: 5px 5px 5px #000000;  /*decalage-a-droite, decalage-bas, flootage, color*/
+	/*text-shadow: 5px 5px 5px #000000;  /*decalage-a-droite, decalage-bas, flootage, color*/
 }
+h2{
+	font-size: 1.8vw;
+}
+
 /*
 #navSmall{
 	position: fixed;
@@ -279,6 +283,10 @@ a:link  {
              -2.2px 5.3px 8px rgba(0,41,0, 0.2),
              -2.2px 5.3px 20px rgba(0,41,0, 0.4); 
 	
+	
+
+}
+.b3green:hover {
 	/*** mode BORDER shadow plus petite ***/
 	box-shadow:-0.2px   0.8px 0 #00B800,
               -0.5px   1.5px 0 #00A300,
@@ -299,7 +307,6 @@ a:link  {
              -2.2px 5.3px 2px rgba(0,41,0, 0.4) inset,
              -2.2px 5.3px 8px rgba(0,41,0, 0.2) inset,
              -2.2px 5.3px 20px rgba(0,41,0, 0.4) inset;
-
 }
 /**************** fin GREEN **************************/
 
