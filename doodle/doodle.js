@@ -25,14 +25,14 @@ for(var i=0; i<tabPerson.length; i++){
 
 function addPersonne(nameAdd){
 
-/*
-		var tr = document.getElementById('tab').tHead.children[0];
-   		var th = document.createElement('th');
+	/*
+	   var tr = document.getElementById('tab').tHead.children[0];
+	   var th = document.createElement('th');
 
 
-				th.innerHTML = "hhhh";
-				tr.appendChild(th);
-				*/
+	   th.innerHTML = "hhhh";
+	   tr.appendChild(th);
+	 */
 
 	var newRow = document.getElementById("tab").insertRow(-1);
 	var cell0 = newRow.insertCell(0);
@@ -84,25 +84,31 @@ function addColumn(){
 	var textRad = document.getElementById("text");
 	var arrayLines = document.getElementById("tab").rows;
 
-		
-		
-		
+
+
+
 
 	if(textRad.checked==false && dateRad.checked==false){
 		alert("Veulliez cochez un des choix");
 	}
-	
+
 	else{
-	
-		
+
+
 		var tr = document.getElementById('tab').tHead.children[0];
-   		var th = document.createElement('th');
-	
+		var th = document.createElement('th');
+
 		if(textRad.checked){
 			var text = document.getElementById("textCol").value;
 			if(text==""){
 				alert("veulliez entrez un titre de colonne");
 			}else{
+				var id;
+				for(i=1; i<theRowNumber; i++){
+					id = i +""+ theColumnNumber;
+					var cell = arrayLines[i].insertCell(theColumnNumber);
+					cell.innerHTML += '<div class="roundedTwo"> <input type="checkbox" value="None" id="'+id+'" name="check"> <label for="'+id+'"></label> </div> '; 
+				}
 				th.innerHTML = text;
 				tr.appendChild(th);
 			}
@@ -113,18 +119,20 @@ function addColumn(){
 			if(dateS=="" || dateE==""){
 				alert("Selectionnez une date de début et une date de fin");
 			}else{
-				th.innerHTML = 'Du '+dateS+' au ' +dateE;
-				tr.appendChild(th);
-			}
-		}
-		var id;
+				var id;
 				for(i=1; i<theRowNumber; i++){
 					id = i +""+ theColumnNumber;
 					var cell = arrayLines[i].insertCell(theColumnNumber);
 					cell.innerHTML += '<div class="roundedTwo"> <input type="checkbox" value="None" id="'+id+'" name="check"> <label for="'+id+'"></label> </div> '; 
 				}
-				theColumnNumber++;
+				th.innerHTML = 'Du '+dateS+' au ' +dateE;
+				tr.appendChild(th);
+
+			}
+		}
+
 	}
+	theColumnNumber++;
 }
 
 function checkRadio(id){
@@ -133,8 +141,8 @@ function checkRadio(id){
 		text.value="titre colonne";
 	}
 	else if(id=="text"){
-			document.getElementById("debutC").value = "";
-			document.getElementById("finC").value = "";
+		document.getElementById("debutC").value = "";
+		document.getElementById("finC").value = "";
 	}
 
 	var rad = document.getElementById(id);

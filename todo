@@ -41,3 +41,20 @@ recherche :jquerry popup fond grisé
 - *.html : nav2.css au lieu de nav.css
  			  navChanging.js
 
+*********************************************************
+Depense : 
+Gerer taille du tableau en fonction de la taille de la fenetre
+Faire un style sur checkbox
+
+********************************************************
+Doodle: 
+Modifier taille datepicker
+
+******************************************************
+Repas:
+Vérifier taille images sur plusieurs navigateurs : pb de taille ! 
+
+
+TOUT : 
+Vérifier que ke bon bouton de nav est current sur chaque service
+
