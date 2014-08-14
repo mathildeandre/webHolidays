@@ -10,7 +10,7 @@ section{
   padding-top: 3%;
 }
 
-h1{
+h1, h2{
 /*text-shadow: 5px 5px 5px #B82EE6;  /*decalage-a-droite, decalage-bas, flootage, color*/
 	color:#853385;
 	text-shadow:0   0.8px 0 #751975,

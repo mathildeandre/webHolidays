@@ -49,7 +49,7 @@ section{
 
 
 
-h1{
+h1, h2{
    /* text-shadow: 5px 5px 5px #FF6600;  /*decalage-a-droite, decalage-bas, flootage, color*/
 
 	color:#FF6600;
