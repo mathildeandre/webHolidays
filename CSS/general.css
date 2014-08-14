@@ -150,7 +150,15 @@ a:link  {
 */
 
 
-
+/*
+#buttonReset{
+	color:	#B2B2B2;
+	border-color:	#B2B2B2;
+}
+#buttonReset:active{ 
+color: #000; 
+}
+*/
 
 
 
@@ -182,6 +190,11 @@ a:link  {
 
 
 /******************** BLUE ***************************/  
+.b3blue:hover{
+	background-color:#4747D1;
+	border-color:#9999FF;
+	color:#9999FF;
+}
 .b3blue {  
 	/* transparent : rgba(0,0,0,0) */
 	background-color:#9999FF;
@@ -226,6 +239,11 @@ a:link  {
 
 
 /************************************** ORANGE **************************************/
+.b3orange:hover{
+	background-color:#FF6600;
+	border-color:#FFA366;
+	color:#FFA366;
+}
 .b3orange {  
 	background-color:	#FFA366;
 	border-color: #FF6600;
@@ -268,6 +286,11 @@ a:link  {
 
 
 /******************** GREEN ***************************/  
+.b3green:hover{
+	background-color:#00CC00;
+	border-color:#85E085;
+	color:#85E085;
+}
 .b3green {  
 	background-color:#85E085;
 	border-color: #00CC00;
@@ -283,10 +306,6 @@ a:link  {
              -2.2px 5.3px 8px rgba(0,41,0, 0.2),
              -2.2px 5.3px 20px rgba(0,41,0, 0.4); 
 	
-	
-
-}
-.b3green:hover {
 	/*** mode BORDER shadow plus petite ***/
 	box-shadow:-0.2px   0.8px 0 #00B800,
               -0.5px   1.5px 0 #00A300,
@@ -307,12 +326,18 @@ a:link  {
              -2.2px 5.3px 2px rgba(0,41,0, 0.4) inset,
              -2.2px 5.3px 8px rgba(0,41,0, 0.2) inset,
              -2.2px 5.3px 20px rgba(0,41,0, 0.4) inset;
+
 }
 /**************** fin GREEN **************************/
 
 /******************** YELLOW ***************************/  
+.b3yellow:hover{
+	background-color:#FFCC00;
+	border-color:#FFE066;
+	color:#FFE066;
+}
 .b3yellow {  
-	background-color:rgba(0,0,0,0);
+	background-color:	#FFE066;
 	border-color: #FFCC00;
 	
 	color:#FFCC00;
@@ -351,12 +376,17 @@ a:link  {
 /**************** fin YELLOW **************************/
 
 /***************************************** RED **************************************/
-.b3red{
-	background-color:#CC0000;
+.b3red:hover{
+	background-color:#FF1919;
 	border-color:#FF8080;
+	color:#FF8080;
+}
+.b3red{
+	background-color:#FF8080;
+	border-color:#FF1919;
 	
 	/** texte shadow red **/    
-	color:#FF8080;
+	color:#FF1919;
 	text-shadow: 0   0.8px 0 #FF4D4D,
               0   1.5px 0 #FF1919,
              -1px 2.3px 0 #E60000,
@@ -389,12 +419,18 @@ a:link  {
              -2.2px 5.3px 2px rgba(50,0,0, 0.4) inset,
              -2.2px 5.3px 8px rgba(50,0,0, 0.2) inset,
              -2.2px 5.3px 20px rgba(50,0,0, 0.4) inset;
+             
 }
 /************************************** fin RED **************************************/
 
 /******************** PURPLE ***************************/  
+.b3purple:hover{
+	background-color:#853385;
+	border-color:#B280B2;
+	color:#B280B2;
+}
 .b3purple {  
-	background-color:rgba(0,0,0,0);
+	background-color:#B280B2;
 	border-color: #853385;
 	
 	color:#853385;
@@ -434,8 +470,13 @@ a:link  {
 
 
 /******************** PINK ***************************/  
+.b3pink:hover{
+	background-color:#FF3399;
+	border-color:#FF85C2;
+	color:#FF85C2;
+}
 .b3pink {  
-	background-color:rgba(0,0,0,0);
+	background-color:#FF85C2;
 	border-color: #FF3399;
 	
 	color:#FF3399;
@@ -489,14 +530,6 @@ a:link  {
 
 
 /************************** BUTTON CLASSIC**************************/
-
-#buttonReset{
-	color:	#B2B2B2;
-	border-color:	#B2B2B2;
-}
-#buttonReset:active{ 
-color: #000; 
-}
 
 .button{
 font-family: Arial,sans-serif; 
