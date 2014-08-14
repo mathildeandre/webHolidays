@@ -25,6 +25,15 @@ for(var i=0; i<tabPerson.length; i++){
 
 function addPersonne(nameAdd){
 
+/*
+		var tr = document.getElementById('tab').tHead.children[0];
+   		var th = document.createElement('th');
+
+
+				th.innerHTML = "hhhh";
+				tr.appendChild(th);
+				*/
+
 	var newRow = document.getElementById("tab").insertRow(-1);
 	var cell0 = newRow.insertCell(0);
 	cell0.innerHTML += "<b>"+nameAdd+"</b>";
@@ -87,7 +96,7 @@ function addColumn(){
 	
 		
 		var tr = document.getElementById('tab').tHead.children[0];
-   	var th = document.createElement('th');
+   		var th = document.createElement('th');
 	
 		if(textRad.checked){
 			var text = document.getElementById("textCol").value;
@@ -110,12 +119,12 @@ function addColumn(){
 		}
 		var id;
 				for(i=1; i<theRowNumber; i++){
-					id = i + theColumnNumber;
+					id = i +""+ theColumnNumber;
 					var cell = arrayLines[i].insertCell(theColumnNumber);
 					cell.innerHTML += '<div class="roundedTwo"> <input type="checkbox" value="None" id="'+id+'" name="check"> <label for="'+id+'"></label> </div> '; 
 				}
+				theColumnNumber++;
 	}
-	theColumnNumber++;
 }
 
 function checkRadio(id){

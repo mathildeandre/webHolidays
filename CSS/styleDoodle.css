@@ -31,27 +31,60 @@ article[class="function"]{
 
 */
 
-#champsDates{
+#funcDate{
 	border:4px solid;
-	border-color: blue ;
+	border-color: green ;
+	border-radius: 30px;
 	width: 50vw;
+	max-width: 500px;
+	height: 150px;
+}
+
+h4{
+	margin-left: 5px;
 }
 
 #butAddCol{
-	border:4px solid;
-	border-color: green ;
+	margin-left: 5px;
 	width: 5vw;
-
+	max-width: 50px;
 }
 
 .datepick{
-	width: 10vw;
+	width: 13vw;
+	max-width: 130px;
+}
+
+#textCol{
+	width: 22vw;
+	max-width: 220px;
+
+}
+
+
+
+#funcPers{
+	margin-left: 3vw;
+	border:4px solid;
+	border-color: green ;
+	border-radius: 30px;
+	width: 25vw;
+	max-width: 250px;
+	height: 50px;
+	
+}
+
+#name{
+	margin-left: 10px;
+	width: 15vw;
+	max-width: 150px;
 }
 
 
 .button{
 	font-size: 1.2em;
 	width: 5vw;
+	max-width: 50px;
 	/*margin-left: 5%;
 	width: 5%; 
 	height: 25px; 
@@ -186,10 +219,10 @@ table, caption, thead, tfoot, tbody {
 
 table {
 	border: 3px solid green;
-	background:white;
+	background:none;
 	border:0;
 	border-collapse: separate;
-	border-spacing: 4px;
+	border-spacing: 0px;
 	color: #333333;
 	margin-top: 5px;
 	max-width: 900px;
@@ -211,16 +244,21 @@ th, td {
 	padding: 1px 6px;
 }
 
-th { /*texte des intitulés de colonnes et cellules*/
-	color: #31605D;
-}
 
 #tab th { /*background entete de colonne*/
+	border:3px solid green;
+	 border-right: 0.01px solid grey; 
+	 border-left: 0.01px solid grey; 
+
 	background: #D3EDEB;
+		color: #31605D;
 }
 
 #tab td {
-
+	
+	 border: 1px solid green; 
+	 border-right: 0.01px solid grey; 
+	 border-left: 0.01px solid grey; 
 	background-color: palegreen;
 }
 

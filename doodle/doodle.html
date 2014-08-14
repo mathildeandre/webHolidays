@@ -43,8 +43,9 @@
 	<h1> Doodle </h1>
 	<article class="function">
 	<div class="line">
+			<div class="line inline" id="funcDate">
 			<div class="inline" id="champsDates">
-					Add a column : </br> 
+					<h4> Add a column : </h4> 
 					<input id="date" type="radio" name="text" value="Du au">  
 				 	Du : <input type="text" id="debutC" class="datepick" onfocus="checkRadio('date')">  
 				 	au : <input type="text" id="finC" class="datepick" onfocus="checkRadio('date')">
@@ -58,7 +59,9 @@
 					OK
 				</div>
 			</div>
-		
+			</div>
+			
+			<div class="line inline" id="funcPers">
 			<div class="inline namePers">
 				<input class="textGrey " id="name" type="text" name="name" value="add person" onfocus="inputTextFocus('name','Orange')" onblur="inputTextBlur('name','add person')" >
 			</div>
@@ -68,6 +71,7 @@
 				<div class="button" id="addPers" onclick="addRow()"> 
 					Add 
 				</div>
+			</div>
 			</div>
 			
 		
