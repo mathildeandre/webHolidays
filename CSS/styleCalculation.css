@@ -18,7 +18,7 @@ section{
 }
 
 
-h1{
+h1, h2{
 /*text-shadow: 5px 5px 5px #FF0000;  /*decalage-a-droite, decalage-bas, flootage, color*/
 	color:#FF1919;/*#FF8080;*/
 	text-shadow: 0   0.8px 0 #E60000,
@@ -46,13 +46,12 @@ margin:3%
 
 }
 
-
 .button{
 font-size: 1.2em;
-width: 200px; 
+/*width: 200px; */
 height: 25px; 
 line-height:25px;/*permet le centrage vertical*/ 
-padding:4px;
+padding:5px 20px 5px 20px;
 color: #FF0000; 
 }
 
@@ -75,7 +74,7 @@ background-size: 200px, 25px;
 
 .right{ 
   position: absolute;
-  right: 12%;
+  right: 12vw;
 }
 #buttonsBottom{
 	margin-top:6%;

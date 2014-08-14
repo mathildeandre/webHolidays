@@ -4,7 +4,6 @@
 }
 */
 
-
 /** pour centrer un texte avec plusieurs lignes :
 	ecire ligne-height = 0px (ou la taille de la police ex:2vw)
 	ensuite centre avec le padding top et bottom		
@@ -51,10 +50,10 @@ header{
 
 footer{
 	margin: auto;
-	padding:2%;/*Marge verticale*/
-	width:80%;
+	padding:2vw;/*Marge verticale*/
+	width:80vw;
 	text-align:center;/*texte centré*/
-	font-size: 15px;
+	font-size: 1vw;
 	/*font-weight: italic; ne marche pas*/
 	color: white;
 	text-shadow:
@@ -62,29 +61,20 @@ footer{
     1px -1px 0 #000,
     -1px 1px 0 #000,
     1px 1px 0 #000; 
-	/*border-bottom: solid;*/
-	/*background: green;/*, darkgoldenrod; /*Couleur de fond
-	border:10px solid blue;
-	border-radius: 30px ;*/
-
 }
 
 
 section{
-  border-radius: 10px ;
-  width:75%;
-  margin : auto; 
-  margin-top : 75px; 
-  background : url("../images/peint-blanc.jpg");
-  background-size:20%;
-  color:#000033;
-  padding: 30px;
-
-	/*background : white;/* url("../images/papier-peint1.jpg");
-	/*background-size: 100% 300px;
+	border-radius: 1vw ;
+	width:75vw;
+	margin : auto; 
+	margin-top : 3vw; 
+	background : url("../images/peint-blanc.jpg");
+	background-size:20vw;
+	color:#000033;
+	padding: 2vw;
 	/*background-attachment: fixed;*/
 	/*border:8px solid grey;/*bleu clair*/   /* blueviolet*/
-	/*background-color:rgba(184,134,11,1);/*darkgoldenrod; -- rgba(50,205,50,0.5); /*limegreen;*/
 }
 
 h1{
@@ -92,12 +82,11 @@ h1{
 	font-size: 2.5vw;
 	font-weight: bold;
 	text-shadow: 5px 5px 5px #000000;  /*decalage-a-droite, decalage-bas, flootage, color*/
-
 }
-
+/*
 #navSmall{
 	position: fixed;
-	border:3px solid #9FC6FF;/*bleu clair*/   /* blueviolet*/
+	border:3px solid #9FC6FF;/*bleu clair*   /* blueviolet*
 	border-radius: 30px ;
 	width:300px;
 	float: left;
@@ -107,9 +96,9 @@ h1{
 	
     color: #9FC6FF;
 	/*width:150px;
-	/*border: 1px solid black;*/
+	/*border: 1px solid black;*
 }
-
+*/
 
 
 
@@ -126,37 +115,377 @@ h1{
 	color : #7A1F99;
 }
 
+
+/*
 .bigCheckbox{
-
-   width: 40px; height: 40px; 
-
+   width: 40px; height: 40px;
 }
 
 input[type='checkbox'] {
 
     background:red;
 }
-/*.right{ text-align: right; } useless */
+*/
 
 .line{
-   	white-space: nowrap; 
-    	margin-left: 0;
+	white-space: nowrap; 
+	margin-left: 0;
 }
 .inline{
 	display: inline-block;
 }
+.right{ 
+  position: absolute;
+  right: 10vw;
+}
 
-/* enleve soulignage des liens */
-a:link  
-{  
- text-decoration:none;  
+/* enleve soulignage des liens 
+a:link  {  
+	text-decoration:none;  
 }  
+*/
 
 
-/************************** BUTTON **************************/
+
+
+
+
+/*******************************************************************************************************************/
+/**************************************************** BUTTON 3D ****************************************************/
+/*******************************************************************************************************************/
+
+
+.button3D{
+	
+	display: inline-block;
+	height:40px;
+	line-height:40px;
+	text-align:center;
+	font-size: 1.2vw;
+	font-weight:bold;
+	padding:0.3vw 1vw;
+	
+	border:4px solid;
+	border-radius: 1vw; 
+}
+.button3D:active{
+	margin-top:4.5px;
+	margin-right:2.2px;
+	box-shadow: 0 0 0 #000000;
+	text-shadow:0   0 0 #000000;
+	
+}
+
+
+/******************** BLUE ***************************/  
+.b3blue {  
+	/* transparent : rgba(0,0,0,0) */
+	background-color:#9999FF;
+	border-color: #4747D1;
+	
+	color:#4747D1;
+	text-shadow: 0   0.8px 0 #2E2EB8,
+              0   1.5px 0 #2929A3,
+             -1px 2.3px 0 #24248F,
+             -1px 3px 0 #1F1F7A,
+             -2px 3.8px 0 #1A1A66,
+             -2.1px 4.5px 0 #141452,
+             -2.2px 5.3px 2px rgba(10,10,41, 0.4),
+             -2.2px 5.3px 8px rgba(10,10,41, 0.2),
+             -2.2px 5.3px 20px rgba(10,10,41, 0.4); 
+
+
+	
+	/*** mode BORDER shadow plus petite ***/
+	box-shadow:-0.2px   0.8px 0 #2E2EB8,
+              -0.5px   1.5px 0 #2929A3,
+             -1px 2.3px 0 #24248F,
+             -1px 3px 0 #1F1F7A,
+             -2px 3.8px 0 #1A1A66,
+             -2.1px 4.5px 0 #141452,
+             -2.2px 5.3px 2px rgba(10,10,41, 0.4),
+             -2.2px 5.3px 8px rgba(10,10,41, 0.2),
+             -2.2px 5.3px 20px rgba(10,10,41, 0.4),
+			/* interieur */
+              -0.2px   0.8px 0 #2E2EB8 inset,
+              -0.5px   1.5px 0 #2929A3 inset,
+             -1px 2.3px 0 #24248F inset,
+             -1px 3px 0 #1F1F7A inset,
+             -2px 3.8px 0 #1A1A66 inset,
+             -2.1px 4.5px 0 #141452 inset,
+             -2.2px 5.3px 2px rgba(10,10,41, 0.4) inset,
+             -2.2px 5.3px 8px rgba(10,10,41, 0.2) inset,
+             -2.2px 5.3px 20px rgba(10,10,41, 0.4) inset;
+
+}
+/**************** fin BLUE **************************/
+
+
+/************************************** ORANGE **************************************/
+.b3orange {  
+	background-color:	#FFA366;
+	border-color: #FF6600;
+	
+	color:#FF6600;
+	text-shadow: 0   0.8px 0 #E65C00,
+              0   1.5px 0 #CC5200,
+             -1px 2.3px 0 #CC5200,
+             -1px 3px 0 #993D00,
+             -2px 3.8px 0 #803300,
+             -2.1px 4.5px 0 #662900,
+             -2.2px 5.3px 2px rgba(51,20,0, 0.4),
+             -2.2px 5.3px 8px rgba(51,20,0, 0.2),
+             -2.2px 5.3px 20px rgba(51,20,0, 0.4); 
+
+	
+	/*** mode BORDER shadow plus petite ***/
+	box-shadow:-0.2px   0.8px 0 #E65C00,
+              -0.5px   1.5px 0 #CC5200,
+             -1px 2.3px 0 #CC5200,
+             -1px 3px 0 #993D00,
+             -2px 3.8px 0 #803300,
+             -2.1px 4.5px 0 #662900,
+             -2.2px 5.3px 2px rgba(51,20,0, 0.4),
+             -2.2px 5.3px 8px rgba(51,20,0, 0.2),
+             -2.2px 5.3px 20px rgba(51,20,0, 0.4),
+			/* interieur */
+              -0.2px   0.8px 0 #E65C00 inset,
+              -0.5px   1.5px 0 #CC5200 inset,
+             -1px 2.3px 0 #CC5200 inset,
+             -1px 3px 0 #993D00 inset,
+             -2px 3.8px 0 #803300 inset,
+             -2.1px 4.5px 0 #662900 inset,
+             -2.2px 5.3px 2px rgba(51,20,0, 0.4) inset,
+             -2.2px 5.3px 8px rgba(51,20,0, 0.2) inset,
+             -2.2px 5.3px 20px rgba(51,20,0, 0.4) inset;
+
+}
+/************************************* fin ORANGE **************************************/
+
+
+/******************** GREEN ***************************/  
+.b3green {  
+	background-color:#85E085;
+	border-color: #00CC00;
+	
+	color:#00CC00;
+	text-shadow: 0   0.8px 0 #00B800,
+              0   1.5px 0 #00A300,
+             -1px 2.3px 0 #008F00,
+             -1px 3px 0 #007A00,
+             -2px 3.8px 0 #006600,
+             -2.1px 4.5px 0 #005200,
+             -2.2px 5.3px 2px rgba(0,41,0, 0.4),
+             -2.2px 5.3px 8px rgba(0,41,0, 0.2),
+             -2.2px 5.3px 20px rgba(0,41,0, 0.4); 
+	
+	/*** mode BORDER shadow plus petite ***/
+	box-shadow:-0.2px   0.8px 0 #00B800,
+              -0.5px   1.5px 0 #00A300,
+             -1px 2.3px 0 #008F00,
+             -1px 3px 0 #007A00,
+             -2px 3.8px 0 #006600,
+             -2.1px 4.5px 0 #005200,
+             -2.2px 5.3px 2px rgba(0,41,0, 0.4),
+             -2.2px 5.3px 8px rgba(0,41,0, 0.2),
+             -2.2px 5.3px 20px rgba(0,41,0, 0.4),
+			/* interieur */
+              -0.2px   0.8px 0 #00B800 inset,
+              -0.5px   1.5px 0 #00A300 inset,
+             -1px 2.3px 0 #008F00 inset,
+             -1px 3px 0 #007A00 inset,
+             -2px 3.8px 0 #006600 inset,
+             -2.1px 4.5px 0 #005200 inset,
+             -2.2px 5.3px 2px rgba(0,41,0, 0.4) inset,
+             -2.2px 5.3px 8px rgba(0,41,0, 0.2) inset,
+             -2.2px 5.3px 20px rgba(0,41,0, 0.4) inset;
+
+}
+/**************** fin GREEN **************************/
+
+/******************** YELLOW ***************************/  
+.b3yellow {  
+	background-color:rgba(0,0,0,0);
+	border-color: #FFCC00;
+	
+	color:#FFCC00;
+	text-shadow:0   0.8px 0 #E6B800,
+              0   1.5px 0 #CCA300,
+             -1px 2.3px 0 #B28F00,
+             -1px 3px 0 #997A00,
+             -2px 3.8px 0 #806600,
+             -2.1px 4.5px 0 #665200,
+             -2.2px 5.3px 2px rgba(51,41,0, 0.4),
+             -2.2px 5.3px 8px rgba(51,41,0, 0.2),
+             -2.2px 5.3px 20px rgba(51,41,0, 0.4); 
+	
+	/*** mode BORDER shadow plus petite ***/
+	box-shadow:-0.2px   0.8px 0 #E6B800,
+              -0.5px   1.5px 0 #CCA300,
+             -1px 2.3px 0 #B28F00,
+             -1px 3px 0 #997A00,
+             -2px 3.8px 0 #806600,
+             -2.1px 4.5px 0 #665200,
+             -2.2px 5.3px 2px rgba(51,41,0, 0.4),
+             -2.2px 5.3px 8px rgba(51,41,0, 0.2),
+             -2.2px 5.3px 20px rgba(51,41,0, 0.4),
+			/* interieur */
+              -0.2px   0.8px 0 #E6B800 inset,
+              -0.5px   1.5px 0 #CCA300 inset,
+             -1px 2.3px 0 #B28F00 inset,
+             -1px 3px 0 #997A00 inset,
+             -2px 3.8px 0 #806600 inset,
+             -2.1px 4.5px 0 #665200 inset,
+             -2.2px 5.3px 2px rgba(51,41,0, 0.4) inset,
+             -2.2px 5.3px 8px rgba(51,41,0, 0.2) inset,
+             -2.2px 5.3px 20px rgba(51,41,0, 0.4) inset;
+
+}
+/**************** fin YELLOW **************************/
+
+/***************************************** RED **************************************/
+.b3red{
+	background-color:#CC0000;
+	border-color:#FF8080;
+	
+	/** texte shadow red **/    
+	color:#FF8080;
+	text-shadow: 0   0.8px 0 #FF4D4D,
+              0   1.5px 0 #FF1919,
+             -1px 2.3px 0 #E60000,
+             -1px 3px 0 #B20000,
+             -1.2px 3.8px 0 #800000,
+             -1.8px 4.5px 0 #660000,
+             -2px 5.3px 2px rgba(50,0,0, 0.6),
+             -2px 5.3px 8px rgba(50,0,0, 0.2),
+             -2px 5.3px 45px rgba(50,0,0, 0.4); 
+
+	
+	
+	/*** mode BORDER shadow plus petite ***/
+	box-shadow:-0.2px   0.8px 0 #FF4D4D,
+              -0.5px   1.5px 0 #FF1919,
+             -1px 2.3px 0 #E60000,
+             -1px 3px 0 #B20000,
+             -2px 3.8px 0 #800000,
+             -2.1px 4.5px 0 #660000,
+             -2.2px 5.3px 2px rgba(50,0,0, 0.4),
+             -2.2px 5.3px 8px rgba(50,0,0, 0.2),
+             -2.2px 5.3px 20px rgba(50,0,0, 0.4),
+			/* interieur */
+              -0.2px   0.8px 0 #FF4D4D inset,
+              -0.5px   1.5px 0 #FF1919 inset,
+             -1px 2.3px 0 #E60000 inset,
+             -1px 3px 0 #B20000 inset,
+             -2px 3.8px 0 #800000 inset,
+             -2.1px 4.5px 0 #660000 inset,
+             -2.2px 5.3px 2px rgba(50,0,0, 0.4) inset,
+             -2.2px 5.3px 8px rgba(50,0,0, 0.2) inset,
+             -2.2px 5.3px 20px rgba(50,0,0, 0.4) inset;
+}
+/************************************** fin RED **************************************/
+
+/******************** PURPLE ***************************/  
+.b3purple {  
+	background-color:rgba(0,0,0,0);
+	border-color: #853385;
+	
+	color:#853385;
+	text-shadow:0   0.8px 0 #751975,
+              0   1.5px 0 #5C005C,
+             -1px 2.3px 0 #520052,
+             -1px 3px 0 #470047,
+             -2px 3.8px 0 #3D003D,
+             -2.1px 4.5px 0 #290029,
+             -2.2px 5.3px 2px rgba(41,0,41, 0.4),
+             -2.2px 5.3px 8px rgba(41,0,41, 0.2),
+             -2.2px 5.3px 20px rgba(41,0,41, 0.4); 
+	
+	/*** mode BORDER shadow plus petite ***/
+	box-shadow:-0.2px   0.8px 0 #751975,
+              -0.5px   1.5px 0 #5C005C,
+             -1px 2.3px 0 #520052,
+             -1px 3px 0 #470047,
+             -2px 3.8px 0 #3D003D,
+             -2.1px 4.5px 0 #290029,
+             -2.2px 5.3px 2px rgba(41,0,41, 0.4),
+             -2.2px 5.3px 8px rgba(41,0,41, 0.2),
+             -2.2px 5.3px 20px rgba(41,0,41, 0.4),
+			/* interieur */
+              -0.2px   0.8px 0 #751975 inset,
+              -0.5px   1.5px 0 #5C005C inset,
+             -1px 2.3px 0 #520052 inset,
+             -1px 3px 0 #470047 inset,
+             -2px 3.8px 0 #3D003D inset,
+             -2.1px 4.5px 0 #290029 inset,
+             -2.2px 5.3px 2px rgba(41,0,41, 0.4) inset,
+             -2.2px 5.3px 8px rgba(41,0,41, 0.2) inset,
+             -2.2px 5.3px 20px rgba(41,0,41, 0.4) inset;
+
+}
+/**************** fin PURPLE **************************/
+
+
+/******************** PINK ***************************/  
+.b3pink {  
+	background-color:rgba(0,0,0,0);
+	border-color: #FF3399;
+	
+	color:#FF3399;
+	text-shadow:0   0.8px 0 #E62E8A,
+              0   1.5px 0 #CC297A,
+             -1px 2.3px 0 #B2246B,
+             -1px 3px 0 #991F5C,
+             -2px 3.8px 0 #801A4C,
+             -2.1px 4.5px 0 #66143D,
+             -2.2px 5.3px 2px rgba(51,10,31, 0.4),
+             -2.2px 5.3px 8px rgba(51,10,31, 0.2),
+             -2.2px 5.3px 20px rgba(51,10,31, 0.4); 
+             
+	/*** mode BORDER shadow plus petite ***/
+	box-shadow:-0.2px   0.8px 0 #E62E8A,
+              -0.5px   1.5px 0 #CC297A,
+             -1px 2.3px 0 #B2246B,
+             -1px 3px 0 #991F5C,
+             -2px 3.8px 0 #801A4C,
+             -2.1px 4.5px 0 #66143D,
+             -2.2px 5.3px 2px rgba(51,10,31, 0.4),
+             -2.2px 5.3px 8px rgba(51,10,31, 0.2),
+             -2.2px 5.3px 20px rgba(51,10,31, 0.4),
+			/* interieur */
+              -0.2px   0.8px 0 #E62E8A inset,
+              -0.5px   1.5px 0 #CC297A inset,
+             -1px 2.3px 0 #B2246B inset,
+             -1px 3px 0 #991F5C inset,
+             -2px 3.8px 0 #801A4C inset,
+             -2.1px 4.5px 0 #66143D inset,
+             -2.2px 5.3px 2px rgba(51,10,31, 0.4) inset,
+             -2.2px 5.3px 8px rgba(51,10,31, 0.2) inset,
+             -2.2px 5.3px 20px rgba(51,10,31, 0.4) inset;
+
+}
+/**************** fin PINK **************************/
+
+
+
+
+/*******************************************************************************************************************/
+/***************************************************fin BUTTON 3D **************************************************/
+/*******************************************************************************************************************/
+
+
+
+
+
+
+
+
+
+/************************** BUTTON CLASSIC**************************/
 
 #buttonReset{
-	color:black;
+	color:	#B2B2B2;
+	border-color:	#B2B2B2;
 }
 #buttonReset:active{ 
 color: #000; 
@@ -165,7 +494,8 @@ color: #000;
 .button{
 font-family: Arial,sans-serif; 
 font-size: 3%;
-width: 200px; 
+/*width: 200px; */
+padding:10px;
 height: 30px; 
 line-height:30px;/*permet le centrage vertical*/ 
 padding:4px;
@@ -207,105 +537,6 @@ background: linear-gradient( #555, #2C2C2C);
 box-shadow: 1px 1px 10px black inset, 0 1px 0 rgba( 255, 255, 255, 0.4); 
 }
 
-/************************** fin BUTTON **************************/
+/************************** fin BUTTON CLASSIC**************************/
 
-
-.red{
-	background-color:#FF0000;
-}
-.button3D{
-	
-	width: 12vw;
-	height:40px;
-	line-height:40px;
-	text-align:center;
-	font-size: 1.5vw;
-	font-weight:bold;
-	
-	
-	color:white;
-	text-shadow: 0   0.8px 0 #eee,
-              0   1.5px 0 #e5e5e5,
-             -1px 2.3px 0 #C8C8C8,
-             -1px 3px 0 #C1C1C1,
-             -1.2px 3.8px 0 #B9B9B9,
-             -1.8px 4.5px 0 #B2B2B2,
-             -2px 5.3px 2px rgba(0,0,0, 0.6),
-             -2px 5.3px 8px rgba(0,0,0, 0.2),
-             -2px 5.3px 45px rgba(0,0,0, 0.4);   
-             
-          
-	border-radius: 4%; 
-	border:4px solid #ffffff;
-	
-	/*** mode BORDER shadow plus petite ***/
-	box-shadow:-0.2px   0.8px 0 #eee,
-              -0.5px   1.5px 0 #e5e5e5,
-             -1px 2.3px 0 #C8C8C8,
-             -1px 3px 0 #C1C1C1,
-             -2px 3.8px 0 #B9B9B9,
-             -2.1px 4.5px 0 #B2B2B2,
-             -2.2px 5.3px 2px rgba(0,0,0, 0.4),
-             -2.2px 5.3px 8px rgba(0,0,0, 0.2),
-             -2.2px 5.3px 20px rgba(0,0,0, 0.4),
-			/* interieur */
-              -0.2px   0.8px 0 #eee inset,
-              -0.5px   1.5px 0 #e5e5e5 inset,
-             -1px 2.3px 0 #C8C8C8 inset,
-             -1px 3px 0 #C1C1C1 inset,
-             -2px 3.8px 0 #B9B9B9 inset,
-             -2.1px 4.5px 0 #B2B2B2 inset,
-             -2.2px 5.3px 2px rgba(0,0,0, 0.4) inset,
-             -2.2px 5.3px 8px rgba(0,0,0, 0.2) inset,
-             -2.2px 5.3px 20px rgba(0,0,0, 0.4) inset;
-}
-.button3D-red{
-	width: 12vw;
-
-	height:40px;
-	line-height:40px;
-	text-align:center;
-	font-size: 1.5vw;
-	font-weight:bold;
-	/***************************** MODE RED ***************************/    
-	background:white;
-	
-	/** texte shadow red **/    
-	color:#FF8080;
-	text-shadow: 0   0.8px 0 #FF4D4D,
-              0   1.5px 0 #FF1919,
-             -1px 2.3px 0 #E60000,
-             -1px 3px 0 #B20000,
-             -1.2px 3.8px 0 #800000,
-             -1.8px 4.5px 0 #660000,
-             -2px 5.3px 2px rgba(50,0,0, 0.6),
-             -2px 5.3px 8px rgba(50,0,0, 0.2),
-             -2px 5.3px 45px rgba(50,0,0, 0.4); 
-
-	border-radius: 4%; 
-	border:4px solid #FF8080;
-	
-	/*** mode BORDER shadow plus petite ***/
-	box-shadow:-0.2px   0.8px 0 #FF4D4D,
-              -0.5px   1.5px 0 #FF1919,
-             -1px 2.3px 0 #E60000,
-             -1px 3px 0 #B20000,
-             -2px 3.8px 0 #800000,
-             -2.1px 4.5px 0 #660000,
-             -2.2px 5.3px 2px rgba(50,0,0, 0.4),
-             -2.2px 5.3px 8px rgba(50,0,0, 0.2),
-             -2.2px 5.3px 20px rgba(50,0,0, 0.4),
-			/* interieur */
-              -0.2px   0.8px 0 #FF4D4D inset,
-              -0.5px   1.5px 0 #FF1919 inset,
-             -1px 2.3px 0 #E60000 inset,
-             -1px 3px 0 #B20000 inset,
-             -2px 3.8px 0 #800000 inset,
-             -2.1px 4.5px 0 #660000 inset,
-             -2.2px 5.3px 2px rgba(50,0,0, 0.4) inset,
-             -2.2px 5.3px 8px rgba(50,0,0, 0.2) inset,
-             -2.2px 5.3px 20px rgba(50,0,0, 0.4) inset;
-             
-/***************************** fin RED ***********************************/
-}
 
