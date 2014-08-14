@@ -9,7 +9,7 @@
 
 	<link rel="stylesheet" type="text/css" href="../CSS/general.css"/> 
 	<link rel="stylesheet" type="text/css" href="../CSS/styleCalculation.css"/> 
-    <link rel="stylesheet" type="text/css" href="../CSS/nav.css" />
+    <link rel="stylesheet" type="text/css" href="../CSS/nav2.css" />
 </head>
 
 
@@ -64,7 +64,7 @@
 	<!--<div>
 	<input type="button" name="addRow" value="add new row" onclick="addRow()">
 	</div>-->
-	<div class="button3D-red" onclick="addRow()"> Add new row </div>
+	<div class="button3D b3red" id="b1" onmouseover="changeCursor('b1')" onclick="addRow()"> Add new row </div>
 
 
 		</br></br>
@@ -72,7 +72,7 @@
 
 		<div class="line">
 		<input class="textGrey inline" id="name" type="text"  value="add an extra person" onfocus="inputTextFocus('name','Red')" onblur="inputTextBlur('name','add an extra person')" >
-		<div class="button inline" onclick="addExtraPerson()"> Add an extra person </div>
+		<div class="button3D b3red" id="b2" onmouseover="changeCursor('b2')" onclick="addExtraPerson()"> Add an extra person </div>
 		</div>
 <!--
 
@@ -88,10 +88,10 @@
 		<label for="theCheckBoxMouseOver" > MouseOver actif ?</label>
 	</div>
 	<div id="buttonsBottom">
-		<div class="button right" id="buttonReset" onclick="reset()"> Empty the tab </div>
+		<div class="button3D b3red right" id="buttonReset" onmouseover="changeCursor('buttonReset')" onclick="reset()"> Empty the tab </div>
 		<!--<input  type="button" name="reset" value="Clear the group" onclick="location.href='groupe.html';">-->
 	  </br>
-		<div class="button" id="showResult" onclick="calculationResult()">SHOW RESULTS</div>
+		<div class="button3D b3red" id="showResult" onmouseover="changeCursor('showResult')" onclick="calculationResult()">SHOW RESULTS</div>
 	</div>
 	<!--
 	<div>	
@@ -115,7 +115,9 @@
 
 <footer><p>Copyright fs - Tous droits réservés<br/> Nous contacter : fabiensauce@orange.fr</p></footer>
 
+
 <script src="../actionJS/navChanging.js" type="text/javascript"></script>
+
 <script src="../actionJS/actionInputText.js" type="text/javascript"></script>
 <script src="calculation.js" type="text/javascript"></script>
 <script src="calculationResult.js" type="text/javascript"></script>
