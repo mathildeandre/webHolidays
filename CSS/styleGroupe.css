@@ -1,17 +1,7 @@
 
 
-
-#name{ /*input text*/
-	font-family: Arial,sans-serif; 
-	font-size: 1vw;
-	width: 10vw; 
-	height: 2vw; 
-	background: url("../images/peint-blanc.jpg");
-	background-size: 10vw, 1vw;
-}
-
 section{
-	width:50vw;
+	width:60vw;
 	color:#803300;
 }
 
@@ -36,37 +26,47 @@ h1, h2{
 
 section h2{
  font-weight: bold;
- padding-top:5vw;
+ padding-top:3vw;
+ padding-bottom:2vw;
 }
 section article{
- margin-left: 5vw;
- padding:2vw;
+ margin-left: 3vw;
+ padding:0vw 2vw 1vw 2vw;
+ 
 }
 section div[class="composition"]{
-    margin-left: 10vw;
+    margin-left: 7vw;
 }
 
 section div[class="ajout"]{
-    margin-left: 10vw;
+    margin-left: 7vw;
 }
 .right{ 
   position: absolute;
   right: 22vw;
 }
-#buttonsBottom{
-	margin-top:8vw;
-}
+
 #listPerson
 {
     color : #FF6600;
-    width: 10vw;
+    width: 14vw;
     padding: 0.5vw;
     border: 5px dotted #FF6600;
-    margin: 1vw;
+    
 
 }
-
-
+#name{ /*input text*/
+	font-family: Arial,sans-serif; 
+	font-size: 1vw;
+	width: 12vw; 
+	margin-right:2vw;
+	height: 2vw; 
+	background: url("../images/peint-blanc.jpg");
+	background-size: 10vw, 1vw;
+}
+#buttonsBottom{
+	margin-top:6vw;
+}
 
 
 /********************************* BUTTON CLASSIC ********************************/
