@@ -11,10 +11,17 @@ section{
 }
 
 h1{
-    text-align:center;/*texte centré*/
-    font-size: x-large;
-    font-weight: bold;
-text-shadow: 5px 5px 5px #B82EE6;  /*decalage-a-droite, decalage-bas, flootage, color*/
+/*text-shadow: 5px 5px 5px #B82EE6;  /*decalage-a-droite, decalage-bas, flootage, color*/
+	color:#853385;
+	text-shadow:0   0.8px 0 #751975,
+              0   1.5px 0 #5C005C,
+             -1px 2.3px 0 #520052,
+             -1px 3px 0 #470047,
+             -2px 3.8px 0 #3D003D,
+             -2.1px 4.5px 0 #290029,
+             -2.2px 5.3px 2px rgba(41,0,41, 0.4),
+             -2.2px 5.3px 8px rgba(41,0,41, 0.2),
+             -2.2px 5.3px 20px rgba(41,0,41, 0.4); 
 
 }
 
