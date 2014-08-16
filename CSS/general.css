@@ -15,16 +15,14 @@ body{
 }
 
 
-/**** TEMPORAIRE ***************************************************************************************
-
 header{
 	margin: auto;
-	padding:1%;/*Marge verticale*
+	padding:1%;/*Marge verticale*/
 	width:80%;
-	/*border-bottom: solid;*
+	/*border-bottom: solid;*/
 	height:100px;
-	line-height:100px; /*vertical-align:middle; ne fonctionne pas*
-	text-align:center;/*texte centré*
+	line-height:100px; /*vertical-align:middle; ne fonctionne pas*/
+	text-align:center;/*texte centré*/
 	font-size: 2.5vw;
 	font-weight: bold;
 	
@@ -42,10 +40,8 @@ header{
     -2px -2px 0 #000,
     2px -2px 0 #000,
     -2px 2px 0 #000,
-    2px 2px 0 #000; *
+    2px 2px 0 #000; */
 }
-****************************************************************************************/
-
 
 
 footer{
