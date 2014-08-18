@@ -1,0 +1,180 @@
+
+
+
+body{
+	/*font-weight: 500;*/
+    /*width:930px;/*Taille de la colonne centrée moins le padding*/
+    /*background-color: limegreen;/*Couleur de fond*/
+    /*padding:0px 25px 0px 25px;/*margin interne*/
+	/*background-image: url("Images/clouds.jpg");*/
+	/*background-color: rgb(200,90,200);*/
+	/*background-image: url("Images/bonhomme.jpg");
+	background-attachement: fixed;
+	background-repeat: no-repeat;
+	background-position: top right;
+	background: url("Images/bonhomme.jpg") fixed no-repeat top right, url("Images/clouds.jpg") fixed;*/
+}
+/*************************************  TEST **************************************/
+#myBox{
+	width:200px;
+	height:100px;
+	line-height:100px;
+	text-align:center;
+	font-size: 40px;
+	font-weight: bold;
+	/*border-top:5px solid black ;
+	border-left:5px solid black;
+	border-right:10px solid blue;*/
+	border:10px solid white;
+	border-radius:5px;
+	background:rgba(255,0,0,0);
+	
+	box-shadow : 0 1px 0 #eee,
+             0 2px 0 #e5e5e5,
+             -1px 3px 0 #C8C8C8,
+             -1px 4px 0 #C1C1C1,
+             -2px 5px 0 #B9B9B9,
+             -2px 6px 0 #B2B2B2,
+             -2px 7px 2px rgba(0,0,0, 0.6),
+             -2px 7px 8px rgba(0,0,0, 0.2),
+             -2px 7px 45px rgba(0,0,0, 0.4),
+             0 1px 0 #eee inset,
+             0 2px 0 #e5e5e5 inset,
+             -1px 3px 0 #C8C8C8 inset,
+             -1px 4px 0 #C1C1C1 inset,
+             -2px 5px 0 #B9B9B9 inset,
+             -2px 6px 0 #B2B2B2 inset,
+             -2px 7px 2px rgba(0,0,0, 0.6) inset,
+             -2px 7px 8px rgba(0,0,0, 0.2) inset,
+             -2px 7px 45px rgba(0,0,0, 0.4) inset;
+/*-10px 10px 5px black inset,
+-10px 10px 5px black;*/
+
+	color:white;
+	text-shadow: 0 1px 0 #eee,
+             0 2px 0 #e5e5e5,
+             -1px 3px 0 #C8C8C8,
+             -1px 4px 0 #C1C1C1,
+             -2px 5px 0 #B9B9B9,
+             -2px 6px 0 #B2B2B2,
+             -2px 7px 2px rgba(0,0,0, 0.6),
+             -2px 7px 8px rgba(0,0,0, 0.2),
+             -2px 7px 45px rgba(0,0,0, 0.4);
+           
+transform: rotate(-10deg) scale(1.3,1.3);  
+}
+/************************************* fin TEST **************************************/
+
+section{
+	background-image:url("../images/parasol.jpg"), url("../images/peint-blanc.jpg");
+	background-repeat:no-repeat, repeat;
+	background-size:20vw;
+	background-position: top right;
+	color:#1A1A66;
+}
+
+
+
+h1, h2{
+	color:#4747D1;
+	text-shadow: 0   0.8px 0 #2E2EB8,
+              0   1.5px 0 #2929A3,
+             -1px 2.3px 0 #24248F,
+             -1px 3px 0 #1F1F7A,
+             -2px 3.8px 0 #1A1A66,
+             -2.1px 4.5px 0 #141452,
+             -2.2px 5.3px 2px rgba(10,10,41, 0.4),
+             -2.2px 5.3px 8px rgba(10,10,41, 0.2),
+             -2.2px 5.3px 20px rgba(10,10,41, 0.4); 
+}
+section article h2{
+	width: 50vw;
+	margin-left: 1vw;
+	padding: 1vw;
+	padding-left:8vw;
+	height:60px;
+	line-height:120px;
+	/*border:2px solid black;
+	border-radius: 5%; */
+}
+#h2Groupe{
+	background: url("../images/groupe.png");
+	background-size:7vw;
+	background-repeat: no-repeat;
+	/*
+
+<img src="../images/doodle.jpg" width="10%">
+<img src="../images/chefcuisine.jpg" width="10%">
+<img src="../images/tirelire.jpg" width="6%">
+<img src="../images/loisirs.jpg" width="11%">
+<img src="../images/loisirs.jpg" width="11%">
+*/
+}
+#h2Doodle{
+	background: url("../images/doodle.jpg");
+	background-size:6vw;
+	background-repeat: no-repeat;
+}
+#h2Repas{
+	background: url("../images/chefcuisine.jpg");
+	background-size:6vw;
+	background-repeat: no-repeat;
+}
+#h2Calc{
+	background: url("../images/tirelire.jpg");
+	background-size:5vw;
+	background-repeat: no-repeat;
+}
+#h2Affaire{
+	background: url("../images/doodle.jpg");
+	background-size:6vw;
+	background-repeat: no-repeat;
+}
+#h2Loisirs{
+	background: url("../images/loisirs.jpg");
+	background-size:7vw;
+	background-repeat: no-repeat;
+}
+
+/************************************ ANIMATION JUMPING ****************************************/
+section article h2:hover{
+
+-webkit-animation: jumping 1s; /* chrome safari*/
+animation: jumping 1s; /* autre*/
+}
+
+@-webkit-keyframes jumping {
+/*from {line-height:120px;}
+to { line-height:0px;}*/
+ 0% 		{	line-height:120px; 	text-shadow: 5px 0px 1px #0000FF;}
+ 12.5% 	{	line-height:90px; 	text-shadow: 5px 15px 4px #0000FF;}
+ 25% 		{	line-height:70px; 	text-shadow: 5px 25px 6px #0000FF;}
+ 32.5% 	{	line-height:65px;		text-shadow: 5px 27px 9px #0000FF;}
+ 40% 		{	line-height:60px;		text-shadow: 5px 30px 12px #0000FF;}
+ 50%		{	line-height:60px;		text-shadow: 5px 30px 12px #0000FF;}
+ 60% 		{	line-height:60px;		text-shadow: 5px 30px 12px #0000FF;}
+ 67.5% 	{	line-height:65px;		text-shadow: 5px 27px 9px #0000FF;}
+ 75% 		{	line-height:70px;		text-shadow: 5px 25px 6px #0000FF;}
+ 87.5% 	{	line-height:90px;		text-shadow: 5px 15px 4px #0000FF;}
+ 100% 	{	line-height:120px;	text-shadow: 5px 0px 1px #0000FF;}
+}
+
+@keyframes jumping {
+ 0% 		{	line-height:120px; 	text-shadow: 5px 0px 1px #0000FF;}
+ 12.5% 	{	line-height:90px; 	text-shadow: 5px 15px 4px #0000FF;}
+ 25% 		{	line-height:70px; 	text-shadow: 5px 25px 6px #0000FF;}
+ 32.5% 	{	line-height:65px;		text-shadow: 5px 27px 9px #0000FF;}
+ 40% 		{	line-height:60px;		text-shadow: 5px 30px 12px #0000FF;}
+ 50%		{	line-height:60px;		text-shadow: 5px 30px 12px #0000FF;}
+ 60% 		{	line-height:60px;		text-shadow: 5px 30px 12px #0000FF;}
+ 67.5% 	{	line-height:65px;		text-shadow: 5px 27px 9px #0000FF;}
+ 75% 		{	line-height:70px;		text-shadow: 5px 25px 6px #0000FF;}
+ 87.5% 	{	line-height:90px;		text-shadow: 5px 15px 4px #0000FF;}
+ 100% 	{	line-height:120px;	text-shadow: 5px 0px 1px #0000FF;}
+
+}
+
+/************************************ fin ANIMATION JUMPING ****************************************/
+
+
+}

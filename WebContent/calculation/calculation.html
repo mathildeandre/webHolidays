@@ -1,0 +1,127 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>J'organise mes Vacances !!</title>
+    <meta charset='utf-8' />
+    <link rel="shortcut icon" href="images/tree3.png" />
+
+	<link rel="stylesheet" type="text/css" href="../CSS/general.css"/> 
+    <link rel="stylesheet" type="text/css" href="../CSS/button.css" />
+	<link rel="stylesheet" type="text/css" href="../CSS/styleCalculation.css"/> 
+    <link rel="stylesheet" type="text/css" href="../CSS/nav.css" />
+</head>
+
+
+<body id="imgHeaderNav" >
+<header> <!--<img src="images/sun.png" alt="Tree" height="100" /> -->
+ 	Organisation of Holidays
+	<!--<img src="images/tree3.png" alt="Tree" height="100" />-->
+</header>
+
+
+<nav>
+	<ul>
+	 <li id="liAccueil" onmouseover="changeCursor('liAccueil')" onclick="location.href='../accueil/accueil.html'">Homepage</li>
+	 <li id="liGroupe" onmouseover="changeCursor('liGroupe')" onclick="location.href='../groupe/groupe.html'" >Group</li>
+	 <li id="liDoodle" onmouseover="changeCursor('liDoodle')" onclick="location.href='../doodle/doodle.html'" >Doodle</li>
+	 <li id="liRepas" onmouseover="changeCursor('liRepas')" onclick="location.href='../repas/repas.html'">Meals</li>
+	 <li class="current" >Expenses</li>
+	 <li id="liAffaire" onmouseover="changeCursor('liAffaire')" onclick="location.href='../affaire/affaire.html'">Things</li>
+	 <li id="liLoisirs" onmouseover="changeCursor('liLoisirs')" onclick="location.href='../loisirs/loisirs.html'">Hobbies</li>
+	</ul>
+</nav>
+
+	<!--
+	<div class="intro">
+		Ajouter une personne : <input id="name" type="text" name="name" value="nom"> 
+		<input type="button" name="addLineTab" value="Ajouter personne" onclick="addPersonne()">
+		<input type="button" name="start_reset" value="Start/Reset" onclick="start_reset()">
+	</div>
+	-->
+
+<section >
+   <h1>Calcul of your expenses</h1>
+ <article>
+   <h2>Who's paid what for whom?</h2>
+<div id="divTab">
+
+<TABLE id="tab" BORDER="1"> 
+		<CAPTION> Table of expenses </CAPTION> 
+		<THEAD >
+			<TR> 
+			 <TH> Expense of </TH> 
+			 <TH> Total </TH> 
+			</TR>
+		</THEAD>
+		<TBODY id="tbody">
+			
+		</TBODY>
+</TABLE> 
+
+		</br></br>
+	<!--<div>
+	<input type="button" name="addRow" value="add new row" onclick="addRow()">
+	</div>-->
+	<div class="button3D b3red" id="b1" onmouseover="changeCursor('b1')" onclick="addRow()"> Add new row </div>
+
+
+		</br></br>
+
+
+		<div class="line">
+		<input class="textGrey inline" id="name" type="text"  value="add an extra person" onfocus="inputTextFocus('name','Red')" onblur="inputTextBlur('name','add an extra person')" >
+		<div class="button3D b3red" id="b2" onmouseover="changeCursor('b2')" onclick="addExtraPerson()"> Add an extra person </div>
+		</div>
+<!--
+
+		<input class="textGrey" id="name" type="text" name="nameExtraPerson" value="add an extra person" onfocus="inputTextFocus('name')" onblur="inputTextBlur('name','add an extra person')" > 
+		<input type="button" name="addExtraPerson" value="add an extra person" onclick="addExtraPerson()">
+-->
+		</br>
+</div>
+
+
+	<div class="right" >
+		<input  id="theCheckBoxMouseOver" type="checkbox" width="100%" height="200px">
+		<label for="theCheckBoxMouseOver" > MouseOver actif ?</label>
+	</div>
+	<div id="buttonsBottom">
+		<div class="button3D b3pink right" id="buttonReset" onmouseover="changeCursor('buttonReset')" onclick="reset()"> Empty the tab </div>
+		<!--<input  type="button" name="reset" value="Clear the group" onclick="location.href='groupe.html';">-->
+	  </br>
+		<div class="button3D b3yellow" id="showResult" onmouseover="changeCursor('showResult')" onclick="calculationResult()">SHOW RESULTS</div>
+		<div class="button3D b3yellow" id="af" onmouseover="changeCursor('af')" onclick="afficheCell()"> affiche cell</div>
+	</div>
+	<!--
+	<div>	
+		</br></br>
+		<input type="button" name="parcoursTab" value="parcours Tab" onclick="parcoursTab()">
+		<input type="button" name="deleteDuplicate" value="deleteDuplicate" onclick="deleteDuplicate()">
+	</div>
+	-->
+
+	<!--<div class="right">	
+		<input   type="button" name="reset" value="Empty the tab" onclick="reset()">
+	</div>
+	<div>	
+		</br></br>
+		<input type="button" name="calculationResult" value="SHOW RESULTS" onclick="calculationResult()">
+	</div>-->
+
+
+ </article>
+</section >
+
+<footer><p>Copyright fs - Tous droits réservés<br/> Nous contacter : fabiensauce@orange.fr</p></footer>
+
+
+<script src="../actionJS/navChanging.js" type="text/javascript"></script>
+
+<script src="../actionJS/actionInputText.js" type="text/javascript"></script>
+<script src="calculation.js" type="text/javascript"></script>
+<script src="calculationResult.js" type="text/javascript"></script>
+
+</body>
+</html>

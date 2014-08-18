@@ -1,0 +1,83 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" href="style.css"/> <!--mise en forme-->
+	<title>Calculations</title> <!-- onglet -->
+</head>
+
+<header>
+	<div class="intro">
+	CALCULATIONS
+	
+	</div>
+</header>
+
+<body>
+	<!--
+	<div class="intro">
+		Ajouter une personne : <input id="name" type="text" name="name" value="nom"> 
+		<input type="button" name="addLineTab" value="Ajouter personne" onclick="addPersonne()">
+		<input type="button" name="start_reset" value="Start/Reset" onclick="start_reset()">
+	</div>
+	-->
+<?php echo "AAAAAAAAAAAAAAAAAAAAACeci est du texte"; ?>
+	<div>
+		</br></br>
+		<input type="button" name="addExtraPerson" value="add an extra person" onclick="addExtraPerson()">
+		<input class="textGrey" id="name" type="text" name="nameExtraPerson" value="add an extra person" onfocus="inputTextFocus('name')" onblur="inputTextBlur('name','add an extra person')" > 
+		</br></br>
+	</div>
+	<div class="right" >
+		<input  id="theCheckBoxMouseOver" type="checkbox" >
+		<label for="theCheckBoxMouseOver" > MouseOver actif ?</label>hauteur
+	</div>
+	<div>
+	<input type="button" name="addRow" value="add new row" onclick="addRow()">
+	<TABLE id="tab" BORDER="1"> 
+		<CAPTION> Tableau de dépenses </CAPTION> 
+		<THEAD>
+			<TR> 
+			 <TH> Depense de </TH> 
+			 <TH> Montant </TH> 
+			</TR>
+		</THEAD>
+		<TBODY>
+			
+			
+		</TBODY>
+	</TABLE> 
+	</div>
+	<!--
+	<div>	
+		</br></br>
+		<input type="button" name="parcoursTab" value="parcours Tab" onclick="parcoursTab()">
+		<input type="button" name="deleteDuplicate" value="deleteDuplicate" onclick="deleteDuplicate()">
+	</div>
+	-->
+
+	<div class="right">	
+		<input   type="button" name="reset" value="Restart All" onclick="reset()">
+	</div>
+	<div>	
+		</br></br>
+		<input type="button" name="calculationResult" value="SHOW RESULTS" onclick="calculationResult()">
+	</div>
+
+</body>
+
+<!-- -------------------------------------------------------------------------------------------->
+<script src="calculationHoliday.js" type="text/javascript"></script>
+<script src="actionInputText.js" type="text/javascript"></script>
+
+<script src="calculationResult_NEW.js" type="text/javascript"></script>
+
+<!--
+<script src="calculationResult_basic.js" type="text/javascript"></script>
+<script src="calculationResult_optimisation.js" type="text/javascript"></script>
+-->
+
+
+</html>

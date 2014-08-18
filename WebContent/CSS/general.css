@@ -1,0 +1,168 @@
+/*@font-face {
+	font-family: 'MaPolice';
+	src: url('../mapolice.otf');
+}
+*/
+
+/** pour centrer un texte avec plusieurs lignes :
+	ecire ligne-height = 0px (ou la taille de la police ex:2vw)
+	ensuite centre avec le padding top et bottom		
+*/
+
+body{
+	font-family: Helvetica Narrow, sans-serif;/*"Comic Sans ms";*/
+	margin: auto; /*centrer la colonne*/
+}
+
+
+header{
+	margin: auto;
+	padding:1%;/*Marge verticale*/
+	width:80%;
+	/*border-bottom: solid;*/
+	height:100px;
+	line-height:100px; /*vertical-align:middle; ne fonctionne pas*/
+	text-align:center;/*texte centré*/
+	font-size: 2.5vw;
+	font-weight: bold;
+	
+	color: white;
+	text-shadow: 0 1px 0 #eee,
+             0 2px 0 #e5e5e5,
+             -1px 3px 0 #C8C8C8,
+             -1px 4px 0 #C1C1C1,
+             -2px 5px 0 #B9B9B9,
+             -2px 6px 0 #B2B2B2,
+             -2px 7px 2px rgba(0,0,0, 0.6),
+             -2px 7px 8px rgba(0,0,0, 0.2),
+             -2px 7px 45px rgba(0,0,0, 0.4);  
+	/*text-shadow:
+    -2px -2px 0 #000,
+    2px -2px 0 #000,
+    -2px 2px 0 #000,
+    2px 2px 0 #000; */
+}
+
+
+footer{
+	margin: auto;
+	padding:2vw;/*Marge verticale*/
+	width:80vw;
+	text-align:center;/*texte centré*/
+	font-size: 1vw;
+	/*font-weight: italic; ne marche pas*/
+	color: white;
+	text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000; 
+}
+
+
+section{
+	border-radius: 1vw ;
+	width:75vw;
+	margin : auto; 
+	margin-top : 3vw; 
+	margin-bottom : 1vw; 
+	background : url("../images/peint-blanc.jpg");
+	background-size:20vw;
+	padding: 2vw;
+	/*color:#000033;
+	/*background-attachment: fixed;*/
+	/*border:8px solid grey;/*bleu clair*/   /* blueviolet*/
+}
+
+h1{
+	text-align:center;/*texte centré*/
+	font-size: 2.5vw;
+	font-weight: bold;
+	/*text-shadow: 5px 5px 5px #000000;  /*decalage-a-droite, decalage-bas, flootage, color*/
+}
+h2{
+	font-size: 1.8vw;
+}
+
+/*
+#navSmall{
+	position: fixed;
+	border:3px solid #9FC6FF;/*bleu clair*   /* blueviolet*
+	border-radius: 30px ;
+	width:300px;
+	float: left;
+	padding: 10px ;
+	margin: 0px; 
+	background-color: rgba(184,134,11,0.5);
+	
+    color: #9FC6FF;
+	/*width:150px;
+	/*border: 1px solid black;*
+}
+*/
+
+
+
+.textGrey{
+	color : grey;
+}
+.textOrange{
+	color : #CC5200;
+}
+.textRed{
+	color : #B20000;
+}
+.textBlue{
+	color : #4747D1;
+}
+.textPurple{
+	color : #7A1F99;
+}
+
+
+/*
+.bigCheckbox{
+   width: 40px; height: 40px;
+}
+
+input[type='checkbox'] {
+
+    background:red;
+}
+*/
+
+.line{
+	white-space: nowrap; 
+	margin-left: 0;
+}
+.inline{
+	display: inline-block;
+}
+.right{ 
+  position: absolute;
+  right: 10vw;
+}
+
+/* enleve soulignage des liens 
+a:link  {  
+	text-decoration:none;  
+}  
+*/
+
+
+/*
+#buttonReset{
+	color:	#B2B2B2;
+	border-color:	#B2B2B2;
+}
+#buttonReset:active{ 
+color: #000; 
+}
+*/
+
+
+
+
+
+
+
