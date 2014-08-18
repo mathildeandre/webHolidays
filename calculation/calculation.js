@@ -27,6 +27,7 @@ function createTHead(){
 	//****************
 
 
+
 	for(var i=0; i<tabPerson.length; i++){
 		//****************
    	 	th = document.createElement('th');
@@ -67,15 +68,21 @@ function addExtraPerson(){
 
 
 	tabPerson.push(name);
-
-	
 	k = tabPerson.length - 1;
-
+	
+	
 	//add into THead
+	var tr = document.getElementById('tab').tHead.children[0];
+	var th = document.createElement('th');
+	th.innerHTML = name;
+	tr.insertBefore(th, tr.children[k+2]);
+	/*** old ***
 	var arrayLines = document.getElementById("tab").rows;
 	var cell = arrayLines[0].insertCell(k+2);
 	cell.innerHTML += "<b>"+name+"</b>";
-
+	*/
+	
+	
 	//add every checkbox
 	var arrayLines = document.getElementById("tab").rows; 
 	var hauteur = arrayLines.length;
@@ -98,7 +105,7 @@ function addExtraPerson(){
 
 function addRow(){
 	//if (isStarted){
-		var newRow = document.getElementById("tab").insertRow(-1);
+		var newRow = document.getElementById("tbody").insertRow(-1);
 
 		// Add Select
 		var cell0 = newRow.insertCell(0);
@@ -202,6 +209,89 @@ function alternBackground(){
 		}
 	}
 }
+
+
+function delete(){
+var row = document.getElementById("myRow");
+row.deleteCell(0);
+
+document.getElementById("myTable").deleteRow(0);	
+}
+
+function afficheCell(){
+	var txt = "";
+   var table = document.getElementById("tab");
+   //alert(table.innerHTML);
+   
+   
+	var arrayLignes = document.getElementById("tab").rows; //on récupère les lignes du tableau
+	var hauteur = arrayLignes.length;//on peut donc appliquer la propriété length
+	var largeur = arrayLignes[0].length;
+	
+	
+	for(i=0; i<hauteur; i++){
+
+		var arrayColonnes = arrayLignes[i].cells;
+		var largeur = arrayColonnes.length;
+
+		for(j=0; j<largeur; j++){
+			txt += " *** ("+i+","+j+"):"+arrayColonnes[j].innerHTML;
+		}
+		txt += "\n \n";
+	}
+	alert(txt);
+	
+	
+	
+	
+	/*var row1 = arrayLignes[1];
+	var cel = row1[3];
+	
+   alert(cel.value);
+   
+   */
+   var tbody = table.getElementsByTagName('tbody')[0];
+   var row1 = tbody.getElementsByTagName("tr")[0];//tbody[0]?
+   var tdElements = row1.getElementsByTagName('td');
+   
+   //alert(tdElements[1].innerHTML);
+  /* 
+    <td onClick="Test(this.innerHTML)">Site du Zéro</td>
+    
+    
+	/*for(var i=1; i<hauteur; i++){
+		if(i%2 == 0){
+		  arrayLignes[i].style.backgroundColor= "#FF8080";
+		}
+	}*/
+}
+
+
+function colorTabColonnes(){ //Color une colonne sur deux en plus foncé
+	var arrayLignes = document.getElementById("tab1").rows; //l'array est stocké dans une variable
+	var longueur = arrayLignes.length;//on peut donc appliquer la propriété length
+
+	arrayLignes[0].style.backgroundColor = "#F5BDCB"; //rose
+	for(i=1; i<longueur; i++){
+
+		var arrayColonnes = arrayLignes[i].cells;
+		var largeur = arrayColonnes.length;
+
+		for(j=0; j<largeur; j++){
+			if(j % 2 == 0){  //si la clé est paire
+				arrayColonnes[j].style.backgroundColor = "#bdcbf5"; //bleu clair
+			}
+		else{ //elle est impaire
+				arrayColonnes[j].style.backgroundColor = "#829eeb"; //bleu fonce
+			}
+		}
+	}
+
+}
+
+
+
+
 
 
 
