@@ -1,4 +1,8 @@
 
+function changeCursor(id) {
+                document.getElementById(id).style.cursor='pointer';
+}
+
 document.addEventListener('keydown', function(event) {
     if(event.keyCode == 13) {
     	var focusedElement = document.activeElement;

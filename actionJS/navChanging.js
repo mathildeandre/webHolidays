@@ -13,6 +13,3 @@
 
 
 
-function changeCursor(id) {
-                document.getElementById(id).style.cursor='pointer';
-}
