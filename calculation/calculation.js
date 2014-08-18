@@ -211,11 +211,11 @@ function alternBackground(){
 }
 
 
-function delete(){
-var row = document.getElementById("myRow");
+function deletee(){
+/*var row = document.getElementById("myRow");
 row.deleteCell(0);
 
-document.getElementById("myTable").deleteRow(0);	
+document.getElementById("myTable").deleteRow(0);	*/
 }
 
 function afficheCell(){
@@ -266,7 +266,7 @@ function afficheCell(){
 	}*/
 }
 
-
+/*************** useless ************/
 function colorTabColonnes(){ //Color une colonne sur deux en plus foncé
 	var arrayLignes = document.getElementById("tab1").rows; //l'array est stocké dans une variable
 	var longueur = arrayLignes.length;//on peut donc appliquer la propriété length
