@@ -9,26 +9,26 @@
 
 	<link rel="stylesheet" type="text/css" href="../CSS/general.css"/> 
 	<link rel="stylesheet" type="text/css" href="../CSS/styleCalculation.css"/> 
-    <link rel="stylesheet" type="text/css" href="../CSS/nav2.css" />
+    <link rel="stylesheet" type="text/css" href="../CSS/nav.css" />
 </head>
 
 
 <body id="imgHeaderNav" >
 <header> <!--<img src="images/sun.png" alt="Tree" height="100" /> -->
- 	Organisation de vos vacances
+ 	Organisation of Holidays
 	<!--<img src="images/tree3.png" alt="Tree" height="100" />-->
 </header>
 
 
 <nav>
 	<ul>
-	 <li id="liAccueil" onmouseover="changeCursor('liAccueil')" onclick="location.href='../accueil/accueil.html'">Accueil</li>
-	 <li id="liGroupe" onmouseover="changeCursor('liGroupe')" onclick="location.href='../groupe/groupe.html'" >Groupe</li>
+	 <li id="liAccueil" onmouseover="changeCursor('liAccueil')" onclick="location.href='../accueil/accueil.html'">Homepage</li>
+	 <li id="liGroupe" onmouseover="changeCursor('liGroupe')" onclick="location.href='../groupe/groupe.html'" >Group</li>
 	 <li id="liDoodle" onmouseover="changeCursor('liDoodle')" onclick="location.href='../doodle/doodle.html'" >Doodle</li>
-	 <li id="liRepas" onmouseover="changeCursor('liRepas')" onclick="location.href='../repas/repas.html'">Repas</li>
-	 <li class="current" >Dépenses</li>
-	 <li id="liAffaire" onmouseover="changeCursor('liAffaire')" onclick="location.href='../affaire/affaire.html'">Affaires</li>
-	 <li id="liLoisirs" onmouseover="changeCursor('liLoisirs')" onclick="location.href='../loisirs/loisirs.html'">Loisirs</li>
+	 <li id="liRepas" onmouseover="changeCursor('liRepas')" onclick="location.href='../repas/repas.html'">Meals</li>
+	 <li class="current" >Expenses</li>
+	 <li id="liAffaire" onmouseover="changeCursor('liAffaire')" onclick="location.href='../affaire/affaire.html'">Things</li>
+	 <li id="liLoisirs" onmouseover="changeCursor('liLoisirs')" onclick="location.href='../loisirs/loisirs.html'">Hobbies</li>
 	</ul>
 </nav>
 
@@ -41,17 +41,17 @@
 	-->
 
 <section >
-   <h1>Calcul de vos dépenses</h1>
+   <h1>Calcul of your expenses</h1>
  <article>
-   <h2>Qui a payé quoi ?</h2>
+   <h2>Who's paid what for whom?</h2>
 <div id="divTab">
 
 <TABLE id="tab" BORDER="1"> 
-		<CAPTION> Tableau de dépenses </CAPTION> 
+		<CAPTION> Table of expenses </CAPTION> 
 		<THEAD >
 			<TR> 
-			 <TH> Depense de </TH> 
-			 <TH> Montant </TH> 
+			 <TH> Expense of </TH> 
+			 <TH> Total </TH> 
 			</TR>
 		</THEAD>
 		<TBODY id="theadd">
@@ -88,10 +88,10 @@
 		<label for="theCheckBoxMouseOver" > MouseOver actif ?</label>
 	</div>
 	<div id="buttonsBottom">
-		<div class="button3D b3red right" id="buttonReset" onmouseover="changeCursor('buttonReset')" onclick="reset()"> Empty the tab </div>
+		<div class="button3D b3pink right" id="buttonReset" onmouseover="changeCursor('buttonReset')" onclick="reset()"> Empty the tab </div>
 		<!--<input  type="button" name="reset" value="Clear the group" onclick="location.href='groupe.html';">-->
 	  </br>
-		<div class="button3D b3red" id="showResult" onmouseover="changeCursor('showResult')" onclick="calculationResult()">SHOW RESULTS</div>
+		<div class="button3D b3yellow" id="showResult" onmouseover="changeCursor('showResult')" onclick="calculationResult()">SHOW RESULTS</div>
 	</div>
 	<!--
 	<div>	

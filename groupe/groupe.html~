@@ -15,27 +15,27 @@
 
 <body id="imgHeaderNav" >
 <header> <!--<img src="images/sun.png" alt="Tree" height="100" /> -->
- 	Organisation de vos vacances
+ 	Aorganisation of Holidays
 	<!--<img src="images/tree3.png" alt="Tree" height="100" />-->
 </header>
 
 
 <nav>
 	<ul>
-	 <li id="liAccueil" onmouseover="changeCursor('liAccueil')" onclick="location.href='../accueil/accueil.html'">Accueil</li>
-	 <li class="current" >Groupe</li>
+	 <li id="liAccueil" onmouseover="changeCursor('liAccueil')" onclick="location.href='../accueil/accueil.html'">Homepage</li>
+	 <li class="current" >Group</li>
 	 <li id="liDoodle" onmouseover="changeCursor('liDoodle')" onclick="location.href='../doodle/doodle.html'" >Doodle</li>
-	 <li id="liRepas" onmouseover="changeCursor('liRepas')" onclick="location.href='../repas/repas.html'">Repas</li>
-	 <li id="liCalc" onmouseover="changeCursor('liCalc')" onclick="location.href='../calculation/calculation.html?tab=emiel,matthijs,fabian,kiki'">Dépenses</li>
-	 <li id="liAffaire" onmouseover="changeCursor('liAffaire')" onclick="location.href='../affaire/affaire.html'">Affaires</li>
-	 <li id="liLoisirs" onmouseover="changeCursor('liLoisirs')" onclick="location.href='../loisirs/loisirs.html'">Loisirs</li>
+	 <li id="liRepas" onmouseover="changeCursor('liRepas')" onclick="location.href='../repas/repas.html'">Meals</li>
+	 <li id="liCalc" onmouseover="changeCursor('liCalc')" onclick="location.href='../calculation/calculation.html?tab=emiel,matthijs,fabian,kiki'">Expenses</li>
+	 <li id="liAffaire" onmouseover="changeCursor('liAffaire')" onclick="location.href='../affaire/affaire.html'">Things</li>
+	 <li id="liLoisirs" onmouseover="changeCursor('liLoisirs')" onclick="location.href='../loisirs/loisirs.html'">Hobbies</li>
 	</ul>
 </nav>
 
 
 
  <section >
-   <h1>Votre Groupe</h1>
+   <h1>Your Group</h1>
 
   <article>
    <h2>Composition</h2>
@@ -50,9 +50,8 @@
 </div>
 
 
-   <h2>Ajout</h2>
+   <h2>Add person to your group</h2>
 <div class="ajout">
-		<p>Ajouter des personnes à votre groupe :</p>
 		<div class="line">
 		<input class="textGrey inline" id="name" type="text" name="name" value="add person" onfocus="inputTextFocus('name','Orange')" onblur="inputTextBlur('name','add person')" >
 		<div class="button3D b3orange inline" id="b1" onmouseover="changeCursor('b1')" onclick="addPerson()"> Add person </div>
