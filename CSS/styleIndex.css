@@ -6,8 +6,9 @@ body{
 }
 
 header{
-	background:url("../images/pins.jpg") ;
+	background:rgba(51,102,255,0.5);/*url("../images/pins.jpg") ;*/
 	background-size:10vw;
+	border-bottom:5px solid rgba(51,102,255,1);
 }
 
 header #title{
@@ -66,12 +67,15 @@ footer{
 	border-radius: 1vw ;
 	width:70vw;
 	height:300px;
-	margin : auto; 
+	margin:auto;
 	margin-top : 3vw; 
 	margin-bottom : 1vw; 
 	/*background : url("../images/peint-blanc.jpg");
 	background-size:20vw;*/
 	padding: 2vw;
+	
+	
+	border:5px solid red;
 }
 
 section article[id="accederSite"]{
@@ -79,6 +83,7 @@ section article[id="accederSite"]{
 	left: 16vw;
 	margin-top:5vw;
 	width:30vw;  
+	border:5px solid red;
 }
 
 #accederSite .button3D{
@@ -91,6 +96,7 @@ section article[id="accederSite"]{
 	border:8px solid white;
 	border-radius: 1vw; 
 	
+	border:5px solid red;
 }
 
 section article[id="creationGroup"]{
@@ -99,6 +105,7 @@ section article[id="creationGroup"]{
 	width:20vw;
 	padding-left:10vw; 
 	border-left:8px dotted #5C5CFF;
+	border:5px solid red;
 }
 
 input[type="text"]{
@@ -109,6 +116,7 @@ input[type="text"]{
 	border-radius: 8px;
 	background: url("../images/peint-blanc.jpg");
 	background-size: 200px, 25px;
+	border:5px solid red;
 }
 #confirm{
 
