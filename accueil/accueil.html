@@ -16,9 +16,23 @@
 <!-- Mise en page classique avec le header, le corps, et le footer ! Les balises structurantes de
 HTML5 sont employées. -->
 <body id="imgHeaderNav" >
-<header> <!--<img src="images/sun.png" alt="Tree" height="100" /> -->
+<!--
+<header> 
  	Organisation of holidays
-	<!--<img src="images/tree3.png" alt="Tree" height="100" />-->
+</header>
+-->
+<header class="line">
+	<div class="inline" id="title">
+ 	Organisation of holidays
+	</div>
+	
+	<div id="connexion" class="line inline right"> 
+		<input class="textGrey inline" id="coGroup" type="text" value="Group" onfocus="inputTextFocus('coGroup', 'Blue')" onblur="inputTextBlur('coGroup','Group')" >
+		<input class="textGrey inline" id="coPwd" type="text" value="Password" onfocus="inputTextFocus('coPwd', 'Blue')" onblur="inputTextBlur('coPwd','Password')" >
+		<div class="inline button3D b3white">Connexion</div>
+	</div>
+
+
 </header>
 
 <nav>
