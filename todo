@@ -1,0 +1,60 @@
+
+-dans les html : placer general.css au dessus puis nav.css puis le style.css de la classe
+
+
+- click repas
+- fond blanc repas
+- fond beige accueil
+- repas bouton retour
+
+- modif checkbox dans calculation !
+- 
+*************************
+NAV :
+	
+-Mettre les nav en mode classic : texte blanc avec petit border black.
+-Essayer d'ameliorer la netteté en mode shadow + rotate : le texte est plus petit ds nav dc faut faire des degradé de shadow moins ecartés.
+-Bloquer un onglet choisi en mode rotate et enfoncé ! (faire donc un clique qui enfonce le texte) (+ 3D ?)
+
+BODY :
+	
+-Mettre chaque titre, sous-titres en mode 3D avec la couleur et un degradé de la couleur !(texte rouge tres clair et degradé de plus en plus foncé)
+-Mettre les bouton en mode comme la nav (border creusé)
+-Plateforme Section en mode 3D egalement => box-shadow (voir border shadow)
+
+**************************
+repas : check "modal/light box"
+=> http://lokeshdhakar.com/projects/lightbox2/#how
+javascript ouverture popup, sinon en css on propose un fond grisé avec pop courante fixed .. etc
+
+recherche :jquerry popup fond grisé
+=>http://dev.howtommy.net/?d=2011/09/16/04/00/00-comment-faire-apparaitre-un-beau-popup-html-sur-son-site-avec-jquery
+
+
+
+
+
+
+
+/***************************************** MODIF mode furtif *************************************/
+-general.css : header
+- *.html : nav2.css au lieu de nav.css
+ 			  navChanging.js
+
+*********************************************************
+Depense : 
+Gerer taille du tableau en fonction de la taille de la fenetre
+Faire un style sur checkbox
+
+********************************************************
+Doodle: 
+Modifier taille datepicker
+
+******************************************************
+Repas:
+Vérifier taille images sur plusieurs navigateurs : pb de taille ! 
+
+
+TOUT : 
+Vérifier que ke bon bouton de nav est current sur chaque service
+

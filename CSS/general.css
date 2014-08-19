@@ -3,72 +3,63 @@
 	src: url('../mapolice.otf');
 }
 */
-#imgHeaderNav{ /* = body */
-    padding:0px;
-	/*background : url("../images/nav2.jpg") no-repeat;
-	background-size: 100% 300px;
-	background-attachment: fixed;*/
+
+/** pour centrer un texte avec plusieurs lignes :
+	ecire ligne-height = 0px (ou la taille de la police ex:2vw)
+	ensuite centre avec le padding top et bottom		
+*/
+
+body{
+	font-family: Helvetica Narrow, sans-serif;/*"Comic Sans ms";*/
+	margin: auto; /*centrer la colonne*/
 }
-/* enleve soulignage des liens */
-a:link  
-{  
- text-decoration:none;  
-}  
 
-header{
-    padding:20px;/*Marge verticale*/
-   /* background-color: rgba(184,134,11,0.5);/*darkgoldenrod; /*Couleur de fond*/
-   /* border-radius: 30px ;*/
 
-    color: white;
-    text-shadow:
+
+footer{
+	margin: auto;
+	padding:2vw;/*Marge verticale*/
+	width:80vw;
+	text-align:center;/*texte centré*/
+	font-size: 1vw;
+	/*font-weight: italic; ne marche pas*/
+	color: white;
+	text-shadow:
     -1px -1px 0 #000,
     1px -1px 0 #000,
     -1px 1px 0 #000,
     1px 1px 0 #000; 
-
-
-    text-align:center;/*texte centré*/
-    font-size: 40px;
-    font-weight: bold;
-    font-family: Georgia, "Comic Sans ms";
-
-  width:200px;
-
-  height:100px;
-  line-height:100px; /*vertical-align:middle;*/
-  /*display: inline;*/
-	width:100%;margin: auto;
-
-    /*border-bottom: solid;*/
-}
-
-footer{
-    padding:25px 0px;/*Marge verticale*/
-    background-color: darkgoldenrod; /*Couleur de fond*/
-    text-align:center;/*texte centré*/
-    font-family: "Comic Sans ms";
-    font-size: small;
-    /*font-weight: italic;*/
-	border-radius: 30px ;
-
-  display: inline;
-	
 }
 
 
 section{
-	/*background : white;/* url("../images/papier-peint1.jpg");
-	/*background-size: 100% 300px;
+	border-radius: 1vw ;
+	width:75vw;
+	margin : auto; 
+	margin-top : 3vw; 
+	margin-bottom : 1vw; 
+	background : url("../images/peint-blanc.jpg");
+	background-size:20vw;
+	padding: 2vw;
+	/*color:#000033;
 	/*background-attachment: fixed;*/
 	/*border:8px solid grey;/*bleu clair*/   /* blueviolet*/
-	/*background-color:rgba(184,134,11,1);/*darkgoldenrod; -- rgba(50,205,50,0.5); /*limegreen;*/
 }
 
+h1{
+	text-align:center;/*texte centré*/
+	font-size: 2.5vw;
+	font-weight: bold;
+	/*text-shadow: 5px 5px 5px #000000;  /*decalage-a-droite, decalage-bas, flootage, color*/
+}
+h2{
+	font-size: 1.8vw;
+}
 
+/*
 #navSmall{
 	position: fixed;
-	border:3px solid #9FC6FF;/*bleu clair*/   /* blueviolet*/
+	border:3px solid #9FC6FF;/*bleu clair*   /* blueviolet*
 	border-radius: 30px ;
 	width:300px;
 	float: left;
@@ -78,33 +69,69 @@ section{
 	
     color: #9FC6FF;
 	/*width:150px;
-	/*border: 1px solid black;*/
+	/*border: 1px solid black;*
 }
-
-.selected{
-	background-color:rgba(184,134,11,1);
-	border-radius: 10px ;
-}
-
+*/
 
 
 
 .textGrey{
 	color : grey;
 }
+.textOrange{
+	color : #CC5200;
+}
+.textRed{
+	color : #B20000;
+}
+.textBlue{
+	color : #4747D1;
+}
+.textPurple{
+	color : #7A1F99;
+}
 
+
+/*
 .bigCheckbox{
-
-   width: 40px; height: 40px; 
-
+   width: 40px; height: 40px;
 }
 
 input[type='checkbox'] {
 
     background:red;
 }
+*/
 
-.right{ text-align: right; }
+.line{
+	white-space: nowrap; 
+	margin-left: 0;
+}
+.inline{
+	display: inline-block;
+}
+.right{ 
+  position: absolute;
+  right: 10vw;
+}
+
+/* enleve soulignage des liens 
+a:link  {  
+	text-decoration:none;  
+}  
+*/
+
+
+/*
+#buttonReset{
+	color:	#B2B2B2;
+	border-color:	#B2B2B2;
+}
+#buttonReset:active{ 
+color: #000; 
+}
+*/
+
 
 
 

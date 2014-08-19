@@ -1,3 +1,16 @@
+
+function changeCursor(id) {
+                document.getElementById(id).style.cursor='pointer';
+}
+
+document.addEventListener('keydown', function(event) {
+    if(event.keyCode == 13) {
+    	var focusedElement = document.activeElement;
+        alert("element who was focused : "+focusedElement.innerHTML);
+    }
+});
+
+
 function inputTextBlur(id,value){
 	var inputName = document.getElementById(id);
 	if(inputName.value == ""){
@@ -5,10 +18,15 @@ function inputTextBlur(id,value){
 		inputName.className = "textGrey";
 	}
 }
-function inputTextFocus(id){
+function inputTextFocus(id, color){
+
+	if (typeof color === 'undefined') { //color non specifié
+		color = "";
+	}
 	var inputName = document.getElementById(id);
-	if(inputName.className != "text"){
-		inputName.className = "text"; //inputName.setAttribute("id","name");
+	//indexOf return la position du string trouvé, -1 si pas trouve    //if(inputName.className == "textGrey"){
+	if(inputName.className.indexOf("textGrey") > -1){  
+		inputName.className = "text"+color; //inputName.setAttribute("id","name");
 		inputName.value = ""; //inputName.setAttribute("value","");
 	}
 }
@@ -22,4 +40,14 @@ function checkBoxMouseOver(id){
 		verifAllRow(id[0]);
 	}
 		
+}
+
+function emptyText(id0, id1, id2){
+			document.getElementById(id0).value = "";
+			if (typeof id1 !== 'undefined'){
+				document.getElementById(id1).value = "";
+			}
+			if (typeof id2 !== 'undefined'){
+				document.getElementById(id2).value = "";
+			}
 }

@@ -1,52 +1,89 @@
 
-/*
-#bodyGroupe{
-	background-image: url("../images/montain.jpg");
-	/*background-position: center;
-
-}
-*/
-
 
 section{
-  border-radius: 10px ;
-  width:50%;
-  margin : auto; 
-  margin-top : 75px; 
-  background : lightgoldenrodyellow;/*url("../images/papier-peint19.jpg");*/
-  color:#803300;
-  padding: 5%;
-  padding-top: 3%;
+	width:60vw;
+	color:#803300;
 }
 
 
-h1{
-    text-align:center;/*texte centré*/
-    font-size: x-large;
-    font-weight: bold;
-text-shadow: 5px 5px 5px #FF6600;  /*decalage-a-droite, decalage-bas, flootage, color*/
+
+h1, h2{
+   /* text-shadow: 5px 5px 5px #FF6600;  /*decalage-a-droite, decalage-bas, flootage, color*/
+
+	color:#FF6600;
+	text-shadow: 0   0.8px 0 #E65C00,
+              0   1.5px 0 #CC5200,
+             -1px 2.3px 0 #CC5200,
+             -1px 3px 0 #993D00,
+             -2px 3.8px 0 #803300,
+             -2.1px 4.5px 0 #662900,
+             -2.2px 5.3px 2px rgba(51,20,0, 0.4),
+             -2.2px 5.3px 8px rgba(51,20,0, 0.2),
+             -2.2px 5.3px 20px rgba(51,20,0, 0.4); 
 
 }
 
 
 section h2{
-    margin-left: 5%;
-    font-weight: bold;
-padding:3%;
-padding-top:5%;
+ font-weight: bold;
+ padding-top:3vw;
+ padding-bottom:2vw;
+}
+section article{
+ margin-left: 3vw;
+ padding:0vw 2vw 1vw 2vw;
+ 
+}
+section div[class="composition"]{
+    margin-left: 7vw;
 }
 
-section div[class]{
-
-    margin-left: 10%;
+section div[class="ajout"]{
+    margin-left: 7vw;
+}
+.right{ 
+  position: absolute;
+  right: 22vw;
 }
 
 #listPerson
 {
     color : #FF6600;
-    width: 220px;
-    padding: 10px;
+    width: 14vw;
+    padding: 0.5vw;
     border: 5px dotted #FF6600;
-    margin: 20px;
+    
 
 }
+#name{ /*input text*/
+	font-family: Arial,sans-serif; 
+	font-size: 1vw;
+	width: 12vw; 
+	margin-right:2vw;
+	height: 2vw; 
+	background: url("../images/peint-blanc.jpg");
+	background-size: 10vw, 1vw;
+}
+#buttonsBottom{
+	margin-top:6vw;
+}
+
+
+/********************************* BUTTON CLASSIC ********************************/
+.button{
+width: 200px; 
+height: 30px; 
+line-height:30px;/*permet le centrage vertical*/ 
+padding:4px;
+color: #CC5200; 
+}
+
+.button:hover{ 
+color: #FF6600; 
+}
+.button:active{ 
+color: #000; 
+}
+
+/********************************* fin BUTTON CLASSIC ********************************/
+
