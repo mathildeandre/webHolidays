@@ -62,8 +62,8 @@ footer{
     -1px 1px 0 #000,
     1px 1px 0 #000; 
 }
-
-#mySection{ /** si on ecrit section ca prend en compte inline block et est trop a gauche*/
+/*
+#mySection{ /** si on ecrit section ca prend en compte inline block et est trop a gauche*
 	border-radius: 1vw ;
 	width:70vw;
 	height:300px;
@@ -71,19 +71,18 @@ footer{
 	margin-top : 3vw; 
 	margin-bottom : 1vw; 
 	/*background : url("../images/peint-blanc.jpg");
-	background-size:20vw;*/
+	background-size:20vw;*
 	padding: 2vw;
 	
 	
 	border:5px solid red;
 }
-
+*/
 section article[id="accederSite"]{
 	position: absolute;
-	left: 16vw;
-	margin-top:5vw;
-	width:30vw;  
-	border:5px solid red;
+	left: 13vw;
+	margin-top:10vw;
+	/*width:40vw;*/  
 }
 
 #accederSite .button3D{
@@ -96,32 +95,30 @@ section article[id="accederSite"]{
 	border:8px solid white;
 	border-radius: 1vw; 
 	
-	border:5px solid red;
 }
 
 section article[id="creationGroup"]{
 	position: absolute;
-	right: 20vw;
-	width:20vw;
+	left: 45vw;
+	margin-top:5vw;
+	/*width:20vw;*/
 	padding-left:10vw; 
 	border-left:8px dotted #5C5CFF;
-	border:5px solid red;
 }
 
 input[type="text"]{
 	margin-top:0.7vw;
-	width:20vw;
+	width:25vw;
 	height:32px;
 	font-size: 1.3vw;
 	border-radius: 8px;
 	background: url("../images/peint-blanc.jpg");
 	background-size: 200px, 25px;
-	border:5px solid red;
 }
-#confirm{
+section #confirm{
 
 	margin-top:2vw;
-	margin-left:5vw;
+	margin-left:7vw;
 	height:35px;
 	line-height:35px;
 	text-align:center;
@@ -132,12 +129,11 @@ input[type="text"]{
 	border:4px solid;
 	border-radius: 1vw; 	
 }
-h2{
+section h2{
 	font-size: 1.8vw;
 	text-align:center;
 	font-weight: bold;
 	
-  
 	color: white;
 	text-shadow: 0 1px 0 #eee,
              0 2px 0 #e5e5e5,
@@ -149,7 +145,6 @@ h2{
              -2px 7px 8px rgba(0,0,0, 0.6),
              -2px 7px 45px rgba(0,0,0, 1); 
              
-	right: 39vw;
 }
 
 
