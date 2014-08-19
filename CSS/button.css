@@ -110,6 +110,7 @@ box-shadow: 1px 1px 10px black inset, 0 1px 0 rgba( 255, 255, 255, 0.4);
 	
 	border-color:white;
 	color:white;
+	/*
 	text-shadow: 0 1px 0 #eee,
              0 2px 0 #e5e5e5,
              -1px 3px 0 #C8C8C8,
@@ -138,6 +139,43 @@ box-shadow: 1px 1px 10px black inset, 0 1px 0 rgba( 255, 255, 255, 0.4);
              -2px 7px 2px rgba(0,0,0, 0.6) inset,
              -2px 7px 8px rgba(0,0,0, 0.2) inset,
              -2px 7px 45px rgba(0,0,0, 0.4) inset;
+             
+     */           
+	text-shadow: 	0   	0.5px	0 #eee,
+						0.1px   	0.8px	0 #eee,
+              		0.2px   	1px 	0 #e5e5e5,
+              		-0.3px   	1.4px 	0 #e5e5e5,
+             	-0.4px 	1.8px 0 #C8C8C8,
+             	-0.7px 	2.3px 	0 #C1C1C1,
+             	-1px 		2.9px 0 #B9B9B9,
+             	-1.5px 	3.5px 	0 #B2B2B2,
+             
+             -2px 5.3px 2px rgba(0,0,0, 0.6),
+             -2px 5.3px 8px rgba(0,0,0, 0.2),
+             -2px 5.3px 45px rgba(0,0,0, 0.4);          
+          
+
+	
+	/*** mode BORDER shadow plus petit ***/
+	box-shadow:-0.2px   0.8px 0 #eee,
+              -0.5px   1.5px 0 #e5e5e5,
+             -1px 2.3px 0 #C8C8C8,
+             -1px 3px 0 #C1C1C1,
+             -2px 3.8px 0 #B9B9B9,
+             -2.1px 4.5px 0 #B2B2B2,
+             -2.2px 5.3px 2px rgba(0,0,0, 0.4),
+             -2.2px 5.3px 8px rgba(0,0,0, 0.2),
+             -2.2px 5.3px 20px rgba(0,0,0, 0.4),
+			/* interieur */
+              -0.2px   0.8px 0 #eee inset,
+              -0.5px   1.5px 0 #e5e5e5 inset,
+             -1px 2.3px 0 #C8C8C8 inset,
+             -1px 3px 0 #C1C1C1 inset,
+             -2px 3.8px 0 #B9B9B9 inset,
+             -2.1px 4.5px 0 #B2B2B2 inset,
+             -2.2px 5.3px 2px rgba(0,0,0, 0.4) inset,
+             -2.2px 5.3px 8px rgba(0,0,0, 0.2) inset,
+             -2.2px 5.3px 20px rgba(0,0,0, 0.4) inset;
              
 }
 /**************** fin WHITE **************************/
