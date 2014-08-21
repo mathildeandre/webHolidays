@@ -6,7 +6,7 @@
         window.document.getElementById("imgHeaderNav").style.backgroundAttachment="fixed";
  
         // Programmation d’un timer qui va réexécuter la fonction toutes les x secondes (en milliseconde)
-        window.setTimeout(changeBackground, 5000); // en millisecondes
+        window.setTimeout(changeBackground, 2000); // en millisecondes
     }
     // Mise en place du fond de page une première fois au chargement de la page. => important sinon ce ne marche pas ?
     window.onload = changeBackground;
