@@ -1,16 +1,15 @@
 
 \section{Software Testing}
 
-	The goal of testing software is to provide informations about the quality of the product. 
+	The goal of testing software is to provide informations about the quality of a product. 
 	It allows developers to know about potential bugs but it also allows the business 
 	to appreciate more the product. The testeur write a document with all the 
 	functionalities of the application and give it to the customers.\\  
 
 The company has a quite big application and the developers have some code that they didn't develop
- themself. They need to do a lot of software testing, in order to know about
+ themselves. They need to do a lot of software testing, in order to know about
 bugs in their application but also about not convenient functionalities. We distinguish 
 two kind of testing issues such as bugs and evolutions. 
-
 This step of software development is essential and is quite
 long and boring. But thanks to this part, the customers will have a nice application, 
 easy to use and without obvious bugs. 
@@ -33,7 +32,7 @@ I learnt how to write lisable tests documents with functionalities plan and it i
 
 In this part of the report, I will describe my different tasks in software testing. 
 I separate software testing in two sections that represent my work for the company: 
-Acceptance testing and Resgression testing. So I will first descibe these two kind of 
+Acceptance testing and Resgression testing. So I will first describe these two kind of 
 testing and explain what I did exactly. 
 In the last part I will focus on a software that I used a bit for testing : JMeter.  \\
 
@@ -63,25 +62,18 @@ As an example, the website had a school bag service and a pigeonhole service.
 In the school bag service you could add some documents, oranize all your papers in
 differents folders and so on. Then you could drop off some of them in the pigeonhole of an
 other user.
-All the services had some tricky functionalitie that I needed to know. Then I could write
+All the services had some tricky functionalities that I needed to know. Then I could write
 the technical report easier. 
    
 I will give you a detailed example that I wrote in this report. 
-It is about the wysiwyg editor. It is used to create some web document. In this system in 
-which the user can view something very 
+It is about the wysiwyg editor. It is used to create some web pages. In this system
+the user can view something very 
 similar to the end result while the document is being created.  \\ 
-b \\
-b \\
-b \\
-b \\
-b \\
-b \\
 
 \newpage
-\begin{itemize}
-	\item Access to the service\\
-
-\begin{tabular}{|m{4cm}|m{3cm}|m{4cm}|m{2.1cm}|}
+\textbf{\underline {Access to the service}}\\
+\newline
+\begin{tabular}{|m{3.7cm}|m{2.3cm}|m{4cm}|m{2.1cm}|}
 \hline
 \textbf{Name of the stage} & \textbf{Description}
  & \textbf{Expected result} & \textbf{Comments} \\
@@ -94,10 +86,11 @@ Opening of the editor Wysiwyg &
 \\
 \hline
 \end{tabular}
-\\
-	\item Create a document \\
+\newline
 
-\begin{tabular}{|m{4cm}|m{3cm}|m{4cm}|m{2.1cm}|}
+\textbf{\underline {Create a document}} \\
+\newline
+\begin{tabular}{|m{3.7cm}|m{2.3cm}|m{4cm}|m{2.1cm}|}
 \hline
 \textbf{Name of the stage} & \textbf{Description}
  & \textbf{Expected result} & \textbf{Comments} \\
@@ -117,26 +110,25 @@ Display of the new document in the list : test.html &
 \hline
 \end{tabular}
 \\
-\end{itemize}
+\newline
 
-In the report I created one section for each service. Then I accompanied 
+In the report, I created one section for each service. Then I accompanied 
 each functionality with a formal description of the actions to perform, 
 the eventual input data and their expected output. In the comments column, I wrote when the
-functionality didn't work well or had a strange beahaviour accoding to me. But then, 
+functionality didn't work well or had a strange or not convenient beahaviour accoding to me. But then, 
 if the comments was some kind of bugs or evolutions, I used Redmine to report them.  
-My descriptions has to be as high level as possible in order to be understable for the customers. 
+My descriptions have to be as high level as possible in order to be understable for the customers. 
 
 As a result of my work, the company had a useful document. It is now used to do regression
 testing as I will explain in the next part. And it could be used to do automated tests later,
- all the scenario to test are already written. And of course it would be given to the customers.
+ all the scenarios to test are already written. And of course it would be given to the customers.
 It is quite easy to evaluate the quality of the document, it has to be easy to read for
 the regression tests that will consist in following all the steps detailed into it.\\
 
 
-\newpage
 \subsection{Regression testing}
 It is a kind of software testing that consists to uncover new softwares bugs
-or regression. These tests are done after each changes such as bugs fixing or new
+or regression. These tests are done after each change such as bugs fixing or new
  configurations settings made in the production instance. 
  Indeed, we can manage to fix a bug but 
 meanwhile a new bug can appear. So regression testing aim to discover these
@@ -146,31 +138,31 @@ kind of new bugs, it helps to determine whether a change in one part of the
  The tests I have done are called black box testing because I didn't know anything yet about
  the interior workings of the application, about the source code. The main advandage of this 
  testing method is that it clearly separates user's perspective from the developer's
- perspective. My role was to be similar to the future users.\\
-
-
+ perspective. My role was to have a beahaviour as similar as possible to the one of 
+ the future users.\\
 
 The following is an example of test I had to do, which one lead to a bug I have found : 
 On the school bag service when we clicked on the new Folder button, then on the close button. 
-Then we couldn't click again on the new Folder button. The button was still displayed but when we clicked on it nothing would happen. \\
+Then we couldn't click again on the new Folder button. The button was still displayed
+ but when we clicked on it nothing would happen. I created a new Redmine issue to 
+ report this bug.\\
 
 Each time the team published changement in the production instance, I had to do some
 regression testing. In order to do these tests, I used the technical report that I wrote
-before. I run set of test-cases by folowing the steps discribed in the document. 
+before. I ran set of test-cases by folowing the steps discribed in the document. 
 For each test, I compare the results obtained with the expected results. 
 If there is a correct match for the test, no new bugs had appeared for this functionality.
- If not, I report the bug. \\
+ If not, I reported the bug. 
  
- To report anything I notice about a step, I used Redmine and created an issue.
+ To report what I noticed during a specific test, I used Redmine and created an issue.
  In case of a correct match it can happen that the functionality tested is less convenient
  for the users than before. In this case I had to create an other kind of issue in Redmine,
-such as evolution issue. These issues are usually less urgent to do. 
+ an evolution issue. These issues are usually less urgent to do. 
 In each issues (bugs and evolutions), I described with precision what I detected. 
-It is very  important to know in which environment the bug had been found such as 
-windows or debian, Firefox, Google chrome or Internet Explorer as well as 
+It is very  important to know in which environment the bug have been found such as 
+Windows or Debian, Firefox, Google chrome or Internet Explorer as well as 
 all the stages needed to reproduce the bug.  \\ 
 
-\newpage
 Here is an example of a creation of Redmine issue : \\ 
 
 \fbox{\includegraphics[scale=0.25]{Images/issue.png}} \\
