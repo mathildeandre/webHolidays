@@ -8,10 +8,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class Accueil extends HttpServlet {
+public class Registration extends HttpServlet {
     
 	public void doGet( HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException{
-		this.getServletContext().getRequestDispatcher( "/WEB-INF/accueil/accueil.jsp" ).forward( request, response );
+		this.getServletContext().getRequestDispatcher( "/WEB-INF/page/registration.jsp" ).forward( request, response );
 	}
 	
 }
