@@ -1,7 +1,6 @@
 
-\section{Goals}
 
-
+\newpage
 Présenter les objectifs du stage afin que vos évaluateurs cernent bien la limite entre l’existant et votre contribution réelle : (environ 5 pages)
 \begin{itemize}
 	\item le travail à réaliser ou le problème à résoudre
@@ -12,21 +11,41 @@ Présenter les objectifs du stage afin que vos évaluateurs cernent bien la limi
 
 ---------------------------------------------------------------
 
-My tasks were related to differents fields such as installing new software for the team of developers, finding new bugs and reporting them into an application then fixing bugs. 
-In this part I will present these tasks separatly. For each of them, I will develop the demand the company, the limit they fix, and finally present my solution. 
+\newpage
+\section{Goals}
+My tasks were related to differents fields such as installing new software for the team 
+of developers, finding bugs and evolution, reporting them into an application 
+and finally fixing some of them. 
+
+In this part I will present these tasks separatly. For each of them, I will develop 
+the demand of the company, the limit they fix, and finally present my solution. 
 
 \subsection{Redmine installation}
-They are a team of 4 employees but they didn't have a tool for project management. 
-They wanted a software that allow them to report bugs and keep a track of their work.
-I had to install a software called Redmine.\\ 
-Redmine is a software for project management and bug-tracking. I had to install this application in order to allow the team to track bugs in their app. \\ 
-It was very useful for them to have an access into Redmine directly from their IDE (Eclipse).\\
-It has several useful plugins available. My task were to find some plugins that fit the 
-developers demands. 
-Redmine is a open source software and is easy to install and use. 
-First I installed Redmine into a web page.  
-Then I did some research about all the plugins in order to choose the most usefull, the goal was to make developers works faster. 
-At last, I set up Redmine's environment to allow developers to us it as easyly as possible. 
+As I said before, they are a team of 4 developers in the company. 
+They all work with an IDE for j2EE development : Eclipse. 
+They also use SVN, a software versionning and source code management 
+system. They now needed a tool for project management. 
+They wanted a software that would allow them to report bugs in a easy way and keep a 
+track of their work. Indeed, they were in a stage where they had to test the application
+over and over. So they would need to write about bugs they found, assigned them to
+somebody in order to be solved. In a nutshell, they needed to keep track of the bugs. 
+After some research, they found that Redmine application was a good project management
+tool, that's why I had to install this software. 
+
+Redmine is a tool for project management and bug-tracking. It is quite easy to begin
+with the software, even for a non technical person. Moreover, it is very scalable 
+thanks to the plugins we can install with it. 
+
+The developers wanted to have an access into Redmine directly from their IDE (Eclipse), 
+in order to know very easily what bug they had to fix or change the statue of an issue.
+
+Redmine software has several useful plugins available. My task were to find some plugins that fit the 
+developers demands I described before. 
+Redmine is an open source software and is easy to install and use. 
+First I installed Redmine into a web page shared by the company.  
+Then I did some research about all the plugins in order to choose the most useful, 
+the goal was to make developers work faster. 
+At last, I set up Redmine's environment to allow developers to use it as easily as possible. 
 
 
 
@@ -34,31 +53,71 @@ At last, I set up Redmine's environment to allow developers to us it as easyly a
 
 \newpage
 \subsection{System testing}
-The application was almost functionnal but it had some small bugs. The company needed to test it over and over.
-For example, some services were totally functionnal on Firefox but didn't work so well on
-Internet Explorer. I had to test all the services of the website, to report the bugs. \\
-The company had one document with the an acceptance test plan for some
-services of the application. 
-First of all I did some acceptance testing in order to continue and finish 
-to write de document. 
-Then I did some regression testing.
+The company had some code that they didn't develop by themselves that's why they didn't 
+know if the application was working exactly as expected but it was almost functionnal. 
+In order to be sure it has as few bugs as possible, they were in a stage where they 
+have to test the application as deeply as possible.  
+I will give you an example of problems a lot of developers encountered : it is the 
+compatibility of different browsers. When you develop a web application, you always have to
+install as many browsers as possible in order to test your application on them all.
+On the Pentila application, some services were very well designed and totally functionnal
+ on Firefox but on Internet Explorer, the design was awfull, we couldn't read all the 
+ sentences of a post-it for example or some pictures weren't displayed. 
 
 
-I looked at the existing software for functionnal tests. One could be very useful for the company, it's called JMeter. The other stagiare installed it and register some scenarios into it. 
+The company had one document with an acceptance test plan for some services of the 
+application. This document was not finished at all but it was very useful in order 
+to continue the testing stage later. 
+My task was first to finish this document, I had to write all the functionalities of every
+services into the document. Once done, I would have to test all the services 
+of the website, and report what I found into the Redmine application. 
+
+In order to accomplish this task, first of all I did some acceptance testing to continue
+ and finish to write the document. Then I did some regression testing. After each new 
+ version of the application, I test the services by following the steps of the acceptance 
+ test plan. 
+
+Finally, I looked at the existing softwares for functionnal tests in order to do automated 
+tests. One could be very useful for the company, it's called JMeter. The other intern 
+installed it and register some scenarios into it. At the end, I helped him to install
+a tool useful to use with JMeter sorftware, it is the jconsole that we can use with Tomcat
+server. I will describe a bit how I did it later in this report. 
 
 
 
 \newpage
 \subsection{Bugs fixing}
-Once the bugs tracking done, I had to fix some bugs. 
-The company gave me a document that explain how to install the source code on your OS. 
+Once the bugs tracking done, the next stage was to fix the bugs reported. 
+The bugs were related to different areas of the application
+such as Tomcat, ldap or programming bugs. Most of them was CSS, Html, Javascript or java EE
+bugs. Here is an example of bug I had to solve. On the Articles service, we could see
+all the articles posted by your group or by the headteacher, but the user could also
+write a new article for a group and add a media into it. 
+When we clicked on the add Media button, 
+the user could choose a file from his local computer or a file from his pigeonhole or school
+bag services. 
+The file has to be with a good extension. But here is the problem : some names of files
+from the pigeonhole and schoolbag was displayed twice in the list.  
 
-I had to follow it in order to have access to all their codes and their classes. To do that, I decided to first understand how the application work exactly. 
-So I made some researches about Tomcat, Liferay, Solr and ldap and then install everything. 
+I was asked to fix some of the bugs such as the one described above. 
+In order to do that, I needed to have an access to the source code of the application
+ and make it work on my computer.
+The company gave me a document that explain how to install the source code on OS Debian. 
+I had to follow the steps described in it, in order to have access to all their codes 
+and their classes.
 
-I had to correct some bugs very diffenrents at each other. Some about Tomcat, some about ldap
-but most of them was Javascript, Html or Css. 
-That's why I followed some tutorials about all of these web programming languages. 
-I looked at the navigator debuggers for js, html and css. 
+The first step was to understand how the application worked, and then install the working 
+environment on my computer. 
+So I made some researches about Tomcat, Liferay, Solr and ldap and then installed everything. 
+Once the environment working, I started to correct some bugs. I quickly understood that
+the bugs assigned to me would be related to different areas.  
+That's why I followed some tutorials about all of these web programming languages. I 
+needed to know at least how was CSS and Javascript working. I already know quite well
+Html.  
 
-
+In order to correct the bugs assigned to me, I first had to reproduce them, then I had
+to look at the code source to find in which class the bug was related. I looked at 
+the navigator debugger tool of Firefox for example. This tool prooves to be very helpful 
+to figure out what was the cause of the bug. I will describe in details
+the different steps to correct bugs of the application later in the   
+\hyperlink{ancre}{Bugfix} part of this report.

@@ -2,25 +2,52 @@
 \subsection{Implementation}
 
 
-I installed Redmine in ssh on an other machine. The installation was not very hard but allow me to know better the IT infrastructure. 
-To have an access to Redmine we neeed to run a server. But it's a bit annoying to have to start the server every day or even more. 
+I installed Redmine in ssh on an other machine. The installation was not very 
+hard. I needed first to install Ruby and
+Rails, and MySQL. I created an empty database and an user, then I set up the 
+database connection configuration. 
+To have an access to Redmine we need to run a server. But it's a bit annoying to start 
+manually the server every time we restart the computer. 
 That's why I searched how we can start a server automatically when we power up the computer. 
-I add a daemon for the Redmine's server, and we can access to our Redmine instance directly. \\ 
+I add a daemon that starts the Redmine's server, and as long as the computer is on, 
+we can directly access to our Redmine instance. 
 
 Then I installed Jenkins plugin, meanwhile I learnt about SVN in order to add jobs into Redmine. 
-SVN is a software versioning and revision control system, it allows Developers to maintain current and historical versions of files such as source code, web pages, and documentation. \\
+SVN is a software versioning and revision control system, it allows developers to 
+maintain current and historical versions of files such as source code, web pages, 
+and documentation. 
  
 The hardest part was to integrate Mylin into Eclipse. I needed a while to make it work but finally I just used the generic web connector of Eclipse. 
 
-The integration of ldap authentification into Redmine was straightforward. I just needed to configure the authentification mode with ldap data. \\ 
+The integration of ldap authentification into Redmine was straightforward. I just 
+needed to configure the authentification mode with ldap data.  
 
-In a nutshell : Schema
+Once evrything installed, I just had to set up the environment in order to allow
+the team's members to use it directly and easily.
+
 
 \subsection{Project creation}
 
 The last step was to create an instance for the project and look how to set up the environment in order to be nicest to use. 
 
-I wrote some wiki pages related to the project. I add a jenkins page into the project in order to have an access to Jenkins directly from their project.  
-Finally I looked how to create new issues in order to be ready to report bugs into Redmine. 
+I created a new project in which I add some members with their roles such as manager, 
+developer or rapporteur. Then I looked at the issues service. In this service it is 
+possible to add some issues such as bugs. It is probably the service that the developers
+will most use. So I set up the environment by adding different types of issues such
+as bugs, evolution, installation, development and assistance. 
+I also add some new issue statuses for example. 
+When we create a new issue, we first choose the type of the issue, then its status 
+can be "New" or "To be covered". The issue is 
+assigned to a project member who can later change the issue status from "New" to "Solved"
+for example. I also add that it is mandatory to choose in which portlet the issue 
+has been noticed. Issues can be nested within other issues, and also linked to each other.
+
+ 
+
+
+I wrote some wiki pages related to the project. I add a jenkins page into the project
+ in order to have an access to Jenkins directly from the project.  
+ Once the Redmine's environment set up, every member of the project could add some
+ issue, look at the issue assigned to them in order to fix them later. 
 
 

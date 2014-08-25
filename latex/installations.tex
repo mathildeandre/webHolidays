@@ -1,5 +1,4 @@
 
-\section{Softwares installation}
 
 Décrire votre travail (environ 6 pages)
 \begin{itemize}
@@ -7,46 +6,43 @@ Décrire votre travail (environ 6 pages)
 	\item implémentation de votre solution (détail technique) ou de la partie la plus intéressante si la place manque
 
 \end{itemize}
-
-In this part I will discuss the diffenrents softwares I have installed for the company. Firstofall I will focus on the research I have done. Then the details of the installation will be detailed. 
+\newpage
+\section{Softwares installation}
+In this part I will discuss the different softwares I have installed for the company.
+As I said in the previous part, the company needed a tool for project managing and asked
+me to install Redmine's software. 
+Firstofall I will focus on the researches I have done and the plugins I finally
+installed. 
+Then the details of the installation will be presented. To finish I will explain how I set
+up the environment and how team members can now work with this new software. 
 \subsection{Researches}
-%\includegraphics[scale=0.55]{Images/redmine.png} \\
 
-\includegraphics[width=\textwidth]{Images/redmine.png}
+\includegraphics[width=\textwidth, height=70px]{Images/redmine.png}
 \newline
 \\
-I dind't know a lot about project managing so I had to look what was Redmine for and what this application will allow us to do. \\ 
-Redmine is a powerful web based project managing which allow bugs tracking. It is possible to add a lot of functionalities to this application in intalling  some plugings into it. \\ 
-\newpage
-I read about all the plugings for Redmine and finally chose some of them  
-	\begin{figure}[h]
-		\includegraphics[scale=0.1]{Images/jenkins.jpeg} 
-		Jenkins. \\
-		This application provides an easy to use continuous integration system. 
-		It is an application that monitors executions of repeated jobs such as bulding, testing a software project.
-		It has 3 main features : 
-		\begin{itemize}
-			\item It allows a team to share common information easily.
-			\item It executes automatically compilation, testing without human intervention.
-			\item It keeps a track of previous productions and allow us to see their development. 
-		\end{itemize}
+I dind't know a lot about project managing so I had to look what was Redmine for and what
+ this application will allow the developers to do.  
+Redmine is a powerful web based project managing which allow bugs tracking. It allows the
+users to create a collection of issues and then see a Gant chart given by the start and 
+end dates of issues. You can also look at a calendar to see what happened on a particular
+day. The best thing about Redmine is that it is very easy to use. When working on a issue
+for example you can update it in one click or add notes to it very quickly. 
+ It is possible to add a lot of functionalities to this application by intalling some 
+ plugings into it. 
 
+This open-source software is written in Ruby and to install it we need to have the right versions of
+Ruby and Rails, depending of the redmine version we want.  
 
-		\includegraphics[scale=0.2]{Images/mylin.jpeg} 
-		Mylin for eclipse connection. \\
-		Mylin is the task and application lifecycle management framework for Eclipse
-		It allows to visualize tasks from Redmine repositorie and it has a connector to Jenkins. \\ 
-		It helps a developer to work efficiently with many different tasks (such as bugs, problem reports or new features). In a nutshell, it improves their productivity by reducing searching, scrolling, and navigation. \\
+ The developers team needed to keep a track of building versions of their application.
+ They also needed to have access to Redmine from Eclipse in order to see and change 
+ some issues from their IDE for example. 
+I read about all the plugings for Redmine and I finally chose some of them. 
+Here is a quick presentation of these plugins :  
 
-		\includegraphics[scale=0.1]{Images/ldap.jpeg} 
-		Ldap authentification. \\
-		Ldap is a protocol that allow us to access and maintain directory services. So we can access to some informations about the users of a network over TCP/IP protocol. 
-		With the ldap authentification into redmine, the users don't need to create a Redmine's account but they can directly access into their redmine's project by using their ldap password and login.   
-	\end{figure} 
-
-
+	 
 
 \newpage
+\input{plugins}
 \input{installations2}
 \cleardoublepage
 
