@@ -1,11 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<html>
 
-<!-- Mise en page classique avec le header, le corps, et le footer ! Les balises structurantes de
-HTML5 sont employÃ©es. -->
 
 
 
@@ -33,10 +26,10 @@ HTML5 sont employÃ©es. -->
                 <p> You can write all your expenses and then the service will calculate how much every body owes to every one. </p>
 	<h2 id="h2Affaire" onmouseover="changeCursor('h2Affaire')" onclick="location.href='../affaire/affaire.html'">Things</h2>
 		<p> You can create a list of things for the trip. You can then share it with people from the group. </p>
-              <!--  <p>Vous pouvez crÃ©er votre liste d'affaire et la partager avec tous les membres de votre groupe afin d'Ãªtre sur de ne rien oublier !</p> -->
+              <!--  <p>Vous pouvez créer votre liste d'affaire et la partager avec tous les membres de votre groupe afin d'être sur de ne rien oublier !</p> -->
 	<h2 id="h2Loisirs" onmouseover="changeCursor('h2Loisirs')" onclick="location.href='../groupe/groupe.html'">Hobbies</h2>
 		<p> Here you will find all kind of hobbies that can fit your holidays : sport, boardgames, nice activities ... </p>
-                <!-- <p>Ici vous trouverez tout type de loisirs qui peuvent accompagner vos vacances : sport, jeu de societe, autres activitÃ©s...</p> -->
+                <!-- <p>Ici vous trouverez tout type de loisirs qui peuvent accompagner vos vacances : sport, jeu de societe, autres activités...</p> -->
 	</article>
        </section>
 

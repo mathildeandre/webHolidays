@@ -1,40 +1,4 @@
 
-<!DOCTYPE html>
-<html onload="changeBackground()">
-
-<head>
-    <title>J'organise mes Vacances !!</title>
-    <meta charset='utf-8' />
-    <link rel="shortcut icon" href="images/tree3.png" />
-
-	<link rel="stylesheet" type="text/css" href="../CSS/general.css"/>
-    <link rel="stylesheet" type="text/css" href="../CSS/button.css" />
-	<link rel="stylesheet" type="text/css" href="../CSS/styleGroupe.css"/>
-    <link rel="stylesheet" type="text/css" href="../CSS/nav.css" />
-</head>
-
-
-<body id="imgHeaderNav" >
-<header> <!--<img src="images/sun.png" alt="Tree" height="100" /> -->
- 	Aorganisation of Holidays
-	<!--<img src="images/tree3.png" alt="Tree" height="100" />-->
-</header>
-
-
-<nav>
-	<ul>
-	 <li id="liAccueil" onmouseover="changeCursor('liAccueil')" onclick="location.href='../accueil/accueil.html'">Homepage</li>
-	 <li class="current" >Group</li>
-	 <li id="liDoodle" onmouseover="changeCursor('liDoodle')" onclick="location.href='../doodle/doodle.html'" >Doodle</li>
-	 <li id="liRepas" onmouseover="changeCursor('liRepas')" onclick="location.href='../repas/repas.html'">Meals</li>
-	 <li id="liCalc" onmouseover="changeCursor('liCalc')" onclick="location.href='../calculation/calculation.html?tab=emiel,matthijs,fabian,kiki'">Expenses</li>
-	 <li id="liAffaire" onmouseover="changeCursor('liAffaire')" onclick="location.href='../affaire/affaire.html'">Things</li>
-	 <li id="liLoisirs" onmouseover="changeCursor('liLoisirs')" onclick="location.href='../loisirs/loisirs.html'">Hobbies</li>
-	</ul>
-</nav>
-
-
-
  <section >
    <h1>Your Group</h1>
 
@@ -73,13 +37,8 @@
 
 
 
-<footer><p>Copyright fs - Tous droits réservés<br/> Nous contacter : fabiensauce@orange.fr</p></footer>
-
-
 <script src="../actionJS/navChanging.js" type="text/javascript"></script>
 
 <script src="../actionJS/actionInputText.js" type="text/javascript"></script>
 <script src="groupe.js" type="text/javascript"></script>
-</body>
 
-</html>
