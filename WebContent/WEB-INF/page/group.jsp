@@ -34,5 +34,4 @@
  </section >
 
 
-<script src="groupe.js" type="text/javascript"></script>
-
+<script src="JS/group.js" type="text/javascript"></script>

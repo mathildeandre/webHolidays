@@ -7,7 +7,7 @@
 
     <link rel="stylesheet" type="text/css" href="CSS/header.css" />
     <link rel="stylesheet" type="text/css" href="CSS/button.css" />
-    <link rel="stylesheet" type="text/css" href="CSS/styleIndex.css" />
+    <link rel="stylesheet" type="text/css" href="CSS/styleWelcome.css" />
 </head>
 <!-- Mise en page classique avec le header, le corps, et le footer ! Les balises structurantes de
 HTML5 sont employées. -->
@@ -30,7 +30,7 @@ HTML5 sont employées. -->
 
 <section class="line" id="mySection">
 	<article id="accederSite" class="inline"  >
-		 <div id="bAccesSite" class="button3D b3white" onmouseover="changeCursor('bAccesSite')" onclick="location.href='index.jsp?page=accueil'">Acceder au site </br> sans créer </br> de groupe </div>
+		 <div id="bAccesSite" class="button3D b3white" onmouseover="changeCursor('bAccesSite')" onclick="location.href='index.jsp?page=homepage'">Acceder au site </br> sans créer </br> de groupe </div>
 	</article>
 	
 	<article id="creationGroup" class="inline">
