@@ -14,4 +14,8 @@
     <link rel="stylesheet" type="text/css" href="CSS/nav.css" />
     <link rel="stylesheet" type="text/css" href="CSS/styleAccueil.css" />
     <link rel="stylesheet" type="text/css" href="CSS/active.css" />
+    
+    
+<script src="actionJS/navChanging.js" type="text/javascript"></script>
+<script src="actionJS/actionInputText.js" type="text/javascript"></script>
 </head>

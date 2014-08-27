@@ -1,7 +1,4 @@
 
-
-
-
        <section >
        
        <div id="myBox" onclick="popup('../groupe/groupe.html')">
@@ -36,8 +33,6 @@
 
 
 
-<script src="actionJS/navChanging.js" type="text/javascript"></script>
-<script src="actionJS/actionInputText.js" type="text/javascript"></script>
 
 <SCRIPT>
     function popup(page) {

@@ -34,11 +34,5 @@
  </section >
 
 
-
-
-
-<script src="../actionJS/navChanging.js" type="text/javascript"></script>
-
-<script src="../actionJS/actionInputText.js" type="text/javascript"></script>
 <script src="groupe.js" type="text/javascript"></script>
 
