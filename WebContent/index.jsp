@@ -18,11 +18,11 @@ HTML5 sont employées. -->
 
 <% 
     if (request.getParameter("page").equals("accueil")) { %>
-        <%@include file="/WEB-INF/page/accueil.jsp"%>
+        <%@include file="/WEB-INF/page/accueil/accueil.jsp"%>
 <%
     }
     else if (request.getParameter("page").equals("group")) { %>
-		<%@include file="/WEB-INF/page/groupe.jsp"%>
+		<%@include file="/WEB-INF/page/groupe/groupe.jsp"%>
 <%
 }
 %>

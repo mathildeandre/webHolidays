@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 public class Registration extends HttpServlet {
     
 	public void doGet( HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException{
-		this.getServletContext().getRequestDispatcher( "/WEB-INF/page/registration.jsp" ).forward( request, response );
+		this.getServletContext().getRequestDispatcher( "/WEB-INF/page/registration/registration.jsp" ).forward( request, response );
 	}
 	
 }
