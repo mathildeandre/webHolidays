@@ -34,20 +34,28 @@ HTML5 sont employées. -->
 	</article>
 	
 	<article id="creationGroup" class="inline">
-		<h2> Créer votre groupe </h2>
-		
-		<div><input class="textGrey inline" id="nameGroup" type="text" value="Nom du groupe" onfocus="inputTextFocus('nameGroup', 'Blue')" onblur="inputTextBlur('nameGroup','Nom du groupe')" >
+		<h2> Creer votre groupe </h2>
+		<form method="post" action="welcome">
+         <div><input class="textGrey inline" id="nameGroup" name="nameGroup" type="text" value="Name of your group" 
+         onfocus="inputTextFocus('nameGroup', 'Blue')" onblur="inputTextBlur('nameGroup','Name of your group')" >
 		 </div>
-		<div><input class="textGrey inline" id="email" type="text" value="Votre adresse electronique" onfocus="inputTextFocus('email', 'Blue')" onblur="inputTextBlur('email','Votre adresse electronique')" >
+		<div><input class="textGrey inline" id="email" name="email" type="email" value="Your email adress" 
+		onfocus="inputTextFocus('email', 'Blue')" onblur="inputTextBlur('email','Your email adress')" >
 		 </div>
-		<div><input class="textGrey inline" id="mdpAdmin" type="text" value="Votre mot de passe (admin)" onfocus="inputTextFocus('mdpAdmin', 'Blue')" onblur="inputTextBlur('mdpAdmin','Votre mot de passe (admin)')" >
+		<div><input class="textGrey inline" id="pwdAdmin" name="pwdAdmin" type="text" value="Your password (admin)" 
+		onfocus="inputTextFocusPwd('pwdAdmin', 'Blue')" onblur="inputTextBlurPwd('pwdAdmin','Your password (admin)')" >
 		 </div>
-		<div><input class="textGrey inline" id="confirmMdpAdmin" type="text" value="Confirmation de votre mdp" onfocus="inputTextFocus('confirmMdpAdmin', 'Blue')" onblur="inputTextBlur('confirmMdpAdmin','Confirmation de votre mdp')" >
+		<div><input class="textGrey inline" id="confirmPwdAdmin" name="confirmPwdAdmin" type="text" value="Confirm your password" 
+		onfocus="inputTextFocusPwd('confirmPwdAdmin', 'Blue')" onblur="inputTextBlurPwd('confirmPwdAdmin','Confirm your password')" >
 		 </div>
-		<div><input class="textGrey inline" id="mdpMembre" type="text" value="Mot de passe pour les membres du groupes" onfocus="inputTextFocus('mdpMembre', 'Blue')" onblur="inputTextBlur('mdpMembre','Mot de passe pour les membres du groupes')" >
+		<div><input class="textGrey inline" id="pwdMembers" name="pwdMembers" type="text" value="Password for members of your group" 
+		onfocus="inputTextFocusPwd('pwdMembers', 'Blue')" onblur="inputTextBlurPwd('pwdMembers','Password for members of your group')" >
 		 </div>
-		<div><input class="textGrey inline" id="confirmMdpMembre" type="text" value="Confirmation du mdp des membres" onfocus="inputTextFocus('confirmMdpMembre', 'Blue')" onblur="inputTextBlur('confirmMdpMembre','Confirmation du mdp des membres')" ></div>
-		<div id="confirm" class="button3D b3white" onmouseover="changeCursor('confirm')" onclick="location.href='../accueil/accueil.html'">Confirmer</div>
+		<div><input class="textGrey inline" id="confirmPwdMembers" name="confirmPwdMembers" type="text" value="Confirm members's password" 
+		onfocus="inputTextFocusPwd('confirmPwdMembers', 'Blue')" 
+		onblur="inputTextBlurPwd('confirmPwdMembers','Confirm members's password')" ></div>
+		<input id="confirm" type="submit" value="Confirm" class="button3D b3white" onmouseover="changeCursor('confirm')"  />
+       </form>
 	</article>
 
 
@@ -55,11 +63,10 @@ HTML5 sont employées. -->
 
 
 
-<footer >Copyright fs - Tous droits réservés<br/> Nous contacter : fabiensauce@orange.fr</footer>
+<footer >Copyright � - Tous droits reserves<br/> Nous contacter : fabiensauce@orange.fr</footer>
 
-<!--<script src="actionJS/navChanging.js" type="text/javascript"></script>-->
-<script src="actionJS/indexChanging.js" type="text/javascript"></script>
-<script src="actionJS/actionInputText.js" type="text/javascript"></script>
+<script src="JS/actionJS/indexChanging.js" type="text/javascript"></script>
+<script src="JS/actionJS/actionInputText.js" type="text/javascript"></script>
 
 </body>
 
