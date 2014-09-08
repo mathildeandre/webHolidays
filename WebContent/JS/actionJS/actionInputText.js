@@ -51,3 +51,24 @@ function emptyText(id0, id1, id2){
 				document.getElementById(id2).value = "";
 			}
 }
+function inputTextBlurPwd(id,value){
+	var inputName = document.getElementById(id);
+	if(inputName.value == ""){
+		inputName.value = value; //setAttribute("value","");
+		inputName.className = "textGrey";
+		inputName.type = "text";
+	}
+}
+function inputTextFocusPwd(id, color){
+
+	if (typeof color === 'undefined') { //color non specifié
+		color = "";
+	}
+	var inputName = document.getElementById(id);
+	//indexOf return la position du string trouvé, -1 si pas trouve    //if(inputName.className == "textGrey"){
+	if(inputName.className.indexOf("textGrey") > -1){  
+		inputName.className = "text"+color; //inputName.setAttribute("id","name");
+		inputName.value = ""; //inputName.setAttribute("value","");
+		inputName.type = "password";
+	}
+}
