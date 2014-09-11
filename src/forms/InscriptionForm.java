@@ -64,7 +64,6 @@ public final class InscriptionForm {
             resultat = "Échec de l'inscription : une erreur imprévue est survenue, merci de réessayer dans quelques instants.";
             e.printStackTrace();
         }
-
         return group;
     }
 

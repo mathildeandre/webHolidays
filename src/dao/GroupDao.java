@@ -3,25 +3,27 @@ package dao;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import org.jasypt.util.password.ConfigurablePasswordEncryptor;
+
 import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.PreparedStatement;
 
 import static dao.DAOUtilitaire.*;
 import beans.Group;
 
-public class GroupDaoImpl implements GroupDao {
+public class GroupDao {
     private DAOFactory daoFactory;
+    private static final String ALGO_CHIFFREMENT = "SHA-256";
 	
-	GroupDaoImpl( DAOFactory daoFactory ) {
+	GroupDao( DAOFactory daoFactory ) {
         this.daoFactory = daoFactory;
     }
 	
 	
 	
-	private static final String SQL_INSERT = "INSERT INTO Groups (name, email, pwd_admin, pwd_members, date_inscription) VALUES (?, ?, ?, ?, NOW())";
+	private static final String SQL_INSERT = "INSERT INTO Groups (nameGroup, email, pwd_admin, pwd_members, date_inscription) VALUES (?, ?, ?, ?, NOW())";
 
 	/* Implémentation de la méthode définie dans l'interface UtilisateurDao */
-	@Override
 	public void creer( Group group ) throws DAOException {
 		System.out.println("creation user !!!!!!!!!!!!!!!!!!!");
 	    Connection connexion = null;
@@ -52,32 +54,50 @@ public class GroupDaoImpl implements GroupDao {
 	    }
 	}
 	
-//	private static final String SQL_SELECT_PAR_EMAIL = "SELECT id, email, nom, mot_de_passe, date_inscription FROM Utilisateur WHERE email = ?";
-//	
-//	@Override
-//	public Group trouver(String email) throws DAOException {
-//		// TODO Auto-generated method stub
-//		Connection connexion = null;
-//	    PreparedStatement preparedStatement = null;
-//	    ResultSet resultSet = null;
-//	    Group utilisateur = null;
-//
-//	    try {
-//	        /* Récupération d'une connexion depuis la Factory */
-//	        connexion = (Connection) daoFactory.getConnection();
-//	        preparedStatement = initialisationRequetePreparee( connexion, SQL_SELECT_PAR_EMAIL, false, email );
-//	        resultSet = preparedStatement.executeQuery();
-//	        /* Parcours de la ligne de données de l'éventuel ResulSet retourné */
-//	        if ( resultSet.next() ) {
-//	            utilisateur = DAOUtilitaire.map( resultSet );
-//	        }
-//	    } catch ( SQLException e ) {
-//	        throw new DAOException( e );
-//	    } finally {
-//	        fermeturesSilencieuses( resultSet, preparedStatement, connexion );
-//	    }
-//
-//	    return utilisateur;
-//	}
+	private static final String SQL_SELECT_GROUP = "SELECT idGroup, nameGroup, pwd_admin, pwd_members FROM Groups WHERE nameGroup=?";
+	
+	public String findGroup(String nameGroup, String pwdGroup) throws DAOException {
+		Connection connexion = null;
+	    PreparedStatement preparedStatementGroup = null;
+	    ResultSet resultSetGroup = null;
+	    String result = "";
 
+	    try {
+	        /* Récupération d'une connexion depuis la Factory */
+	        connexion = (Connection) daoFactory.getConnection();
+	        preparedStatementGroup = initialisationRequetePreparee( connexion, SQL_SELECT_GROUP, false, nameGroup );
+	        resultSetGroup = preparedStatementGroup.executeQuery();
+
+	        if ( resultSetGroup.next() ) {
+	        	String pwdAdmin = resultSetGroup.getString("pwd_admin");
+	        	String pwdMember = resultSetGroup.getString("pwd_members");
+	        	
+	        	ConfigurablePasswordEncryptor passwordEncryptor = new ConfigurablePasswordEncryptor();
+	            passwordEncryptor.setAlgorithm( ALGO_CHIFFREMENT );
+	            passwordEncryptor.setPlainDigest( false );
+	            Boolean boolAdmin = passwordEncryptor.checkPassword(pwdGroup, pwdAdmin);
+	            Boolean boolMember = passwordEncryptor.checkPassword(pwdGroup, pwdMember);
+	            
+		        if ( boolAdmin ) {
+		        	result="OK_admin";
+		        }
+		        else if(boolMember){
+		        	result="OK_member";
+		        }
+		        else{
+			        result = "ERROR_pwd";
+			    }
+		        
+	        }
+	        else{
+	        	result = "ERROR_name";
+	        }
+	    } catch ( SQLException e ) {
+	        throw new DAOException( e );
+	    } finally {
+	        fermeturesSilencieuses( resultSetGroup, preparedStatementGroup, connexion );
+	    }
+
+	    return result;
+	}
 }

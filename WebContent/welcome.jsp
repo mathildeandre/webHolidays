@@ -17,11 +17,14 @@ HTML5 sont employées. -->
  	Organisation of holidays
 	</div>
 	
+	<form method="post" action="connexion">
 	<div id="connexion" class="line inline"> 
-		<input class="textGrey inline" id="coGroup" type="text" value="Group" onfocus="inputTextFocus('coGroup', 'Blue')" onblur="inputTextBlur('coGroup','Group')" >
-		<input class="textGrey inline" id="coPwd" type="text" value="Password" onfocus="inputTextFocus('coPwd', 'Blue')" onblur="inputTextBlur('coPwd','Password')" >
-		<div class="inline button3D b3white">Connexion</div>
+		<input class="textGrey inline" id="coGroup" name="coGroup" type="text" value="Group" onfocus="inputTextFocus('coGroup', 'Blue')" onblur="inputTextBlur('coGroup','Group')" >
+		<input class="textGrey inline" id="coPwd" name="coPwd" type="text" value="Password" onfocus="inputTextFocus('coPwd', 'Blue')" onblur="inputTextBlur('coPwd','Password')" >
+		<input id="confirm" type="submit" value="Connexion" class="inline button3D b3white" onmouseover="changeCursor('confirm')"  />
+       
 	</div>
+	</form>
 
 
 </header>
@@ -52,8 +55,7 @@ HTML5 sont employées. -->
 		onfocus="inputTextFocusPwd('pwdMembers', 'Blue')" onblur="inputTextBlurPwd('pwdMembers','Password for members of your group')" >
 		 </div>
 		<div><input class="textGrey inline" id="confirmPwdMembers" name="confirmPwdMembers" type="text" value="Confirm members's password" 
-		onfocus="inputTextFocusPwd('confirmPwdMembers', 'Blue')" 
-		onblur="inputTextBlurPwd('confirmPwdMembers','Confirm members's password')" ></div>
+		onfocus="inputTextFocusPwd('confirmPwdMembers', 'Blue')"  onblur="inputTextBlurPwd('confirmPwdMembers','Confirm members's password')"></div>
 		<input id="confirm" type="submit" value="Confirm" class="button3D b3white" onmouseover="changeCursor('confirm')"  />
        </form>
 	</article>

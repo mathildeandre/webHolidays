@@ -74,7 +74,7 @@ public class DAOFactory {
      * Méthodes de récupération de l'implémentation des différents DAO (un seul
      * pour le moment)
      */
-    public GroupDao getUtilisateurDao() {
-        return new GroupDaoImpl( this );
+    public GroupDao getGroupDao() {
+        return new GroupDao( this );
     }
 }

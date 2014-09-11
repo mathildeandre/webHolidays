@@ -24,7 +24,7 @@ public class Welcome extends HttpServlet {
 
     public void init() throws ServletException {
         /* Récupération d'une instance de notre DAO Utilisateur */
-        this.groupDAO = ( (DAOFactory) getServletContext().getAttribute( CONF_DAO_FACTORY ) ).getUtilisateurDao();
+        this.groupDAO = ( (DAOFactory) getServletContext().getAttribute( CONF_DAO_FACTORY ) ).getGroupDao();
     }
 
     
