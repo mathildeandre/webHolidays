@@ -9,23 +9,27 @@ import javax.servlet.http.HttpServletRequest;
 import org.jasypt.util.password.ConfigurablePasswordEncryptor;
 
 import beans.Group;
+import beans.Person;
 import dao.DAOException;
 import dao.GroupDao;
+import dao.PersonDao;
 
 public final class InscriptionForm {
-    private static final String CHAMP_EMAIL      = "email";
-    private static final String CHAMP_PASS       = "motdepasse";
-    private static final String CHAMP_CONF       = "confirmation";
-    private static final String CHAMP_NOM        = "nom";
+//    private static final String CHAMP_EMAIL      = "email";
+//    private static final String CHAMP_PASS       = "motdepasse";
+//    private static final String CHAMP_CONF       = "confirmation";
+//    private static final String CHAMP_NOM        = "nameGroup";
 
     private static final String ALGO_CHIFFREMENT = "SHA-256";
 
     private String              resultat;
     private Map<String, String> erreurs          = new HashMap<String, String>();
     private GroupDao      groupDao;
+    private PersonDao     personDao;
 
-    public InscriptionForm( GroupDao groupDao ) {
+    public InscriptionForm( GroupDao groupDao, PersonDao personDao ) {
         this.groupDao = groupDao;
+        this.personDao = personDao;
     }
 
     public Map<String, String> getErreurs() {
@@ -37,25 +41,33 @@ public final class InscriptionForm {
     }
 
     public Group inscrireUtilisateur( HttpServletRequest request ) {
-        String name = getValeurChamp( request, "nameGroup" );
-        String email = getValeurChamp( request, "email" );
+        String nameGroup = getValeurChamp( request, "nameGroup" );
+        String nameAdmin = getValeurChamp( request, "nameAdmin" );
+        String emailAdmin = getValeurChamp( request, "emailAdmin" );
         String pwdAdmin = getValeurChamp( request, "pwdAdmin" );
         String confirmPwdAdmin = getValeurChamp( request, "confirmPwdAdmin" );
-        String pwdMembers = getValeurChamp( request, "pwdMembers" );
-        String confirmPwdMembers = getValeurChamp( request, "confirmPwdMembers" );
 
         Group group = new Group();
+        Person person = new Person();
         try {
 
-            traiterNom( name, group ); 
-            traiterEmail( email, group );
+             traiterNom( nameGroup, group );
+            group.setName( nameGroup );
+             traiterEmail( emailAdmin, person );
+            person.setEmail( emailAdmin );
+            person.setName(nameAdmin);
+            person.setAdmin(true);
             String newPwdAdmin = traiterMotsDePasse( pwdAdmin, confirmPwdAdmin );
-            group.setPwdAdmin(newPwdAdmin);
-            String newPwdMembers = traiterMotsDePasse( pwdMembers, confirmPwdMembers);
-            group.setPwdMembers(newPwdMembers);
+            person.setPwd(newPwdAdmin);
 
             if ( erreurs.isEmpty() ) {
-                groupDao.creer( group );
+                long idGroup = groupDao.create( group ); //we do inside : group.setId
+                group.setId(idGroup);
+                person.setIdGroup(idGroup);
+                
+                long idPerson = personDao.create( person );
+                
+                person.setId(idPerson);
                 System.out.println( "Succès de l'inscription.");
             } else {
             	 System.out.println( "Échec de l'inscription.");
@@ -68,19 +80,60 @@ public final class InscriptionForm {
     }
 
     /*
+     * Appel à la validation du nom reçu et initialisation de la propriété nom
+     * du bean
+     */
+    private void traiterNom( String name, Group group ) {
+        try {
+            validationNom( name );
+        } catch ( FormValidationException e ) {
+        	System.out.println("mauvais nom.");
+            setErreur( "nameGroup", e.getMessage() );
+        }
+    }
+    /* Validation du nom */
+    private void validationNom( String nameGroup ) throws FormValidationException {
+        if ( nameGroup != null && nameGroup.length() < 3 ) {
+        	System.out.println( "Le nom d'utilisateur doit contenir au moins 3 caractères.");
+            throw new FormValidationException( "Le nom d'utilisateur doit contenir au moins 3 caractères." );
+        }
+        
+//        TODO checker si le nom exist pas ds la bdd
+//        else if (){ 
+//        	
+//        }
+    }
+    
+    /*
      * Appel à la validation de l'adresse email reçue et initialisation de la
      * propriété email du bean
      */
-    private void traiterEmail( String email, Group utilisateur ) {
+    private void traiterEmail( String email, Person person ) {
         try {
             validationEmail( email );
         } catch ( FormValidationException e ) {
         	System.out.println("mauvaise adresse mail");
-            setErreur( CHAMP_EMAIL, e.getMessage() );
+            setErreur( "email", e.getMessage() );
         }
-        utilisateur.setEmail( email );
     }
 
+    /* Validation de l'adresse email */
+    private void validationEmail( String email ) throws FormValidationException {
+        if ( email != null ) {
+            if ( !email.matches( "([^.@]+)(\\.[^.@]+)*@([^.@]+\\.)+([^.@]+)" ) ) {
+                System.out.println( "Merci de saisir une adresse mail valide." );
+
+                throw new FormValidationException( "Merci de saisir une adresse mail valide." );
+//            } else if ( groupDao.trouver( email ) != null ) {
+//            	System.out.println("Cette adresse email est déjà utilisée, merci d'en choisir une autre.");
+//                throw new FormValidationException( "Cette adresse email est déjà utilisée, merci d'en choisir une autre." );
+            }
+        } 
+    }
+    
+    
+    
+    
     /*
      * Appel à la validation des mots de passe reçus, chiffrement du mot de
      * passe et initialisation de la propriété motDePasse du bean
@@ -91,8 +144,11 @@ public final class InscriptionForm {
         } catch ( FormValidationException e ) {
         	System.out.println("mauvais mdp");
 
-            setErreur( CHAMP_PASS, e.getMessage() );
-            setErreur( CHAMP_CONF, null );
+            setErreur( "pwdAdmin", e.getMessage() );
+        }
+        catch (SecondException e){
+
+            setErreur( "confirmPwdAdmin", e.getMessage() );
         }
 
         /*
@@ -112,60 +168,34 @@ public final class InscriptionForm {
         return pwdChiffre;
     }
 
-    /*
-     * Appel à la validation du nom reçu et initialisation de la propriété nom
-     * du bean
-     */
-    private void traiterNom( String name, Group group ) {
-        try {
-            validationNom( name );
-        } catch ( FormValidationException e ) {
-        	System.out.println("mauvais nom.");
-            setErreur( CHAMP_NOM, e.getMessage() );
-        }
-        group.setName( name );
-    }
+   
+    
 
-    /* Validation de l'adresse email */
-    private void validationEmail( String email ) throws FormValidationException {
-        if ( email != null ) {
-            if ( !email.matches( "([^.@]+)(\\.[^.@]+)*@([^.@]+\\.)+([^.@]+)" ) ) {
-                System.out.println( "Merci de saisir une adresse mail valide." );
-
-                throw new FormValidationException( "Merci de saisir une adresse mail valide." );
-//            } else if ( groupDao.trouver( email ) != null ) {
-//            	System.out.println("Cette adresse email est déjà utilisée, merci d'en choisir une autre.");
-//                throw new FormValidationException( "Cette adresse email est déjà utilisée, merci d'en choisir une autre." );
-            }
-        } else {
-        	System.out.println("Merci de saisir une adresse mail.");
-            throw new FormValidationException( "Merci de saisir une adresse mail." );
-        }
-    }
+   
 
     /* Validation des mots de passe */
-    private void validationMotsDePasse( String motDePasse, String confirmation ) throws FormValidationException {
+    private void validationMotsDePasse( String motDePasse, String confirmation ) throws FormValidationException, SecondException {
         if ( motDePasse != null && confirmation != null ) {
             if ( !motDePasse.equals( confirmation ) ) {
             	System.out.println("Les mots de passe entrés sont différents, merci de les saisir à nouveau.");
-                throw new FormValidationException( "Les mots de passe entrés sont différents, merci de les saisir à nouveau." );
+                throw new SecondException( "Password different from the first" );
             } else if ( motDePasse.length() < 3 ) {            	
             	System.out.println("Les mots de passe doivent contenir au moins 3 caractères.");
                 throw new FormValidationException( "Les mots de passe doivent contenir au moins 3 caractères." );
             }
-        } else {
+        } 
+//        TODO verifier que le pwd est unique dans le group
+//        else if(){
+//        	
+//        }
+        
+        else {
         	System.out.println("Merci de saisir et confirmer votre mot de passe.");
             throw new FormValidationException( "Merci de saisir et confirmer votre mot de passe." );
         }
     }
 
-    /* Validation du nom */
-    private void validationNom( String nom ) throws FormValidationException {
-        if ( nom != null && nom.length() < 3 ) {
-        	System.out.println( "Le nom d'utilisateur doit contenir au moins 3 caractères.");
-            throw new FormValidationException( "Le nom d'utilisateur doit contenir au moins 3 caractères." );
-        }
-    }
+  
 
     /*
      * Ajoute un message correspondant au champ spécifié à la map des erreurs.

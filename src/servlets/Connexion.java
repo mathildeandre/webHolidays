@@ -8,8 +8,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import beans.Group;
 import dao.DAOFactory;
 import dao.GroupDao;
+import forms.ConnexionForm;
 
 public class Connexion extends HttpServlet {
 	
@@ -27,21 +29,27 @@ public class Connexion extends HttpServlet {
     
 	
 	public void doPost( HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException {
-		String nameGroup = request.getParameter("coGroup");
-		String pwdGroup = request.getParameter("coPwd");
-        String result = groupDAO.findGroup(nameGroup, pwdGroup);
+	//	String nameGroup = request.getParameter("coGroup");
+	//	String pwdGroup = request.getParameter("coPwd");
+		
+		ConnexionForm connexionForm = new ConnexionForm(groupDAO);
+		Group myGroup = connexionForm.connectUser(request);
+		
+//		connexionForm.getErreurs();
+		
+   //     String result = groupDAO.findGroup(nameGroup, pwdGroup);
 
-        /* Stockage du formulaire et du bean dans l'objet request */
-        request.setAttribute( "result", result );
-        request.setAttribute( "nameGroup", nameGroup );
+//        /* Stockage du formulaire et du bean dans l'objet request */
+//        request.setAttribute( "result", result );
+//        request.setAttribute( "nameGroup", nameGroup );
 
-        if(result.equalsIgnoreCase("OK_admin")){
-            this.getServletContext().getRequestDispatcher("/index.jsp?page=homepage").forward(request, response);
-        }else if(result.equalsIgnoreCase("OK_member")){
-            this.getServletContext().getRequestDispatcher("/index.jsp?page=homepage").forward(request, response);
-        }else{
-            this.getServletContext().getRequestDispatcher(VUE).forward( request, response );
-        }
+//        if(result.equalsIgnoreCase("OK_admin")){
+//            this.getServletContext().getRequestDispatcher("/index.jsp?page=homepage").forward(request, response);
+//        }else if(result.equalsIgnoreCase("OK_member")){
+//            this.getServletContext().getRequestDispatcher("/index.jsp?page=homepage").forward(request, response);
+//        }else{
+//            this.getServletContext().getRequestDispatcher(VUE).forward( request, response );
+//        }
 
     }
 	

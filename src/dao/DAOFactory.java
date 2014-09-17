@@ -77,4 +77,8 @@ public class DAOFactory {
     public GroupDao getGroupDao() {
         return new GroupDao( this );
     }
+
+    public PersonDao getPersonDao() {
+        return new PersonDao( this );
+    }
 }

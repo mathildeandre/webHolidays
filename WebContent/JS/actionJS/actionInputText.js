@@ -72,3 +72,31 @@ function inputTextFocusPwd(id, color){
 		inputName.type = "password";
 	}
 }
+function emtyAll(id1,text1,id2,text2,id3,text3,id4,text4,id5,text5){
+	var inputName1 = document.getElementById(id1);
+	var inputName2 = document.getElementById(id2);
+	var inputName3 = document.getElementById(id3);
+	var inputName4 = document.getElementById(id4);
+	var inputName5 = document.getElementById(id5);
+	if(inputName1.value == text1){
+		inputName1.value = "";
+	}
+	if(inputName2.value == text2){
+		inputName2.value = "";
+	}
+	if(inputName3.value == text3){
+		inputName3.value = "";
+	}
+	if(inputName4.value == text4){
+		inputName4.value = "";
+	}
+	if(inputName5.value == text5){
+		inputName5.value = "";
+	}
+}
+function emtyEmail(id,text){
+	var inputName = document.getElementById(id);
+	if(inputName.value == text){
+		inputName.value = "";
+	}
+}

@@ -1,3 +1,5 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 
 <!-- La section <head>. Nous aurons l'occasion d'en parler plus tard dans le cours ! -->
 <head>
@@ -33,30 +35,29 @@ HTML5 sont employées. -->
 
 <section class="line" id="mySection">
 	<article id="accederSite" class="inline"  >
-		 <div id="bAccesSite" class="button3D b3white" onmouseover="changeCursor('bAccesSite')" onclick="location.href='index.jsp?page=homepage'">Acceder au site </br> sans créer </br> de groupe </div>
+		 <div id="bAccesSite" class="button3D b3white" onmouseover="changeCursor('bAccesSite')" onclick="location.href='index.jsp?page=homepage'">Acceder au site </br> sans creer </br> de groupe </div>
 	</article>
 	
 	<article id="creationGroup" class="inline">
 		<h2> Creer votre groupe </h2>
-		<form method="post" action="welcome">
+		<form method="post" action="inscription">
          <div><input class="textGrey inline" id="nameGroup" name="nameGroup" type="text" value="Name of your group" 
-         onfocus="inputTextFocus('nameGroup', 'Blue')" onblur="inputTextBlur('nameGroup','Name of your group')" >
-		 </div>
-		<div><input class="textGrey inline" id="email" name="email" type="email" value="Your email adress" 
-		onfocus="inputTextFocus('email', 'Blue')" onblur="inputTextBlur('email','Your email adress')" >
+         onfocus="inputTextFocus('nameGroup', 'Blue')" onblur="inputTextBlur('nameGroup','Name of your group')" required >
+		 </div><span class="textRed">${requestScope.errors['nameGroup']}</span>
+		  <div><input class="textGrey inline" id="nameAdmin" name="nameAdmin" type="text" value="Your name into the group" 
+         onfocus="inputTextFocus('nameAdmin', 'Blue')" onblur="inputTextBlur('nameAdmin','Your name into the group')" required >
+		 </div><span class="textRed">${requestScope.errors['nameGroup']}</span>
+		<div><input class="textGrey inline" id="emailAdmin" name="emailAdmin" type="email" value="Your email adress (optional)" 
+		onfocus="inputTextFocus('emailAdmin', 'Blue')" onblur="inputTextBlur('emailAdmin','Your email adress (optional)')" >
 		 </div>
 		<div><input class="textGrey inline" id="pwdAdmin" name="pwdAdmin" type="text" value="Your password (admin)" 
-		onfocus="inputTextFocusPwd('pwdAdmin', 'Blue')" onblur="inputTextBlurPwd('pwdAdmin','Your password (admin)')" >
-		 </div>
+		onfocus="inputTextFocusPwd('pwdAdmin', 'Blue')" onblur="inputTextBlurPwd('pwdAdmin','Your password (admin)')" required>
+		 </div><span class="textRed">${requestScope.errors['pwdAdmin']}</span>
 		<div><input class="textGrey inline" id="confirmPwdAdmin" name="confirmPwdAdmin" type="text" value="Confirm your password" 
-		onfocus="inputTextFocusPwd('confirmPwdAdmin', 'Blue')" onblur="inputTextBlurPwd('confirmPwdAdmin','Confirm your password')" >
-		 </div>
-		<div><input class="textGrey inline" id="pwdMembers" name="pwdMembers" type="text" value="Password for members of your group" 
-		onfocus="inputTextFocusPwd('pwdMembers', 'Blue')" onblur="inputTextBlurPwd('pwdMembers','Password for members of your group')" >
-		 </div>
-		<div><input class="textGrey inline" id="confirmPwdMembers" name="confirmPwdMembers" type="text" value="Confirm members's password" 
-		onfocus="inputTextFocusPwd('confirmPwdMembers', 'Blue')"  onblur="inputTextBlurPwd('confirmPwdMembers','Confirm members's password')"></div>
-		<input id="confirm" type="submit" value="Confirm" class="button3D b3white" onmouseover="changeCursor('confirm')"  />
+		onfocus="inputTextFocusPwd('confirmPwdAdmin', 'Blue')" onblur="inputTextBlurPwd('confirmPwdAdmin','Confirm your password')" required>
+		 </div><span class="textRed">${requestScope.errors['confirmPwdAdmin']}</span>
+		<input id="confirm" type="submit" value="Confirm" class="button3D b3white" onmouseover="changeCursor('confirm')" 
+		onclick="emtyAll('nameGroup','Name of your group','nameAdmin','Your name into the group', 'emailAdmin','Your email adress (optional)', 'pwdAdmin','Your password (admin)', 'confirmPwdAdmin','Confirm your password')" />
        </form>
 	</article>
 

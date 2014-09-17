@@ -23,21 +23,6 @@ public class DAOUtilitaire {
 	    return preparedStatement;
 	}
 	
-	/*
-	 * Simple méthode utilitaire permettant de faire la correspondance (le
-	 * mapping) entre une ligne issue de la table des utilisateurs (un
-	 * ResultSet) et un bean Utilisateur.
-	 */
-	static Group map( ResultSet resultSet ) throws SQLException {
-	    Group utilisateur = new Group();
-	    utilisateur.setId( resultSet.getLong( "id" ) );
-	    utilisateur.setName( resultSet.getString( "name" ) );
-	    utilisateur.setEmail( resultSet.getString( "email" ) );
-	    utilisateur.setPwdAdmin( resultSet.getString( "pwd_admin" ) );
-	    utilisateur.setPwdMembers( resultSet.getString( "pwd_members" ) );
-	    utilisateur.setDateInscription( resultSet.getTimestamp( "date_inscription" ) );
-	    return utilisateur;
-	}
 	
 	/* Fermeture silencieuse du resultset */
 	public static void fermetureSilencieuse( ResultSet resultSet ) {
