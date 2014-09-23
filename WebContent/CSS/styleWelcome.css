@@ -131,6 +131,9 @@ section #creationGroup{
 .textBlue{
 	color : #4747D1;
 }
+.textRed{
+	color : #B20000;
+}
 .right{ 
   position: absolute;
   right: 1vw;

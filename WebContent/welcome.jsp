@@ -1,3 +1,5 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 
 <!-- La section <head>. Nous aurons l'occasion d'en parler plus tard dans le cours ! -->
 <head>
@@ -17,11 +19,14 @@ HTML5 sont employées. -->
  	Organisation of holidays
 	</div>
 	
+	<form method="post" action="connexion">
 	<div id="connexion" class="line inline"> 
-		<input class="textGrey inline" id="coGroup" type="text" value="Group" onfocus="inputTextFocus('coGroup', 'Blue')" onblur="inputTextBlur('coGroup','Group')" >
-		<input class="textGrey inline" id="coPwd" type="text" value="Password" onfocus="inputTextFocus('coPwd', 'Blue')" onblur="inputTextBlur('coPwd','Password')" >
-		<div class="inline button3D b3white">Connexion</div>
+		<input class="textGrey inline" id="coGroup" name="coGroup" type="text" value="Group" onfocus="inputTextFocus('coGroup', 'Blue')" onblur="inputTextBlur('coGroup','Group')" >
+		<input class="textGrey inline" id="coPwd" name="coPwd" type="text" value="Password" onfocus="inputTextFocus('coPwd', 'Blue')" onblur="inputTextBlur('coPwd','Password')" >
+		<input id="confirm" type="submit" value="Connexion" class="inline button3D b3white" onmouseover="changeCursor('confirm')"  />
+       
 	</div>
+	</form>
 
 
 </header>
@@ -30,24 +35,30 @@ HTML5 sont employées. -->
 
 <section class="line" id="mySection">
 	<article id="accederSite" class="inline"  >
-		 <div id="bAccesSite" class="button3D b3white" onmouseover="changeCursor('bAccesSite')" onclick="location.href='index.jsp?page=homepage'">Acceder au site </br> sans créer </br> de groupe </div>
+		 <div id="bAccesSite" class="button3D b3white" onmouseover="changeCursor('bAccesSite')" onclick="location.href='index.jsp?page=homepage'">Acceder au site </br> sans creer </br> de groupe </div>
 	</article>
 	
 	<article id="creationGroup" class="inline">
-		<h2> Créer votre groupe </h2>
-		
-		<div><input class="textGrey inline" id="nameGroup" type="text" value="Nom du groupe" onfocus="inputTextFocus('nameGroup', 'Blue')" onblur="inputTextBlur('nameGroup','Nom du groupe')" >
+		<h2> Creer votre groupe </h2>
+		<form method="post" action="inscription">
+         <div><input class="textGrey inline" id="nameGroup" name="nameGroup" type="text" value="Name of your group" 
+         onfocus="inputTextFocus('nameGroup', 'Blue')" onblur="inputTextBlur('nameGroup','Name of your group')" required >
+		 </div><span class="textRed">${requestScope.errors['nameGroup']}</span>
+		  <div><input class="textGrey inline" id="nameAdmin" name="nameAdmin" type="text" value="Your name into the group" 
+         onfocus="inputTextFocus('nameAdmin', 'Blue')" onblur="inputTextBlur('nameAdmin','Your name into the group')" required >
+		 </div><span class="textRed">${requestScope.errors['nameGroup']}</span>
+		<div><input class="textGrey inline" id="emailAdmin" name="emailAdmin" type="email" value="Your email adress (optional)" 
+		onfocus="inputTextFocus('emailAdmin', 'Blue')" onblur="inputTextBlur('emailAdmin','Your email adress (optional)')" >
 		 </div>
-		<div><input class="textGrey inline" id="email" type="text" value="Votre adresse electronique" onfocus="inputTextFocus('email', 'Blue')" onblur="inputTextBlur('email','Votre adresse electronique')" >
-		 </div>
-		<div><input class="textGrey inline" id="mdpAdmin" type="text" value="Votre mot de passe (admin)" onfocus="inputTextFocus('mdpAdmin', 'Blue')" onblur="inputTextBlur('mdpAdmin','Votre mot de passe (admin)')" >
-		 </div>
-		<div><input class="textGrey inline" id="confirmMdpAdmin" type="text" value="Confirmation de votre mdp" onfocus="inputTextFocus('confirmMdpAdmin', 'Blue')" onblur="inputTextBlur('confirmMdpAdmin','Confirmation de votre mdp')" >
-		 </div>
-		<div><input class="textGrey inline" id="mdpMembre" type="text" value="Mot de passe pour les membres du groupes" onfocus="inputTextFocus('mdpMembre', 'Blue')" onblur="inputTextBlur('mdpMembre','Mot de passe pour les membres du groupes')" >
-		 </div>
-		<div><input class="textGrey inline" id="confirmMdpMembre" type="text" value="Confirmation du mdp des membres" onfocus="inputTextFocus('confirmMdpMembre', 'Blue')" onblur="inputTextBlur('confirmMdpMembre','Confirmation du mdp des membres')" ></div>
-		<div id="confirm" class="button3D b3white" onmouseover="changeCursor('confirm')" onclick="location.href='../accueil/accueil.html'">Confirmer</div>
+		<div><input class="textGrey inline" id="pwdAdmin" name="pwdAdmin" type="text" value="Your password (admin)" 
+		onfocus="inputTextFocusPwd('pwdAdmin', 'Blue')" onblur="inputTextBlurPwd('pwdAdmin','Your password (admin)')" required>
+		 </div><span class="textRed">${requestScope.errors['pwdAdmin']}</span>
+		<div><input class="textGrey inline" id="confirmPwdAdmin" name="confirmPwdAdmin" type="text" value="Confirm your password" 
+		onfocus="inputTextFocusPwd('confirmPwdAdmin', 'Blue')" onblur="inputTextBlurPwd('confirmPwdAdmin','Confirm your password')" required>
+		 </div><span class="textRed">${requestScope.errors['confirmPwdAdmin']}</span>
+		<input id="confirm" type="submit" value="Confirm" class="button3D b3white" onmouseover="changeCursor('confirm')" 
+		onclick="emtyAll('nameGroup','Name of your group','nameAdmin','Your name into the group', 'emailAdmin','Your email adress (optional)', 'pwdAdmin','Your password (admin)', 'confirmPwdAdmin','Confirm your password')" />
+       </form>
 	</article>
 
 
@@ -55,10 +66,9 @@ HTML5 sont employées. -->
 
 
 
-<footer >Copyright fs - Tous droits réservés<br/> Nous contacter : fabiensauce@orange.fr</footer>
+<footer >Copyright � - Tous droits reserves<br/> Nous contacter : fabiensauce@orange.fr</footer>
 
-<!--<script src="actionJS/navChanging.js" type="text/javascript"></script>-->
-<script src="JS/actionJS/welcomeChanging.js" type="text/javascript"></script>
+<script src="JS/actionJS/indexChanging.js" type="text/javascript"></script>
 <script src="JS/actionJS/actionInputText.js" type="text/javascript"></script>
 
 </body>
