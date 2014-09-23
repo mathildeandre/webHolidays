@@ -58,8 +58,8 @@ HTML5 sont employées. -->
 <footer >Copyright fs - Tous droits réservés<br/> Nous contacter : fabiensauce@orange.fr</footer>
 
 <!--<script src="actionJS/navChanging.js" type="text/javascript"></script>-->
-<script src="actionJS/indexChanging.js" type="text/javascript"></script>
-<script src="actionJS/actionInputText.js" type="text/javascript"></script>
+<script src="JS/actionJS/welcomeChanging.js" type="text/javascript"></script>
+<script src="JS/actionJS/actionInputText.js" type="text/javascript"></script>
 
 </body>
 
