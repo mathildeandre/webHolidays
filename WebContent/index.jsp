@@ -11,7 +11,7 @@
 
 <!-- Mise en page classique avec le header, le corps, et le footer ! Les balises structurantes de
 HTML5 sont employées. -->
-<body id="imgHeaderNav" >
+<body id="bodyIndex" >
 
 <%@include file="/WEB-INF/include/header.jsp" %>
 
@@ -29,6 +29,7 @@ HTML5 sont employées. -->
 	}
     else if (request.getParameter("page").equals("doodle")) { %>
 		<%@include file="/WEB-INF/page/doodle.jsp"%>
+        <script>changeBackground("doodle"); </script>
 <%
 	}
     else if (request.getParameter("page").equals("meals")) { %>

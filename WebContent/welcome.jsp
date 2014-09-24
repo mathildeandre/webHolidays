@@ -9,7 +9,7 @@
 
     <link rel="stylesheet" type="text/css" href="CSS/police.css" />
     <link rel="stylesheet" type="text/css" href="CSS/button.css" />
-    <link rel="stylesheet" type="text/css" href="CSS/styleWelcome.css" />
+    <link rel="stylesheet" type="text/css" href="CSS/styleWeelcome.css" />
 </head>
 
 
@@ -18,7 +18,11 @@ HTML5 sont employées. -->
 <body id="imgHeaderNav" >
 <header class="line">
 	<div class="inline" id="title">
- 	Organisation of holidays
+ 	Organisation of 
+	</div>
+	
+	<div  id="title2">
+ 	Organisation of holidays 
 	</div>
 	
 	<form method="post" action="connexion">
@@ -37,11 +41,11 @@ HTML5 sont employées. -->
 
 <section class="line" id="mySection">
 	<article id="accederSite" class="inline"  >
-		 <div id="bAccesSite" class="button3D b3white" onmouseover="changeCursor('bAccesSite')" onclick="location.href='index.jsp?page=homepage'">DEMO </br> reach directly </br> the website </div>
+		 <div id="bAccesSite" class=" b3white" onmouseover="changeCursor('bAccesSite')" onclick="location.href='index.jsp?page=homepage'">DEMO </br> reach directly </br> the website </div>
 	</article>
 	
 	<article id="creationGroup" class="inline">
-		<h2> Registration </h2>
+		<h2> Registrationsx </h2>
 		<form method="post" action="inscription">
 		  <div><input class="textGrey inline" id="pseudo" name="pseudo" type="text" value="Pseudo" 
          onfocus="inputTextFocus('pseudo', 'White')" onblur="inputTextBlur('pseudo','Pseudo')" required >
