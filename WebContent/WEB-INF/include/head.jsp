@@ -46,7 +46,7 @@
 
 
 <head>
-    <title>Holidays !!</title>
+    <title>EasyHolidays !!</title>
     <meta name="description" content="C'est la description de ma page ! apparait dans les recherches google" />
     
     

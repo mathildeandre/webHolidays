@@ -3,14 +3,16 @@
 
 <!-- La section <head>. Nous aurons l'occasion d'en parler plus tard dans le cours ! -->
 <head>
-    <title>J'organise mes Vacances !!</title>
+    <title>EasyHolidays</title>
     <meta charset='utf-8' />
     <link rel="shortcut icon" href="images/tree3.png" />
 
-    <link rel="stylesheet" type="text/css" href="CSS/header.css" />
+    <link rel="stylesheet" type="text/css" href="CSS/police.css" />
     <link rel="stylesheet" type="text/css" href="CSS/button.css" />
     <link rel="stylesheet" type="text/css" href="CSS/styleWelcome.css" />
 </head>
+
+
 <!-- Mise en page classique avec le header, le corps, et le footer ! Les balises structurantes de
 HTML5 sont employées. -->
 <body id="imgHeaderNav" >
@@ -23,7 +25,7 @@ HTML5 sont employées. -->
 	<div id="connexion" class="line inline"> 
 		<input class="textGrey inline" id="coGroup" name="coGroup" type="text" value="Group" onfocus="inputTextFocus('coGroup', 'Blue')" onblur="inputTextBlur('coGroup','Group')" >
 		<input class="textGrey inline" id="coPwd" name="coPwd" type="text" value="Password" onfocus="inputTextFocus('coPwd', 'Blue')" onblur="inputTextBlur('coPwd','Password')" >
-		<input id="confirm" type="submit" value="Connexion" class="inline button3D b3white" onmouseover="changeCursor('confirm')"  />
+		<input id="confirmConnexion" type="submit" value="Connexion" class="inline  b3white" onmouseover="changeCursor('confirmConnexion')"  />
        
 	</div>
 	</form>
@@ -56,7 +58,7 @@ HTML5 sont employées. -->
 		<div><input class="textGrey inline" id="confirmPwdAdmin" name="confirmPwdAdmin" type="text" value="Confirm your password" 
 		onfocus="inputTextFocusPwd('confirmPwdAdmin', 'Blue')" onblur="inputTextBlurPwd('confirmPwdAdmin','Confirm your password')" required>
 		 </div><span class="textRed">${requestScope.errors['confirmPwdAdmin']}</span>
-		<input id="confirm" type="submit" value="Confirm" class="button3D b3white" onmouseover="changeCursor('confirm')" 
+		<input id="confirmInscription" type="submit" value="Confirm" class="b3white" onmouseover="changeCursor('confirmInscription')" 
 		onclick="emtyAll('nameGroup','Name of your group','nameAdmin','Your name into the group', 'emailAdmin','Your email adress (optional)', 'pwdAdmin','Your password (admin)', 'confirmPwdAdmin','Confirm your password')" />
        </form>
 	</article>
@@ -68,7 +70,7 @@ HTML5 sont employées. -->
 
 <footer >Copyright � - Tous droits reserves<br/> Nous contacter : fabiensauce@orange.fr</footer>
 
-<script src="JS/actionJS/indexChanging.js" type="text/javascript"></script>
+<script src="JS/actionJS/welcomeChanging.js" type="text/javascript"></script>
 <script src="JS/actionJS/actionInputText.js" type="text/javascript"></script>
 
 </body>
