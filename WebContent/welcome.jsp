@@ -23,9 +23,9 @@ HTML5 sont employées. -->
 	
 	<form method="post" action="connexion">
 	<div id="connexion" class="line inline"> 
-		<input class="textGrey inline" id="coGroup" name="coGroup" type="text" value="Group" onfocus="inputTextFocus('coGroup', 'Blue')" onblur="inputTextBlur('coGroup','Group')" >
-		<input class="textGrey inline" id="coPwd" name="coPwd" type="text" value="Password" onfocus="inputTextFocus('coPwd', 'Blue')" onblur="inputTextBlur('coPwd','Password')" >
-		<input id="confirmConnexion" type="submit" value="Connexion" class="inline  b3white" onmouseover="changeCursor('confirmConnexion')"  />
+		<input class="textGrey inline" id="coGroup" name="coGroup" type="text" value="Pseudo or Email" onfocus="inputTextFocus('coGroup', 'White')" onblur="inputTextBlur('coGroup','Pseudo or Email')" >
+		<input class="textGrey inline" id="coPwd" name="coPwd" type="text" value="Password" onfocus="inputTextFocusPwd('coPwd', 'White')" onblur="inputTextBlurPwd('coPwd','Password')" >
+		<input id="confirmConnexion" type="submit" value="Connection" class="inline  b3white" onmouseover="changeCursor('confirmConnexion')"  />
        
 	</div>
 	</form>
@@ -37,29 +37,26 @@ HTML5 sont employées. -->
 
 <section class="line" id="mySection">
 	<article id="accederSite" class="inline"  >
-		 <div id="bAccesSite" class="button3D b3white" onmouseover="changeCursor('bAccesSite')" onclick="location.href='index.jsp?page=homepage'">Acceder au site </br> sans creer </br> de groupe </div>
+		 <div id="bAccesSite" class="button3D b3white" onmouseover="changeCursor('bAccesSite')" onclick="location.href='index.jsp?page=homepage'">DEMO </br> reach directly </br> the website </div>
 	</article>
 	
 	<article id="creationGroup" class="inline">
-		<h2> Creer votre groupe </h2>
+		<h2> Registration </h2>
 		<form method="post" action="inscription">
-         <div><input class="textGrey inline" id="nameGroup" name="nameGroup" type="text" value="Name of your group" 
-         onfocus="inputTextFocus('nameGroup', 'Blue')" onblur="inputTextBlur('nameGroup','Name of your group')" required >
+		  <div><input class="textGrey inline" id="pseudo" name="pseudo" type="text" value="Pseudo" 
+         onfocus="inputTextFocus('pseudo', 'White')" onblur="inputTextBlur('pseudo','Pseudo')" required >
 		 </div><span class="textRed">${requestScope.errors['nameGroup']}</span>
-		  <div><input class="textGrey inline" id="nameAdmin" name="nameAdmin" type="text" value="Your name into the group" 
-         onfocus="inputTextFocus('nameAdmin', 'Blue')" onblur="inputTextBlur('nameAdmin','Your name into the group')" required >
-		 </div><span class="textRed">${requestScope.errors['nameGroup']}</span>
-		<div><input class="textGrey inline" id="emailAdmin" name="emailAdmin" type="email" value="Your email adress (optional)" 
-		onfocus="inputTextFocus('emailAdmin', 'Blue')" onblur="inputTextBlur('emailAdmin','Your email adress (optional)')" >
+		<div><input class="textGrey inline" id="email" name="email" type="email" value="Email (optional)" 
+		onfocus="inputTextFocus('email', 'White')" onblur="inputTextBlur('email','Email (optional)')" >
 		 </div>
-		<div><input class="textGrey inline" id="pwdAdmin" name="pwdAdmin" type="text" value="Your password (admin)" 
-		onfocus="inputTextFocusPwd('pwdAdmin', 'Blue')" onblur="inputTextBlurPwd('pwdAdmin','Your password (admin)')" required>
-		 </div><span class="textRed">${requestScope.errors['pwdAdmin']}</span>
-		<div><input class="textGrey inline" id="confirmPwdAdmin" name="confirmPwdAdmin" type="text" value="Confirm your password" 
-		onfocus="inputTextFocusPwd('confirmPwdAdmin', 'Blue')" onblur="inputTextBlurPwd('confirmPwdAdmin','Confirm your password')" required>
-		 </div><span class="textRed">${requestScope.errors['confirmPwdAdmin']}</span>
+		<div><input class="textGrey inline" id="pwd" name="pwd" type="text" value="Password" 
+		onfocus="inputTextFocusPwd('pwd', 'White')" onblur="inputTextBlurPwd('pwd','Password')" required>
+		 </div><span class="textRed">${requestScope.errors['pwd']}</span>
+		<div><input class="textGrey inline" id="confirmPwd" name="confirmPwd" type="text" value="Confirm your password" 
+		onfocus="inputTextFocusPwd('confirmPwd', 'White')" onblur="inputTextBlurPwd('confirmPwd','Confirm your password')" required>
+		 </div><span class="textRed">${requestScope.errors['confirmPwd']}</span>
 		<input id="confirmInscription" type="submit" value="Confirm" class="b3white" onmouseover="changeCursor('confirmInscription')" 
-		onclick="emtyAll('nameGroup','Name of your group','nameAdmin','Your name into the group', 'emailAdmin','Your email adress (optional)', 'pwdAdmin','Your password (admin)', 'confirmPwdAdmin','Confirm your password')" />
+		onclick="emtyAll('nameGroup','Name of your group','pseudo','Your name into the group', 'email','Your email adress (optional)', 'pwd','Your password (admin)', 'confirmPwd','Confirm your password')" />
        </form>
 	</article>
 

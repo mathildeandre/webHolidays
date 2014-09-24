@@ -4,9 +4,12 @@ body{
 }
 
 header{
-	background:rgba(51,102,255,0.5);/*url("../images/pins.jpg") ;*/
+	/*background:rgba(51,102,255,0.5);/*url("../images/pins.jpg") ;*/
+	
+	background:rgba(151,152,255,0.9);/*url("../images/pins.jpg") ;*/
+	
 	background-size:10vw;
-	border-bottom:5px solid rgba(51,102,255,1);
+	border-bottom:5px solid #003399 ;
 	border-top:1px solid rgba(0,0,0,0); /* bug ^^cette ligne permet de coller la bande header en haut*/ 
 	margin:auto;
 	width:100vw;
@@ -22,6 +25,7 @@ header #title{
 	font-weight: bold;
   
 	color: white;
+	
 	text-shadow: 0 1px 0 #eee,
              0 2px 0 #e5e5e5,
              -1px 3px 0 #C8C8C8,
@@ -40,20 +44,43 @@ header #title{
 }
 header #connexion{
   position: absolute;
-  right: 1vw;
+  right: 2vw;
 	/* comprend les deux input text + button connexion */
 }
+
 header #coGroup, #coPwd{
 	margin:0;
 	margin-left:0.5vw;
-	width:10vw;
-	height:32px;
+	padding : 0.5vw;
+	width:13vw;
+	height:36px;
 	font-size: 1.3vw;
-	border-radius: 8px;
+	
+	border:1px solid white ;
+	border-radius: 0.5vw;
+	background : rgba(0,0,0,0);
+	/*
+	border:2px solid #003399 ;
 	background: url("../images/peint-blanc.jpg");
 	background-size: 200px, 25px;
+	*/
 }
 
+#pseudo, #email, #pwd, #confirmPwd{
+	
+	margin-top:0.7vw;
+	padding : 0.5vw;
+	padding-left : 0.8vw;
+	width:25vw;
+	height:40px;
+	font-size: 1.3vw;
+	/*background: url("../images/peint-blanc.jpg");
+	background-size: 200px, 25px;*/
+	
+	background:rgba(151,152,255,0.9);/*url("../images/pins.jpg") ;*/
+	border:1px solid white;
+	border-radius: 0.5vw;
+}
 .button3D{
 	height:40px;
 	line-height:0px;
@@ -69,21 +96,22 @@ header #coGroup, #coPwd{
 
 footer{
 	position:absolute;
-	top:800px;
+	top:700px;
 	/*bottom:0;
 	margin: auto;
 	padding-top:10vw;*/
 	padding:2vw;/*Marge verticale*/
 	width:90vw;
 	text-align:center;/*texte centré*/
-	font-size: 1vw;
+	font-size: 1.5vw;
 	/*font-weight: italic; ne marche pas*/
 	color: white;
-	text-shadow:
+	/*text-shadow:
     -1px -1px 0 #000,
     1px -1px 0 #000,
     -1px 1px 0 #000,
     1px 1px 0 #000; 
+    */
 }
 /*
 #mySection{ /** si on ecrit section ca prend en compte inline block et est trop a gauche*
@@ -129,30 +157,24 @@ section article[id="creationGroup"]{
 	border-left:8px dotted #5C5CFF;
 }
 
-#creationGroup input[type="text"] {
+#pseudo, #email, #pwd, #confirmPwd{
+	
 	margin-top:0.7vw;
+	padding : 0.5vw;
+	padding-left : 0.8vw;
 	width:25vw;
-	height:32px;
+	height:40px;
 	font-size: 1.3vw;
-	border-radius: 8px;
-	background: url("../images/peint-blanc.jpg");
-	background-size: 200px, 25px;
-}#creationGroup input[type="email"] {
-	margin-top:0.7vw;
-	width:25vw;
-	height:32px;
-	font-size: 1.3vw;
-	border-radius: 8px;
-	background: url("../images/peint-blanc.jpg");
-	background-size: 200px, 25px;
-}#creationGroup input[type="password"] {
-	margin-top:0.7vw;
-	width:25vw;
-	height:32px;
-	font-size: 1.3vw;
-	border-radius: 8px;
-	background: url("../images/peint-blanc.jpg");
-	background-size: 200px, 25px;
+	/*background: url("../images/peint-blanc.jpg");
+	background-size: 200px, 25px;*/
+	
+	
+	background:rgba(151,152,255,0.9);/*url("../images/pins.jpg") ;*/
+	border:1px solid white;
+	border-radius: 0.5vw;
+	
+	
+	
 }
 #confirmConnexion{
 	height:40px;
@@ -161,7 +183,7 @@ section article[id="creationGroup"]{
 	font-size: 1.4vw;
 	font-weight:bold;
 	padding:0.2vw 1vw;
-	margin-left:2vw;
+	margin-left:1vw;
 	border:4px solid;
 	border-radius: 0.5vw; 
 	
@@ -180,7 +202,7 @@ section article[id="creationGroup"]{
 	border-radius: 0.5vw; 	
 }
 section h2{
-	font-size: 1.8vw;
+	font-size:2.6vw;
 	text-align:center;
 	font-weight: bold;
 	
@@ -210,6 +232,10 @@ section h2{
 
 .textBlue{
 	color : #4747D1;
+}
+
+.textWhite{
+	color : white;
 }
 .right{ 
   position: absolute;
