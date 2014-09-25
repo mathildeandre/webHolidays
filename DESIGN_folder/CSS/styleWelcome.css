@@ -1,0 +1,131 @@
+body{
+	margin:auto; /*centrer la colonne*/
+}
+
+header{
+	background:rgba(151,152,255,0.9);/*url("../images/pins.jpg") ;*/
+	background-size:10vw;
+	border-bottom:5px solid #003399 ;
+	border-top:1px solid rgba(0,0,0,0); /* bug ^^cette ligne permet de coller la bande header en haut*/ 
+	margin:auto;
+	width:100vw;
+	height:150px;
+	line-height:150px; /*vertical-align:middle; ne fonctionne pas*/
+}
+header #title{
+	position: absolute;
+	left: 8vw;
+	font-size: 3vw;
+	font-weight: bold;
+	color: white;
+}
+header #divConnexion{
+  position: absolute;
+  right: 2vw;
+	/* comprend les deux input text + button connexion */
+}
+
+header #coPseudo, #coPwd{
+	margin:0;
+	margin-left:0.5vw;
+	padding : 0.5vw;
+	width:13vw;
+	height:36px;
+	font-size: 1.3vw;
+	
+	border:1px solid white ;
+	border-radius: 0.5vw;
+	background : rgba(0,0,0,0);
+}
+
+header #confirmConnexion{
+	margin-left:1vw;
+}
+
+section #demo{
+	position: absolute;
+	left: 13vw;
+	margin-top:10vw;
+	/*width:40vw;*/  
+}
+
+section #buttonDemo{
+	height:150px;
+	line-height:50px;
+	text-align:center;
+	font-size: 2.2vw;
+	font-weight:bold;
+	padding:2vw 1vw;
+	border:8px solid white;
+	
+}
+
+section #registration{
+	position: absolute;
+	left: 45vw;
+	margin-top:5vw;
+	/*width:20vw;*/
+	padding-left:10vw; 
+	border-left:8px dotted #5C5CFF;
+}
+
+section #registrationH2 {
+	font-size:2.6vw;
+	text-align:center;
+	font-weight: bold;
+	color: white;
+             
+}
+
+section #pseudo, #email, #pwd, #confirmPwd{
+	
+	margin-top:0.7vw;
+	padding : 0.5vw;
+	padding-left : 0.8vw;
+	width:25vw;
+	height:40px;
+	font-size: 1.3vw;
+	/*background: url("../images/peint-blanc.jpg");
+	background-size: 200px, 25px;*/
+	
+	background:rgba(151,152,255,0.9);/*url("../images/pins.jpg") ;*/
+	border:1px solid white;
+	border-radius: 0.5vw;
+}
+section #confirmInscription{
+	margin-top:2vw;
+	margin-left:7vw;
+}
+
+
+
+footer{
+	position:absolute;
+	top:700px;
+	padding:2vw;/*Marge verticale*/
+	width:90vw;
+	text-align:center;/*texte centré*/
+	font-size: 1.5vw;
+	color: white;
+}
+
+.line{
+	white-space: nowrap; 
+	margin-left: 0;
+}
+.inline{
+	display: inline-block;
+}
+/** reecri de general.css **/
+
+.textBlue{
+	color : #4747D1;
+}
+
+.textWhite{
+	color : white;
+}
+.right{ 
+  position: absolute;
+  right: 1vw;
+}
