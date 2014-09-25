@@ -20,11 +20,11 @@ HTML5 sont employees. -->
  	Organisation of holidays
 	</div>
 	
-	<form method="post" action="connexion">
-	<div id="divConnexion" class="line inline"> 
+	<form method="post" action="logIn">
+	<div id="divLogIn" class="line inline"> 
 		<input id="coPseudo" class="textGrey inline" name="coPseudo" type="text" value="Pseudo or Email" onfocus="inputTextFocus('coPseudo', 'White')" onblur="inputTextBlur('coPseudo','Pseudo or Email')" >
 		<input id="coPwd" class="textGrey inline" name="coPwd" type="text" value="Password" onfocus="inputTextFocusPwd('coPwd', 'White')" onblur="inputTextBlurPwd('coPwd','Password')" >
-		<input id="confirmConnexion" type="submit" value="Connection" class="inline  newButton3D" onmouseover="changeCursor('confirmConnexion')"  />
+		<input id="confirmLogIn" type="submit" value="Log in" class="inline  newButton3D" onmouseover="changeCursor('confirmLogIn')"  />
        
 	</div>
 	</form>

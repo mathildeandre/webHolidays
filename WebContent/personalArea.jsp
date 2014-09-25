@@ -8,7 +8,7 @@
 
     <link rel="stylesheet" type="text/css" href="CSS/police.css" />
     <link rel="stylesheet" type="text/css" href="CSS/3D.css" />
-    <link rel="stylesheet" type="text/css" href="CSS/stylePrivateArea.css" />
+    <link rel="stylesheet" type="text/css" href="CSS/stylePersonalArea.css" />
 </head>
 
 
@@ -21,13 +21,13 @@ HTML5 sont employees. -->
 	</div>
 	
 	<div id="titlePrivateArea" class="inline text3Dfonce"> 
-		Private Area
+		Personal Area
 	</div>
 	
-	<div id="divDeconnection" class="line inline"> 
-	<form method="post" action="deconnexion">
+	<div id="divLogOut" class="line inline"> 
+	<form method="post" action="logOut">
 		<!--ne s'aligne pas correctement: si on met deux ligne input.. avec le inline ca fonctionne^^-->
-		<input id="buttonDeconnection" type="submit" value="Deconnection" class="inline newButton3D" onmouseover="changeCursor('buttonDeconnection')"  />
+		<input id="buttonLogOut" type="submit" value="Log out" class="inline newButton3D" onmouseover="changeCursor('buttonLogOut')"  />
 	</form>
 	</div>
 
@@ -128,13 +128,13 @@ HTML5 sont employees. -->
 		 <form method="post" action="modifyPassword">
 		 Change Password :
 		  <div><input id="oldPwd" class="textGrey inline"  name="oldPwd" type="text" value="Old Password" 
-         onfocus="inputTextFocus('oldPwd', 'White')" onblur="inputTextBlur('oldPwd','Old Password')" required >
+         onfocus="inputTextFocusPwd('oldPwd', 'White')" onblur="inputTextBlurPwd('oldPwd','Old Password')" required >
          </div>
 		  <div><input id="newPwd" class="textGrey inline"  name="newPwd" type="text" value="New Password" 
-         onfocus="inputTextFocus('newPwd', 'White')" onblur="inputTextBlur('newPwd','New Password')" required >
+         onfocus="inputTextFocusPwd('newPwd', 'White')" onblur="inputTextBlurPwd('newPwd','New Password')" required >
          </div>
 		  <div><input id="confirmNewPwd" class="textGrey inline"  name="confirmNewPwd" type="text" value="Confirm New Pwd" 
-         onfocus="inputTextFocus('confirmNewPwd', 'White')" onblur="inputTextBlur('confirmNewPwd','Confirm New Pwd')" required >
+         onfocus="inputTextFocusPwd('confirmNewPwd', 'White')" onblur="inputTextBlurPwd('confirmNewPwd','Confirm New Pwd')" required >
          </div>
          <br>
          <input id="confirmModifyPwd" type="submit" value="Modify Password" class="newButton3D" onmouseover="changeCursor('confirmModifyPwd')" />

@@ -27,10 +27,10 @@ header #titlePrivateArea{
 	font-weight: bold;
 	/* comprend les deux input text + button connexion */
 }
-header #divDeconnection{
-	
-  position: absolute;
-  right: 2vw;
+header #divLogOut{
+	top:1vw;
+  	position: absolute;
+  	right: 2vw;
 }
 
 section #myGroups{
