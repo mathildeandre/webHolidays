@@ -95,9 +95,9 @@
 	background:white;
 }
 .newButton3D:active{
-	margin-top:4.5px;
+	/*margin-top:4.5px;
 	margin-right:2.2px;
-	
+	*/
 	background:rgba(0,0,0,0);
 	box-shadow: 0 0 0 #000000;
 	text-shadow:0   0 0 #000000;
@@ -165,9 +165,9 @@
 	background:white;
 }
 .newButton3D:active{
-	margin-top:4.5px;
+	/*margin-top:4.5px;
 	margin-right:2.2px;
-	
+	*/
 	background:rgba(0,0,0,0);
 	box-shadow: 0 0 0 #000000;
 	text-shadow:0   0 0 #000000;

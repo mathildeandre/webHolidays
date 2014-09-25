@@ -1,0 +1,125 @@
+body{
+	margin:auto; /*centrer la colonne*/
+	color: white;
+}
+
+header{
+	background:rgba(151,152,255,0.9);/*url("../images/pins.jpg") ;*/
+	background-size:10vw;
+	border-bottom:5px solid #003399 ;
+	border-top:1px solid rgba(0,0,0,0); /* bug ^^cette ligne permet de coller la bande header en haut*/ 
+	margin:auto;
+	width:100vw;
+	height:150px;
+	line-height:150px; /*vertical-align:middle; ne fonctionne pas*/
+}
+header #title{
+	position: absolute;
+	left: 2vw;
+	font-size: 2.5vw;
+	font-weight: bold;
+	color: white;
+}
+header #titlePrivateArea{
+  	position: absolute;
+  	right: 25vw;
+	font-size: 3vw;
+	font-weight: bold;
+	/* comprend les deux input text + button connexion */
+}
+header #divDeconnection{
+	
+  position: absolute;
+  right: 2vw;
+}
+
+section #myGroups{
+	position: absolute;
+	left: 2vw;
+	margin-top:5vw;
+	/*width:40vw;*/  
+}
+
+
+section #myContacts{
+	position: absolute;
+	left: 31vw;
+	margin-top:5vw;
+	/*width:20vw;*/
+	padding-left:3vw; 
+	border-left:6px dotted #5C5CFF;
+}
+section #myProfil{
+	position: absolute;
+	left: 65vw;
+	margin-top:5vw;
+	padding-left:3vw; 
+	/*width:20vw;*/
+	border-left:6px dotted #5C5CFF;
+}
+
+section #fieldMyGroups{
+	overflow-y: hidden,scroll;
+	overflow-x: hidden;
+	max-height: 20vw;
+	padding-left:2vw; 
+	font-size: 1.5vw;
+}
+
+section #fieldMyContact{
+	overflow-y: hidden,scroll;
+	overflow-x: hidden;
+	max-height: 20vw;
+	padding-left:2vw; 
+	font-size: 1.5vw;
+}
+section #groupName, #nameNewContact, #listContacts, #pseudo, #email, #oldPwd, #newPwd, #confirmNewPwd{
+	
+	margin-top:0.7vw;
+	padding : 0.5vw;
+	padding-left : 0.8vw;
+	width:13vw;
+	height:40px;
+	font-size: 1.3vw;
+	/*background: url("../images/peint-blanc.jpg");
+	background-size: 200px, 25px;*/
+	
+	background:rgba(151,152,255,0.9);/*url("../images/pins.jpg") ;*/
+	border:1px solid white;
+	border-radius: 0.5vw;
+}
+section #nameNewContact, #email, #oldPwd, #newPwd, #confirmNewPwd{
+	width:14.5vw;
+}
+
+
+footer{
+	position:absolute;
+	top:1000px;
+	padding:2vw;/*Marge verticale*/
+	width:90vw;
+	text-align:center;/*texte centré*/
+	font-size: 1.5vw;
+	color: white;
+}
+
+.line{
+	white-space: nowrap; 
+	margin-left: 0;
+}
+.inline{
+	display: inline-block;
+}
+/** reecri de general.css **/
+
+.textBlue{
+	color : #4747D1;
+}
+
+.textWhite{
+	color : white;
+}
+.right{ 
+  position: absolute;
+  right: 1vw;
+}

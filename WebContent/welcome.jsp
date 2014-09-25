@@ -70,11 +70,3 @@ HTML5 sont employees. -->
 <script src="JS/actionJS/actionInputText.js" type="text/javascript"></script>
 
 </body>
-
-
- 
-
-
-
-
-
