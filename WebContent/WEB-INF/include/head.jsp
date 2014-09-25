@@ -57,7 +57,7 @@
     <link rel="stylesheet" type="text/css" href="CSS/general.css" />
     <link rel="stylesheet" type="text/css" href="CSS/header.css" />
     <link rel="stylesheet" type="text/css" href="CSS/button.css" />
-    <link rel="stylesheet" type="text/css" href="CSS/nav3.css" />
+    <link rel="stylesheet" type="text/css" href="CSS/nav.css" />
     ${extraCSS}
     <!-- <link rel="stylesheet" type="text/css" href="CSS/active.css"  />-->
     

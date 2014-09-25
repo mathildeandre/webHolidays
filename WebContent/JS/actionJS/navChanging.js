@@ -3,7 +3,7 @@
     function changeBackground() {
     	var elem = window.document.getElementById("bodyIndex");
 	//parseInt(Math.random()*4) genere un nombre aleatoirement entre 0 et 3 inclus
-        //window.document.getElementById("imgHeaderNav").style.background = 'url("images/nav'+parseInt(Math.random()*4)+'.jpg") no-repeat, url("images/papier-peint2.jpg")';
+        //elem.style.background = 'url("images/nav'+parseInt(Math.random()*4)+'.jpg") no-repeat, url("images/papier-peint2.jpg")';
         elem.style.background = 'url("images/panoramic/homepage.jpg") no-repeat, url("images/papier-peint2.jpg")';
         elem.style.backgroundSize = '100% 300px, 10%';
         elem.style.backgroundAttachment="fixed";

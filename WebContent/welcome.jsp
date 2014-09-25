@@ -1,6 +1,5 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
-
 <!-- La section <head>. Nous aurons l'occasion d'en parler plus tard dans le cours ! -->
 <head>
     <title>EasyHolidays</title>
@@ -8,24 +7,23 @@
     <link rel="shortcut icon" href="images/tree3.png" />
 
     <link rel="stylesheet" type="text/css" href="CSS/police.css" />
-    <!--  <link rel="stylesheet" type="text/css" href="CSS/button.css" /> -->
-    <link rel="stylesheet" type="text/css" href="CSS/styleWelcome1.css" />
-    <link rel="stylesheet" type="text/css" href="CSS/newButton3D1.css" />
+    <link rel="stylesheet" type="text/css" href="CSS/3D.css" />
+    <link rel="stylesheet" type="text/css" href="CSS/styleWelcome.css" />
 </head>
 
 
 <!-- Mise en page classique avec le header, le corps, et le footer ! Les balises structurantes de
-HTML5 sont employées. -->
-<body id="imgHeaderNav" >
+HTML5 sont employees. -->
+<body id="bodyWelcome" >
 <header class="line">
-	<div class="inline" id="title">
+	<div id="title" class="inline text3Dfonce " >
  	Organisation of holidays
 	</div>
 	
 	<form method="post" action="connexion">
-	<div id="connexion" class="line inline"> 
-		<input class="textGrey inline" id="coGroup" name="coGroup" type="text" value="Pseudo or Email" onfocus="inputTextFocus('coGroup', 'White')" onblur="inputTextBlur('coGroup','Pseudo or Email')" >
-		<input class="textGrey inline" id="coPwd" name="coPwd" type="text" value="Password" onfocus="inputTextFocusPwd('coPwd', 'White')" onblur="inputTextBlurPwd('coPwd','Password')" >
+	<div id="divConnexion" class="line inline"> 
+		<input id="coPseudo" class="textGrey inline" name="coPseudo" type="text" value="Pseudo or Email" onfocus="inputTextFocus('coPseudo', 'White')" onblur="inputTextBlur('coPseudo','Pseudo or Email')" >
+		<input id="coPwd" class="textGrey inline" name="coPwd" type="text" value="Password" onfocus="inputTextFocusPwd('coPwd', 'White')" onblur="inputTextBlurPwd('coPwd','Password')" >
 		<input id="confirmConnexion" type="submit" value="Connection" class="inline  newButton3D" onmouseover="changeCursor('confirmConnexion')"  />
        
 	</div>
@@ -36,26 +34,26 @@ HTML5 sont employées. -->
 
 
 
-<section class="line" id="mySection">
-	<article id="accederSite" class="inline"  >
-		 <div id="bAccesSite" class=" newButton3D" onmouseover="changeCursor('bAccesSite')" onclick="location.href='index.jsp?page=homepage'">DEMO </br> reach directly </br> the website </div>
+<section class="line" >
+	<article id="demo" class="inline"  >
+		 <h2 id="buttonDemo" class="newButton3D" onmouseover="changeCursor('buttonDemo')" onclick="location.href='index.jsp?page=homepage'">DEMO </br> reach directly </br> the website </h2>
 	</article>
 	
-	<article id="creationGroup" class="inline">
-		<h2> Registration </h2>
+	<article id="registration" class="inline">
+		<h2 id="registrationH2" class="text3Dfonce"> Registration </h2>
 		<form method="post" action="inscription">
-		  <div><input class="textGrey inline" id="pseudo" name="pseudo" type="text" value="Pseudo" 
+		  <div><input id="pseudo" class="textGrey inline"  name="pseudo" type="text" value="Pseudo" 
          onfocus="inputTextFocus('pseudo', 'White')" onblur="inputTextBlur('pseudo','Pseudo')" required >
-		 </div><span class="textRed">${requestScope.errors['nameGroup']}</span>
-		<div><input class="textGrey inline" id="email" name="email" type="email" value="Email (optional)" 
+		 </div>
+		<div><input id="email" class="textGrey inline"  name="email" type="email" value="Email (optional)" 
 		onfocus="inputTextFocus('email', 'White')" onblur="inputTextBlur('email','Email (optional)')" >
 		 </div>
-		<div><input class="textGrey inline" id="pwd" name="pwd" type="text" value="Password" 
+		<div><input id="pwd" class="textGrey inline"  name="pwd" type="text" value="Password" 
 		onfocus="inputTextFocusPwd('pwd', 'White')" onblur="inputTextBlurPwd('pwd','Password')" required>
-		 </div><span class="textRed">${requestScope.errors['pwd']}</span>
-		<div><input class="textGrey inline" id="confirmPwd" name="confirmPwd" type="text" value="Confirm your password" 
+		 </div>
+		<div><input id="confirmPwd" class="textGrey inline"  name="confirmPwd" type="text" value="Confirm your password" 
 		onfocus="inputTextFocusPwd('confirmPwd', 'White')" onblur="inputTextBlurPwd('confirmPwd','Confirm your password')" required>
-		 </div><span class="textRed">${requestScope.errors['confirmPwd']}</span>
+		 </div>
 		<input id="confirmInscription" type="submit" value="Confirm" class="newButton3D" onmouseover="changeCursor('confirmInscription')" 
 		onclick="emtyAll('nameGroup','Name of your group','pseudo','Your name into the group', 'email','Your email adress (optional)', 'pwd','Your password (admin)', 'confirmPwd','Confirm your password')" />
        </form>
