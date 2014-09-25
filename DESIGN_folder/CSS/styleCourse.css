@@ -1,0 +1,104 @@
+section[class="images"] h1{
+	text-align:center;
+	font-style:italic;
+}
+
+
+
+article{
+	border:3px solid chocolate;/*bleu clair*/   /* blueviolet*/
+	border-radius: 20px ;
+	height: 650px;
+	width: 70%;
+	margin-left: 20%;
+	margin-top: 10px;
+	opacity:1;
+	color: white;
+    text-shadow:
+    -0.5px -0.5px 0 #000,
+    0.5px -0.5px 0 #000,
+    -0.5px 0.5px 0 #000,
+    0.5px 0.5px 0 #000; 
+	font-family:Comic Sans MS;
+	background-repeat:no-repeat, repeat;
+	background-size:30%, 100%;
+	background-position:5% 15%, top left;
+}
+
+article[id="burgers"]{
+	
+	
+	background-image:url("../images/burger2.jpg"), url("../images/burger.jpg");
+	
+}
+
+article[id="lasagne"]{
+	
+	background-image:url("../images/lasagne2.jpg"),url("../images/lasagne.jpg");
+	
+}
+
+article div[class="ingredients"]{
+	margin-left:40%;
+	font-style:bold;
+	font-size:large;  
+}
+
+article div[class="preparation"]{
+	margin-left:10%;
+	font-style:bold;
+	font-size:large;
+}
+
+
+h1{
+	text-align:center;
+	color: black;
+    text-shadow:
+    -0.5px -0.5px 0 #0000FF,
+    0.5px -0.5px 0 #0000FF,
+    -0.5px 0.5px 0 #0000FF,
+    0.5px 0.5px 0 #0000FF; 
+	font-family:Comic Sans MS;
+	font-size:xx-large;
+}
+
+article h2{
+	text-align:center;
+	color: chocolate;
+    text-shadow:
+    -0.5px -0.5px 0 #000,
+    0.5px -0.5px 0 #000,
+    -0.5px 0.5px 0 #000,
+    0.5px 0.5px 0 #000; 
+	font-size:xx-large;
+}
+
+article h3{
+	text-decoration:underline;
+	}
+	
+	
+section[class="navPlats"] ul{
+	position: fixed;
+	float: left;
+	padding: 10px ;
+	margin: 0px; 
+    list-style-type: none;
+	margin-left:20px;
+    padding: 0;
+}
+
+section[class="navPlats"] ul li{
+	border:3px solid chocolate;/*bleu clair*/   /* blueviolet*/
+	border-radius: 30px ;
+	width:100%;
+	margin-left:20px;
+	margin-top:5px;
+
+}
+
+section[class="navPlats"] ul li a{
+	margin-left:20px;
+	color:black;
+}
