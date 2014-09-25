@@ -1,5 +1,5 @@
 /*
-#imgHeaderNav{
+#bodyIndex{
 	background-image: url("../images/nav2.jpg") fixed;
 	
     background-repeat: no-repeat;
@@ -44,42 +44,15 @@ nav li {
 	font-weight:bold;
 	/*min-width: 100px;*/
 	
-/*
-	border:2px solid #ffffff;
-	color: #333333;
-	text-shadow:
-    -1px -1px 0 #fff,
-    1px -1px 0 #fff,
-    -1px 1px 0 #fff,
-    1px 1px 0 #fff; 
-*/
-
-	/*** mode classic color white shadow black 
-	color: #ffffff;
-	text-shadow:
-    -1.5px -1.5px 0 #000,
-    1.5px -1.5px 0 #000,
-    -1.5px 1.5px 0 #000,
-    1.5px 1.5px 0 #000; */
+	
+/**************** identique a newButton3D de 3D.css ************/	
+	padding:0.5vw 1vw;
+	border:4px solid white;
+	border-radius: 0.5vw; 
+	
     
-    /*** mode 3D color White ***/
+	background:rgba(0,0,0,0);
 	color:white;
-	     
-	/*text-shadow: 	0   	0.5px	0 #eee,
-						0.1px   	0.8px	0 #eee,
-              		0.2px   	1px 	0 #e5e5e5,
-              		-0.3px   	1.4px 	0 #e5e5e5,
-             	-0.4px 	1.8px 0 #C8C8C8,
-             	-0.7px 	2.3px 	0 #C1C1C1,
-             	-1px 		2.9px 0 #B9B9B9,
-             	-1.5px 	3.5px 	0 #B2B2B2,
-             
-             -2px 5.3px 2px rgba(0,0,0, 0.6),
-             -2px 5.3px 8px rgba(0,0,0, 0.2),
-             -2px 5.3px 45px rgba(0,0,0, 0.4);          
-          */  
-    /* shadow text moyen TOP */  
-	color: white;
 	
 	 /* shadow text moyen foncé!! */
 		text-shadow: 0   0.5px	0 #CCCCCC,
@@ -94,20 +67,6 @@ nav li {
              -2px 3.5px 8px rgba(0,0,0, 0.2),
              -2px 3.5px 45px rgba(0,0,0, 0.4);
              
-		/*text-shadow: 0   0.5px	0 #eee,
-				0.1px 	0.8px	0 #eee,
-              	0.2px   1px 	0 #e5e5e5,
-              	-0.3px  1.2px 	0 #e5e5e5,
-             	-0.4px 	1.5px 0 #C8C8C8,
-             	-0.7px 	2px 	0 #C1C1C1,
-             	-1px 	2.5px 0 #B9B9B9,
-             	-1.5px 	3px 	0 #B2B2B2,
-             -2px 3.5px 2px rgba(0,0,0, 0.6),
-             -2px 3.5px 8px rgba(0,0,0, 0.2),
-             -2px 3.5px 45px rgba(0,0,0, 0.4);
-             */
-	border-radius: 4%; 
-	border:4px solid white ;
 	
 		/** border fonce TOP */
 	box-shadow:-0.2px   0.8px 0 #CCCCCC,
@@ -129,52 +88,9 @@ nav li {
              -2.2px 5.3px 2px rgba(0,0,0, 0.4) inset,
              -2.2px 5.3px 8px rgba(0,0,0, 0.2) inset,
              -2.2px 5.3px 20px rgba(0,0,0, 0.4) inset;
-	
-	/*** mode BORDER shadow plus petit ***/
-	/*box-shadow:-0.2px   0.8px 0 #eee,
-              -0.5px   1.5px 0 #e5e5e5,
-             -1px 2.3px 0 #C8C8C8,
-             -1px 3px 0 #C1C1C1,
-             -2px 3.8px 0 #B9B9B9,
-             -2.1px 4.5px 0 #B2B2B2,
-             -2.2px 5.3px 2px rgba(0,0,0, 0.4),
-             -2.2px 5.3px 8px rgba(0,0,0, 0.2),
-             -2.2px 5.3px 20px rgba(0,0,0, 0.4),
-			/* interieur 
-              -0.2px   0.8px 0 #eee inset,
-              -0.5px   1.5px 0 #e5e5e5 inset,
-             -1px 2.3px 0 #C8C8C8 inset,
-             -1px 3px 0 #C1C1C1 inset,
-             -2px 3.8px 0 #B9B9B9 inset,
-             -2.1px 4.5px 0 #B2B2B2 inset,
-             -2.2px 5.3px 2px rgba(0,0,0, 0.4) inset,
-             -2.2px 5.3px 8px rgba(0,0,0, 0.2) inset,
-             -2.2px 5.3px 20px rgba(0,0,0, 0.4) inset;
-        */
-        
-             
-	/*** mode BORDER shadow GROS text ***
-	box-shadow: 0 1px 0 #eee,
-             0 2px 0 #e5e5e5,
-             -1px 3px 0 #C8C8C8,
-             -1px 4px 0 #C1C1C1,
-             -2px 5px 0 #B9B9B9,
-             -2px 6px 0 #B2B2B2,
-             -2px 7px 2px rgba(0,0,0, 0.6),
-             -2px 7px 8px rgba(0,0,0, 0.2),
-             -2px 7px 45px rgba(0,0,0, 0.4),
-             -2px 7px 45px rgba(0,0,0, 0.4),
-             0 1px 0 #eee inset,
-             0 2px 0 #e5e5e5 inset,
-             -1px 3px 0 #C8C8C8 inset,
-             -1px 4px 0 #C1C1C1 inset,
-             -2px 5px 0 #B9B9B9 inset,
-             -2px 6px 0 #B2B2B2 inset,
-             -2px 7px 2px rgba(0,0,0, 0.6) inset,
-             -2px 7px 8px rgba(0,0,0, 0.2) inset,
-             -2px 7px 45px rgba(0,0,0, 0.4) inset;*/
-}
 
+/****************fin identique a newButton3D de 3D.css ************/	
+}
 
 nav li:nth-child(1) {
 background-color:#4747D1; /*blue  rgb(71,71,255)*/
