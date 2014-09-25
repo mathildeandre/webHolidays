@@ -2,7 +2,6 @@ body{
 	margin:auto; /*centrer la colonne*/
 	color: white;
 }
-
 header{
 	background:rgba(151,152,255,0.9);/*url("../images/pins.jpg") ;*/
 	background-size:10vw;
@@ -31,6 +30,15 @@ header #divLogOut{
 	top:1vw;
   	position: absolute;
   	right: 2vw;
+}
+
+section #hint{
+	margin-top:1vw;
+	font-size: 1.5vw;
+	font-weight: bold;
+	background:rgba(151,152,255,0.9);
+	border:1px solid white;
+	border-radius: 0.5vw;
 }
 
 section #myGroups{

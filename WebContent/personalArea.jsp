@@ -36,6 +36,10 @@ HTML5 sont employees. -->
 
 
 <section class="line" >
+	<div id="hint">
+	In order to create your first group : fill up "Group name", 
+	create the group and the click on it into "My Group"
+	</div>
 	<article id="myGroups" class="inline"  >
 	
 	  	<fieldset>
