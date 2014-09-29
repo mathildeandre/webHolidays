@@ -7,8 +7,8 @@
     <link rel="shortcut icon" href="images/tree3.png" />
 
     <link rel="stylesheet" type="text/css" href="CSS/police.css" />
-    <link rel="stylesheet" type="text/css" href="CSS/3D.css" />
-    <link rel="stylesheet" type="text/css" href="CSS/styleWelcome.css" />
+    <link rel="stylesheet" type="text/css" href="CSS/3D1.css" />
+    <link rel="stylesheet" type="text/css" href="CSS/styleWelcome2.css" />
 </head>
 
 

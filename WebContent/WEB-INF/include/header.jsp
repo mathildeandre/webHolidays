@@ -3,14 +3,15 @@
 
 
 <header class="line">
-	<div class="inline" id="title">
+	<div id="titleIndex" class="inline text3Dfonce">
  	Organisation of holidays
 	</div>
 	
 	<div id="connexion" class="line inline right"> 
 		
-		<div id="nameGroup" class="inline">${requestScope.nameGroup}</div>
-		<div class="inline button3D b3white">Deconnexion</div>
+		<div id="nameGroup" class="inline text3Dfonce">${requestScope.nameGroup}</div>
+		<div class="inline newButton3D">Personal Area</div>
+		<div class="inline newButton3D">Deconnexion</div>
 	</div>
 
 </header>

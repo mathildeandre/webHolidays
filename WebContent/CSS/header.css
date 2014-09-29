@@ -7,12 +7,12 @@ header{
 	height:150px;
 	line-height:150px; /*vertical-align:middle; ne fonctionne pas*/
 }
-header #title{
+header #titleIndex{
 	position: absolute;
 	left: 20vw;
 	font-size: 2.5vw;
 	font-weight: bold;
-  
+  /*
 	color: white;
 	text-shadow: 0 1px 0 #eee,
              0 2px 0 #e5e5e5,
@@ -23,6 +23,7 @@ header #title{
              -2px 7px 2px rgba(0,0,0, 0.6),
              -2px 7px 8px rgba(0,0,0, 0.6),
              -2px 7px 45px rgba(0,0,0, 1);  
+   */
 	/*text-shadow:
     -2px -2px 0 #000,
     2px -2px 0 #000,
@@ -52,16 +53,3 @@ header #nameGroup{
              -2px 5.3px 8px rgba(0,0,0, 0.2),
              -2px 5.3px 45px rgba(0,0,0, 0.4);          
 }
-header .button3D{
-	height:35px;
-	line-height:35px;
-	text-align:center;
-	font-size: 1.2vw;
-	font-weight:bold;
-	padding:0 0.3vw;
-	margin-left:1vw;
-	border:4px solid;
-	border-radius: 0.5vw; 
-	
-}
-

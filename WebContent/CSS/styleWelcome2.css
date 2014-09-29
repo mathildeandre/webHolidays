@@ -56,8 +56,7 @@ section #buttonDemo{
 	font-size: 2.2vw;
 	font-weight:bold;
 	padding:2vw 1vw;
-	border:8px solid white;
-	
+    border-width: 8px;
 }
 
 section #registration{
