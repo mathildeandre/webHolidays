@@ -1,0 +1,2083 @@
+/*
+* general
+* header
+* 3D
+* nav
+* styleWelcome
+* stylePersonalArea
+* styleHomepage
+* styleGroup
+* styleDoodle
+* styleExpenses
+* 
+* manque : styleCourses, styleHobbies, styleMeals, styleThings
+*/
+
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx  general   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+
+
+
+body{
+	font-family:"Comic Sans ms", Helvetica Narrow, sans-serif;/*"Comic Sans ms";*/
+}
+
+/*@font-face {
+	font-family: 'MaPolice';
+	src: url('../mapolice.otf');
+}
+*/
+
+/** pour centrer un texte avec plusieurs lignes :
+	ecire ligne-height = 0px (ou la taille de la police ex:2vw)
+	ensuite centre avec le padding top et bottom		
+*/
+
+body{
+	margin: auto; /*centrer la colonne*/
+}
+
+
+
+footer{
+	margin: auto;
+	padding:2vw;/*Marge verticale*/
+	width:80vw;
+	text-align:center;/*texte centré*/
+	font-size: 1vw;
+	/*font-weight: italic; ne marche pas*/
+	color: white;
+	text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000; 
+}
+
+
+section{
+	border-radius: 1vw ;
+	width:75vw;
+	margin : auto; 
+	margin-top : 3vw; 
+	margin-bottom : 1vw; 
+	background : url("../images/peint-blanc.jpg");
+	background-size:20vw;
+	padding: 2vw;
+	/*color:#000033;
+	/*background-attachment: fixed;*/
+	/*border:8px solid grey;/*bleu clair*/   /* blueviolet*/
+}
+
+h1{
+	text-align:center;/*texte centré*/
+	font-size: 2.5vw;
+	font-weight: bold;
+	/*text-shadow: 5px 5px 5px #000000;  /*decalage-a-droite, decalage-bas, flootage, color*/
+}
+h2{
+	font-size: 1.8vw;
+}
+
+/*
+#navSmall{
+	position: fixed;
+	border:3px solid #9FC6FF;/*bleu clair*   /* blueviolet*
+	border-radius: 30px ;
+	width:300px;
+	float: left;
+	padding: 10px ;
+	margin: 0px; 
+	background-color: rgba(184,134,11,0.5);
+	
+    color: #9FC6FF;
+	/*width:150px;
+	/*border: 1px solid black;*
+}
+*/
+
+
+
+.textGrey{
+	color : grey;
+}
+.textOrange{
+	color : #CC5200;
+}
+.textRed{
+	color : #B20000;
+}
+.textBlue{
+	color : #4747D1;
+}
+.textPurple{
+	color : #7A1F99;
+}
+
+
+/*
+.bigCheckbox{
+   width: 40px; height: 40px;
+}
+
+input[type='checkbox'] {
+
+    background:red;
+}
+*/
+
+.line{
+	white-space: nowrap; 
+	margin-left: 0;
+}
+.inline{
+	display: inline-block;
+}
+.right{ 
+  position: absolute;
+  right: 10vw;
+}
+
+/* enleve soulignage des liens 
+a:link  {  
+	text-decoration:none;  
+}  
+*/
+
+
+/*
+#buttonReset{
+	color:	#B2B2B2;
+	border-color:	#B2B2B2;
+}
+#buttonReset:active{ 
+color: #000; 
+}
+*/
+
+
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx fin general   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+
+
+
+
+
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx header   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+
+
+/* concern only the INDEX !! */
+
+
+header{
+	margin:auto;
+	width:100vw;
+	height:150px;
+	line-height:150px; /*vertical-align:middle; ne fonctionne pas*/
+}
+header #titleIndex{
+	position: absolute;
+	left: 20vw;
+	font-size: 2.5vw;
+	font-weight: bold;
+  /*
+	color: white;
+	text-shadow: 0 1px 0 #eee,
+             0 2px 0 #e5e5e5,
+             -1px 3px 0 #C8C8C8,
+             -1px 4px 0 #C1C1C1,
+             -2px 5px 0 #B9B9B9,
+             -2px 6px 0 #B2B2B2,
+             -2px 7px 2px rgba(0,0,0, 0.6),
+             -2px 7px 8px rgba(0,0,0, 0.6),
+             -2px 7px 45px rgba(0,0,0, 1);  
+   */
+	/*text-shadow:
+    -2px -2px 0 #000,
+    2px -2px 0 #000,
+    -2px 2px 0 #000,
+    2px 2px 0 #000; */
+}
+
+header #connexion{
+  position: absolute;
+  right: 0.5vw;
+	/* comprend les deux input text + button connexion */
+}
+header #nameGroup{
+	font-size: 1.5vw;
+	font-weight: bold;
+	color: white;
+             text-shadow: 	0   	0.5px	0 #eee,
+						0.1px   	0.8px	0 #eee,
+              		0.2px   	1px 	0 #e5e5e5,
+              		-0.3px   	1.4px 	0 #e5e5e5,
+             	-0.4px 	1.8px 0 #C8C8C8,
+             	-0.7px 	2.3px 	0 #C1C1C1,
+             	-1px 		2.9px 0 #B9B9B9,
+             	-1.5px 	3.5px 	0 #B2B2B2,
+             
+             -2px 5.3px 2px rgba(0,0,0, 0.6),
+             -2px 5.3px 8px rgba(0,0,0, 0.2),
+             -2px 5.3px 45px rgba(0,0,0, 0.4);          
+}
+
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx fin header   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+
+
+
+
+
+
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 3D   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+
+
+	
+
+/******************** TEXT WHITE shadow foncé ***************************/  
+
+.text3Dfonce{ /* same as newButton3D */
+
+		text-shadow: 0   0.5px	0 #CCCCCC,
+				0.1px 	0.8px	0 #CCCCCC,
+              	0.2px   1px 	0 #B2B2B2,
+              	-0.3px  1.2px 	0 #B2B2B2,
+             	-0.4px 	1.5px 0 #999999,
+             	-0.7px 	2px 	0 #666666,
+             	-1px 	2.5px 0 #4C4C4C,
+             	-1.5px 	3px 	0 #333333,
+             -2px 3.5px 2px rgba(0,0,0, 0.6),
+             -2px 3.5px 8px rgba(0,0,0, 0.2),
+             -2px 3.5px 45px rgba(0,0,0, 0.4);
+}
+/******************** fin TEXT WHITE shadow foncé ***************************/  
+
+/******************** TEXT WHITE shadow clair ***************************/  
+.text3Dclair{
+
+		text-shadow: 0   0.5px	0 #eee,
+				0.1px 	0.8px	0 #eee,
+              	0.2px   1px 	0 #e5e5e5,
+              	-0.3px  1.2px 	0 #e5e5e5,
+             	-0.4px 	1.5px 0 #C8C8C8,
+             	-0.7px 	2px 	0 #C1C1C1,
+             	-1px 	2.5px 0 #B9B9B9,
+             	-1.5px 	3px 	0 #B2B2B2,
+             -2px 3.5px 2px rgba(0,0,0, 0.6),
+             -2px 3.5px 8px rgba(0,0,0, 0.2),
+             -2px 3.5px 45px rgba(0,0,0, 0.4);
+}
+/******************** fin TEXT WHITE shadow clair ***************************/  
+
+/******************** BUTTON WHITE PLEIN ***************************/  
+
+.newButton3D{
+	/*line-height:50px;*/
+	/*min-width: 100px;*/
+
+	height:40px;
+	line-height:0px;
+	text-align:center;
+	font-size: 1.4vw;
+	font-weight:bold;
+	padding:0.5vw 1vw;
+	border:4px solid white;
+	border-radius: 0.5vw; 
+	
+    
+	background:white;/*rgba(0,0,0,0);*/
+	color:#003399;/*rgba(0,0,105,0.9);
+	
+	 /* shadow text moyen foncé!! */
+	/*	text-shadow: 0   0.5px	0 #CCCCCC,
+				0.1px 	0.8px	0 #CCCCCC,
+              	0.2px   1px 	0 #B2B2B2,
+              	-0.3px  1.2px 	0 #B2B2B2,
+             	-0.4px 	1.5px 0 #999999,
+             	-0.7px 	2px 	0 #666666,
+             	-1px 	2.5px 0 #4C4C4C,
+             	-1.5px 	3px 	0 #333333,
+             -2px 3.5px 2px rgba(0,0,0, 0.6),
+             -2px 3.5px 8px rgba(0,0,0, 0.2),
+             -2px 3.5px 45px rgba(0,0,0, 0.4);
+          */   
+	
+		/** border fonce TOP */
+	box-shadow:-0.2px   0.8px 0 #CCCCCC,
+              -0.5px   1.5px 0 #CCCCCC,
+             -1px 2.3px 0 #B2B2B2,
+             -1px 3px 0 #999999,
+             -2px 3.8px 0 #666666,
+             -2.1px 4.5px 0 #4C4C4C,
+             -2.2px 5.3px 2px rgba(0,0,0, 0.4),
+             -2.2px 5.3px 8px rgba(0,0,0, 0.2),
+             -2.2px 5.3px 20px rgba(0,0,0, 0.4);
+			/* interieur 
+              -0.2px   0.8px 0 #CCCCCC inset,
+              -0.5px   1.5px 0 #CCCCCC inset,
+             -1px 2.3px 0 #B2B2B2 inset,
+             -1px 3px 0 #999999 inset,
+             -2px 3.8px 0 #666666 inset,
+             -2.1px 4.5px 0 #4C4C4C inset,
+             -2.2px 5.3px 2px rgba(0,0,0, 0.4) inset,
+             -2.2px 5.3px 8px rgba(0,0,0, 0.2) inset,
+             -2.2px 5.3px 20px rgba(0,0,0, 0.4) inset;*/
+	
+}
+.newButton3D:hover{
+	background:white;
+}
+.newButton3D:active{
+	/*margin-top:4.5px;
+	margin-right:2.2px;
+	*/
+	background:rgba(0,0,0,0);
+	box-shadow: 0 0 0 #000000;
+	text-shadow:0   0 0 #000000;
+	
+}
+
+
+/******************** fin BUTTON WHITE PLEIN ***************************/  
+
+
+/******************** BUTTON WHITE CREUX ***************************/  
+
+.newButton3D{
+
+	height:40px;
+	line-height:0px;
+	text-align:center;
+	font-size: 1.4vw;
+	font-weight:bold;
+	padding:0.5vw 1vw;
+	border:4px solid white;/*bleu fonce #003399; /*vert : #4DB84D;*/
+	border-radius: 0.5vw; 
+	
+    
+	background:white;/* bleu fonce #003399;*/
+	color:white;
+	
+	 /* shadow text moyen foncé!! */
+		text-shadow: 0   0.5px	0 #CCCCCC,
+				0.1px 	0.8px	0 #CCCCCC,
+              	0.2px   1px 	0 #B2B2B2,
+              	-0.3px  1.2px 	0 #B2B2B2,
+             	-0.4px 	1.5px 0 #999999,
+             	-0.7px 	2px 	0 #666666,
+             	-1px 	2.5px 0 #4C4C4C,
+             	-1.5px 	3px 	0 #333333,
+             -2px 3.5px 2px rgba(0,0,0, 0.6),
+             -2px 3.5px 8px rgba(0,0,0, 0.2),
+             -2px 3.5px 45px rgba(0,0,0, 0.4);
+            
+	
+		/** border fonce TOP */
+	box-shadow:-0.2px   0.8px 0 #CCCCCC,
+              -0.5px   1.5px 0 #CCCCCC,
+             -1px 2.3px 0 #B2B2B2,
+             -1px 3px 0 #999999,
+             -2px 3.8px 0 #666666,
+             -2.1px 4.5px 0 #4C4C4C,
+             -2.2px 5.3px 2px rgba(0,0,0, 0.4),
+             -2.2px 5.3px 8px rgba(0,0,0, 0.2),
+             -2.2px 5.3px 20px rgba(0,0,0, 0.4);
+	
+}
+.newButton3D:hover{
+	
+	background:rgba(0,0,0,0);
+	/* permet d'enlever leffet creux */
+	box-shadow:-0.2px   0.8px 0 #CCCCCC,
+              -0.5px   1.5px 0 #CCCCCC,
+             -1px 2.3px 0 #B2B2B2,
+             -1px 3px 0 #999999,
+             -2px 3.8px 0 #666666,
+             -2.1px 4.5px 0 #4C4C4C,
+             -2.2px 5.3px 2px rgba(0,0,0, 0.4),
+             -2.2px 5.3px 8px rgba(0,0,0, 0.2),
+             -2.2px 5.3px 20px rgba(0,0,0, 0.4),
+			/* interieur */
+              -0.2px   0.8px 0 #CCCCCC inset,
+              -0.5px   1.5px 0 #CCCCCC inset,
+             -1px 2.3px 0 #B2B2B2 inset,
+             -1px 3px 0 #999999 inset,
+             -2px 3.8px 0 #666666 inset,
+             -2.1px 4.5px 0 #4C4C4C inset,
+             -2.2px 5.3px 2px rgba(0,0,0, 0.4) inset,
+             -2.2px 5.3px 8px rgba(0,0,0, 0.2) inset,
+             -2.2px 5.3px 20px rgba(0,0,0, 0.4) inset;
+             
+}
+.newButton3D:active{
+	/*margin-top:4.5px;
+	margin-right:2.2px;
+	*/
+	background:rgba(0,0,0,0);
+	box-shadow: 0 0 0 #000000;
+	text-shadow:0   0 0 #000000;
+	
+}
+
+
+/******************** fin BUTTON WHITE CREUX ***************************/  
+
+
+
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx fin 3D   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+
+
+
+
+
+
+
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx nav   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+
+/*
+#bodyIndex{
+	background-image: url("../images/nav2.jpg") fixed;
+	
+    background-repeat: no-repeat;
+	background-position: 0 0;
+
+}*/
+html {
+    -webkit-font-smoothing: antialiased; /* permet de rendre opacity during animation en chrome possible*/
+}
+
+nav{ 
+	/*overflow-x:scroll;
+	overflow-y:none; */  	
+	white-space: nowrap; 
+	margin-left: 0;
+	padding:0;   
+}
+
+nav ul {
+	display: inline-block;
+	margin-left: 0;
+	/*display: inline; /* IE7 */
+	/*zoom:1;  /* IE7 */ 
+	list-style: none;
+	width: 100vw;
+	padding:0;
+}
+
+/***********************************************************************************************************/
+/********************************************** NAV MODE CLASSIC *******************************************/
+/***********************************************************************************************************/
+nav li {
+	display: inline-block;
+	/**display: inline;
+	/*zoom:1;*/
+	width: 10vw;
+	margin-left:2vw;
+	height:50px;
+	line-height:50px;
+	text-align:center;
+	font-size: 1.8vw;
+	font-weight:bold;
+	/*min-width: 100px;*/
+	
+	
+/**************** identique a newButton3D de 3D.css ************/	
+	padding:0.5vw 1vw;
+	border:4px solid white;
+	border-radius: 0.5vw; 
+	
+    
+	background:rgba(0,0,0,0);
+	color:white;
+	
+	 /* shadow text moyen foncé!! */
+		text-shadow: 0   0.5px	0 #CCCCCC,
+				0.1px 	0.8px	0 #CCCCCC,
+              	0.2px   1px 	0 #B2B2B2,
+              	-0.3px  1.2px 	0 #B2B2B2,
+             	-0.4px 	1.5px 0 #999999,
+             	-0.7px 	2px 	0 #666666,
+             	-1px 	2.5px 0 #4C4C4C,
+             	-1.5px 	3px 	0 #333333,
+             -2px 3.5px 2px rgba(0,0,0, 0.6),
+             -2px 3.5px 8px rgba(0,0,0, 0.2),
+             -2px 3.5px 45px rgba(0,0,0, 0.4);
+             
+	
+		/** border fonce TOP */
+	box-shadow:-0.2px   0.8px 0 #CCCCCC,
+              -0.5px   1.5px 0 #CCCCCC,
+             -1px 2.3px 0 #B2B2B2,
+             -1px 3px 0 #999999,
+             -2px 3.8px 0 #666666,
+             -2.1px 4.5px 0 #4C4C4C,
+             -2.2px 5.3px 2px rgba(0,0,0, 0.4),
+             -2.2px 5.3px 8px rgba(0,0,0, 0.2),
+             -2.2px 5.3px 20px rgba(0,0,0, 0.4),
+			/* interieur */
+              -0.2px   0.8px 0 #CCCCCC inset,
+              -0.5px   1.5px 0 #CCCCCC inset,
+             -1px 2.3px 0 #B2B2B2 inset,
+             -1px 3px 0 #999999 inset,
+             -2px 3.8px 0 #666666 inset,
+             -2.1px 4.5px 0 #4C4C4C inset,
+             -2.2px 5.3px 2px rgba(0,0,0, 0.4) inset,
+             -2.2px 5.3px 8px rgba(0,0,0, 0.2) inset,
+             -2.2px 5.3px 20px rgba(0,0,0, 0.4) inset;
+
+/****************fin identique a newButton3D de 3D.css ************/	
+}
+
+nav li:nth-child(1) {
+background-color:#4747D1; /*blue  rgb(71,71,255)*/
+ 	/*border-color:#333333;  /* dark #000066 ;*/
+}
+nav li:nth-child(2) {
+background-color:#FF6600; /*orange  rgb(255,102,0)*/
+ 	/*border-color:#333333;/* dark #803300 ;*/
+}
+nav li:nth-child(3) {
+background-color:#00CC00; /*green  rgb(0,204,0)*/
+ 	/*border-color:#333333;/* dark rgb(0,76,0) ;*/
+}
+nav li:nth-child(4) {
+background-color:#FFCC00; /*yellow  rgb(255,204,0)*/
+ 	/*border-color:#333333; /* less dark :B2B200 ;darker : #808000;*/
+}
+nav li:nth-child(5) {
+background-color:#FF1919; /*red  rgb(255,25,2)*/
+ 	/*border-color:#333333; /* less dark #B20000 ;darker : #800000;*/
+}
+nav li:nth-child(6) {
+background-color:#853385; /*purple  rgb(133,51,133)*/
+ 	/*border-color:#333333;/* less #7A1F99   dark #3D003D ;*/
+}
+nav li:nth-child(7) {
+background-color:#FF3399; /*pink  rgb(255,51,153)*/
+ 	/*border-color:#333333;*/
+}
+
+/***********************************************************************************************************/
+/******************************************** fin NAV MODE CLASSIC *****************************************/
+/***********************************************************************************************************/
+
+
+
+/***********************************************************************************************************/
+/******************************************** CURRENT ******************************************************/
+/***********************************************************************************************************/
+
+@-webkit-keyframes clignote1 {
+from {background-color:rgba(71,71,209,1);}
+to {background-color:rgba(71,71,209,0.3);}
+}
+@keyframes clignote1 {
+from {background-color:rgba(71,71,255,1);}
+to {background-color:rgba(71,71,255,0.3);}
+}
+@keyframes clignote2 {
+from {background-color:rgba(255,102,0,1);}
+to {background-color:rgba(255,102,0,0.3);}
+}
+@keyframes clignote3 {
+from {background-color:rgba(0,204,0,1);}
+to {background-color:rgba(0,204,0,0.3);}
+}
+@keyframes clignote4 {
+from {background-color:rgba(255,204,0,1);}
+to {background-color:rgba(255,204,0,0.3);}
+}
+@keyframes clignote5 {
+from {background-color:rgba(255,25,2,1);}
+to {background-color:rgba(255,25,2,0.3);}
+}
+@keyframes clignote6 {
+from {background-color:rgba(133,51,133,1);}
+to {background-color:rgba(133,51,133,0.3);}
+}
+@keyframes clignote7 {
+from {background-color:rgba(255,51,153,1);}
+to {background-color:rgba(255,51,153,0.3);}
+}
+nav li:nth-child(1)[class="current"] {
+-webkit-animation: clignote1 2s alternate infinite; /* chrome*/
+animation: clignote1 2s alternate infinite; /* all */
+}
+nav li:nth-child(2)[class="current"] {
+animation: clignote2 2s alternate infinite; /* all */
+}
+nav li:nth-child(3)[class="current"] {
+animation: clignote3 2s alternate infinite; /* all */
+}
+nav li:nth-child(4)[class="current"] {
+animation: clignote4 2s alternate infinite; /* chrome*
+animation: clignote4 2s alternate infinite; /* all */
+}
+nav li:nth-child(5)[class="current"] {
+animation: clignote5 2s alternate infinite; /* all */
+}
+nav li:nth-child(6)[class="current"] {
+animation: clignote6 2s alternate infinite; /* all */
+}
+nav li:nth-child(7)[class="current"] {
+animation: clignote7 2s alternate infinite; /* all */
+}
+
+
+nav ul li[class="current"] {
+	transform: rotate(-10deg);
+	color:#B2B2B2;
+	border-color:#B2B2B2;
+	/*	aucun 3D
+	text-shadow: 0 0 0 rgba(0,0,0,0);
+	box-shadow: 0 0 0 rgba(0,0,0,0);
+	*/
+}
+
+/***********************************************************************************************************/
+/******************************************** fin CURRENT **************************************************/
+/***********************************************************************************************************/
+
+
+
+
+
+/***********************************************************************************************************/
+/********************************************  HOVER  ******************************************************/
+/***********************************************************************************************************/
+@keyframes penche {
+from {transform: rotate(-10deg) scale(1.3,1.3);}
+to {transform: rotate(-7deg) scale(1.3,1.3);}
+}
+@-webkit-keyframes penche {
+from {transform: rotate(-10deg) scale(1.3,1.3);}
+to {transform: rotate(-7deg) scale(1.3,1.3);}
+}
+nav ul li:not([class="current"]):hover {
+	animation: penche 0.2s alternate; /* firefox*/
+	-webkit-animation: penche 0.2s alternate; /* firefox*/
+	transform: rotate(-10deg) scale(1.3,1.3);
+	
+	border:5px solid white;
+	border-radius:5px;
+}
+/******************** BLUE ***************************/  
+nav li:nth-child(1):not([class="current"]):hover {  
+	background:rgba(0,0,0,0);
+	
+	
+	color:#4747D1;
+	text-shadow: 0   0.8px 0 #2E2EB8,
+              0   1.5px 0 #2929A3,
+             -1px 2.3px 0 #24248F,
+             -1px 3px 0 #1F1F7A,
+             -2px 3.8px 0 #1A1A66,
+             -2.1px 4.5px 0 #141452,
+             -2.2px 5.3px 2px rgba(10,10,41, 0.4),
+             -2.2px 5.3px 8px rgba(10,10,41, 0.2),
+             -2.2px 5.3px 20px rgba(10,10,41, 0.4); 
+
+	border-radius: 4%; 
+	border:4px solid #4747D1;
+	
+	/*** mode BORDER shadow plus petite ***/
+	box-shadow:-0.2px   0.8px 0 #2E2EB8,
+              -0.5px   1.5px 0 #2929A3,
+             -1px 2.3px 0 #24248F,
+             -1px 3px 0 #1F1F7A,
+             -2px 3.8px 0 #1A1A66,
+             -2.1px 4.5px 0 #141452,
+             -2.2px 5.3px 2px rgba(10,10,41, 0.4),
+             -2.2px 5.3px 8px rgba(10,10,41, 0.2),
+             -2.2px 5.3px 20px rgba(10,10,41, 0.4),
+			/* interieur */
+              -0.2px   0.8px 0 #2E2EB8 inset,
+              -0.5px   1.5px 0 #2929A3 inset,
+             -1px 2.3px 0 #24248F inset,
+             -1px 3px 0 #1F1F7A inset,
+             -2px 3.8px 0 #1A1A66 inset,
+             -2.1px 4.5px 0 #141452 inset,
+             -2.2px 5.3px 2px rgba(10,10,41, 0.4) inset,
+             -2.2px 5.3px 8px rgba(10,10,41, 0.2) inset,
+             -2.2px 5.3px 20px rgba(10,10,41, 0.4) inset;
+
+}
+/**************** fin BLUE **************************/
+
+
+/******************** ORANGE ***************************/  
+nav li:nth-child(2):not([class="current"]):hover {  
+	background:rgba(0,0,0,0);
+	
+	
+	color:#FF6600;
+	text-shadow: 0   0.8px 0 #E65C00,
+              0   1.5px 0 #CC5200,
+             -1px 2.3px 0 #CC5200,
+             -1px 3px 0 #993D00,
+             -2px 3.8px 0 #803300,
+             -2.1px 4.5px 0 #662900,
+             -2.2px 5.3px 2px rgba(51,20,0, 0.4),
+             -2.2px 5.3px 8px rgba(51,20,0, 0.2),
+             -2.2px 5.3px 20px rgba(51,20,0, 0.4); 
+
+	border-radius: 4%; 
+	border:4px solid #FF6600;
+	
+	/*** mode BORDER shadow plus petite ***/
+	box-shadow:-0.2px   0.8px 0 #E65C00,
+              -0.5px   1.5px 0 #CC5200,
+             -1px 2.3px 0 #CC5200,
+             -1px 3px 0 #993D00,
+             -2px 3.8px 0 #803300,
+             -2.1px 4.5px 0 #662900,
+             -2.2px 5.3px 2px rgba(51,20,0, 0.4),
+             -2.2px 5.3px 8px rgba(51,20,0, 0.2),
+             -2.2px 5.3px 20px rgba(51,20,0, 0.4),
+			/* interieur */
+              -0.2px   0.8px 0 #E65C00 inset,
+              -0.5px   1.5px 0 #CC5200 inset,
+             -1px 2.3px 0 #CC5200 inset,
+             -1px 3px 0 #993D00 inset,
+             -2px 3.8px 0 #803300 inset,
+             -2.1px 4.5px 0 #662900 inset,
+             -2.2px 5.3px 2px rgba(51,20,0, 0.4) inset,
+             -2.2px 5.3px 8px rgba(51,20,0, 0.2) inset,
+             -2.2px 5.3px 20px rgba(51,20,0, 0.4) inset;
+
+}
+/**************** fin ORANGE **************************/
+
+
+/******************** GREEN ***************************/  
+nav li:nth-child(3):not([class="current"]):hover {  
+	background:rgba(0,0,0,0);
+	
+	
+	color:#00CC00;
+	text-shadow: 0   0.8px 0 #00B800,
+              0   1.5px 0 #00A300,
+             -1px 2.3px 0 #008F00,
+             -1px 3px 0 #007A00,
+             -2px 3.8px 0 #006600,
+             -2.1px 4.5px 0 #005200,
+             -2.2px 5.3px 2px rgba(0,41,0, 0.4),
+             -2.2px 5.3px 8px rgba(0,41,0, 0.2),
+             -2.2px 5.3px 20px rgba(0,41,0, 0.4); 
+
+	border-radius: 4%; 
+	border:4px solid #00CC00;
+	
+	/*** mode BORDER shadow plus petite ***/
+	box-shadow:-0.2px   0.8px 0 #00B800,
+              -0.5px   1.5px 0 #00A300,
+             -1px 2.3px 0 #008F00,
+             -1px 3px 0 #007A00,
+             -2px 3.8px 0 #006600,
+             -2.1px 4.5px 0 #005200,
+             -2.2px 5.3px 2px rgba(0,41,0, 0.4),
+             -2.2px 5.3px 8px rgba(0,41,0, 0.2),
+             -2.2px 5.3px 20px rgba(0,41,0, 0.4),
+			/* interieur */
+              -0.2px   0.8px 0 #00B800 inset,
+              -0.5px   1.5px 0 #00A300 inset,
+             -1px 2.3px 0 #008F00 inset,
+             -1px 3px 0 #007A00 inset,
+             -2px 3.8px 0 #006600 inset,
+             -2.1px 4.5px 0 #005200 inset,
+             -2.2px 5.3px 2px rgba(0,41,0, 0.4) inset,
+             -2.2px 5.3px 8px rgba(0,41,0, 0.2) inset,
+             -2.2px 5.3px 20px rgba(0,41,0, 0.4) inset;
+
+}
+/**************** fin GREEN **************************/
+
+/******************** YELLOW ***************************/  
+nav li:nth-child(4):not([class="current"]):hover {  
+	background:rgba(0,0,0,0);
+	
+	
+	color:#FFCC00;
+	text-shadow:0   0.8px 0 #E6B800,
+              0   1.5px 0 #CCA300,
+             -1px 2.3px 0 #B28F00,
+             -1px 3px 0 #997A00,
+             -2px 3.8px 0 #806600,
+             -2.1px 4.5px 0 #665200,
+             -2.2px 5.3px 2px rgba(51,41,0, 0.4),
+             -2.2px 5.3px 8px rgba(51,41,0, 0.2),
+             -2.2px 5.3px 20px rgba(51,41,0, 0.4); 
+
+	border-radius: 4%; 
+	border:4px solid #FFCC00;
+	
+	/*** mode BORDER shadow plus petite ***/
+	box-shadow:-0.2px   0.8px 0 #E6B800,
+              -0.5px   1.5px 0 #CCA300,
+             -1px 2.3px 0 #B28F00,
+             -1px 3px 0 #997A00,
+             -2px 3.8px 0 #806600,
+             -2.1px 4.5px 0 #665200,
+             -2.2px 5.3px 2px rgba(51,41,0, 0.4),
+             -2.2px 5.3px 8px rgba(51,41,0, 0.2),
+             -2.2px 5.3px 20px rgba(51,41,0, 0.4),
+			/* interieur */
+              -0.2px   0.8px 0 #E6B800 inset,
+              -0.5px   1.5px 0 #CCA300 inset,
+             -1px 2.3px 0 #B28F00 inset,
+             -1px 3px 0 #997A00 inset,
+             -2px 3.8px 0 #806600 inset,
+             -2.1px 4.5px 0 #665200 inset,
+             -2.2px 5.3px 2px rgba(51,41,0, 0.4) inset,
+             -2.2px 5.3px 8px rgba(51,41,0, 0.2) inset,
+             -2.2px 5.3px 20px rgba(51,41,0, 0.4) inset;
+
+}
+/**************** fin YELLOW **************************/
+
+
+/******************** RED ***************************/  
+nav li:nth-child(5):not([class="current"]):hover {  
+	background:rgba(0,0,0,0);
+	
+	
+	color:#FF1919;/*#FF8080;*/
+	text-shadow: 0   0.8px 0 #E60000,
+              0   1.5px 0 #CC0000,
+             -1px 2.3px 0 #B20000,
+             -1px 3px 0 #990000,
+             -2px 3.8px 0 #800000,
+             -2.1px 4.5px 0 #660000,
+             -2.2px 5.3px 2px rgba(50,0,0, 0.4),
+             -2.2px 5.3px 8px rgba(50,0,0, 0.2),
+             -2.2px 5.3px 20px rgba(50,0,0, 0.4); 
+
+	border-radius: 4%; 
+	border:4px solid #FF1919;
+	
+	/*** mode BORDER shadow plus petite ***/
+	box-shadow:-0.2px   0.8px 0 #E60000,
+              -0.5px   1.5px 0 #CC0000,
+             -1px 2.3px 0 #B20000,
+             -1px 3px 0 #990000,
+             -2px 3.8px 0 #800000,
+             -2.1px 4.5px 0 #660000,
+             -2.2px 5.3px 2px rgba(50,0,0, 0.4),
+             -2.2px 5.3px 8px rgba(50,0,0, 0.2),
+             -2.2px 5.3px 20px rgba(50,0,0, 0.4),
+			/* interieur */
+              -0.2px   0.8px 0 #E60000 inset,
+              -0.5px   1.5px 0 #CC0000 inset,
+             -1px 2.3px 0 #B20000 inset,
+             -1px 3px 0 #990000 inset,
+             -2px 3.8px 0 #800000 inset,
+             -2.1px 4.5px 0 #660000 inset,
+             -2.2px 5.3px 2px rgba(50,0,0, 0.4) inset,
+             -2.2px 5.3px 8px rgba(50,0,0, 0.2) inset,
+             -2.2px 5.3px 20px rgba(50,0,0, 0.4) inset;
+
+}
+/**************** fin RED **************************/
+
+/******************** PURPLE ***************************/  
+nav li:nth-child(6):not([class="current"]):hover {  
+	background:rgba(0,0,0,0);
+	
+	
+	color:#853385;
+	text-shadow:0   0.8px 0 #751975,
+              0   1.5px 0 #5C005C,
+             -1px 2.3px 0 #520052,
+             -1px 3px 0 #470047,
+             -2px 3.8px 0 #3D003D,
+             -2.1px 4.5px 0 #290029,
+             -2.2px 5.3px 2px rgba(41,0,41, 0.4),
+             -2.2px 5.3px 8px rgba(41,0,41, 0.2),
+             -2.2px 5.3px 20px rgba(41,0,41, 0.4); 
+
+	border-radius: 4%; 
+	border:4px solid #853385;
+	
+	/*** mode BORDER shadow plus petite ***/
+	box-shadow:-0.2px   0.8px 0 #751975,
+              -0.5px   1.5px 0 #5C005C,
+             -1px 2.3px 0 #520052,
+             -1px 3px 0 #470047,
+             -2px 3.8px 0 #3D003D,
+             -2.1px 4.5px 0 #290029,
+             -2.2px 5.3px 2px rgba(41,0,41, 0.4),
+             -2.2px 5.3px 8px rgba(41,0,41, 0.2),
+             -2.2px 5.3px 20px rgba(41,0,41, 0.4),
+			/* interieur */
+              -0.2px   0.8px 0 #751975 inset,
+              -0.5px   1.5px 0 #5C005C inset,
+             -1px 2.3px 0 #520052 inset,
+             -1px 3px 0 #470047 inset,
+             -2px 3.8px 0 #3D003D inset,
+             -2.1px 4.5px 0 #290029 inset,
+             -2.2px 5.3px 2px rgba(41,0,41, 0.4) inset,
+             -2.2px 5.3px 8px rgba(41,0,41, 0.2) inset,
+             -2.2px 5.3px 20px rgba(41,0,41, 0.4) inset;
+
+}
+/**************** fin PURPLE **************************/
+
+
+/******************** PINK ***************************/  
+nav li:nth-child(7):not([class="current"]):hover {  
+	background:rgba(0,0,0,0);
+	
+	
+	color:#FF3399;
+	text-shadow:0   0.8px 0 #E62E8A,
+              0   1.5px 0 #CC297A,
+             -1px 2.3px 0 #B2246B,
+             -1px 3px 0 #991F5C,
+             -2px 3.8px 0 #801A4C,
+             -2.1px 4.5px 0 #66143D,
+             -2.2px 5.3px 2px rgba(51,10,31, 0.4),
+             -2.2px 5.3px 8px rgba(51,10,31, 0.2),
+             -2.2px 5.3px 20px rgba(51,10,31, 0.4); 
+
+	border-radius: 4%; 
+	border:4px solid #FF3399;
+	
+	/*** mode BORDER shadow plus petite ***/
+	box-shadow:-0.2px   0.8px 0 #E62E8A,
+              -0.5px   1.5px 0 #CC297A,
+             -1px 2.3px 0 #B2246B,
+             -1px 3px 0 #991F5C,
+             -2px 3.8px 0 #801A4C,
+             -2.1px 4.5px 0 #66143D,
+             -2.2px 5.3px 2px rgba(51,10,31, 0.4),
+             -2.2px 5.3px 8px rgba(51,10,31, 0.2),
+             -2.2px 5.3px 20px rgba(51,10,31, 0.4),
+			/* interieur */
+              -0.2px   0.8px 0 #E62E8A inset,
+              -0.5px   1.5px 0 #CC297A inset,
+             -1px 2.3px 0 #B2246B inset,
+             -1px 3px 0 #991F5C inset,
+             -2px 3.8px 0 #801A4C inset,
+             -2.1px 4.5px 0 #66143D inset,
+             -2.2px 5.3px 2px rgba(51,10,31, 0.4) inset,
+             -2.2px 5.3px 8px rgba(51,10,31, 0.2) inset,
+             -2.2px 5.3px 20px rgba(51,10,31, 0.4) inset;
+
+}
+/**************** fin PINK **************************/
+
+/***********************************************************************************************************/
+/******************************************** fin HOVER  ***************************************************/
+/***********************************************************************************************************/
+
+
+
+ 
+ 
+ 
+ 
+/***********************************************************************************************************/
+/********************************************  ACTIVE  ******************************************************/
+/***********************************************************************************************************/
+ 
+ /* NE FONCTIONNE PAS */ 
+ nav li:nth-child(1):not([class="current"]):active{
+	margin-top:4.5px;
+	margin-right:2.2px;
+	box-shadow: 0 0 0 #000000;
+	text-shadow:0   0 0 #000000;
+	/*border:4px solid #000000;
+	background:white;*/
+ }
+  nav li:nth-child(2):not([class="current"]):active{
+	margin-top:4.5px;
+	margin-right:2.2px;
+	box-shadow: 0 0 0 #000000;
+	text-shadow:0   0 0 #000000;
+	/*border:4px solid #000000;
+	background:white;*/
+ }
+  nav li:nth-child(3):not([class="current"]):active{
+	margin-top:4.5px;
+	margin-right:2.2px;
+	box-shadow: 0 0 0 #000000;
+	text-shadow:0   0 0 #000000;
+	/*border:4px solid #000000;
+	background:white;*/
+ }
+  nav li:nth-child(4):not([class="current"]):active{
+	margin-top:4.5px;
+	margin-right:2.2px;
+	box-shadow: 0 0 0 #000000;
+	text-shadow:0   0 0 #000000;
+	/*border:4px solid #000000;
+	background:white;*/
+ }
+  nav li:nth-child(5):not([class="current"]):active{
+	margin-top:4.5px;
+	margin-right:2.2px;
+	box-shadow: 0 0 0 #000000;
+	text-shadow:0   0 0 #000000;
+	/*border:4px solid #000000;
+	background:white;*/
+ }
+  nav li:nth-child(6):not([class="current"]):active{
+	margin-top:4.5px;
+	margin-right:2.2px;
+	box-shadow: 0 0 0 #000000;
+	text-shadow:0   0 0 #000000;
+	/*border:4px solid #000000;
+	background:white;*/
+ }
+ nav li:nth-child(7):not([class="current"]):active{
+	margin-top:4.5px;
+	margin-right:2.2px;
+	box-shadow: 0 0 0 #000000;
+	text-shadow:0   0 0 #000000;
+	/*border:4px solid #000000;
+	background:white;*/
+ }
+
+
+
+
+
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx fin nav   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+
+
+
+
+
+
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx styleWelcome   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+
+body{
+	margin:auto; /*centrer la colonne*/
+}
+
+header{
+	background:rgba(151,152,255,0.9);/*url("../images/pins.jpg") ;*/
+	background-size:10vw;
+	border-bottom:5px solid #003399 ;
+	border-top:1px solid rgba(0,0,0,0); /* bug ^^cette ligne permet de coller la bande header en haut*/ 
+	margin:auto;
+	width:100vw;
+	height:150px;
+	line-height:150px; /*vertical-align:middle; ne fonctionne pas*/
+}
+header #title{
+	position: absolute;
+	left: 8vw;
+	font-size: 3vw;
+	font-weight: bold;
+	color: white;
+}
+header #divLogIn{
+  position: absolute;
+  right: 2vw;
+	/* comprend les deux input text + button connexion */
+}
+
+header #coPseudo, #coPwd{
+	margin:0;
+	margin-left:0.5vw;
+	padding : 0.5vw;
+	width:13vw;
+	height:36px;
+	font-size: 1.3vw;
+	
+	border:1px solid white ;
+	border-radius: 0.5vw;
+	background : rgba(0,0,0,0);
+}
+
+header #confirmLogIn{
+	margin-left:1vw;
+}
+
+section #demo{
+	position: absolute;
+	left: 13vw;
+	margin-top:10vw;
+	/*width:40vw;*/  
+}
+
+section #buttonDemo{
+	height:150px;
+	line-height:50px;
+	text-align:center;
+	font-size: 2.2vw;
+	font-weight:bold;
+	padding:2vw 1vw;
+    border-width: 8px;
+}
+
+section #registration{
+	position: absolute;
+	left: 45vw;
+	margin-top:5vw;
+	/*width:20vw;*/
+	padding-left:10vw; 
+	border-left:8px dotted #5C5CFF;
+}
+
+section #registrationH2 {
+	font-size:2.6vw;
+	text-align:center;
+	font-weight: bold;
+	color: white;
+             
+}
+
+section #pseudo, #email, #pwd, #confirmPwd{
+	
+	margin-top:0.7vw;
+	padding : 0.5vw;
+	padding-left : 0.8vw;
+	width:25vw;
+	height:40px;
+	font-size: 1.3vw;
+	/*background: url("../images/peint-blanc.jpg");
+	background-size: 200px, 25px;*/
+	
+	background:rgba(151,152,255,0.9);/*url("../images/pins.jpg") ;*/
+	border:1px solid white;
+	border-radius: 0.5vw;
+}
+section #confirmInscription{
+	margin-top:2vw;
+	margin-left:7vw;
+}
+
+
+
+footer{
+	position:absolute;
+	top:700px;
+	padding:2vw;/*Marge verticale*/
+	width:90vw;
+	text-align:center;/*texte centré*/
+	font-size: 1.5vw;
+	color: white;
+}
+
+.line{
+	white-space: nowrap; 
+	margin-left: 0;
+}
+.inline{
+	display: inline-block;
+}
+/** reecri de general.css **/
+
+.textBlue{
+	color : #4747D1;
+}
+
+.textWhite{
+	color : white;
+}
+.right{ 
+  position: absolute;
+  right: 1vw;
+}
+
+
+
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx fin styleWelcome   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+
+
+
+
+
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx stylePersonalArea   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+
+body{
+	margin:auto; /*centrer la colonne*/
+	color: white;
+}
+header{
+	background:rgba(151,152,255,0.9);/*url("../images/pins.jpg") ;*/
+	background-size:10vw;
+	border-bottom:5px solid #003399 ;
+	border-top:1px solid rgba(0,0,0,0); /* bug ^^cette ligne permet de coller la bande header en haut*/ 
+	margin:auto;
+	width:100vw;
+	height:150px;
+	line-height:150px; /*vertical-align:middle; ne fonctionne pas*/
+}
+header #title{
+	position: absolute;
+	left: 2vw;
+	font-size: 2.5vw;
+	font-weight: bold;
+	color: white;
+}
+header #titlePrivateArea{
+  	position: absolute;
+  	right: 25vw;
+	font-size: 3vw;
+	font-weight: bold;
+	/* comprend les deux input text + button connexion */
+}
+header #divLogOut{
+	top:1vw;
+  	position: absolute;
+  	right: 2vw;
+}
+
+section #hint{
+	margin-top:1vw;
+	font-size: 1.5vw;
+	font-weight: bold;
+	background:rgba(151,152,255,0.9);
+	border:1px solid white;
+	border-radius: 0.5vw;
+}
+
+section #myGroups{
+	position: absolute;
+	left: 2vw;
+	margin-top:5vw;
+	/*width:40vw;*/  
+}
+
+
+section #myContacts{
+	position: absolute;
+	left: 31vw;
+	margin-top:5vw;
+	/*width:20vw;*/
+	padding-left:3vw; 
+	border-left:6px dotted #5C5CFF;
+}
+section #myProfil{
+	position: absolute;
+	left: 65vw;
+	margin-top:5vw;
+	padding-left:3vw; 
+	/*width:20vw;*/
+	border-left:6px dotted #5C5CFF;
+}
+
+section #fieldMyGroups{
+	overflow-y: hidden,scroll;
+	overflow-x: hidden;
+	max-height: 20vw;
+	padding-left:2vw; 
+	font-size: 1.5vw;
+}
+
+section #fieldMyContact{
+	overflow-y: hidden,scroll;
+	overflow-x: hidden;
+	max-height: 20vw;
+	padding-left:2vw; 
+	font-size: 1.5vw;
+}
+section #groupName, #nameNewContact, #listContacts, #pseudo, #email, #oldPwd, #newPwd, #confirmNewPwd{
+	
+	margin-top:0.7vw;
+	padding : 0.5vw;
+	padding-left : 0.8vw;
+	width:13vw;
+	height:40px;
+	font-size: 1.3vw;
+	/*background: url("../images/peint-blanc.jpg");
+	background-size: 200px, 25px;*/
+	
+	background:rgba(151,152,255,0.9);/*url("../images/pins.jpg") ;*/
+	border:1px solid white;
+	border-radius: 0.5vw;
+}
+section #nameNewContact, #email, #oldPwd, #newPwd, #confirmNewPwd{
+	width:14.5vw;
+}
+
+
+footer{
+	position:absolute;
+	top:1000px;
+	padding:2vw;/*Marge verticale*/
+	width:90vw;
+	text-align:center;/*texte centré*/
+	font-size: 1.5vw;
+	color: white;
+}
+
+.line{
+	white-space: nowrap; 
+	margin-left: 0;
+}
+.inline{
+	display: inline-block;
+}
+/** reecri de general.css **/
+
+.textBlue{
+	color : #4747D1;
+}
+
+.textWhite{
+	color : white;
+}
+.right{ 
+  position: absolute;
+  right: 1vw;
+}
+
+
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx fin stylePersonalArea   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+
+
+
+
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx styleHomepage   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+
+
+
+
+body{
+	/*font-weight: 500;*/
+    /*width:930px;/*Taille de la colonne centrée moins le padding*/
+    /*background-color: limegreen;/*Couleur de fond*/
+    /*padding:0px 25px 0px 25px;/*margin interne*/
+	/*background-image: url("Images/clouds.jpg");*/
+	/*background-color: rgb(200,90,200);*/
+	/*background-image: url("Images/bonhomme.jpg");
+	background-attachement: fixed;
+	background-repeat: no-repeat;
+	background-position: top right;
+	background: url("Images/bonhomme.jpg") fixed no-repeat top right, url("Images/clouds.jpg") fixed;*/
+}
+/*************************************  TEST **************************************/
+#myBox{
+	width:200px;
+	height:100px;
+	line-height:100px;
+	text-align:center;
+	font-size: 40px;
+	font-weight: bold;
+	/*border-top:5px solid black ;
+	border-left:5px solid black;
+	border-right:10px solid blue;*/
+	border:10px solid white;
+	border-radius:5px;
+	background:rgba(255,0,0,0);
+	
+	box-shadow : 0 1px 0 #eee,
+             0 2px 0 #e5e5e5,
+             -1px 3px 0 #C8C8C8,
+             -1px 4px 0 #C1C1C1,
+             -2px 5px 0 #B9B9B9,
+             -2px 6px 0 #B2B2B2,
+             -2px 7px 2px rgba(0,0,0, 0.6),
+             -2px 7px 8px rgba(0,0,0, 0.2),
+             -2px 7px 45px rgba(0,0,0, 0.4),
+             0 1px 0 #eee inset,
+             0 2px 0 #e5e5e5 inset,
+             -1px 3px 0 #C8C8C8 inset,
+             -1px 4px 0 #C1C1C1 inset,
+             -2px 5px 0 #B9B9B9 inset,
+             -2px 6px 0 #B2B2B2 inset,
+             -2px 7px 2px rgba(0,0,0, 0.6) inset,
+             -2px 7px 8px rgba(0,0,0, 0.2) inset,
+             -2px 7px 45px rgba(0,0,0, 0.4) inset;
+/*-10px 10px 5px black inset,
+-10px 10px 5px black;*/
+
+	color:white;
+	text-shadow: 0 1px 0 #eee,
+             0 2px 0 #e5e5e5,
+             -1px 3px 0 #C8C8C8,
+             -1px 4px 0 #C1C1C1,
+             -2px 5px 0 #B9B9B9,
+             -2px 6px 0 #B2B2B2,
+             -2px 7px 2px rgba(0,0,0, 0.6),
+             -2px 7px 8px rgba(0,0,0, 0.2),
+             -2px 7px 45px rgba(0,0,0, 0.4);
+           
+transform: rotate(-10deg) scale(1.3,1.3);  
+}
+/************************************* fin TEST **************************************/
+
+section{
+	background-image:url("../images/parasol.jpg"), url("../images/peint-blanc.jpg");
+	background-repeat:no-repeat, repeat;
+	background-size:20vw;
+	background-position: top right;
+	color:#1A1A66;
+}
+
+
+
+h1, h2{
+	color:#4747D1;
+	text-shadow: 0   0.8px 0 #2E2EB8,
+              0   1.5px 0 #2929A3,
+             -1px 2.3px 0 #24248F,
+             -1px 3px 0 #1F1F7A,
+             -2px 3.8px 0 #1A1A66,
+             -2.1px 4.5px 0 #141452,
+             -2.2px 5.3px 2px rgba(10,10,41, 0.4),
+             -2.2px 5.3px 8px rgba(10,10,41, 0.2),
+             -2.2px 5.3px 20px rgba(10,10,41, 0.4); 
+}
+section article h2{
+	width: 50vw;
+	margin-left: 1vw;
+	padding: 1vw;
+	padding-left:8vw;
+	height:60px;
+	line-height:120px;
+	/*border:2px solid black;
+	border-radius: 5%; */
+}
+#h2Groupe{
+	background: url("../images/groupe.png");
+	background-size:7vw;
+	background-repeat: no-repeat;
+	/*
+
+<img src="../images/doodle.jpg" width="10%">
+<img src="../images/chefcuisine.jpg" width="10%">
+<img src="../images/tirelire.jpg" width="6%">
+<img src="../images/loisirs.jpg" width="11%">
+<img src="../images/loisirs.jpg" width="11%">
+*/
+}
+#h2Doodle{
+	background: url("../images/doodle.jpg");
+	background-size:6vw;
+	background-repeat: no-repeat;
+}
+#h2Repas{
+	background: url("../images/chefcuisine.jpg");
+	background-size:6vw;
+	background-repeat: no-repeat;
+}
+#h2Calc{
+	background: url("../images/tirelire.jpg");
+	background-size:5vw;
+	background-repeat: no-repeat;
+}
+#h2Affaire{
+	background: url("../images/doodle.jpg");
+	background-size:6vw;
+	background-repeat: no-repeat;
+}
+#h2Loisirs{
+	background: url("../images/loisirs.jpg");
+	background-size:7vw;
+	background-repeat: no-repeat;
+}
+
+/************************************ ANIMATION JUMPING ****************************************/
+section article h2:hover{
+
+-webkit-animation: jumping 1s; /* chrome safari*/
+animation: jumping 1s; /* autre*/
+}
+
+@-webkit-keyframes jumping {
+/*from {line-height:120px;}
+to { line-height:0px;}*/
+ 0% 		{	line-height:120px; 	text-shadow: 5px 0px 1px #0000FF;}
+ 12.5% 	{	line-height:90px; 	text-shadow: 5px 15px 4px #0000FF;}
+ 25% 		{	line-height:70px; 	text-shadow: 5px 25px 6px #0000FF;}
+ 32.5% 	{	line-height:65px;		text-shadow: 5px 27px 9px #0000FF;}
+ 40% 		{	line-height:60px;		text-shadow: 5px 30px 12px #0000FF;}
+ 50%		{	line-height:60px;		text-shadow: 5px 30px 12px #0000FF;}
+ 60% 		{	line-height:60px;		text-shadow: 5px 30px 12px #0000FF;}
+ 67.5% 	{	line-height:65px;		text-shadow: 5px 27px 9px #0000FF;}
+ 75% 		{	line-height:70px;		text-shadow: 5px 25px 6px #0000FF;}
+ 87.5% 	{	line-height:90px;		text-shadow: 5px 15px 4px #0000FF;}
+ 100% 	{	line-height:120px;	text-shadow: 5px 0px 1px #0000FF;}
+}
+
+@keyframes jumping {
+ 0% 		{	line-height:120px; 	text-shadow: 5px 0px 1px #0000FF;}
+ 12.5% 	{	line-height:90px; 	text-shadow: 5px 15px 4px #0000FF;}
+ 25% 		{	line-height:70px; 	text-shadow: 5px 25px 6px #0000FF;}
+ 32.5% 	{	line-height:65px;		text-shadow: 5px 27px 9px #0000FF;}
+ 40% 		{	line-height:60px;		text-shadow: 5px 30px 12px #0000FF;}
+ 50%		{	line-height:60px;		text-shadow: 5px 30px 12px #0000FF;}
+ 60% 		{	line-height:60px;		text-shadow: 5px 30px 12px #0000FF;}
+ 67.5% 	{	line-height:65px;		text-shadow: 5px 27px 9px #0000FF;}
+ 75% 		{	line-height:70px;		text-shadow: 5px 25px 6px #0000FF;}
+ 87.5% 	{	line-height:90px;		text-shadow: 5px 15px 4px #0000FF;}
+ 100% 	{	line-height:120px;	text-shadow: 5px 0px 1px #0000FF;}
+
+}
+
+/************************************ fin ANIMATION JUMPING ****************************************/
+
+
+}
+
+
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx fin styleHomepage   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+
+
+
+
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx styleGroup   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+
+
+
+
+section{
+	width:60vw;
+	color:#803300;
+}
+
+
+
+h1, h2{
+   /* text-shadow: 5px 5px 5px #FF6600;  /*decalage-a-droite, decalage-bas, flootage, color*/
+
+	color:#FF6600;
+	text-shadow: 0   0.8px 0 #E65C00,
+              0   1.5px 0 #CC5200,
+             -1px 2.3px 0 #CC5200,
+             -1px 3px 0 #993D00,
+             -2px 3.8px 0 #803300,
+             -2.1px 4.5px 0 #662900,
+             -2.2px 5.3px 2px rgba(51,20,0, 0.4),
+             -2.2px 5.3px 8px rgba(51,20,0, 0.2),
+             -2.2px 5.3px 20px rgba(51,20,0, 0.4); 
+
+}
+
+
+section h2{
+ font-weight: bold;
+ padding-top:3vw;
+ padding-bottom:2vw;
+}
+section article{
+ margin-left: 3vw;
+ padding:0vw 2vw 1vw 2vw;
+ 
+}
+section div[class="composition"]{
+    margin-left: 7vw;
+}
+
+section div[class="ajout"]{
+    margin-left: 7vw;
+}
+.right{ 
+  position: absolute;
+  right: 22vw;
+}
+
+#listPerson
+{
+    color : #FF6600;
+    width: 14vw;
+    padding: 0.5vw;
+    border: 5px dotted #FF6600;
+    
+
+}
+#name{ /*input text*/
+	font-family: Arial,sans-serif; 
+	font-size: 1vw;
+	width: 12vw; 
+	margin-right:2vw;
+	height: 2vw; 
+	background: url("../images/peint-blanc.jpg");
+	background-size: 10vw, 1vw;
+}
+#buttonsBottom{
+	margin-top:6vw;
+}
+
+
+/********************************* BUTTON CLASSIC ********************************/
+.button{
+width: 200px; 
+height: 30px; 
+line-height:30px;/*permet le centrage vertical*/ 
+padding:4px;
+color: #CC5200; 
+}
+
+.button:hover{ 
+color: #FF6600; 
+}
+.button:active{ 
+color: #000; 
+}
+
+/********************************* fin BUTTON CLASSIC ********************************/
+
+
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx fin styleGroup   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+
+
+
+
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx styleDoodle   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+
+
+h1, h2{
+	/*  text-shadow:
+	       -0.5px -0.5px 0 #0000FF,
+	       0.5px -0.5px 0 #0000FF,
+	       -0.5px 0.5px 0 #0000FF,
+	       0.5px 0.5px 0 #0000FF; */
+       
+	color:#00CC00;
+	text-shadow: 0   0.8px 0 #00B800,
+              0   1.5px 0 #00A300,
+             -1px 2.3px 0 #008F00,
+             -1px 3px 0 #007A00,
+             -2px 3.8px 0 #006600,
+             -2.1px 4.5px 0 #005200,
+             -2.2px 5.3px 2px rgba(0,41,0, 0.4),
+             -2.2px 5.3px 8px rgba(0,41,0, 0.2),
+             -2.2px 5.3px 20px rgba(0,41,0, 0.4); 
+}
+
+/*
+article[class="function"]{
+	border:4px solid;
+	border-color: black ;
+	border-radius: 30px;
+}
+
+.line{
+	margin:0%;
+}
+
+*/
+#funcDate{
+	border:4px solid;
+	border-color: green ;
+	border-radius: 30px;
+	width: 50vw;
+	max-width: 500px;
+	height: 150px;
+}
+
+h4{
+	margin-left: 5px;
+}
+
+#butAddCol{
+	margin-left: 5px;
+	width: 5vw;
+	max-width: 50px;
+}
+
+.datepick{
+
+	width: 13vw;
+	max-width: 130px;
+}
+#textCol{
+	width: 22vw;
+	max-width: 220px;
+
+}
+
+
+
+#funcPers{
+	margin-left: 3vw;/*calc(20vw-40px);*/
+	border:4px solid;
+	border-color: green ;
+	border-radius: 30px;
+	width: 25vw;
+	max-width: 250px;
+	height: 50px;
+	
+}
+
+#name{
+	margin-left: 10px;
+	width: 15vw;
+	max-width: 150px;
+}
+
+
+.button{
+	font-size: 1.2em;
+	width: 5vw;
+	max-width: 50px;
+	/*margin-left: 5%;
+	width: 5%; 
+	height: 25px; 
+	line-height:25px;/*permet le centrage vertical*
+	padding:4px;
+	color: #FF0000; */
+}
+
+/*
+.button:hover{ 
+	color: #FF4D4D; 
+}
+.button:active{ 
+	color: #000; 
+}
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+/******* CHECKBOX *********/
+input[type=checkbox] {
+		visibility: hidden;
+}
+
+/* ROUNDED TWO */
+.roundedTwo {
+	width: 30px;
+	height: 30px;
+	background: #fcfff4;
+
+	background: -webkit-linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, palegreen 100%);
+	background: -moz-linear-gradient(top, #fcfff4 0%, palegreen 10%, yellowgreen 30%);
+	background: -o-linear-gradient(top, #fcfff4 0%, palegreen 10%, yellowgreen 30%);
+	background: -ms-linear-gradient(top, #fcfff4 0%, palegreen 10%, yellowgreen 30%);
+	background: linear-gradient(top, #fcfff4 0%, palegreen 10%, yellowgreen 30%);
+margin: 20px auto;
+
+	border-radius: 10px;
+
+	box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0,0,0,0.5);
+position: relative;
+}
+
+.roundedTwo label {
+	cursor: pointer;
+	position: absolute;
+	width: 25px;
+	height: 25px;
+
+	border-radius: 10px;
+	left: 3px;
+	top: 3px;
+
+     box-shadow: inset 0px 1px 1px rgba(0,0,0,0.5), 0px 1px 0px rgba(255,255,255,1);
+
+	background: -webkit-linear-gradient(top, #222 0%, green 100%);
+	background: -moz-linear-gradient(top, #222 0%, green 100%);
+	background: -o-linear-gradient(top, #222 0%, green 100%);
+	background: -ms-linear-gradient(top, #222 0%, green 100%);
+	background: linear-gradient(top, #222 0%, green 100%);
+}
+
+.roundedTwo label:after {
+	opacity: 0;
+	content: '';
+	position: absolute;
+	width: 11px;
+	height: 7px;
+	background: transparent;
+	top: 5px;
+	left: 4px;
+	border: 3px solid #fcfff4;
+	border-top: none;
+	border-right: none;
+
+	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	-o-transform: rotate(-45deg);
+	-ms-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+}
+
+.roundedTwo label:hover::after {
+opacity: 0.3;
+}
+
+.roundedTwo input[type=checkbox]:checked + label:after {
+opacity: 1;
+}
+
+/******* END CHECKBOX *********/
+
+
+/*
+#tab{
+	border : none;
+       }
+thead th{
+	border : none;
+	 border-bottom: 5px solid green;
+}*/
+
+
+
+table, caption, thead, tfoot, tbody {
+	margin: 0;
+	padding: 0;
+}
+
+#tab{
+
+	border: 3px solid green;
+	border-radius: 10px;
+
+}
+
+table {
+	background:none;
+	border:0;
+	border-collapse: separate;
+	border-spacing: 1px;
+	color: #333333;
+	margin-top: 5px;
+	max-width: 900px;
+	min-width: 400px;
+	/* padding: 20px 5px 5px 5px; Espcaement du border */
+	width: 100%;
+}
+
+
+
+
+thead, th, td{
+
+}
+
+th, td {
+	border:none;
+	/* border: 1px solid green; */
+	padding: 1px 6px;
+}
+
+
+#tab th { /*background entete de colonne*/
+	border:3px solid green;
+	 border-right: 0.01px solid grey; 
+	 border-left: 0.01px solid grey; 
+	 border-radius: 20px;
+
+	background:	#33D633;
+	color: #31605D;
+}
+
+#tab td {
+	
+	 border: 2px solid green; 
+	 border-right: 0.01px solid grey; 
+	 border-left: 0.01px solid grey; 
+	 border-radius: 10px;
+	background-color: 	#D1FFC2;
+}
+
+#tab td:hover{
+	background-color: 	#CCFF99;
+	
+}
+
+thead,td {
+	text-align: center;
+}
+
+td:empty {
+	background: #A7DBD8;
+	border: 0;
+}
+
+
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx fin styleDoodle   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+
+
+
+
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx styleExpenses   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+
+/*
+#bodyCalculation{
+	background-image: url("../images/sunflower.jpg");
+	/*background-position: center;
+
+}
+*/
+
+
+section{
+  border-radius: 10px ;
+  width:90%;
+  margin : auto; 
+  margin-top : 75px; 
+  background : lightgoldenrodyellow;/*url("../images/papier-peint19.jpg");*/
+  color:#800000;
+  padding: 3%;
+}
+
+
+h1, h2{
+/*text-shadow: 5px 5px 5px #FF0000;  /*decalage-a-droite, decalage-bas, flootage, color*/
+	color:#FF1919;/*#FF8080;*/
+	text-shadow: 0   0.8px 0 #E60000,
+              0   1.5px 0 #CC0000,
+             -1px 2.3px 0 #B20000,
+             -1px 3px 0 #990000,
+             -2px 3.8px 0 #800000,
+             -2.1px 4.5px 0 #660000,
+             -2.2px 5.3px 2px rgba(50,0,0, 0.4),
+             -2.2px 5.3px 8px rgba(50,0,0, 0.2),
+             -2.2px 5.3px 20px rgba(50,0,0, 0.4); 
+}
+
+section h2{
+ font-weight: bold;
+ padding-top:4%;
+}
+section article{
+ margin-left: 3%;
+}
+
+
+#divTab{
+margin:3%
+
+}
+
+.button{
+font-size: 1.2em;
+/*width: 200px; */
+height: 25px; 
+line-height:25px;/*permet le centrage vertical*/ 
+padding:5px 20px 5px 20px;
+color: #FF0000; 
+}
+
+.button:hover{ 
+color: #FF4D4D; 
+}
+.button:active{ 
+color: #000; 
+}
+
+#name{ /*input text*/
+font-family: Arial,sans-serif; 
+font-size: 1.2em;
+width: 200px ; 
+height: 25px; 
+/*border-radius: 8px;*/
+background: url("../images/peint-blanc.jpg");
+background-size: 200px, 25px;
+}
+
+.right{ 
+  position: absolute;
+  right: 12vw;
+}
+#buttonsBottom{
+	margin-top:6%;
+}
+#tab caption{
+
+	font-size: 1.5em;
+	border: 4px solid #800000;
+	border-radius: 10px;
+	border-bottom : 1px; 
+color: white;
+    text-shadow:
+    -2px -2px 0 #800000,
+    2px -2px 0 #800000,
+    -2px 2px 0 #800000,
+    2px 2px 0 #800000; 
+}
+
+#tab{
+	border: 4px solid #800000;
+	
+	border-radius: 10px;
+	/*background:#FF0000;*/
+}
+
+#tab th, #tab td{
+	border: 1px solid #800000;
+	border-radius: 5px;
+}
+th{
+
+	background:#B20000;
+	color:white;
+}
+
+/*
+input[type="checkbox"].css-checkbox {
+							  position: absolute; 
+							overflow: hidden; 
+							clip: rect(0 0 0 0); 
+							height:1px; 
+							width:1px; 
+							margin:-1px; 
+							padding:0;
+							border:0;
+						}
+
+*/
+
+input[type=checkbox] {
+	
+  -moz-appearance: none;
+  width: 20px;
+  height: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx fin styleExpenses   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
