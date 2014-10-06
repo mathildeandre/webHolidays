@@ -1,0 +1,12 @@
+
+MYSQL 
+
+Se connecter : mysql -u root -p
+
+Montrer bd : show databases ;
+
+Créer bdd : CREATE DATABASE bdd_holidays DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+
+Importer fichier dans bd : mysql -h root -u base_de_donnees < fichier_dump
+
+
