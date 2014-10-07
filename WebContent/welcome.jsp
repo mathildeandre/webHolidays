@@ -59,7 +59,7 @@ HTML5 sont employees. -->
 		onfocus="inputTextFocusPwd('confirmPwd', 'White')" onblur="inputTextBlurPwd('confirmPwd','Confirm your password')" required>
 		 </div>
 		<input id="confirmInscription" type="submit" value="Confirm" class="newButton3D" onmouseover="changeCursor('confirmInscription')" 
-		onclick="emptyAll('nameGroup','Name of your group','pseudo','Your name into the group', 'email','Email (optional)', 'pwd','Your password (admin)', 'confirmPwd','Confirm your password')" />
+		onclick="emptyAll('login','Login', 'email','Email (optional)', 'pwd','Password', 'confirmPwd','Confirm your password')" />
        </form>
 	</article>
 

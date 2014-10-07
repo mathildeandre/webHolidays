@@ -131,6 +131,7 @@ public final class RegistrationForm {
      */
     private void traiterEmail( String email, Person person ) {
         try {
+        	System.out.println("Email: "+ email);
             validationEmail( email );
         } catch ( FormValidationException e ) {
         	System.out.println("mauvaise adresse mail");
