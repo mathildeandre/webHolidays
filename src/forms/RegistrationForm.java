@@ -11,7 +11,6 @@ import org.jasypt.util.password.ConfigurablePasswordEncryptor;
 import beans.Group;
 import beans.Person;
 import dao.DAOException;
-import dao.GroupDao;
 import dao.PersonDao;
 
 public final class RegistrationForm {
