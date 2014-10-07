@@ -51,7 +51,7 @@ HTML5 sont employees. -->
 		</div>
 		</fieldset>
 	 	<br>
-		<form method="post" action="createGroup">
+		<form method="post" action="creationGroup">
 		 <input id="groupName" class="textGrey"  name="groupName" type="text" value="Group name" 
          onfocus="inputTextFocus('groupName', 'White')" onblur="inputTextBlur('groupName','Group name')" required >
 		<input id="createGroup" type="submit" value="Create Group" class="newButton3D buttonBlueFonce" onmouseover="changeCursor('createGroup')"/>

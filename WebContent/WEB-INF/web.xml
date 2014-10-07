@@ -41,6 +41,15 @@
 		<url-pattern>/login</url-pattern>
 	</servlet-mapping>
 	
+	<servlet>
+		<servlet-name>CreationGroup</servlet-name>
+		<servlet-class>servlets.CreationGroup</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>CreationGroup</servlet-name>
+		<url-pattern>/creationGroup</url-pattern>
+	</servlet-mapping>
+	
 	<listener>
     <listener-class>config.InitialisationDaoFactory</listener-class>
 </listener>
