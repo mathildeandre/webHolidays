@@ -14,7 +14,7 @@ import dao.DAOException;
 import dao.GroupDao;
 import dao.PersonDao;
 
-public final class InscriptionForm {
+public final class RegistrationForm {
 //    private static final String CHAMP_EMAIL      = "email";
 //    private static final String CHAMP_PASS       = "motdepasse";
 //    private static final String CHAMP_CONF       = "confirmation";
@@ -24,11 +24,9 @@ public final class InscriptionForm {
 
     private String              resultat;
     private Map<String, String> erreurs          = new HashMap<String, String>();
-    private GroupDao      groupDao;
     private PersonDao     personDao;
 
-    public InscriptionForm( GroupDao groupDao, PersonDao personDao ) {
-        this.groupDao = groupDao;
+    public RegistrationForm(PersonDao personDao ) {
         this.personDao = personDao;
     }
 
@@ -40,30 +38,26 @@ public final class InscriptionForm {
         return resultat;
     }
 
-    public Group inscrireUtilisateur( HttpServletRequest request ) {
-        String nameGroup = getValeurChamp( request, "nameGroup" );
-        String nameAdmin = getValeurChamp( request, "nameAdmin" );
-        String emailAdmin = getValeurChamp( request, "emailAdmin" );
-        String pwdAdmin = getValeurChamp( request, "pwdAdmin" );
-        String confirmPwdAdmin = getValeurChamp( request, "confirmPwdAdmin" );
+    public Person inscrireUtilisateur( HttpServletRequest request ) {
+        String login = getValeurChamp( request, "login" );
+        String email = getValeurChamp( request, "email" );
+        String pwd = getValeurChamp( request, "pwd" );
+        String confirmPwd = getValeurChamp( request, "confirmPwd" );
 
-        Group group = new Group();
         Person person = new Person();
         try {
 
-             traiterNom( nameGroup, group );
-            group.setName( nameGroup );
-             traiterEmail( emailAdmin, person );
-            person.setEmail( emailAdmin );
-            person.setName(nameAdmin);
-            person.setAdmin(true);
-            String newPwdAdmin = traiterMotsDePasse( pwdAdmin, confirmPwdAdmin );
+            //traiterPseudo( pseudoAdmin );
+            person.setName(login);
+            traiterLogin(login);
+            person.setLogin(login);
+            traiterEmail( email, person );
+            person.setEmail( email );
+            person.setNew(true);
+            String newPwdAdmin = traiterMotsDePasse( pwd, confirmPwd );
             person.setPwd(newPwdAdmin);
 
             if ( erreurs.isEmpty() ) {
-                long idGroup = groupDao.create( group ); //we do inside : group.setId
-                group.setId(idGroup);
-                person.setIdGroup(idGroup);
                 
                 long idPerson = personDao.create( person );
                 
@@ -76,9 +70,36 @@ public final class InscriptionForm {
             resultat = "Échec de l'inscription : une erreur imprévue est survenue, merci de réessayer dans quelques instants.";
             e.printStackTrace();
         }
-        return group;
+        return null;
     }
 
+    /*
+     * Appel à la validation du nom reçu et initialisation de la propriété nom
+     * du bean
+     */
+    private void traiterLogin( String login ) {
+        try {
+            validationLogin( login );
+        } catch ( FormValidationException e ) {
+        	System.out.println("le login existe déjà!!");
+            setErreur( "loginPerson", e.getMessage() );
+        }
+    }
+    
+    /* Validation du nom */
+    private void validationLogin( String login) throws FormValidationException {
+        if ( login != null && login.length() < 3 ) {
+        	System.out.println( "Le nom d'utilisateur doit contenir au moins 3 caractères.");
+            throw new FormValidationException( "Le login utilisateur doit contenir au moins 3 caractères." );
+        }
+        
+//        TODO checker si le login exist pas ds la bdd
+        else if (! personDao.checkLogin(login)){ 
+            throw new FormValidationException( "Le login utilisateur existe déjà." );
+        	
+        }
+    }
+    
     /*
      * Appel à la validation du nom reçu et initialisation de la propriété nom
      * du bean

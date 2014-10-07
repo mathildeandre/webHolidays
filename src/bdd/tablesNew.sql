@@ -14,12 +14,12 @@ drop table Persons;
 CREATE TABLE Persons (
 	id_person INT(11) NOT NULL AUTO_INCREMENT,
 	name_person VARCHAR(50) NOT NULL,
-	pseudo_person VARCHAR(50) NOT NULL,
+	login_person VARCHAR(50) NOT NULL,
 	pwd_person VARCHAR(90) NOT NULL,
 	mail_person VARCHAR(50),
 	is_new TINYINT(1),
 	PRIMARY KEY (id_person),
-	UNIQUE (pseudo_person, pwd_person)
+	UNIQUE (login_person)
 );
 
 CREATE TABLE ContactList (
@@ -41,6 +41,7 @@ CREATE TABLE  Groups (
 CREATE TABLE BelongTo (
 	id_person INT(11) NOT NULL,
     id_group INT( 11 ) NOT NULL,
+	is_admin TINYINT(1),
 	PRIMARY KEY (id_person, id_group),
 	FOREIGN KEY (id_person) REFERENCES Persons(id_person),
 	FOREIGN KEY (id_group) REFERENCES Groups(id_group)

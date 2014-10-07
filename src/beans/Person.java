@@ -3,12 +3,12 @@ package beans;
 public class Person {
 
     private Long      id;
-    private Long      idGroup;
     private String    name;
+   
+	private String    login;
     private String    pwd;
     private String    email;
-    private boolean isAdmin;
-    
+    private boolean isNew;
     
     
 	public Long getId() {
@@ -17,18 +17,21 @@ public class Person {
 	public void setId(Long id) {
 		this.id = id;
 	}
-	public Long getIdGroup() {
-		return idGroup;
-	}
-	public void setIdGroup(Long idGroup) {
-		this.idGroup = idGroup;
-	}
+	
 	public String getName() {
 		return name;
 	}
 	public void setName(String name) {
 		this.name = name;
 	}
+	
+	public String getLogin() {
+		return login;
+	}
+	public void setLogin(String login) {
+		this.login = login;
+	}
+	
 	public String getPwd() {
 		return pwd;
 	}
@@ -41,11 +44,11 @@ public class Person {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public boolean isAdmin() {
-		return isAdmin;
+	public boolean isNew() {
+		return isNew;
 	}
-	public void setAdmin(boolean isAdmin) {
-		this.isAdmin = isAdmin;
+	public void setNew(boolean isNew) {
+		this.isNew = isNew;
 	}
 
     

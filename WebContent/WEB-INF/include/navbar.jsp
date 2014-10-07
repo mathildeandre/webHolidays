@@ -41,7 +41,7 @@ onclick='location.href=\"index.jsp?page=hobbies\"'" />
 
 
 
-<nav>
+<nav id="mainNav">
 	<ul>
 	<!--  <li <b><c:out value="${currentAccueil}" /></b> >Homepage</li>-->
 	 <li ${currentHomepage} >Homepage</li>

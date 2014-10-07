@@ -5,17 +5,19 @@
     <title>EasyHolidays</title>
     <meta charset='utf-8' />
     <link rel="shortcut icon" href="images/tree3.png" />
-
-    <link rel="stylesheet" type="text/css" href="CSS/police.css" />
+    
+    
+	<link rel="stylesheet" type="text/css" href="CSS/all2.css" />
+   <!--<link rel="stylesheet" type="text/css" href="CSS/police.css" />
     <link rel="stylesheet" type="text/css" href="CSS/3D1.css" />
-    <link rel="stylesheet" type="text/css" href="CSS/stylePersonalArea.css" />
+    <link rel="stylesheet" type="text/css" href="CSS/stylePersonalArea.css" />-->
 </head>
 
 
 <!-- Mise en page classique avec le header, le corps, et le footer ! Les balises structurantes de
 HTML5 sont employees. -->
 <body id="bodyWelcome" >
-<header class="line">
+<header id="headerPersonalArea"  class="line">
 	<div id="title" class="inline text3Dfonce " >
  	Organisation of holidays
 	</div>
@@ -34,17 +36,16 @@ HTML5 sont employees. -->
 </header>
 
 
-
-<section class="line" >
+<section id="sectionPersonalArea" class="line" >
 	<div id="hint">
 	In order to create your first group : fill up "Group name", 
 	create the group and the click on it into "My Group"
 	</div>
 	<article id="myGroups" class="inline"  >
-	
 	  	<fieldset>
-	    <legend id="titleMyGroups" class="text3Dfonce" ><h2>My Groups</h2></legend>
-	    <div id="fieldMyGroups">
+	    <legend id="titleMyGroups" class="text3Dfonce" >
+		<h2>My Group</h2></legend>
+	    <div id="fieldMyGroups" class="aroundBlack">
 			 - group 1 <br>
 			 - group 2 <br>
 			 - group 3 <br>
@@ -63,7 +64,7 @@ HTML5 sont employees. -->
 	
 		<fieldset >
 	    <legend id="titleMyContacts" class="text3Dfonce" ><h2>My Contacts</h2></legend>
-	    <div id="fieldMyContact">
+	    <div id="fieldMyContact" class="aroundBlack">
 			 - emiel <br>
 			 - matthijs <br>
 			 - fabian <br>
@@ -98,7 +99,7 @@ HTML5 sont employees. -->
        </form>
        
        <form method="post" action="deletePersonList">
-	       <select id="listContacts">
+	       <select id="listContacts" class="textGrey">
 				<option>emiel</option>
 				<option>matthijs</option>
 				<option>fabian</option>
@@ -114,7 +115,7 @@ HTML5 sont employees. -->
 		 <h2 id="titleMyProfil" class="text3Dfonce">My Profil</h2>
 		 
 		 <form method="post" action="modifyPseudo">
-		 Pseudo :
+		 <div class="aroundBlack">Pseudo : </div>
 		  <div><input id="pseudo" class="textGrey inline"  name="pseudo" type="text" value="mathilde" 
          onfocus="inputTextFocus('pseudo', 'White')" onblur="inputTextBlur('pseudo','mathilde')" required >
          <input id="confirmModifyPseudo" type="submit" value="Modify Pseudo" class="newButton3D" onmouseover="changeCursor('confirmModifyPseudo')" />
@@ -122,7 +123,7 @@ HTML5 sont employees. -->
 		 </form>
 		 
 		 <form method="post" action="modifyEmail">
-		 Email adress :
+		 <div class="aroundBlack">Email adress :</div>
 		  <div><input id="email" class="textGrey inline"  name="email" type="text" value=" - " 
          onfocus="inputTextFocus('email', 'White')" onblur="inputTextBlur('email',' - ')" required >
          <input id="confirmModifyEmail" type="submit" value="Modify Email" class="newButton3D" onmouseover="changeCursor('confirmModifyEmail')" />
@@ -130,7 +131,7 @@ HTML5 sont employees. -->
 		 </form>
 		 
 		 <form method="post" action="modifyPassword">
-		 Change Password :
+		 <div class="aroundBlack">Change Password :</div>
 		  <div><input id="oldPwd" class="textGrey inline"  name="oldPwd" type="text" value="Old Password" 
          onfocus="inputTextFocusPwd('oldPwd', 'White')" onblur="inputTextBlurPwd('oldPwd','Old Password')" required >
          </div>
@@ -147,7 +148,7 @@ HTML5 sont employees. -->
 </section>
 
 
-<footer >Copyright © - Tous droits reserves<br/> Nous contacter : fabiensauce@orange.fr</footer>
+<footer id="footerPersonalArea">Copyright © - Tous droits reserves<br/> Nous contacter : fabiensauce@orange.fr</footer>
 
 <script src="JS/actionJS/welcomeChanging.js" type="text/javascript"></script>
 <script src="JS/actionJS/actionInputText.js" type="text/javascript"></script>

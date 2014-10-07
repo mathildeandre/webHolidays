@@ -5,17 +5,18 @@
     <title>EasyHolidays</title>
     <meta charset='utf-8' />
     <link rel="shortcut icon" href="images/tree3.png" />
-
-    <link rel="stylesheet" type="text/css" href="CSS/police.css" />
+    
+	<link rel="stylesheet" type="text/css" href="CSS/all2.css" />
+   <!--  <link rel="stylesheet" type="text/css" href="CSS/police.css" />
     <link rel="stylesheet" type="text/css" href="CSS/3D1.css" />
-    <link rel="stylesheet" type="text/css" href="CSS/styleWelcome2.css" />
+    <link rel="stylesheet" type="text/css" href="CSS/styleWelcome2.css" /> -->
 </head>
 
 
 <!-- Mise en page classique avec le header, le corps, et le footer ! Les balises structurantes de
 HTML5 sont employees. -->
 <body id="bodyWelcome" >
-<header class="line">
+<header id="headerWelcome" class="line">
 	<div id="title" class="inline text3Dfonce " >
  	Organisation of holidays
 	</div>
@@ -34,18 +35,21 @@ HTML5 sont employees. -->
 
 
 
-<section class="line" >
+<section id="sectionWelcome" class="line" >
 	<article id="demo" class="inline"  >
 		 <h2 id="buttonDemo" class="newButton3D" onmouseover="changeCursor('buttonDemo')" onclick="location.href='index.jsp?page=homepage'">DEMO </br> reach directly </br> the website </h2>
 	</article>
 	
 	<article id="registration" class="inline">
 		<h2 id="registrationH2" class="text3Dfonce"> Registration </h2>
-		<form method="post" action="inscription">
-		  <div><input id="pseudo" class="textGrey inline"  name="pseudo" type="text" value="Pseudo" 
-         onfocus="inputTextFocus('pseudo', 'White')" onblur="inputTextBlur('pseudo','Pseudo')" required >
+		<form method="post" action="registration">
+		
+		  <div>
+         <input id="login" class="textGrey inline"  name="login" type="text" value="Login" 
+         onfocus="inputTextFocus('login', 'White')" onblur="inputTextBlur('login','Login')" required >
+         <span class="textRed">${requestScope.errors['loginPerson']}</span>
 		 </div>
-		<div><input id="email" class="textGrey inline"  name="email" type="email" value="Email (optional)" 
+		<div><input id="email" class="textGrey inline"  name="email" type="text" value="Email (optional)" 
 		onfocus="inputTextFocus('email', 'White')" onblur="inputTextBlur('email','Email (optional)')" >
 		 </div>
 		<div><input id="pwd" class="textGrey inline"  name="pwd" type="text" value="Password" 
@@ -55,7 +59,7 @@ HTML5 sont employees. -->
 		onfocus="inputTextFocusPwd('confirmPwd', 'White')" onblur="inputTextBlurPwd('confirmPwd','Confirm your password')" required>
 		 </div>
 		<input id="confirmInscription" type="submit" value="Confirm" class="newButton3D" onmouseover="changeCursor('confirmInscription')" 
-		onclick="emtyAll('nameGroup','Name of your group','pseudo','Your name into the group', 'email','Your email adress (optional)', 'pwd','Your password (admin)', 'confirmPwd','Confirm your password')" />
+		onclick="emptyAll('nameGroup','Name of your group','pseudo','Your name into the group', 'email','Email (optional)', 'pwd','Your password (admin)', 'confirmPwd','Confirm your password')" />
        </form>
 	</article>
 
@@ -64,7 +68,7 @@ HTML5 sont employees. -->
 
 
 
-<footer >Copyright © - Tous droits reserves<br/> Nous contacter : fabiensauce@orange.fr</footer>
+<footer id="footerWelcome" >Copyright © - Tous droits reserves<br/> Nous contacter : fabiensauce@orange.fr</footer>
 
 <script src="JS/actionJS/welcomeChanging.js" type="text/javascript"></script>
 <script src="JS/actionJS/actionInputText.js" type="text/javascript"></script>

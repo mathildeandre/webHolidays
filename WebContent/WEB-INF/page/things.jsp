@@ -1,6 +1,6 @@
 
 
- <section >
+ <section id="sectionThings">
    <h1>List of stuffs</h1>
 
   <article>

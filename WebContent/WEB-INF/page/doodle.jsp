@@ -1,5 +1,5 @@
 
-<section>
+<section id="sectionDoodle" class="section">
 	<h1> Doodle </h1>
 	<article class="function">
 	<div class="line">

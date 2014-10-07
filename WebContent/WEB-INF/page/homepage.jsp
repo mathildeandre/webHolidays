@@ -1,5 +1,5 @@
 
-       <section >
+<section id="sectionHomepage" class="section">
        
        <div id="myBox" onclick="popup('../groupe/groupe.html')">
        	Hello
@@ -28,7 +28,7 @@
 		<p> Here you will find all kind of hobbies that can fit your holidays : sport, boardgames, nice activities ... </p>
                 <!-- <p>Ici vous trouverez tout type de loisirs qui peuvent accompagner vos vacances : sport, jeu de societe, autres activités...</p> -->
 	</article>
-       </section>
+</section>
 
 
 

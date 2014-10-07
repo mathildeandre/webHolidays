@@ -23,13 +23,13 @@
 	</servlet-mapping>
 	
 	<servlet>
-		<servlet-name>Inscription</servlet-name>
-		<servlet-class>servlets.Inscription</servlet-class>
+		<servlet-name>Registration</servlet-name>
+		<servlet-class>servlets.Registration</servlet-class>
 	</servlet>
 
 	<servlet-mapping>
-		<servlet-name>Inscription</servlet-name>
-		<url-pattern>/inscription</url-pattern>
+		<servlet-name>Registration</servlet-name>
+		<url-pattern>/registration</url-pattern>
 	</servlet-mapping>
 	
 	<listener>

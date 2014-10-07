@@ -72,7 +72,8 @@ function inputTextFocusPwd(id, color){
 		inputName.type = "password";
 	}
 }
-function emtyAll(id1,text1,id2,text2,id3,text3,id4,text4,id5,text5){
+function emptyAll(id1,text1,id2,text2,id3,text3,id4,text4,id5,text5){
+	alert("boo");
 	var inputName1 = document.getElementById(id1);
 	var inputName2 = document.getElementById(id2);
 	var inputName3 = document.getElementById(id3);

@@ -21,6 +21,18 @@
 
 body{
 	font-family:"Comic Sans ms", Helvetica Narrow, sans-serif;/*"Comic Sans ms";*/
+	margin: auto; /*centrer la colonne*/
+	/*font-weight: 500;*/
+    /*width:930px;/*Taille de la colonne centrée moins le padding*/
+    /*background-color: limegreen;/*Couleur de fond*/
+    /*padding:0px 25px 0px 25px;/*margin interne*/
+	/*background-image: url("Images/clouds.jpg");*/
+	/*background-color: rgb(200,90,200);*/
+	/*background-image: url("Images/bonhomme.jpg");
+	background-attachement: fixed;
+	background-repeat: no-repeat;
+	background-position: top right;
+	background: url("Images/bonhomme.jpg") fixed no-repeat top right, url("Images/clouds.jpg") fixed;*/
 }
 
 /*@font-face {
@@ -34,18 +46,17 @@ body{
 	ensuite centre avec le padding top et bottom		
 */
 
-body{
-	margin: auto; /*centrer la colonne*/
-}
-
 
 
 footer{
 	margin: auto;
+	position:absolute;
+	bottom:0;
+	
 	padding:2vw;/*Marge verticale*/
 	width:80vw;
 	text-align:center;/*texte centré*/
-	font-size: 1vw;
+	font-size: 1.2vw;
 	/*font-weight: italic; ne marche pas*/
 	color: white;
 	text-shadow:
@@ -53,10 +64,11 @@ footer{
     1px -1px 0 #000,
     -1px 1px 0 #000,
     1px 1px 0 #000; 
+    
 }
 
 
-section{
+.section{
 	border-radius: 1vw ;
 	width:75vw;
 	margin : auto; 
@@ -70,13 +82,13 @@ section{
 	/*border:8px solid grey;/*bleu clair*/   /* blueviolet*/
 }
 
-h1{
+.h1{
 	text-align:center;/*texte centré*/
 	font-size: 2.5vw;
 	font-weight: bold;
 	/*text-shadow: 5px 5px 5px #000000;  /*decalage-a-droite, decalage-bas, flootage, color*/
 }
-h2{
+.h2{
 	font-size: 1.8vw;
 }
 
@@ -98,7 +110,9 @@ h2{
 */
 
 
-
+.textWhite{
+	color : white;
+}
 .textGrey{
 	color : grey;
 }
@@ -165,75 +179,6 @@ color: #000;
 
 
 
-/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
-/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx header   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
-/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
-
-
-/* concern only the INDEX !! */
-
-
-header{
-	margin:auto;
-	width:100vw;
-	height:150px;
-	line-height:150px; /*vertical-align:middle; ne fonctionne pas*/
-}
-header #titleIndex{
-	position: absolute;
-	left: 20vw;
-	font-size: 2.5vw;
-	font-weight: bold;
-  /*
-	color: white;
-	text-shadow: 0 1px 0 #eee,
-             0 2px 0 #e5e5e5,
-             -1px 3px 0 #C8C8C8,
-             -1px 4px 0 #C1C1C1,
-             -2px 5px 0 #B9B9B9,
-             -2px 6px 0 #B2B2B2,
-             -2px 7px 2px rgba(0,0,0, 0.6),
-             -2px 7px 8px rgba(0,0,0, 0.6),
-             -2px 7px 45px rgba(0,0,0, 1);  
-   */
-	/*text-shadow:
-    -2px -2px 0 #000,
-    2px -2px 0 #000,
-    -2px 2px 0 #000,
-    2px 2px 0 #000; */
-}
-
-header #connexion{
-  position: absolute;
-  right: 0.5vw;
-	/* comprend les deux input text + button connexion */
-}
-header #nameGroup{
-	font-size: 1.5vw;
-	font-weight: bold;
-	color: white;
-             text-shadow: 	0   	0.5px	0 #eee,
-						0.1px   	0.8px	0 #eee,
-              		0.2px   	1px 	0 #e5e5e5,
-              		-0.3px   	1.4px 	0 #e5e5e5,
-             	-0.4px 	1.8px 0 #C8C8C8,
-             	-0.7px 	2.3px 	0 #C1C1C1,
-             	-1px 		2.9px 0 #B9B9B9,
-             	-1.5px 	3.5px 	0 #B2B2B2,
-             
-             -2px 5.3px 2px rgba(0,0,0, 0.6),
-             -2px 5.3px 8px rgba(0,0,0, 0.2),
-             -2px 5.3px 45px rgba(0,0,0, 0.4);          
-}
-
-/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
-/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx fin header   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
-/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
-
-
-
-
-
 
 /*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
 /*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 3D   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
@@ -289,15 +234,15 @@ header #nameGroup{
 	font-size: 1.4vw;
 	font-weight:bold;
 	padding:0.5vw 1vw;
-	border:4px solid white;
+	border:4px solid #003399;
 	border-radius: 0.5vw; 
 	
     
-	background:white;/*rgba(0,0,0,0);*/
-	color:#003399;/*rgba(0,0,105,0.9);
+	background:#003399;/*rgba(0,0,0,0);*/
+	color:white;/*rgba(0,0,105,0.9);
 	
 	 /* shadow text moyen foncé!! */
-	/*	text-shadow: 0   0.5px	0 #CCCCCC,
+	text-shadow: 0   0.5px	0 #CCCCCC,
 				0.1px 	0.8px	0 #CCCCCC,
               	0.2px   1px 	0 #B2B2B2,
               	-0.3px  1.2px 	0 #B2B2B2,
@@ -308,7 +253,7 @@ header #nameGroup{
              -2px 3.5px 2px rgba(0,0,0, 0.6),
              -2px 3.5px 8px rgba(0,0,0, 0.2),
              -2px 3.5px 45px rgba(0,0,0, 0.4);
-          */   
+          
 	
 		/** border fonce TOP */
 	box-shadow:-0.2px   0.8px 0 #CCCCCC,
@@ -320,7 +265,22 @@ header #nameGroup{
              -2.2px 5.3px 2px rgba(0,0,0, 0.4),
              -2.2px 5.3px 8px rgba(0,0,0, 0.2),
              -2.2px 5.3px 20px rgba(0,0,0, 0.4);
-			/* interieur 
+	
+}
+.newButton3D:hover{
+	border:4px solid white;
+	background:rgba(0,0,0,0);
+	/* permet d'enlever leffet creux */
+	box-shadow:-0.2px   0.8px 0 #CCCCCC,
+              -0.5px   1.5px 0 #CCCCCC,
+             -1px 2.3px 0 #B2B2B2,
+             -1px 3px 0 #999999,
+             -2px 3.8px 0 #666666,
+             -2.1px 4.5px 0 #4C4C4C,
+             -2.2px 5.3px 2px rgba(0,0,0, 0.4),
+             -2.2px 5.3px 8px rgba(0,0,0, 0.2),
+             -2.2px 5.3px 20px rgba(0,0,0, 0.4),
+			/* interieur */
               -0.2px   0.8px 0 #CCCCCC inset,
               -0.5px   1.5px 0 #CCCCCC inset,
              -1px 2.3px 0 #B2B2B2 inset,
@@ -329,11 +289,7 @@ header #nameGroup{
              -2.1px 4.5px 0 #4C4C4C inset,
              -2.2px 5.3px 2px rgba(0,0,0, 0.4) inset,
              -2.2px 5.3px 8px rgba(0,0,0, 0.2) inset,
-             -2.2px 5.3px 20px rgba(0,0,0, 0.4) inset;*/
-	
-}
-.newButton3D:hover{
-	background:white;
+             -2.2px 5.3px 20px rgba(0,0,0, 0.4) inset;
 }
 .newButton3D:active{
 	/*margin-top:4.5px;
@@ -351,7 +307,7 @@ header #nameGroup{
 
 /******************** BUTTON WHITE CREUX ***************************/  
 
-.newButton3D{
+.newButton3Dcreux{
 
 	height:40px;
 	line-height:0px;
@@ -363,10 +319,10 @@ header #nameGroup{
 	border-radius: 0.5vw; 
 	
     
-	background:white;/* bleu fonce #003399;*/
+	background:rgba(0,0,0,0);
 	color:white;
 	
-	 /* shadow text moyen foncé!! */
+	 /*shadow text moyen foncé!!*/
 		text-shadow: 0   0.5px	0 #CCCCCC,
 				0.1px 	0.8px	0 #CCCCCC,
               	0.2px   1px 	0 #B2B2B2,
@@ -389,21 +345,6 @@ header #nameGroup{
              -2.1px 4.5px 0 #4C4C4C,
              -2.2px 5.3px 2px rgba(0,0,0, 0.4),
              -2.2px 5.3px 8px rgba(0,0,0, 0.2),
-             -2.2px 5.3px 20px rgba(0,0,0, 0.4);
-	
-}
-.newButton3D:hover{
-	
-	background:rgba(0,0,0,0);
-	/* permet d'enlever leffet creux */
-	box-shadow:-0.2px   0.8px 0 #CCCCCC,
-              -0.5px   1.5px 0 #CCCCCC,
-             -1px 2.3px 0 #B2B2B2,
-             -1px 3px 0 #999999,
-             -2px 3.8px 0 #666666,
-             -2.1px 4.5px 0 #4C4C4C,
-             -2.2px 5.3px 2px rgba(0,0,0, 0.4),
-             -2.2px 5.3px 8px rgba(0,0,0, 0.2),
              -2.2px 5.3px 20px rgba(0,0,0, 0.4),
 			/* interieur */
               -0.2px   0.8px 0 #CCCCCC inset,
@@ -415,9 +356,12 @@ header #nameGroup{
              -2.2px 5.3px 2px rgba(0,0,0, 0.4) inset,
              -2.2px 5.3px 8px rgba(0,0,0, 0.2) inset,
              -2.2px 5.3px 20px rgba(0,0,0, 0.4) inset;
+}
+.newButton3Dcreux:hover{
+	background:white;
              
 }
-.newButton3D:active{
+.newButton3Dcreux:active{
 	/*margin-top:4.5px;
 	margin-right:2.2px;
 	*/
@@ -442,6 +386,1001 @@ header #nameGroup{
 
 
 
+
+
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx styleWelcome   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+
+
+#headerWelcome{
+	background:rgba(151,152,255,0.9);/*url("../images/pins.jpg") ;*/
+	background-size:10vw;
+	border-bottom:5px solid #003399 ;
+	border-top:1px solid rgba(0,0,0,0); /* bug ^^cette ligne permet de coller la bande header en haut*/ 
+	margin:auto;
+	width:100vw;
+	height:150px;
+	line-height:150px; /*vertical-align:middle; ne fonctionne pas*/
+}
+#headerWelcome #title{
+	position: absolute;
+	left: 8vw;
+	font-size: 3vw;
+	font-weight: bold;
+	color: white;
+}
+#headerWelcome #divLogIn{
+  position: absolute;
+  right: 2vw;
+	/* comprend les deux input text + button connexion */
+}
+
+#headerWelcome #coPseudo, #coPwd{
+	margin:0;
+	margin-left:0.5vw;
+	padding : 0.5vw;
+	width:13vw;
+	height:36px;
+	font-size: 1.3vw;
+	
+	border:1px solid white ;
+	border-radius: 0.5vw;
+	background : rgba(0,0,0,0);
+}
+
+#headerWelcome #confirmLogIn{
+	margin-left:1vw;
+}
+
+#sectionWelcome #demo{
+	position: absolute;
+	left: 13vw;
+	margin-top:10vw;
+	/*width:40vw;*/  
+}
+
+#sectionWelcome #buttonDemo{
+	height:150px;
+	line-height:50px;
+	text-align:center;
+	font-size: 2.2vw;
+	font-weight:bold;
+	padding:2vw 1vw;
+    border-width: 8px;
+}
+
+#sectionWelcome #registration{
+	position: absolute;
+	left: 45vw;
+	margin-top:5vw;
+	/*width:20vw;*/
+	padding-left:10vw; 
+	border-left:8px dotted #5C5CFF;
+}
+
+#sectionWelcome #registrationH2 {
+	font-size:2.6vw;
+	text-align:center;
+	font-weight: bold;
+	color: white;
+             
+}
+
+#sectionWelcome #name #login, #email, #pwd, #confirmPwd{
+	
+	margin-top:0.7vw;
+	padding : 0.5vw;
+	padding-left : 0.8vw;
+	width:25vw;
+	height:40px;
+	font-size: 1.3vw;
+	/*background: url("../images/peint-blanc.jpg");
+	background-size: 200px, 25px;*/
+	
+	background:rgba(151,152,255,0.9);/*url("../images/pins.jpg") ;*/
+	border:1px solid white;
+	border-radius: 0.5vw;
+}
+#sectionWelcome #confirmInscription{
+	margin-top:2vw;
+	margin-left:7vw;
+}
+
+
+#footerWelcome{
+	top:700px;
+    
+}
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx fin styleWelcome   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+
+
+
+
+
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx stylePersonalArea   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+
+#headerPersonalArea{
+	background:rgba(151,152,255,0.9);/*url("../images/pins.jpg") ;*/
+	background-size:10vw;
+	border-bottom:5px solid #003399 ;
+	border-top:1px solid rgba(0,0,0,0); /* bug ^^cette ligne permet de coller la bande header en haut*/ 
+	margin:auto;
+	width:100vw;
+	height:150px;
+	line-height:150px; /*vertical-align:middle; ne fonctionne pas*/
+	color: white;
+}
+#headerPersonalArea #title{
+	position: absolute;
+	left: 2vw;
+	font-size: 2.5vw;
+	font-weight: bold;
+}
+#headerPersonalArea #titlePrivateArea{
+  	position: absolute;
+  	right: 25vw;
+	font-size: 3vw;
+	font-weight: bold;
+	/* comprend les deux input text + button connexion */
+}
+#headerPersonalArea #divLogOut{
+	top:1vw;
+  	position: absolute;
+  	right: 2vw;
+}
+#sectionPersonalArea{
+	color:white;
+}
+
+#sectionPersonalArea .aroundBlack{
+	text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000; 
+}
+
+#sectionPersonalArea #hint{
+	margin-top:1vw;
+	font-size: 1.5vw;
+	font-weight: bold;
+	background:rgba(151,152,255,0.9);
+	border:1px solid white;
+	border-radius: 0.5vw;
+}
+
+#sectionPersonalArea #myGroups{
+	position: absolute;
+	left: 2vw;
+	margin-top:5vw;
+	/*width:40vw;*/  
+}
+
+
+#sectionPersonalArea #myContacts{
+	position: absolute;
+	left: 31vw;
+	margin-top:5vw;
+	/*width:20vw;*/
+	padding-left:3vw; 
+	border-left:6px dotted #5C5CFF;
+}
+#sectionPersonalArea #myProfil{
+	position: absolute;
+	left: 65vw;
+	margin-top:5vw;
+	padding-left:3vw; 
+	/*width:20vw;*/
+	border-left:6px dotted #5C5CFF;
+}
+
+#sectionPersonalArea #fieldMyGroups{
+	overflow-y: hidden,scroll;
+	overflow-x: hidden;
+	max-height: 20vw;
+	padding-left:2vw; 
+	font-size: 1.5vw;
+}
+
+#sectionPersonalArea #fieldMyContact{
+	overflow-y: hidden,scroll;
+	overflow-x: hidden;
+	max-height: 20vw;
+	padding-left:2vw; 
+	font-size: 1.5vw;
+}
+#sectionPersonalArea #groupName, #nameNewContact, #listContacts,  #name, #login, #email, #oldPwd, #newPwd, #confirmNewPwd{
+	
+	margin-top:0.7vw;
+	padding : 0.5vw;
+	padding-left : 0.8vw;
+	width:13vw;
+	height:40px;
+	font-size: 1.3vw;
+	/*background: url("../images/peint-blanc.jpg");
+	background-size: 200px, 25px;*/
+	
+	background:rgba(151,152,255,0.9);/*url("../images/pins.jpg") ;*/
+	border:1px solid white;
+	border-radius: 0.5vw;
+}
+#sectionPersonalArea #nameNewContact, #email, #oldPwd, #newPwd, #confirmNewPwd{
+	width:14.5vw;
+}
+
+
+#footerPersonalArea{
+	top:1000px;
+}
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx fin stylePersonalArea   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+
+
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx header - Index   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+
+
+/* concern only the INDEX !! */
+
+
+#headerIndex {
+	margin:auto;
+	width:100vw;
+	height:150px;
+	line-height:150px; /*vertical-align:middle; ne fonctionne pas*/
+}
+#headerIndex #titleIndex{
+	position: absolute;
+	left: 20vw;
+	font-size: 2.5vw;
+	font-weight: bold;
+  /*
+	color: white;
+	text-shadow: 0 1px 0 #eee,
+             0 2px 0 #e5e5e5,
+             -1px 3px 0 #C8C8C8,
+             -1px 4px 0 #C1C1C1,
+             -2px 5px 0 #B9B9B9,
+             -2px 6px 0 #B2B2B2,
+             -2px 7px 2px rgba(0,0,0, 0.6),
+             -2px 7px 8px rgba(0,0,0, 0.6),
+             -2px 7px 45px rgba(0,0,0, 1);  
+   */
+	/*text-shadow:
+    -2px -2px 0 #000,
+    2px -2px 0 #000,
+    -2px 2px 0 #000,
+    2px 2px 0 #000; */
+}
+
+#headerIndex #connexion{
+  position: absolute;
+  right: 0.5vw;
+	/* comprend les deux input text + button connexion */
+}
+#headerIndex #nameGroup{
+	font-size: 1.5vw;
+	font-weight: bold;
+	color: white;
+             text-shadow: 	0   	0.5px	0 #eee,
+						0.1px   	0.8px	0 #eee,
+              		0.2px   	1px 	0 #e5e5e5,
+              		-0.3px   	1.4px 	0 #e5e5e5,
+             	-0.4px 	1.8px 0 #C8C8C8,
+             	-0.7px 	2.3px 	0 #C1C1C1,
+             	-1px 		2.9px 0 #B9B9B9,
+             	-1.5px 	3.5px 	0 #B2B2B2,
+             
+             -2px 5.3px 2px rgba(0,0,0, 0.6),
+             -2px 5.3px 8px rgba(0,0,0, 0.2),
+             -2px 5.3px 45px rgba(0,0,0, 0.4);          
+}
+
+#footerIndex{
+	top:700px;
+    
+}
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx fin header-Index   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+
+
+
+
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx styleHomepage   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+
+
+
+
+/*************************************  TEST **************************************/
+#myBox{
+	width:200px;
+	height:100px;
+	line-height:100px;
+	text-align:center;
+	font-size: 40px;
+	font-weight: bold;
+	/*border-top:5px solid black ;
+	border-left:5px solid black;
+	border-right:10px solid blue;*/
+	border:10px solid white;
+	border-radius:5px;
+	background:rgba(255,0,0,0);
+	
+	box-shadow : 0 1px 0 #eee,
+             0 2px 0 #e5e5e5,
+             -1px 3px 0 #C8C8C8,
+             -1px 4px 0 #C1C1C1,
+             -2px 5px 0 #B9B9B9,
+             -2px 6px 0 #B2B2B2,
+             -2px 7px 2px rgba(0,0,0, 0.6),
+             -2px 7px 8px rgba(0,0,0, 0.2),
+             -2px 7px 45px rgba(0,0,0, 0.4),
+             0 1px 0 #eee inset,
+             0 2px 0 #e5e5e5 inset,
+             -1px 3px 0 #C8C8C8 inset,
+             -1px 4px 0 #C1C1C1 inset,
+             -2px 5px 0 #B9B9B9 inset,
+             -2px 6px 0 #B2B2B2 inset,
+             -2px 7px 2px rgba(0,0,0, 0.6) inset,
+             -2px 7px 8px rgba(0,0,0, 0.2) inset,
+             -2px 7px 45px rgba(0,0,0, 0.4) inset;
+/*-10px 10px 5px black inset,
+-10px 10px 5px black;*/
+
+	color:white;
+	text-shadow: 0 1px 0 #eee,
+             0 2px 0 #e5e5e5,
+             -1px 3px 0 #C8C8C8,
+             -1px 4px 0 #C1C1C1,
+             -2px 5px 0 #B9B9B9,
+             -2px 6px 0 #B2B2B2,
+             -2px 7px 2px rgba(0,0,0, 0.6),
+             -2px 7px 8px rgba(0,0,0, 0.2),
+             -2px 7px 45px rgba(0,0,0, 0.4);
+           
+transform: rotate(-10deg) scale(1.3,1.3);  
+}
+/************************************* fin TEST **************************************/
+
+#sectionHomepage{
+	background-image:url("../images/parasol.jpg"), url("../images/peint-blanc.jpg");
+	background-repeat:no-repeat, repeat;
+	background-size:20vw;
+	background-position: top right;
+	color:#1A1A66;
+}
+
+
+
+#sectionHomepage h1, h2{
+	color:#4747D1;
+	text-shadow: 0   0.8px 0 #2E2EB8,
+              0   1.5px 0 #2929A3,
+             -1px 2.3px 0 #24248F,
+             -1px 3px 0 #1F1F7A,
+             -2px 3.8px 0 #1A1A66,
+             -2.1px 4.5px 0 #141452,
+             -2.2px 5.3px 2px rgba(10,10,41, 0.4),
+             -2.2px 5.3px 8px rgba(10,10,41, 0.2),
+             -2.2px 5.3px 20px rgba(10,10,41, 0.4); 
+}
+#sectionHomepage article h2{
+	width: 50vw;
+	margin-left: 1vw;
+	padding: 1vw;
+	padding-left:8vw;
+	height:60px;
+	line-height:120px;
+	/*border:2px solid black;
+	border-radius: 5%; */
+}
+#h2Groupe{
+	background: url("../images/groupe.png");
+	background-size:7vw;
+	background-repeat: no-repeat;
+	/*
+
+<img src="../images/doodle.jpg" width="10%">
+<img src="../images/chefcuisine.jpg" width="10%">
+<img src="../images/tirelire.jpg" width="6%">
+<img src="../images/loisirs.jpg" width="11%">
+<img src="../images/loisirs.jpg" width="11%">
+*/
+}
+#h2Doodle{
+	background: url("../images/doodle.jpg");
+	background-size:6vw;
+	background-repeat: no-repeat;
+}
+#h2Repas{
+	background: url("../images/chefcuisine.jpg");
+	background-size:6vw;
+	background-repeat: no-repeat;
+}
+#h2Calc{
+	background: url("../images/tirelire.jpg");
+	background-size:5vw;
+	background-repeat: no-repeat;
+}
+#h2Affaire{
+	background: url("../images/doodle.jpg");
+	background-size:6vw;
+	background-repeat: no-repeat;
+}
+#h2Loisirs{
+	background: url("../images/loisirs.jpg");
+	background-size:7vw;
+	background-repeat: no-repeat;
+}
+
+/****** ANIMATION JUMPING **********/
+#sectionHomepage article h2:hover{
+-webkit-animation: jumping 1s; /* chrome safari*/
+animation: jumping 1s; /* autre*/
+}
+
+@-webkit-keyframes jumping {
+/*from {line-height:120px;}
+to { line-height:0px;}*/
+ 0% 		{	line-height:120px; 	text-shadow: 5px 0px 1px #0000FF;}
+ 12.5% 	{	line-height:90px; 	text-shadow: 5px 15px 4px #0000FF;}
+ 25% 		{	line-height:70px; 	text-shadow: 5px 25px 6px #0000FF;}
+ 32.5% 	{	line-height:65px;		text-shadow: 5px 27px 9px #0000FF;}
+ 40% 		{	line-height:60px;		text-shadow: 5px 30px 12px #0000FF;}
+ 50%		{	line-height:60px;		text-shadow: 5px 30px 12px #0000FF;}
+ 60% 		{	line-height:60px;		text-shadow: 5px 30px 12px #0000FF;}
+ 67.5% 	{	line-height:65px;		text-shadow: 5px 27px 9px #0000FF;}
+ 75% 		{	line-height:70px;		text-shadow: 5px 25px 6px #0000FF;}
+ 87.5% 	{	line-height:90px;		text-shadow: 5px 15px 4px #0000FF;}
+ 100% 	{	line-height:120px;	text-shadow: 5px 0px 1px #0000FF;}
+}
+
+@keyframes jumping {
+ 0% 		{	line-height:120px; 	text-shadow: 5px 0px 1px #0000FF;}
+ 12.5% 	{	line-height:90px; 	text-shadow: 5px 15px 4px #0000FF;}
+ 25% 		{	line-height:70px; 	text-shadow: 5px 25px 6px #0000FF;}
+ 32.5% 	{	line-height:65px;		text-shadow: 5px 27px 9px #0000FF;}
+ 40% 		{	line-height:60px;		text-shadow: 5px 30px 12px #0000FF;}
+ 50%		{	line-height:60px;		text-shadow: 5px 30px 12px #0000FF;}
+ 60% 		{	line-height:60px;		text-shadow: 5px 30px 12px #0000FF;}
+ 67.5% 	{	line-height:65px;		text-shadow: 5px 27px 9px #0000FF;}
+ 75% 		{	line-height:70px;		text-shadow: 5px 25px 6px #0000FF;}
+ 87.5% 	{	line-height:90px;		text-shadow: 5px 15px 4px #0000FF;}
+ 100% 	{	line-height:120px;	text-shadow: 5px 0px 1px #0000FF;}
+
+}
+/******** fin ANIMATION JUMPING ********/
+
+
+}
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx fin styleHomepage   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+
+
+
+
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx styleGroup   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+
+#sectionGroup{
+	width:60vw;
+	color:#803300;
+}
+
+
+
+#sectionGroup h1, h2{
+   /* text-shadow: 5px 5px 5px #FF6600;  /*decalage-a-droite, decalage-bas, flootage, color*/
+
+	color:#FF6600;
+	text-shadow: 0   0.8px 0 #E65C00,
+              0   1.5px 0 #CC5200,
+             -1px 2.3px 0 #CC5200,
+             -1px 3px 0 #993D00,
+             -2px 3.8px 0 #803300,
+             -2.1px 4.5px 0 #662900,
+             -2.2px 5.3px 2px rgba(51,20,0, 0.4),
+             -2.2px 5.3px 8px rgba(51,20,0, 0.2),
+             -2.2px 5.3px 20px rgba(51,20,0, 0.4); 
+
+}
+
+
+#sectionGroup h2{
+ font-weight: bold;
+ padding-top:3vw;
+ padding-bottom:2vw;
+}
+#sectionGroup article{
+ margin-left: 3vw;
+ padding:0vw 2vw 1vw 2vw;
+ 
+}
+#sectionGroup div[class="composition"]{
+    margin-left: 7vw;
+}
+
+#sectionGroup div[class="ajout"]{
+    margin-left: 7vw;
+}
+.right{ 
+  position: absolute;
+  right: 22vw;
+}
+
+#sectionGroup #listPerson
+{
+    color : #FF6600;
+    width: 14vw;
+    padding: 0.5vw;
+    border: 5px dotted #FF6600;
+    
+
+}
+#sectionGroup #name{ /*input text*/
+	font-family: Arial,sans-serif; 
+	font-size: 1vw;
+	width: 12vw; 
+	margin-right:2vw;
+	height: 2vw; 
+	background: url("../images/peint-blanc.jpg");
+	background-size: 10vw, 1vw;
+}
+#sectionGroup #buttonsBottom{
+	margin-top:6vw;
+}
+
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx fin styleGroup   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+
+
+
+
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx styleDoodle (need to clean up)   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+
+
+#sectionDoodle h1, h2{
+	/*  text-shadow:
+	       -0.5px -0.5px 0 #0000FF,
+	       0.5px -0.5px 0 #0000FF,
+	       -0.5px 0.5px 0 #0000FF,
+	       0.5px 0.5px 0 #0000FF; */
+       
+	color:#00CC00;
+	text-shadow: 0   0.8px 0 #00B800,
+              0   1.5px 0 #00A300,
+             -1px 2.3px 0 #008F00,
+             -1px 3px 0 #007A00,
+             -2px 3.8px 0 #006600,
+             -2.1px 4.5px 0 #005200,
+             -2.2px 5.3px 2px rgba(0,41,0, 0.4),
+             -2.2px 5.3px 8px rgba(0,41,0, 0.2),
+             -2.2px 5.3px 20px rgba(0,41,0, 0.4); 
+}
+
+/*
+article[class="function"]{
+	border:4px solid;
+	border-color: black ;
+	border-radius: 30px;
+}
+
+.line{
+	margin:0%;
+}
+
+*/
+#sectionDoodle #funcDate{
+	border:4px solid;
+	border-color: green ;
+	border-radius: 30px;
+	width: 50vw;
+	max-width: 500px;
+	height: 150px;
+}
+
+#sectionDoodle h4{
+	margin-left: 5px;
+}
+
+#sectionDoodle #butAddCol{
+	margin-left: 5px;
+	width: 5vw;
+	max-width: 50px;
+}
+
+#sectionDoodle .datepick{
+
+	width: 13vw;
+	max-width: 130px;
+}
+#sectionDoodle #textCol{
+	width: 22vw;
+	max-width: 220px;
+
+}
+
+
+
+#sectionDoodle #funcPers{
+	margin-left: 3vw;/*calc(20vw-40px);*/
+	border:4px solid;
+	border-color: green ;
+	border-radius: 30px;
+	width: 25vw;
+	max-width: 250px;
+	height: 50px;
+	
+}
+
+#sectionDoodle #name{
+	margin-left: 10px;
+	width: 15vw;
+	max-width: 150px;
+}
+
+/******* CHECKBOX *********/
+#sectionDoodle input[type=checkbox] {
+		visibility: hidden;
+}
+
+/* ROUNDED TWO */
+#sectionDoodle .roundedTwo {
+	width: 30px;
+	height: 30px;
+	background: #fcfff4;
+
+	background: -webkit-linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, palegreen 100%);
+	background: -moz-linear-gradient(top, #fcfff4 0%, palegreen 10%, yellowgreen 30%);
+	background: -o-linear-gradient(top, #fcfff4 0%, palegreen 10%, yellowgreen 30%);
+	background: -ms-linear-gradient(top, #fcfff4 0%, palegreen 10%, yellowgreen 30%);
+	background: linear-gradient(top, #fcfff4 0%, palegreen 10%, yellowgreen 30%);
+margin: 20px auto;
+
+	border-radius: 10px;
+
+	box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0,0,0,0.5);
+position: relative;
+}
+
+#sectionDoodle .roundedTwo label {
+	cursor: pointer;
+	position: absolute;
+	width: 25px;
+	height: 25px;
+
+	border-radius: 10px;
+	left: 3px;
+	top: 3px;
+
+     box-shadow: inset 0px 1px 1px rgba(0,0,0,0.5), 0px 1px 0px rgba(255,255,255,1);
+
+	background: -webkit-linear-gradient(top, #222 0%, green 100%);
+	background: -moz-linear-gradient(top, #222 0%, green 100%);
+	background: -o-linear-gradient(top, #222 0%, green 100%);
+	background: -ms-linear-gradient(top, #222 0%, green 100%);
+	background: linear-gradient(top, #222 0%, green 100%);
+}
+
+#sectionDoodle .roundedTwo label:after {
+	opacity: 0;
+	content: '';
+	position: absolute;
+	width: 11px;
+	height: 7px;
+	background: transparent;
+	top: 5px;
+	left: 4px;
+	border: 3px solid #fcfff4;
+	border-top: none;
+	border-right: none;
+
+	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	-o-transform: rotate(-45deg);
+	-ms-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+}
+
+#sectionDoodle .roundedTwo label:hover::after {
+opacity: 0.3;
+}
+
+#sectionDoodle .roundedTwo input[type=checkbox]:checked + label:after {
+opacity: 1;
+}
+
+/******* END CHECKBOX *********/
+
+
+/*
+#tab{
+	border : none;
+       }
+thead th{
+	border : none;
+	 border-bottom: 5px solid green;
+}*/
+
+
+
+#sectionDoodle table, caption, thead, tfoot, tbody {
+	margin: 0;
+	padding: 0;
+}
+
+#sectionDoodle #tab{
+
+	border: 3px solid green;
+	border-radius: 10px;
+
+}
+
+#sectionDoodle table {
+	background:none;
+	border:0;
+	border-collapse: separate;
+	border-spacing: 1px;
+	color: #333333;
+	margin-top: 5px;
+	max-width: 900px;
+	min-width: 400px;
+	/* padding: 20px 5px 5px 5px; Espcaement du border */
+	width: 100%;
+}
+
+
+
+
+#sectionDoodle thead, th, td{
+
+}
+
+#sectionDoodle th, td {
+	border:none;
+	/* border: 1px solid green; */
+	padding: 1px 6px;
+}
+
+
+#sectionDoodle #tab th { /*background entete de colonne*/
+	border:3px solid green;
+	 border-right: 0.01px solid grey; 
+	 border-left: 0.01px solid grey; 
+	 border-radius: 20px;
+
+	background:	#33D633;
+	color: #31605D;
+}
+
+#sectionDoodle #tab td {
+	
+	 border: 2px solid green; 
+	 border-right: 0.01px solid grey; 
+	 border-left: 0.01px solid grey; 
+	 border-radius: 10px;
+	background-color: 	#D1FFC2;
+}
+
+#sectionDoodle #tab td:hover{
+	background-color: 	#CCFF99;
+	
+}
+
+#sectionDoodle thead,td {
+	text-align: center;
+}
+
+#sectionDoodle td:empty {
+	background: #A7DBD8;
+	border: 0;
+}
+
+
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx fin styleDoodle   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+
+
+
+
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx styleExpenses   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+
+/*
+#bodyCalculation{
+	background-image: url("../images/sunflower.jpg");
+	/*background-position: center;
+
+}
+*/
+
+
+#sectionExpenses{
+  border-radius: 10px ;
+  width:90%;
+  margin : auto; 
+  margin-top : 75px; 
+  background : lightgoldenrodyellow;/*url("../images/papier-peint19.jpg");*/
+  color:#800000;
+  padding: 3%;
+}
+
+
+#sectionExpenses h1, #sectionExpenses h2{
+/*text-shadow: 5px 5px 5px #FF0000;  /*decalage-a-droite, decalage-bas, flootage, color*/
+	color:#FF1919;/*#FF8080;*/
+	text-shadow: 0   0.8px 0 #E60000,
+              0   1.5px 0 #CC0000,
+             -1px 2.3px 0 #B20000,
+             -1px 3px 0 #990000,
+             -2px 3.8px 0 #800000,
+             -2.1px 4.5px 0 #660000,
+             -2.2px 5.3px 2px rgba(50,0,0, 0.4),
+             -2.2px 5.3px 8px rgba(50,0,0, 0.2),
+             -2.2px 5.3px 20px rgba(50,0,0, 0.4); 
+}
+
+#sectionExpenses  h2{
+ font-weight: bold;
+ padding-top:4%;
+}
+#sectionExpenses  article{
+ margin-left: 3%;
+}
+
+
+#sectionExpenses #divTab{
+margin:3%
+
+}
+
+#sectionExpenses .button{
+font-size: 1.2em;
+/*width: 200px; */
+height: 25px; 
+line-height:25px;/*permet le centrage vertical*/ 
+padding:5px 20px 5px 20px;
+color: #FF0000; 
+}
+
+#sectionExpenses .button:hover{ 
+color: #FF4D4D; 
+}
+#sectionExpenses .button:active{ 
+color: #000; 
+}
+
+#sectionExpenses #name{ /*input text*/
+font-family: Arial,sans-serif; 
+font-size: 1.2em;
+width: 200px ; 
+height: 25px; 
+/*border-radius: 8px;*/
+background: url("../images/peint-blanc.jpg");
+background-size: 200px, 25px;
+}
+
+#sectionExpenses .right{ 
+  position: absolute;
+  right: 12vw;
+}
+#sectionExpenses #buttonsBottom{
+	margin-top:6%;
+}
+#sectionExpenses #tab caption{
+
+	font-size: 1.5em;
+	border: 4px solid #800000;
+	border-radius: 10px;
+	border-bottom : 1px; 
+color: white;
+    text-shadow:
+    -2px -2px 0 #800000,
+    2px -2px 0 #800000,
+    -2px 2px 0 #800000,
+    2px 2px 0 #800000; 
+}
+
+#sectionExpenses #tab{
+	border: 4px solid #800000;
+	
+	border-radius: 10px;
+	/*background:#FF0000;*/
+}
+
+#sectionExpenses #tab th, #sectionExpenses #tab td{
+	border: 1px solid #800000;
+	border-radius: 5px;
+}
+#sectionExpenses th{
+
+	background:#B20000;
+	color:white;
+}
+
+/*
+input[type="checkbox"].css-checkbox {
+							  position: absolute; 
+							overflow: hidden; 
+							clip: rect(0 0 0 0); 
+							height:1px; 
+							width:1px; 
+							margin:-1px; 
+							padding:0;
+							border:0;
+						}
+
+*/
+
+#sectionExpenses input[type=checkbox] {
+	
+  -moz-appearance: none;
+  width: 20px;
+  height: 20px;
+}
+
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx fin styleExpenses   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo*/
+/*oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo*/
+/*oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo*/
+/*oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo*/
+/*oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo*/
+/*oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo*/
+/*oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
 /*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx nav   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
 /*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
@@ -458,7 +1397,7 @@ html {
     -webkit-font-smoothing: antialiased; /* permet de rendre opacity during animation en chrome possible*/
 }
 
-nav{ 
+#mainNav{ 
 	/*overflow-x:scroll;
 	overflow-y:none; */  	
 	white-space: nowrap; 
@@ -466,7 +1405,7 @@ nav{
 	padding:0;   
 }
 
-nav ul {
+#mainNav ul {
 	display: inline-block;
 	margin-left: 0;
 	/*display: inline; /* IE7 */
@@ -479,7 +1418,7 @@ nav ul {
 /***********************************************************************************************************/
 /********************************************** NAV MODE CLASSIC *******************************************/
 /***********************************************************************************************************/
-nav li {
+#mainNav li {
 	display: inline-block;
 	/**display: inline;
 	/*zoom:1;*/
@@ -540,37 +1479,37 @@ nav li {
 /****************fin identique a newButton3D de 3D.css ************/	
 }
 
-nav li:nth-child(1) {
+#mainNav li:nth-child(1) {
 background-color:#4747D1; /*blue  rgb(71,71,255)*/
  	/*border-color:#333333;  /* dark #000066 ;*/
 }
-nav li:nth-child(2) {
+#mainNav li:nth-child(2) {
 background-color:#FF6600; /*orange  rgb(255,102,0)*/
  	/*border-color:#333333;/* dark #803300 ;*/
 }
-nav li:nth-child(3) {
+#mainNav li:nth-child(3) {
 background-color:#00CC00; /*green  rgb(0,204,0)*/
  	/*border-color:#333333;/* dark rgb(0,76,0) ;*/
 }
-nav li:nth-child(4) {
+#mainNav li:nth-child(4) {
 background-color:#FFCC00; /*yellow  rgb(255,204,0)*/
  	/*border-color:#333333; /* less dark :B2B200 ;darker : #808000;*/
 }
-nav li:nth-child(5) {
+#mainNav li:nth-child(5) {
 background-color:#FF1919; /*red  rgb(255,25,2)*/
  	/*border-color:#333333; /* less dark #B20000 ;darker : #800000;*/
 }
-nav li:nth-child(6) {
+#mainNav li:nth-child(6) {
 background-color:#853385; /*purple  rgb(133,51,133)*/
  	/*border-color:#333333;/* less #7A1F99   dark #3D003D ;*/
 }
-nav li:nth-child(7) {
+#mainNav li:nth-child(7) {
 background-color:#FF3399; /*pink  rgb(255,51,153)*/
  	/*border-color:#333333;*/
 }
 
 /***********************************************************************************************************/
-/******************************************** fin NAV MODE CLASSIC *****************************************/
+/******************************************** fin #mainNav MODE CLASSIC *****************************************/
 /***********************************************************************************************************/
 
 
@@ -611,32 +1550,32 @@ to {background-color:rgba(133,51,133,0.3);}
 from {background-color:rgba(255,51,153,1);}
 to {background-color:rgba(255,51,153,0.3);}
 }
-nav li:nth-child(1)[class="current"] {
+#mainNav li:nth-child(1)[class="current"] {
 -webkit-animation: clignote1 2s alternate infinite; /* chrome*/
 animation: clignote1 2s alternate infinite; /* all */
 }
-nav li:nth-child(2)[class="current"] {
+#mainNav li:nth-child(2)[class="current"] {
 animation: clignote2 2s alternate infinite; /* all */
 }
-nav li:nth-child(3)[class="current"] {
+#mainNav li:nth-child(3)[class="current"] {
 animation: clignote3 2s alternate infinite; /* all */
 }
-nav li:nth-child(4)[class="current"] {
+#mainNav li:nth-child(4)[class="current"] {
 animation: clignote4 2s alternate infinite; /* chrome*
 animation: clignote4 2s alternate infinite; /* all */
 }
-nav li:nth-child(5)[class="current"] {
+#mainNav li:nth-child(5)[class="current"] {
 animation: clignote5 2s alternate infinite; /* all */
 }
-nav li:nth-child(6)[class="current"] {
+#mainNav li:nth-child(6)[class="current"] {
 animation: clignote6 2s alternate infinite; /* all */
 }
-nav li:nth-child(7)[class="current"] {
+#mainNav li:nth-child(7)[class="current"] {
 animation: clignote7 2s alternate infinite; /* all */
 }
 
 
-nav ul li[class="current"] {
+#mainNav ul li[class="current"] {
 	transform: rotate(-10deg);
 	color:#B2B2B2;
 	border-color:#B2B2B2;
@@ -665,7 +1604,7 @@ to {transform: rotate(-7deg) scale(1.3,1.3);}
 from {transform: rotate(-10deg) scale(1.3,1.3);}
 to {transform: rotate(-7deg) scale(1.3,1.3);}
 }
-nav ul li:not([class="current"]):hover {
+#mainNav ul li:not([class="current"]):hover {
 	animation: penche 0.2s alternate; /* firefox*/
 	-webkit-animation: penche 0.2s alternate; /* firefox*/
 	transform: rotate(-10deg) scale(1.3,1.3);
@@ -674,7 +1613,7 @@ nav ul li:not([class="current"]):hover {
 	border-radius:5px;
 }
 /******************** BLUE ***************************/  
-nav li:nth-child(1):not([class="current"]):hover {  
+#mainNav li:nth-child(1):not([class="current"]):hover {  
 	background:rgba(0,0,0,0);
 	
 	
@@ -718,7 +1657,7 @@ nav li:nth-child(1):not([class="current"]):hover {
 
 
 /******************** ORANGE ***************************/  
-nav li:nth-child(2):not([class="current"]):hover {  
+#mainNav li:nth-child(2):not([class="current"]):hover {  
 	background:rgba(0,0,0,0);
 	
 	
@@ -762,7 +1701,7 @@ nav li:nth-child(2):not([class="current"]):hover {
 
 
 /******************** GREEN ***************************/  
-nav li:nth-child(3):not([class="current"]):hover {  
+#mainNav li:nth-child(3):not([class="current"]):hover {  
 	background:rgba(0,0,0,0);
 	
 	
@@ -805,7 +1744,7 @@ nav li:nth-child(3):not([class="current"]):hover {
 /**************** fin GREEN **************************/
 
 /******************** YELLOW ***************************/  
-nav li:nth-child(4):not([class="current"]):hover {  
+#mainNav li:nth-child(4):not([class="current"]):hover {  
 	background:rgba(0,0,0,0);
 	
 	
@@ -849,7 +1788,7 @@ nav li:nth-child(4):not([class="current"]):hover {
 
 
 /******************** RED ***************************/  
-nav li:nth-child(5):not([class="current"]):hover {  
+#mainNav li:nth-child(5):not([class="current"]):hover {  
 	background:rgba(0,0,0,0);
 	
 	
@@ -892,7 +1831,7 @@ nav li:nth-child(5):not([class="current"]):hover {
 /**************** fin RED **************************/
 
 /******************** PURPLE ***************************/  
-nav li:nth-child(6):not([class="current"]):hover {  
+#mainNav li:nth-child(6):not([class="current"]):hover {  
 	background:rgba(0,0,0,0);
 	
 	
@@ -936,7 +1875,7 @@ nav li:nth-child(6):not([class="current"]):hover {
 
 
 /******************** PINK ***************************/  
-nav li:nth-child(7):not([class="current"]):hover {  
+#mainNav li:nth-child(7):not([class="current"]):hover {  
 	background:rgba(0,0,0,0);
 	
 	
@@ -983,8 +1922,6 @@ nav li:nth-child(7):not([class="current"]):hover {
 /***********************************************************************************************************/
 
 
-
- 
  
  
  
@@ -993,7 +1930,7 @@ nav li:nth-child(7):not([class="current"]):hover {
 /***********************************************************************************************************/
  
  /* NE FONCTIONNE PAS */ 
- nav li:nth-child(1):not([class="current"]):active{
+ #mainNav li:nth-child(1):not([class="current"]):active{
 	margin-top:4.5px;
 	margin-right:2.2px;
 	box-shadow: 0 0 0 #000000;
@@ -1001,7 +1938,7 @@ nav li:nth-child(7):not([class="current"]):hover {
 	/*border:4px solid #000000;
 	background:white;*/
  }
-  nav li:nth-child(2):not([class="current"]):active{
+  #mainNav li:nth-child(2):not([class="current"]):active{
 	margin-top:4.5px;
 	margin-right:2.2px;
 	box-shadow: 0 0 0 #000000;
@@ -1009,7 +1946,7 @@ nav li:nth-child(7):not([class="current"]):hover {
 	/*border:4px solid #000000;
 	background:white;*/
  }
-  nav li:nth-child(3):not([class="current"]):active{
+  #mainNav li:nth-child(3):not([class="current"]):active{
 	margin-top:4.5px;
 	margin-right:2.2px;
 	box-shadow: 0 0 0 #000000;
@@ -1017,7 +1954,7 @@ nav li:nth-child(7):not([class="current"]):hover {
 	/*border:4px solid #000000;
 	background:white;*/
  }
-  nav li:nth-child(4):not([class="current"]):active{
+  #mainNav li:nth-child(4):not([class="current"]):active{
 	margin-top:4.5px;
 	margin-right:2.2px;
 	box-shadow: 0 0 0 #000000;
@@ -1025,7 +1962,7 @@ nav li:nth-child(7):not([class="current"]):hover {
 	/*border:4px solid #000000;
 	background:white;*/
  }
-  nav li:nth-child(5):not([class="current"]):active{
+  #mainNav li:nth-child(5):not([class="current"]):active{
 	margin-top:4.5px;
 	margin-right:2.2px;
 	box-shadow: 0 0 0 #000000;
@@ -1033,7 +1970,7 @@ nav li:nth-child(7):not([class="current"]):hover {
 	/*border:4px solid #000000;
 	background:white;*/
  }
-  nav li:nth-child(6):not([class="current"]):active{
+  #mainNav li:nth-child(6):not([class="current"]):active{
 	margin-top:4.5px;
 	margin-right:2.2px;
 	box-shadow: 0 0 0 #000000;
@@ -1041,7 +1978,7 @@ nav li:nth-child(7):not([class="current"]):hover {
 	/*border:4px solid #000000;
 	background:white;*/
  }
- nav li:nth-child(7):not([class="current"]):active{
+ #mainNav li:nth-child(7):not([class="current"]):active{
 	margin-top:4.5px;
 	margin-right:2.2px;
 	box-shadow: 0 0 0 #000000;
@@ -1049,1035 +1986,8 @@ nav li:nth-child(7):not([class="current"]):hover {
 	/*border:4px solid #000000;
 	background:white;*/
  }
-
-
-
-
 
 /*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
 /*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx fin nav   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
 /*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
 
-
-
-
-
-
-/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
-/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx styleWelcome   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
-/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
-
-body{
-	margin:auto; /*centrer la colonne*/
-}
-
-header{
-	background:rgba(151,152,255,0.9);/*url("../images/pins.jpg") ;*/
-	background-size:10vw;
-	border-bottom:5px solid #003399 ;
-	border-top:1px solid rgba(0,0,0,0); /* bug ^^cette ligne permet de coller la bande header en haut*/ 
-	margin:auto;
-	width:100vw;
-	height:150px;
-	line-height:150px; /*vertical-align:middle; ne fonctionne pas*/
-}
-header #title{
-	position: absolute;
-	left: 8vw;
-	font-size: 3vw;
-	font-weight: bold;
-	color: white;
-}
-header #divLogIn{
-  position: absolute;
-  right: 2vw;
-	/* comprend les deux input text + button connexion */
-}
-
-header #coPseudo, #coPwd{
-	margin:0;
-	margin-left:0.5vw;
-	padding : 0.5vw;
-	width:13vw;
-	height:36px;
-	font-size: 1.3vw;
-	
-	border:1px solid white ;
-	border-radius: 0.5vw;
-	background : rgba(0,0,0,0);
-}
-
-header #confirmLogIn{
-	margin-left:1vw;
-}
-
-section #demo{
-	position: absolute;
-	left: 13vw;
-	margin-top:10vw;
-	/*width:40vw;*/  
-}
-
-section #buttonDemo{
-	height:150px;
-	line-height:50px;
-	text-align:center;
-	font-size: 2.2vw;
-	font-weight:bold;
-	padding:2vw 1vw;
-    border-width: 8px;
-}
-
-section #registration{
-	position: absolute;
-	left: 45vw;
-	margin-top:5vw;
-	/*width:20vw;*/
-	padding-left:10vw; 
-	border-left:8px dotted #5C5CFF;
-}
-
-section #registrationH2 {
-	font-size:2.6vw;
-	text-align:center;
-	font-weight: bold;
-	color: white;
-             
-}
-
-section #pseudo, #email, #pwd, #confirmPwd{
-	
-	margin-top:0.7vw;
-	padding : 0.5vw;
-	padding-left : 0.8vw;
-	width:25vw;
-	height:40px;
-	font-size: 1.3vw;
-	/*background: url("../images/peint-blanc.jpg");
-	background-size: 200px, 25px;*/
-	
-	background:rgba(151,152,255,0.9);/*url("../images/pins.jpg") ;*/
-	border:1px solid white;
-	border-radius: 0.5vw;
-}
-section #confirmInscription{
-	margin-top:2vw;
-	margin-left:7vw;
-}
-
-
-
-footer{
-	position:absolute;
-	top:700px;
-	padding:2vw;/*Marge verticale*/
-	width:90vw;
-	text-align:center;/*texte centré*/
-	font-size: 1.5vw;
-	color: white;
-}
-
-.line{
-	white-space: nowrap; 
-	margin-left: 0;
-}
-.inline{
-	display: inline-block;
-}
-/** reecri de general.css **/
-
-.textBlue{
-	color : #4747D1;
-}
-
-.textWhite{
-	color : white;
-}
-.right{ 
-  position: absolute;
-  right: 1vw;
-}
-
-
-
-/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
-/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx fin styleWelcome   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
-/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
-
-
-
-
-
-/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
-/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx stylePersonalArea   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
-/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
-
-body{
-	margin:auto; /*centrer la colonne*/
-	color: white;
-}
-header{
-	background:rgba(151,152,255,0.9);/*url("../images/pins.jpg") ;*/
-	background-size:10vw;
-	border-bottom:5px solid #003399 ;
-	border-top:1px solid rgba(0,0,0,0); /* bug ^^cette ligne permet de coller la bande header en haut*/ 
-	margin:auto;
-	width:100vw;
-	height:150px;
-	line-height:150px; /*vertical-align:middle; ne fonctionne pas*/
-}
-header #title{
-	position: absolute;
-	left: 2vw;
-	font-size: 2.5vw;
-	font-weight: bold;
-	color: white;
-}
-header #titlePrivateArea{
-  	position: absolute;
-  	right: 25vw;
-	font-size: 3vw;
-	font-weight: bold;
-	/* comprend les deux input text + button connexion */
-}
-header #divLogOut{
-	top:1vw;
-  	position: absolute;
-  	right: 2vw;
-}
-
-section #hint{
-	margin-top:1vw;
-	font-size: 1.5vw;
-	font-weight: bold;
-	background:rgba(151,152,255,0.9);
-	border:1px solid white;
-	border-radius: 0.5vw;
-}
-
-section #myGroups{
-	position: absolute;
-	left: 2vw;
-	margin-top:5vw;
-	/*width:40vw;*/  
-}
-
-
-section #myContacts{
-	position: absolute;
-	left: 31vw;
-	margin-top:5vw;
-	/*width:20vw;*/
-	padding-left:3vw; 
-	border-left:6px dotted #5C5CFF;
-}
-section #myProfil{
-	position: absolute;
-	left: 65vw;
-	margin-top:5vw;
-	padding-left:3vw; 
-	/*width:20vw;*/
-	border-left:6px dotted #5C5CFF;
-}
-
-section #fieldMyGroups{
-	overflow-y: hidden,scroll;
-	overflow-x: hidden;
-	max-height: 20vw;
-	padding-left:2vw; 
-	font-size: 1.5vw;
-}
-
-section #fieldMyContact{
-	overflow-y: hidden,scroll;
-	overflow-x: hidden;
-	max-height: 20vw;
-	padding-left:2vw; 
-	font-size: 1.5vw;
-}
-section #groupName, #nameNewContact, #listContacts, #pseudo, #email, #oldPwd, #newPwd, #confirmNewPwd{
-	
-	margin-top:0.7vw;
-	padding : 0.5vw;
-	padding-left : 0.8vw;
-	width:13vw;
-	height:40px;
-	font-size: 1.3vw;
-	/*background: url("../images/peint-blanc.jpg");
-	background-size: 200px, 25px;*/
-	
-	background:rgba(151,152,255,0.9);/*url("../images/pins.jpg") ;*/
-	border:1px solid white;
-	border-radius: 0.5vw;
-}
-section #nameNewContact, #email, #oldPwd, #newPwd, #confirmNewPwd{
-	width:14.5vw;
-}
-
-
-footer{
-	position:absolute;
-	top:1000px;
-	padding:2vw;/*Marge verticale*/
-	width:90vw;
-	text-align:center;/*texte centré*/
-	font-size: 1.5vw;
-	color: white;
-}
-
-.line{
-	white-space: nowrap; 
-	margin-left: 0;
-}
-.inline{
-	display: inline-block;
-}
-/** reecri de general.css **/
-
-.textBlue{
-	color : #4747D1;
-}
-
-.textWhite{
-	color : white;
-}
-.right{ 
-  position: absolute;
-  right: 1vw;
-}
-
-
-/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
-/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx fin stylePersonalArea   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
-/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
-
-
-
-
-/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
-/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx styleHomepage   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
-/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
-
-
-
-
-body{
-	/*font-weight: 500;*/
-    /*width:930px;/*Taille de la colonne centrée moins le padding*/
-    /*background-color: limegreen;/*Couleur de fond*/
-    /*padding:0px 25px 0px 25px;/*margin interne*/
-	/*background-image: url("Images/clouds.jpg");*/
-	/*background-color: rgb(200,90,200);*/
-	/*background-image: url("Images/bonhomme.jpg");
-	background-attachement: fixed;
-	background-repeat: no-repeat;
-	background-position: top right;
-	background: url("Images/bonhomme.jpg") fixed no-repeat top right, url("Images/clouds.jpg") fixed;*/
-}
-/*************************************  TEST **************************************/
-#myBox{
-	width:200px;
-	height:100px;
-	line-height:100px;
-	text-align:center;
-	font-size: 40px;
-	font-weight: bold;
-	/*border-top:5px solid black ;
-	border-left:5px solid black;
-	border-right:10px solid blue;*/
-	border:10px solid white;
-	border-radius:5px;
-	background:rgba(255,0,0,0);
-	
-	box-shadow : 0 1px 0 #eee,
-             0 2px 0 #e5e5e5,
-             -1px 3px 0 #C8C8C8,
-             -1px 4px 0 #C1C1C1,
-             -2px 5px 0 #B9B9B9,
-             -2px 6px 0 #B2B2B2,
-             -2px 7px 2px rgba(0,0,0, 0.6),
-             -2px 7px 8px rgba(0,0,0, 0.2),
-             -2px 7px 45px rgba(0,0,0, 0.4),
-             0 1px 0 #eee inset,
-             0 2px 0 #e5e5e5 inset,
-             -1px 3px 0 #C8C8C8 inset,
-             -1px 4px 0 #C1C1C1 inset,
-             -2px 5px 0 #B9B9B9 inset,
-             -2px 6px 0 #B2B2B2 inset,
-             -2px 7px 2px rgba(0,0,0, 0.6) inset,
-             -2px 7px 8px rgba(0,0,0, 0.2) inset,
-             -2px 7px 45px rgba(0,0,0, 0.4) inset;
-/*-10px 10px 5px black inset,
--10px 10px 5px black;*/
-
-	color:white;
-	text-shadow: 0 1px 0 #eee,
-             0 2px 0 #e5e5e5,
-             -1px 3px 0 #C8C8C8,
-             -1px 4px 0 #C1C1C1,
-             -2px 5px 0 #B9B9B9,
-             -2px 6px 0 #B2B2B2,
-             -2px 7px 2px rgba(0,0,0, 0.6),
-             -2px 7px 8px rgba(0,0,0, 0.2),
-             -2px 7px 45px rgba(0,0,0, 0.4);
-           
-transform: rotate(-10deg) scale(1.3,1.3);  
-}
-/************************************* fin TEST **************************************/
-
-section{
-	background-image:url("../images/parasol.jpg"), url("../images/peint-blanc.jpg");
-	background-repeat:no-repeat, repeat;
-	background-size:20vw;
-	background-position: top right;
-	color:#1A1A66;
-}
-
-
-
-h1, h2{
-	color:#4747D1;
-	text-shadow: 0   0.8px 0 #2E2EB8,
-              0   1.5px 0 #2929A3,
-             -1px 2.3px 0 #24248F,
-             -1px 3px 0 #1F1F7A,
-             -2px 3.8px 0 #1A1A66,
-             -2.1px 4.5px 0 #141452,
-             -2.2px 5.3px 2px rgba(10,10,41, 0.4),
-             -2.2px 5.3px 8px rgba(10,10,41, 0.2),
-             -2.2px 5.3px 20px rgba(10,10,41, 0.4); 
-}
-section article h2{
-	width: 50vw;
-	margin-left: 1vw;
-	padding: 1vw;
-	padding-left:8vw;
-	height:60px;
-	line-height:120px;
-	/*border:2px solid black;
-	border-radius: 5%; */
-}
-#h2Groupe{
-	background: url("../images/groupe.png");
-	background-size:7vw;
-	background-repeat: no-repeat;
-	/*
-
-<img src="../images/doodle.jpg" width="10%">
-<img src="../images/chefcuisine.jpg" width="10%">
-<img src="../images/tirelire.jpg" width="6%">
-<img src="../images/loisirs.jpg" width="11%">
-<img src="../images/loisirs.jpg" width="11%">
-*/
-}
-#h2Doodle{
-	background: url("../images/doodle.jpg");
-	background-size:6vw;
-	background-repeat: no-repeat;
-}
-#h2Repas{
-	background: url("../images/chefcuisine.jpg");
-	background-size:6vw;
-	background-repeat: no-repeat;
-}
-#h2Calc{
-	background: url("../images/tirelire.jpg");
-	background-size:5vw;
-	background-repeat: no-repeat;
-}
-#h2Affaire{
-	background: url("../images/doodle.jpg");
-	background-size:6vw;
-	background-repeat: no-repeat;
-}
-#h2Loisirs{
-	background: url("../images/loisirs.jpg");
-	background-size:7vw;
-	background-repeat: no-repeat;
-}
-
-/************************************ ANIMATION JUMPING ****************************************/
-section article h2:hover{
-
--webkit-animation: jumping 1s; /* chrome safari*/
-animation: jumping 1s; /* autre*/
-}
-
-@-webkit-keyframes jumping {
-/*from {line-height:120px;}
-to { line-height:0px;}*/
- 0% 		{	line-height:120px; 	text-shadow: 5px 0px 1px #0000FF;}
- 12.5% 	{	line-height:90px; 	text-shadow: 5px 15px 4px #0000FF;}
- 25% 		{	line-height:70px; 	text-shadow: 5px 25px 6px #0000FF;}
- 32.5% 	{	line-height:65px;		text-shadow: 5px 27px 9px #0000FF;}
- 40% 		{	line-height:60px;		text-shadow: 5px 30px 12px #0000FF;}
- 50%		{	line-height:60px;		text-shadow: 5px 30px 12px #0000FF;}
- 60% 		{	line-height:60px;		text-shadow: 5px 30px 12px #0000FF;}
- 67.5% 	{	line-height:65px;		text-shadow: 5px 27px 9px #0000FF;}
- 75% 		{	line-height:70px;		text-shadow: 5px 25px 6px #0000FF;}
- 87.5% 	{	line-height:90px;		text-shadow: 5px 15px 4px #0000FF;}
- 100% 	{	line-height:120px;	text-shadow: 5px 0px 1px #0000FF;}
-}
-
-@keyframes jumping {
- 0% 		{	line-height:120px; 	text-shadow: 5px 0px 1px #0000FF;}
- 12.5% 	{	line-height:90px; 	text-shadow: 5px 15px 4px #0000FF;}
- 25% 		{	line-height:70px; 	text-shadow: 5px 25px 6px #0000FF;}
- 32.5% 	{	line-height:65px;		text-shadow: 5px 27px 9px #0000FF;}
- 40% 		{	line-height:60px;		text-shadow: 5px 30px 12px #0000FF;}
- 50%		{	line-height:60px;		text-shadow: 5px 30px 12px #0000FF;}
- 60% 		{	line-height:60px;		text-shadow: 5px 30px 12px #0000FF;}
- 67.5% 	{	line-height:65px;		text-shadow: 5px 27px 9px #0000FF;}
- 75% 		{	line-height:70px;		text-shadow: 5px 25px 6px #0000FF;}
- 87.5% 	{	line-height:90px;		text-shadow: 5px 15px 4px #0000FF;}
- 100% 	{	line-height:120px;	text-shadow: 5px 0px 1px #0000FF;}
-
-}
-
-/************************************ fin ANIMATION JUMPING ****************************************/
-
-
-}
-
-
-/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
-/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx fin styleHomepage   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
-/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
-
-
-
-
-/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
-/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx styleGroup   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
-/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
-
-
-
-
-section{
-	width:60vw;
-	color:#803300;
-}
-
-
-
-h1, h2{
-   /* text-shadow: 5px 5px 5px #FF6600;  /*decalage-a-droite, decalage-bas, flootage, color*/
-
-	color:#FF6600;
-	text-shadow: 0   0.8px 0 #E65C00,
-              0   1.5px 0 #CC5200,
-             -1px 2.3px 0 #CC5200,
-             -1px 3px 0 #993D00,
-             -2px 3.8px 0 #803300,
-             -2.1px 4.5px 0 #662900,
-             -2.2px 5.3px 2px rgba(51,20,0, 0.4),
-             -2.2px 5.3px 8px rgba(51,20,0, 0.2),
-             -2.2px 5.3px 20px rgba(51,20,0, 0.4); 
-
-}
-
-
-section h2{
- font-weight: bold;
- padding-top:3vw;
- padding-bottom:2vw;
-}
-section article{
- margin-left: 3vw;
- padding:0vw 2vw 1vw 2vw;
- 
-}
-section div[class="composition"]{
-    margin-left: 7vw;
-}
-
-section div[class="ajout"]{
-    margin-left: 7vw;
-}
-.right{ 
-  position: absolute;
-  right: 22vw;
-}
-
-#listPerson
-{
-    color : #FF6600;
-    width: 14vw;
-    padding: 0.5vw;
-    border: 5px dotted #FF6600;
-    
-
-}
-#name{ /*input text*/
-	font-family: Arial,sans-serif; 
-	font-size: 1vw;
-	width: 12vw; 
-	margin-right:2vw;
-	height: 2vw; 
-	background: url("../images/peint-blanc.jpg");
-	background-size: 10vw, 1vw;
-}
-#buttonsBottom{
-	margin-top:6vw;
-}
-
-
-/********************************* BUTTON CLASSIC ********************************/
-.button{
-width: 200px; 
-height: 30px; 
-line-height:30px;/*permet le centrage vertical*/ 
-padding:4px;
-color: #CC5200; 
-}
-
-.button:hover{ 
-color: #FF6600; 
-}
-.button:active{ 
-color: #000; 
-}
-
-/********************************* fin BUTTON CLASSIC ********************************/
-
-
-/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
-/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx fin styleGroup   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
-/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
-
-
-
-
-/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
-/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx styleDoodle   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
-/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
-
-
-h1, h2{
-	/*  text-shadow:
-	       -0.5px -0.5px 0 #0000FF,
-	       0.5px -0.5px 0 #0000FF,
-	       -0.5px 0.5px 0 #0000FF,
-	       0.5px 0.5px 0 #0000FF; */
-       
-	color:#00CC00;
-	text-shadow: 0   0.8px 0 #00B800,
-              0   1.5px 0 #00A300,
-             -1px 2.3px 0 #008F00,
-             -1px 3px 0 #007A00,
-             -2px 3.8px 0 #006600,
-             -2.1px 4.5px 0 #005200,
-             -2.2px 5.3px 2px rgba(0,41,0, 0.4),
-             -2.2px 5.3px 8px rgba(0,41,0, 0.2),
-             -2.2px 5.3px 20px rgba(0,41,0, 0.4); 
-}
-
-/*
-article[class="function"]{
-	border:4px solid;
-	border-color: black ;
-	border-radius: 30px;
-}
-
-.line{
-	margin:0%;
-}
-
-*/
-#funcDate{
-	border:4px solid;
-	border-color: green ;
-	border-radius: 30px;
-	width: 50vw;
-	max-width: 500px;
-	height: 150px;
-}
-
-h4{
-	margin-left: 5px;
-}
-
-#butAddCol{
-	margin-left: 5px;
-	width: 5vw;
-	max-width: 50px;
-}
-
-.datepick{
-
-	width: 13vw;
-	max-width: 130px;
-}
-#textCol{
-	width: 22vw;
-	max-width: 220px;
-
-}
-
-
-
-#funcPers{
-	margin-left: 3vw;/*calc(20vw-40px);*/
-	border:4px solid;
-	border-color: green ;
-	border-radius: 30px;
-	width: 25vw;
-	max-width: 250px;
-	height: 50px;
-	
-}
-
-#name{
-	margin-left: 10px;
-	width: 15vw;
-	max-width: 150px;
-}
-
-
-.button{
-	font-size: 1.2em;
-	width: 5vw;
-	max-width: 50px;
-	/*margin-left: 5%;
-	width: 5%; 
-	height: 25px; 
-	line-height:25px;/*permet le centrage vertical*
-	padding:4px;
-	color: #FF0000; */
-}
-
-/*
-.button:hover{ 
-	color: #FF4D4D; 
-}
-.button:active{ 
-	color: #000; 
-}
-*/
-
-
-
-
-
-
-
-
-
-
-
-
-/******* CHECKBOX *********/
-input[type=checkbox] {
-		visibility: hidden;
-}
-
-/* ROUNDED TWO */
-.roundedTwo {
-	width: 30px;
-	height: 30px;
-	background: #fcfff4;
-
-	background: -webkit-linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, palegreen 100%);
-	background: -moz-linear-gradient(top, #fcfff4 0%, palegreen 10%, yellowgreen 30%);
-	background: -o-linear-gradient(top, #fcfff4 0%, palegreen 10%, yellowgreen 30%);
-	background: -ms-linear-gradient(top, #fcfff4 0%, palegreen 10%, yellowgreen 30%);
-	background: linear-gradient(top, #fcfff4 0%, palegreen 10%, yellowgreen 30%);
-margin: 20px auto;
-
-	border-radius: 10px;
-
-	box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0,0,0,0.5);
-position: relative;
-}
-
-.roundedTwo label {
-	cursor: pointer;
-	position: absolute;
-	width: 25px;
-	height: 25px;
-
-	border-radius: 10px;
-	left: 3px;
-	top: 3px;
-
-     box-shadow: inset 0px 1px 1px rgba(0,0,0,0.5), 0px 1px 0px rgba(255,255,255,1);
-
-	background: -webkit-linear-gradient(top, #222 0%, green 100%);
-	background: -moz-linear-gradient(top, #222 0%, green 100%);
-	background: -o-linear-gradient(top, #222 0%, green 100%);
-	background: -ms-linear-gradient(top, #222 0%, green 100%);
-	background: linear-gradient(top, #222 0%, green 100%);
-}
-
-.roundedTwo label:after {
-	opacity: 0;
-	content: '';
-	position: absolute;
-	width: 11px;
-	height: 7px;
-	background: transparent;
-	top: 5px;
-	left: 4px;
-	border: 3px solid #fcfff4;
-	border-top: none;
-	border-right: none;
-
-	-webkit-transform: rotate(-45deg);
-	-moz-transform: rotate(-45deg);
-	-o-transform: rotate(-45deg);
-	-ms-transform: rotate(-45deg);
-	transform: rotate(-45deg);
-}
-
-.roundedTwo label:hover::after {
-opacity: 0.3;
-}
-
-.roundedTwo input[type=checkbox]:checked + label:after {
-opacity: 1;
-}
-
-/******* END CHECKBOX *********/
-
-
-/*
-#tab{
-	border : none;
-       }
-thead th{
-	border : none;
-	 border-bottom: 5px solid green;
-}*/
-
-
-
-table, caption, thead, tfoot, tbody {
-	margin: 0;
-	padding: 0;
-}
-
-#tab{
-
-	border: 3px solid green;
-	border-radius: 10px;
-
-}
-
-table {
-	background:none;
-	border:0;
-	border-collapse: separate;
-	border-spacing: 1px;
-	color: #333333;
-	margin-top: 5px;
-	max-width: 900px;
-	min-width: 400px;
-	/* padding: 20px 5px 5px 5px; Espcaement du border */
-	width: 100%;
-}
-
-
-
-
-thead, th, td{
-
-}
-
-th, td {
-	border:none;
-	/* border: 1px solid green; */
-	padding: 1px 6px;
-}
-
-
-#tab th { /*background entete de colonne*/
-	border:3px solid green;
-	 border-right: 0.01px solid grey; 
-	 border-left: 0.01px solid grey; 
-	 border-radius: 20px;
-
-	background:	#33D633;
-	color: #31605D;
-}
-
-#tab td {
-	
-	 border: 2px solid green; 
-	 border-right: 0.01px solid grey; 
-	 border-left: 0.01px solid grey; 
-	 border-radius: 10px;
-	background-color: 	#D1FFC2;
-}
-
-#tab td:hover{
-	background-color: 	#CCFF99;
-	
-}
-
-thead,td {
-	text-align: center;
-}
-
-td:empty {
-	background: #A7DBD8;
-	border: 0;
-}
-
-
-/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
-/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx fin styleDoodle   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
-/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
-
-
-
-
-/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
-/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx styleExpenses   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
-/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
-
-/*
-#bodyCalculation{
-	background-image: url("../images/sunflower.jpg");
-	/*background-position: center;
-
-}
-*/
-
-
-section{
-  border-radius: 10px ;
-  width:90%;
-  margin : auto; 
-  margin-top : 75px; 
-  background : lightgoldenrodyellow;/*url("../images/papier-peint19.jpg");*/
-  color:#800000;
-  padding: 3%;
-}
-
-
-h1, h2{
-/*text-shadow: 5px 5px 5px #FF0000;  /*decalage-a-droite, decalage-bas, flootage, color*/
-	color:#FF1919;/*#FF8080;*/
-	text-shadow: 0   0.8px 0 #E60000,
-              0   1.5px 0 #CC0000,
-             -1px 2.3px 0 #B20000,
-             -1px 3px 0 #990000,
-             -2px 3.8px 0 #800000,
-             -2.1px 4.5px 0 #660000,
-             -2.2px 5.3px 2px rgba(50,0,0, 0.4),
-             -2.2px 5.3px 8px rgba(50,0,0, 0.2),
-             -2.2px 5.3px 20px rgba(50,0,0, 0.4); 
-}
-
-section h2{
- font-weight: bold;
- padding-top:4%;
-}
-section article{
- margin-left: 3%;
-}
-
-
-#divTab{
-margin:3%
-
-}
-
-.button{
-font-size: 1.2em;
-/*width: 200px; */
-height: 25px; 
-line-height:25px;/*permet le centrage vertical*/ 
-padding:5px 20px 5px 20px;
-color: #FF0000; 
-}
-
-.button:hover{ 
-color: #FF4D4D; 
-}
-.button:active{ 
-color: #000; 
-}
-
-#name{ /*input text*/
-font-family: Arial,sans-serif; 
-font-size: 1.2em;
-width: 200px ; 
-height: 25px; 
-/*border-radius: 8px;*/
-background: url("../images/peint-blanc.jpg");
-background-size: 200px, 25px;
-}
-
-.right{ 
-  position: absolute;
-  right: 12vw;
-}
-#buttonsBottom{
-	margin-top:6%;
-}
-#tab caption{
-
-	font-size: 1.5em;
-	border: 4px solid #800000;
-	border-radius: 10px;
-	border-bottom : 1px; 
-color: white;
-    text-shadow:
-    -2px -2px 0 #800000,
-    2px -2px 0 #800000,
-    -2px 2px 0 #800000,
-    2px 2px 0 #800000; 
-}
-
-#tab{
-	border: 4px solid #800000;
-	
-	border-radius: 10px;
-	/*background:#FF0000;*/
-}
-
-#tab th, #tab td{
-	border: 1px solid #800000;
-	border-radius: 5px;
-}
-th{
-
-	background:#B20000;
-	color:white;
-}
-
-/*
-input[type="checkbox"].css-checkbox {
-							  position: absolute; 
-							overflow: hidden; 
-							clip: rect(0 0 0 0); 
-							height:1px; 
-							width:1px; 
-							margin:-1px; 
-							padding:0;
-							border:0;
-						}
-
-*/
-
-input[type=checkbox] {
-	
-  -moz-appearance: none;
-  width: 20px;
-  height: 20px;
-}
-
-
-
-
-
-
-
-
-
-
-/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
-/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx fin styleExpenses   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
-/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/

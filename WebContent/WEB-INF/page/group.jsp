@@ -1,5 +1,5 @@
 
- <section >
+ <section id="sectionGroup" class="section">
    <h1>Your Group</h1>
 
   <article>

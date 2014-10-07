@@ -12,9 +12,10 @@ import dao.DAOFactory;
 import dao.GroupDao;
 import dao.PersonDao;
 import beans.Group;
-import forms.InscriptionForm;
+import beans.Person;
+import forms.RegistrationForm;
 
-public class Inscription extends HttpServlet {
+public class Registration extends HttpServlet {
 	
 	public static final String CONF_DAO_FACTORY = "daofactory";
     public static final String ATT_GROUP         = "group";
@@ -38,10 +39,10 @@ public class Inscription extends HttpServlet {
 	
 	public void doPost( HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException {
         /* Préparation de l'objet formulaire */
-        InscriptionForm form = new InscriptionForm( groupDAO, personDAO);
+        RegistrationForm form = new RegistrationForm(personDAO);
 
         /* Traitement de la requête et récupération du bean en résultant */
-        Group group = form.inscrireUtilisateur( request );
+        Person person = form.inscrireUtilisateur( request );
         
         request.setAttribute("errors", form.getErreurs());
 

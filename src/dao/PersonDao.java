@@ -22,7 +22,7 @@ public class PersonDao {
     }
 	
 
-	private static final String SQL_INSERT = "INSERT INTO Persons (name_person, pwd_person, mail_person, id_group, is_admin) VALUES (?, ?, ?, ?, ?)";
+	private static final String SQL_INSERT = "INSERT INTO Persons (name_person, login_person, pwd_person, mail_person, is_new) VALUES (?, ?, ?, ?, ?)";
 
 	/* Implémentation de la méthode définie dans l'interface UtilisateurDao */
 	public long create( Person person ) throws DAOException {
@@ -34,7 +34,7 @@ public class PersonDao {
 	    try {
 	        /* Récupération d'une connexion depuis la Factory */
 	        connexion = (Connection) daoFactory.getConnection();
-	        preparedStatement = initialisationRequetePreparee( connexion, SQL_INSERT, true, person.getName(), person.getPwd(), person.getEmail(), person.getIdGroup(), person.isAdmin());
+	        preparedStatement = initialisationRequetePreparee( connexion, SQL_INSERT, true, person.getName(), person.getLogin(), person.getPwd(), person.getEmail(), person.isNew());
 	        int statut = preparedStatement.executeUpdate();
 	        /* Analyse du statut retourné par la requête d'insertion */
 	        if ( statut == 0 ) {
@@ -55,4 +55,30 @@ public class PersonDao {
 	        fermeturesSilencieuses( valeursAutoGenerees, preparedStatement, connexion );
 	    }
 	}
+	
+	private static final String SQL_SELECT_LOGIN = "SELECT id_person FROM Persons WHERE login_person=?";
+
+	public boolean checkLogin( String login ) throws DAOException {
+	    Connection connexion = null;
+	    PreparedStatement preparedStatement = null;
+	    ResultSet resultSetLogin = null;
+	    
+		try {
+		        /* Récupération d'une connexion depuis la Factory */
+		        connexion = (Connection) daoFactory.getConnection();
+		        preparedStatement = initialisationRequetePreparee( connexion, SQL_SELECT_LOGIN, false, login);
+		        resultSetLogin = preparedStatement.executeQuery();
+		        /* Analyse du statut retourné par la requête d'insertion */
+		        if ( resultSetLogin.next() ) {
+		            return false;
+		        } else {
+		        	return true;	
+		        }
+		    } catch ( SQLException e ) {
+		        throw new DAOException( e );
+		    } finally {
+		        fermeturesSilencieuses( resultSetLogin, preparedStatement, connexion );
+		    }
+	}
+	
 }
