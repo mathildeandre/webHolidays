@@ -73,8 +73,8 @@ footer{
 .section{
 	border-radius: 1vw ;
 	width:75vw;
-	margin : auto; 
-	margin-top : 3.8vw; 
+margin : auto; 
+	   margin-top : 3.8vw; 
 	margin-bottom : 1vw; 
 	background : url("../images/peint-blanc.jpg");
 	background-size:20vw;
@@ -111,7 +111,28 @@ footer{
 }
 */
 
-
+.aroundBlack{
+	text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000; 
+}
+.aroundWhite{
+	text-shadow:
+    -1px -1px 0 white,
+    1px -1px 0 white,
+    -1px 1px 0 white,
+    1px 1px 0 white; 
+}
+.buttonBlueFonce{
+	border-color:#003399;
+	background:#003399;/*rgba(0,0,0,0);*/
+}
+.buttonOrangeFonce{
+	border-color:#803300;
+	background:#803300;/*rgba(0,0,0,0);*/
+}
 .textWhite{
 	color : white;
 }
@@ -236,11 +257,12 @@ color: #000;
 	font-size: 1.4vw;
 	font-weight:bold;
 	padding:0.5vw 1vw;
-	border:4px solid #003399;
+	
+    border-style: solid;
+    border-width: 4px;
 	border-radius: 0.5vw; 
 	
     
-	background:#003399;/*rgba(0,0,0,0);*/
 	color:white;/*rgba(0,0,105,0.9);
 	
 	 /* shadow text moyen foncé!! */
@@ -544,13 +566,6 @@ color: #000;
 	color:white;
 }
 
-#sectionPersonalArea .aroundBlack{
-	text-shadow:
-    -1px -1px 0 #000,
-    1px -1px 0 #000,
-    -1px 1px 0 #000,
-    1px 1px 0 #000; 
-}
 
 #sectionPersonalArea #hint{
 	margin-top:1vw;
@@ -601,12 +616,12 @@ color: #000;
 	padding-left:2vw; 
 	font-size: 1.5vw;
 }
-#sectionPersonalArea #groupName, #nameNewContact, #listContacts, #login, #name, #email, #oldPwd, #newPwd, #confirmNewPwd{
+#groupName, #nameNewContact, #listContacts, #login, #name, #email, #oldPwd, #newPwd, #confirmNewPwd{
 	
 	margin-top:0.7vw;
 	padding : 0.5vw;
 	padding-left : 0.8vw;
-	width:13vw;
+	width:13.5vw;
 	height:40px;
 	font-size: 1.3vw;
 	/*background: url("../images/peint-blanc.jpg");
@@ -616,8 +631,8 @@ color: #000;
 	border:1px solid white;
 	border-radius: 0.5vw;
 }
-#sectionPersonalArea #nameNewContact, #oldPwd, #newPwd, #confirmNewPwd{
-	width:14.5vw;
+#nameNewContact, #oldPwd, #newPwd, #confirmNewPwd{
+	/*width:14.5vw;*/
 }
 
 
@@ -873,13 +888,14 @@ to { line-height:0px;}*/
 
 #sectionGroup{
 	width:60vw;
-	color:#803300;
+	color:black; /*#803300; orange très fonce */
 }
 
 
-
-#sectionGroup h1, #sectionGroup h2{
-   /* text-shadow: 5px 5px 5px #FF6600;  /*decalage-a-droite, decalage-bas, flootage, color*/
+/* le pure 3D orange good */
+/*
+#sectionGroup h1 {
+	* text-shadow: 5px 5px 5px #FF6600;  *decalage-a-droite, decalage-bas, flootage, color*
 
 	color:#FF6600;
 	text-shadow: 0   0.8px 0 #E65C00,
@@ -892,19 +908,46 @@ to { line-height:0px;}*/
              -2.2px 5.3px 8px rgba(51,20,0, 0.2),
              -2.2px 5.3px 20px rgba(51,20,0, 0.4); 
 
+} */
+#sectionGroup h1{
+color:#FF6600;
 }
 
-
 #sectionGroup h2{
- font-weight: bold;
- padding-top:3vw;
- padding-bottom:2vw;
+ 	font-weight: bold;
+ 	padding-top:3vw;
+ 	padding-bottom:2vw;
 }
 #sectionGroup article{
  margin-left: 3vw;
  padding:0vw 2vw 1vw 2vw;
  
 }
+
+
+
+#groupListContacts,#searchPerson, #loginPerson, #pwdPerson, #emailPerson{
+	
+	margin-top:0.7vw;
+	padding : 0.5vw;
+	padding-left : 0.8vw;
+	width:13.5vw;
+	height:27px;
+	font-size: 1.3vw;
+	/*background: url("../images/peint-blanc.jpg");
+	background-size: 200px, 25px;*/
+	
+	background:rgba(251,100,0,0.8);
+	border:1px solid white;
+	border-radius: 0.5vw;
+}
+#groupListContacts{
+	
+	height:38px;
+}
+
+
+
 #sectionGroup div[class="composition"]{
     margin-left: 7vw;
 }

@@ -77,6 +77,10 @@ HTML5 sont employées. -->
 	<%@include file="/WEB-INF/page/hobbies.jsp"%>
 <%
 	}
+    else if (request.getParameter("page").equals("perso")) { %>
+	<jsp:forward page='/registration'/>
+<%
+	}
 %>
 
 <footer id="footerIndex">Copyright fs - Tous droits réservés<br/> Contact : fabiensauce@orange.fr  mathildeandre@orange.fr</footer>
