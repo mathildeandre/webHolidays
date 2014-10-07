@@ -23,36 +23,54 @@ public class GroupDao {
 	
 	
 	private static final String SQL_INSERT = "INSERT INTO Groups (name_group, date_inscription) VALUES (?, NOW())";
+	private static final String SQL_SELECT_NAME = "SELECT id_group FROM Groups WHERE name_group=?";
+
 
 	/* Implémentation de la méthode définie dans l'interface UtilisateurDao */
-	public long create( Group group ) throws DAOException {
-		System.out.println("creation user !!!!!!!!!!!!!!!!!!!");
+	public long createGroup( Group group ) throws DAOException {
+		System.out.println("creation group !!!!!!!!!!!!!!!!!!!");
 	    Connection connexion = null;
-	    PreparedStatement preparedStatement = null;
+	    PreparedStatement preparedStatementInsert = null;
+	    PreparedStatement preparedStatementSelect = null;
 	    ResultSet valeursAutoGenerees = null;
+	    ResultSet resultSetName = null;
 
 	    try {
 	        /* Récupération d'une connexion depuis la Factory */
 	        connexion = (Connection) daoFactory.getConnection();
-	        preparedStatement = initialisationRequetePreparee( connexion, SQL_INSERT, true, group.getName());
-	        int statut = preparedStatement.executeUpdate();
-	        /* Analyse du statut retourné par la requête d'insertion */
-	        if ( statut == 0 ) {
-	            throw new DAOException( "Échec de la création de l'utilisateur, aucune ligne ajoutée dans la table." );
+	        
+	        
+	        preparedStatementSelect = initialisationRequetePreparee( connexion, SQL_SELECT_NAME, false, group.getName());
+	        resultSetName = preparedStatementSelect.executeQuery();
+
+	        if ( resultSetName.next() ) {
+	        	// le nom existe déjà ! 
+	        	System.out.println("The name of the group already exists ! ");
+	        	return 0;
+	        }else{
+	        	// si le nom n'est pas pris, on insert le groupe dans la base
+	        	preparedStatementInsert = initialisationRequetePreparee( connexion, SQL_INSERT, true, group.getName());
+		        int statut = preparedStatementInsert.executeUpdate();
+		        /* Analyse du statut retourné par la requête d'insertion */
+		        if ( statut == 0 ) {
+		            throw new DAOException( "Échec de la création de l'utilisateur, aucune ligne ajoutée dans la table." );
+		        }
+		        /* Récupération de l'id auto-généré par la requête d'insertion */
+		        valeursAutoGenerees = preparedStatementInsert.getGeneratedKeys();
+		        if ( valeursAutoGenerees.next() ) {
+		        	return valeursAutoGenerees.getLong( 1 );
+		        } else {
+		            throw new DAOException( "Échec de la création de l'utilisateur en base, aucun ID auto-généré retourné." );
+		        }
 	        }
-	        /* Récupération de l'id auto-généré par la requête d'insertion */
-	        valeursAutoGenerees = preparedStatement.getGeneratedKeys();
-	        if ( valeursAutoGenerees.next() ) {
-	        	return valeursAutoGenerees.getLong( 1 );
-	            /* Puis initialisation de la propriété id du bean Utilisateur avec sa valeur */
-	            //group.setId( valeursAutoGenerees.getLong( 1 ) );
-	        } else {
-	            throw new DAOException( "Échec de la création de l'utilisateur en base, aucun ID auto-généré retourné." );
-	        }
+	        
+	        
+	        
 	    } catch ( SQLException e ) {
 	        throw new DAOException( e );
 	    } finally {
-	        fermeturesSilencieuses( valeursAutoGenerees, preparedStatement, connexion );
+	        fermeturesSilencieuses( valeursAutoGenerees, preparedStatementInsert, connexion );
+	        fermeturesSilencieuses( resultSetName, preparedStatementSelect, connexion );
 	    }
 	}
 	

@@ -29,8 +29,6 @@ HTML5 sont employees. -->
 		<input id="coPseudo" class="textGrey inline" name="coLogin" type="text" value="Login or Email" onfocus="inputTextFocus('coPseudo', 'White')" onblur="inputTextBlur('coPseudo','Pseudo or Email')" >
 		<input id="coPwd" class="textGrey inline" name="coPwd" type="text" value="Password" onfocus="inputTextFocusPwd('coPwd', 'White')" onblur="inputTextBlurPwd('coPwd','Password')" >
 		<input id="confirmLogIn" type="submit" value="Log in" class="inline  newButton3D" onmouseover="changeCursor('confirmLogIn')"  />
-		
-       
 	</div>
 	</form>
 
