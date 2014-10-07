@@ -2,7 +2,7 @@
  <section id="sectionGroup" class="section">
    <h1 class="h1">Your Group</h1>
 
-  <article>
+  <article >
    <h2>Composition</h2>
 <div class="composition">
 
