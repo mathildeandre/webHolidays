@@ -1,6 +1,6 @@
 
  <section id="sectionGroup" class="section">
-   <h1>Your Group</h1>
+   <h1 class="h1">Your Group</h1>
 
   <article>
    <h2>Composition</h2>

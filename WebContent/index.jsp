@@ -18,7 +18,7 @@
     <link rel="shortcut icon" href="images/tree3.png" />
 
     <!-- il est important de mettre general au dessus du style propre a la classe comme ca general est moins prioritaire-->
-    <link rel="stylesheet" type="text/css" href="CSS/all3.css" />
+    <link rel="stylesheet" type="text/css" href="CSS/all4.css" />
     <!-- <link rel="stylesheet" type="text/css" href="CSS/active.css"  />-->
     
 </head>
