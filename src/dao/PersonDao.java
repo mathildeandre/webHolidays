@@ -111,6 +111,7 @@ public class PersonDao {
 		            	boolean isNew = resultSetPerson.getBoolean("is_new");
 		            	person.setName(nameP);
 		            	person.setLogin(login);
+		            	person.setEmail(emailP);
 		            	person.setPwd(pwd);
 		            	person.setNew(isNew);
 		            	// le pwd correspond bien à celui du login

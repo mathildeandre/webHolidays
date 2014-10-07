@@ -115,24 +115,25 @@ HTML5 sont employees. -->
 		 
 		 <form method="post" action="modifyLogin">
 		 <div class="aroundBlack">Login : </div>
-		  <div><input id="login" class="textGrey inline"  name="login" type="text" value="mathilde" 
-         onfocus="inputTextFocus('login', 'White')" onblur="inputTextBlur('login','mathilde')" required >
+		 
+		  <div><input id="login" class="textGrey inline"  name="login" type="text" value="${sessionScope.person.login}"
+         onfocus="inputTextFocus('login', 'White')" onblur="inputTextBlur('login','${sessionScope.person.login}')" required >
          <input id="confirmModifyLogin" type="submit" value="Modify Login" class="newButton3D" onmouseover="changeCursor('confirmModifyLogin')" />
 		 </div>
 		 </form>
 		 
 		 <form method="post" action="modifyName">
 		 <div class="aroundBlack">Name (visible into groups): </div>
-		  <div><input id="name" class="textGrey inline"  name="name" type="text" value="mathilde" 
-         onfocus="inputTextFocus('name', 'White')" onblur="inputTextBlur('name','mathilde')" required >
+		  <div><input id="name" class="textGrey inline"  name="name" type="text" value="${sessionScope.person.name}" 
+         onfocus="inputTextFocus('name', 'White')" onblur="inputTextBlur('name','${sessionScope.person.name}')" required >
          <input id="confirmModifyName" type="submit" value="Modify Name" class="newButton3D" onmouseover="changeCursor('confirmModifyName')" />
 		 </div>
 		 </form>
 		 
 		 <form method="post" action="modifyEmail">
 		 <div class="aroundBlack">Email adress :</div>
-		  <div><input id="email" class="textGrey inline"  name="email" type="text" value=" - " 
-         onfocus="inputTextFocus('email', 'White')" onblur="inputTextBlur('email',' - ')" required >
+		  <div><input id="email" class="textGrey inline"  name="email" type="text" value="${sessionScope.person.email}" 
+         onfocus="inputTextFocus('email', 'White')" onblur="inputTextBlur('email','${sessionScope.person.email}')" required >
          <input id="confirmModifyEmail" type="submit" value="Modify Email" class="newButton3D" onmouseover="changeCursor('confirmModifyEmail')" />
 		 </div>
 		 </form>

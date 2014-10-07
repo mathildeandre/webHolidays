@@ -417,7 +417,12 @@ color: #000;
   right: 2vw;
 	/* comprend les deux input text + button connexion */
 }
-
+#headerWelcome #divLogInError{
+	
+  position: absolute;
+  right: 17vw;
+  top:3.5vw;
+}
 #headerWelcome #coPseudo, #coPwd{
 	margin:0;
 	margin-left:0.5vw;

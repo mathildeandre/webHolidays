@@ -7,6 +7,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import dao.DAOFactory;
 import dao.GroupDao;
@@ -44,14 +45,17 @@ public class Login extends HttpServlet {
         /* Traitement de la requête et récupération du bean en résultant */
         Person person = form.connectUser( request );
         
+        HttpSession session = request.getSession(); 
         //request.setAttribute("errors", form.getErrors());
-        request.setAttribute("person", person);
+        session.setAttribute("person", person);
 
         if(person != null){
             this.getServletContext().getRequestDispatcher( "/personalArea.jsp" ).forward( request, response );
         }
         else{
         	//TODO gerer les erreurs
+
+            request.setAttribute("errorConnexion", "error");
             this.getServletContext().getRequestDispatcher( "/welcome.jsp" ).forward( request, response );
         }
 
