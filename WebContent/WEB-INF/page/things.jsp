@@ -1,7 +1,7 @@
 
 
  <section id="sectionThings">
-   <h1>List of stuffs</h1>
+   <h1 class="h1">Things</h1>
 
   <article>
    <h2>My list</h2>

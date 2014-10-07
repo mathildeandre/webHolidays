@@ -6,7 +6,7 @@
        </div>
        
         <article>
-	 <h1>Practical guide </h1>
+	 <h1 class="h1">Practical guide </h1>
 <!--<h2 id="h2Groupe" class="line" onmouseover="changeCursor('h2Groupe')" onclick="location.href='../groupe/groupe.html'">
 		<img class="inline" src="../images/groupe.png" width="10%">
 		<div class=inline" > Groupe </div>

@@ -7,7 +7,7 @@
     <link rel="shortcut icon" href="images/tree3.png" />
     
     
-	<link rel="stylesheet" type="text/css" href="CSS/all2.css" />
+	<link rel="stylesheet" type="text/css" href="CSS/all4.css" />
    <!--<link rel="stylesheet" type="text/css" href="CSS/police.css" />
     <link rel="stylesheet" type="text/css" href="CSS/3D1.css" />
     <link rel="stylesheet" type="text/css" href="CSS/stylePersonalArea.css" />-->
@@ -37,14 +37,13 @@ HTML5 sont employees. -->
 
 
 <section id="sectionPersonalArea" class="line" >
-	<div id="hint">
-	In order to create your first group : fill up "Group name", 
-	create the group and the click on it into "My Group"
-	</div>
+		<!-- <div id="hint" class="aroundBlack">
+		In order to create your first group : fill up "Group name", 
+		create the group and the click on it into "My Group"
+		</div> -->
 	<article id="myGroups" class="inline"  >
-	  	<fieldset>
-	    <legend id="titleMyGroups" class="text3Dfonce" >
-		<h2>My Group</h2></legend>
+	  	<fieldset> 
+	    <legend><h2 class="text3Dfonce" >My Group</h2></legend>
 	    <div id="fieldMyGroups" class="aroundBlack">
 			 - group 1 <br>
 			 - group 2 <br>
@@ -63,7 +62,7 @@ HTML5 sont employees. -->
 	<article id="myContacts" class="inline">
 	
 		<fieldset >
-	    <legend id="titleMyContacts" class="text3Dfonce" ><h2>My Contacts</h2></legend>
+	    <legend><h2 class="text3Dfonce" >My Contacts</h2></legend>
 	    <div id="fieldMyContact" class="aroundBlack">
 			 - emiel <br>
 			 - matthijs <br>
@@ -112,13 +111,21 @@ HTML5 sont employees. -->
 
 
 	<article id="myProfil" class="inline"  >
-		 <h2 id="titleMyProfil" class="text3Dfonce">My Profil</h2>
+		 <h2 class="text3Dfonce">My Profil</h2>
 		 
-		 <form method="post" action="modifyPseudo">
-		 <div class="aroundBlack">Pseudo : </div>
-		  <div><input id="pseudo" class="textGrey inline"  name="pseudo" type="text" value="mathilde" 
-         onfocus="inputTextFocus('pseudo', 'White')" onblur="inputTextBlur('pseudo','mathilde')" required >
-         <input id="confirmModifyPseudo" type="submit" value="Modify Pseudo" class="newButton3D" onmouseover="changeCursor('confirmModifyPseudo')" />
+		 <form method="post" action="modifyLogin">
+		 <div class="aroundBlack">Login : </div>
+		  <div><input id="login" class="textGrey inline"  name="login" type="text" value="mathilde" 
+         onfocus="inputTextFocus('login', 'White')" onblur="inputTextBlur('login','mathilde')" required >
+         <input id="confirmModifyLogin" type="submit" value="Modify Login" class="newButton3D" onmouseover="changeCursor('confirmModifyLogin')" />
+		 </div>
+		 </form>
+		 
+		 <form method="post" action="modifyName">
+		 <div class="aroundBlack">Name (visible into groups): </div>
+		  <div><input id="name" class="textGrey inline"  name="name" type="text" value="mathilde" 
+         onfocus="inputTextFocus('name', 'White')" onblur="inputTextBlur('name','mathilde')" required >
+         <input id="confirmModifyName" type="submit" value="Modify Name" class="newButton3D" onmouseover="changeCursor('confirmModifyName')" />
 		 </div>
 		 </form>
 		 

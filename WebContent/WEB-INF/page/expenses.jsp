@@ -1,6 +1,6 @@
 
 <section id="sectionExpenses" class="section">
-   <h1>Calcul of your expenses</h1>
+   <h1 class="h1">Calcul of your expenses</h1>
  <article>
    <h2>Who's paid what for whom?</h2>
 <div id="divTab">

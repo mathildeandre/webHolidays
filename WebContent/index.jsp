@@ -18,7 +18,7 @@
     <link rel="shortcut icon" href="images/tree3.png" />
 
     <!-- il est important de mettre general au dessus du style propre a la classe comme ca general est moins prioritaire-->
-    <link rel="stylesheet" type="text/css" href="CSS/all.css" />
+    <link rel="stylesheet" type="text/css" href="CSS/all4.css" />
     <!-- <link rel="stylesheet" type="text/css" href="CSS/active.css"  />-->
     
 </head>
@@ -27,7 +27,7 @@
 
 <!-- Mise en page classique avec le header, le corps, et le footer ! Les balises structurantes de
 HTML5 sont employées. -->
-<body id="bodyIndex" >
+<body id="bodyIndex">
 
 <header id="headerIndex" class="line">
 	<div id="titleIndex" class="inline text3Dfonce">
@@ -36,9 +36,10 @@ HTML5 sont employées. -->
 	
 	<div id="connexion" class="line inline right"> 
 		
-		<div id="nameGroup" class="inline text3Dfonce">${requestScope.nameGroup}</div>
-		<div class="inline newButton3D">Personal Area</div>
-		<div class="inline newButton3D">Deconnexion</div>
+		<div id="nameGroup" class="inline text3Dfonce">NameGroup${requestScope.nameGroup}</div>
+		<input id="persoArea" type="submit" value="Personal Area" class="inline newButton3Dcreux" onmouseover="changeCursor('persoArea')"  />
+		<input id="deconnexion" type="submit" value="Deconnexion" class="inline newButton3Dcreux" onmouseover="changeCursor('deconnexion')"  />
+       
 	</div>
 
 </header>
@@ -78,7 +79,8 @@ HTML5 sont employées. -->
 	}
 %>
 
-<%@include file="/WEB-INF/include/footer.jsp" %>
+<footer id="footerIndex">Copyright fs - Tous droits réservés<br/> Contact : fabiensauce@orange.fr  mathildeandre@orange.fr</footer>
+
     
 <script src="JS/actionJS/navChanging.js" type="text/javascript"></script>
 <script src="JS/actionJS/actionInputText.js" type="text/javascript"></script>
