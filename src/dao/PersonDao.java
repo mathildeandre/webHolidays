@@ -6,6 +6,8 @@ import static dao.DAOUtilitaire.initialisationRequetePreparee;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import org.jasypt.util.password.ConfigurablePasswordEncryptor;
+
 import beans.Group;
 import beans.Person;
 
@@ -16,6 +18,7 @@ public class PersonDao {
 	
 
     private DAOFactory daoFactory;
+    private static final String ALGO_CHIFFREMENT = "SHA-256";
     
 	public PersonDao( DAOFactory daoFactory ) {
         this.daoFactory = daoFactory;
@@ -78,6 +81,56 @@ public class PersonDao {
 		        throw new DAOException( e );
 		    } finally {
 		        fermeturesSilencieuses( resultSetLogin, preparedStatement, connexion );
+		    }
+	}
+	
+	private static final String SQL_SELECT_PERSON = "SELECT * FROM Persons WHERE login_person=?";
+
+	public boolean checkUser(Person person, String login, String pwd) throws DAOException {
+	    Connection connexion = null;
+	    PreparedStatement preparedStatement = null;
+	    ResultSet resultSetPerson = null;
+	    
+		try {
+		        /* Récupération d'une connexion depuis la Factory */
+		        connexion = (Connection) daoFactory.getConnection();
+		        preparedStatement = initialisationRequetePreparee( connexion, SQL_SELECT_PERSON, false, login);
+		        resultSetPerson = preparedStatement.executeQuery();
+
+		        if ( resultSetPerson.next() ) {
+		        	String pwdPerson = resultSetPerson.getString("pwd_person");
+		        	
+		        	ConfigurablePasswordEncryptor passwordEncryptor = new ConfigurablePasswordEncryptor();
+		            passwordEncryptor.setAlgorithm( ALGO_CHIFFREMENT );
+		            passwordEncryptor.setPlainDigest( false );
+		            Boolean boolPwd = passwordEncryptor.checkPassword(pwd, pwdPerson);
+		            if(boolPwd){
+		            	// Creation de la person
+		            	String nameP = resultSetPerson.getString("name_person");
+		            	String emailP = resultSetPerson.getString("mail_person");
+		            	boolean isNew = resultSetPerson.getBoolean("is_new");
+		            	person.setName(nameP);
+		            	person.setLogin(login);
+		            	person.setEmail(emailP);
+		            	person.setPwd(pwd);
+		            	person.setNew(isNew);
+		            	// le pwd correspond bien à celui du login
+		                System.out.println("Personne crée !");
+		            	return true;
+		            }else{
+		            	// mauvais pwd
+		                System.out.println("Mauvais pwd !");
+		            	return false;
+		            }
+		        }else{
+		        	// login non existant
+	                System.out.println("Login non existant!");
+		        	return false;
+		        }
+		    } catch ( SQLException e ) {
+		        throw new DAOException( e );
+		    } finally {
+		        fermeturesSilencieuses( resultSetPerson, preparedStatement, connexion );
 		    }
 	}
 	

@@ -11,7 +11,6 @@ import org.jasypt.util.password.ConfigurablePasswordEncryptor;
 import beans.Group;
 import beans.Person;
 import dao.DAOException;
-import dao.GroupDao;
 import dao.PersonDao;
 
 public final class RegistrationForm {
@@ -131,6 +130,7 @@ public final class RegistrationForm {
      */
     private void traiterEmail( String email, Person person ) {
         try {
+        	System.out.println("Email: "+ email);
             validationEmail( email );
         } catch ( FormValidationException e ) {
         	System.out.println("mauvaise adresse mail");
