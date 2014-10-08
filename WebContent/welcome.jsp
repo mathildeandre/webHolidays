@@ -58,12 +58,15 @@ HTML5 sont employees. -->
 		 </div>
 		<div><input id="pwd" class="textGrey inline"  name="pwd" type="text" value="Password" 
 		onfocus="inputTextFocusPwd('pwd', 'White')" onblur="inputTextBlurPwd('pwd','Password')" required>
+		<span class="textRed">${requestScope.errors['pwd']}</span>
 		 </div>
 		<div><input id="confirmPwd" class="textGrey inline"  name="confirmPwd" type="text" value="Confirm your password" 
 		onfocus="inputTextFocusPwd('confirmPwd', 'White')" onblur="inputTextBlurPwd('confirmPwd','Confirm your password')" required>
+         <span class="textRed">${requestScope.errors['confirmPwd']}</span>
 		 </div>
-		<input id="confirmInscription" type="submit" value="Confirm" class="newButton3D buttonBlueFonce" onmouseover="changeCursor('confirmInscription')" 
-		onclick="emptyAll('login','Login', 'email','Email (optional)', 'pwd','Password', 'confirmPwd','Confirm your password')" />
+		<div><input id="confirmInscription" type="submit" value="Confirm" class="newButton3D buttonBlueFonce" onmouseover="changeCursor('confirmInscription')" 
+		onclick="emptyAll('login','Login', 'email','Email (optional)', 'pwd','Password', 'confirmPwd','Confirm your password')" >
+         </div>
        </form>
 	</article>
 

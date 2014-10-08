@@ -17,7 +17,7 @@ import beans.Person;
 import forms.ConnexionForm;
 import forms.RegistrationForm;
 
-public class Login extends HttpServlet {
+public class Logout extends HttpServlet {
 	
 	public static final String CONF_DAO_FACTORY = "daofactory";
     public static final String ATT_GROUP         = "group";
@@ -39,26 +39,13 @@ public class Login extends HttpServlet {
 	}
 	
 	public void doPost( HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException {
-        /* Préparation de l'objet formulaire */
-        ConnexionForm form = new ConnexionForm(personDAO);
-
-        /* Traitement de la requête et récupération du bean en résultant */
-        Person person = form.connectUser( request );
+        
         
         HttpSession session = request.getSession(); 
         //request.setAttribute("errors", form.getErrors());
-        session.setAttribute("person", person);
-      
+        session.invalidate();
 
-        if(person != null){
-            this.getServletContext().getRequestDispatcher( "/persoArea" ).forward( request, response );
-        }
-        else{
-        	//TODO gerer les erreurs
-
-            request.setAttribute("errorConnexion", "error");
-            this.getServletContext().getRequestDispatcher( "/welcome.jsp" ).forward( request, response );
-        }
+        this.getServletContext().getRequestDispatcher( "/welcome.jsp" ).forward( request, response );
 
     }
 	

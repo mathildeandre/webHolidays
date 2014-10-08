@@ -48,7 +48,7 @@ public class CreationGroup extends HttpServlet {
     	request.setAttribute("group", group);
 
         if(group != null){
-            this.getServletContext().getRequestDispatcher( "/personalArea.jsp" ).forward( request, response );
+            this.getServletContext().getRequestDispatcher( "/persoArea" ).forward( request, response );
         }
         else{
         	//TODO gerer les erreurs

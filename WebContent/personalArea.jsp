@@ -27,7 +27,7 @@ HTML5 sont employees. -->
 	</div>
 	
 	<div id="divLogOut" class="line inline"> 
-	<form method="post" action="logOut">
+	<form method="post" action="logout">
 		<!--ne s'aligne pas correctement: si on met deux ligne input.. avec le inline ca fonctionne^^-->
 		<input id="buttonLogOut" type="submit" value="Log out" class="inline newButton3D buttonBlueFonce" onmouseover="changeCursor('buttonLogOut')"  />
 	</form>
@@ -45,9 +45,11 @@ HTML5 sont employees. -->
 	  	<fieldset> 
 	    <legend><h2 class="text3Dfonce" >My Group</h2></legend>
 	    <div id="fieldMyGroups" class="aroundBlack">
-			 - group 1 <br>
-			 - group 2 <br>
-			 - group 3 <br>
+	    
+	    <c:forEach var="group" items="${requestScope['listGroups']}">
+	    		${group.name}<br> 
+	    </c:forEach>
+	    
 		</div>
 		</fieldset>
 	 	<br>

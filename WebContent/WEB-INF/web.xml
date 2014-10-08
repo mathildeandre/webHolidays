@@ -42,12 +42,30 @@
 	</servlet-mapping>
 	
 	<servlet>
+		<servlet-name>Logout</servlet-name>
+		<servlet-class>servlets.Logout</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Logout</servlet-name>
+		<url-pattern>/logout</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
 		<servlet-name>CreationGroup</servlet-name>
 		<servlet-class>servlets.CreationGroup</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>CreationGroup</servlet-name>
 		<url-pattern>/creationGroup</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>PersoArea</servlet-name>
+		<servlet-class>servlets.PersoArea</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>PersoArea</servlet-name>
+		<url-pattern>/persoArea</url-pattern>
 	</servlet-mapping>
 	
 	<listener>

@@ -74,6 +74,37 @@ public class GroupDao {
 	    }
 	}
 	
+	private static final String SQL_INSERT_BELONG = "INSERT INTO BelongTo (id_person, id_group) VALUES (?,?)";
+
+	public boolean registerGroup(long idPers, long idGroup) throws DAOException {
+		Connection connexion = null;
+	    PreparedStatement preparedStatementGroup = null;
+	    ResultSet resultSetGroup = null;
+
+	    try {
+	        /* Récupération d'une connexion depuis la Factory */
+	        connexion = (Connection) daoFactory.getConnection();
+	        
+		   // PreparedStatement preparedStatement = (PreparedStatement) connexion.prepareStatement( SQL_SELECT_GROUP, Statement.NO_GENERATED_KEYS );
+		   // preparedStatement.setString(1, nameGroup);
+	     
+	        preparedStatementGroup = initialisationRequetePreparee( connexion, SQL_INSERT_BELONG, false, idPers, idGroup );
+	        int statut = preparedStatementGroup.executeUpdate();
+
+	        if ( statut == 0) {
+	            throw new DAOException( "Échec de l'association groupe person, aucune ligne ajoutée dans la table." ); 
+	        }
+	        else{
+	        	return true;
+	        }
+	    } catch ( SQLException e ) {
+	        throw new DAOException( e );
+	    } finally {
+	        fermeturesSilencieuses( resultSetGroup, preparedStatementGroup, connexion );
+	    }
+	}
+	
+	
 	private static final String SQL_SELECT_GROUP = "SELECT idGroup, nameGroup, pwd_admin, pwd_members FROM Groups WHERE nameGroup=?";
 	
 	public String findGroup(String nameGroup, String pwdGroup) throws DAOException {
