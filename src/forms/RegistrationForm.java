@@ -165,11 +165,11 @@ public final class RegistrationForm {
         } catch ( FormValidationException e ) {
         	System.out.println("mauvais mdp");
 
-            setErreur( "pwdAdmin", e.getMessage() );
+            setErreur( "pwd", e.getMessage() );
         }
         catch (SecondException e){
 
-            setErreur( "confirmPwdAdmin", e.getMessage() );
+            setErreur( "confirmPwd", e.getMessage() );
         }
 
         /*
