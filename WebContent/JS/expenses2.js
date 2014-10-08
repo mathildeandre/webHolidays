@@ -10,6 +10,9 @@ var tabStr = url.substring(url.lastIndexOf("=")+1);
 //alert("start:"+tabStr+":finshed");
 var tabPerson = tabStr.split(",");
 
+	//on reecrit le tab de maniere temp
+	tabPerson=["emiel","matthijs","fabian"]; 
+	
 /* start */
 createTHead();
 addRow()

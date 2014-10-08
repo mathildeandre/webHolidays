@@ -16,7 +16,6 @@
 <c:if test="${param['page'] == 'doodle'}" >
 	<c:set var = "extraCSS" value="
 		<link rel='stylesheet' type='text/css' href='CSS/styleDoodle.css'/> <!--mise en forme-->
-		<link rel='stylesheet' type='text/css' href='http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.12/themes/smoothness/jquery-ui.css' />
 		<script src='http://code.jquery.com/jquery-1.9.1.js'></script>
   		<script src='http://code.jquery.com/ui/1.10.2/jquery-ui.js'></script>
   	"/>
