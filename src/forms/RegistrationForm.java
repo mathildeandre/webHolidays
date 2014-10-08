@@ -68,8 +68,9 @@ public final class RegistrationForm {
         } catch ( DAOException e ) {
             resultat = "Échec de l'inscription : une erreur imprévue est survenue, merci de réessayer dans quelques instants.";
             e.printStackTrace();
+            return null;
         }
-        return null;
+        return person;
     }
 
     /*

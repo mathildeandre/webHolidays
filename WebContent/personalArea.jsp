@@ -7,7 +7,7 @@
     <link rel="shortcut icon" href="images/tree3.png" />
     
     
-	<link rel="stylesheet" type="text/css" href="CSS/all5.css" />
+	<link rel="stylesheet" type="text/css" href="CSS/all6.css" />
    <!--<link rel="stylesheet" type="text/css" href="CSS/police.css" />
     <link rel="stylesheet" type="text/css" href="CSS/3D1.css" />
     <link rel="stylesheet" type="text/css" href="CSS/stylePersonalArea.css" />-->
