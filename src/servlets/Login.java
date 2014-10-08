@@ -50,7 +50,7 @@ public class Login extends HttpServlet {
         session.setAttribute("person", person);
 
         if(person != null){
-            this.getServletContext().getRequestDispatcher( "/personalArea.jsp" ).forward( request, response );
+            this.getServletContext().getRequestDispatcher( "/registration" ).forward( request, response );
         }
         else{
         	//TODO gerer les erreurs

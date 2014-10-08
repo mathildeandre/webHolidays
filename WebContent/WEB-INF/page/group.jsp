@@ -1,15 +1,19 @@
 
- <section id="sectionGroup" class="section">
+ <section id="sectionGroup" class="section line">
    <h1 class="h1 text3Dfonce">Your Group</h1>
 
 
-	<article id="myComposition" >
+	<article id="articleComposition" class="inline">
 	  	<fieldset> 
 	    <legend><h2 class="text3Dfonce" >Composition</h2></legend>
 	    <div id="fieldMyComposition" class="aroundWhite">
 			 - kate <br>
 			 - bibiche <br>
 			 - toto <br>
+			 - kate <br>
+			 - bibiche <br>
+			 - toto <br>
+			 - kate <br>
 		</div>
 		</fieldset>
 	 	<br>
@@ -17,7 +21,7 @@
 	 	
 	</article>
 	
-	<article>
+	<article id="articleAddMember" class="inline">
 		<h2 class="text3Dfonce" >Add person from your contact list</h2>
        	<form method="post" action="addFromList">
 	       <select id="groupListContacts" class="textGrey">
@@ -29,10 +33,6 @@
 		
 		<input id="addMember" type="submit" value="Add member" class="newButton3D buttonOrangeFonce" onmouseover="changeCursor('addMember')"/>
        </form>
-       
-	</article>
-	
-	<article>
        
 		<h2 class="text3Dfonce" >Add another person</h2>
 		
