@@ -133,6 +133,10 @@ footer{
 	border-color:#803300;
 	background:#803300;/*rgba(0,0,0,0);*/
 }
+.buttonRedFonce{
+	border-color:#800000;
+	background:#800000;/*rgba(0,0,0,0);*/
+}
 .textWhite{
 	color : white;
 }
@@ -488,6 +492,338 @@ color: #000;
 
 
 
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx styleExpenses   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+
+/*
+#bodyCalculation{
+	background-image: url("../images/sunflower.jpg");
+	/*background-position: center;
+
+}
+*/
+
+
+#sectionExpenses{  
+	color:#800000 /*black; /*#803300; orange très fonce */
+	/*height:900px; /*car les article sont absolute*
+	margin-left:10vw; */
+  	width:100%;
+}
+
+/* le pure 3D red good */
+/* #sectionExpenses h1, #sectionExpenses h2{
+*text-shadow: 5px 5px 5px #FF0000;  *decalage-a-droite, decalage-bas, flootage, color*
+	color:#FF1919;#FF8080;
+	text-shadow: 0   0.8px 0 #E60000,
+              0   1.5px 0 #CC0000,
+             -1px 2.3px 0 #B20000,
+             -1px 3px 0 #990000,
+             -2px 3.8px 0 #800000,
+             -2.1px 4.5px 0 #660000,
+             -2.2px 5.3px 2px rgba(50,0,0, 0.4),
+             -2.2px 5.3px 8px rgba(50,0,0, 0.2),
+             -2.2px 5.3px 20px rgba(50,0,0, 0.4); 
+} */
+
+#sectionExpenses h1{
+color:#FF1919;
+}
+#sectionExpenses  h2{
+ font-weight: bold;
+ padding-top:1vw;
+}
+
+
+
+
+#sectionExpenses  article{
+ margin-left: 3%;
+}
+
+
+#sectionExpenses #divTab{
+margin:3%
+
+}
+
+#sectionExpenses .button{
+font-size: 1.2em;
+/*width: 200px; */
+height: 25px; 
+line-height:25px;/*permet le centrage vertical*/ 
+padding:5px 20px 5px 20px;
+color: #FF0000; 
+}
+
+#sectionExpenses .button:hover{ 
+color: #FF4D4D; 
+}
+#sectionExpenses .button:active{ 
+color: #000; 
+}
+
+#sectionExpenses #name{ /*input text*/
+font-family: Arial,sans-serif; 
+font-size: 1.2em;
+width: 200px ; 
+height: 25px; 
+/*border-radius: 8px;*/
+background: url("../images/peint-blanc.jpg");
+background-size: 200px, 25px;
+}
+
+#sectionExpenses .right{ 
+  position: absolute;
+  right: 12vw;
+}
+#sectionExpenses #buttonsBottom{
+	margin-top:6%;
+}
+#sectionExpenses #tab caption{
+
+	font-size: 1.5em;
+	border: 4px solid #800000;
+	border-radius: 10px;
+	border-bottom : 1px; 
+color: white;
+    text-shadow:
+    -2px -2px 0 #800000,
+    2px -2px 0 #800000,
+    -2px 2px 0 #800000,
+    2px 2px 0 #800000; 
+}
+
+#sectionExpenses #tab{
+	border: 4px solid #800000;
+	
+	border-radius: 10px;
+	/*background:#FF0000;*/
+}
+
+#sectionExpenses #tab th, #sectionExpenses #tab td{
+	border: 1px solid #800000;
+	border-radius: 5px;
+}
+#sectionExpenses th{
+
+	background:#B20000;
+	color:white;
+}
+
+/*
+input[type="checkbox"].css-checkbox {
+							  position: absolute; 
+							overflow: hidden; 
+							clip: rect(0 0 0 0); 
+							height:1px; 
+							width:1px; 
+							margin:-1px; 
+							padding:0;
+							border:0;
+						}
+
+*/
+
+#sectionExpenses input[type=checkbox] {
+	
+  -moz-appearance: none;
+  width: 20px;
+  height: 20px;
+}
+
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx fin styleExpenses   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+
+
+
+
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx styleHomepage   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+
+
+
+
+/*************************************  TEST **************************************/
+#myBox{
+	width:200px;
+	height:100px;
+	line-height:100px;
+	text-align:center;
+	font-size: 40px;
+	font-weight: bold;
+	/*border-top:5px solid black ;
+	border-left:5px solid black;
+	border-right:10px solid blue;*/
+	border:10px solid white;
+	border-radius:5px;
+	background:rgba(255,0,0,0);
+	
+	box-shadow : 0 1px 0 #eee,
+             0 2px 0 #e5e5e5,
+             -1px 3px 0 #C8C8C8,
+             -1px 4px 0 #C1C1C1,
+             -2px 5px 0 #B9B9B9,
+             -2px 6px 0 #B2B2B2,
+             -2px 7px 2px rgba(0,0,0, 0.6),
+             -2px 7px 8px rgba(0,0,0, 0.2),
+             -2px 7px 45px rgba(0,0,0, 0.4),
+             0 1px 0 #eee inset,
+             0 2px 0 #e5e5e5 inset,
+             -1px 3px 0 #C8C8C8 inset,
+             -1px 4px 0 #C1C1C1 inset,
+             -2px 5px 0 #B9B9B9 inset,
+             -2px 6px 0 #B2B2B2 inset,
+             -2px 7px 2px rgba(0,0,0, 0.6) inset,
+             -2px 7px 8px rgba(0,0,0, 0.2) inset,
+             -2px 7px 45px rgba(0,0,0, 0.4) inset;
+/*-10px 10px 5px black inset,
+-10px 10px 5px black;*/
+
+	color:white;
+	text-shadow: 0 1px 0 #eee,
+             0 2px 0 #e5e5e5,
+             -1px 3px 0 #C8C8C8,
+             -1px 4px 0 #C1C1C1,
+             -2px 5px 0 #B9B9B9,
+             -2px 6px 0 #B2B2B2,
+             -2px 7px 2px rgba(0,0,0, 0.6),
+             -2px 7px 8px rgba(0,0,0, 0.2),
+             -2px 7px 45px rgba(0,0,0, 0.4);
+           
+transform: rotate(-10deg) scale(1.3,1.3);  
+}
+/************************************* fin TEST **************************************/
+
+#sectionHomepage{
+	background-image:url("../images/parasol.jpg"), url("../images/peint-blanc.jpg");
+	background-repeat:no-repeat, repeat;
+	background-size:20vw;
+	background-position: top right;
+	color:#1A1A66;
+	
+	
+	/*background:white;
+	background-image:url("../images/parasol.jpg");
+	background-repeat:no-repeat;
+	background-size:20vw;
+	background-position: top right;
+	color:#1A1A66;
+	*/
+}
+
+
+
+#sectionHomepage h1, #sectionHomepage h2{
+	color:#4747D1;
+	text-shadow: 0   0.8px 0 #2E2EB8,
+              0   1.5px 0 #2929A3,
+             -1px 2.3px 0 #24248F,
+             -1px 3px 0 #1F1F7A,
+             -2px 3.8px 0 #1A1A66,
+             -2.1px 4.5px 0 #141452,
+             -2.2px 5.3px 2px rgba(10,10,41, 0.4),
+             -2.2px 5.3px 8px rgba(10,10,41, 0.2),
+             -2.2px 5.3px 20px rgba(10,10,41, 0.4); 
+}
+#sectionHomepage article h2{
+	width: 50vw;
+	margin-left: 1vw;
+	padding: 1vw;
+	padding-left:8vw;
+	height:60px;
+	line-height:120px;
+	/*border:2px solid black;
+	border-radius: 5%; */
+}
+#h2Groupe{
+	background: url("../images/groupe.png");
+	background-size:7vw;
+	background-repeat: no-repeat;
+	/*
+
+<img src="../images/doodle.jpg" width="10%">
+<img src="../images/chefcuisine.jpg" width="10%">
+<img src="../images/tirelire.jpg" width="6%">
+<img src="../images/loisirs.jpg" width="11%">
+<img src="../images/loisirs.jpg" width="11%">
+*/
+}
+#h2Doodle{
+	background: url("../images/doodle.jpg");
+	background-size:6vw;
+	background-repeat: no-repeat;
+}
+#h2Repas{
+	background: url("../images/chefcuisine.jpg");
+	background-size:6vw;
+	background-repeat: no-repeat;
+}
+#h2Calc{
+	background: url("../images/tirelire.jpg");
+	background-size:5vw;
+	background-repeat: no-repeat;
+}
+#h2Affaire{
+	background: url("../images/doodle.jpg");
+	background-size:6vw;
+	background-repeat: no-repeat;
+}
+#h2Loisirs{
+	background: url("../images/loisirs.jpg");
+	background-size:7vw;
+	background-repeat: no-repeat;
+}
+
+/****** ANIMATION JUMPING **********/
+#sectionHomepage article h2:hover{
+-webkit-animation: jumping 1s; /* chrome safari*/
+animation: jumping 1s; /* autre*/
+}
+
+@-webkit-keyframes jumping {
+/*from {line-height:120px;}
+to { line-height:0px;}*/
+ 0% 		{	line-height:120px; 	text-shadow: 5px 0px 1px #0000FF;}
+ 12.5% 	{	line-height:90px; 	text-shadow: 5px 15px 4px #0000FF;}
+ 25% 		{	line-height:70px; 	text-shadow: 5px 25px 6px #0000FF;}
+ 32.5% 	{	line-height:65px;		text-shadow: 5px 27px 9px #0000FF;}
+ 40% 		{	line-height:60px;		text-shadow: 5px 30px 12px #0000FF;}
+ 50%		{	line-height:60px;		text-shadow: 5px 30px 12px #0000FF;}
+ 60% 		{	line-height:60px;		text-shadow: 5px 30px 12px #0000FF;}
+ 67.5% 	{	line-height:65px;		text-shadow: 5px 27px 9px #0000FF;}
+ 75% 		{	line-height:70px;		text-shadow: 5px 25px 6px #0000FF;}
+ 87.5% 	{	line-height:90px;		text-shadow: 5px 15px 4px #0000FF;}
+ 100% 	{	line-height:120px;	text-shadow: 5px 0px 1px #0000FF;}
+}
+
+@keyframes jumping {
+ 0% 		{	line-height:120px; 	text-shadow: 5px 0px 1px #0000FF;}
+ 12.5% 	{	line-height:90px; 	text-shadow: 5px 15px 4px #0000FF;}
+ 25% 		{	line-height:70px; 	text-shadow: 5px 25px 6px #0000FF;}
+ 32.5% 	{	line-height:65px;		text-shadow: 5px 27px 9px #0000FF;}
+ 40% 		{	line-height:60px;		text-shadow: 5px 30px 12px #0000FF;}
+ 50%		{	line-height:60px;		text-shadow: 5px 30px 12px #0000FF;}
+ 60% 		{	line-height:60px;		text-shadow: 5px 30px 12px #0000FF;}
+ 67.5% 	{	line-height:65px;		text-shadow: 5px 27px 9px #0000FF;}
+ 75% 		{	line-height:70px;		text-shadow: 5px 25px 6px #0000FF;}
+ 87.5% 	{	line-height:90px;		text-shadow: 5px 15px 4px #0000FF;}
+ 100% 	{	line-height:120px;	text-shadow: 5px 0px 1px #0000FF;}
+
+}
+/******** fin ANIMATION JUMPING ********/
+
+
+
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx fin styleHomepage   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+
+
+
 
 
 /*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
@@ -830,334 +1166,6 @@ thead th{
 /*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx fin styleDoodle   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
 /*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
 
-
-
-
-/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
-/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx styleExpenses   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
-/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
-
-/*
-#bodyCalculation{
-	background-image: url("../images/sunflower.jpg");
-	/*background-position: center;
-
-}
-*/
-
-
-#sectionExpenses{
-  border-radius: 10px ;
-  width:90%;
-  margin : auto; 
-  margin-top : 75px; 
-  background : lightgoldenrodyellow;/*url("../images/papier-peint19.jpg");*/
-  color:#800000;
-  padding: 3%;
-}
-
-
-#sectionExpenses h1, #sectionExpenses h2{
-/*text-shadow: 5px 5px 5px #FF0000;  /*decalage-a-droite, decalage-bas, flootage, color*/
-	color:#FF1919;/*#FF8080;*/
-	text-shadow: 0   0.8px 0 #E60000,
-              0   1.5px 0 #CC0000,
-             -1px 2.3px 0 #B20000,
-             -1px 3px 0 #990000,
-             -2px 3.8px 0 #800000,
-             -2.1px 4.5px 0 #660000,
-             -2.2px 5.3px 2px rgba(50,0,0, 0.4),
-             -2.2px 5.3px 8px rgba(50,0,0, 0.2),
-             -2.2px 5.3px 20px rgba(50,0,0, 0.4); 
-}
-
-#sectionExpenses  h2{
- font-weight: bold;
- padding-top:4%;
-}
-#sectionExpenses  article{
- margin-left: 3%;
-}
-
-
-#sectionExpenses #divTab{
-margin:3%
-
-}
-
-#sectionExpenses .button{
-font-size: 1.2em;
-/*width: 200px; */
-height: 25px; 
-line-height:25px;/*permet le centrage vertical*/ 
-padding:5px 20px 5px 20px;
-color: #FF0000; 
-}
-
-#sectionExpenses .button:hover{ 
-color: #FF4D4D; 
-}
-#sectionExpenses .button:active{ 
-color: #000; 
-}
-
-#sectionExpenses #name{ /*input text*/
-font-family: Arial,sans-serif; 
-font-size: 1.2em;
-width: 200px ; 
-height: 25px; 
-/*border-radius: 8px;*/
-background: url("../images/peint-blanc.jpg");
-background-size: 200px, 25px;
-}
-
-#sectionExpenses .right{ 
-  position: absolute;
-  right: 12vw;
-}
-#sectionExpenses #buttonsBottom{
-	margin-top:6%;
-}
-#sectionExpenses #tab caption{
-
-	font-size: 1.5em;
-	border: 4px solid #800000;
-	border-radius: 10px;
-	border-bottom : 1px; 
-color: white;
-    text-shadow:
-    -2px -2px 0 #800000,
-    2px -2px 0 #800000,
-    -2px 2px 0 #800000,
-    2px 2px 0 #800000; 
-}
-
-#sectionExpenses #tab{
-	border: 4px solid #800000;
-	
-	border-radius: 10px;
-	/*background:#FF0000;*/
-}
-
-#sectionExpenses #tab th, #sectionExpenses #tab td{
-	border: 1px solid #800000;
-	border-radius: 5px;
-}
-#sectionExpenses th{
-
-	background:#B20000;
-	color:white;
-}
-
-/*
-input[type="checkbox"].css-checkbox {
-							  position: absolute; 
-							overflow: hidden; 
-							clip: rect(0 0 0 0); 
-							height:1px; 
-							width:1px; 
-							margin:-1px; 
-							padding:0;
-							border:0;
-						}
-
-*/
-
-#sectionExpenses input[type=checkbox] {
-	
-  -moz-appearance: none;
-  width: 20px;
-  height: 20px;
-}
-
-/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
-/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx fin styleExpenses   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
-/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
-
-
-
-
-/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
-/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx styleHomepage   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
-/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
-
-
-
-
-/*************************************  TEST **************************************/
-#myBox{
-	width:200px;
-	height:100px;
-	line-height:100px;
-	text-align:center;
-	font-size: 40px;
-	font-weight: bold;
-	/*border-top:5px solid black ;
-	border-left:5px solid black;
-	border-right:10px solid blue;*/
-	border:10px solid white;
-	border-radius:5px;
-	background:rgba(255,0,0,0);
-	
-	box-shadow : 0 1px 0 #eee,
-             0 2px 0 #e5e5e5,
-             -1px 3px 0 #C8C8C8,
-             -1px 4px 0 #C1C1C1,
-             -2px 5px 0 #B9B9B9,
-             -2px 6px 0 #B2B2B2,
-             -2px 7px 2px rgba(0,0,0, 0.6),
-             -2px 7px 8px rgba(0,0,0, 0.2),
-             -2px 7px 45px rgba(0,0,0, 0.4),
-             0 1px 0 #eee inset,
-             0 2px 0 #e5e5e5 inset,
-             -1px 3px 0 #C8C8C8 inset,
-             -1px 4px 0 #C1C1C1 inset,
-             -2px 5px 0 #B9B9B9 inset,
-             -2px 6px 0 #B2B2B2 inset,
-             -2px 7px 2px rgba(0,0,0, 0.6) inset,
-             -2px 7px 8px rgba(0,0,0, 0.2) inset,
-             -2px 7px 45px rgba(0,0,0, 0.4) inset;
-/*-10px 10px 5px black inset,
--10px 10px 5px black;*/
-
-	color:white;
-	text-shadow: 0 1px 0 #eee,
-             0 2px 0 #e5e5e5,
-             -1px 3px 0 #C8C8C8,
-             -1px 4px 0 #C1C1C1,
-             -2px 5px 0 #B9B9B9,
-             -2px 6px 0 #B2B2B2,
-             -2px 7px 2px rgba(0,0,0, 0.6),
-             -2px 7px 8px rgba(0,0,0, 0.2),
-             -2px 7px 45px rgba(0,0,0, 0.4);
-           
-transform: rotate(-10deg) scale(1.3,1.3);  
-}
-/************************************* fin TEST **************************************/
-
-#sectionHomepage{
-	background-image:url("../images/parasol.jpg"), url("../images/peint-blanc.jpg");
-	background-repeat:no-repeat, repeat;
-	background-size:20vw;
-	background-position: top right;
-	color:#1A1A66;
-	
-	
-	/*background:white;
-	background-image:url("../images/parasol.jpg");
-	background-repeat:no-repeat;
-	background-size:20vw;
-	background-position: top right;
-	color:#1A1A66;
-	*/
-}
-
-
-
-#sectionHomepage h1, #sectionHomepage h2{
-	color:#4747D1;
-	text-shadow: 0   0.8px 0 #2E2EB8,
-              0   1.5px 0 #2929A3,
-             -1px 2.3px 0 #24248F,
-             -1px 3px 0 #1F1F7A,
-             -2px 3.8px 0 #1A1A66,
-             -2.1px 4.5px 0 #141452,
-             -2.2px 5.3px 2px rgba(10,10,41, 0.4),
-             -2.2px 5.3px 8px rgba(10,10,41, 0.2),
-             -2.2px 5.3px 20px rgba(10,10,41, 0.4); 
-}
-#sectionHomepage article h2{
-	width: 50vw;
-	margin-left: 1vw;
-	padding: 1vw;
-	padding-left:8vw;
-	height:60px;
-	line-height:120px;
-	/*border:2px solid black;
-	border-radius: 5%; */
-}
-#h2Groupe{
-	background: url("../images/groupe.png");
-	background-size:7vw;
-	background-repeat: no-repeat;
-	/*
-
-<img src="../images/doodle.jpg" width="10%">
-<img src="../images/chefcuisine.jpg" width="10%">
-<img src="../images/tirelire.jpg" width="6%">
-<img src="../images/loisirs.jpg" width="11%">
-<img src="../images/loisirs.jpg" width="11%">
-*/
-}
-#h2Doodle{
-	background: url("../images/doodle.jpg");
-	background-size:6vw;
-	background-repeat: no-repeat;
-}
-#h2Repas{
-	background: url("../images/chefcuisine.jpg");
-	background-size:6vw;
-	background-repeat: no-repeat;
-}
-#h2Calc{
-	background: url("../images/tirelire.jpg");
-	background-size:5vw;
-	background-repeat: no-repeat;
-}
-#h2Affaire{
-	background: url("../images/doodle.jpg");
-	background-size:6vw;
-	background-repeat: no-repeat;
-}
-#h2Loisirs{
-	background: url("../images/loisirs.jpg");
-	background-size:7vw;
-	background-repeat: no-repeat;
-}
-
-/****** ANIMATION JUMPING **********/
-#sectionHomepage article h2:hover{
--webkit-animation: jumping 1s; /* chrome safari*/
-animation: jumping 1s; /* autre*/
-}
-
-@-webkit-keyframes jumping {
-/*from {line-height:120px;}
-to { line-height:0px;}*/
- 0% 		{	line-height:120px; 	text-shadow: 5px 0px 1px #0000FF;}
- 12.5% 	{	line-height:90px; 	text-shadow: 5px 15px 4px #0000FF;}
- 25% 		{	line-height:70px; 	text-shadow: 5px 25px 6px #0000FF;}
- 32.5% 	{	line-height:65px;		text-shadow: 5px 27px 9px #0000FF;}
- 40% 		{	line-height:60px;		text-shadow: 5px 30px 12px #0000FF;}
- 50%		{	line-height:60px;		text-shadow: 5px 30px 12px #0000FF;}
- 60% 		{	line-height:60px;		text-shadow: 5px 30px 12px #0000FF;}
- 67.5% 	{	line-height:65px;		text-shadow: 5px 27px 9px #0000FF;}
- 75% 		{	line-height:70px;		text-shadow: 5px 25px 6px #0000FF;}
- 87.5% 	{	line-height:90px;		text-shadow: 5px 15px 4px #0000FF;}
- 100% 	{	line-height:120px;	text-shadow: 5px 0px 1px #0000FF;}
-}
-
-@keyframes jumping {
- 0% 		{	line-height:120px; 	text-shadow: 5px 0px 1px #0000FF;}
- 12.5% 	{	line-height:90px; 	text-shadow: 5px 15px 4px #0000FF;}
- 25% 		{	line-height:70px; 	text-shadow: 5px 25px 6px #0000FF;}
- 32.5% 	{	line-height:65px;		text-shadow: 5px 27px 9px #0000FF;}
- 40% 		{	line-height:60px;		text-shadow: 5px 30px 12px #0000FF;}
- 50%		{	line-height:60px;		text-shadow: 5px 30px 12px #0000FF;}
- 60% 		{	line-height:60px;		text-shadow: 5px 30px 12px #0000FF;}
- 67.5% 	{	line-height:65px;		text-shadow: 5px 27px 9px #0000FF;}
- 75% 		{	line-height:70px;		text-shadow: 5px 25px 6px #0000FF;}
- 87.5% 	{	line-height:90px;		text-shadow: 5px 15px 4px #0000FF;}
- 100% 	{	line-height:120px;	text-shadow: 5px 0px 1px #0000FF;}
-
-}
-/******** fin ANIMATION JUMPING ********/
-
-
-
-/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
-/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx fin styleHomepage   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
-/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
 
 
 
