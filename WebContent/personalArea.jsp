@@ -29,7 +29,7 @@ HTML5 sont employees. -->
 	<div id="divLogOut" class="line inline"> 
 	<form method="post" action="logout">
 		<!--ne s'aligne pas correctement: si on met deux ligne input.. avec le inline ca fonctionne^^-->
-		<input id="buttonLogOut" type="submit" value="Log out" class="inline newButton3D" onmouseover="changeCursor('buttonLogOut')"  />
+		<input id="buttonLogOut" type="submit" value="Log out" class="inline newButton3D buttonBlueFonce" onmouseover="changeCursor('buttonLogOut')"  />
 	</form>
 	</div>
 
@@ -56,7 +56,7 @@ HTML5 sont employees. -->
 		<form method="post" action="creationGroup">
 		 <input id="groupName" class="textGrey"  name="groupName" type="text" value="Group name" 
          onfocus="inputTextFocus('groupName', 'White')" onblur="inputTextBlur('groupName','Group name')" required >
-		<input id="createGroup" type="submit" value="Create Group" class="newButton3D" onmouseover="changeCursor('createGroup')"/>
+		<input id="createGroup" type="submit" value="Create Group" class="newButton3D buttonBlueFonce" onmouseover="changeCursor('createGroup')"/>
        </form>
 	
 	</article>
@@ -96,7 +96,7 @@ HTML5 sont employees. -->
 		<form method="post" action="addPersonList">
 		 <input id="nameNewContact" class="textGrey"  name="nameNewContact" type="text" value="Name new contact" 
          onfocus="inputTextFocus('nameNewContact', 'White')" onblur="inputTextBlur('nameNewContact','Name new contact')" required >
-		<input id="addContact" type="submit" value="Add Contact" class="newButton3D" onmouseover="changeCursor('addContact')"/>
+		<input id="addContact" type="submit" value="Add Contact" class="newButton3D buttonBlueFonce" onmouseover="changeCursor('addContact')"/>
        </form>
        
        <form method="post" action="deletePersonList">
@@ -107,7 +107,7 @@ HTML5 sont employees. -->
 				<option>kiki</option>
 			</select>
 		
-		<input id="deleteContact" type="submit" value="Delete contact" class="newButton3D" onmouseover="changeCursor('deleteContact')"/>
+		<input id="deleteContact" type="submit" value="Delete contact" class="newButton3D buttonBlueFonce" onmouseover="changeCursor('deleteContact')"/>
        </form>
 	</article>
 
@@ -120,7 +120,7 @@ HTML5 sont employees. -->
 		 
 		  <div><input id="login" class="textGrey inline"  name="login" type="text" value="${sessionScope.person.login}"
          onfocus="inputTextFocus('login', 'White')" onblur="inputTextBlur('login','${sessionScope.person.login}')" required >
-         <input id="confirmModifyLogin" type="submit" value="Modify Login" class="newButton3D" onmouseover="changeCursor('confirmModifyLogin')" />
+         <input id="confirmModifyLogin" type="submit" value="Modify Login" class="newButton3D buttonBlueFonce" onmouseover="changeCursor('confirmModifyLogin')" />
 		 </div>
 		 </form>
 		 
@@ -128,7 +128,7 @@ HTML5 sont employees. -->
 		 <div class="aroundBlack">Name (visible into groups): </div>
 		  <div><input id="name" class="textGrey inline"  name="name" type="text" value="${sessionScope.person.name}" 
          onfocus="inputTextFocus('name', 'White')" onblur="inputTextBlur('name','${sessionScope.person.name}')" required >
-         <input id="confirmModifyName" type="submit" value="Modify Name" class="newButton3D" onmouseover="changeCursor('confirmModifyName')" />
+         <input id="confirmModifyName" type="submit" value="Modify Name" class="newButton3D buttonBlueFonce" onmouseover="changeCursor('confirmModifyName')" />
 		 </div>
 		 </form>
 		 
@@ -136,7 +136,7 @@ HTML5 sont employees. -->
 		 <div class="aroundBlack">Email adress :</div>
 		  <div><input id="email" class="textGrey inline"  name="email" type="text" value="${sessionScope.person.email}" 
          onfocus="inputTextFocus('email', 'White')" onblur="inputTextBlur('email','${sessionScope.person.email}')" required >
-         <input id="confirmModifyEmail" type="submit" value="Modify Email" class="newButton3D" onmouseover="changeCursor('confirmModifyEmail')" />
+         <input id="confirmModifyEmail" type="submit" value="Modify Email" class="newButton3D buttonBlueFonce" onmouseover="changeCursor('confirmModifyEmail')" />
 		 </div>
 		 </form>
 		 
@@ -150,9 +150,9 @@ HTML5 sont employees. -->
          </div>
 		  <div><input id="confirmNewPwd" class="textGrey inline"  name="confirmNewPwd" type="text" value="Confirm New Pwd" 
          onfocus="inputTextFocusPwd('confirmNewPwd', 'White')" onblur="inputTextBlurPwd('confirmNewPwd','Confirm New Pwd')" required >
-         </div>
-         <br>
-         <input id="confirmModifyPwd" type="submit" value="Modify Password" class="newButton3D" onmouseover="changeCursor('confirmModifyPwd')" />
+         
+         <input id="confirmModifyPwd" type="submit" value="Modify Password" class="newButton3D buttonBlueFonce" onmouseover="changeCursor('confirmModifyPwd')" />
+		 </div>
 		 </form>
 	</article>
 </section>

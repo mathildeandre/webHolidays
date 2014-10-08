@@ -111,7 +111,28 @@ footer{
 }
 */
 
-
+.aroundBlack{
+	text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000; 
+}
+.aroundWhite{
+	text-shadow:
+    -1px -1px 0 white,
+    1px -1px 0 white,
+    -1px 1px 0 white,
+    1px 1px 0 white; 
+}
+.buttonBlueFonce{
+	border-color:#003399;
+	background:#003399;/*rgba(0,0,0,0);*/
+}
+.buttonOrangeFonce{
+	border-color:#803300;
+	background:#803300;/*rgba(0,0,0,0);*/
+}
 .textWhite{
 	color : white;
 }
@@ -176,213 +197,6 @@ color: #000;
 /*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
 /*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx fin general   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
 /*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
-
-
-
-
-
-
-/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
-/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 3D   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
-/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
-
-
-	
-
-/******************** TEXT WHITE shadow foncé ***************************/  
-
-.text3Dfonce{ /* same as newButton3D */
-
-		text-shadow: 0   0.5px	0 #CCCCCC,
-				0.1px 	0.8px	0 #CCCCCC,
-              	0.2px   1px 	0 #B2B2B2,
-              	-0.3px  1.2px 	0 #B2B2B2,
-             	-0.4px 	1.5px 0 #999999,
-             	-0.7px 	2px 	0 #666666,
-             	-1px 	2.5px 0 #4C4C4C,
-             	-1.5px 	3px 	0 #333333,
-             -2px 3.5px 2px rgba(0,0,0, 0.6),
-             -2px 3.5px 8px rgba(0,0,0, 0.2),
-             -2px 3.5px 45px rgba(0,0,0, 0.4);
-}
-/******************** fin TEXT WHITE shadow foncé ***************************/  
-
-/******************** TEXT WHITE shadow clair ***************************/  
-.text3Dclair{
-
-		text-shadow: 0   0.5px	0 #eee,
-				0.1px 	0.8px	0 #eee,
-              	0.2px   1px 	0 #e5e5e5,
-              	-0.3px  1.2px 	0 #e5e5e5,
-             	-0.4px 	1.5px 0 #C8C8C8,
-             	-0.7px 	2px 	0 #C1C1C1,
-             	-1px 	2.5px 0 #B9B9B9,
-             	-1.5px 	3px 	0 #B2B2B2,
-             -2px 3.5px 2px rgba(0,0,0, 0.6),
-             -2px 3.5px 8px rgba(0,0,0, 0.2),
-             -2px 3.5px 45px rgba(0,0,0, 0.4);
-}
-/******************** fin TEXT WHITE shadow clair ***************************/  
-
-/******************** BUTTON WHITE PLEIN ***************************/  
-
-.newButton3D{
-	/*line-height:50px;*/
-	/*min-width: 100px;*/
-
-	height:40px;
-	line-height:0px;
-	text-align:center;
-	font-size: 1.4vw;
-	font-weight:bold;
-	padding:0.5vw 1vw;
-	border:4px solid #003399;
-	border-radius: 0.5vw; 
-	
-    
-	background:#003399;/*rgba(0,0,0,0);*/
-	color:white;/*rgba(0,0,105,0.9);
-	
-	 /* shadow text moyen foncé!! */
-	text-shadow: 0   0.5px	0 #CCCCCC,
-				0.1px 	0.8px	0 #CCCCCC,
-              	0.2px   1px 	0 #B2B2B2,
-              	-0.3px  1.2px 	0 #B2B2B2,
-             	-0.4px 	1.5px 0 #999999,
-             	-0.7px 	2px 	0 #666666,
-             	-1px 	2.5px 0 #4C4C4C,
-             	-1.5px 	3px 	0 #333333,
-             -2px 3.5px 2px rgba(0,0,0, 0.6),
-             -2px 3.5px 8px rgba(0,0,0, 0.2),
-             -2px 3.5px 45px rgba(0,0,0, 0.4);
-          
-	
-		/** border fonce TOP */
-	box-shadow:-0.2px   0.8px 0 #CCCCCC,
-              -0.5px   1.5px 0 #CCCCCC,
-             -1px 2.3px 0 #B2B2B2,
-             -1px 3px 0 #999999,
-             -2px 3.8px 0 #666666,
-             -2.1px 4.5px 0 #4C4C4C,
-             -2.2px 5.3px 2px rgba(0,0,0, 0.4),
-             -2.2px 5.3px 8px rgba(0,0,0, 0.2),
-             -2.2px 5.3px 20px rgba(0,0,0, 0.4);
-	
-}
-.newButton3D:hover{
-	border:4px solid white;
-	background:rgba(0,0,0,0);
-	/* permet d'enlever leffet creux */
-	box-shadow:-0.2px   0.8px 0 #CCCCCC,
-              -0.5px   1.5px 0 #CCCCCC,
-             -1px 2.3px 0 #B2B2B2,
-             -1px 3px 0 #999999,
-             -2px 3.8px 0 #666666,
-             -2.1px 4.5px 0 #4C4C4C,
-             -2.2px 5.3px 2px rgba(0,0,0, 0.4),
-             -2.2px 5.3px 8px rgba(0,0,0, 0.2),
-             -2.2px 5.3px 20px rgba(0,0,0, 0.4),
-			/* interieur */
-              -0.2px   0.8px 0 #CCCCCC inset,
-              -0.5px   1.5px 0 #CCCCCC inset,
-             -1px 2.3px 0 #B2B2B2 inset,
-             -1px 3px 0 #999999 inset,
-             -2px 3.8px 0 #666666 inset,
-             -2.1px 4.5px 0 #4C4C4C inset,
-             -2.2px 5.3px 2px rgba(0,0,0, 0.4) inset,
-             -2.2px 5.3px 8px rgba(0,0,0, 0.2) inset,
-             -2.2px 5.3px 20px rgba(0,0,0, 0.4) inset;
-}
-.newButton3D:active{
-	/*margin-top:4.5px;
-	margin-right:2.2px;
-	*/
-	background:rgba(0,0,0,0);
-	box-shadow: 0 0 0 #000000;
-	text-shadow:0   0 0 #000000;
-	
-}
-
-
-/******************** fin BUTTON WHITE PLEIN ***************************/  
-
-
-/******************** BUTTON WHITE CREUX ***************************/  
-
-.newButton3Dcreux{
-
-	height:40px;
-	line-height:0px;
-	text-align:center;
-	font-size: 1.4vw;
-	font-weight:bold;
-	padding:0.5vw 1vw;
-	border:4px solid white;/*bleu fonce #003399; /*vert : #4DB84D;*/
-	border-radius: 0.5vw; 
-	
-    
-	background:rgba(0,0,0,0);
-	color:white;
-	
-	 /*shadow text moyen foncé!!*/
-		text-shadow: 0   0.5px	0 #CCCCCC,
-				0.1px 	0.8px	0 #CCCCCC,
-              	0.2px   1px 	0 #B2B2B2,
-              	-0.3px  1.2px 	0 #B2B2B2,
-             	-0.4px 	1.5px 0 #999999,
-             	-0.7px 	2px 	0 #666666,
-             	-1px 	2.5px 0 #4C4C4C,
-             	-1.5px 	3px 	0 #333333,
-             -2px 3.5px 2px rgba(0,0,0, 0.6),
-             -2px 3.5px 8px rgba(0,0,0, 0.2),
-             -2px 3.5px 45px rgba(0,0,0, 0.4);
-            
-	
-		/** border fonce TOP */
-	box-shadow:-0.2px   0.8px 0 #CCCCCC,
-              -0.5px   1.5px 0 #CCCCCC,
-             -1px 2.3px 0 #B2B2B2,
-             -1px 3px 0 #999999,
-             -2px 3.8px 0 #666666,
-             -2.1px 4.5px 0 #4C4C4C,
-             -2.2px 5.3px 2px rgba(0,0,0, 0.4),
-             -2.2px 5.3px 8px rgba(0,0,0, 0.2),
-             -2.2px 5.3px 20px rgba(0,0,0, 0.4),
-			/* interieur */
-              -0.2px   0.8px 0 #CCCCCC inset,
-              -0.5px   1.5px 0 #CCCCCC inset,
-             -1px 2.3px 0 #B2B2B2 inset,
-             -1px 3px 0 #999999 inset,
-             -2px 3.8px 0 #666666 inset,
-             -2.1px 4.5px 0 #4C4C4C inset,
-             -2.2px 5.3px 2px rgba(0,0,0, 0.4) inset,
-             -2.2px 5.3px 8px rgba(0,0,0, 0.2) inset,
-             -2.2px 5.3px 20px rgba(0,0,0, 0.4) inset;
-}
-.newButton3Dcreux:hover{
-	background:white;
-             
-}
-.newButton3Dcreux:active{
-	/*margin-top:4.5px;
-	margin-right:2.2px;
-	*/
-	background:rgba(0,0,0,0);
-	box-shadow: 0 0 0 #000000;
-	text-shadow:0   0 0 #000000;
-	
-}
-
-
-/******************** fin BUTTON WHITE CREUX ***************************/  
-
-
-
-/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
-/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx fin 3D   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
-/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
-
-
 
 
 
@@ -544,13 +358,6 @@ color: #000;
 	color:white;
 }
 
-#sectionPersonalArea .aroundBlack{
-	text-shadow:
-    -1px -1px 0 #000,
-    1px -1px 0 #000,
-    -1px 1px 0 #000,
-    1px 1px 0 #000; 
-}
 
 #sectionPersonalArea #hint{
 	margin-top:1vw;
@@ -601,12 +408,12 @@ color: #000;
 	padding-left:2vw; 
 	font-size: 1.5vw;
 }
-#sectionPersonalArea #groupName, #nameNewContact, #listContacts, #login, #name, #email, #oldPwd, #newPwd, #confirmNewPwd{
+#groupName, #nameNewContact, #listContacts, #login, #name, #email, #oldPwd, #newPwd, #confirmNewPwd{
 	
 	margin-top:0.7vw;
 	padding : 0.5vw;
 	padding-left : 0.8vw;
-	width:13vw;
+	width:13.5vw;
 	height:40px;
 	font-size: 1.3vw;
 	/*background: url("../images/peint-blanc.jpg");
@@ -616,8 +423,8 @@ color: #000;
 	border:1px solid white;
 	border-radius: 0.5vw;
 }
-#sectionPersonalArea #nameNewContact, #oldPwd, #newPwd, #confirmNewPwd{
-	width:14.5vw;
+#nameNewContact, #oldPwd, #newPwd, #confirmNewPwd{
+	/*width:14.5vw;*/
 }
 
 
@@ -682,204 +489,23 @@ color: #000;
 
 
 
-/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
-/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx styleHomepage   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
-/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
-
-
-
-
-/*************************************  TEST **************************************/
-#myBox{
-	width:200px;
-	height:100px;
-	line-height:100px;
-	text-align:center;
-	font-size: 40px;
-	font-weight: bold;
-	/*border-top:5px solid black ;
-	border-left:5px solid black;
-	border-right:10px solid blue;*/
-	border:10px solid white;
-	border-radius:5px;
-	background:rgba(255,0,0,0);
-	
-	box-shadow : 0 1px 0 #eee,
-             0 2px 0 #e5e5e5,
-             -1px 3px 0 #C8C8C8,
-             -1px 4px 0 #C1C1C1,
-             -2px 5px 0 #B9B9B9,
-             -2px 6px 0 #B2B2B2,
-             -2px 7px 2px rgba(0,0,0, 0.6),
-             -2px 7px 8px rgba(0,0,0, 0.2),
-             -2px 7px 45px rgba(0,0,0, 0.4),
-             0 1px 0 #eee inset,
-             0 2px 0 #e5e5e5 inset,
-             -1px 3px 0 #C8C8C8 inset,
-             -1px 4px 0 #C1C1C1 inset,
-             -2px 5px 0 #B9B9B9 inset,
-             -2px 6px 0 #B2B2B2 inset,
-             -2px 7px 2px rgba(0,0,0, 0.6) inset,
-             -2px 7px 8px rgba(0,0,0, 0.2) inset,
-             -2px 7px 45px rgba(0,0,0, 0.4) inset;
-/*-10px 10px 5px black inset,
--10px 10px 5px black;*/
-
-	color:white;
-	text-shadow: 0 1px 0 #eee,
-             0 2px 0 #e5e5e5,
-             -1px 3px 0 #C8C8C8,
-             -1px 4px 0 #C1C1C1,
-             -2px 5px 0 #B9B9B9,
-             -2px 6px 0 #B2B2B2,
-             -2px 7px 2px rgba(0,0,0, 0.6),
-             -2px 7px 8px rgba(0,0,0, 0.2),
-             -2px 7px 45px rgba(0,0,0, 0.4);
-           
-transform: rotate(-10deg) scale(1.3,1.3);  
-}
-/************************************* fin TEST **************************************/
-
-#sectionHomepage{
-	background-image:url("../images/parasol.jpg"), url("../images/peint-blanc.jpg");
-	background-repeat:no-repeat, repeat;
-	background-size:20vw;
-	background-position: top right;
-	color:#1A1A66;
-	
-	
-	/*background:white;
-	background-image:url("../images/parasol.jpg");
-	background-repeat:no-repeat;
-	background-size:20vw;
-	background-position: top right;
-	color:#1A1A66;
-	*/
-}
-
-
-
-#sectionHomepage h1, #sectionHomepage h2{
-	color:#4747D1;
-	text-shadow: 0   0.8px 0 #2E2EB8,
-              0   1.5px 0 #2929A3,
-             -1px 2.3px 0 #24248F,
-             -1px 3px 0 #1F1F7A,
-             -2px 3.8px 0 #1A1A66,
-             -2.1px 4.5px 0 #141452,
-             -2.2px 5.3px 2px rgba(10,10,41, 0.4),
-             -2.2px 5.3px 8px rgba(10,10,41, 0.2),
-             -2.2px 5.3px 20px rgba(10,10,41, 0.4); 
-}
-#sectionHomepage article h2{
-	width: 50vw;
-	margin-left: 1vw;
-	padding: 1vw;
-	padding-left:8vw;
-	height:60px;
-	line-height:120px;
-	/*border:2px solid black;
-	border-radius: 5%; */
-}
-#h2Groupe{
-	background: url("../images/groupe.png");
-	background-size:7vw;
-	background-repeat: no-repeat;
-	/*
-
-<img src="../images/doodle.jpg" width="10%">
-<img src="../images/chefcuisine.jpg" width="10%">
-<img src="../images/tirelire.jpg" width="6%">
-<img src="../images/loisirs.jpg" width="11%">
-<img src="../images/loisirs.jpg" width="11%">
-*/
-}
-#h2Doodle{
-	background: url("../images/doodle.jpg");
-	background-size:6vw;
-	background-repeat: no-repeat;
-}
-#h2Repas{
-	background: url("../images/chefcuisine.jpg");
-	background-size:6vw;
-	background-repeat: no-repeat;
-}
-#h2Calc{
-	background: url("../images/tirelire.jpg");
-	background-size:5vw;
-	background-repeat: no-repeat;
-}
-#h2Affaire{
-	background: url("../images/doodle.jpg");
-	background-size:6vw;
-	background-repeat: no-repeat;
-}
-#h2Loisirs{
-	background: url("../images/loisirs.jpg");
-	background-size:7vw;
-	background-repeat: no-repeat;
-}
-
-/****** ANIMATION JUMPING **********/
-#sectionHomepage article h2:hover{
--webkit-animation: jumping 1s; /* chrome safari*/
-animation: jumping 1s; /* autre*/
-}
-
-@-webkit-keyframes jumping {
-/*from {line-height:120px;}
-to { line-height:0px;}*/
- 0% 		{	line-height:120px; 	text-shadow: 5px 0px 1px #0000FF;}
- 12.5% 	{	line-height:90px; 	text-shadow: 5px 15px 4px #0000FF;}
- 25% 		{	line-height:70px; 	text-shadow: 5px 25px 6px #0000FF;}
- 32.5% 	{	line-height:65px;		text-shadow: 5px 27px 9px #0000FF;}
- 40% 		{	line-height:60px;		text-shadow: 5px 30px 12px #0000FF;}
- 50%		{	line-height:60px;		text-shadow: 5px 30px 12px #0000FF;}
- 60% 		{	line-height:60px;		text-shadow: 5px 30px 12px #0000FF;}
- 67.5% 	{	line-height:65px;		text-shadow: 5px 27px 9px #0000FF;}
- 75% 		{	line-height:70px;		text-shadow: 5px 25px 6px #0000FF;}
- 87.5% 	{	line-height:90px;		text-shadow: 5px 15px 4px #0000FF;}
- 100% 	{	line-height:120px;	text-shadow: 5px 0px 1px #0000FF;}
-}
-
-@keyframes jumping {
- 0% 		{	line-height:120px; 	text-shadow: 5px 0px 1px #0000FF;}
- 12.5% 	{	line-height:90px; 	text-shadow: 5px 15px 4px #0000FF;}
- 25% 		{	line-height:70px; 	text-shadow: 5px 25px 6px #0000FF;}
- 32.5% 	{	line-height:65px;		text-shadow: 5px 27px 9px #0000FF;}
- 40% 		{	line-height:60px;		text-shadow: 5px 30px 12px #0000FF;}
- 50%		{	line-height:60px;		text-shadow: 5px 30px 12px #0000FF;}
- 60% 		{	line-height:60px;		text-shadow: 5px 30px 12px #0000FF;}
- 67.5% 	{	line-height:65px;		text-shadow: 5px 27px 9px #0000FF;}
- 75% 		{	line-height:70px;		text-shadow: 5px 25px 6px #0000FF;}
- 87.5% 	{	line-height:90px;		text-shadow: 5px 15px 4px #0000FF;}
- 100% 	{	line-height:120px;	text-shadow: 5px 0px 1px #0000FF;}
-
-}
-/******** fin ANIMATION JUMPING ********/
-
-
-
-/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
-/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx fin styleHomepage   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
-/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
-
-
-
 
 /*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
 /*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx styleGroup   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
 /*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
 
 #sectionGroup{
-	width:60vw;
-	color:#803300;
+	color:black; /*#803300; orange très fonce */
+	height:900px; /*car les article sont absolute*/
+	
+	margin-left:10vw;
 }
 
 
-
-#sectionGroup h1, #sectionGroup h2{
-   /* text-shadow: 5px 5px 5px #FF6600;  /*decalage-a-droite, decalage-bas, flootage, color*/
+/* le pure 3D orange good */
+/*
+#sectionGroup h1 {
+	* text-shadow: 5px 5px 5px #FF6600;  *decalage-a-droite, decalage-bas, flootage, color*
 
 	color:#FF6600;
 	text-shadow: 0   0.8px 0 #E65C00,
@@ -892,51 +518,62 @@ to { line-height:0px;}*/
              -2.2px 5.3px 8px rgba(51,20,0, 0.2),
              -2.2px 5.3px 20px rgba(51,20,0, 0.4); 
 
+} */
+#sectionGroup h1{
+color:#FF6600;
 }
-
 
 #sectionGroup h2{
- font-weight: bold;
- padding-top:3vw;
- padding-bottom:2vw;
+ 	font-weight: bold;
+ 	padding-top:1vw;
 }
+/*
 #sectionGroup article{
  margin-left: 3vw;
  padding:0vw 2vw 1vw 2vw;
  
 }
-#sectionGroup div[class="composition"]{
-    margin-left: 7vw;
+*/
+#articleComposition{
+	position: absolute;
+	left: 17vw;
+	/*width:40vw;*/  
 }
 
-#sectionGroup div[class="ajout"]{
-    margin-left: 7vw;
+#articleAddMember{
+	position: absolute;
+	left: 43vw;
+	/*width:20vw;*/
+	padding-left:5vw; 
+	border-left:3px dotted black;
 }
-.right{ 
-  position: absolute;
-  right: 22vw;
+#fieldMyComposition{
+	overflow-y: hidden,scroll;
+	overflow-x: hidden;
+	max-height: 30vw;
+	width:17vw;
+	padding-left:1vw; 
+	font-size: 1.5vw;
 }
 
-#sectionGroup #listPerson
-{
-    color : #FF6600;
-    width: 14vw;
-    padding: 0.5vw;
-    border: 5px dotted #FF6600;
-    
 
+
+#groupListContacts,#searchPerson, #loginPerson, #pwdPerson, #emailPerson{
+	
+	padding : 0.3vw;
+	padding-left : 0.8vw;
+	width:13.5vw;
+	height:27px;
+	font-size: 1.3vw;
+	/*background: url("../images/peint-blanc.jpg");
+	background-size: 200px, 25px;*/
+	
+	background:rgba(251,100,0,0.8);
+	border:1px solid white;
+	border-radius: 0.5vw;
 }
-#sectionGroup #name{ /*input text*/
-	font-family: Arial,sans-serif; 
-	font-size: 1vw;
-	width: 12vw; 
-	margin-right:2vw;
-	height: 2vw; 
-	background: url("../images/peint-blanc.jpg");
-	background-size: 10vw, 1vw;
-}
-#sectionGroup #buttonsBottom{
-	margin-top:6vw;
+#groupListContacts{
+	height:38px;
 }
 
 /*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
@@ -1336,6 +973,399 @@ input[type="checkbox"].css-checkbox {
 /*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
 /*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx fin styleExpenses   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
 /*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+
+
+
+
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx styleHomepage   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+
+
+
+
+/*************************************  TEST **************************************/
+#myBox{
+	width:200px;
+	height:100px;
+	line-height:100px;
+	text-align:center;
+	font-size: 40px;
+	font-weight: bold;
+	/*border-top:5px solid black ;
+	border-left:5px solid black;
+	border-right:10px solid blue;*/
+	border:10px solid white;
+	border-radius:5px;
+	background:rgba(255,0,0,0);
+	
+	box-shadow : 0 1px 0 #eee,
+             0 2px 0 #e5e5e5,
+             -1px 3px 0 #C8C8C8,
+             -1px 4px 0 #C1C1C1,
+             -2px 5px 0 #B9B9B9,
+             -2px 6px 0 #B2B2B2,
+             -2px 7px 2px rgba(0,0,0, 0.6),
+             -2px 7px 8px rgba(0,0,0, 0.2),
+             -2px 7px 45px rgba(0,0,0, 0.4),
+             0 1px 0 #eee inset,
+             0 2px 0 #e5e5e5 inset,
+             -1px 3px 0 #C8C8C8 inset,
+             -1px 4px 0 #C1C1C1 inset,
+             -2px 5px 0 #B9B9B9 inset,
+             -2px 6px 0 #B2B2B2 inset,
+             -2px 7px 2px rgba(0,0,0, 0.6) inset,
+             -2px 7px 8px rgba(0,0,0, 0.2) inset,
+             -2px 7px 45px rgba(0,0,0, 0.4) inset;
+/*-10px 10px 5px black inset,
+-10px 10px 5px black;*/
+
+	color:white;
+	text-shadow: 0 1px 0 #eee,
+             0 2px 0 #e5e5e5,
+             -1px 3px 0 #C8C8C8,
+             -1px 4px 0 #C1C1C1,
+             -2px 5px 0 #B9B9B9,
+             -2px 6px 0 #B2B2B2,
+             -2px 7px 2px rgba(0,0,0, 0.6),
+             -2px 7px 8px rgba(0,0,0, 0.2),
+             -2px 7px 45px rgba(0,0,0, 0.4);
+           
+transform: rotate(-10deg) scale(1.3,1.3);  
+}
+/************************************* fin TEST **************************************/
+
+#sectionHomepage{
+	background-image:url("../images/parasol.jpg"), url("../images/peint-blanc.jpg");
+	background-repeat:no-repeat, repeat;
+	background-size:20vw;
+	background-position: top right;
+	color:#1A1A66;
+	
+	
+	/*background:white;
+	background-image:url("../images/parasol.jpg");
+	background-repeat:no-repeat;
+	background-size:20vw;
+	background-position: top right;
+	color:#1A1A66;
+	*/
+}
+
+
+
+#sectionHomepage h1, #sectionHomepage h2{
+	color:#4747D1;
+	text-shadow: 0   0.8px 0 #2E2EB8,
+              0   1.5px 0 #2929A3,
+             -1px 2.3px 0 #24248F,
+             -1px 3px 0 #1F1F7A,
+             -2px 3.8px 0 #1A1A66,
+             -2.1px 4.5px 0 #141452,
+             -2.2px 5.3px 2px rgba(10,10,41, 0.4),
+             -2.2px 5.3px 8px rgba(10,10,41, 0.2),
+             -2.2px 5.3px 20px rgba(10,10,41, 0.4); 
+}
+#sectionHomepage article h2{
+	width: 50vw;
+	margin-left: 1vw;
+	padding: 1vw;
+	padding-left:8vw;
+	height:60px;
+	line-height:120px;
+	/*border:2px solid black;
+	border-radius: 5%; */
+}
+#h2Groupe{
+	background: url("../images/groupe.png");
+	background-size:7vw;
+	background-repeat: no-repeat;
+	/*
+
+<img src="../images/doodle.jpg" width="10%">
+<img src="../images/chefcuisine.jpg" width="10%">
+<img src="../images/tirelire.jpg" width="6%">
+<img src="../images/loisirs.jpg" width="11%">
+<img src="../images/loisirs.jpg" width="11%">
+*/
+}
+#h2Doodle{
+	background: url("../images/doodle.jpg");
+	background-size:6vw;
+	background-repeat: no-repeat;
+}
+#h2Repas{
+	background: url("../images/chefcuisine.jpg");
+	background-size:6vw;
+	background-repeat: no-repeat;
+}
+#h2Calc{
+	background: url("../images/tirelire.jpg");
+	background-size:5vw;
+	background-repeat: no-repeat;
+}
+#h2Affaire{
+	background: url("../images/doodle.jpg");
+	background-size:6vw;
+	background-repeat: no-repeat;
+}
+#h2Loisirs{
+	background: url("../images/loisirs.jpg");
+	background-size:7vw;
+	background-repeat: no-repeat;
+}
+
+/****** ANIMATION JUMPING **********/
+#sectionHomepage article h2:hover{
+-webkit-animation: jumping 1s; /* chrome safari*/
+animation: jumping 1s; /* autre*/
+}
+
+@-webkit-keyframes jumping {
+/*from {line-height:120px;}
+to { line-height:0px;}*/
+ 0% 		{	line-height:120px; 	text-shadow: 5px 0px 1px #0000FF;}
+ 12.5% 	{	line-height:90px; 	text-shadow: 5px 15px 4px #0000FF;}
+ 25% 		{	line-height:70px; 	text-shadow: 5px 25px 6px #0000FF;}
+ 32.5% 	{	line-height:65px;		text-shadow: 5px 27px 9px #0000FF;}
+ 40% 		{	line-height:60px;		text-shadow: 5px 30px 12px #0000FF;}
+ 50%		{	line-height:60px;		text-shadow: 5px 30px 12px #0000FF;}
+ 60% 		{	line-height:60px;		text-shadow: 5px 30px 12px #0000FF;}
+ 67.5% 	{	line-height:65px;		text-shadow: 5px 27px 9px #0000FF;}
+ 75% 		{	line-height:70px;		text-shadow: 5px 25px 6px #0000FF;}
+ 87.5% 	{	line-height:90px;		text-shadow: 5px 15px 4px #0000FF;}
+ 100% 	{	line-height:120px;	text-shadow: 5px 0px 1px #0000FF;}
+}
+
+@keyframes jumping {
+ 0% 		{	line-height:120px; 	text-shadow: 5px 0px 1px #0000FF;}
+ 12.5% 	{	line-height:90px; 	text-shadow: 5px 15px 4px #0000FF;}
+ 25% 		{	line-height:70px; 	text-shadow: 5px 25px 6px #0000FF;}
+ 32.5% 	{	line-height:65px;		text-shadow: 5px 27px 9px #0000FF;}
+ 40% 		{	line-height:60px;		text-shadow: 5px 30px 12px #0000FF;}
+ 50%		{	line-height:60px;		text-shadow: 5px 30px 12px #0000FF;}
+ 60% 		{	line-height:60px;		text-shadow: 5px 30px 12px #0000FF;}
+ 67.5% 	{	line-height:65px;		text-shadow: 5px 27px 9px #0000FF;}
+ 75% 		{	line-height:70px;		text-shadow: 5px 25px 6px #0000FF;}
+ 87.5% 	{	line-height:90px;		text-shadow: 5px 15px 4px #0000FF;}
+ 100% 	{	line-height:120px;	text-shadow: 5px 0px 1px #0000FF;}
+
+}
+/******** fin ANIMATION JUMPING ********/
+
+
+
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx fin styleHomepage   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+
+
+
+
+
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 3D   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+
+
+	
+
+/******************** TEXT WHITE shadow foncé ***************************/  
+
+.text3Dfonce{ /* same as newButton3D */
+
+		text-shadow: 0   0.5px	0 #CCCCCC,
+				0.1px 	0.8px	0 #CCCCCC,
+              	0.2px   1px 	0 #B2B2B2,
+              	-0.3px  1.2px 	0 #B2B2B2,
+             	-0.4px 	1.5px 0 #999999,
+             	-0.7px 	2px 	0 #666666,
+             	-1px 	2.5px 0 #4C4C4C,
+             	-1.5px 	3px 	0 #333333,
+             -2px 3.5px 2px rgba(0,0,0, 0.6),
+             -2px 3.5px 8px rgba(0,0,0, 0.2),
+             -2px 3.5px 45px rgba(0,0,0, 0.4);
+}
+/******************** fin TEXT WHITE shadow foncé ***************************/  
+
+/******************** TEXT WHITE shadow clair ***************************/  
+.text3Dclair{
+
+		text-shadow: 0   0.5px	0 #eee,
+				0.1px 	0.8px	0 #eee,
+              	0.2px   1px 	0 #e5e5e5,
+              	-0.3px  1.2px 	0 #e5e5e5,
+             	-0.4px 	1.5px 0 #C8C8C8,
+             	-0.7px 	2px 	0 #C1C1C1,
+             	-1px 	2.5px 0 #B9B9B9,
+             	-1.5px 	3px 	0 #B2B2B2,
+             -2px 3.5px 2px rgba(0,0,0, 0.6),
+             -2px 3.5px 8px rgba(0,0,0, 0.2),
+             -2px 3.5px 45px rgba(0,0,0, 0.4);
+}
+/******************** fin TEXT WHITE shadow clair ***************************/  
+
+/******************** BUTTON WHITE PLEIN ***************************/  
+
+.newButton3D{
+	/*line-height:50px;*/
+	/*min-width: 100px;*/
+
+	height:40px;
+	line-height:0px;
+	text-align:center;
+	font-size: 1.4vw;
+	font-weight:bold;
+	padding:0.5vw 1vw;
+	
+    border-style: solid;
+    border-width: 4px;
+	border-radius: 0.5vw; 
+	
+    
+	color:white;/*rgba(0,0,105,0.9);
+	
+	 /* shadow text moyen foncé!! */
+	text-shadow: 0   0.5px	0 #CCCCCC,
+				0.1px 	0.8px	0 #CCCCCC,
+              	0.2px   1px 	0 #B2B2B2,
+              	-0.3px  1.2px 	0 #B2B2B2,
+             	-0.4px 	1.5px 0 #999999,
+             	-0.7px 	2px 	0 #666666,
+             	-1px 	2.5px 0 #4C4C4C,
+             	-1.5px 	3px 	0 #333333,
+             -2px 3.5px 2px rgba(0,0,0, 0.6),
+             -2px 3.5px 8px rgba(0,0,0, 0.2),
+             -2px 3.5px 45px rgba(0,0,0, 0.4);
+          
+	
+		/** border fonce TOP */
+	box-shadow:-0.2px   0.8px 0 #CCCCCC,
+              -0.5px   1.5px 0 #CCCCCC,
+             -1px 2.3px 0 #B2B2B2,
+             -1px 3px 0 #999999,
+             -2px 3.8px 0 #666666,
+             -2.1px 4.5px 0 #4C4C4C,
+             -2.2px 5.3px 2px rgba(0,0,0, 0.4),
+             -2.2px 5.3px 8px rgba(0,0,0, 0.2),
+             -2.2px 5.3px 20px rgba(0,0,0, 0.4);
+	
+}
+.newButton3D:hover{
+	border:4px solid white;
+	background:rgba(0,0,0,0);
+	/* permet d'enlever leffet creux */
+	box-shadow:-0.2px   0.8px 0 #CCCCCC,
+              -0.5px   1.5px 0 #CCCCCC,
+             -1px 2.3px 0 #B2B2B2,
+             -1px 3px 0 #999999,
+             -2px 3.8px 0 #666666,
+             -2.1px 4.5px 0 #4C4C4C,
+             -2.2px 5.3px 2px rgba(0,0,0, 0.4),
+             -2.2px 5.3px 8px rgba(0,0,0, 0.2),
+             -2.2px 5.3px 20px rgba(0,0,0, 0.4),
+			/* interieur */
+              -0.2px   0.8px 0 #CCCCCC inset,
+              -0.5px   1.5px 0 #CCCCCC inset,
+             -1px 2.3px 0 #B2B2B2 inset,
+             -1px 3px 0 #999999 inset,
+             -2px 3.8px 0 #666666 inset,
+             -2.1px 4.5px 0 #4C4C4C inset,
+             -2.2px 5.3px 2px rgba(0,0,0, 0.4) inset,
+             -2.2px 5.3px 8px rgba(0,0,0, 0.2) inset,
+             -2.2px 5.3px 20px rgba(0,0,0, 0.4) inset;
+}
+.newButton3D:active{
+	/*margin-top:4.5px;
+	margin-right:2.2px;
+	*/
+	background:rgba(0,0,0,0);
+	box-shadow: 0 0 0 #000000;
+	text-shadow:0   0 0 #000000;
+	
+}
+
+
+/******************** fin BUTTON WHITE PLEIN ***************************/  
+
+
+/******************** BUTTON WHITE CREUX ***************************/  
+
+.newButton3Dcreux{
+
+	height:40px;
+	line-height:0px;
+	text-align:center;
+	font-size: 1.4vw;
+	font-weight:bold;
+	padding:0.5vw 1vw;
+	border:4px solid white;/*bleu fonce #003399; /*vert : #4DB84D;*/
+	border-radius: 0.5vw; 
+	
+    
+	background:rgba(0,0,0,0);
+	color:white;
+	
+	 /*shadow text moyen foncé!!*/
+		text-shadow: 0   0.5px	0 #CCCCCC,
+				0.1px 	0.8px	0 #CCCCCC,
+              	0.2px   1px 	0 #B2B2B2,
+              	-0.3px  1.2px 	0 #B2B2B2,
+             	-0.4px 	1.5px 0 #999999,
+             	-0.7px 	2px 	0 #666666,
+             	-1px 	2.5px 0 #4C4C4C,
+             	-1.5px 	3px 	0 #333333,
+             -2px 3.5px 2px rgba(0,0,0, 0.6),
+             -2px 3.5px 8px rgba(0,0,0, 0.2),
+             -2px 3.5px 45px rgba(0,0,0, 0.4);
+            
+	
+		/** border fonce TOP */
+	box-shadow:-0.2px   0.8px 0 #CCCCCC,
+              -0.5px   1.5px 0 #CCCCCC,
+             -1px 2.3px 0 #B2B2B2,
+             -1px 3px 0 #999999,
+             -2px 3.8px 0 #666666,
+             -2.1px 4.5px 0 #4C4C4C,
+             -2.2px 5.3px 2px rgba(0,0,0, 0.4),
+             -2.2px 5.3px 8px rgba(0,0,0, 0.2),
+             -2.2px 5.3px 20px rgba(0,0,0, 0.4),
+			/* interieur */
+              -0.2px   0.8px 0 #CCCCCC inset,
+              -0.5px   1.5px 0 #CCCCCC inset,
+             -1px 2.3px 0 #B2B2B2 inset,
+             -1px 3px 0 #999999 inset,
+             -2px 3.8px 0 #666666 inset,
+             -2.1px 4.5px 0 #4C4C4C inset,
+             -2.2px 5.3px 2px rgba(0,0,0, 0.4) inset,
+             -2.2px 5.3px 8px rgba(0,0,0, 0.2) inset,
+             -2.2px 5.3px 20px rgba(0,0,0, 0.4) inset;
+}
+.newButton3Dcreux:hover{
+	background:white;
+             
+}
+.newButton3Dcreux:active{
+	/*margin-top:4.5px;
+	margin-right:2.2px;
+	*/
+	background:rgba(0,0,0,0);
+	box-shadow: 0 0 0 #000000;
+	text-shadow:0   0 0 #000000;
+	
+}
+
+
+/******************** fin BUTTON WHITE CREUX ***************************/  
+
+
+
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx fin 3D   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+
+
+
 
 
 

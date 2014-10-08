@@ -18,7 +18,7 @@
     <link rel="shortcut icon" href="images/tree3.png" />
 
     <!-- il est important de mettre general au dessus du style propre a la classe comme ca general est moins prioritaire-->
-    <link rel="stylesheet" type="text/css" href="CSS/all5.css" />
+    <link rel="stylesheet" type="text/css" href="CSS/all6.css" />
     <!-- <link rel="stylesheet" type="text/css" href="CSS/active.css"  />-->
     
 </head>
@@ -75,6 +75,10 @@ HTML5 sont employées. -->
 	}
     else if (request.getParameter("page").equals("hobbies")) { %>
 	<%@include file="/WEB-INF/page/hobbies.jsp"%>
+<%
+	}
+    else if (request.getParameter("page").equals("perso")) { %>
+	<jsp:forward page='/registration'/>
 <%
 	}
 %>

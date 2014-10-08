@@ -6,7 +6,7 @@
     <meta charset='utf-8' />
     <link rel="shortcut icon" href="images/tree3.png" />
     
-	<link rel="stylesheet" type="text/css" href="CSS/all5.css" />
+	<link rel="stylesheet" type="text/css" href="CSS/all6.css" />
    <!--  <link rel="stylesheet" type="text/css" href="CSS/police.css" />
     <link rel="stylesheet" type="text/css" href="CSS/3D1.css" />
     <link rel="stylesheet" type="text/css" href="CSS/styleWelcome2.css" /> -->
@@ -28,7 +28,9 @@ HTML5 sont employees. -->
 	<div id="divLogIn" class="line inline"> 
 		<input id="coPseudo" class="textGrey inline" name="coLogin" type="text" value="Login or Email" onfocus="inputTextFocus('coPseudo', 'White')" onblur="inputTextBlur('coPseudo','Pseudo or Email')" >
 		<input id="coPwd" class="textGrey inline" name="coPwd" type="text" value="Password" onfocus="inputTextFocusPwd('coPwd', 'White')" onblur="inputTextBlurPwd('coPwd','Password')" >
-		<input id="confirmLogIn" type="submit" value="Log in" class="inline  newButton3D" onmouseover="changeCursor('confirmLogIn')"  />
+		<input id="confirmLogIn" type="submit" value="Log in" class="inline  newButton3D buttonBlueFonce" onmouseover="changeCursor('confirmLogIn')"  />
+		
+       
 	</div>
 	</form>
 
@@ -39,7 +41,7 @@ HTML5 sont employees. -->
 
 <section id="sectionWelcome" class="line" >
 	<article id="demo" class="inline"  >
-		 <h2 id="buttonDemo" class="newButton3D" onmouseover="changeCursor('buttonDemo')" onclick="location.href='index.jsp?page=homepage'">DEMO </br> reach directly </br> the website </h2>
+		 <h2 id="buttonDemo" class="newButton3D buttonBlueFonce" onmouseover="changeCursor('buttonDemo')" onclick="location.href='index.jsp?page=homepage'">DEMO </br> reach directly </br> the website </h2>
 	</article>
 	
 	<article id="registration" class="inline">
@@ -60,7 +62,7 @@ HTML5 sont employees. -->
 		<div><input id="confirmPwd" class="textGrey inline"  name="confirmPwd" type="text" value="Confirm your password" 
 		onfocus="inputTextFocusPwd('confirmPwd', 'White')" onblur="inputTextBlurPwd('confirmPwd','Confirm your password')" required>
 		 </div>
-		<input id="confirmInscription" type="submit" value="Confirm" class="newButton3D" onmouseover="changeCursor('confirmInscription')" 
+		<input id="confirmInscription" type="submit" value="Confirm" class="newButton3D buttonBlueFonce" onmouseover="changeCursor('confirmInscription')" 
 		onclick="emptyAll('login','Login', 'email','Email (optional)', 'pwd','Password', 'confirmPwd','Confirm your password')" />
        </form>
 	</article>
