@@ -5,6 +5,8 @@ import static dao.DAOUtilitaire.initialisationRequetePreparee;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Timestamp;
+import java.util.ArrayList;
 
 import org.jasypt.util.password.ConfigurablePasswordEncryptor;
 
@@ -106,9 +108,11 @@ public class PersonDao {
 		            Boolean boolPwd = passwordEncryptor.checkPassword(pwd, pwdPerson);
 		            if(boolPwd){
 		            	// Creation de la person
+		            	long idP = resultSetPerson.getInt("id_person");
 		            	String nameP = resultSetPerson.getString("name_person");
 		            	String emailP = resultSetPerson.getString("mail_person");
 		            	boolean isNew = resultSetPerson.getBoolean("is_new");
+		            	person.setId(idP);
 		            	person.setName(nameP);
 		            	person.setLogin(login);
 		            	person.setEmail(emailP);
@@ -133,5 +137,44 @@ public class PersonDao {
 		        fermeturesSilencieuses( resultSetPerson, preparedStatement, connexion );
 		    }
 	}
+	
+     private static final String SQL_SELECT_GROUPS = "select Groups.id_group, Groups.name_group, Groups.date_inscription"
+     		+ " from BelongTo, Groups where BelongTo.id_person=? "
+		+ "AND Groups.id_group=BelongTo.id_group";
+
+
+	public ArrayList<Group> getGroups(Person person) throws DAOException {
+	    Connection connexion = null;
+	    PreparedStatement preparedStatement = null;
+	    ResultSet resultSetGroup = null;
+	    ArrayList<Group> listGroups = new ArrayList<>();
+	    
+		try {
+		        /* Récupération d'une connexion depuis la Factory */
+		        connexion = (Connection) daoFactory.getConnection();
+		        preparedStatement = initialisationRequetePreparee( connexion, SQL_SELECT_GROUPS, false, person.getId());
+		        resultSetGroup = preparedStatement.executeQuery();
+		        String nameGroup;
+		        long idGroup;
+		        Timestamp date;
+		        while ( resultSetGroup.next() ) {
+		    	    Group group = new Group();
+		        	idGroup = resultSetGroup.getInt("id_group");
+		        	nameGroup = resultSetGroup.getString("name_group");
+		        	date = resultSetGroup.getTimestamp("date_inscription");
+		        	group.setName(nameGroup);
+		        	group.setId(idGroup);
+		        	group.setDateInscription(date);
+		        	listGroups.add(group);
+		        }
+		        return listGroups;
+		    } catch ( SQLException e ) {
+		        throw new DAOException( e );
+		    } finally {
+		        fermeturesSilencieuses( resultSetGroup, preparedStatement, connexion );
+		    }
+	}
+	
+	
 	
 }

@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.jasypt.util.password.ConfigurablePasswordEncryptor;
 
@@ -37,6 +38,12 @@ public final class GroupForm {
     public Group createGroup( HttpServletRequest request ) {
     	
         String nameG = request.getParameter("groupName" );
+        
+        HttpSession session = request.getSession(); 
+        //request.setAttribute("errors", form.getErrors());
+        Person person = (Person) session.getAttribute("person");
+        
+        long idPers = person.getId();
 
         Group group = new Group();
         try {
@@ -44,10 +51,12 @@ public final class GroupForm {
             //traiterPseudo( pseudoAdmin );
         	group.setName(nameG);
         	long idGroup = groupDao.createGroup(group);
-        	group.setId(idGroup);
 
             if ( idGroup != 0 ) {
-                System.out.println( "Succès de l'inscription.");
+                System.out.println( "Succès de l'ajout de groupe.");
+            	group.setId(idGroup);
+            	
+            	boolean insertBelongTo = groupDao.registerGroup(idPers, idGroup);
             } else {
             	 System.out.println( "Échec de l'inscription.");
             }
