@@ -45,7 +45,7 @@ onclick='location.href=\"index.jsp?page=hobbies\"'" />
 	<ul>
 	<!--  <li <b><c:out value="${currentAccueil}" /></b> >Homepage</li>-->
 	 <li ${currentHomepage} >Homepage</li>
-	 <li ${currentGroup} >Group</li>
+	 <li ${currentGroup} >Members</li>
 	 <li ${currentDoodle} >Doodle</li>
 	 <li ${currentMeals} >Meals</li>
 	 <li ${currentExpenses} >Expenses</li>
