@@ -1,6 +1,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
-
+<!-- USELESS! NOT USED ANY MORE -->
 	
 <c:if test="${param['page'] == 'homepage'}" >
 	<c:set var = "extraCSS" value="

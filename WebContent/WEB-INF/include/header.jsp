@@ -1,7 +1,9 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 
+<!-- USELESS! NOT USED ANY MORE -->
 
+<!-- 
 <header class="line">
 	<div id="titleIndex" class="inline text3Dfonce">
  	Organisation of holidays
@@ -15,3 +17,4 @@
 	</div>
 
 </header>
+-->
