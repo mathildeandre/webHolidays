@@ -559,6 +559,10 @@ color: #000;
 /*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
 #bodyPersonalArea{
 	
+	
+	background-image: url("../images/design6.jpg");
+	background-size: 100%;
+	background-attachment: fixed;
 }
 
 
@@ -607,11 +611,6 @@ color: #000;
 
 #sectionPersonalArea{
 	color:white;
-	
-	background-image: url("../images/design6.jpg");
-	background-size: 100%;
-	background-attachment: fixed;
-	background:red;
 }
 #sousSectionPA{
 	
