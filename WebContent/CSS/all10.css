@@ -611,6 +611,7 @@ color: #000;
 
 #sectionPersonalArea{
 	color:white;
+	background:rgba(255,255,255,0.3);
 }
 #sousSectionPA{
 	
@@ -626,9 +627,10 @@ color: #000;
 }
 
 #sectionPersonalArea #myGroups{
-	position: absolute;
 	left: 2vw;
 	margin-top:5vw;
+	margin-left:2vw;
+	height:100vw;
 	/*width:40vw;*/  
 }
 
