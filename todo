@@ -1,0 +1,38 @@
+
+-> Réfléchir à la page meals
+
+-> Faire enregistrement doodle et expense
+
+-> Faire design doodle et meals
+
+-> Changer taille datepicker
+
+
+
+A FAIRE AVANT DE METTRE LE SITE EN LIGNE (mais pas le + urgent)
+
+- Envoie mail automatique lors de l'ajout d'une personne dans le groupe
+- Creer masse de recettes
+- Changer dans persoArea la partie modif de profil ?? 
+- Gerer le isNew : 
+	-> Si première connexion et enregistré par quelqu'un d'autre : 
+fenetre d'avertissement pr login pwd
+	-> Affichage d'un petit guide d'utilisation	
+- Gerer les cotés admin : 
+	-> Doodle : creation et suppression que pour l'admin
+	-> Expenses : creation et suppression de ligne que par admin
+- Si ajout d'un contact deja existant a un group : email envoye
+automatiquement et petit message lorsque le mec se connecte au site
+- A gerer : Si pas d'inscription mais qu'une simple utilisation des services
+
+
+
+
+CE A QUOI ON A PENSE (plus tard ou ameliorations)
+
+- Lors de l'ajout d'une personne dans le groupe avec une creation de 
+contact, possibilite de mettre que l'adresse mail et la personne
+pourra choisir directement soi-même son login et pwd ? Pas forcement
+utile ? 
+
+
