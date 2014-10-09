@@ -119,15 +119,17 @@ HTML5 sont employees. -->
 		 
 		 <c:if test="${requestScope.actionDone == 'modifyLogin'}" >
 			<div class="textGreen">  The change of login has been successful </div>
-		</c:if>
-		 
+		</c:if> 
 		  <div><input id="login" class="textGrey inline"  name="login" type="text" value="${sessionScope.person.login}"
          onfocus="inputTextFocus('login', 'White')" onblur="inputTextBlur('login','${sessionScope.person.login}')" required >
          <input id="confirmModifyLogin" type="submit" value="Modify Login" class="newButton3D buttonBlueFonce" onmouseover="changeCursor('confirmModifyLogin')" />
 		 </div>
 		 </form>
 		 
-		 <form method="post" action="modifyName">
+		 <form method="post" action="persoArea?action=modifyName">
+		 <c:if test="${requestScope.actionDone == 'modifyName'}" >
+			<div class="textGreen">  The change of name has been successful </div>
+		</c:if> 
 		 <div class="aroundBlack">Name (visible into groups): </div>
 		  <div><input id="name" class="textGrey inline"  name="name" type="text" value="${sessionScope.person.name}" 
          onfocus="inputTextFocus('name', 'White')" onblur="inputTextBlur('name','${sessionScope.person.name}')" required >

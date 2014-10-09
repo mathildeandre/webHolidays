@@ -42,30 +42,21 @@ public class PersoArea extends HttpServlet {
      * This method is called when the personalArea page has to be displayed. 
      * It will get all the groups and contacts matching the person connected. 
      * And then display them in the personalArea page
+     * @throws IOException 
+     * @throws ServletException 
      */
-	public void doPost( HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException {
+	public void doPost( HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException  {
       
 		// Si l'action correspondante est modification de login
 		if(request.getParameter("action")!=null && request.getParameter("action").equalsIgnoreCase("modifyLogin")){
-			PersoForm form = new PersoForm(personDAO);
-			Person person = form.modifyLogin(request);
-			HttpSession session = request.getSession();
-			
-			Map<String, String> errors = form.getErrors();
-			//la modif de login s'est bien passée
-			if(! errors.containsKey("modifyLogin")){
-				session.setAttribute("person", person);
-				request.setAttribute("actionDone", "modifyLogin");
-				this.getServletContext().getRequestDispatcher("/personalArea.jsp").forward(request, response);
-			}
-			//la modif n'a pas marche
-			else{
-				//erreur a traitée dans personalArea
-				request.setAttribute("errors", errors);
-				this.getServletContext().getRequestDispatcher("/personalArea.jsp").forward(request, response);
-			}
+			modifyLogin(request, response);
+		}
+		// Si l'action correspondante est modification de login
+		else if(request.getParameter("action")!=null && request.getParameter("action").equalsIgnoreCase("modifyName")){
+			modifyName(request, response);
 			
 		}
+		// Affichage normal de personalArea. A mettre dans une fonction à part
 		else{
 			// recuperer liste des groupes de la personne
 			ConnexionForm form = new ConnexionForm(personDAO);
@@ -84,5 +75,46 @@ public class PersoArea extends HttpServlet {
 		}
 
     }
+	
+	
+	private void modifyLogin(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+		PersoForm form = new PersoForm(personDAO);
+		Person person = form.modifyLogin(request);
+		HttpSession session = request.getSession();
+		
+		Map<String, String> errors = form.getErrors();
+		//la modif de login s'est bien passée
+		if(! errors.containsKey("modifyLogin")){
+			session.setAttribute("person", person);
+			request.setAttribute("actionDone", "modifyLogin");
+			this.getServletContext().getRequestDispatcher("/personalArea.jsp").forward(request, response);
+		}
+		//la modif n'a pas marche
+		else{
+			//erreur a traitée dans personalArea
+			request.setAttribute("errors", errors);
+			this.getServletContext().getRequestDispatcher("/personalArea.jsp").forward(request, response);
+		}
+	}
+	
+	private void modifyName(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+		PersoForm form = new PersoForm(personDAO);
+		Person person = form.modifyName(request);
+		HttpSession session = request.getSession();
+		
+		Map<String, String> errors = form.getErrors();
+		//la modif de login s'est bien passée
+		if(! errors.containsKey("modifyLogin")){
+			session.setAttribute("person", person);
+			request.setAttribute("actionDone", "modifyName");
+			this.getServletContext().getRequestDispatcher("/personalArea.jsp").forward(request, response);
+		}
+		//la modif n'a pas marche
+		else{
+			//erreur a traitée dans personalArea
+			request.setAttribute("errors", errors);
+			this.getServletContext().getRequestDispatcher("/personalArea.jsp").forward(request, response);
+		}
+	}
 	
 }

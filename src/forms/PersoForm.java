@@ -45,9 +45,27 @@ public final class PersoForm {
         
 
         try {
-        	System.out.println("changement de login reussi !");
-        	personDao.modifyLogin(person);
+        	personDao.modifyLogin(person, login);
         	person.setLogin(login);
+        	System.out.println("changement de login reussi !");
+            return person;
+        } catch ( DAOException e ) {
+            errors.put("modifyLogin", "Fail of the modification of login : thank you to try egain in few minutes.");
+            e.printStackTrace();
+            return null;
+        }
+    }
+    
+public Person modifyName(HttpServletRequest request) {
+    	
+        String name = request.getParameter("name" );
+        
+        HttpSession session = request.getSession(); 
+        Person person = (Person) session.getAttribute("person");
+        try {
+        	personDao.modifyName(person, name);
+        	person.setName(name);
+        	System.out.println("changement de name reussi !");
             return person;
         } catch ( DAOException e ) {
             errors.put("modifyLogin", "Fail of the modification of login : thank you to try egain in few minutes.");
