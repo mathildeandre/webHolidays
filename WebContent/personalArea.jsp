@@ -6,7 +6,7 @@
     <meta charset='utf-8' />
     <link rel="shortcut icon" href="images/tree3.png" />
     
-	<link rel="stylesheet" type="text/css" href="CSS/all9.css" />
+	<link rel="stylesheet" type="text/css" href="CSS/all10.css" />
    <!--<link rel="stylesheet" type="text/css" href="CSS/police.css" />
     <link rel="stylesheet" type="text/css" href="CSS/3D1.css" />
     <link rel="stylesheet" type="text/css" href="CSS/stylePersonalArea.css" />-->
@@ -15,7 +15,7 @@
 
 <!-- Mise en page classique avec le header, le corps, et le footer ! Les balises structurantes de
 HTML5 sont employees. -->
-<body id="bodyWelcome" >
+<body id="bodyPersonalArea" >
 <header id="headerPersonalArea"  class="line">
 	<div id="title" class="inline text3Dfonce " >
  	Organisation of holidays
@@ -40,11 +40,11 @@ HTML5 sont employees. -->
 
 
 <section id="sectionPersonalArea" class="line" >
+<div id="sousSectionPA">
 		<!-- <div id="hint" class="aroundBlack">
 		In order to create your first group : fill up "Group name", 
 		create the group and the click on it into "My Group"
 		</div> -->
-		
 		
 		
 	<article id="myGroups" class="inline"  >
@@ -213,13 +213,17 @@ HTML5 sont employees. -->
 		 </div>
 		 </form>
 	</article>
+	
+</div>
 </section>
-
 
 <footer id="footerPersonalArea">Copyright © - Tous droits reserves<br/> Nous contacter : fabiensauce@orange.fr</footer>
 
-<script src="JS/actionJS/welcomeChanging.js" type="text/javascript"></script>
+<!-- 
+<script src="JS/actionJS/personalAreaChanging.js" type="text/javascript"></script>
+-->
 <script src="JS/actionJS/actionInputText.js" type="text/javascript"></script>
+
 
 </body>
 

@@ -557,6 +557,11 @@ color: #000;
 /*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
 /*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx stylePersonalArea   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
 /*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+#bodyPersonalArea{
+	
+}
+
+
 
 #headerPersonalArea{
 	background:rgba(151,152,255,0.9);/*url("../images/pins.jpg") ;*/
@@ -602,8 +607,15 @@ color: #000;
 
 #sectionPersonalArea{
 	color:white;
+	
+	background-image: url("../images/design6.jpg");
+	background-size: 100%;
+	background-attachment: fixed;
+	background:red;
 }
-
+#sousSectionPA{
+	
+}
 
 #sectionPersonalArea #hint{
 	margin-top:1vw;
@@ -802,22 +814,16 @@ transform: rotate(-10deg) scale(1.3,1.3);
 
 #sectionHomepage{
 	background-image:url("../images/parasol.jpg"), url("../images/peint-blanc.jpg");
+	
 	background-repeat:no-repeat, repeat;
 	background-size:20vw;
 	background-position: top right;
 	color:#1A1A66;
-	
-	
-	/*background:white;
-	background-image:url("../images/parasol.jpg");
-	background-repeat:no-repeat;
-	background-size:20vw;
-	background-position: top right;
-	color:#1A1A66;
-	*/
 }
-
-
+/*test pr mettre une surcouche transparente sur image*/
+#sousSectionHomepage{
+	background:rgba(255,255,255,0.7);
+}
 
 #sectionHomepage h1, #sectionHomepage h2{
 	color:#4747D1;
