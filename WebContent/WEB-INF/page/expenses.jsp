@@ -81,5 +81,5 @@ $(document).click(function(e) {
     // e.target is the element which has been clicked.
 });
 </script>
-<script src="JS/expenses2.js" type="text/javascript"></script>
-<script src="JS/expensesResult2.js" type="text/javascript"></script>
+<script src="JS/expenses3.js" type="text/javascript"></script>
+<script src="JS/expensesResult3.js" type="text/javascript"></script>

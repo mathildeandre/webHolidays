@@ -33,7 +33,7 @@ function afficheResult(){
 	
 	
 	var resultDiv = document.getElementById("resultExpenses");
-	resultDiv.innerHTML = text+'(-> : "owes")';
+	resultDiv.innerHTML = text+'</br>(-> : "owes")';
 	
 	
 	//alert(text+'(-> : "owes")');

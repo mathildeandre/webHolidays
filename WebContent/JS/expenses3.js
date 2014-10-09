@@ -11,7 +11,7 @@ var tabStr = url.substring(url.lastIndexOf("=")+1);
 var tabPerson = tabStr.split(",");
 
 	//on reecrit le tab de maniere temp
-	tabPerson=["emiel","matthijs","fabian"]; 
+	tabPerson=["emiel","matthijs","fabian","kiki","niaude","math","fab","loulou"]; 
 	
 /* start */
 createTHead();
@@ -117,7 +117,7 @@ function addRow(){
 		// Add Input Amount
 		var cell1 = newRow.insertCell(1);
 		var id = theRowNumber + "1";
-		cell1.innerHTML = '<input class="textGrey" id="'+id+'" type="number" value="00.00"  onfocus="inputTextFocus(\''+id+'\', \'Red\')" onblur="inputTextBlur(\''+id+'\',\'00.00\')" >';
+		cell1.innerHTML = '<input class="textRed tdTotal" id="'+id+'" type="number" value="00.00"  onfocus="inputTextFocus(\''+id+'\', \'Red\')" onblur="inputTextBlur(\''+id+'\',\'00.00\')" >';
 
 		// Add checkbox for persons
 		for(i=0; i<tabPerson.length; i++){
@@ -128,13 +128,14 @@ function addRow(){
 		
 		// Add button checkAllTheRow
 		var cellButtonAll = newRow.insertCell(tabPerson.length+2);
-		cellButtonAll.innerHTML = '<input type="checkbox" id="all'+theRowNumber+'" name="Checkall" value="check/uncheck all" onclick="checkAllRow('+theRowNumber+')"><label for="all'+theRowNumber+'" > all </label>';
-		cellButtonAll.style.backgroundColor = "#FF8080";
+		cellButtonAll.innerHTML = '<label name for="all'+theRowNumber+'" >All </label><input type="checkbox" id="all'+theRowNumber+'" name="Checkall" value="check/uncheck all" onclick="checkAllRow('+theRowNumber+')">';
+		/*permet de mettre toutes les cells All avec background*/
+		//cellButtonAll.style.backgroundColor = "#FF8080";
 
 
 		// Add Description
 		var cellDescript = newRow.insertCell(tabPerson.length+3);
-		cellDescript.innerHTML = '<textarea  class="textGrey" id="descript'+theRowNumber+'" rows="1" cols="50" onfocus="inputTextFocus(\'descript'+theRowNumber+'\', \'Red\')"  onblur="inputTextBlur(\'descript'+theRowNumber+'\',\'Description\')" >Description</textarea> ';
+		cellDescript.innerHTML = '<textarea  class="textGrey" id="descript'+theRowNumber+'" rows="1" cols="17" onfocus="inputTextFocus(\'descript'+theRowNumber+'\', \'Red\')"  onblur="inputTextBlur(\'descript'+theRowNumber+'\',\'Description\')" >Description</textarea> ';
 		
 		theRowNumber++;
 		alternBackground();
