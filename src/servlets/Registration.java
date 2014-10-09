@@ -49,7 +49,7 @@ public class Registration extends HttpServlet {
         request.setAttribute("errors", form.getErrors());
 
         if(form.getErrors().isEmpty()){
-            this.getServletContext().getRequestDispatcher( "/persoArea" ).forward( request, response );
+            this.getServletContext().getRequestDispatcher( "/persoArea?action=display" ).forward( request, response );
         }
         else{
         	//TODO gerer les erreurs

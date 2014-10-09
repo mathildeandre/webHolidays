@@ -104,14 +104,12 @@ public class GroupDao {
 	    }
 	}
 	
-	
-	private static final String SQL_SELECT_GROUP = "SELECT idGroup, nameGroup, pwd_admin, pwd_members FROM Groups WHERE nameGroup=?";
-	
-	public String findGroup(String nameGroup, String pwdGroup) throws DAOException {
+	private static final String SQL_SELECT_GROUP = "SELECT * FROM Groups WHERE name_group=?";
+
+	public boolean checkGroup(String nameGroup) throws DAOException {
 		Connection connexion = null;
 	    PreparedStatement preparedStatementGroup = null;
 	    ResultSet resultSetGroup = null;
-	    String result = "";
 
 	    try {
 	        /* Récupération d'une connexion depuis la Factory */
@@ -120,38 +118,22 @@ public class GroupDao {
 		   // PreparedStatement preparedStatement = (PreparedStatement) connexion.prepareStatement( SQL_SELECT_GROUP, Statement.NO_GENERATED_KEYS );
 		   // preparedStatement.setString(1, nameGroup);
 	     
-	        preparedStatementGroup = initialisationRequetePreparee( connexion, SQL_SELECT_GROUP, false, nameGroup );
+	        preparedStatementGroup = initialisationRequetePreparee( connexion, SQL_SELECT_GROUP, false, nameGroup);
 	        resultSetGroup = preparedStatementGroup.executeQuery();
 
-	        if ( resultSetGroup.next() ) {
-	        	String pwdAdmin = resultSetGroup.getString("pwd_admin");
-	        	String pwdMember = resultSetGroup.getString("pwd_members");
-	        	
-	        	ConfigurablePasswordEncryptor passwordEncryptor = new ConfigurablePasswordEncryptor();
-	            passwordEncryptor.setAlgorithm( ALGO_CHIFFREMENT );
-	            passwordEncryptor.setPlainDigest( false );
-	            Boolean boolAdmin = passwordEncryptor.checkPassword(pwdGroup, pwdAdmin);
-	            Boolean boolMember = passwordEncryptor.checkPassword(pwdGroup, pwdMember);
-	            
-		        if ( boolAdmin ) {
-		        	result="OK_admin";
-		        }
-		        else if(boolMember){
-		        	result="OK_member";
-		        }
-		        else{
-			        result = "ERROR_pwd";
-			    }
-		        
+	        if ( resultSetGroup.next()) {
+	        	return false;
 	        }
 	        else{
-	        	result = "ERROR_name";
+	        	return true;
 	        }
 	    } catch ( SQLException e ) {
 	        throw new DAOException( e );
 	    } finally {
 	        fermeturesSilencieuses( resultSetGroup, preparedStatementGroup, connexion );
 	    }
-	    return result;
 	}
+	
+	
+	
 }

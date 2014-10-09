@@ -21,9 +21,7 @@ HTML5 sont employees. -->
  	Organisation of holidays
 	</div>
 	
-	<c:if test="${not empty requestScope.errorConnexion}" >
-         <div id="divLogInError" class="textRed">Error with your login or password</div>
-	</c:if>
+         <div id="divLogInError" class="textRed">${requestScope.errors['signIn']}</div>
 	<form method="post" action="login">
 	<div id="divLogIn" class="line inline"> 
 		<input id="coPseudo" class="textGrey inline" name="coLogin" type="text" value="Login or Email" onfocus="inputTextFocus('coPseudo', 'White')" onblur="inputTextBlur('coPseudo','Pseudo or Email')" >

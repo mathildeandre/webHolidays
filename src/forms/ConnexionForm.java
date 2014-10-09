@@ -42,6 +42,7 @@ public class ConnexionForm {
 	            	return person;
 	            } else {
 	            	 System.out.println( "Échec de la connexion.");
+	            	 errors.put("signIn", "wrong pwd or login");
 	            	 return null;
 	            }
 	        } catch ( DAOException e ) {

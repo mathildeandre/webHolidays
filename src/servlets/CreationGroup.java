@@ -2,6 +2,7 @@ package servlets;
 
 
 import java.io.IOException;
+import java.util.Map;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -44,16 +45,18 @@ public class CreationGroup extends HttpServlet {
 
         /* Traitement de la requête et récupération du bean en résultant */
         Group group = form.createGroup(request );
+        Map<String, String> errors = form.getErrors();
 
     	request.setAttribute("group", group);
 
-        if(group != null){
-            this.getServletContext().getRequestDispatcher( "/persoArea" ).forward( request, response );
+        if(errors.isEmpty()){
+            this.getServletContext().getRequestDispatcher( "/persoArea?action=display" ).forward( request, response );
         }
         else{
         	//TODO gerer les erreurs
             request.setAttribute("errorConnexion", "error");
-            this.getServletContext().getRequestDispatcher( "/welcome.jsp" ).forward( request, response );
+            request.setAttribute("errors", errors);
+            this.getServletContext().getRequestDispatcher( "/persoArea?action=display" ).forward( request, response );
         }
 
     }
