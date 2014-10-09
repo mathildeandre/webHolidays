@@ -120,6 +120,8 @@ HTML5 sont employees. -->
 		 <c:if test="${requestScope.actionDone == 'modifyLogin'}" >
 			<div class="textGreen">  The change of login has been successful </div>
 		</c:if> 
+		 <div class="textRed">${requestScope.errors['loginPerson']}</div>
+		
 		  <div><input id="login" class="textGrey inline"  name="login" type="text" value="${sessionScope.person.login}"
          onfocus="inputTextFocus('login', 'White')" onblur="inputTextBlur('login','${sessionScope.person.login}')" required >
          <input id="confirmModifyLogin" type="submit" value="Modify Login" class="newButton3D buttonBlueFonce" onmouseover="changeCursor('confirmModifyLogin')" />
@@ -137,7 +139,12 @@ HTML5 sont employees. -->
 		 </div>
 		 </form>
 		 
-		 <form method="post" action="modifyEmail">
+		 <form method="post" action="persoArea?action=modifyEmail">
+		 <c:if test="${requestScope.actionDone == 'modifyEmail'}" >
+			<div class="textGreen">  The change of email has been successful </div>
+		</c:if> 
+		 <div class="textRed">${requestScope.errors['emailPerson']}</div>
+		
 		 <div class="aroundBlack">Email adress :</div>
 		  <div><input id="email" class="textGrey inline"  name="email" type="text" value="${sessionScope.person.email}" 
          onfocus="inputTextFocus('email', 'White')" onblur="inputTextBlur('email','${sessionScope.person.email}')" required >

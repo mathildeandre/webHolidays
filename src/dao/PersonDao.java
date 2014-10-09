@@ -215,6 +215,26 @@ public class PersonDao {
 				        fermeturesSilencieuses(preparedStatement, connexion );
 				    }
 			}
+
+	private static final String SQL_UPDATE_EMAIL = "UPDATE Persons SET mail_person=? WHERE id_person=?";
+
+	public void modifyEmail(Person person, String newMail) throws DAOException {
+		Connection connexion = null;
+		PreparedStatement preparedStatement = null;
+
+		try {
+			/* Récupération d'une connexion depuis la Factory */
+			connexion = (Connection) daoFactory.getConnection();
+			preparedStatement = initialisationRequetePreparee(connexion,
+					SQL_UPDATE_EMAIL, false, newMail, person.getId());
+			preparedStatement.executeUpdate();
+
+		} catch (SQLException e) {
+			throw new DAOException(e);
+		} finally {
+			fermeturesSilencieuses(preparedStatement, connexion);
+		}
+	}
 	
 	
 	

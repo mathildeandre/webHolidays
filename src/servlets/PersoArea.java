@@ -18,7 +18,6 @@ import dao.PersonDao;
 import beans.Group;
 import beans.Person;
 import forms.ConnexionForm;
-import forms.PersoForm;
 import forms.RegistrationForm;
 
 public class PersoArea extends HttpServlet {
@@ -51,11 +50,16 @@ public class PersoArea extends HttpServlet {
 		if(request.getParameter("action")!=null && request.getParameter("action").equalsIgnoreCase("modifyLogin")){
 			modifyLogin(request, response);
 		}
-		// Si l'action correspondante est modification de login
+		// Si l'action correspondante est modification de name
 		else if(request.getParameter("action")!=null && request.getParameter("action").equalsIgnoreCase("modifyName")){
 			modifyName(request, response);
 			
 		}
+		// Si l'action correspondante est modification d'email
+				else if(request.getParameter("action")!=null && request.getParameter("action").equalsIgnoreCase("modifyEmail")){
+					modifyEmail(request, response);
+					
+				}
 		// Affichage normal de personalArea. A mettre dans une fonction à part
 		else{
 			// recuperer liste des groupes de la personne
@@ -78,13 +82,13 @@ public class PersoArea extends HttpServlet {
 	
 	
 	private void modifyLogin(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
-		PersoForm form = new PersoForm(personDAO);
+		RegistrationForm form = new RegistrationForm(personDAO);
 		Person person = form.modifyLogin(request);
 		HttpSession session = request.getSession();
 		
 		Map<String, String> errors = form.getErrors();
 		//la modif de login s'est bien passée
-		if(! errors.containsKey("modifyLogin")){
+		if(errors.isEmpty()){
 			session.setAttribute("person", person);
 			request.setAttribute("actionDone", "modifyLogin");
 			this.getServletContext().getRequestDispatcher("/personalArea.jsp").forward(request, response);
@@ -98,15 +102,35 @@ public class PersoArea extends HttpServlet {
 	}
 	
 	private void modifyName(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
-		PersoForm form = new PersoForm(personDAO);
+		RegistrationForm form = new RegistrationForm(personDAO);
 		Person person = form.modifyName(request);
 		HttpSession session = request.getSession();
 		
 		Map<String, String> errors = form.getErrors();
 		//la modif de login s'est bien passée
-		if(! errors.containsKey("modifyLogin")){
+		if(! errors.containsKey("modifyName")){
 			session.setAttribute("person", person);
 			request.setAttribute("actionDone", "modifyName");
+			this.getServletContext().getRequestDispatcher("/personalArea.jsp").forward(request, response);
+		}
+		//la modif n'a pas marche
+		else{
+			//erreur a traitée dans personalArea
+			request.setAttribute("errors", errors);
+			this.getServletContext().getRequestDispatcher("/personalArea.jsp").forward(request, response);
+		}
+	}
+	
+	private void modifyEmail(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+		RegistrationForm form = new RegistrationForm(personDAO);
+		Person person = form.modifyEmail(request);
+		HttpSession session = request.getSession();
+		
+		Map<String, String> errors = form.getErrors();
+		//la modif de login s'est bien passée
+		if(errors.isEmpty()){
+			session.setAttribute("person", person);
+			request.setAttribute("actionDone", "modifyEmail");
 			this.getServletContext().getRequestDispatcher("/personalArea.jsp").forward(request, response);
 		}
 		//la modif n'a pas marche
