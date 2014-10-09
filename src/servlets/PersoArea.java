@@ -56,10 +56,17 @@ public class PersoArea extends HttpServlet {
 			
 		}
 		// Si l'action correspondante est modification d'email
-				else if(request.getParameter("action")!=null && request.getParameter("action").equalsIgnoreCase("modifyEmail")){
-					modifyEmail(request, response);
-					
-				}
+		else if (request.getParameter("action") != null && request.getParameter("action")
+				.equalsIgnoreCase("modifyEmail")) {
+			modifyEmail(request, response);
+
+		}
+		// Si l'action correspondante est modification d'email
+		else if (request.getParameter("action") != null && request.getParameter("action")
+				.equalsIgnoreCase("modifyPwd")) {
+			modifyPwd(request, response);
+
+		}
 		// Affichage normal de personalArea. A mettre dans une fonction à part
 		else{
 			// recuperer liste des groupes de la personne
@@ -131,6 +138,27 @@ public class PersoArea extends HttpServlet {
 		if(errors.isEmpty()){
 			session.setAttribute("person", person);
 			request.setAttribute("actionDone", "modifyEmail");
+			this.getServletContext().getRequestDispatcher("/personalArea.jsp").forward(request, response);
+		}
+		//la modif n'a pas marche
+		else{
+			//erreur a traitée dans personalArea
+			request.setAttribute("errors", errors);
+			this.getServletContext().getRequestDispatcher("/personalArea.jsp").forward(request, response);
+		}
+	}
+	
+	private void modifyPwd(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+		RegistrationForm form = new RegistrationForm(personDAO);
+		Person person = form.modifyPwd(request);
+		
+		HttpSession session = request.getSession();
+		
+		Map<String, String> errors = form.getErrors();
+		//la modif de login s'est bien passée
+		if(errors.isEmpty()){
+			session.setAttribute("person", person);
+			request.setAttribute("actionDone", "modifyPwd");
 			this.getServletContext().getRequestDispatcher("/personalArea.jsp").forward(request, response);
 		}
 		//la modif n'a pas marche

@@ -152,19 +152,25 @@ HTML5 sont employees. -->
 		 </div>
 		 </form>
 		 
-		 <form method="post" action="modifyPassword">
+		 <form method="post" autocomplete="off" action="persoArea?action=modifyPwd">
+		 <c:if test="${requestScope.actionDone == 'modifyPwd'}" >
+			<div class="textGreen">  The change of pwd has been successful </div>
+		</c:if> 
 		 <div class="aroundBlack">Change Password :</div>
 		  <div><input id="oldPwd" class="textGrey inline"  name="oldPwd" type="text" value="Old Password" 
          onfocus="inputTextFocusPwd('oldPwd', 'White')" onblur="inputTextBlurPwd('oldPwd','Old Password')" required >
          </div>
+		<div class="textRed">${requestScope.errors['oldPwd']}</div>
 		  <div><input id="newPwd" class="textGrey inline"  name="newPwd" type="text" value="New Password" 
          onfocus="inputTextFocusPwd('newPwd', 'White')" onblur="inputTextBlurPwd('newPwd','New Password')" required >
          </div>
+		<div class="textRed">${requestScope.errors['pwd']}</div>
 		  <div><input id="confirmNewPwd" class="textGrey inline"  name="confirmNewPwd" type="text" value="Confirm New Pwd" 
          onfocus="inputTextFocusPwd('confirmNewPwd', 'White')" onblur="inputTextBlurPwd('confirmNewPwd','Confirm New Pwd')" required >
          
          <input id="confirmModifyPwd" type="submit" value="Modify Password" class="newButton3D buttonBlueFonce" onmouseover="changeCursor('confirmModifyPwd')" />
 		 </div>
+		<div class="textRed">${requestScope.errors['confirmPwd']}</div>
 		 </form>
 	</article>
 </section>

@@ -236,6 +236,26 @@ public class PersonDao {
 		}
 	}
 	
+	private static final String SQL_UPDATE_PWD = "UPDATE Persons SET pwd_person=? WHERE id_person=?";
+
+	public void modifyPwd(Person person, String newPwd) throws DAOException {
+		Connection connexion = null;
+		PreparedStatement preparedStatement = null;
+
+		try {
+			/* Récupération d'une connexion depuis la Factory */
+			connexion = (Connection) daoFactory.getConnection();
+			preparedStatement = initialisationRequetePreparee(connexion,
+					SQL_UPDATE_PWD, false, newPwd, person.getId());
+			preparedStatement.executeUpdate();
+
+		} catch (SQLException e) {
+			throw new DAOException(e);
+		} finally {
+			fermeturesSilencieuses(preparedStatement, connexion);
+		}
+	}
+	
 	
 	
 }

@@ -134,6 +134,38 @@ public final class RegistrationForm {
 		}
 		return person;
 	}
+	
+	public Person modifyPwd(HttpServletRequest request) {
+
+		String oldPwd = request.getParameter("oldPwd");
+		String newPwd = getValeurChamp(request, "newPwd");
+		String confirmNewPwd = getValeurChamp(request, "confirmNewPwd");
+
+		HttpSession session = request.getSession();
+		Person person = (Person) session.getAttribute("person");
+		try {
+			// we check that the old pwd match the user connected
+        	boolean oldPwdOk = personDao.checkUser(person,person.getLogin(), oldPwd);
+        	String cryptedPwd = ""; 
+        	if(! oldPwdOk){
+        		errors.put("oldPwd", "wrong password");
+        	}else{
+        		// if yes we check that the pwd and the confirmPwd are the same
+    			cryptedPwd = traiterMotsDePasse(newPwd, confirmNewPwd);
+    			if(errors.isEmpty()){
+    				// if everything ok we insert in the database
+    				personDao.modifyPwd(person, cryptedPwd);
+    				person.setPwd(cryptedPwd);
+    			}
+       	}
+		} catch (DAOException e) {
+			errors.put("modifyPwd",
+					"Fail of the modification of email : thank you to try egain in few minutes.");
+			e.printStackTrace();
+			return null;
+		}
+		return person;
+	}
 
 	/*
 	 * Appel à la validation du nom reçu et initialisation de la propriété nom
