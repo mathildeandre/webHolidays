@@ -7,6 +7,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import dao.DAOFactory;
 import dao.GroupDao;
@@ -43,11 +44,12 @@ public class Registration extends HttpServlet {
 
         /* Traitement de la requête et récupération du bean en résultant */
         Person person = form.inscrireUtilisateur( request );
-        
+        HttpSession session = request.getSession(); 
+        session.setAttribute("person", person);
         request.setAttribute("errors", form.getErreurs());
 
         if(form.getErreurs().isEmpty()){
-            this.getServletContext().getRequestDispatcher( "/WEB-INF/page/homepage.jsp" ).forward( request, response );
+            this.getServletContext().getRequestDispatcher( "/persoArea" ).forward( request, response );
         }
         else{
         	//TODO gerer les erreurs
