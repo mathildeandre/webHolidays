@@ -55,6 +55,7 @@ HTML5 sont employees. -->
 		 </div>
 		<div><input id="email" class="textGrey inline"  name="email" type="text" value="Email (optional)" 
 		onfocus="inputTextFocus('email', 'White')" onblur="inputTextBlur('email','Email (optional)')" >
+         <span class="textRed">${requestScope.errors['emailPerson']}</span>
 		 </div>
 		<div><input id="pwd" class="textGrey inline"  name="pwd" type="text" value="Password" 
 		onfocus="inputTextFocusPwd('pwd', 'White')" onblur="inputTextBlurPwd('pwd','Password')" required>

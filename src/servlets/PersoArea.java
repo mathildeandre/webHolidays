@@ -3,6 +3,7 @@ package servlets;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Map;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -40,24 +41,132 @@ public class PersoArea extends HttpServlet {
      * This method is called when the personalArea page has to be displayed. 
      * It will get all the groups and contacts matching the person connected. 
      * And then display them in the personalArea page
+     * @throws IOException 
+     * @throws ServletException 
      */
-	public void doPost( HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException {
+	public void doPost( HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException  {
       
-        // recuperer liste des groupes de la personne
-		ConnexionForm form = new ConnexionForm(personDAO);
-		ArrayList<Group> listGroups = new ArrayList<>();
-		//HttpSession session = request.getSession();
-		//Person person = (Person) session.getAttribute("person");
-		listGroups = form.getGroups(request);
-		String error = form.getError();
-		if(error == null){
-			request.setAttribute("listGroups", listGroups);
-            this.getServletContext().getRequestDispatcher( "/personalArea.jsp" ).forward( request, response );
+		// Si l'action correspondante est modification de login
+		if(request.getParameter("action")!=null && request.getParameter("action").equalsIgnoreCase("modifyLogin")){
+			modifyLogin(request, response);
+		}
+		// Si l'action correspondante est modification de name
+		else if(request.getParameter("action")!=null && request.getParameter("action").equalsIgnoreCase("modifyName")){
+			modifyName(request, response);
 			
-		}else{
-			//traiter l'erreur et afficher un beau message sur le site
+		}
+		// Si l'action correspondante est modification d'email
+		else if (request.getParameter("action") != null && request.getParameter("action")
+				.equalsIgnoreCase("modifyEmail")) {
+			modifyEmail(request, response);
+
+		}
+		// Si l'action correspondante est modification d'email
+		else if (request.getParameter("action") != null && request.getParameter("action")
+				.equalsIgnoreCase("modifyPwd")) {
+			modifyPwd(request, response);
+
+		}
+		// Affichage normal de personalArea. A mettre dans une fonction à part
+		else{
+			// recuperer liste des groupes de la personne
+			ConnexionForm form = new ConnexionForm(personDAO);
+			ArrayList<Group> listGroups = new ArrayList<>();
+			// HttpSession session = request.getSession();
+			// Person person = (Person) session.getAttribute("person");
+			listGroups = form.getGroups(request);
+			String error = form.getError();
+			if (error == null) {
+				request.setAttribute("listGroups", listGroups);
+				this.getServletContext().getRequestDispatcher("/personalArea.jsp").forward(request, response);
+
+			} else {
+				// traiter l'erreur et afficher un beau message sur le site
+			}
 		}
 
     }
+	
+	
+	private void modifyLogin(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+		RegistrationForm form = new RegistrationForm(personDAO);
+		Person person = form.modifyLogin(request);
+		HttpSession session = request.getSession();
+		
+		Map<String, String> errors = form.getErrors();
+		//la modif de login s'est bien passée
+		if(errors.isEmpty()){
+			session.setAttribute("person", person);
+			request.setAttribute("actionDone", "modifyLogin");
+			this.getServletContext().getRequestDispatcher("/personalArea.jsp").forward(request, response);
+		}
+		//la modif n'a pas marche
+		else{
+			//erreur a traitée dans personalArea
+			request.setAttribute("errors", errors);
+			this.getServletContext().getRequestDispatcher("/personalArea.jsp").forward(request, response);
+		}
+	}
+	
+	private void modifyName(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+		RegistrationForm form = new RegistrationForm(personDAO);
+		Person person = form.modifyName(request);
+		HttpSession session = request.getSession();
+		
+		Map<String, String> errors = form.getErrors();
+		//la modif de login s'est bien passée
+		if(! errors.containsKey("modifyName")){
+			session.setAttribute("person", person);
+			request.setAttribute("actionDone", "modifyName");
+			this.getServletContext().getRequestDispatcher("/personalArea.jsp").forward(request, response);
+		}
+		//la modif n'a pas marche
+		else{
+			//erreur a traitée dans personalArea
+			request.setAttribute("errors", errors);
+			this.getServletContext().getRequestDispatcher("/personalArea.jsp").forward(request, response);
+		}
+	}
+	
+	private void modifyEmail(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+		RegistrationForm form = new RegistrationForm(personDAO);
+		Person person = form.modifyEmail(request);
+		HttpSession session = request.getSession();
+		
+		Map<String, String> errors = form.getErrors();
+		//la modif de login s'est bien passée
+		if(errors.isEmpty()){
+			session.setAttribute("person", person);
+			request.setAttribute("actionDone", "modifyEmail");
+			this.getServletContext().getRequestDispatcher("/personalArea.jsp").forward(request, response);
+		}
+		//la modif n'a pas marche
+		else{
+			//erreur a traitée dans personalArea
+			request.setAttribute("errors", errors);
+			this.getServletContext().getRequestDispatcher("/personalArea.jsp").forward(request, response);
+		}
+	}
+	
+	private void modifyPwd(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+		RegistrationForm form = new RegistrationForm(personDAO);
+		Person person = form.modifyPwd(request);
+		
+		HttpSession session = request.getSession();
+		
+		Map<String, String> errors = form.getErrors();
+		//la modif de login s'est bien passée
+		if(errors.isEmpty()){
+			session.setAttribute("person", person);
+			request.setAttribute("actionDone", "modifyPwd");
+			this.getServletContext().getRequestDispatcher("/personalArea.jsp").forward(request, response);
+		}
+		//la modif n'a pas marche
+		else{
+			//erreur a traitée dans personalArea
+			request.setAttribute("errors", errors);
+			this.getServletContext().getRequestDispatcher("/personalArea.jsp").forward(request, response);
+		}
+	}
 	
 }

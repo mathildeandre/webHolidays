@@ -175,6 +175,87 @@ public class PersonDao {
 		    }
 	}
 	
+	 private static final String SQL_UPDATE_LOGIN = "UPDATE Persons SET login_person=? WHERE id_person=?";
+
+
+		public void modifyLogin(Person person, String newLogin) throws DAOException {
+		    Connection connexion = null;
+		    PreparedStatement preparedStatement = null;
+		    ResultSet resultSetGroup = null;
+		    
+			try {
+			        /* Récupération d'une connexion depuis la Factory */
+			        connexion = (Connection) daoFactory.getConnection();
+			        preparedStatement = initialisationRequetePreparee( connexion, SQL_UPDATE_LOGIN, false, newLogin, person.getId());
+			        preparedStatement.executeUpdate();
+			       
+			    } catch ( SQLException e ) {
+			        throw new DAOException( e );
+			    } finally {
+			        fermeturesSilencieuses( resultSetGroup, preparedStatement, connexion );
+			    }
+		}
+		
+		private static final String SQL_UPDATE_NAME = "UPDATE Persons SET name_person=? WHERE id_person=?";
+
+
+		public void modifyName(Person person, String newName) throws DAOException {
+			    Connection connexion = null;
+			    PreparedStatement preparedStatement = null;
+			    
+				try {
+				        /* Récupération d'une connexion depuis la Factory */
+				        connexion = (Connection) daoFactory.getConnection();
+				        preparedStatement = initialisationRequetePreparee( connexion, SQL_UPDATE_NAME, false, newName, person.getId());
+				        preparedStatement.executeUpdate();
+				       
+				    } catch ( SQLException e ) {
+				        throw new DAOException( e );
+				    } finally {
+				        fermeturesSilencieuses(preparedStatement, connexion );
+				    }
+			}
+
+	private static final String SQL_UPDATE_EMAIL = "UPDATE Persons SET mail_person=? WHERE id_person=?";
+
+	public void modifyEmail(Person person, String newMail) throws DAOException {
+		Connection connexion = null;
+		PreparedStatement preparedStatement = null;
+
+		try {
+			/* Récupération d'une connexion depuis la Factory */
+			connexion = (Connection) daoFactory.getConnection();
+			preparedStatement = initialisationRequetePreparee(connexion,
+					SQL_UPDATE_EMAIL, false, newMail, person.getId());
+			preparedStatement.executeUpdate();
+
+		} catch (SQLException e) {
+			throw new DAOException(e);
+		} finally {
+			fermeturesSilencieuses(preparedStatement, connexion);
+		}
+	}
+	
+	private static final String SQL_UPDATE_PWD = "UPDATE Persons SET pwd_person=? WHERE id_person=?";
+
+	public void modifyPwd(Person person, String newPwd) throws DAOException {
+		Connection connexion = null;
+		PreparedStatement preparedStatement = null;
+
+		try {
+			/* Récupération d'une connexion depuis la Factory */
+			connexion = (Connection) daoFactory.getConnection();
+			preparedStatement = initialisationRequetePreparee(connexion,
+					SQL_UPDATE_PWD, false, newPwd, person.getId());
+			preparedStatement.executeUpdate();
+
+		} catch (SQLException e) {
+			throw new DAOException(e);
+		} finally {
+			fermeturesSilencieuses(preparedStatement, connexion);
+		}
+	}
+	
 	
 	
 }

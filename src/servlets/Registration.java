@@ -46,9 +46,9 @@ public class Registration extends HttpServlet {
         Person person = form.inscrireUtilisateur( request );
         HttpSession session = request.getSession(); 
         session.setAttribute("person", person);
-        request.setAttribute("errors", form.getErreurs());
+        request.setAttribute("errors", form.getErrors());
 
-        if(form.getErreurs().isEmpty()){
+        if(form.getErrors().isEmpty()){
             this.getServletContext().getRequestDispatcher( "/persoArea" ).forward( request, response );
         }
         else{

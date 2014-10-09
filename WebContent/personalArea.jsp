@@ -53,7 +53,7 @@ HTML5 sont employees. -->
 	    <div id="fieldMyGroups" class="aroundBlack">
 	    
 	    <c:forEach var="group" items="${requestScope['listGroups']}">
-	    		${group.name}<br> 
+	    		<li id="liGroup" onmouseover="changeCursor('liGroup')" onclick="location.href='index.jsp?page=homepage <% session.setAttribute("nameGroup", "${group.name}"); %>'" > ${group.name}</li> 
 	    </c:forEach>
 	    
 		</div>
@@ -154,16 +154,24 @@ HTML5 sont employees. -->
 	<article id="myProfil" class="inline"  >
 		 <h2 class="text3Dfonce">My Profil</h2>
 		 
-		 <form method="post" action="modifyLogin">
+		 <form method="post" action="persoArea?action=modifyLogin">
 		 <div class="aroundBlack">Login : </div>
 		 
+		 <c:if test="${requestScope.actionDone == 'modifyLogin'}" >
+			<div class="textGreen">  The change of login has been successful </div>
+		</c:if> 
+		 <div class="textRed">${requestScope.errors['loginPerson']}</div>
+		
 		  <div><input id="login" class="textGrey inline"  name="login" type="text" value="${sessionScope.person.login}"
          onfocus="inputTextFocus('login', 'White')" onblur="inputTextBlur('login','${sessionScope.person.login}')" required >
          <input id="confirmModifyLogin" type="submit" value="Modify Login" class="newButton3D buttonBlueFonce" onmouseover="changeCursor('confirmModifyLogin')" />
 		 </div>
 		 </form>
 		 
-		 <form method="post" action="modifyName">
+		 <form method="post" action="persoArea?action=modifyName">
+		 <c:if test="${requestScope.actionDone == 'modifyName'}" >
+			<div class="textGreen">  The change of name has been successful </div>
+		</c:if> 
 		 <div class="aroundBlack">Name (visible into groups): </div>
 		  <div><input id="name" class="textGrey inline"  name="name" type="text" value="${sessionScope.person.name}" 
          onfocus="inputTextFocus('name', 'White')" onblur="inputTextBlur('name','${sessionScope.person.name}')" required >
@@ -171,7 +179,12 @@ HTML5 sont employees. -->
 		 </div>
 		 </form>
 		 
-		 <form method="post" action="modifyEmail">
+		 <form method="post" action="persoArea?action=modifyEmail">
+		 <c:if test="${requestScope.actionDone == 'modifyEmail'}" >
+			<div class="textGreen">  The change of email has been successful </div>
+		</c:if> 
+		 <div class="textRed">${requestScope.errors['emailPerson']}</div>
+		
 		 <div class="aroundBlack">Email adress :</div>
 		  <div><input id="email" class="textGrey inline"  name="email" type="text" value="${sessionScope.person.email}" 
          onfocus="inputTextFocus('email', 'White')" onblur="inputTextBlur('email','${sessionScope.person.email}')" required >
@@ -179,14 +192,20 @@ HTML5 sont employees. -->
 		 </div>
 		 </form>
 		 
-		 <form method="post" action="modifyPassword">
+		 <form method="post" autocomplete="off" action="persoArea?action=modifyPwd">
+		 <c:if test="${requestScope.actionDone == 'modifyPwd'}" >
+			<div class="textGreen">  The change of pwd has been successful </div>
+		</c:if> 
+		<div class="textRed">${requestScope.errors['oldPwd']}</div>
 		 <div class="aroundBlack">Change Password :</div>
 		  <div><input id="oldPwd" class="textGrey inline"  name="oldPwd" type="text" value="Old Password" 
          onfocus="inputTextFocusPwd('oldPwd', 'White')" onblur="inputTextBlurPwd('oldPwd','Old Password')" required >
          </div>
+		<div class="textRed">${requestScope.errors['pwd']}</div>
 		  <div><input id="newPwd" class="textGrey inline"  name="newPwd" type="text" value="New Password" 
          onfocus="inputTextFocusPwd('newPwd', 'White')" onblur="inputTextBlurPwd('newPwd','New Password')" required >
          </div>
+		<div class="textRed">${requestScope.errors['confirmPwd']}</div>
 		  <div><input id="confirmNewPwd" class="textGrey inline"  name="confirmNewPwd" type="text" value="Confirm New Pwd" 
          onfocus="inputTextFocusPwd('confirmNewPwd', 'White')" onblur="inputTextBlurPwd('confirmNewPwd','Confirm New Pwd')" required >
          
