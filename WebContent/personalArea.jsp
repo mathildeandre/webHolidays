@@ -27,7 +27,7 @@ HTML5 sont employees. -->
 	
 	<div id="divLogOut" class="line inline"> 
 	
-		<div id="nameUser" class="inline text3Dfonce">NameUser${requestScope.nameGroup}</div>
+		<div id="nameUser" class="inline text3Dfonce">${sessionScope.person.name}</div>
 		
 		<form method="post" action="logout">
 			<!--ne s'aligne pas correctement: si on met deux ligne input.. avec le inline ca fonctionne^^-->
