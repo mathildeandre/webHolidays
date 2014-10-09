@@ -2,10 +2,10 @@
  <section id="sectionGroup" class="section line">
    <h1 class="h1 text3Dfonce">Your Group</h1>
 
-
+<!-- pour remmetre les h2 en 3D ecrire : class="text3Dfonce" -->
 	<article id="articleComposition" class="inline">
 	  	<fieldset> 
-	    <legend><h2 class="text3Dfonce" >Composition</h2></legend>
+	    <legend><h2 class="" >Composition</h2></legend>
 	    <div id="fieldMyComposition" class="aroundWhite">
 			 - kate <br>
 			 - bibiche <br>
@@ -22,7 +22,7 @@
 	</article>
 	
 	<article id="articleAddMember" class="inline">
-		<h2 class="text3Dfonce" >Add person from your contact list</h2>
+		<h2 class="" >Add person from your contact list</h2>
        	<form method="post" action="addFromList">
 	       <select id="groupListContacts" class="textGrey">
 				<option>emiel</option>
@@ -34,7 +34,7 @@
 		<input id="addMember" type="submit" value="Add member" class="newButton3D buttonOrangeFonce" onmouseover="changeCursor('addMember')"/>
        </form>
        
-		<h2 class="text3Dfonce" >Add another person</h2>
+		<h2 class="" >Add another person</h2>
 		
 		<div class="aroundWhite">Search existing person : </div>
        	<form method="post" action="searchPerson">

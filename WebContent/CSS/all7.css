@@ -155,7 +155,9 @@ footer{
 .textPurple{
 	color : #7A1F99;
 }
-
+.textGreen{
+	color : #00CC00;
+}
 
 /*
 .bigCheckbox{
@@ -496,20 +498,12 @@ color: #000;
 /*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx styleExpenses   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
 /*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
 
-/*
-#bodyCalculation{
-	background-image: url("../images/sunflower.jpg");
-	/*background-position: center;
-
-}
-*/
-
 
 #sectionExpenses{  
-	color:#800000 /*black; /*#803300; orange très fonce */
+	color:#800000; /*black; /*#803300; orange très fonce */
 	/*height:900px; /*car les article sont absolute*
 	margin-left:10vw; */
-  	width:100%;
+	width:90vw;
 }
 
 /* le pure 3D red good */
@@ -528,50 +522,19 @@ color: #000;
 } */
 
 #sectionExpenses h1{
-color:#FF1919;
+	color:#FF1919;
 }
 #sectionExpenses  h2{
- font-weight: bold;
- padding-top:1vw;
+ 	font-weight: bold;
+ 	padding-top:1vw;
 }
-
-
-
 
 #sectionExpenses  article{
  margin-left: 3%;
 }
 
-
 #sectionExpenses #divTab{
 margin:3%
-
-}
-
-#sectionExpenses .button{
-font-size: 1.2em;
-/*width: 200px; */
-height: 25px; 
-line-height:25px;/*permet le centrage vertical*/ 
-padding:5px 20px 5px 20px;
-color: #FF0000; 
-}
-
-#sectionExpenses .button:hover{ 
-color: #FF4D4D; 
-}
-#sectionExpenses .button:active{ 
-color: #000; 
-}
-
-#sectionExpenses #name{ /*input text*/
-font-family: Arial,sans-serif; 
-font-size: 1.2em;
-width: 200px ; 
-height: 25px; 
-/*border-radius: 8px;*/
-background: url("../images/peint-blanc.jpg");
-background-size: 200px, 25px;
 }
 
 #sectionExpenses .right{ 
@@ -594,7 +557,9 @@ color: white;
     -2px 2px 0 #800000,
     2px 2px 0 #800000; 
 }
-
+.tdTotal{ /* largeur de colonne prix/total */
+	width:60px;
+}
 #sectionExpenses #tab{
 	border: 4px solid #800000;
 	
@@ -625,7 +590,7 @@ input[type="checkbox"].css-checkbox {
 						}
 
 */
-
+/* taille des checkbox */
 #sectionExpenses input[type=checkbox] {
 	
   -moz-appearance: none;
@@ -862,6 +827,7 @@ color:#FF6600;
 #sectionGroup h2{
  	font-weight: bold;
  	padding-top:1vw;
+	font-size: 1.4vw;
 }
 /*
 #sectionGroup article{
@@ -882,6 +848,7 @@ color:#FF6600;
 	/*width:20vw;*/
 	padding-left:5vw; 
 	border-left:3px dotted black;
+	background:red;
 }
 #fieldMyComposition{
 	overflow-y: hidden,scroll;
