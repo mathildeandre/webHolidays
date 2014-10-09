@@ -68,7 +68,8 @@ public class PersoArea extends HttpServlet {
 
 		}
 		// Affichage normal de personalArea. A mettre dans une fonction à part
-		else{
+		else if(request.getParameter("action") != null && request.getParameter("action")
+				.equalsIgnoreCase("display")) {
 			// recuperer liste des groupes de la personne
 			ConnexionForm form = new ConnexionForm(personDAO);
 			ArrayList<Group> listGroups = new ArrayList<>();
@@ -98,13 +99,13 @@ public class PersoArea extends HttpServlet {
 		if(errors.isEmpty()){
 			session.setAttribute("person", person);
 			request.setAttribute("actionDone", "modifyLogin");
-			this.getServletContext().getRequestDispatcher("/personalArea.jsp").forward(request, response);
+			this.getServletContext().getRequestDispatcher("/persoArea?action=display").forward(request, response);
 		}
 		//la modif n'a pas marche
 		else{
 			//erreur a traitée dans personalArea
 			request.setAttribute("errors", errors);
-			this.getServletContext().getRequestDispatcher("/personalArea.jsp").forward(request, response);
+			this.getServletContext().getRequestDispatcher("/persoArea?action=display").forward(request, response);
 		}
 	}
 	
@@ -118,13 +119,13 @@ public class PersoArea extends HttpServlet {
 		if(! errors.containsKey("modifyName")){
 			session.setAttribute("person", person);
 			request.setAttribute("actionDone", "modifyName");
-			this.getServletContext().getRequestDispatcher("/personalArea.jsp").forward(request, response);
+			this.getServletContext().getRequestDispatcher("/persoArea?action=display").forward(request, response);
 		}
 		//la modif n'a pas marche
 		else{
 			//erreur a traitée dans personalArea
 			request.setAttribute("errors", errors);
-			this.getServletContext().getRequestDispatcher("/personalArea.jsp").forward(request, response);
+			this.getServletContext().getRequestDispatcher("/persoArea?action=display").forward(request, response);
 		}
 	}
 	
@@ -138,13 +139,13 @@ public class PersoArea extends HttpServlet {
 		if(errors.isEmpty()){
 			session.setAttribute("person", person);
 			request.setAttribute("actionDone", "modifyEmail");
-			this.getServletContext().getRequestDispatcher("/personalArea.jsp").forward(request, response);
+			this.getServletContext().getRequestDispatcher("/persoArea?action=display").forward(request, response);
 		}
 		//la modif n'a pas marche
 		else{
 			//erreur a traitée dans personalArea
 			request.setAttribute("errors", errors);
-			this.getServletContext().getRequestDispatcher("/personalArea.jsp").forward(request, response);
+			this.getServletContext().getRequestDispatcher("/persoArea?action=display").forward(request, response);
 		}
 	}
 	
@@ -159,13 +160,13 @@ public class PersoArea extends HttpServlet {
 		if(errors.isEmpty()){
 			session.setAttribute("person", person);
 			request.setAttribute("actionDone", "modifyPwd");
-			this.getServletContext().getRequestDispatcher("/personalArea.jsp").forward(request, response);
+			this.getServletContext().getRequestDispatcher("/persoArea?action=display").forward(request, response);
 		}
 		//la modif n'a pas marche
 		else{
 			//erreur a traitée dans personalArea
 			request.setAttribute("errors", errors);
-			this.getServletContext().getRequestDispatcher("/personalArea.jsp").forward(request, response);
+			this.getServletContext().getRequestDispatcher("/persoArea?action=display").forward(request, response);
 		}
 	}
 	

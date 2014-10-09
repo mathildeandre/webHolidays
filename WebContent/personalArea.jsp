@@ -55,6 +55,7 @@ HTML5 sont employees. -->
 		<form method="post" action="creationGroup">
 		 <input id="groupName" class="textGrey"  name="groupName" type="text" value="Group name" 
          onfocus="inputTextFocus('groupName', 'White')" onblur="inputTextBlur('groupName','Group name')" required >
+		 <div class="textRed">${requestScope.errors['createGroup']}</div>
 		<input id="createGroup" type="submit" value="Create Group" class="newButton3D buttonBlueFonce" onmouseover="changeCursor('createGroup')"/>
        </form>
 	
