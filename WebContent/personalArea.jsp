@@ -115,8 +115,12 @@ HTML5 sont employees. -->
 	<article id="myProfil" class="inline"  >
 		 <h2 class="text3Dfonce">My Profil</h2>
 		 
-		 <form method="post" action="modifyLogin">
+		 <form method="post" action="persoArea?action=modifyLogin">
 		 <div class="aroundBlack">Login : </div>
+		 
+		 <c:if test="${requestScope.actionDone == 'modifyLogin'}" >
+			<div class="textGreen">  The change of login has been successful </div>
+		</c:if>
 		 
 		  <div><input id="login" class="textGrey inline"  name="login" type="text" value="${sessionScope.person.login}"
          onfocus="inputTextFocus('login', 'White')" onblur="inputTextBlur('login','${sessionScope.person.login}')" required >
