@@ -2,7 +2,7 @@
 <section id="sectionExpenses" class="section">
    <h1 class="h1 text3Dfonce">Calcul of your expenses</h1>
  <article>
-   <h2 class="text3Dfonce" >Who's paid what for whom?</h2>
+   <h2 >Who's paid what for whom?</h2>
 <div id="divTab">
 
 <TABLE id="tab" BORDER="1" onmouseout="calculationResult()"> 

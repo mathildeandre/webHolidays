@@ -28,7 +28,7 @@ function afficheTab(tab, str){
 function afficheResult(){
 	var text = '';
 	for(var k=0; k<tabCouple.length; k++){
-		text += tabPerson[tabCouple[k][2]] + " -> : " + tabCouple[k][1] + "€ to "+ tabPerson[tabCouple[k][0]] + "</br>\n";
+		text += tabPerson[tabCouple[k][2]] + " -> " + tabCouple[k][1] + "€ to "+ tabPerson[tabCouple[k][0]] + "</br>\n";
 	}
 	
 	

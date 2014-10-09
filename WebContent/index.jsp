@@ -18,7 +18,7 @@
     <link rel="shortcut icon" href="images/tree3.png" />
 <link rel='stylesheet' type='text/css' href='http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.12/themes/smoothness/jquery-ui.css' />
     <!-- il est important de mettre general au dessus du style propre a la classe comme ca general est moins prioritaire-->
-    <link rel="stylesheet" type="text/css" href="CSS/all7.css" />
+    <link rel="stylesheet" type="text/css" href="CSS/all8.css" />
     <!-- <link rel="stylesheet" type="text/css" href="CSS/active.css"  />-->
     
 </head>
