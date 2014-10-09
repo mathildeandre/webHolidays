@@ -35,8 +35,7 @@ HTML5 sont employées. -->
 	</div>
 	
 	<div id="connexion" class="line inline right"> 
-		
-		<div id="nameGroup" class="inline text3Dfonce">NameGroup${requestScope.nameGroup}</div>
+		<div id="nameGroup" class="inline text3Dfonce">${sessionScope.nameGroup}</div>
 		<input id="persoArea" type="submit" value="Personal Area" class="inline newButton3Dcreux" onmouseover="changeCursor('persoArea')"  />
 		<input id="deconnexion" type="submit" value="Deconnexion" class="inline newButton3Dcreux" onmouseover="changeCursor('deconnexion')"  />
        

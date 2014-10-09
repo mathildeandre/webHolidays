@@ -46,7 +46,7 @@ HTML5 sont employees. -->
 	    <div id="fieldMyGroups" class="aroundBlack">
 	    
 	    <c:forEach var="group" items="${requestScope['listGroups']}">
-	    		${group.name}<br> 
+	    		<li id="liGroup" onmouseover="changeCursor('liGroup')" onclick="location.href='index.jsp?page=homepage <% session.setAttribute("nameGroup", "${group.name}"); %>'" > ${group.name}</li> 
 	    </c:forEach>
 	    
 		</div>
