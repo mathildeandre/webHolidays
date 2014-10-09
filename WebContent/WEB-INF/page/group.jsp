@@ -1,12 +1,12 @@
 
  <section id="sectionGroup" class="section line">
-   <h1 id="myh1" class="h1 text3Dfonce">Your Group</h1>
+   <h1 id="h1Group" class="h1 text3Dfonce">Your Group</h1>
 
 <!-- pour remmetre les h2 en 3D ecrire : class="text3Dfonce" -->
 	<article id="articleComposition" class="inline">
 	  	<fieldset> 
 	    <legend><h2 class="" >Composition</h2></legend>
-	    <div id="fieldMyComposition" class="aroundBlack">
+	    <div id="fieldMyComposition" class="aroundWhite">
 			 - kate <br>
 			 - bibiche <br>
 			 - toto <br>
@@ -36,15 +36,16 @@
        
 		<h2 class="" >Add another person</h2>
 		
-		<div class="aroundWhite">Search existing person : </div>
+		<div  class="aroundWhite">Search existing person : </div>
        	<form method="post" action="searchPerson">
 	      <input id="searchPerson" class="textGrey"  name="searchPerson" type="text" value="Login of the person" 
          onfocus="inputTextFocus('searchPerson', 'Orange')" onblur="inputTextBlur('searchPerson','Login of the person')" required >
 		<input id="addPerson" type="submit" value="Add person" class="newButton3D buttonGroup buttonGroup buttonOrangeClair" onmouseover="changeCursor('addPerson')"/>
        	</form>
-       
-       </br></br>
-       <div class="aroundWhite">Create yourself a person : </div>
+       	
+       	</br>
+       	
+       	<div  class="aroundWhite">Create yourself a person : </div>
        	<form method="post" action="searchPerson">
 	      <div><input id="loginPerson" class="textGrey"  name="loginPerson" type="text" value="Login person" 
          onfocus="inputTextFocus('loginPerson', 'Orange')" onblur="inputTextBlur('loginPerson','Login Person')" required >
@@ -52,20 +53,15 @@
 	      <div><input id="pwdPerson" class="textGrey"  name="loginPerson" type="text" value="Password person" 
          onfocus="inputTextFocus('pwdPerson', 'Orange')" onblur="inputTextBlur('pwdPerson','Password Person')" required >
          </div>
-         <div id="andOr" class="aroundWhite">AND/OR</div> 
+         <!-- <div id="andOr" class="aroundWhite">AND/OR</div>  -->
          <div>
-	      <input id="emailPerson" class="textGrey"  name="emailPerson" type="text" value="Email person" 
-         onfocus="inputTextFocus('emailPerson', 'Orange')" onblur="inputTextBlur('emailPerson','Password Person')" required >
+	      <input id="emailPerson" class="textGrey"  name="emailPerson" type="text" value="Email (optional)" 
+         onfocus="inputTextFocus('emailPerson', 'Orange')" onblur="inputTextBlur('emailPerson','Email (optional)')" required >
 		<input id="createPerson" type="submit" value="Create person" class="newButton3D buttonGroup buttonOrangeClair" onmouseover="changeCursor('createPerson')"/>
        	</div>
        	</form>
        	
-       	
-       	
-       	
 	</article>
-       	
-       	
  </section >
 
 

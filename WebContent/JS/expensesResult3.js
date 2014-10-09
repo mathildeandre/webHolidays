@@ -32,7 +32,7 @@ function afficheResult(){
 	}
 	
 	
-	var resultDiv = document.getElementById("resultExpenses");
+	var resultDiv = document.getElementById("fieldResultExpenses");
 	resultDiv.innerHTML = text+'</br>(-> : "owes")';
 	
 	

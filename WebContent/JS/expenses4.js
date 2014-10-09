@@ -209,7 +209,7 @@ function alternBackground(){
 
 	for(var i=1; i<hauteur; i++){
 		if(i%2 == 0){
-		  arrayLignes[i].style.backgroundColor= "#FF8080";
+		  arrayLignes[i].style.backgroundColor= "rgba(255,77,77,0.3)";
 		}
 	}
 }

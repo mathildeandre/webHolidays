@@ -113,10 +113,10 @@ footer{
 
 .aroundBlack{
 	text-shadow:
-    -0.5px -0.5px 0 #000,
-    0.5px -0.5px 0 #000,
-    -0.5px 0.5px 0 #000,
-    0.5px 0.5px 0 #000; 
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000; 
 }
 .aroundWhite{
 	text-shadow:
@@ -137,8 +137,9 @@ footer{
 	background:#003399;/*rgba(0,0,0,0);*/
 }
 .buttonOrangeFonce{
-	border-color:#803300;
-	background:#803300;/*rgba(0,0,0,0);*/
+	/* old : #803300 */
+	border-color:#CC5200;
+	background:#CC5200;/*rgba(0,0,0,0);*/
 }
 .buttonOrangeClair{
 	border-color:#FF944D;
@@ -146,9 +147,15 @@ footer{
 	
 }
 .buttonRedFonce{
-	border-color:#800000;
-	background:#800000;/*rgba(0,0,0,0);*/
+	/* old : #B20000,#800000 */
+	border-color:#CC0000;
+	background:#CC0000;/*rgba(0,0,0,0);*/
 }
+.buttonRedClair{
+	border-color:#FF4D4D;
+	background:#FF4D4D;/*rgba(0,0,0,0);*/
+}
+	
 .textWhite{
 	color : white;
 }
@@ -559,7 +566,6 @@ color: #000;
 	margin:auto;
 	width:100vw;
 	height:150px;
-	line-height:150px; /*vertical-align:middle; ne fonctionne pas*/
 	color: white;
 }
 #headerPersonalArea #title{
@@ -567,19 +573,33 @@ color: #000;
 	left: 2vw;
 	font-size: 2.5vw;
 	font-weight: bold;
+	line-height:140px; /*vertical-align:middle; ne fonctionne pas*/
 }
 #headerPersonalArea #titlePrivateArea{
   	position: absolute;
-  	right: 25vw;
+  	right: 29vw;
 	font-size: 3vw;
 	font-weight: bold;
+	line-height:170px; /*vertical-align:middle; ne fonctionne pas*/
 	/* comprend les deux input text + button connexion */
 }
+
 #headerPersonalArea #divLogOut{
-	top:1vw;
+	/*top:1vw;
+  	position: absolute;
+  	right: 2vw;*/
+}
+#headerPersonalArea #nameUser{
+  	top:1.7vw;
+  	position: absolute;
+  	right: 12vw;
+}
+#headerPersonalArea #buttonLogOut{
+  	top:1vw;
   	position: absolute;
   	right: 2vw;
 }
+
 #sectionPersonalArea{
 	color:white;
 }
@@ -634,7 +654,7 @@ color: #000;
 	padding-left:2vw; 
 	font-size: 1.5vw;
 }
-#groupName, #nameNewContact, #listContacts, #login, #name, #email, #oldPwd, #newPwd, #confirmNewPwd{
+#groupName, #PAsearchPerson, #PAloginPerson, #PApwdPerson, #PAemailPerson, #listContacts, #login, #name, #email, #oldPwd, #newPwd, #confirmNewPwd{
 	
 	margin-top:0.7vw;
 	padding : 0.5vw;
@@ -693,7 +713,9 @@ color: #000;
 #headerIndex #nameGroup{
 	font-size: 1.5vw;
 	font-weight: bold;    
-  	margin-right: 0.8vw;   
+  	margin-right: 0.8vw;
+ 	position: absolute; 
+ 	right:18vw;
 }
 #headerIndex #persoArea, #headerIndex #deconnexion{
 	height:35px;
@@ -703,6 +725,12 @@ color: #000;
 	font-weight:bold;
 	padding:0;
 	border-width: 2px; 
+ 	position: absolute; 
+ 	right:9vw;
+}
+#headerIndex #deconnexion{
+	
+ 	right:0.5vw;
 }
 
 #footerIndex{
@@ -904,14 +932,6 @@ to { line-height:0px;}*/
 /*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx styleGroup   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
 /*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
 
-#sectionGroup{
-	color:black; /*#803300; orange très fonce */
-	height:650px; /*car les article sont absolute*/
-	
-	margin-left:10vw;
-}
-
-
 /* le pure 3D orange good */
 /*
 #sectionGroup h1 {
@@ -929,7 +949,15 @@ to { line-height:0px;}*/
              -2.2px 5.3px 20px rgba(51,20,0, 0.4); 
 
 } */
-#sectionGroup #myh1{
+
+#sectionGroup{
+	color:black; /*#803300; orange très fonce */
+	height:650px; /*car les article sont absolute*/
+	
+	margin-left:10vw;
+}
+
+#sectionGroup #h1Group{
 	color:#FF6600;
 	padding-bottom:2vw;
 }
@@ -961,6 +989,8 @@ to { line-height:0px;}*/
 }
 #fieldMyComposition{
 	color:#FF6600;
+	color:#803300;
+	color:#CC5200;	/*#B20000*/
 	overflow-y: hidden,scroll;
 	overflow-x: hidden;
 	max-height: 30vw;
@@ -968,11 +998,11 @@ to { line-height:0px;}*/
 	padding-left:1vw; 
 	font-size: 1.5vw;
 }
-
+/*
 #andOr{
-	
 	margin-top: 0.5vw;
 }
+*/
 
 #groupListContacts,#searchPerson, #loginPerson, #pwdPerson, #emailPerson{
 	
@@ -1009,14 +1039,6 @@ to { line-height:0px;}*/
 /*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx styleExpenses   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
 /*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
 
-
-#sectionExpenses{  
-	color:blakc;/*#800000; /*black; /*#803300; orange très fonce */
-	/*height:900px; /*car les article sont absolute*
-	margin-left:10vw; */
-	width:90vw;
-}
-
 /* le pure 3D red good */
 /* #sectionExpenses h1, #sectionExpenses h2{
 *text-shadow: 5px 5px 5px #FF0000;  *decalage-a-droite, decalage-bas, flootage, color*
@@ -1032,59 +1054,108 @@ to { line-height:0px;}*/
              -2.2px 5.3px 20px rgba(50,0,0, 0.4); 
 } */
 
-#sectionExpenses h1{
-	color:#FF1919;
+
+#sectionExpenses{  
+	color:blakc;/*#800000; /*black; /*#803300; orange très fonce */
+	/*height:900px; /*car les article sont absolute*
+	margin-left:10vw; */
+	width:90vw;
+	padding-bottom:5vw;
+}
+#sectionExpenses #h1Expenses{
+	/*color:#FF1919;
+	color:#FF3333;*/
+	color:#CC0000;
+	padding-bottom:2vw;
 }
 #sectionExpenses  h2{
  	font-weight: bold;
  	padding-top:1vw;
+	font-size: 1.4vw;
 }
 
-#sectionExpenses  article{
- margin-left: 3%;
-}
-
-#sectionExpenses #divTab{
-margin:3%
-}
 
 #sectionExpenses .right{ 
   position: absolute;
   right: 12vw;
 }
-#sectionExpenses #buttonsBottom{
-	margin-top:6%;
-}
-#sectionExpenses #tab caption{
 
-	font-size: 1.5em;
-	border: 4px solid #800000;
-	border-radius: 10px;
+#buttonsForTab{
+	
+	margin-left:3vw;
+}
+#sectionExpenses #emptyTab{
+	margin-top:1vw;
+}
+
+#saveTab{
+	
+}
+#mouseOver{
+	margin-top:15px;
+}
+#blockFieldResult{ /* le field result avec titre etc */
+	
+	margin-left:3vw;
+	margin-top:40px;
+	width:40vw;
+}
+#fieldResultExpenses{ /*juste le texte a l'interieur de field result */
+	color:#CC0000;
+	overflow-y: hidden,scroll;
+	overflow-x: hidden;
+	max-height: 40vw;
+	padding-left:5vw; 
+	font-size: 1.2vw;
+}
+
+/************* TAB *************/
+
+#sectionExpenses #tab{
+	margin:3vw;
+}
+
+
+#sectionExpenses #tab caption{ /*titre du tab "table of expense" */
+
+	font-size: 1.5vw;
+	border: 1px solid #CC0000;
+	border-radius: 0.5vw; 
 	border-bottom : 1px; 
-color: white;
+	color: white;
     text-shadow:
-    -2px -2px 0 #800000,
-    2px -2px 0 #800000,
-    -2px 2px 0 #800000,
-    2px 2px 0 #800000; 
+    -1px -1px 0 #CC0000,
+    1px -1px 0 #CC0000,
+    -1px 1px 0 #CC0000,
+    1px 1px 0 #CC0000; 
+    
 }
 .tdTotal{ /* largeur de colonne prix/total */
 	width:60px;
 }
 #sectionExpenses #tab{
-	border: 4px solid #800000;
+	border: 1px solid #CC0000;
+	border-radius: 0.5vw; 
 	
-	border-radius: 10px;
 	/*background:#FF0000;*/
 }
 
 #sectionExpenses #tab th, #sectionExpenses #tab td{
-	border: 1px solid #800000;
-	border-radius: 5px;
+	/*border: 1px solid #B20000;
+	border-radius: 0.5vw; 
+	*/
 }
-#sectionExpenses th{
+#sectionExpenses th{ /*colonne de titre */
 
-	background:#B20000;
+	border: 1px solid #CC0000;
+	border-radius: 0.5vw; 
+	background:rgba(178,0,0,0.5);/* =>#B20000;*/
+	background:rgba(255,77,77,0.5);/* =>#FF4D4D;*/
+	background:rgba(255,25,25,0.6);/* =>#FF1919;*/
+	/*background:rgba(204,0,0,0.4);/* =>#CC0000;*/
+	
+	
+	color:rgba(0,0,0,0.8);/*black;*/
 	color:white;
 }
 

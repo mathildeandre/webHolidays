@@ -18,7 +18,7 @@
     <link rel="shortcut icon" href="images/tree3.png" />
 <link rel='stylesheet' type='text/css' href='http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.12/themes/smoothness/jquery-ui.css' />
     <!-- il est important de mettre general au dessus du style propre a la classe comme ca general est moins prioritaire-->
-    <link rel="stylesheet" type="text/css" href="CSS/all8.css" />
+    <link rel="stylesheet" type="text/css" href="CSS/all9.css" />
     <!-- <link rel="stylesheet" type="text/css" href="CSS/active.css"  />-->
     
 </head>
@@ -37,9 +37,12 @@ HTML5 sont employées. -->
 	<div id="connexion" class="line inline right"> 
 		
 		<div id="nameGroup" class="inline text3Dfonce">NameGroup${requestScope.nameGroup}</div>
-		<input id="persoArea" type="submit" value="Personal Area" class="inline newButton3Dcreux" onmouseover="changeCursor('persoArea')"  />
-		<input id="deconnexion" type="submit" value="Deconnexion" class="inline newButton3Dcreux" onmouseover="changeCursor('deconnexion')"  />
-       
+			<form method="post" action="GotoPersoArea">
+			<input id="persoArea" type="submit" value="Personal Area" class="inline newButton3Dcreux" onmouseover="changeCursor('persoArea')"  />
+			</form>
+			<form method="post" action="D">
+			<input id="deconnexion" type="submit" value="Deconnexion" class="inline newButton3Dcreux" onmouseover="changeCursor('deconnexion')"  />
+       		</form>
 	</div>
 
 </header>
