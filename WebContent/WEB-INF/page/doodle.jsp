@@ -103,5 +103,5 @@
 </style>
 
 
-<script src="JS/doodle.js" type="text/javascript"></script>
+<script src="JS/doodle1.js" type="text/javascript"></script>
 <script src="JS/doodleTab.js" type="text/javascript"></script>

@@ -9,8 +9,8 @@
 		<CAPTION> Table of expenses </CAPTION> 
 		<THEAD >
 			<TR> 
-			 <TH> Expense of </TH> 
-			 <TH> Total </TH> 
+			 <TH id="thExpenseOf">Expense of</TH> 
+			 <TH id="thTotal">Total</TH> 
 			</TR>
 		</THEAD>
 		<TBODY id="tbody">

@@ -985,7 +985,8 @@ to { line-height:0px;}*/
 
 #sectionGroup{
 	color:black; /*#803300; orange très fonce */
-	height:650px; /*car les article sont absolute*/
+	/*height:650px; /*car les article sont absolute*/
+	height:50vw; /*car les article sont absolute*/
 	
 	margin-left:10vw;
 }
@@ -1230,13 +1231,13 @@ article[class="function"]{
 
 
 /**************************************** TABLE *********/
-
+/* 
 #sectionDoodle table, caption, thead, tfoot, tbody {
 	margin: 0;
 	padding: 0;
 }
 
-#sectionDoodle #tab{ /* tout le tab */
+#sectionDoodle #tab{ * tout le tab *
 	
 	background:none;
 	border:1px solid #009933;
@@ -1246,8 +1247,8 @@ article[class="function"]{
 	color: #333333;
 	margin: 3vw;
 	max-width: 70vw;
-	/* padding: 20px 5px 5px 5px; Espcaement du border */
-	/*width: 100%;*/
+	* padding: 20px 5px 5px 5px; Espcaement du border *
+	*width: 100%;*
 
 }
 #sectionDoodle #tab caption{
@@ -1260,11 +1261,11 @@ article[class="function"]{
 }
 #sectionDoodle th, td {
 	border:none;
-	/* border: 1px solid green; */
+	* border: 1px solid green; *
 }
 
 
-#sectionDoodle #tab th { /*background entete de colonne*/
+#sectionDoodle #tab th { *background entete de colonne*
 	border:3px solid green;
 	 border-right: 0.01px solid grey; 
 	 border-left: 0.01px solid grey; 
@@ -1275,11 +1276,10 @@ article[class="function"]{
 }
 
 #sectionDoodle #tab td {
-	
-	 border: 2px solid green; 
-	 border-right: 0.01px solid grey; 
-	 border-left: 0.01px solid grey; 
-	 border-radius: 10px;
+	border: 2px solid green; 
+	border-right: 0.01px solid grey; 
+	border-left: 0.01px solid grey; 
+	border-radius: 10px;
 	background-color: 	#D1FFC2;
 }
 
@@ -1294,7 +1294,67 @@ article[class="function"]{
 	border: 0;
 }
 
+ */
 
+/****************** OTHER **************************/
+
+#sectionDoodle #tab{
+	margin:3vw;
+}
+
+
+#sectionDoodle #tab caption{ /*titre du tab "table of expense" */
+
+	font-size: 1.5vw;
+	border: 2px solid #009933;;
+	border-radius: 0.5vw; 
+	border-bottom : 1px; 
+	color:#009933;;
+	/*color: white;
+    text-shadow:
+    -1px -1px 0 #CC0000,
+    1px -1px 0 #CC0000,
+    -1px 1px 0 #CC0000,
+    1px 1px 0 #CC0000; 
+    */
+    
+}
+#sectionDoodle #tab{
+	border: 2px solid #009933;;
+	border-radius: 0.5vw; 
+	
+	/*background:#FF0000;*/
+}
+
+#sectionDoodle td{ /* toute cases*/
+	border:none;/* 1px solid #B20000;
+	border-radius: 0.5vw; */
+	
+	margin: auto;
+}
+#sectionDoodle th{ /*colonne de titre */
+	padding-top : 10px;
+	padding-bottom : 10px;
+	
+	border: 1px solid #009933;;
+	border-radius: 0.5vw; 
+	background:rgba(0,153,51,0.4);/* =>##009933;;*/	
+	/*color:rgba(0,0,0,0.8);/*black;*/
+	color:white;
+}
+ #sectionDoodle .names{/*cellule with names memebrs */
+	padding-top : 10px;
+	padding-bottom : 10px;
+	
+ 	font-weight: bold;
+	
+	border: 1px solid #009933;;
+	border-radius: 0.5vw; 
+	background:rgba(0,153,51,0.2);/* =>##009933;;*/	
+	color:rgba(0,0,0,0.8); /*black*/
+	text-align:center;
+}
+/****************** fin other **************************/
 
 
 
@@ -1420,9 +1480,9 @@ thead th{
 }
 #sectionExpenses #h1Expenses{
 	/*color:#FF1919;
-	color:#FF3333;*/
-	color:#CC0000;
+	color:#FF3333; */
 	color:#FF1919;
+	color:#CC0000;
 }
 #sectionExpenses  h2{
  	font-weight: bold;
@@ -1457,7 +1517,7 @@ thead th{
 	width:40vw;
 }
 #fieldResultExpenses{ /*juste le texte a l'interieur de field result */
-	color:#CC0000;
+	color:#FF1919;
 	overflow-y: hidden,scroll;
 	overflow-x: hidden;
 	max-height: 40vw;
@@ -1478,16 +1538,21 @@ thead th{
 	border: 1px solid #CC0000;
 	border-radius: 0.5vw; 
 	border-bottom : 1px; 
-	color: white;
+	color:#CC0000;
+	/*color: white;
     text-shadow:
     -1px -1px 0 #CC0000,
     1px -1px 0 #CC0000,
     -1px 1px 0 #CC0000,
     1px 1px 0 #CC0000; 
+    */
     
 }
-.tdTotal{ /* largeur de colonne prix/total */
-	width:60px;
+#thExpenseOf{ /* largeur de colonne expense of */
+	width:200px;
+}
+#thTotal{ /* largeur de colonne prix/total */
+	width:60px; /* ne marche pas...*/
 }
 #sectionExpenses #tab{
 	border: 1px solid #CC0000;
@@ -1500,9 +1565,14 @@ thead th{
 	/*border: 1px solid #B20000;
 	border-radius: 0.5vw; 
 	*/
+	border:none;
 	margin: auto;
+	margin-left:10px;
 }
 #sectionExpenses th{ /*colonne de titre */
+
+	padding-top : 10px;
+	padding-bottom : 10px;
 
 	border: 1px solid #CC0000;
 	border-radius: 0.5vw; 
@@ -1578,7 +1648,8 @@ h1, h2{
 	width:80vw;*/
 	padding-bottom:5vw;
 	margin-left:10vw;
-	height:650px; /*car les article sont absolute*/
+	/*height:650px; /*car les article sont absolute*/
+	height:50vw; /*car les article sont absolute*/
 }
 
 #h1Things{

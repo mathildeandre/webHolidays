@@ -117,7 +117,7 @@ function addRow(){
 		// Add Input Amount
 		var cell1 = newRow.insertCell(1);
 		var id = theRowNumber + "1";
-		cell1.innerHTML = '<input class="textRed tdTotal" id="'+id+'" type="number" value="00.00"  onfocus="inputTextFocus(\''+id+'\', \'Red\')" onblur="inputTextBlur(\''+id+'\',\'00.00\')" >';
+		cell1.innerHTML = '<input class="textRed" id="'+id+'" type="number" value="00.00"  onfocus="inputTextFocus(\''+id+'\', \'Red\')" onblur="inputTextBlur(\''+id+'\',\'00.00\')" >';
 
 		// Add checkbox for persons
 		for(i=0; i<tabPerson.length; i++){
@@ -209,7 +209,7 @@ function alternBackground(){
 
 	for(var i=1; i<hauteur; i++){
 		if(i%2 == 0){
-		  arrayLignes[i].style.backgroundColor= "rgba(255,77,77,0.3)";
+		  arrayLignes[i].style.backgroundColor= "rgba(255,77,77,0.2)";
 		}
 	}
 }

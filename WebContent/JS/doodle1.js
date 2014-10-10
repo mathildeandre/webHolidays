@@ -36,7 +36,7 @@ function addPersonne(nameAdd){
 
 	var newRow = document.getElementById("tab").insertRow(-1);
 	var cell0 = newRow.insertCell(0);
-	cell0.innerHTML += "<b>"+nameAdd+"</b>";
+	cell0.innerHTML += "<div class='names'>"+nameAdd+"</div>";
 
 	var cell;
 	var id;
@@ -76,6 +76,7 @@ function addRow(){
 	   }
 	   theRowNumber++;
 	 */
+	
 }
 
 function addColumn(){
@@ -135,7 +136,24 @@ function addColumn(){
 		}
 
 	}
+
+	alternBackground();
 }
+
+/** ROW BACKGROUND ALTERNATE */
+function alternBackground(){
+	var arrayLignes = document.getElementById("tab").rows; //on récupère les lignes du tableau
+	var hauteur = arrayLignes.length;//on peut donc appliquer la propriété length
+
+
+	for(var i=1; i<hauteur; i++){
+		if(i%2 == 0){
+		  arrayLignes[i].style.backgroundColor= "rgba(0,153,51,0.1)";
+		}
+	}
+}
+
+
 
 function checkRadio(id){
 	if(id=="date"){
