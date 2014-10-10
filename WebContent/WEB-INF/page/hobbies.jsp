@@ -1,5 +1,5 @@
 <section id="sectionHobbies" class="section">
-	<h1 id="h1Hobbies" class="h1 text3Dfonce">Hobbies</h1>
+	<h1 id="h1Hobbies" class="h1">Hobbies</h1> <!-- class="h1 text3Dfonce" -->
 
 	<!-- pour remmetre les h2 en 3D ecrire : class="text3Dfonce" -->
 	<article id="articleHobbies" class="aroundWhite" >

@@ -1,7 +1,7 @@
 
 
  <section id="sectionThings" class="section line">
-   <h1 id="h1Things" class="h1 text3Dfonce">Things you need</h1>
+   <h1 id="h1Things" class="h1">Things you need</h1> <!-- class="h1 text3Dfonce" -->
 	
 	<article id="articlePersonalThings" class="inline">
 	  	<fieldset> 

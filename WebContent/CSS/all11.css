@@ -1140,14 +1140,11 @@ to { line-height:0px;}*/
 #sectionDoodle{
 	margin-left:17vw;
 	color:black;
+	padding-bottom: 4vw;
+	padding-left: 3vw;
 }
-
-#sectionDoodle h1{
-	/*  text-shadow:
-	       -0.5px -0.5px 0 #0000FF,
-	       0.5px -0.5px 0 #0000FF,
-	       -0.5px 0.5px 0 #0000FF,
-	       0.5px 0.5px 0 #0000FF; */
+/* old title TOP */
+/* #sectionDoodle h1{
        
 	color:#009933;
 	text-shadow: 0   0.8px 0 #00B800,
@@ -1159,6 +1156,10 @@ to { line-height:0px;}*/
              -2.2px 5.3px 2px rgba(0,41,0, 0.4),
              -2.2px 5.3px 8px rgba(0,41,0, 0.2),
              -2.2px 5.3px 20px rgba(0,41,0, 0.4); 
+} */
+#sectionDoodle h1{
+	
+	color:#009933;
 }
 #sectionDoodle h2{
  	font-weight: bold;
@@ -1167,70 +1168,9 @@ to { line-height:0px;}*/
 }
 
 
-/*
-article[class="function"]{
-	border:4px solid;
-	border-color: black ;
-	border-radius: 30px;
-}
-
-.line{
-	margin:0%;
-}
-
-*/
-#sectionDoodle #funcDate{
-	border:4px solid;
-	border-color: green ;
-	border-radius: 30px;
-	width: 50vw;
-	max-width: 500px;
-	height: 150px;
-}
-
-#sectionDoodle h4{
-	margin-left: 5px;
-}
-
-#sectionDoodle #butAddCol{
-	margin-left: 5px;
-	width: 5vw;
-	max-width: 50px;
-}
-
-#sectionDoodle .datepick{
-
-	width: 13vw;
-	max-width: 130px;
-}
-#sectionDoodle #textCol{
-	width: 22vw;
-	max-width: 220px;
-
-}
 
 
-
-#sectionDoodle #funcPers{
-	margin-left: 3vw;/*calc(20vw-40px);*/
-	border:4px solid;
-	border-color: green ;
-	border-radius: 30px;
-	width: 25vw;
-	max-width: 250px;
-	height: 50px;
-	
-}
-
-#sectionDoodle #name{
-	margin-left: 10px;
-	width: 15vw;
-	max-width: 150px;
-}
-
-
-
-/**************************************** TABLE *********/
+/***********************************   OLD  TABLE *********/
 /* 
 #sectionDoodle table, caption, thead, tfoot, tbody {
 	margin: 0;
@@ -1296,7 +1236,6 @@ article[class="function"]{
 
  */
 
-/****************** OTHER **************************/
 
 #sectionDoodle #tab{
 	margin:3vw;
@@ -1354,7 +1293,7 @@ article[class="function"]{
 	color:rgba(0,0,0,0.8); /*black*/
 	text-align:center;
 }
-/****************** fin other **************************/
+/****************** fin TABLE **************************/
 
 
 
@@ -1430,19 +1369,93 @@ opacity: 0.3;
 opacity: 1;
 }
 
-/******* END CHECKBOX *********/
+/************************************************************ END CHECKBOX *********/
+
+#sectionDoodle #articleAddColumn{
+	margin-left: 3vw;
+	margin-top: 5vw;
+	margin-bottom: 3vw;
+}
+
+#divAddColumn{
+ 	font-weight: bold;
+	font-size: 1vw;
+	
+ 	margin-top:1vw;
+ 	margin-bottom:1vw;
+}
+
+#addColumn{
+	margin-left: 4vw;
+}
+
+#debutC,#finC, #loginPerson, #textCol{
+	
+	padding : 0.3vw;
+	padding-left : 0.8vw;
+	margin-top: 0.5vw;
+	width:13.5vw;
+	/*height:27px;*/
+	font-size: 1.3vw;
+	/*background: url("../images/peint-blanc.jpg");
+	background-size: 200px, 25px;*/
+	
+	background:rgba(255,255,255,0.5);
+	border:1px solid rgba(0,153,51,0.8);
+	border-radius: 0.5vw;
+	
+}
 
 
-/*
-#tab{
-	border : none;
-       }
-thead th{
-	border : none;
-	 border-bottom: 5px solid green;
-}*/
+
+#sectionDoodle #funcDate{
+	border:4px solid;
+	border-color: green ;
+	border-radius: 30px;
+	width: 50vw;
+	max-width: 500px;
+	height: 150px;
+}
+
+#sectionDoodle h4{
+	margin-left: 5px;
+}
+
+#sectionDoodle #butAddCol{
+	margin-left: 5px;
+	width: 5vw;
+	max-width: 50px;
+}
+
+#sectionDoodle .datepick{
+
+	width: 13vw;
+	max-width: 130px;
+}
+#sectionDoodle #textCol{
+	width: 22vw;
+	max-width: 220px;
+
+}
 
 
+
+#sectionDoodle #funcPers{
+	margin-left: 3vw;/*calc(20vw-40px);*/
+	border:4px solid;
+	border-color: green ;
+	border-radius: 30px;
+	width: 25vw;
+	max-width: 250px;
+	height: 50px;
+	
+}
+
+#sectionDoodle #name{
+	margin-left: 10px;
+	width: 15vw;
+	max-width: 150px;
+}
 
 /*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
 /*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx fin styleDoodle   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
@@ -1681,7 +1694,6 @@ h1, h2{
 	overflow-y: hidden,scroll;
 	overflow-x: hidden;
 	max-height: 30vw;
-	width:10vw;
 	padding-left:1vw; 
 	font-size: 1.5vw;
 }
@@ -1690,7 +1702,6 @@ h1, h2{
 	overflow-y: hidden,scroll;
 	overflow-x: hidden;
 	max-height: 30vw;
-	width:22vw;
 	padding-left:1vw; 
 	font-size: 1.5vw;
 	

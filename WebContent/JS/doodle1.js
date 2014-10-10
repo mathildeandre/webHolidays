@@ -158,7 +158,8 @@ function alternBackground(){
 function checkRadio(id){
 	if(id=="date"){
 		var text = document.getElementById("textCol");
-		text.value="titre colonne";
+		text.value="column title";
+		text.className = "textGrey";
 	}
 	else if(id=="text"){
 		document.getElementById("debutC").value = "";
