@@ -1,6 +1,42 @@
 
+ 
+ 	<section id="navDoodle">
+		<ul>
+		  <li><a href="#burgers">Doodle1</a></li>
+		  <li><a href="#lasagne">Doodle2</a></li>
+		  <li><a href="#contact">Contact</a></li>
+		  <li><a href="#about">About</a></li><li><a href="#home">Home</a></li>
+		  <li><a href="#news">News</a></li>
+		  <li><a href="#contact">Contact</a></li>
+		  <li><a href="#about">About</a></li>
+		</ul>
+	</section>
+
+
 <section id="sectionDoodle" class="section">
 	<h1 id="h1Doodle" class="h1 text3Dfonce"> Doodle </h1>
+	
+	</article>
+	   <h2>Wishes of the group</h2>
+		
+		<article class="table">
+		<TABLE id="tab" BORDER="1"> 
+			<CAPTION> Doodle table </CAPTION> 
+			<THEAD>
+				<TR> 
+				 <TH> Names </TH> 
+			</THEAD>
+			
+			<TBODY>
+				
+				
+			</TBODY>
+		</TABLE>
+	</article>
+	
+	
+	
+	
 	<article class="function">
 	<div class="line">
 			<div class="line inline" id="funcDate">
@@ -21,6 +57,9 @@
 			</div>
 			</div>
 			
+			
+			
+			<!--
 			<div class="line inline" id="funcPers">
 			<div class="inline namePers">
 				<input class="textGrey " id="name" type="text" name="name" value="add person" onfocus="inputTextFocus('name','Orange')" onblur="inputTextBlur('name','add person')" >
@@ -33,30 +72,11 @@
 				</div>
 			</div>
 			</div>
-			
+			  -->
 		
 	</div> <!--fin div line-->
 
-	</article>
 	
-   <h2>Wishes of the group</h2>
-	
-	<article class="table">
-	<TABLE id="tab" BORDER="1"> 
-		<CAPTION> Doodle table </CAPTION> 
-		<THEAD>
-			<TR> 
-			 <TH> Names </TH> 
-		</THEAD>
-		
-		<TBODY>
-			
-			
-		</TBODY>
-	</TABLE>
-
-
-</article>
 </section>
 
 

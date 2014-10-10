@@ -1244,8 +1244,6 @@ h1, h2{
 	width:80vw;*/
 	padding-bottom:5vw;
 	margin-left:10vw;
-	
-	
 	height:650px; /*car les article sont absolute*/
 }
 
@@ -1337,6 +1335,21 @@ h1, h2{
 /*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx styleDoodle (need to clean up)   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
 /*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
 
+#navDoodle ul{
+	position: fixed;
+	float: left;
+    list-style-type: none;
+	margin-left:1.5vw;
+	margin-top : 3.8vw; 
+	padding: 2vw;
+	background : url("../images/peint-blanc.jpg");
+	background-size:20vw;
+	border-radius: 1vw ;
+	width:10vw;
+}
+#sectionDoodle{
+	margin-left:17vw;
+}
 
 #sectionDoodle h1, #sectionDoodle h2{
 	/*  text-shadow:
@@ -1582,6 +1595,50 @@ thead th{
 
 
 
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx styleHobbies   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+
+/* le pure 3D pink good */
+/* h1, h2{
+*text-shadow: 5px 5px 5px #0033CC;  *decalage-a-droite, decalage-bas, flootage, color*
+
+	color:#FF3399;
+	text-shadow:0   0.8px 0 #E62E8A,
+              0   1.5px 0 #CC297A,
+             -1px 2.3px 0 #B2246B,
+             -1px 3px 0 #991F5C,
+             -2px 3.8px 0 #801A4C,
+             -2.1px 4.5px 0 #66143D,
+             -2.2px 5.3px 2px rgba(51,10,31, 0.4),
+             -2.2px 5.3px 8px rgba(51,10,31, 0.2),
+             -2.2px 5.3px 20px rgba(51,10,31, 0.4); 
+} */
+
+#sectionHobbies{  
+	color:black;/*#800000; /*black; /*#803300; orange très fonce */
+	/*height:900px; /*car les article sont absolute*
+	margin-left:10vw; *
+	width:80vw;*/
+	padding-bottom:5vw;
+	margin-left:10vw;
+}
+
+#h1Hobbies{
+	color:#FF3399;
+}
+#sectionThings h2{
+ 	font-weight: bold;
+ 	padding-top:1vw;
+	font-size: 1.4vw;
+}
+#articleHobbies{
+	color: #FF3399;
+}
+
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx fin styleHobbies   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
 
 
 
