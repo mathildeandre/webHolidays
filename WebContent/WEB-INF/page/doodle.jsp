@@ -20,12 +20,11 @@
 
 
 <section id="sectionDoodle" class="section">
-	<h1 id="h1Doodle" class="h1 text3Dfonce">Doodle</h1>
+	<h1 id="h1Doodle" class="h1">Doodle</h1> <!-- class="h1 text3Dfonce" -->
 	
 	<article>
 	   <h2>Wishes of the group</h2>
 		
-		<article class="table">
 		<TABLE id="tab" BORDER="1"> 
 			<CAPTION>My Title</CAPTION> 
 			<THEAD>
@@ -43,12 +42,32 @@
 	
 	
 	
-	<article class="function">
-	<div class="line">
-			<div class="line inline" id="funcDate">
+	<article id="articleAddColumn" >
+	
+		<div id="divAddColumn" class="aroundWhite">Add a column : </div>
+		
+		<div class="line">
+			<div class="inline">
+				<div id="divDate" class="line">
+					<input id="date" type="radio" name="text" value="Du au">  
+					From : <input type="text" id="debutC" class="datepick textGreen" onfocus="checkRadio('date')">  
+					to : <input type="text" id="finC" class="datepick textGreen" onfocus="checkRadio('date')">
+				</div>
+				
+				
+				<div id="divTitle" class="line">
+					<input id="text" type="radio" name="text" value="text"> 
+					Column title : <input id="textCol" class="textGrey" type="texte"  value="column title" onfocus="checkRadio('text'); inputTextFocus('textCol', 'Green')" onblur="inputTextBlur('textCol','column title')"> 
+				</div>
+			</div>
+			<div class="inline">
+				<input id="addColumn" type="submit" value="Add" class="newButton3D buttonGreenClair" onmouseover="changeCursor('addColumn')" onclick="addColumn(); emptyText('textCol', 'debutC','finC');  inputTextBlur('textCol','column title');"/>
+			</div>
+		</div>
+		<!--
+		<div id="funcDate" class="line">
 			
-				<div class="inline" id="champsDates">
-						<div  class="aroundWhite">Add a column : </div>
+				<div id="champsDates" class="inline" >
 	       	
 						<input id="date" type="radio" name="text" value="Du au">  
 					 	From : <input type="text" id="debutC" class="datepick" onfocus="checkRadio('date')">  
@@ -65,26 +84,8 @@
 				</div>
 			</div>
 			
-			
-			
-			<!--
-			<div class="line inline" id="funcPers">
-			<div class="inline namePers">
-				<input class="textGrey " id="name" type="text" name="name" value="add person" onfocus="inputTextFocus('name','Orange')" onblur="inputTextBlur('name','add person')" >
-			</div>
-			
-			<div class="inline">
-			
-				<div class="button3D b3green" id="addPers" onmouseover="changeCursor('addPers')" onclick="addRow()"> 
-					Add 
-				</div>
-			</div>
-			</div>
-			  -->
-		
-	</div> <!--fin div line-->
-
-	
+			-->
+	</article>
 </section>
 
 

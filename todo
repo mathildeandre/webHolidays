@@ -45,7 +45,8 @@ utile ?
 * Tout les <div class="aroundWhite"> à REMPLACER par <h3> 
 * Pour les repas fare "accepeter" une charte aux personnes ajoutant une recette 
   en disant que l'on peut s'approprier et afficher leur recette sur le web
-* 
+* GERER CONTACT LIST
+* enlever input "confirm pwd" de Members
 
 
 *infobulles...

@@ -1,6 +1,6 @@
 
  <section id="sectionGroup" class="section line">
-   <h1 id="h1Group" class="h1 ">Your Group</h1>
+   <h1 id="h1Group" class="h1 ">Your Group</h1> <!-- class="h1 text3Dfonce" -->
 
 <!-- pour remmetre les h2 en 3D ecrire : class="text3Dfonce" -->
 	<article id="articleComposition" class="inline">
