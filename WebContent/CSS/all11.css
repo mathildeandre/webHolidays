@@ -134,6 +134,8 @@ footer{
     -1px 1px 0 #FF6600,
     1px 1px 0 #FF6600; 
 }
+
+
 .buttonBlueFonce{
 	border-color:#003399;
 	background:#003399;/*rgba(0,0,0,0);*/
@@ -147,6 +149,11 @@ footer{
 	border-color:#FF944D;
 	background:#FF944D;
 	
+}
+
+.buttonGreenClair{
+	border-color:#009933;
+	background:#009933;
 }
 .buttonRedFonce{
 	/* old : #B20000,#800000 */
@@ -184,7 +191,7 @@ footer{
 	color:#853385;
 }
 .textGreen{
-	color : #00CC00;
+	color : #009933;
 }
 
 /*
@@ -1060,6 +1067,322 @@ to { line-height:0px;}*/
 
 
 
+
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx styleDoodle   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+
+#sectionNavDoodle{
+	overflow-y: hidden,scroll;
+	overflow-x: hidden;
+	max-height: 25vw;
+	position: fixed;
+	float: left;
+    list-style-type: none;
+	margin-left:1.5vw;
+	margin-top : 3.8vw; 
+	padding: 1vw;
+	padding-bottom:1.5vw;
+	background : url("../images/peint-blanc.jpg");
+	background-size:20vw;
+	border-radius: 1vw ;
+	width:11vw;
+}
+#sectionNavDoodle ul{
+    /*list-style-type: none;*/ /*pour enlever les points/noeuds*/
+	margin-bottom:1vw;
+}
+#sectionNavDoodle li{
+	margin-bottom:0.3vw;
+}
+#sectionNavDoodle a{
+	color: black;
+    text-decoration:none;
+}
+#h2navDoodle{
+	color:#009933;
+ 	font-weight: bold;
+	font-size: 0.9vw;
+}
+
+#inputNewDoodle{
+	padding : 0.3vw;
+	padding-left : 0.5vw;
+	margin-top: 0.5vw;
+	width:8vw;
+	/*height:27px;*/
+	font-size: 0.7vw;
+	/*background: url("../images/peint-blanc.jpg");
+	background-size: 200px, 25px;*/
+	
+	background:rgba(255,255,255,0.5);
+	border:1px solid rgba(0,153,51,0.8); /* #009933;*/
+	border-radius: 0.5vw;
+	
+}
+
+#createDoodle{
+	margin-top: 0.5vw;
+	/*margin-left:4vw;*/
+	padding:0.5vw;
+	font-size: 0.8vw;
+}
+
+
+
+
+#sectionDoodle{
+	margin-left:17vw;
+}
+
+
+
+
+#sectionDoodle h1, #sectionDoodle h2{
+	/*  text-shadow:
+	       -0.5px -0.5px 0 #0000FF,
+	       0.5px -0.5px 0 #0000FF,
+	       -0.5px 0.5px 0 #0000FF,
+	       0.5px 0.5px 0 #0000FF; */
+       
+	color:#009933;
+	text-shadow: 0   0.8px 0 #00B800,
+              0   1.5px 0 #00A300,
+             -1px 2.3px 0 #008F00,
+             -1px 3px 0 #007A00,
+             -2px 3.8px 0 #006600,
+             -2.1px 4.5px 0 #005200,
+             -2.2px 5.3px 2px rgba(0,41,0, 0.4),
+             -2.2px 5.3px 8px rgba(0,41,0, 0.2),
+             -2.2px 5.3px 20px rgba(0,41,0, 0.4); 
+}
+
+/*
+article[class="function"]{
+	border:4px solid;
+	border-color: black ;
+	border-radius: 30px;
+}
+
+.line{
+	margin:0%;
+}
+
+*/
+#sectionDoodle #funcDate{
+	border:4px solid;
+	border-color: green ;
+	border-radius: 30px;
+	width: 50vw;
+	max-width: 500px;
+	height: 150px;
+}
+
+#sectionDoodle h4{
+	margin-left: 5px;
+}
+
+#sectionDoodle #butAddCol{
+	margin-left: 5px;
+	width: 5vw;
+	max-width: 50px;
+}
+
+#sectionDoodle .datepick{
+
+	width: 13vw;
+	max-width: 130px;
+}
+#sectionDoodle #textCol{
+	width: 22vw;
+	max-width: 220px;
+
+}
+
+
+
+#sectionDoodle #funcPers{
+	margin-left: 3vw;/*calc(20vw-40px);*/
+	border:4px solid;
+	border-color: green ;
+	border-radius: 30px;
+	width: 25vw;
+	max-width: 250px;
+	height: 50px;
+	
+}
+
+#sectionDoodle #name{
+	margin-left: 10px;
+	width: 15vw;
+	max-width: 150px;
+}
+
+/******* CHECKBOX *********/
+#sectionDoodle input[type=checkbox] {
+		visibility: hidden;
+}
+
+/* ROUNDED TWO */
+#sectionDoodle .roundedTwo {
+	width: 30px;
+	height: 30px;
+	background: #fcfff4;
+
+	background: -webkit-linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, palegreen 100%);
+	background: -moz-linear-gradient(top, #fcfff4 0%, palegreen 10%, yellowgreen 30%);
+	background: -o-linear-gradient(top, #fcfff4 0%, palegreen 10%, yellowgreen 30%);
+	background: -ms-linear-gradient(top, #fcfff4 0%, palegreen 10%, yellowgreen 30%);
+	background: linear-gradient(top, #fcfff4 0%, palegreen 10%, yellowgreen 30%);
+margin: 20px auto;
+
+	border-radius: 10px;
+
+	box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0,0,0,0.5);
+position: relative;
+}
+
+#sectionDoodle .roundedTwo label {
+	cursor: pointer;
+	position: absolute;
+	width: 25px;
+	height: 25px;
+
+	border-radius: 10px;
+	left: 3px;
+	top: 3px;
+
+     box-shadow: inset 0px 1px 1px rgba(0,0,0,0.5), 0px 1px 0px rgba(255,255,255,1);
+
+	background: -webkit-linear-gradient(top, #222 0%, green 100%);
+	background: -moz-linear-gradient(top, #222 0%, green 100%);
+	background: -o-linear-gradient(top, #222 0%, green 100%);
+	background: -ms-linear-gradient(top, #222 0%, green 100%);
+	background: linear-gradient(top, #222 0%, green 100%);
+}
+
+#sectionDoodle .roundedTwo label:after {
+	opacity: 0;
+	content: '';
+	position: absolute;
+	width: 11px;
+	height: 7px;
+	background: transparent;
+	top: 5px;
+	left: 4px;
+	border: 3px solid #fcfff4;
+	border-top: none;
+	border-right: none;
+
+	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	-o-transform: rotate(-45deg);
+	-ms-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+}
+
+#sectionDoodle .roundedTwo label:hover::after {
+opacity: 0.3;
+}
+
+#sectionDoodle .roundedTwo input[type=checkbox]:checked + label:after {
+opacity: 1;
+}
+
+/******* END CHECKBOX *********/
+
+
+/*
+#tab{
+	border : none;
+       }
+thead th{
+	border : none;
+	 border-bottom: 5px solid green;
+}*/
+
+
+
+#sectionDoodle table, caption, thead, tfoot, tbody {
+	margin: 0;
+	padding: 0;
+}
+
+#sectionDoodle #tab{
+
+	border: 3px solid green;
+	border-radius: 10px;
+
+}
+
+#sectionDoodle table {
+	background:none;
+	border:0;
+	border-collapse: separate;
+	border-spacing: 1px;
+	color: #333333;
+	margin-top: 5px;
+	max-width: 900px;
+	min-width: 400px;
+	/* padding: 20px 5px 5px 5px; Espcaement du border */
+	width: 100%;
+}
+
+
+
+
+#sectionDoodle thead, th, td{
+
+}
+
+#sectionDoodle th, td {
+	border:none;
+	/* border: 1px solid green; */
+	padding: 1px 6px;
+}
+
+
+#sectionDoodle #tab th { /*background entete de colonne*/
+	border:3px solid green;
+	 border-right: 0.01px solid grey; 
+	 border-left: 0.01px solid grey; 
+	 border-radius: 20px;
+
+	background:	#33D633;
+	color: #31605D;
+}
+
+#sectionDoodle #tab td {
+	
+	 border: 2px solid green; 
+	 border-right: 0.01px solid grey; 
+	 border-left: 0.01px solid grey; 
+	 border-radius: 10px;
+	background-color: 	#D1FFC2;
+}
+
+#sectionDoodle #tab td:hover{
+	background-color: 	#CCFF99;
+	
+}
+
+#sectionDoodle thead,td {
+	text-align: center;
+}
+
+#sectionDoodle td:empty {
+	background: #A7DBD8;
+	border: 0;
+}
+
+
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx fin styleDoodle   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+
+
+
+
 /*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
 /*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx styleExpenses   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
 /*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
@@ -1327,271 +1650,6 @@ h1, h2{
 /*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx fin styleThings   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
 /*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
 
-
-
-
-
-/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
-/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx styleDoodle (need to clean up)   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
-/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
-
-#navDoodle ul{
-	position: fixed;
-	float: left;
-    list-style-type: none;
-	margin-left:1.5vw;
-	margin-top : 3.8vw; 
-	padding: 2vw;
-	background : url("../images/peint-blanc.jpg");
-	background-size:20vw;
-	border-radius: 1vw ;
-	width:10vw;
-}
-#sectionDoodle{
-	margin-left:17vw;
-}
-
-#sectionDoodle h1, #sectionDoodle h2{
-	/*  text-shadow:
-	       -0.5px -0.5px 0 #0000FF,
-	       0.5px -0.5px 0 #0000FF,
-	       -0.5px 0.5px 0 #0000FF,
-	       0.5px 0.5px 0 #0000FF; */
-       
-	color:#00CC00;
-	text-shadow: 0   0.8px 0 #00B800,
-              0   1.5px 0 #00A300,
-             -1px 2.3px 0 #008F00,
-             -1px 3px 0 #007A00,
-             -2px 3.8px 0 #006600,
-             -2.1px 4.5px 0 #005200,
-             -2.2px 5.3px 2px rgba(0,41,0, 0.4),
-             -2.2px 5.3px 8px rgba(0,41,0, 0.2),
-             -2.2px 5.3px 20px rgba(0,41,0, 0.4); 
-}
-
-/*
-article[class="function"]{
-	border:4px solid;
-	border-color: black ;
-	border-radius: 30px;
-}
-
-.line{
-	margin:0%;
-}
-
-*/
-#sectionDoodle #funcDate{
-	border:4px solid;
-	border-color: green ;
-	border-radius: 30px;
-	width: 50vw;
-	max-width: 500px;
-	height: 150px;
-}
-
-#sectionDoodle h4{
-	margin-left: 5px;
-}
-
-#sectionDoodle #butAddCol{
-	margin-left: 5px;
-	width: 5vw;
-	max-width: 50px;
-}
-
-#sectionDoodle .datepick{
-
-	width: 13vw;
-	max-width: 130px;
-}
-#sectionDoodle #textCol{
-	width: 22vw;
-	max-width: 220px;
-
-}
-
-
-
-#sectionDoodle #funcPers{
-	margin-left: 3vw;/*calc(20vw-40px);*/
-	border:4px solid;
-	border-color: green ;
-	border-radius: 30px;
-	width: 25vw;
-	max-width: 250px;
-	height: 50px;
-	
-}
-
-#sectionDoodle #name{
-	margin-left: 10px;
-	width: 15vw;
-	max-width: 150px;
-}
-
-/******* CHECKBOX *********/
-#sectionDoodle input[type=checkbox] {
-		visibility: hidden;
-}
-
-/* ROUNDED TWO */
-#sectionDoodle .roundedTwo {
-	width: 30px;
-	height: 30px;
-	background: #fcfff4;
-
-	background: -webkit-linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, palegreen 100%);
-	background: -moz-linear-gradient(top, #fcfff4 0%, palegreen 10%, yellowgreen 30%);
-	background: -o-linear-gradient(top, #fcfff4 0%, palegreen 10%, yellowgreen 30%);
-	background: -ms-linear-gradient(top, #fcfff4 0%, palegreen 10%, yellowgreen 30%);
-	background: linear-gradient(top, #fcfff4 0%, palegreen 10%, yellowgreen 30%);
-margin: 20px auto;
-
-	border-radius: 10px;
-
-	box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0,0,0,0.5);
-position: relative;
-}
-
-#sectionDoodle .roundedTwo label {
-	cursor: pointer;
-	position: absolute;
-	width: 25px;
-	height: 25px;
-
-	border-radius: 10px;
-	left: 3px;
-	top: 3px;
-
-     box-shadow: inset 0px 1px 1px rgba(0,0,0,0.5), 0px 1px 0px rgba(255,255,255,1);
-
-	background: -webkit-linear-gradient(top, #222 0%, green 100%);
-	background: -moz-linear-gradient(top, #222 0%, green 100%);
-	background: -o-linear-gradient(top, #222 0%, green 100%);
-	background: -ms-linear-gradient(top, #222 0%, green 100%);
-	background: linear-gradient(top, #222 0%, green 100%);
-}
-
-#sectionDoodle .roundedTwo label:after {
-	opacity: 0;
-	content: '';
-	position: absolute;
-	width: 11px;
-	height: 7px;
-	background: transparent;
-	top: 5px;
-	left: 4px;
-	border: 3px solid #fcfff4;
-	border-top: none;
-	border-right: none;
-
-	-webkit-transform: rotate(-45deg);
-	-moz-transform: rotate(-45deg);
-	-o-transform: rotate(-45deg);
-	-ms-transform: rotate(-45deg);
-	transform: rotate(-45deg);
-}
-
-#sectionDoodle .roundedTwo label:hover::after {
-opacity: 0.3;
-}
-
-#sectionDoodle .roundedTwo input[type=checkbox]:checked + label:after {
-opacity: 1;
-}
-
-/******* END CHECKBOX *********/
-
-
-/*
-#tab{
-	border : none;
-       }
-thead th{
-	border : none;
-	 border-bottom: 5px solid green;
-}*/
-
-
-
-#sectionDoodle table, caption, thead, tfoot, tbody {
-	margin: 0;
-	padding: 0;
-}
-
-#sectionDoodle #tab{
-
-	border: 3px solid green;
-	border-radius: 10px;
-
-}
-
-#sectionDoodle table {
-	background:none;
-	border:0;
-	border-collapse: separate;
-	border-spacing: 1px;
-	color: #333333;
-	margin-top: 5px;
-	max-width: 900px;
-	min-width: 400px;
-	/* padding: 20px 5px 5px 5px; Espcaement du border */
-	width: 100%;
-}
-
-
-
-
-#sectionDoodle thead, th, td{
-
-}
-
-#sectionDoodle th, td {
-	border:none;
-	/* border: 1px solid green; */
-	padding: 1px 6px;
-}
-
-
-#sectionDoodle #tab th { /*background entete de colonne*/
-	border:3px solid green;
-	 border-right: 0.01px solid grey; 
-	 border-left: 0.01px solid grey; 
-	 border-radius: 20px;
-
-	background:	#33D633;
-	color: #31605D;
-}
-
-#sectionDoodle #tab td {
-	
-	 border: 2px solid green; 
-	 border-right: 0.01px solid grey; 
-	 border-left: 0.01px solid grey; 
-	 border-radius: 10px;
-	background-color: 	#D1FFC2;
-}
-
-#sectionDoodle #tab td:hover{
-	background-color: 	#CCFF99;
-	
-}
-
-#sectionDoodle thead,td {
-	text-align: center;
-}
-
-#sectionDoodle td:empty {
-	background: #A7DBD8;
-	border: 0;
-}
-
-
-/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
-/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx fin styleDoodle   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
-/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
 
 
 
