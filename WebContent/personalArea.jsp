@@ -72,6 +72,7 @@ HTML5 sont employees. -->
 		<fieldset >
 	    <legend><h2 class="text3Dfonce" >My Contacts</h2></legend>
 	    <div id="fieldMyContact" class="aroundBlack">
+	    <!-- 
 			 - emiel <br>
 			 - matthijs <br>
 			 - fabian <br>
@@ -96,6 +97,7 @@ HTML5 sont employees. -->
 			 - matthijs <br>
 			 - fabian <br>
 			 - kiki <br>
+			  -->
 		</div>
 		</fieldset>
 		<!-- 

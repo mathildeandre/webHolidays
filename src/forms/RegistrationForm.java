@@ -12,6 +12,7 @@ import beans.Group;
 import beans.Person;
 import dao.DAOException;
 import dao.PersonDao;
+import dao.GroupDao;
 
 public final class RegistrationForm {
 
@@ -20,9 +21,16 @@ public final class RegistrationForm {
 	private String resultat;
 	private Map<String, String> errors ;
 	private PersonDao personDao;
+	private GroupDao groupDao;
 
 	public RegistrationForm(PersonDao personDao) {
 		this.personDao = personDao;
+		errors = new HashMap<String, String>();
+	}
+	
+	public RegistrationForm(PersonDao personDao, GroupDao groupDao) {
+		this.personDao = personDao;
+		this.groupDao = groupDao;
 		errors = new HashMap<String, String>();
 	}
 
@@ -34,7 +42,7 @@ public final class RegistrationForm {
 		return resultat;
 	}
 
-	public Person inscrireUtilisateur(HttpServletRequest request) {
+	public Person registerUser(HttpServletRequest request) {
 		String login = getValeurChamp(request, "login");
 		String email = getValeurChamp(request, "email");
 		String pwd = getValeurChamp(request, "pwd");
@@ -68,6 +76,29 @@ public final class RegistrationForm {
 			return null;
 		}
 		return person;
+	}
+	
+	public void registerUserBySomeoneElse(HttpServletRequest request) {
+		//creation de la nouvelle personne
+		Person personToAdd = registerUser(request);
+		
+		HttpSession session = request.getSession();
+		//Person user = (Person) session.getAttribute("person");
+		
+		Group group = (Group) session.getAttribute("group");
+		
+		if(errors.isEmpty()){
+			try{
+				//TODO enregistrement de cette persone ds la liste de contact de l'utilisateur
+				//personDao.addContact(contact, user);
+				
+				// et dans belongTo
+				groupDao.registerGroup(personToAdd.getId(), group.getId());
+			}catch (DAOException e){
+				errors.put("registerUser", "Échec de l'inscription : une erreur imprévue est survenue, merci de réessayer dans quelques instants.");
+				e.printStackTrace();
+			}
+		}
 	}
 
 	public Person modifyLogin(HttpServletRequest request) {

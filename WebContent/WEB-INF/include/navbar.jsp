@@ -4,7 +4,7 @@
 <c:set var = "currentHomepage" value="id='liHomepage' onmouseover='changeCursor(\"liHomepage\")' 
 onclick='location.href=\"index.jsp?page=homepage\"'" />
 <c:set var = "currentGroup" value="id='liGroupe' onmouseover='changeCursor(\"liGroupe\")' 
-onclick='location.href=\"index.jsp?page=group\"'" />
+onclick='location.href=\"group?action=display\"'" />
 <c:set var = "currentDoodle" value="id='liDoodle' onmouseover='changeCursor(\"liDoodle\")' 
 onclick='location.href=\"index.jsp?page=doodle\"'" />
 <c:set var = "currentMeals" value="id='liMeals' onmouseover='changeCursor(\"liMeals\")' 

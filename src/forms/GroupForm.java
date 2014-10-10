@@ -1,6 +1,7 @@
 package forms;
 
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -22,9 +23,13 @@ public final class GroupForm {
     private String              resultat;
     private Map<String, String> errors          = new HashMap<String, String>();
     private GroupDao     groupDao;
+    private PersonDao     personDao;
 
     public GroupForm(GroupDao groupDao ) {
         this.groupDao = groupDao;
+    }
+    public GroupForm(PersonDao personDao ) {
+        this.personDao = personDao;
     }
 
     public Map<String, String> getErrors() {
@@ -71,6 +76,43 @@ public final class GroupForm {
         }
         return group;
     }
+    
+    
+    public ArrayList<Person> getMembers(HttpServletRequest request) {
+
+		HttpSession session = request.getSession();
+		Group group = (Group) session.getAttribute("group");
+		ArrayList<Person> listMembers = new ArrayList<Person>();
+
+		try {
+			listMembers = groupDao.getMembers(group);
+			return listMembers;
+		} catch (DAOException e) {
+			errors.put(
+					"getContact",
+					"Échec de la selection des contacts: une erreur imprévue est survenue, merci de réessayer dans quelques instants.");
+			e.printStackTrace();
+			return null;
+		}
+	}
+    
+	public ArrayList<Person> getContacts(HttpServletRequest request) {
+
+		HttpSession session = request.getSession();
+		Person person = (Person) session.getAttribute("person");
+		ArrayList<Person> listContacts = new ArrayList<Person>();
+
+		try {
+			listContacts = personDao.getContacts(person);
+			return listContacts;
+		} catch (DAOException e) {
+			errors.put(
+					"getContact",
+					"Échec de la selection des contacts: une erreur imprévue est survenue, merci de réessayer dans quelques instants.");
+			e.printStackTrace();
+			return null;
+		}
+	}
 
    
 }

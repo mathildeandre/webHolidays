@@ -196,8 +196,6 @@ public class PersonDao {
 		}
 		
 		private static final String SQL_UPDATE_NAME = "UPDATE Persons SET name_person=? WHERE id_person=?";
-
-
 		public void modifyName(Person person, String newName) throws DAOException {
 			    Connection connexion = null;
 			    PreparedStatement preparedStatement = null;
@@ -215,6 +213,7 @@ public class PersonDao {
 				    }
 			}
 
+		
 	private static final String SQL_UPDATE_EMAIL = "UPDATE Persons SET mail_person=? WHERE id_person=?";
 
 	public void modifyEmail(Person person, String newMail) throws DAOException {
@@ -279,6 +278,69 @@ public class PersonDao {
 			fermeturesSilencieuses(preparedStatement, connexion);
 		}
 		return 0;
+	}
+	
+	private static final String SQL_INSERT_CONTACT = "INSERT INTO ContactList (id_person1, id_person2) VALUES (?, ?)";
+
+	public void addContact(Person contact, Person user) throws DAOException {
+		Connection connexion = null;
+		PreparedStatement preparedStatement = null;
+	    ResultSet resultSetGroup = null;
+
+		try {
+			/* Récupération d'une connexion depuis la Factory */
+			connexion = (Connection) daoFactory.getConnection();
+			preparedStatement = initialisationRequetePreparee(connexion,
+					SQL_INSERT_CONTACT, false, user.getId(), contact.getId());
+			int statue = preparedStatement.executeUpdate();
+			if(statue == 0){	     
+				throw new DAOException( "Échec de la création de l'utilisateur, aucune ligne ajoutée dans la table." );
+			}
+		} catch (SQLException e) {
+			throw new DAOException(e);
+		} finally {
+			fermeturesSilencieuses(preparedStatement, connexion);
+		}
+	}
+	
+	private static final String SQL_SELECT_CONTACTS = "SELECT * FROM ContactList, Persons WHERE ContactList.id_person1=? "
+			+ "AND Persons.id_person=ContactList.id_person2";
+	
+	public ArrayList<Person> getContacts(Person person) throws DAOException {
+		Connection connexion = null;
+		PreparedStatement preparedStatement = null;
+	    ResultSet resultSetContacts = null;
+	    long     idC;
+	    String    nameC;
+	    String    emailC;
+	    boolean isNewC;
+	    
+	    ArrayList<Person> listContacts = new ArrayList<Person>();
+
+		try {
+			/* Récupération d'une connexion depuis la Factory */
+			connexion = (Connection) daoFactory.getConnection();
+			preparedStatement = initialisationRequetePreparee(connexion,
+					SQL_INSERT_CONTACT, false, person.getId());
+			resultSetContacts = preparedStatement.executeQuery();
+			while ( resultSetContacts.next() ) {
+	    	    Person contact = new Person();
+	        	idC = (long) resultSetContacts.getInt("id_person2");
+	        	nameC = resultSetContacts.getString("name_person");
+	        	emailC = resultSetContacts.getString("name_person");
+	        	isNewC = true;
+	        	person.setId(idC);
+	        	person.setName(nameC);
+	        	person.setEmail(emailC);
+	        	person.setNew(isNewC);
+	        	listContacts.add(contact);
+	        }
+	        return listContacts;
+		} catch (SQLException e) {
+			throw new DAOException(e);
+		} finally {
+			fermeturesSilencieuses(preparedStatement, connexion);
+		}
 	}
 	
 	

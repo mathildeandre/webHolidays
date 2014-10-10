@@ -36,6 +36,11 @@ public class PersoArea extends HttpServlet {
         this.personDAO = ( (DAOFactory) getServletContext().getAttribute( CONF_DAO_FACTORY ) ).getPersonDao();
        
     }
+    
+	public void doGet( HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException  {
+		this.getServletContext().getRequestDispatcher("/persoArea").forward(request, response);
+	}
+
 	
     /**
      * This method is called when the personalArea page has to be displayed. 

@@ -2,6 +2,7 @@ package dao;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import org.jasypt.util.password.ConfigurablePasswordEncryptor;
 
@@ -11,6 +12,7 @@ import com.mysql.jdbc.Statement;
 
 import static dao.DAOUtilitaire.*;
 import beans.Group;
+import beans.Person;
 
 public class GroupDao {
     private DAOFactory daoFactory;
@@ -76,7 +78,7 @@ public class GroupDao {
 	
 	private static final String SQL_INSERT_BELONG = "INSERT INTO BelongTo (id_person, id_group) VALUES (?,?)";
 
-	public boolean registerGroup(long idPers, long idGroup) throws DAOException {
+	public void registerGroup(long idPers, long idGroup) throws DAOException {
 		Connection connexion = null;
 	    PreparedStatement preparedStatementGroup = null;
 	    ResultSet resultSetGroup = null;
@@ -93,9 +95,6 @@ public class GroupDao {
 
 	        if ( statut == 0) {
 	            throw new DAOException( "Échec de l'association groupe person, aucune ligne ajoutée dans la table." ); 
-	        }
-	        else{
-	        	return true;
 	        }
 	    } catch ( SQLException e ) {
 	        throw new DAOException( e );
@@ -132,6 +131,47 @@ public class GroupDao {
 	    } finally {
 	        fermeturesSilencieuses( resultSetGroup, preparedStatementGroup, connexion );
 	    }
+	}
+	
+
+	private static final String SQL_SELECT_MEMBERS = 
+			"SELECT Persons.id_person, name_person, login_person, pwd_person, mail_person, is_new "
+			+ "FROM BelongTo,Persons "
+			+ "WHERE BelongTo.id_group = ? "
+			+ "AND BelongTo.id_person = Persons.id_person";
+	
+	public ArrayList<Person> getMembers(Group group){
+		Connection connexion = null;
+	    PreparedStatement preparedStatementGroup = null;
+	    ResultSet resultSetGroup = null;
+
+	    ArrayList<Person> listMembers = new ArrayList<Person>();
+	    
+	    try {
+	        /* Récupération d'une connexion depuis la Factory */
+	        connexion = (Connection) daoFactory.getConnection();
+	        preparedStatementGroup = initialisationRequetePreparee( connexion, SQL_SELECT_MEMBERS, false, group.getId());
+	        resultSetGroup = preparedStatementGroup.executeQuery();
+
+	        while(resultSetGroup.next()){
+
+		        Person person = new Person();
+	        	person.setId(resultSetGroup.getLong("id_person"));
+	        	person.setName(resultSetGroup.getString("name_person"));
+	        	person.setLogin(resultSetGroup.getString("login_person"));
+	        	
+	        	person.setPwd(resultSetGroup.getString("pwd_person"));
+	        	person.setEmail(resultSetGroup.getString("mail_person"));
+	        	person.setNew(resultSetGroup.getBoolean("is_new"));
+	        	listMembers.add(person);
+	        }
+	    } catch ( SQLException e ) {
+	        throw new DAOException( e );
+	    } finally {
+	        fermeturesSilencieuses( resultSetGroup, preparedStatementGroup, connexion );
+	    }
+		
+		return listMembers;
 	}
 	
 	
