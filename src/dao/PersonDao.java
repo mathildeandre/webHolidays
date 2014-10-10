@@ -177,7 +177,6 @@ public class PersonDao {
 	
 	 private static final String SQL_UPDATE_LOGIN = "UPDATE Persons SET login_person=? WHERE id_person=?";
 
-
 		public void modifyLogin(Person person, String newLogin) throws DAOException {
 		    Connection connexion = null;
 		    PreparedStatement preparedStatement = null;

@@ -88,7 +88,7 @@ public final class RegistrationForm {
 			}
 		} catch (DAOException e) {
 			errors.put("modifyLogin",
-					"Fail of the modification of login : thank you to try egain in few minutes.");
+					"Fail of the modification of login : thank you to try again in few minutes.");
 			e.printStackTrace();
 			return null;
 		}

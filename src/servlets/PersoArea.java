@@ -45,7 +45,7 @@ public class PersoArea extends HttpServlet {
      * @throws ServletException 
      */
 	public void doPost( HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException  {
-      
+		
 		// Si l'action correspondante est modification de login
 		if(request.getParameter("action")!=null && request.getParameter("action").equalsIgnoreCase("modifyLogin")){
 			modifyLogin(request, response);
@@ -92,6 +92,7 @@ public class PersoArea extends HttpServlet {
 	private void modifyLogin(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		RegistrationForm form = new RegistrationForm(personDAO);
 		Person person = form.modifyLogin(request);
+		
 		HttpSession session = request.getSession();
 		
 		Map<String, String> errors = form.getErrors();
