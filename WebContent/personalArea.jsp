@@ -27,7 +27,7 @@ HTML5 sont employees. -->
 	
 	<div id="divLogOut" class="line inline"> 
 	
-		<div id="nameUser" class="inline text3Dfonce">NameUser${requestScope.nameGroup}</div>
+		<div id="nameUser" class="inline text3Dfonce">${sessionScope.person.name}</div>
 		
 		<form method="post" action="logout">
 			<!--ne s'aligne pas correctement: si on met deux ligne input.. avec le inline ca fonctionne^^-->
@@ -53,7 +53,7 @@ HTML5 sont employees. -->
 	    <div id="fieldMyGroups" class="aroundBlack">
 	    
 	    <c:forEach var="group" items="${requestScope['listGroups']}">
-	    		<li id="liGroup" onmouseover="changeCursor('liGroup')" onclick="location.href='index.jsp?page=homepage <% session.setAttribute("nameGroup", "${group.name}"); %>'" > ${group.name}</li> 
+	    		<li id="liGroup" onmouseover="changeCursor('liGroup')" onclick="location.href='/webHolidays/group?nameGroup=${group.name}'" > ${group.name}</li> 
 	    </c:forEach>
 	    
 		</div>

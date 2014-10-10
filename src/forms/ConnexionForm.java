@@ -52,6 +52,25 @@ public class ConnexionForm {
 	        }
 	}
 	
+	public Group connectGroup(HttpServletRequest request){
+	    String nameGroup = request.getParameter("nameGroup");
+	    HttpSession session = request.getSession();
+	    Person person = (Person) session.getAttribute("person");
+
+        Group group = new Group();
+        try {
+        	long idGroup = personDao.findGroup(nameGroup, person);
+        	group.setName(nameGroup);
+        	group.setId(idGroup);
+           
+        } catch ( DAOException e ) {
+            errors.put("connectGroup", "Échec de l'inscription : une erreur imprévue est survenue, merci de réessayer dans quelques instants.");
+            e.printStackTrace();
+            return null;
+        }
+        return group;
+}
+	
 	public ArrayList<Group> getGroups(HttpServletRequest request){
 
 		HttpSession session = request.getSession();

@@ -68,6 +68,15 @@
 		<url-pattern>/persoArea</url-pattern>
 	</servlet-mapping>
 	
+	<servlet>
+		<servlet-name>GroupServlet</servlet-name>
+		<servlet-class>servlets.GroupServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>GroupServlet</servlet-name>
+		<url-pattern>/group</url-pattern>
+	</servlet-mapping>
+	
 	<listener>
     <listener-class>config.InitialisationDaoFactory</listener-class>
 </listener>
