@@ -79,6 +79,7 @@ footer{
 	background : url("../images/peint-blanc.jpg");
 	background-size:20vw;
 	padding: 2vw;
+	padding-top:5vw;
 	/*color:#000033;
 	/*background-attachment: fixed;*/
 	/*border:8px solid grey;/*bleu clair*/   /* blueviolet*/
@@ -88,6 +89,7 @@ footer{
 	text-align:center;/*texte centré*/
 	font-size: 2.5vw;
 	font-weight: bold;
+	padding-bottom:2vw;
 	/*text-shadow: 5px 5px 5px #000000;  /*decalage-a-droite, decalage-bas, flootage, color*/
 }
 .h2{
@@ -155,6 +157,10 @@ footer{
 	border-color:#FF4D4D;
 	background:#FF4D4D;/*rgba(0,0,0,0);*/
 }
+.buttonPurpleClair{
+	border-color:#853385;
+	background:#853385;
+}
 	
 .textWhite{
 	color : white;
@@ -175,7 +181,7 @@ footer{
 	color : #4747D1;
 }
 .textPurple{
-	color : #7A1F99;
+	color:#853385;
 }
 .textGreen{
 	color : #00CC00;
@@ -813,19 +819,10 @@ transform: rotate(-10deg) scale(1.3,1.3);
 }
 /************************************* fin TEST **************************************/
 
-#sectionHomepage{
-	background-image:url("../images/parasol.jpg"), url("../images/peint-blanc.jpg");
-	
-	background-repeat:no-repeat, repeat;
-	background-size:20vw;
-	background-position: top right;
-	color:#1A1A66;
-}
-/*test pr mettre une surcouche transparente sur image*/
-#sousSectionHomepage{
-	background:rgba(255,255,255,0.7);
-}
 
+
+/* le pure 3D blue good */
+/*
 #sectionHomepage h1, #sectionHomepage h2{
 	color:#4747D1;
 	text-shadow: 0   0.8px 0 #2E2EB8,
@@ -837,6 +834,26 @@ transform: rotate(-10deg) scale(1.3,1.3);
              -2.2px 5.3px 2px rgba(10,10,41, 0.4),
              -2.2px 5.3px 8px rgba(10,10,41, 0.2),
              -2.2px 5.3px 20px rgba(10,10,41, 0.4); 
+}*/
+
+
+
+#sectionHomepage{
+	background-image:url("../images/parasol.jpg"), url("../images/peint-blanc.jpg");
+	
+	background-repeat:no-repeat, repeat;
+	background-size:20vw;
+	background-position: top right;
+	color:#1A1A66;
+}
+/*test pr mettre une surcouche transparente sur image*/
+
+#sousSectionHomepage{
+	background:rgba(255,255,255,0); /* couverture blanche transparente..*/
+}
+
+#h1Homepage{
+	color:#4747D1;
 }
 #sectionHomepage article h2{
 	width: 50vw;
@@ -847,8 +864,10 @@ transform: rotate(-10deg) scale(1.3,1.3);
 	line-height:120px;
 	/*border:2px solid black;
 	border-radius: 5%; */
+	
+	color:#4747D1;
 }
-#h2Groupe{
+#sectionHomepage #h2Groupe{
 	background: url("../images/groupe.png");
 	background-size:7vw;
 	background-repeat: no-repeat;
@@ -861,27 +880,27 @@ transform: rotate(-10deg) scale(1.3,1.3);
 <img src="../images/loisirs.jpg" width="11%">
 */
 }
-#h2Doodle{
+#sectionHomepage #h2Doodle{
 	background: url("../images/doodle.jpg");
 	background-size:6vw;
 	background-repeat: no-repeat;
 }
-#h2Repas{
+#sectionHomepage #h2Repas{
 	background: url("../images/chefcuisine.jpg");
 	background-size:6vw;
 	background-repeat: no-repeat;
 }
-#h2Calc{
+#sectionHomepage #h2Calc{
 	background: url("../images/tirelire.jpg");
 	background-size:5vw;
 	background-repeat: no-repeat;
 }
-#h2Affaire{
+#sectionHomepage #h2Affaire{
 	background: url("../images/doodle.jpg");
 	background-size:6vw;
 	background-repeat: no-repeat;
 }
-#h2Loisirs{
+#sectionHomepage #h2Loisirs{
 	background: url("../images/loisirs.jpg");
 	background-size:7vw;
 	background-repeat: no-repeat;
@@ -966,7 +985,6 @@ to { line-height:0px;}*/
 
 #sectionGroup #h1Group{
 	color:#FF6600;
-	padding-bottom:2vw;
 }
 
 #sectionGroup h2{
@@ -1063,7 +1081,7 @@ to { line-height:0px;}*/
 
 
 #sectionExpenses{  
-	color:blakc;/*#800000; /*black; /*#803300; orange très fonce */
+	color:black;/*#800000; /*black; /*#803300; orange très fonce */
 	/*height:900px; /*car les article sont absolute*
 	margin-left:10vw; */
 	width:90vw;
@@ -1073,7 +1091,7 @@ to { line-height:0px;}*/
 	/*color:#FF1919;
 	color:#FF3333;*/
 	color:#CC0000;
-	padding-bottom:2vw;
+	color:#FF1919;
 }
 #sectionExpenses  h2{
  	font-weight: bold;
@@ -1189,6 +1207,126 @@ input[type="checkbox"].css-checkbox {
 
 /*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
 /*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx fin styleExpenses   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+
+
+
+
+
+
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx styleThings   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+
+
+/* le pure 3D red good */
+/*
+h1, h2{
+*text-shadow: 5px 5px 5px #B82EE6;  *decalage-a-droite, decalage-bas, flootage, color*
+	color:#853385;
+	text-shadow:0   0.8px 0 #751975,
+              0   1.5px 0 #5C005C,
+             -1px 2.3px 0 #520052,
+             -1px 3px 0 #470047,
+             -2px 3.8px 0 #3D003D,
+             -2.1px 4.5px 0 #290029,
+             -2.2px 5.3px 2px rgba(41,0,41, 0.4),
+             -2.2px 5.3px 8px rgba(41,0,41, 0.2),
+             -2.2px 5.3px 20px rgba(41,0,41, 0.4); 
+
+}
+*/
+
+#sectionThings{  
+	color:black;/*#800000; /*black; /*#803300; orange très fonce */
+	/*height:900px; /*car les article sont absolute*
+	margin-left:10vw; *
+	width:80vw;*/
+	padding-bottom:5vw;
+	margin-left:10vw;
+	
+	
+	height:650px; /*car les article sont absolute*/
+}
+
+#h1Things{
+	color:#853385;
+}
+#sectionThings h2{
+ 	font-weight: bold;
+ 	padding-top:1vw;
+	font-size: 1.4vw;
+}
+
+#articlePersonalThings{
+	position: absolute;
+	left: 18vw;
+	/*width:40vw;*/  
+}
+
+#articleGroupThings{
+	position: absolute;
+	left: 48vw;
+	/*width:20vw;*/
+	padding-left:5vw; 
+	border-left:3px dotted white;
+}
+
+
+#fieldPersonalThings{
+	color:#853385;
+	overflow-y: hidden,scroll;
+	overflow-x: hidden;
+	max-height: 30vw;
+	width:10vw;
+	padding-left:1vw; 
+	font-size: 1.5vw;
+}
+#fieldGroupThings{
+	color:#853385;
+	overflow-y: hidden,scroll;
+	overflow-x: hidden;
+	max-height: 30vw;
+	width:22vw;
+	padding-left:1vw; 
+	font-size: 1.5vw;
+	
+}
+#inputPersonalThing, #inputGroupThing,  #thingsListContacts{
+	
+	padding : 0.3vw;
+	padding-left : 0.8vw;
+	margin-top: 0.5vw;
+	width:13.5vw;
+	/*height:27px;*/
+	font-size: 1.3vw;
+	/*background: url("../images/peint-blanc.jpg");
+	background-size: 200px, 25px;*/
+	
+	background:rgba(255,255,255,0.5);
+	border:1px solid rgba(133,51,133,0.8);/*#853385*/
+	border-radius: 0.5vw;
+	
+}
+#thingsListContacts{
+	
+	padding : 0.2vw;
+	padding-left : 0.5vw;
+	margin-top: 0vw;
+	margin-left:2vw;
+	width:7vw;
+	font-size: 1vw;
+	
+}
+.buttonThing{
+	padding:0.9vw 0.7vw;
+	font-size: 1.3vw;
+}
+
+
+
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx fin styleThings   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
 /*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
 
 

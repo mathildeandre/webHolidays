@@ -16,9 +16,6 @@
 			 - kate <br>
 		</div>
 		</fieldset>
-	 	<br>
-	 	
-	 	
 	</article>
 	
 	<article id="articleAddMember" class="inline">
@@ -40,7 +37,7 @@
        	<form method="post" action="searchPerson">
 	      <input id="searchPerson" class="textGrey"  name="searchPerson" type="text" value="Login of the person" 
          onfocus="inputTextFocus('searchPerson', 'Orange')" onblur="inputTextBlur('searchPerson','Login of the person')" required >
-		<input id="addPerson" type="submit" value="Add person" class="newButton3D buttonGroup buttonGroup buttonOrangeClair" onmouseover="changeCursor('addPerson')"/>
+		<input id="addPerson" type="submit" value="Add person" class="newButton3D buttonGroup buttonOrangeClair" onmouseover="changeCursor('addPerson')"/>
        	</form>
        	
        	</br>

@@ -1,6 +1,6 @@
 
 <section id="sectionDoodle" class="section">
-	<h1 class="h1"> Doodle </h1>
+	<h1 id="h1Doodle" class="h1 text3Dfonce"> Doodle </h1>
 	<article class="function">
 	<div class="line">
 			<div class="line inline" id="funcDate">
