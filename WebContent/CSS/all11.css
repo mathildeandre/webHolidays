@@ -134,6 +134,8 @@ footer{
     -1px 1px 0 #FF6600,
     1px 1px 0 #FF6600; 
 }
+
+
 .buttonBlueFonce{
 	border-color:#003399;
 	background:#003399;/*rgba(0,0,0,0);*/
@@ -147,6 +149,11 @@ footer{
 	border-color:#FF944D;
 	background:#FF944D;
 	
+}
+
+.buttonGreenClair{
+	border-color:#009933;
+	background:#009933;
 }
 .buttonRedFonce{
 	/* old : #B20000,#800000 */
@@ -184,7 +191,7 @@ footer{
 	color:#853385;
 }
 .textGreen{
-	color : #00CC00;
+	color : #009933;
 }
 
 /*
@@ -1060,298 +1067,76 @@ to { line-height:0px;}*/
 
 
 
+
 /*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
-/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx styleExpenses   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx styleDoodle   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
 /*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
 
-/* le pure 3D red good */
-/* #sectionExpenses h1, #sectionExpenses h2{
-*text-shadow: 5px 5px 5px #FF0000;  *decalage-a-droite, decalage-bas, flootage, color*
-	color:#FF1919;#FF8080;
-	text-shadow: 0   0.8px 0 #E60000,
-              0   1.5px 0 #CC0000,
-             -1px 2.3px 0 #B20000,
-             -1px 3px 0 #990000,
-             -2px 3.8px 0 #800000,
-             -2.1px 4.5px 0 #660000,
-             -2.2px 5.3px 2px rgba(50,0,0, 0.4),
-             -2.2px 5.3px 8px rgba(50,0,0, 0.2),
-             -2.2px 5.3px 20px rgba(50,0,0, 0.4); 
-} */
-
-
-#sectionExpenses{  
-	color:black;/*#800000; /*black; /*#803300; orange très fonce */
-	/*height:900px; /*car les article sont absolute*
-	margin-left:10vw; */
-	width:90vw;
-	padding-bottom:5vw;
-}
-#sectionExpenses #h1Expenses{
-	/*color:#FF1919;
-	color:#FF3333;*/
-	color:#CC0000;
-	color:#FF1919;
-}
-#sectionExpenses  h2{
- 	font-weight: bold;
- 	padding-top:1vw;
-	font-size: 1.4vw;
-}
-
-
-#sectionExpenses .right{ 
-  position: absolute;
-  right: 12vw;
-}
-
-#buttonsForTab{
-	
-	margin-left:3vw;
-}
-#sectionExpenses #emptyTab{
-	margin-top:1vw;
-}
-
-#saveTab{
-	
-}
-#mouseOver{
-	margin-top:15px;
-}
-#blockFieldResult{ /* le field result avec titre etc */
-	
-	margin-left:3vw;
-	margin-top:40px;
-	width:40vw;
-}
-#fieldResultExpenses{ /*juste le texte a l'interieur de field result */
-	color:#CC0000;
+#sectionNavDoodle{
 	overflow-y: hidden,scroll;
 	overflow-x: hidden;
-	max-height: 40vw;
-	padding-left:5vw; 
-	font-size: 1.2vw;
-}
-
-/************* TAB *************/
-
-#sectionExpenses #tab{
-	margin:3vw;
-}
-
-
-#sectionExpenses #tab caption{ /*titre du tab "table of expense" */
-
-	font-size: 1.5vw;
-	border: 1px solid #CC0000;
-	border-radius: 0.5vw; 
-	border-bottom : 1px; 
-	color:#CC0000;
-	/*color: white;
-    text-shadow:
-    -1px -1px 0 #CC0000,
-    1px -1px 0 #CC0000,
-    -1px 1px 0 #CC0000,
-    1px 1px 0 #CC0000; 
-    */
-    
-}
-.tdTotal{ /* largeur de colonne prix/total */
-	width:60px;
-}
-#sectionExpenses #tab{
-	border: 1px solid #CC0000;
-	border-radius: 0.5vw; 
-	
-	/*background:#FF0000;*/
-}
-
-#sectionExpenses #tab th, #sectionExpenses #tab td{
-	/*border: 1px solid #B20000;
-	border-radius: 0.5vw; 
-	*/
-}
-#sectionExpenses th{ /*colonne de titre */
-
-	border: 1px solid #CC0000;
-	border-radius: 0.5vw; 
-	background:rgba(178,0,0,0.5);/* =>#B20000;*/
-	background:rgba(255,77,77,0.5);/* =>#FF4D4D;*/
-	background:rgba(255,25,25,0.6);/* =>#FF1919;*/
-	/*background:rgba(204,0,0,0.4);/* =>#CC0000;*/
-	
-	
-	color:rgba(0,0,0,0.8);/*black;*/
-	color:white;
-}
-
-/*
-input[type="checkbox"].css-checkbox {
-							  position: absolute; 
-							overflow: hidden; 
-							clip: rect(0 0 0 0); 
-							height:1px; 
-							width:1px; 
-							margin:-1px; 
-							padding:0;
-							border:0;
-						}
-
-*/
-/* taille des checkbox */
-#sectionExpenses input[type=checkbox] {
-	
-  -moz-appearance: none;
-  width: 20px;
-  height: 20px;
-}
-
-/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
-/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx fin styleExpenses   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
-/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
-
-
-
-
-
-
-/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
-/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx styleThings   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
-/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
-
-
-/* le pure 3D red good */
-/*
-h1, h2{
-*text-shadow: 5px 5px 5px #B82EE6;  *decalage-a-droite, decalage-bas, flootage, color*
-	color:#853385;
-	text-shadow:0   0.8px 0 #751975,
-              0   1.5px 0 #5C005C,
-             -1px 2.3px 0 #520052,
-             -1px 3px 0 #470047,
-             -2px 3.8px 0 #3D003D,
-             -2.1px 4.5px 0 #290029,
-             -2.2px 5.3px 2px rgba(41,0,41, 0.4),
-             -2.2px 5.3px 8px rgba(41,0,41, 0.2),
-             -2.2px 5.3px 20px rgba(41,0,41, 0.4); 
-
-}
-*/
-
-#sectionThings{  
-	color:black;/*#800000; /*black; /*#803300; orange très fonce */
-	/*height:900px; /*car les article sont absolute*
-	margin-left:10vw; *
-	width:80vw;*/
-	padding-bottom:5vw;
-	margin-left:10vw;
-	height:650px; /*car les article sont absolute*/
-}
-
-#h1Things{
-	color:#853385;
-}
-#sectionThings h2{
- 	font-weight: bold;
- 	padding-top:1vw;
-	font-size: 1.4vw;
-}
-
-#articlePersonalThings{
-	position: absolute;
-	left: 18vw;
-	/*width:40vw;*/  
-}
-
-#articleGroupThings{
-	position: absolute;
-	left: 48vw;
-	/*width:20vw;*/
-	padding-left:5vw; 
-	border-left:3px dotted white;
-}
-
-
-#fieldPersonalThings{
-	color:#853385;
-	overflow-y: hidden,scroll;
-	overflow-x: hidden;
-	max-height: 30vw;
-	width:10vw;
-	padding-left:1vw; 
-	font-size: 1.5vw;
-}
-#fieldGroupThings{
-	color:#853385;
-	overflow-y: hidden,scroll;
-	overflow-x: hidden;
-	max-height: 30vw;
-	width:22vw;
-	padding-left:1vw; 
-	font-size: 1.5vw;
-	
-}
-#inputPersonalThing, #inputGroupThing,  #thingsListContacts{
-	
-	padding : 0.3vw;
-	padding-left : 0.8vw;
-	margin-top: 0.5vw;
-	width:13.5vw;
-	/*height:27px;*/
-	font-size: 1.3vw;
-	/*background: url("../images/peint-blanc.jpg");
-	background-size: 200px, 25px;*/
-	
-	background:rgba(255,255,255,0.5);
-	border:1px solid rgba(133,51,133,0.8);/*#853385*/
-	border-radius: 0.5vw;
-	
-}
-#thingsListContacts{
-	
-	padding : 0.2vw;
-	padding-left : 0.5vw;
-	margin-top: 0vw;
-	margin-left:2vw;
-	width:7vw;
-	font-size: 1vw;
-	
-}
-.buttonThing{
-	padding:0.9vw 0.7vw;
-	font-size: 1.3vw;
-}
-
-
-
-/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
-/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx fin styleThings   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
-/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
-
-
-
-
-
-/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
-/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx styleDoodle (need to clean up)   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
-/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
-
-#navDoodle ul{
+	max-height: 25vw;
 	position: fixed;
 	float: left;
     list-style-type: none;
 	margin-left:1.5vw;
 	margin-top : 3.8vw; 
-	padding: 2vw;
+	padding: 1vw;
+	padding-bottom:1.5vw;
 	background : url("../images/peint-blanc.jpg");
 	background-size:20vw;
 	border-radius: 1vw ;
-	width:10vw;
+	width:11vw;
 }
+#sectionNavDoodle ul{
+    /*list-style-type: none;*/ /*pour enlever les points/noeuds*/
+	margin-bottom:1vw;
+}
+#sectionNavDoodle li{
+	margin-bottom:0.3vw;
+}
+#sectionNavDoodle a{
+	color: black;
+    text-decoration:none;
+}
+#h2navDoodle{
+	color:#009933;
+ 	font-weight: bold;
+	font-size: 0.9vw;
+}
+
+#inputNewDoodle{
+	padding : 0.3vw;
+	padding-left : 0.5vw;
+	margin-top: 0.5vw;
+	width:8vw;
+	/*height:27px;*/
+	font-size: 0.7vw;
+	/*background: url("../images/peint-blanc.jpg");
+	background-size: 200px, 25px;*/
+	
+	background:rgba(255,255,255,0.5);
+	border:1px solid rgba(0,153,51,0.8); /* #009933;*/
+	border-radius: 0.5vw;
+	
+}
+
+#createDoodle{
+	margin-top: 0.5vw;
+	/*margin-left:4vw;*/
+	padding:0.5vw;
+	font-size: 0.8vw;
+}
+
+
+
+
 #sectionDoodle{
 	margin-left:17vw;
 }
+
+
+
 
 #sectionDoodle h1, #sectionDoodle h2{
 	/*  text-shadow:
@@ -1360,7 +1145,7 @@ h1, h2{
 	       -0.5px 0.5px 0 #0000FF,
 	       0.5px 0.5px 0 #0000FF; */
        
-	color:#00CC00;
+	color:#009933;
 	text-shadow: 0   0.8px 0 #00B800,
               0   1.5px 0 #00A300,
              -1px 2.3px 0 #008F00,
@@ -1594,6 +1379,277 @@ thead th{
 /*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
 /*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx fin styleDoodle   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
 /*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+
+
+
+
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx styleExpenses   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+
+/* le pure 3D red good */
+/* #sectionExpenses h1, #sectionExpenses h2{
+*text-shadow: 5px 5px 5px #FF0000;  *decalage-a-droite, decalage-bas, flootage, color*
+	color:#FF1919;#FF8080;
+	text-shadow: 0   0.8px 0 #E60000,
+              0   1.5px 0 #CC0000,
+             -1px 2.3px 0 #B20000,
+             -1px 3px 0 #990000,
+             -2px 3.8px 0 #800000,
+             -2.1px 4.5px 0 #660000,
+             -2.2px 5.3px 2px rgba(50,0,0, 0.4),
+             -2.2px 5.3px 8px rgba(50,0,0, 0.2),
+             -2.2px 5.3px 20px rgba(50,0,0, 0.4); 
+} */
+
+
+#sectionExpenses{  
+	color:black;/*#800000; /*black; /*#803300; orange très fonce */
+	/*height:900px; /*car les article sont absolute*
+	margin-left:10vw; */
+	width:90vw;
+	padding-bottom:5vw;
+}
+#sectionExpenses #h1Expenses{
+	/*color:#FF1919;
+	color:#FF3333;*/
+	color:#CC0000;
+	color:#FF1919;
+}
+#sectionExpenses  h2{
+ 	font-weight: bold;
+ 	padding-top:1vw;
+	font-size: 1.4vw;
+}
+
+
+#sectionExpenses .right{ 
+  position: absolute;
+  right: 12vw;
+}
+
+#buttonsForTab{
+	
+	margin-left:3vw;
+}
+#sectionExpenses #emptyTab{
+	margin-top:1vw;
+}
+
+#saveTab{
+	
+}
+#mouseOver{
+	margin-top:15px;
+}
+#blockFieldResult{ /* le field result avec titre etc */
+	
+	margin-left:3vw;
+	margin-top:40px;
+	width:40vw;
+}
+#fieldResultExpenses{ /*juste le texte a l'interieur de field result */
+	color:#CC0000;
+	overflow-y: hidden,scroll;
+	overflow-x: hidden;
+	max-height: 40vw;
+	padding-left:5vw; 
+	font-size: 1.2vw;
+}
+
+/************* TAB *************/
+
+#sectionExpenses #tab{
+	margin:3vw;
+}
+
+
+#sectionExpenses #tab caption{ /*titre du tab "table of expense" */
+
+	font-size: 1.5vw;
+	border: 1px solid #CC0000;
+	border-radius: 0.5vw; 
+	border-bottom : 1px; 
+	color: white;
+    text-shadow:
+    -1px -1px 0 #CC0000,
+    1px -1px 0 #CC0000,
+    -1px 1px 0 #CC0000,
+    1px 1px 0 #CC0000; 
+    
+}
+.tdTotal{ /* largeur de colonne prix/total */
+	width:60px;
+}
+#sectionExpenses #tab{
+	border: 1px solid #CC0000;
+	border-radius: 0.5vw; 
+	
+	/*background:#FF0000;*/
+}
+
+#sectionExpenses #tab th, #sectionExpenses #tab td{
+	/*border: 1px solid #B20000;
+	border-radius: 0.5vw; 
+	*/
+}
+#sectionExpenses th{ /*colonne de titre */
+
+	border: 1px solid #CC0000;
+	border-radius: 0.5vw; 
+	background:rgba(178,0,0,0.5);/* =>#B20000;*/
+	background:rgba(255,77,77,0.5);/* =>#FF4D4D;*/
+	background:rgba(255,25,25,0.6);/* =>#FF1919;*/
+	/*background:rgba(204,0,0,0.4);/* =>#CC0000;*/
+	
+	
+	color:rgba(0,0,0,0.8);/*black;*/
+	color:white;
+}
+
+/*
+input[type="checkbox"].css-checkbox {
+							  position: absolute; 
+							overflow: hidden; 
+							clip: rect(0 0 0 0); 
+							height:1px; 
+							width:1px; 
+							margin:-1px; 
+							padding:0;
+							border:0;
+						}
+
+*/
+/* taille des checkbox */
+#sectionExpenses input[type=checkbox] {
+	
+  -moz-appearance: none;
+  width: 20px;
+  height: 20px;
+}
+
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx fin styleExpenses   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+
+
+
+
+
+
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx styleThings   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+
+
+/* le pure 3D red good */
+/*
+h1, h2{
+*text-shadow: 5px 5px 5px #B82EE6;  *decalage-a-droite, decalage-bas, flootage, color*
+	color:#853385;
+	text-shadow:0   0.8px 0 #751975,
+              0   1.5px 0 #5C005C,
+             -1px 2.3px 0 #520052,
+             -1px 3px 0 #470047,
+             -2px 3.8px 0 #3D003D,
+             -2.1px 4.5px 0 #290029,
+             -2.2px 5.3px 2px rgba(41,0,41, 0.4),
+             -2.2px 5.3px 8px rgba(41,0,41, 0.2),
+             -2.2px 5.3px 20px rgba(41,0,41, 0.4); 
+
+}
+*/
+
+#sectionThings{  
+	color:black;/*#800000; /*black; /*#803300; orange très fonce */
+	/*height:900px; /*car les article sont absolute*
+	margin-left:10vw; *
+	width:80vw;*/
+	padding-bottom:5vw;
+	margin-left:10vw;
+	height:650px; /*car les article sont absolute*/
+}
+
+#h1Things{
+	color:#853385;
+}
+#sectionThings h2{
+ 	font-weight: bold;
+ 	padding-top:1vw;
+	font-size: 1.4vw;
+}
+
+#articlePersonalThings{
+	position: absolute;
+	left: 18vw;
+	/*width:40vw;*/  
+}
+
+#articleGroupThings{
+	position: absolute;
+	left: 48vw;
+	/*width:20vw;*/
+	padding-left:5vw; 
+	border-left:3px dotted white;
+}
+
+
+#fieldPersonalThings{
+	color:#853385;
+	overflow-y: hidden,scroll;
+	overflow-x: hidden;
+	max-height: 30vw;
+	width:10vw;
+	padding-left:1vw; 
+	font-size: 1.5vw;
+}
+#fieldGroupThings{
+	color:#853385;
+	overflow-y: hidden,scroll;
+	overflow-x: hidden;
+	max-height: 30vw;
+	width:22vw;
+	padding-left:1vw; 
+	font-size: 1.5vw;
+	
+}
+#inputPersonalThing, #inputGroupThing,  #thingsListContacts{
+	
+	padding : 0.3vw;
+	padding-left : 0.8vw;
+	margin-top: 0.5vw;
+	width:13.5vw;
+	/*height:27px;*/
+	font-size: 1.3vw;
+	/*background: url("../images/peint-blanc.jpg");
+	background-size: 200px, 25px;*/
+	
+	background:rgba(255,255,255,0.5);
+	border:1px solid rgba(133,51,133,0.8);/*#853385*/
+	border-radius: 0.5vw;
+	
+}
+#thingsListContacts{
+	
+	padding : 0.2vw;
+	padding-left : 0.5vw;
+	margin-top: 0vw;
+	margin-left:2vw;
+	width:7vw;
+	font-size: 1vw;
+	
+}
+.buttonThing{
+	padding:0.9vw 0.7vw;
+	font-size: 1.3vw;
+}
+
+
+
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx fin styleThings   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+
 
 
 

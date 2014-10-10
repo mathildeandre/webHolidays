@@ -1,6 +1,7 @@
 
  
- 	<section id="navDoodle">
+ 	<section id="sectionNavDoodle">
+ 		<h2 id="h2navDoodle">Choose your doodle</h2>
 		<ul>
 		  <li><a href="#burgers">Doodle1</a></li>
 		  <li><a href="#lasagne">Doodle2</a></li>
@@ -10,6 +11,14 @@
 		  <li><a href="#contact">Contact</a></li>
 		  <li><a href="#about">About</a></li>
 		</ul>
+		
+		
+		<div  class="aroundWhite">Create new doodle : </div>
+		<form method="post" action="createDoodle">
+	      <input id="inputNewDoodle" class="textGrey"  name="inputNewDoodle" type="text" value="Name doodle" 
+         onfocus="inputTextFocus('inputNewDoodle', 'Green')" onblur="inputTextBlur('inputNewDoodle','Name doodle')" required >
+		<input id="createDoodle" type="submit" value="Create" class="newButton3D buttonGreenClair" onmouseover="changeCursor('createDoodle')"/>
+       	</form>
 	</section>
 
 
