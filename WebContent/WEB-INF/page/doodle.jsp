@@ -6,10 +6,7 @@
 		  <li><a href="#burgers">Doodle1</a></li>
 		  <li><a href="#lasagne">Doodle2</a></li>
 		  <li><a href="#contact">Contact</a></li>
-		  <li><a href="#about">About</a></li><li><a href="#home">Home</a></li>
 		  <li><a href="#news">News</a></li>
-		  <li><a href="#contact">Contact</a></li>
-		  <li><a href="#about">About</a></li>
 		</ul>
 		
 		
@@ -23,14 +20,14 @@
 
 
 <section id="sectionDoodle" class="section">
-	<h1 id="h1Doodle" class="h1 text3Dfonce"> Doodle </h1>
+	<h1 id="h1Doodle" class="h1 text3Dfonce">Doodle</h1>
 	
-	</article>
+	<article>
 	   <h2>Wishes of the group</h2>
 		
 		<article class="table">
 		<TABLE id="tab" BORDER="1"> 
-			<CAPTION> Doodle table </CAPTION> 
+			<CAPTION>My Title</CAPTION> 
 			<THEAD>
 				<TR> 
 				 <TH> Names </TH> 
@@ -49,21 +46,23 @@
 	<article class="function">
 	<div class="line">
 			<div class="line inline" id="funcDate">
-			<div class="inline" id="champsDates">
-					<h4> Add a column : </h4> 
-					<input id="date" type="radio" name="text" value="Du au">  
-				 	From : <input type="text" id="debutC" class="datepick" onfocus="checkRadio('date')">  
-				 	to : <input type="text" id="finC" class="datepick" onfocus="checkRadio('date')">
-				 	</br> 
-					<input id="text" type="radio" name="text" value="text"> 
-					Column title : <input class="textGrey" type="texte" id="textCol" value="column title" onfocus="checkRadio('text'); inputTextFocus('textCol', 'green')" onblur="inputTextBlur('textCol','column title')"> 
-			</div>
 			
-			<div class="inline" id="butAddCol">
-				<div class="button3D b3green" id="addCol" name="addColumn" onmouseover="changeCursor('addCol')" onclick="addColumn(); emptyText('textCol', 'debutC','finC');  inputTextBlur('textCol','titre colonne');"> 
-					OK
+				<div class="inline" id="champsDates">
+						<div  class="aroundWhite">Add a column : </div>
+	       	
+						<input id="date" type="radio" name="text" value="Du au">  
+					 	From : <input type="text" id="debutC" class="datepick" onfocus="checkRadio('date')">  
+					 	to : <input type="text" id="finC" class="datepick" onfocus="checkRadio('date')">
+					 	</br> 
+						<input id="text" type="radio" name="text" value="text"> 
+						Column title : <input class="textGrey" type="texte" id="textCol" value="column title" onfocus="checkRadio('text'); inputTextFocus('textCol', 'green')" onblur="inputTextBlur('textCol','column title')"> 
 				</div>
-			</div>
+				
+				<div class="inline" id="butAddCol">
+					<div class="button3D b3green" id="addCol" name="addColumn" onmouseover="changeCursor('addCol')" onclick="addColumn(); emptyText('textCol', 'debutC','finC');  inputTextBlur('textCol','titre colonne');"> 
+						OK
+					</div>
+				</div>
 			</div>
 			
 			

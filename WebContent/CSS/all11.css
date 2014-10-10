@@ -1075,18 +1075,21 @@ to { line-height:0px;}*/
 #sectionNavDoodle{
 	overflow-y: hidden,scroll;
 	overflow-x: hidden;
-	max-height: 25vw;
+	max-height: 15vw;
 	position: fixed;
 	float: left;
+	
     list-style-type: none;
 	margin-left:1.5vw;
 	margin-top : 3.8vw; 
 	padding: 1vw;
 	padding-bottom:1.5vw;
+	
 	background : url("../images/peint-blanc.jpg");
 	background-size:20vw;
 	border-radius: 1vw ;
 	width:11vw;
+	font-size: 0.9vw;
 }
 #sectionNavDoodle ul{
     /*list-style-type: none;*/ /*pour enlever les points/noeuds*/
@@ -1129,16 +1132,16 @@ to { line-height:0px;}*/
 }
 
 
+/*******************************************************************/
+
 
 
 #sectionDoodle{
 	margin-left:17vw;
+	color:black;
 }
 
-
-
-
-#sectionDoodle h1, #sectionDoodle h2{
+#sectionDoodle h1{
 	/*  text-shadow:
 	       -0.5px -0.5px 0 #0000FF,
 	       0.5px -0.5px 0 #0000FF,
@@ -1156,6 +1159,12 @@ to { line-height:0px;}*/
              -2.2px 5.3px 8px rgba(0,41,0, 0.2),
              -2.2px 5.3px 20px rgba(0,41,0, 0.4); 
 }
+#sectionDoodle h2{
+ 	font-weight: bold;
+ 	padding-top:1vw;
+	font-size: 1.4vw;
+}
+
 
 /*
 article[class="function"]{
@@ -1218,7 +1227,78 @@ article[class="function"]{
 	max-width: 150px;
 }
 
-/******* CHECKBOX *********/
+
+
+/**************************************** TABLE *********/
+
+#sectionDoodle table, caption, thead, tfoot, tbody {
+	margin: 0;
+	padding: 0;
+}
+
+#sectionDoodle #tab{ /* tout le tab */
+	
+	background:none;
+	border:1px solid #009933;
+	border-radius: 10px;
+	border-collapse: separate;
+	border-spacing: 1px;
+	color: #333333;
+	margin: 3vw;
+	max-width: 70vw;
+	/* padding: 20px 5px 5px 5px; Espcaement du border */
+	/*width: 100%;*/
+
+}
+#sectionDoodle #tab caption{
+	
+	border:1px solid #009933;
+	border-radius: 10px;
+}
+#sectionDoodle thead, #sectionDoodle  td, #sectionDoodle th {
+	text-align: center;
+}
+#sectionDoodle th, td {
+	border:none;
+	/* border: 1px solid green; */
+}
+
+
+#sectionDoodle #tab th { /*background entete de colonne*/
+	border:3px solid green;
+	 border-right: 0.01px solid grey; 
+	 border-left: 0.01px solid grey; 
+	 border-radius: 20px;
+
+	background:	#33D633;
+	color: #31605D;
+}
+
+#sectionDoodle #tab td {
+	
+	 border: 2px solid green; 
+	 border-right: 0.01px solid grey; 
+	 border-left: 0.01px solid grey; 
+	 border-radius: 10px;
+	background-color: 	#D1FFC2;
+}
+
+#sectionDoodle #tab td:hover{
+	background-color: 	#CCFF99;
+	
+}
+
+
+#sectionDoodle td:empty {
+	background: #A7DBD8;
+	border: 0;
+}
+
+
+
+
+
+/**************************************** CHECKBOX *********/
 #sectionDoodle input[type=checkbox] {
 		visibility: hidden;
 }
@@ -1234,12 +1314,13 @@ article[class="function"]{
 	background: -o-linear-gradient(top, #fcfff4 0%, palegreen 10%, yellowgreen 30%);
 	background: -ms-linear-gradient(top, #fcfff4 0%, palegreen 10%, yellowgreen 30%);
 	background: linear-gradient(top, #fcfff4 0%, palegreen 10%, yellowgreen 30%);
-margin: 20px auto;
+	
+	margin: auto;
 
 	border-radius: 10px;
 
 	box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0,0,0,0.5);
-position: relative;
+	position: relative;
 }
 
 #sectionDoodle .roundedTwo label {
@@ -1301,79 +1382,6 @@ thead th{
 	 border-bottom: 5px solid green;
 }*/
 
-
-
-#sectionDoodle table, caption, thead, tfoot, tbody {
-	margin: 0;
-	padding: 0;
-}
-
-#sectionDoodle #tab{
-
-	border: 3px solid green;
-	border-radius: 10px;
-
-}
-
-#sectionDoodle table {
-	background:none;
-	border:0;
-	border-collapse: separate;
-	border-spacing: 1px;
-	color: #333333;
-	margin-top: 5px;
-	max-width: 900px;
-	min-width: 400px;
-	/* padding: 20px 5px 5px 5px; Espcaement du border */
-	width: 100%;
-}
-
-
-
-
-#sectionDoodle thead, th, td{
-
-}
-
-#sectionDoodle th, td {
-	border:none;
-	/* border: 1px solid green; */
-	padding: 1px 6px;
-}
-
-
-#sectionDoodle #tab th { /*background entete de colonne*/
-	border:3px solid green;
-	 border-right: 0.01px solid grey; 
-	 border-left: 0.01px solid grey; 
-	 border-radius: 20px;
-
-	background:	#33D633;
-	color: #31605D;
-}
-
-#sectionDoodle #tab td {
-	
-	 border: 2px solid green; 
-	 border-right: 0.01px solid grey; 
-	 border-left: 0.01px solid grey; 
-	 border-radius: 10px;
-	background-color: 	#D1FFC2;
-}
-
-#sectionDoodle #tab td:hover{
-	background-color: 	#CCFF99;
-	
-}
-
-#sectionDoodle thead,td {
-	text-align: center;
-}
-
-#sectionDoodle td:empty {
-	background: #A7DBD8;
-	border: 0;
-}
 
 
 /*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
@@ -1488,10 +1496,11 @@ thead th{
 	/*background:#FF0000;*/
 }
 
-#sectionExpenses #tab th, #sectionExpenses #tab td{
+#sectionExpenses td{ /* toute cases*/
 	/*border: 1px solid #B20000;
 	border-radius: 0.5vw; 
 	*/
+	margin: auto;
 }
 #sectionExpenses th{ /*colonne de titre */
 
@@ -1526,6 +1535,8 @@ input[type="checkbox"].css-checkbox {
   -moz-appearance: none;
   width: 20px;
   height: 20px;
+	margin: auto;
+	margin-left: 8px;
 }
 
 /*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
