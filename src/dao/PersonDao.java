@@ -226,9 +226,9 @@ public class PersonDao {
 			connexion = (Connection) daoFactory.getConnection();
 			preparedStatement = initialisationRequetePreparee(connexion,
 					SQL_UPDATE_EMAIL, false, newMail, person.getId());
-			preparedStatement.executeUpdate();
-
+			
 		} catch (SQLException e) {
+			
 			throw new DAOException(e);
 		} finally {
 			fermeturesSilencieuses(preparedStatement, connexion);
@@ -254,6 +254,34 @@ public class PersonDao {
 			fermeturesSilencieuses(preparedStatement, connexion);
 		}
 	}
+	
+	private static final String SQL_SELECT_GROUP = "SELECT BelongTo.id_Group FROM BelongTo, Groups WHERE Groups.name_group=?"
+			+ " AND BelongTo.id_group = Groups.id_group AND BelongTo.id_person=?";
+
+	public long findGroup(String nameGroup, Person person) throws DAOException {
+		Connection connexion = null;
+		PreparedStatement preparedStatement = null;
+	    ResultSet resultSetGroup = null;
+
+		try {
+			/* Récupération d'une connexion depuis la Factory */
+			connexion = (Connection) daoFactory.getConnection();
+			preparedStatement = initialisationRequetePreparee(connexion,
+					SQL_SELECT_GROUP, false, nameGroup, person.getId());
+			resultSetGroup = preparedStatement.executeQuery();
+			if(resultSetGroup.next()){
+				long idGroup = resultSetGroup.getInt("id_group");
+				return idGroup;
+			}
+		} catch (SQLException e) {
+			throw new DAOException(e);
+		} finally {
+			fermeturesSilencieuses(preparedStatement, connexion);
+		}
+		return 0;
+	}
+	
+	
 	
 	
 	
