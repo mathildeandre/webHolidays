@@ -39,30 +39,15 @@ public class GroupServlet extends HttpServlet {
 
     
 	public void doGet( HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException{
+		if(request.getParameter("action")!=null){
 
-        if(request.getParameter("action")!=null && request.getParameter("action").equalsIgnoreCase("display")){
-        	doPost(request, response);
-        }else{
-        	//on est censé se retrouver la lorsque lon a clique sur un nom de groupe
-        	 /* Préparation de l'objet formulaire */
-            ConnexionForm form = new ConnexionForm(personDAO);
-            HttpSession session = request.getSession(); 
-            /* Traitement de la requête et récupération du bean en résultant */
-            Group group = form.connectGroup(request);
-            
-            session.setAttribute("group", group);
-            request.setAttribute("errors", form.getErrors());
-
-            if(form.getErrors().isEmpty()){
-                this.getServletContext().getRequestDispatcher( "/index.jsp?page=homepage" ).forward( request, response );
-            }
-            else{
-            	//TODO gerer les erreurs
-                this.getServletContext().getRequestDispatcher( "/welcome.jsp" ).forward( request, response );
-            }	
-        }
-		
-       }
+			 if(request.getParameter("action").equalsIgnoreCase("display")){
+		        	doPost(request, response);
+		     }else if(request.getParameter("action").startsWith(("connectGroup"))){
+		    	 connectGroup(request, response);
+		     }
+		}
+    }
 	
 	public void doPost( HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException {
        if(request.getParameter("action") != null){
@@ -76,6 +61,26 @@ public class GroupServlet extends HttpServlet {
        }
 
     }
+	
+	private void connectGroup(HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException {
+		//on est censé se retrouver la lorsque lon a clique sur un nom de groupe
+   	 /* Préparation de l'objet formulaire */
+       ConnexionForm form = new ConnexionForm(personDAO);
+       HttpSession session = request.getSession(); 
+       /* Traitement de la requête et récupération du bean en résultant */
+       Group group = form.connectGroup(request);
+       
+       session.setAttribute("group", group);
+       request.setAttribute("errors", form.getErrors());
+
+       if(form.getErrors().isEmpty()){
+           this.getServletContext().getRequestDispatcher( "/index.jsp?page=homepage" ).forward( request, response );
+       }
+       else{
+       	//TODO gerer les erreurs
+           this.getServletContext().getRequestDispatcher( "/welcome.jsp" ).forward( request, response );
+       }	
+	}
 	
 	private void createPerson(HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException {
 		RegistrationForm form = new RegistrationForm(personDAO, groupDAO);

@@ -53,7 +53,7 @@ HTML5 sont employees. -->
 	    <div id="fieldMyGroups" class="aroundBlack">
 	    
 	    <c:forEach var="group" items="${requestScope['listGroups']}">
-	    		<li id="liGroup" onmouseover="changeCursor('liGroup')" onclick="location.href='/webHolidays/group?nameGroup=${group.name}'" > ${group.name}</li> 
+	    		<li id="liGroup" onmouseover="changeCursor('liGroup')" onclick="location.href='/webHolidays/group?action=connectGroup&nameGroup=${group.name}'" > ${group.name}</li> 
 	    </c:forEach>
 	    
 		</div>

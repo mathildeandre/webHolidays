@@ -54,10 +54,11 @@
          onfocus="inputTextFocus('pwdPerson', 'Orange')" onblur="inputTextBlur('pwdPerson','Password Person')" required >
 		<span class="textRed">${requestScope.errors['pwd']}</span>
          </div>
+         <!--
          <div><input id="confirmPwdPerson" class="textGrey"  name="confirmPwd" type="text" value="Confirm Password person" 
          onfocus="inputTextFocus('confirmPwdPerson', 'Orange')" onblur="inputTextBlur('confirmPwdPerson','Password Person')" required >
          <span class="textRed">${requestScope.errors['confirmPwd']}</span>
-         </div>
+         </div> --!>
          <!-- <div id="andOr" class="aroundWhite">AND/OR</div>  -->
          <div>
 	      <input id="emailPerson" class="textGrey"  name="email" type="text" value="Email (optional)" 
@@ -72,7 +73,7 @@
 	</article>
  </section >
 
-<script src="JS/actionJS/actionInputText3.js" type="text/javascript"></script>
+<script src="JS/actionJS/actionInputText.js" type="text/javascript"></script>
 <script src="JS/group.js" type="text/javascript"></script>
 
 
