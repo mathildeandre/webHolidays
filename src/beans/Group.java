@@ -1,12 +1,14 @@
 package beans;
 
 import java.sql.Timestamp;
+import java.util.ArrayList;
 
 public class Group {
 
     private Long      id;
     private String    name;
     private Timestamp dateInscription;
+    private ArrayList<Person> listMembers;
 
     public Long getId() {
         return id;
@@ -27,4 +29,20 @@ public class Group {
     public void setDateInscription( Timestamp dateInscription ) {
         this.dateInscription = dateInscription;
     }
+    
+    public ArrayList<Person> getListMembers(){
+    	return listMembers;
+    }
+    
+    public void addPersonIntoListMembers(Person person){
+    	listMembers.add(person);
+    }
+    public void setListMembers(ArrayList<Person> aListMembers){
+    	listMembers = new ArrayList<Person>();
+    	listMembers.clear();
+    	for(int i=0; i<aListMembers.size(); i++){
+    		listMembers.add(aListMembers.get(i));
+    	}
+    }
+    // TODO function deleteMembers
 }

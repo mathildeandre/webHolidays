@@ -14,7 +14,7 @@ var tabPerson = tabStr.split(",");
 	tabPerson=["emiel","matthijs","fabian","kiki","niaude","math","fab","loulou"]; 
 	
 /* start */
-createTHead();
+//createTHead();
 addRow()
 /* fin start */
 

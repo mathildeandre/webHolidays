@@ -9,7 +9,7 @@
 	    <div id="fieldMyComposition" class="aroundWhite">
 	    
 	    
-	     	<c:forEach var="members" items="${requestScope['listMembers']}">
+	     	<c:forEach var="members" items="${sessionScope.group.listMembers}">
 	    		<li > ${members.name}</li> 
 	    	</c:forEach>
 	    
@@ -42,7 +42,7 @@
        	</br>
        	
        	<div  class="aroundWhite">Create yourself a person : </div>
-       	<form method="post" action="group?action=createPerson">
+      <form method="post" action="group?action=createPerson">
        	
 			<div class="textGreen">  ${requestScope.createPerson} </div>
        	
@@ -54,11 +54,11 @@
          onfocus="inputTextFocus('pwdPerson', 'Orange')" onblur="inputTextBlur('pwdPerson','Password Person')" required >
 		<span class="textRed">${requestScope.errors['pwd']}</span>
          </div>
-         <!--
+         
          <div><input id="confirmPwdPerson" class="textGrey"  name="confirmPwd" type="text" value="Confirm Password person" 
          onfocus="inputTextFocus('confirmPwdPerson', 'Orange')" onblur="inputTextBlur('confirmPwdPerson','Password Person')" required >
          <span class="textRed">${requestScope.errors['confirmPwd']}</span>
-         </div> --!>
+         </div> 
          <!-- <div id="andOr" class="aroundWhite">AND/OR</div>  -->
          <div>
 	      <input id="emailPerson" class="textGrey"  name="email" type="text" value="Email (optional)" 
@@ -68,7 +68,7 @@
 			onclick="emptyAll('loginPerson','Login person', 'emailPerson','Email (optional)', 'pwdPerson','Password person', 'confirmPwdPerson','Confirm Password person')" >
 		
        	</div>
-       	</form>
+      </form>
        	
 	</article>
  </section >

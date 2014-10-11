@@ -11,6 +11,10 @@
 			<TR> 
 			 <TH id="thExpenseOf">Expense of</TH> 
 			 <TH id="thTotal">Total</TH> 
+			 
+	     	<c:forEach var="members" items="${sessionScope.group.listMembers}">
+	    		<th class="thTotal" > ${members.name}</th> 
+	    	</c:forEach>
 			</TR>
 		</THEAD>
 		<TBODY id="tbody">

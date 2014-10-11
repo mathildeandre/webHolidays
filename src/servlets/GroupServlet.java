@@ -40,10 +40,7 @@ public class GroupServlet extends HttpServlet {
     
 	public void doGet( HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException{
 		if(request.getParameter("action")!=null){
-
-			 if(request.getParameter("action").equalsIgnoreCase("display")){
-		        	doPost(request, response);
-		     }else if(request.getParameter("action").startsWith(("connectGroup"))){
+		     if(request.getParameter("action").equalsIgnoreCase(("connectGroup"))){
 		    	 connectGroup(request, response);
 		     }
 		}
@@ -54,10 +51,10 @@ public class GroupServlet extends HttpServlet {
     	   if(request.getParameter("action").equalsIgnoreCase("createPerson")){
     		   createPerson(request, response);
     	   }
-    	   else if(request.getParameter("action").equalsIgnoreCase("display")){
-    		   displayGroup(request, response);
-    		
-    	   }
+//    	   else if(request.getParameter("action").equalsIgnoreCase("display")){
+//    		   displayGroup(request, response);
+//    		
+//    	   }
        }
 
     }
@@ -65,7 +62,7 @@ public class GroupServlet extends HttpServlet {
 	private void connectGroup(HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException {
 		//on est censé se retrouver la lorsque lon a clique sur un nom de groupe
    	 /* Préparation de l'objet formulaire */
-       ConnexionForm form = new ConnexionForm(personDAO);
+       ConnexionForm form = new ConnexionForm(personDAO,groupDAO);
        HttpSession session = request.getSession(); 
        /* Traitement de la requête et récupération du bean en résultant */
        Group group = form.connectGroup(request);
@@ -89,32 +86,34 @@ public class GroupServlet extends HttpServlet {
 		//la modif de login s'est bien passée
 		if(errors.isEmpty()){
 			request.setAttribute("createPerson", "The person has been add to the members of the group !");
-			this.getServletContext().getRequestDispatcher("/group?action=display").forward(request, response);
+			this.getServletContext().getRequestDispatcher("/index.jsp?page=group").forward(request, response);
 		}
 		//la modif n'a pas marche
 		else{
 			//erreur a traitée dans personalArea
 			request.setAttribute("errors", errors);
-			this.getServletContext().getRequestDispatcher("/group?action=display").forward(request, response);
+			this.getServletContext().getRequestDispatcher("/index.jsp?page=group").forward(request, response);
 
 		}
 	}
 	
-	private void displayGroup(HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException {
-		// recuperer liste des groupes de la personne
-		GroupForm form = new GroupForm(groupDAO);
-		ArrayList<Person> listMembers= new ArrayList<>();
-		listMembers = form.getMembers(request);
-		Map<String, String> errors = form.getErrors();
-		if (errors.isEmpty()) {
-			request.setAttribute("listMembers", listMembers);
-			this.getServletContext().getRequestDispatcher("/index.jsp?page=group")
-					.forward(request, response);
-
-		} else {
-			// traiter l'erreur et afficher un beau message sur le site
-		}
-
-	}
+//	private void displayGroup(HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException {
+//		
+//		
+//		// recuperer liste des groupes de la personne
+//		GroupForm form = new GroupForm(groupDAO);
+//		ArrayList<Person> listMembers= new ArrayList<>();
+//		listMembers = form.getMembers(request);
+//		Map<String, String> errors = form.getErrors();
+//		if (errors.isEmpty()) {
+//			request.setAttribute("listMembers", listMembers);
+//			this.getServletContext().getRequestDispatcher("/index.jsp?page=group")
+//					.forward(request, response);
+//
+//		} else {
+//			// traiter l'erreur et afficher un beau message sur le site
+//		}
+//
+//	}
 	
 }

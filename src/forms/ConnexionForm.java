@@ -12,6 +12,7 @@ import org.jasypt.util.password.ConfigurablePasswordEncryptor;
 import beans.Group;
 import beans.Person;
 import dao.DAOException;
+import dao.GroupDao;
 import dao.PersonDao;
 
 public class ConnexionForm {
@@ -21,12 +22,17 @@ public class ConnexionForm {
     private String error;
     private Map<String, String> errors          = new HashMap<String, String>();
     private PersonDao     personDao;
+    private GroupDao      groupDao;
     
-	public ConnexionForm( PersonDao personDao ) {
+	public ConnexionForm( PersonDao personDao) {
         this.personDao = personDao;
         error = null;
     }
-	
+	public ConnexionForm( PersonDao personDao, GroupDao groupDao) {
+        this.personDao = personDao;
+        this.groupDao = groupDao;
+        error = null;
+    }
 	
 	public Person connectUser(HttpServletRequest request){
 		    String login = request.getParameter("coLogin");
@@ -62,7 +68,10 @@ public class ConnexionForm {
         	long idGroup = personDao.findGroup(nameGroup, person);
         	group.setName(nameGroup);
         	group.setId(idGroup);
-           
+        	
+        	ArrayList<Person> listMembers = groupDao.getMembers(group);
+            group.setListMembers(listMembers);
+            
         } catch ( DAOException e ) {
             errors.put("connectGroup", "Échec de l'inscription : une erreur imprévue est survenue, merci de réessayer dans quelques instants.");
             e.printStackTrace();

@@ -1564,7 +1564,7 @@ opacity: 1;
 #thExpenseOf{ /* largeur de colonne expense of */
 	width:200px;
 }
-#thTotal{ /* largeur de colonne prix/total */
+.thTotal{ /* largeur de colonne prix/total */
 	width:60px; /* ne marche pas...*/
 }
 #sectionExpenses #tab{
