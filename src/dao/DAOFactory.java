@@ -81,4 +81,8 @@ public class DAOFactory {
     public PersonDao getPersonDao() {
         return new PersonDao( this );
     }
+
+    public ExpensesDao getExpensesDao() {
+        return new ExpensesDao( this );
+    }
 }

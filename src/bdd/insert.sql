@@ -1,14 +1,19 @@
 
 
-INSERT INTO Groups ( nameGroup, email, pwd_admin, pwd_members, date_inscription)
-VALUES ('FirstGroup','fg@orange.fr','fg', 'fg', '17/07/2014');
-INSERT INTO Groups ( nameGroup, email, pwd_admin, pwd_members, date_inscription)
-VALUES ('SecondGroup','fg@orange.fr','fg', 'fg', '17/07/2014');
+INSERT INTO RowExpenses (id_row, id_buyer, amount, description, id_group)
+VALUES ('1','1','15','patate', '2');
 
 
-INSERT INTO Persons ( namePerson, mailPerson, idGroup)
-VALUES ('Fabien','fg@orange.fr',1);
-INSERT INTO Persons ( namePerson, mailPerson, idGroup)
-VALUES ('Math','fg@orange.fr',1);
-INSERT INTO Persons ( namePerson, mailPerson, idGroup)
-VALUES ('Fabien','fg@orange.fr',3);
+INSERT INTO Beneficiaries (id_rowExpenses, id_benef)
+VALUES ('1','2');
+INSERT INTO Beneficiaries (id_rowExpenses, id_benef)
+VALUES ('1','3');
+
+
+
+INSERT INTO RowExpenses (id_row, id_buyer, amount, description, id_group)
+VALUES ('2','3','117.9','grosse dépense', '2');
+
+
+INSERT INTO Beneficiaries (id_rowExpenses, id_benef)
+VALUES ('2','1');

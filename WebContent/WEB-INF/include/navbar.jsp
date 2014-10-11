@@ -6,7 +6,7 @@ onclick='location.href=\"index.jsp?page=homepage\"'" />
 <c:set var = "currentGroup" value="id='liGroupe' onmouseover='changeCursor(\"liGroupe\")' 
 onclick='location.href=\"index.jsp?page=group\"'" />
 <c:set var = "currentDoodle" value="id='liDoodle' onmouseover='changeCursor(\"liDoodle\")' 
-onclick='location.href=\"index.jsp?page=doodle\"'" />
+onclick='location.href=\"index.jsp?page=doodle\"'; 'alert(\"ceci nest pas un onlaod\")' " />
 <c:set var = "currentMeals" value="id='liMeals' onmouseover='changeCursor(\"liMeals\")' 
 onclick='location.href=\"index.jsp?page=homepage\"'" />
 <c:set var = "currentExpenses" value="id='liExpenses' onmouseover='changeCursor(\"liExpenses\")' 
@@ -48,7 +48,7 @@ onclick='location.href=\"index.jsp?page=hobbies\"'" />
 	 <li ${currentGroup} >Members</li>
 	 <li ${currentDoodle} >Doodle</li>
 	 <li ${currentMeals} >Meals</li>
-	 <li ${currentExpenses} >Expenses</li>
+	 <li ${currentExpenses}  >Expenses</li>
 	 <li ${currentThings} >Things</li>
 	 <li ${currentHobbies} >Hobbies</li>
 	</ul>

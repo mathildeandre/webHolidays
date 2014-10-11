@@ -77,6 +77,18 @@
 		<url-pattern>/group</url-pattern>
 	</servlet-mapping>
 	
+	
+	
+	<servlet>
+		<servlet-name>ExpensesServlet</servlet-name>
+		<servlet-class>servlets.ExpensesServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ExpensesServlet</servlet-name>
+		<url-pattern>/expensesServlet</url-pattern>
+	</servlet-mapping>
+	
+	
 	<listener>
     <listener-class>config.InitialisationDaoFactory</listener-class>
 </listener>

@@ -27,7 +27,7 @@
 
 <!-- Mise en page classique avec le header, le corps, et le footer ! Les balises structurantes de
 HTML5 sont employées. -->
-<body id="bodyIndex">
+<body id="bodyIndex" onload="alert('BABAR')">
 
 <header id="headerIndex" class="line">
 	<div id="titleIndex" class="inline text3Dfonce">

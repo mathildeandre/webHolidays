@@ -12,11 +12,14 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import dao.DAOFactory;
+import dao.ExpensesDao;
 import dao.GroupDao;
 import dao.PersonDao;
+import beans.Expenses;
 import beans.Group;
 import beans.Person;
 import forms.ConnexionForm;
+import forms.ExpensesForm;
 import forms.GroupForm;
 import forms.RegistrationForm;
 
@@ -27,13 +30,15 @@ public class GroupServlet extends HttpServlet {
     public static final String ATT_FORM         = "form";
     public static final String VUE              = "";
 
-    private GroupDao     groupDAO;
-    private PersonDao     personDAO;
+    private GroupDao	groupDAO;
+    private PersonDao 	personDAO;
+    private ExpensesDao expensesDAO;
 
     public void init() throws ServletException {
         /* Récupération d'une instance de notre DAO Utilisateur */
         this.groupDAO = ( (DAOFactory) getServletContext().getAttribute( CONF_DAO_FACTORY ) ).getGroupDao();
         this.personDAO = ( (DAOFactory) getServletContext().getAttribute( CONF_DAO_FACTORY ) ).getPersonDao();
+        this.expensesDAO = ( (DAOFactory) getServletContext().getAttribute( CONF_DAO_FACTORY ) ).getExpensesDao();
        
     }
 
@@ -69,6 +74,16 @@ public class GroupServlet extends HttpServlet {
        
        session.setAttribute("group", group);
        request.setAttribute("errors", form.getErrors());
+       
+       
+       /* recuperation des expenses*/
+       ExpensesForm expForm = new ExpensesForm(expensesDAO);
+       Expenses expenses = expForm.getExpenses(request, group);
+
+       session.setAttribute("expenses", expenses);
+       request.setAttribute("errorsExpenses", expForm.getErrors());
+
+       
 
        if(form.getErrors().isEmpty()){
            this.getServletContext().getRequestDispatcher( "/index.jsp?page=homepage" ).forward( request, response );

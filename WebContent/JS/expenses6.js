@@ -15,47 +15,63 @@ var tabPerson = tabStr.split(",");
 	
 /* start */
 //createTHead();
-addRow()
+//addRow()
 /* fin start */
 
+/*********************************************** recup name persons */
+//alert("bonjour");
+//var arrayLines = document.getElementById("tab").rows; 
+//alert(arrayLines[0].innerHTML);
+////var hauteur = arrayLines.length;
+//arrayColonnes = arrayLines[0].cells;
+//var largeur = arrayColonnes.length;
+//alert(largeur);
+//
+//	for(i=0; i<largeur; i++){
+//		alert(arrayColonnes[i].innerHTML);
+//	}
+//	
+	
 
 
-
-
-function createTHead(){
-	//var arrayLines = document.getElementById("tab").rows;
-	//****************
-	var tr = document.getElementById('tab').tHead.children[0];
-	var th;	
-	//****************
-
-
-
-	for(var i=0; i<tabPerson.length; i++){
-		//****************
-   	 	th = document.createElement('th');
-		th.innerHTML = tabPerson[i];
-		tr.appendChild(th);
-		//*************
-		/*var cell = arrayLines[0].insertCell(-1);
-		cell.innerHTML += "<b>"+tabPerson[i]+"</b>";*/
-	}
-   	 	th = document.createElement('th');
-		th.innerHTML = "Everybody";
-		tr.appendChild(th);
-   	 	th = document.createElement('th');
-		th.innerHTML = "Description";
-		tr.appendChild(th);
-/*
-	var cellCheckAll = arrayLines[0].insertCell(-1);
-	cellCheckAll.innerHTML += "<b>Everybody</b>";
-
-	var cellDescrip = arrayLines[0].insertCell(-1);
-	cellDescrip.innerHTML += "<b>Description</b>"; 
-*/
-
-
+function init(){
+	alert("BABAR");
 }
+
+//function createTHead(){
+//	//var arrayLines = document.getElementById("tab").rows;
+//	//****************
+//	var tr = document.getElementById('tab').tHead.children[0];
+//	var th;	
+//	//****************
+//
+//
+//
+//	for(var i=0; i<tabPerson.length; i++){
+//		//****************
+//   	 	th = document.createElement('th');
+//		th.innerHTML = tabPerson[i];
+//		tr.appendChild(th);
+//		//*************
+//		/*var cell = arrayLines[0].insertCell(-1);
+//		cell.innerHTML += "<b>"+tabPerson[i]+"</b>";*/
+//	}
+//   	 	th = document.createElement('th');
+//		th.innerHTML = "Everybody";
+//		tr.appendChild(th);
+//   	 	th = document.createElement('th');
+//		th.innerHTML = "Description";
+//		tr.appendChild(th);
+///*
+//	var cellCheckAll = arrayLines[0].insertCell(-1);
+//	cellCheckAll.innerHTML += "<b>Everybody</b>";
+//
+//	var cellDescrip = arrayLines[0].insertCell(-1);
+//	cellDescrip.innerHTML += "<b>Description</b>"; 
+//*/
+//
+//
+//}
 
 
 /****************************************** EXTRA PERSON *******************************************/
@@ -123,7 +139,8 @@ function addRow(){
 		for(i=0; i<tabPerson.length; i++){
 			id = theRowNumber + (i+2).toString();
 			var cell = newRow.insertCell(i+2);
-			cell.innerHTML = '<input  id="'+id+'" type="checkbox" onclick="verifAllRow(\''+theRowNumber+'\')" onmouseover="checkBoxMouseOver(\''+id+'\')" >';			cell.style.width= "300px";
+			cell.innerHTML = '<input  id="'+id+'" type="checkbox" onclick="verifAllRow(\''+theRowNumber+'\')" onmouseover="checkBoxMouseOver(\''+id+'\')" >';
+			cell.style.width= "300px";
 		}
 		
 		// Add button checkAllTheRow
@@ -151,7 +168,7 @@ function createTextSelect(rowNumber){
 	//'<select name="pays" id="pays"><option value="emiel">emiel</option><option value="kirsty">kirsty</option></select>'
 	var nameSelect = 'select'+rowNumber;
 	var id = rowNumber + "0";
-	var text = '<select id="'+id+'" name="'+nameSelect+'" id="'+nameSelect+'">';
+	var text = '<select id="'+id+'" name="'+nameSelect+'">';
 	for(i=0; i<tabPerson.length; i++){
 		text += '<option value="'+i+'">'+tabPerson[i]+'</option>';
 	}

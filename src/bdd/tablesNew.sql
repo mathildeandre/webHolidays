@@ -54,6 +54,7 @@ CREATE TABLE RowExpenses (
 	description VARCHAR(250),
 	id_group INT(11) NOT NULL,
 	PRIMARY KEY (id_row),
+	FOREIGN KEY (id_buyer) REFERENCES Persons(id_person),
 	FOREIGN KEY (id_group) REFERENCES Groups(id_group)
 );
 
