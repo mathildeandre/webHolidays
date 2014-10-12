@@ -9,6 +9,7 @@ public class Group {
     private String    name;
     private Timestamp dateInscription;
     private ArrayList<Person> listMembers;
+    private int nbPerson;
 
     public Long getId() {
         return id;
@@ -43,6 +44,10 @@ public class Group {
     	for(int i=0; i<aListMembers.size(); i++){
     		listMembers.add(aListMembers.get(i));
     	}
+    	nbPerson = listMembers.size();
     }
     // TODO function deleteMembers
+	public int getNbPerson() {
+		return nbPerson;
+	}
 }

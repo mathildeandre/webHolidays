@@ -79,7 +79,6 @@ public class GroupServlet extends HttpServlet {
        /* recuperation des expenses*/
        ExpensesForm expForm = new ExpensesForm(expensesDAO);
        Expenses expenses = expForm.getExpenses(request, group);
-
        session.setAttribute("expenses", expenses);
        request.setAttribute("errorsExpenses", expForm.getErrors());
 

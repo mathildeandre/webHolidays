@@ -14,6 +14,7 @@ import dao.DAOFactory;
 import dao.ExpensesDao;
 import dao.GroupDao;
 import dao.PersonDao;
+import beans.Expenses;
 import beans.Group;
 import beans.Person;
 import forms.ConnexionForm;
@@ -61,21 +62,26 @@ public class ExpensesServlet extends HttpServlet {
     }
 	
 	private void saveTab(HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException {
+		
+
+	    HttpSession session = request.getSession(); 
+	    Group group = (Group) session.getAttribute("group");
 		ExpensesForm form = new ExpensesForm(expensesDAO);
 		
-		form.saveTab(request);
+		Expenses expenses = form.saveTab(request, group);
+		session.setAttribute("expenses", expenses);
 		
 		Map<String, String> errors = form.getErrors();
 		//la modif de login s'est bien passée
 		if(errors.isEmpty()){
-			request.setAttribute("createPerson", "The person has been add to the members of the group !");
-			this.getServletContext().getRequestDispatcher("/index.jsp?page=group").forward(request, response);
+			//request.setAttribute("createPerson", "The person has been add to the members of the group !");
+			this.getServletContext().getRequestDispatcher("/index.jsp?page=expenses").forward(request, response);
 		}
 		//la modif n'a pas marche
 		else{
 			//erreur a traitée dans personalArea
 			request.setAttribute("errors", errors);
-			this.getServletContext().getRequestDispatcher("/index.jsp?page=group").forward(request, response);
+			this.getServletContext().getRequestDispatcher("/index.jsp?page=expenses").forward(request, response);
 
 		}
 	}

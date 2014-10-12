@@ -95,10 +95,11 @@ public class ExpensesDao {
 	
 	
 	
-	private static final String SQL_INSERT = "INSERT INTO Groups (name_group, date_inscription) VALUES (?, NOW())";
+	private static final String SQL_INSERT_NEW_ROW = "INSERT INTO RowExpenses (id_buyer, amount, description, id_group)"
+			+ "VALUES (?, ?, ?, ?)";
 	
 	/* Implémentation de la méthode définie dans l'interface UtilisateurDao */
-	public void saveTab(Expenses expenses) throws DAOException {
+	public int createNewRow(int idBuyer, int amount, String descript, long idGroup) throws DAOException {
 
 		Connection connexion = null;
 	    PreparedStatement preparedStatementInsert = null;
@@ -110,7 +111,7 @@ public class ExpensesDao {
 
 	        connexion = (Connection) daoFactory.getConnection();
 			// si le nom n'est pas pris, on insert le groupe dans la base
-        	preparedStatementInsert = initialisationRequetePreparee( connexion, SQL_INSERT, true, group.getName());
+        	preparedStatementInsert = initialisationRequetePreparee( connexion, SQL_INSERT_NEW_ROW, true, idBuyer, amount, descript, idGroup);
 	        int statut = preparedStatementInsert.executeUpdate();
 	        /* Analyse du statut retourné par la requête d'insertion */
 	        if ( statut == 0 ) {
@@ -119,7 +120,7 @@ public class ExpensesDao {
 	        /* Récupération de l'id auto-généré par la requête d'insertion */
 	        valeursAutoGenerees = preparedStatementInsert.getGeneratedKeys();
 	        if ( valeursAutoGenerees.next() ) {
-	        	//return valeursAutoGenerees.getLong( 1 );
+	        	return (int) valeursAutoGenerees.getLong( 1 );
 	        } else {
 	            throw new DAOException( "Échec de la création de l'utilisateur en base, aucun ID auto-généré retourné." );
 	        }
@@ -130,15 +131,65 @@ public class ExpensesDao {
 		        throw new DAOException( e );
 		    } finally {
 		        fermeturesSilencieuses( valeursAutoGenerees, preparedStatementInsert, connexion );
-		        fermeturesSilencieuses( resultSetName, preparedStatementSelect, connexion );
 		    }
-	        
-	        
-			
-			
-			
-			
 	}
 	
+	private static final String SQL_UPDATE_ROW = "UPDATE RowExpenses SET id_buyer=?, amount=?, description=? WHERE id_row=?";
+	
+	public void updateRow(int idRow, int idBuyer, int amount, String descript){
+		Connection connexion = null;
+	    PreparedStatement preparedStatement = null;
+	    
+		try {
+		        /* Récupération d'une connexion depuis la Factory */
+		        connexion = (Connection) daoFactory.getConnection();
+		        preparedStatement = initialisationRequetePreparee( connexion, SQL_UPDATE_ROW, false, idBuyer, amount, descript, idRow);
+		        preparedStatement.executeUpdate();
+		       
+		    } catch ( SQLException e ) {
+		        throw new DAOException( e );
+		    } finally {
+		        fermeturesSilencieuses(preparedStatement, connexion );
+		    }
+	}
+	
+	private static final String SQL_DELETE_BENEF = "DELETE FROM Beneficiaries WHERE id_rowExpenses = ?";
+	
+	public void deleteBeneficiaries(int idRow){
+		Connection connexion = null;
+	    PreparedStatement preparedStatement = null;
+	    
+		try {
+		        /* Récupération d'une connexion depuis la Factory */
+		        connexion = (Connection) daoFactory.getConnection();
+		        preparedStatement = initialisationRequetePreparee( connexion, SQL_DELETE_BENEF, false, idRow);
+		        preparedStatement.executeUpdate();
+		       
+		    } catch ( SQLException e ) {
+		        throw new DAOException( e );
+		    } finally {
+		        fermeturesSilencieuses(preparedStatement, connexion );
+		    }
+	}
 
+
+	private static final String SQL_INSERT_BENEFICIARIES = "INSERT INTO Beneficiaries (id_rowExpenses, id_benef) VALUES (?, ?)";
+	
+	public void insertIntoBeneficiaries(int idRow, int idBenef){
+		Connection connexion = null;
+	    PreparedStatement preparedStatement = null;
+	    
+		try {
+		        /* Récupération d'une connexion depuis la Factory */
+		        connexion = (Connection) daoFactory.getConnection();
+		        preparedStatement = initialisationRequetePreparee( connexion, SQL_INSERT_BENEFICIARIES, false, idRow, idBenef);
+		        preparedStatement.executeUpdate();
+		       
+		    } catch ( SQLException e ) {
+		        throw new DAOException( e );
+		    } finally {
+		        fermeturesSilencieuses(preparedStatement, connexion );
+		    }
+		
+	}
 }
