@@ -19,7 +19,6 @@ import beans.RowExpenses;
 
 public class ExpensesDao {
     private DAOFactory daoFactory;
-    private static final String ALGO_CHIFFREMENT = "SHA-256";
 	
 	public ExpensesDao( DAOFactory daoFactory ) {
         this.daoFactory = daoFactory;
@@ -53,7 +52,7 @@ public class ExpensesDao {
 			while (resultSetRowExp.next()) {
 				RowExpenses rowE = new RowExpenses();
 				// on recup l'id de la row
-				int idRow = resultSetRowExp.getInt("id_row");
+				Long idRow = resultSetRowExp.getLong("id_row");
 				// on recup le buyer
 				String nameBuyer = resultSetRowExp.getString("name_person");
 				int idBuyer = resultSetRowExp.getInt("id_person");
@@ -64,6 +63,7 @@ public class ExpensesDao {
 				int amount = resultSetRowExp.getInt("amount");
 				String description = resultSetRowExp.getString("description");
 
+				rowE.setId(idRow);
 				rowE.setBuyer(buyer);
 				rowE.setAmount(amount);
 				rowE.setDescription(description);
@@ -92,5 +92,53 @@ public class ExpensesDao {
 					connexion);
 		}
 	}
+	
+	
+	
+	private static final String SQL_INSERT = "INSERT INTO Groups (name_group, date_inscription) VALUES (?, NOW())";
+	
+	/* Implémentation de la méthode définie dans l'interface UtilisateurDao */
+	public void saveTab(Expenses expenses) throws DAOException {
+
+		Connection connexion = null;
+	    PreparedStatement preparedStatementInsert = null;
+	    ResultSet valeursAutoGenerees = null;
+	    
+	    
+
+		try {
+
+	        connexion = (Connection) daoFactory.getConnection();
+			// si le nom n'est pas pris, on insert le groupe dans la base
+        	preparedStatementInsert = initialisationRequetePreparee( connexion, SQL_INSERT, true, group.getName());
+	        int statut = preparedStatementInsert.executeUpdate();
+	        /* Analyse du statut retourné par la requête d'insertion */
+	        if ( statut == 0 ) {
+	            throw new DAOException( "Échec de la création de l'utilisateur, aucune ligne ajoutée dans la table." );
+	        }
+	        /* Récupération de l'id auto-généré par la requête d'insertion */
+	        valeursAutoGenerees = preparedStatementInsert.getGeneratedKeys();
+	        if ( valeursAutoGenerees.next() ) {
+	        	//return valeursAutoGenerees.getLong( 1 );
+	        } else {
+	            throw new DAOException( "Échec de la création de l'utilisateur en base, aucun ID auto-généré retourné." );
+	        }
+		
+		
+	     
+		    } catch ( SQLException e ) {
+		        throw new DAOException( e );
+		    } finally {
+		        fermeturesSilencieuses( valeursAutoGenerees, preparedStatementInsert, connexion );
+		        fermeturesSilencieuses( resultSetName, preparedStatementSelect, connexion );
+		    }
+	        
+	        
+			
+			
+			
+			
+	}
+	
 
 }

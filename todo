@@ -48,5 +48,7 @@ utile ?
 * GERER CONTACT LIST
 * enlever input "confirm pwd" de Members
 *infobulles...
+* NAME GROUP pas forcement unique!! unique juste au sein d'une personne mais sinon pas genant!
+  on le reconnaitra par son admin (info bulle sur groupe : name admin) => unicite : couple nameGroup + admin
 
 /***************************************/

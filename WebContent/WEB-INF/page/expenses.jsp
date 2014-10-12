@@ -29,6 +29,8 @@
 				
 					<c:forEach var="rowExpenses" items="${sessionScope.expenses.listRowExpenses}" varStatus="nbLine">
 						<tr>
+						
+							<input type="hidden" name="${nbLine.index+1}idRow" value="${rowExpenses.id}" >
 							<td><select id="${nbLine.index}select" name="${nbLine.index}select">
 									<c:forEach var="member" items="${sessionScope.group.listMembers}"  varStatus="nbCol">
 										
@@ -63,19 +65,20 @@
 					
 				</TBODY>
 		</TABLE> 
-		<input id="createPerson" type="submit" value="NOOOM" class="newButton3D buttonGroup buttonOrangeClair" onmouseover="changeCursor('createPerson')"
-			onclick="emptyAll('loginPerson','Login person', 'emailPerson','Email (optional)', 'pwdPerson','Password person', 'confirmPwdPerson','Confirm Password person')" >
 		
-		
+		<input id="saveTab" type="submit" value="Save Tab" class="newButton3D buttonRedFonce right" 
+				onmouseover="changeCursor('saveTab')"/>
 	</form>
+	
+	
+	
 <div id="buttonsForTab">
 
 
 	<input id="addRow" type="submit" value="Add new row" class="newButton3D buttonRedFonce" onmouseover="changeCursor('addRow')" onclick="alert(document.getElementById('tab').innerHTML); addRow()"/>
        	
 
-	<input id="saveTab" type="submit" value="Save Tab" class="newButton3D buttonRedFonce right" onmouseover="changeCursor('saveTab')" onclick="alert('faire fonction save')"/>
-    
+	
 	<div id="mouseOver" class="right" >
 		<input  id="theCheckBoxMouseOver" type="checkbox" width="100%" height="200px">
 		<label for="theCheckBoxMouseOver" > MouseOver actif ?</label>

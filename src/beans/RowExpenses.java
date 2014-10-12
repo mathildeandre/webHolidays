@@ -4,7 +4,7 @@ import java.util.HashMap;
 
 public class RowExpenses {
 
-	
+	private Long id;
     private Person buyer;
     private int amount;   
 	private HashMap<Long,String> mapCheckBox; //on ecris "checked" ou non
@@ -14,6 +14,16 @@ public class RowExpenses {
     	mapCheckBox = new HashMap<Long,String>();
     }
     
+    
+    
+
+	public Long getId() {
+		return id;
+	}
+	public void setId(Long id) {
+		this.id = id;
+	}
+	
 	public Person getBuyer() {
 		return buyer;
 	}

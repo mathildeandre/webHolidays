@@ -20,7 +20,7 @@ public class ExpensesForm extends Exception {
     private Map<String, String> errors;
     
     
-    public ExpensesForm(ExpensesDao expensesDao ) {
+    public ExpensesForm(ExpensesDao expensesDao) {
         this.expensesDao = expensesDao;
         errors = new HashMap<String, String>();
     }
@@ -36,6 +36,16 @@ public class ExpensesForm extends Exception {
              return null;
          }
     	return expenses;
+    }
+    
+    public void saveTab(HttpServletRequest request){
+    	Expenses expenses = new Expenses();
+         try {
+         	expensesDao.saveTab(expenses); /* on rempli dans le dao lobjet expenses */
+         } catch ( DAOException e ) {
+             errors.put("getExpenses", "Échec de la sauvegarde du TAB : une erreur imprévue est survenue, merci de réessayer dans quelques instants.");
+             e.printStackTrace();
+         }
     }
     
     public Map<String, String> getErrors() {

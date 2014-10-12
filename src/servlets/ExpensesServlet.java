@@ -11,12 +11,15 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import dao.DAOFactory;
+import dao.ExpensesDao;
 import dao.GroupDao;
 import dao.PersonDao;
 import beans.Group;
 import beans.Person;
 import forms.ConnexionForm;
+import forms.ExpensesForm;
 import forms.GroupForm;
+import forms.RegistrationForm;
 
 public class ExpensesServlet extends HttpServlet {
 	
@@ -25,13 +28,15 @@ public class ExpensesServlet extends HttpServlet {
     public static final String ATT_FORM         = "form";
     public static final String VUE              = "";
 
-    private GroupDao     groupDAO;
-    private PersonDao     personDAO;
+//    private GroupDao     groupDAO;
+//    private PersonDao     personDAO;
+    private ExpensesDao expensesDAO;
 
     public void init() throws ServletException {
         /* Récupération d'une instance de notre DAO Utilisateur */
-        this.groupDAO = ( (DAOFactory) getServletContext().getAttribute( CONF_DAO_FACTORY ) ).getGroupDao();
-        this.personDAO = ( (DAOFactory) getServletContext().getAttribute( CONF_DAO_FACTORY ) ).getPersonDao();
+//        this.groupDAO = ( (DAOFactory) getServletContext().getAttribute( CONF_DAO_FACTORY ) ).getGroupDao();
+//        this.personDAO = ( (DAOFactory) getServletContext().getAttribute( CONF_DAO_FACTORY ) ).getPersonDao();
+        this.expensesDAO = ( (DAOFactory) getServletContext().getAttribute( CONF_DAO_FACTORY ) ).getExpensesDao();
        
     }
 
@@ -43,17 +48,37 @@ public class ExpensesServlet extends HttpServlet {
 		System.out.println("OUHHHHHHHHHHHHHHHHHHHHHH"+request.getParameter("expenseOf"));
 		
 		
-//		if(request.getParameter("action") != null){
-//	    	   if(request.getParameter("action").equalsIgnoreCase("createPerson")){
-//	    		   createPerson(request, response);
+		if(request.getParameter("action") != null){
+	    	   if(request.getParameter("action").equalsIgnoreCase("saveTab")){
+	    		   saveTab(request, response);
+	    	   }
+//	    	   else if(request.getParameter("action").equalsIgnoreCase("display")){
+//	    		   displayGroup(request, response);
+//	    		
 //	    	   }
-////	    	   else if(request.getParameter("action").equalsIgnoreCase("display")){
-////	    		   displayGroup(request, response);
-////	    		
-////	    	   }
-//	       }
+	       }
 
     }
+	
+	private void saveTab(HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException {
+		ExpensesForm form = new ExpensesForm(expensesDAO);
+		
+		form.saveTab(request);
+		
+		Map<String, String> errors = form.getErrors();
+		//la modif de login s'est bien passée
+		if(errors.isEmpty()){
+			request.setAttribute("createPerson", "The person has been add to the members of the group !");
+			this.getServletContext().getRequestDispatcher("/index.jsp?page=group").forward(request, response);
+		}
+		//la modif n'a pas marche
+		else{
+			//erreur a traitée dans personalArea
+			request.setAttribute("errors", errors);
+			this.getServletContext().getRequestDispatcher("/index.jsp?page=group").forward(request, response);
+
+		}
+	}
 	
 }
 
