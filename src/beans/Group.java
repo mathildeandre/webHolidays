@@ -37,6 +37,7 @@ public class Group {
     
     public void addPersonIntoListMembers(Person person){
     	listMembers.add(person);
+    	nbPerson ++;
     }
     public void setListMembers(ArrayList<Person> aListMembers){
     	listMembers = new ArrayList<Person>();

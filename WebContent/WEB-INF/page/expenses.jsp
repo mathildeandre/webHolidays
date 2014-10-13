@@ -56,10 +56,14 @@
 							<c:forEach var="member" items="${sessionScope.group.listMembers}" varStatus="nbCol" >
 								<c:set var="benef" value="${member.id}"> </c:set>
 								<td><input id="${nbLine.index}${nbCol.index}" name="${nbLine.index}${nbCol.index}" type="checkbox" 
-								onclick="verifAllRow('${nbLine.index}')" 
+								onclick="verifRowAll('${nbLine.index}','${sessionScope.group.nbPerson}')" 
 								onmouseover="checkBoxMouseOver('${nbLine.index}${nbCol.index}')" ${rowExpenses.mapCheckBox[benef]} ></td>
 							</c:forEach>
-							<td></td>
+							
+						
+							<td><label for="all${nbLine.index}" >All </label><input type="checkbox" id="all${nbLine.index}"  onclick="checkAllRow('${nbLine.index}','${sessionScope.group.nbPerson}')">
+							</td>
+							
 							<td><textarea  class="textRed" id="${nbLine.index}descript" name="${nbLine.index}descript" 
 								rows="1" cols="17"  >${rowExpenses.description}</textarea>
 							</td>
@@ -104,6 +108,6 @@
  </article>
 </section >
 
-<script src="JS/expenses7.js" type="text/javascript"></script>
-<script src="JS/expensesResult5.js" type="text/javascript"></script>
+<script src="JS/expenses8.js" type="text/javascript"></script>
+<script src="JS/expensesResult6.js" type="text/javascript"></script>
 		

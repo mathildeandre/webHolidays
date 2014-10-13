@@ -1,5 +1,8 @@
 
 function calculationResult(){
+	var resultDiv = document.getElementById("fieldResultExpenses");
+	resultDiv.innerHTML = '</br>(-> : "owes eheh")';
+	
 	creationTabExpense();
 	//afficheTab(tabExpense, "tab expense : ");
 
