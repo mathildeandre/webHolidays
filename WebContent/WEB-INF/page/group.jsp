@@ -33,9 +33,11 @@
 		<h2 class="" >Add another person</h2>
 		
 		<div  class="aroundWhite">Search existing person : </div>
-       	<form method="post" action="searchPerson">
+		 <span class="textRed">${requestScope.errors['searchPerson']}</span>
+       	<form method="post" action="group?action=searchPerson">
 	      <input id="searchPerson" class="textGrey"  name="searchPerson" type="text" value="Login of the person" 
          onfocus="inputTextFocus('searchPerson', 'Orange')" onblur="inputTextBlur('searchPerson','Login of the person')" required >
+         
 		<input id="addPerson" type="submit" value="Add person" class="newButton3D buttonGroup buttonOrangeClair" onmouseover="changeCursor('addPerson')"/>
        	</form>
        	
@@ -55,10 +57,11 @@
 		<span class="textRed">${requestScope.errors['pwd']}</span>
          </div>
          
+         <!-- 
          <div><input id="confirmPwdPerson" class="textGrey"  name="confirmPwd" type="text" value="Confirm Password person" 
          onfocus="inputTextFocus('confirmPwdPerson', 'Orange')" onblur="inputTextBlur('confirmPwdPerson','Password Person')" required >
          <span class="textRed">${requestScope.errors['confirmPwd']}</span>
-         </div> 
+         </div>   -->
          <!-- <div id="andOr" class="aroundWhite">AND/OR</div>  -->
          <div>
 	      <input id="emailPerson" class="textGrey"  name="email" type="text" value="Email (optional)" 

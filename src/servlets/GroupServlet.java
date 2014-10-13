@@ -21,6 +21,7 @@ import beans.Person;
 import forms.ConnexionForm;
 import forms.ExpensesForm;
 import forms.GroupForm;
+import forms.PersonForm;
 import forms.RegistrationForm;
 
 public class GroupServlet extends HttpServlet {
@@ -56,10 +57,10 @@ public class GroupServlet extends HttpServlet {
     	   if(request.getParameter("action").equalsIgnoreCase("createPerson")){
     		   createPerson(request, response);
     	   }
-//    	   else if(request.getParameter("action").equalsIgnoreCase("display")){
-//    		   displayGroup(request, response);
-//    		
-//    	   }
+    	   else if(request.getParameter("action").equalsIgnoreCase("searchPerson")){
+    		   searchPerson(request, response);
+    		
+    	   }
        }
 
     }
@@ -100,6 +101,24 @@ public class GroupServlet extends HttpServlet {
 		//la modif de login s'est bien passée
 		if(errors.isEmpty()){
 			request.setAttribute("createPerson", "The person has been add to the members of the group !");
+			this.getServletContext().getRequestDispatcher("/index.jsp?page=group").forward(request, response);
+		}
+		//la modif n'a pas marche
+		else{
+			//erreur a traitée dans personalArea
+			request.setAttribute("errors", errors);
+			this.getServletContext().getRequestDispatcher("/index.jsp?page=group").forward(request, response);
+
+		}
+	}
+	
+	private void searchPerson(HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException {
+		PersonForm form = new PersonForm(personDAO, groupDAO);
+		form.searchPerson(request);
+		Map<String, String> errors = form.getErrors();
+		//la modif de login s'est bien passée
+		if(errors.isEmpty()){
+			request.setAttribute("searchPerson", "The person has been add to the members of the group !");
 			this.getServletContext().getRequestDispatcher("/index.jsp?page=group").forward(request, response);
 		}
 		//la modif n'a pas marche

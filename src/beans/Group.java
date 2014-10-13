@@ -37,7 +37,18 @@ public class Group {
     
     public void addPersonIntoListMembers(Person person){
     	listMembers.add(person);
+    	nbPerson += 1;
     }
+    
+    public boolean containsMember(String login){
+    	for(int i=0; i<listMembers.size(); i++){
+    		if(listMembers.get(i).getLogin().equalsIgnoreCase(login)){
+    			return true;
+    		}
+    	}
+    	return false;
+    }
+    
     public void setListMembers(ArrayList<Person> aListMembers){
     	listMembers = new ArrayList<Person>();
     	listMembers.clear();

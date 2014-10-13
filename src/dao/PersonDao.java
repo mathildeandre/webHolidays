@@ -86,6 +86,41 @@ public class PersonDao {
 		    }
 	}
 	
+	private static final String SQL_FIND_PERSON = "SELECT * FROM Persons WHERE login_person=?";
+
+	public boolean findUser( Person person, String login ) throws DAOException {
+	    Connection connexion = null;
+	    PreparedStatement preparedStatement = null;
+	    ResultSet resultSetLogin = null;
+	    
+		try {
+		        /* Récupération d'une connexion depuis la Factory */
+		        connexion = (Connection) daoFactory.getConnection();
+		        preparedStatement = initialisationRequetePreparee( connexion, SQL_FIND_PERSON, false, login);
+		        resultSetLogin = preparedStatement.executeQuery();
+		        /* Analyse du statut retourné par la requête d'insertion */
+		        if ( resultSetLogin.next() ) {
+		        	long id = resultSetLogin.getLong("id_person");
+		        	String name = resultSetLogin.getString("name_person");
+		        	String email = resultSetLogin.getString("mail_person");
+		        	
+		        	person.setId(id);
+		        	person.setName(name);
+		        	person.setLogin(login);
+		        	person.setEmail(email);
+		        	person.setNew(false);
+		            return true;
+		        } else {
+		        	return false;	
+		        }
+		    } catch ( SQLException e ) {
+		        throw new DAOException( e );
+		    } finally {
+		        fermeturesSilencieuses( resultSetLogin, preparedStatement, connexion );
+		    }
+	}
+	
+	
 	private static final String SQL_SELECT_PERSON = "SELECT * FROM Persons WHERE login_person=?";
 
 	public boolean checkUser(Person person, String login, String pwd) throws DAOException {
