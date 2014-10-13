@@ -12,13 +12,16 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import dao.DAOFactory;
+import dao.DoodleDao;
 import dao.ExpensesDao;
 import dao.GroupDao;
 import dao.PersonDao;
+import beans.Doodle;
 import beans.Expenses;
 import beans.Group;
 import beans.Person;
 import forms.ConnexionForm;
+import forms.DoodleForm;
 import forms.ExpensesForm;
 import forms.GroupForm;
 import forms.PersonForm;
@@ -34,13 +37,15 @@ public class GroupServlet extends HttpServlet {
     private GroupDao	groupDAO;
     private PersonDao 	personDAO;
     private ExpensesDao expensesDAO;
+    private DoodleDao doodleDAO;
 
     public void init() throws ServletException {
         /* Récupération d'une instance de notre DAO Utilisateur */
         this.groupDAO = ( (DAOFactory) getServletContext().getAttribute( CONF_DAO_FACTORY ) ).getGroupDao();
         this.personDAO = ( (DAOFactory) getServletContext().getAttribute( CONF_DAO_FACTORY ) ).getPersonDao();
         this.expensesDAO = ( (DAOFactory) getServletContext().getAttribute( CONF_DAO_FACTORY ) ).getExpensesDao();
-       
+        this.doodleDAO = ( (DAOFactory) getServletContext().getAttribute( CONF_DAO_FACTORY ) ).getDoodleDao();
+
     }
 
     
@@ -74,7 +79,12 @@ public class GroupServlet extends HttpServlet {
        Group group = form.connectGroup(request);
        
        session.setAttribute("group", group);
-       request.setAttribute("errors", form.getErrors());
+       
+       // recuperation des doodle
+       DoodleForm doodForm = new DoodleForm(doodleDAO);
+       ArrayList<Doodle> listDoodles = doodForm.getDoodles(request, group);
+       session.setAttribute("doodles", listDoodles);
+       request.setAttribute("errorsDoodle", doodForm.getErrors());
        
        
        /* recuperation des expenses*/

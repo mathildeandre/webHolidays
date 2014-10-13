@@ -86,7 +86,7 @@ CREATE TABLE PublicThings (
 );
 
 CREATE TABLE Doodle (
-	id_doodle INT(11) NOT NULL,
+	id_doodle INT(11) NOT NULL AUTO_INCREMENT,
 	name_doodle VARCHAR(50) NOT NULL,
 	id_group INT(11) NOT NULL,
 	PRIMARY KEY (id_doodle),

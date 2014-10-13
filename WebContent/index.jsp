@@ -64,7 +64,6 @@ HTML5 sont employées. -->
 	}
     else if (request.getParameter("page").equals("doodle")) { %>
 		<%@include file="/WEB-INF/page/doodle.jsp"%>
-        <script>changeBackground("doodle"); </script>
 <%
 	}
     else if (request.getParameter("page").equals("meals")) { %>

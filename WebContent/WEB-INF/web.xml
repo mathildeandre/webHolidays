@@ -88,6 +88,15 @@
 		<url-pattern>/expensesServlet</url-pattern>
 	</servlet-mapping>
 	
+	<servlet>
+		<servlet-name>DoodleServlet</servlet-name>
+		<servlet-class>servlets.DoodleServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>DoodleServlet</servlet-name>
+		<url-pattern>/doodleServlet</url-pattern>
+	</servlet-mapping>
+	
 	
 	<listener>
     <listener-class>config.InitialisationDaoFactory</listener-class>

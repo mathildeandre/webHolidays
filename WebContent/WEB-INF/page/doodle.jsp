@@ -3,16 +3,20 @@
  	<section id="sectionNavDoodle">
  		<h2 id="h2navDoodle">Choose your doodle</h2>
 		<ul>
-		  <li><a href="#burgers">Doodle1</a></li>
-		  <li><a href="#lasagne">Doodle2</a></li>
-		  <li><a href="#contact">Contact</a></li>
-		  <li><a href="#news">News</a></li>
+			<c:forEach var="doodle" items="${sessionScope.doodles}" varStatus="numDoodle">
+			
+			<form method="post" action="doodleServlet?action=displayDoodle">
+				<li><a> <input id="idDoodle" name="idDoodle" type="submit" value="${doodle.nameDoodle}" onmouseover="changeCursor('idDoodle')"/></a></li>
+			</form>
+			
+			</c:forEach>
+		
 		</ul>
 		
 		
 		<div  class="aroundWhite">Create new doodle : </div>
-		<form method="post" action="createDoodle">
-	      <input id="inputNewDoodle" class="textGrey"  name="inputNewDoodle" type="text" value="Name doodle" 
+		<form method="post" action="doodleServlet?action=createDoodle">
+	      <input id="inputNewDoodle" class="textGrey"  name="nameNewDoodle" type="text" value="Name doodle" 
          onfocus="inputTextFocus('inputNewDoodle', 'Green')" onblur="inputTextBlur('inputNewDoodle','Name doodle')" required >
 		<input id="createDoodle" type="submit" value="Create" class="newButton3D buttonGreenClair" onmouseover="changeCursor('createDoodle')"/>
        	</form>
@@ -23,20 +27,44 @@
 	<h1 id="h1Doodle" class="h1">Doodle</h1> <!-- class="h1 text3Dfonce" -->
 	
 	<article>
-	   <h2>Wishes of the group</h2>
+	<h2>Wishes of the group</h2>
 		
-		<TABLE id="tab" BORDER="1"> 
-			<CAPTION>My Title</CAPTION> 
+		<form method="post" action="doodleServlet?action=saveDodle">    	
+		
+			<TABLE id="tab" BORDER="1"> 
+				<c:choose>
+   					 <c:when test="${requestScope.numDoodle != null}">
+   					 	 <c:set var="numDoodle" value="${requestScope.numDoodle}"></c:set>
+   					 
+						<CAPTION>${sessionScope.doodles[numDoodle-1].nameDoodle}</CAPTION> 
+    				</c:when>
+   				<c:otherwise>
+        			<CAPTION>${sessionScope.doodles[0].nameDoodle}</CAPTION> 
+        			
+    			</c:otherwise>
+				</c:choose>
 			<THEAD>
 				<TR> 
 				 <TH> Names </TH> 
+				 <c:set var="courentDoodle" value="${sessionScope.doodles[0]}"></c:set>
+				 
+				 </TR>
 			</THEAD>
 			
 			<TBODY>
+			
+				<c:forEach var="member" items="${sessionScope.group.listMembers}" varStatus="numLine">
+				<TR>
 				
+				<td><input name="" class="textRed"  type="text" value="${member.name}"></td>
+				
+				</TR>
+				</c:forEach>
 				
 			</TBODY>
 		</TABLE>
+		</form>
+		
 	</article>
 	
 	
