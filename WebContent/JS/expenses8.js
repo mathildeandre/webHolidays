@@ -22,8 +22,12 @@ var nbLines = document.getElementById("nbLineHidden").value;
 if(nbLines == 0){
 	addRow();
 }
-/* fin start */
-
+else{ //on verifie les checkAll
+	var nbP = document.getElementById("nbMemberHidden").value;
+	for(k=0; k<nbLines; k++){
+		verifRowAll(k, nbP);
+	}
+}
 
 
 function init(){
@@ -39,7 +43,7 @@ function init(){
 function addRow(){
 
 	var nbPersons = document.getElementById("nbMemberHidden").value;
-	document.getElementById("hiddenRow").innerHTML += '<input type="hidden" name="'+nbLines+'idRow" value="-1" >';
+	document.getElementById("hiddenRow").innerHTML += '<input id="th'+nbLines+'" name="th'+nbLines+'" type="hidden" value="-1">';
 	
 		var newRow = document.getElementById("tbody").insertRow(-1);
 
@@ -49,18 +53,18 @@ function addRow(){
 
 		// Add Input Amount
 		var cell1 = newRow.insertCell(1);
-		cell1.innerHTML =  '<input name="'+nbLines+'total" class="textRed"  type="number" value="0">';
+		cell1.innerHTML =  '<input id="'+nbLines+'total" name="'+nbLines+'total" class="textRed"  type="number" value="0">';
 		
 		// Add checkbox for persons
 		for(i=0; i<nbPersons; i++){
 			var cell = newRow.insertCell(i+2);
-			cell.innerHTML =  '<input id="'+nbLines+i+'" name="'+nbLines+i+'" type="checkbox" onclick="verifAllRow(\''+nbLines+'\')"  onmouseover="checkBoxMouseOver(\''+nbLines+i+'\')" >';
+			cell.innerHTML =  '<input id="'+nbLines+i+'" name="'+nbLines+i+'" type="checkbox" onclick="verifRowAll(\''+nbLines+'\',\''+nbPersons+'\')"  onmouseover="checkBoxMouseOver(\''+nbLines+i+'\')" >';
 			cell.style.width= "300px";
 		}
 
 		// Add button checkAllTheRow
 		var cellButtonAll = newRow.insertCell(parseInt(nbPersons)+2);
-		cellButtonAll.innerHTML ='<label name for="all'+nbLines+'" >All </label><input type="checkbox" id="all'+nbLines+'" name="Checkall" value="check/uncheck all" onclick="checkAllRow('+nbLines+')">';
+		cellButtonAll.innerHTML ='<label for="all'+nbLines+'" >All </label><input type="checkbox" id="all'+nbLines+'" onclick="checkAllRow(\''+nbLines+'\',\''+nbPersons+'\')">';
 		/*permet de mettre toutes les cells All avec background*/
 		//cellButtonAll.style.backgroundColor = "#FF8080";
 
@@ -98,35 +102,33 @@ function createTextSelect(rowNumber, nbPers){
 //alert(document.getElementById("descript1").value);
 //}
 
-function verifAllRow(rowNum){
+function verifRowAll(rowNum, nbPers){
 	var boolAllChecked = true;
-	for(i=0; i<tabPerson.length; i++){
-		if(document.getElementById(rowNum.toString()+(i+2).toString()).checked == false){
+	for(i=0; i<nbPers; i++){
+
+		if(document.getElementById(rowNum.toString()+(i).toString()).checked == false){
 			boolAllChecked = false;
 		}
 	}
-	
 	var checkAll = document.getElementById("all"+rowNum);
 	checkAll.checked = boolAllChecked;
 }
 
 
 
-function checkAllRow(rowNum){
+function checkAllRow(rowNum, nbPers){
 	var checkAll = document.getElementById("all"+rowNum);
 	var bool = checkAll.checked;
 	/*if(hidden.value == "true"){ //si toutes les checkbox sont deja cochees
 		bool = false;
 		hidden.value = "false";
-		
 	}
 	else{
 		bool = true;
 		hidden.value = "true";
 	} */
-	for(var i=0; i<tabPerson.length; i++){
-		var id = rowNum + (i+2).toString();
-		document.getElementById(id).checked = bool;
+	for(i=0; i<nbPers; i++){
+		document.getElementById(rowNum+i).checked = bool;
 	}
 }
 function reset(){
@@ -185,7 +187,7 @@ function addExtraPerson(){
 		/* ajout des checkbox pr chaque lignes */
 		id = i + (k+2).toString();
 		var cell = arrayLines[i].insertCell(k+2);
-		cell.innerHTML = '<input id="'+id+'" type="checkbox" onclick="verifAllRow(\''+i+'\')" onmouseover="checkBoxMouseOver(\''+id+'\')">';
+		cell.innerHTML = '<input id="'+id+'" type="checkbox" onclick="verifRowAll(\''+i+'\')" onmouseover="checkBoxMouseOver(\''+id+'\')">';
 		/* ajout du nom dans les select*/
 		var select = document.getElementById(i.toString()+"0");
 		select.innerHTML += '<option value="'+k+'">'+name+'</option>';

@@ -37,7 +37,7 @@ public class Group {
     
     public void addPersonIntoListMembers(Person person){
     	listMembers.add(person);
-    	nbPerson += 1;
+    	nbPerson ++;
     }
     
     public boolean containsMember(String login){

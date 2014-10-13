@@ -23,6 +23,7 @@
 			    		<th class="thTotal" > ${member.name}</th> 
 			    		<input id="th${nbCol.index}" name="th${nbCol.index}" type="hidden" value="${member.id}">
 			    		<input id="thName${nbCol.index}" name="thName${nbCol.index}" type="hidden" value="${member.name}">
+			    		<!-- util pr affiche Names dans Result cf expensesResult.js-->
 			    	</c:forEach>
 			    	
 					 <TH >Everybody</TH> 
@@ -52,15 +53,19 @@
 							</td>
 							
 							
-							<td><input name="${nbLine.index}total" class="textRed"  type="number" value="${rowExpenses.amount}"></td>
+							<td><input id="${nbLine.index}total" name="${nbLine.index}total" class="textRed"  type="number" value="${rowExpenses.amount}"></td>
 							
 							<c:forEach var="member" items="${sessionScope.group.listMembers}" varStatus="nbCol" >
 								<c:set var="benef" value="${member.id}"> </c:set>
 								<td><input id="${nbLine.index}${nbCol.index}" name="${nbLine.index}${nbCol.index}" type="checkbox" 
-								onclick="verifAllRow('${nbLine.index}')" 
+								onclick="verifRowAll('${nbLine.index}','${sessionScope.group.nbPerson}')" 
 								onmouseover="checkBoxMouseOver('${nbLine.index}${nbCol.index}')" ${rowExpenses.mapCheckBox[benef]} ></td>
 							</c:forEach>
-							<td></td>
+							
+						
+							<td><label for="all${nbLine.index}" >All </label><input type="checkbox" id="all${nbLine.index}"  onclick="checkAllRow('${nbLine.index}','${sessionScope.group.nbPerson}')">
+							</td>
+							
 							<td><textarea  class="textRed" id="${nbLine.index}descript" name="${nbLine.index}descript" 
 								rows="1" cols="17"  >${rowExpenses.description}</textarea>
 							</td>
@@ -105,6 +110,6 @@
  </article>
 </section >
 
-<script src="JS/expenses7.js" type="text/javascript"></script>
-<script src="JS/expensesResult5.js" type="text/javascript"></script>
+<script src="JS/expenses8.js" type="text/javascript"></script>
+<script src="JS/expensesResult6.js" type="text/javascript"></script>
 		

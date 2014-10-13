@@ -1,4 +1,23 @@
 
+/*init */
+var tabExpense = [];
+var tabPerson = [];
+var tabCouple = [];
+
+
+var nbPers = document.getElementById("nbMemberHidden").value;
+for(k=0; k<nbPers; k++){
+	var idPers = document.getElementById("thName"+k).value;
+	
+	tabPerson.push(idPers);
+}
+
+/* fin init*/
+
+//on lance la fonction une premiere fois
+calculationResult();
+
+
 function calculationResult(){
 	creationTabExpense();
 	//afficheTab(tabExpense, "tab expense : ");
@@ -21,7 +40,6 @@ function afficheTab(tab, str){
 
 
 function afficheResult(){
-	alert("ON ET DES OUF");
 	var text = '';
 	for(var k=0; k<tabCouple.length; k++){
 		text += tabPerson[tabCouple[k][2]] + " -> " + tabCouple[k][1] + "€ to "+ tabPerson[tabCouple[k][0]] + "</br>\n";
@@ -40,7 +58,7 @@ function afficheResult(){
 
 
 function creationTabCouple(){
-	tabCouple=[];
+	tabCouple=[]; //on revide le tab
 	var indexMax = findIndexMax(tabExpense);
 	var indexMin = findIndexMin(tabExpense, (-1)*tabExpense[indexMax]);
 	while(indexMax != -1){ //tant qu'il y a des personne encore avec un montant payé > 0
@@ -69,37 +87,46 @@ function creationTabCouple(){
 
 /* construit tous les couples dans tabCouple */
 function creationTabExpense(){ 
-	tabExpense = [];
+	tabExpense = [];//on revide le tab
 	for(var i=0; i<tabPerson.length; i++){
 		tabExpense.push(0);
 	}
 	
 	var arrayLignes = document.getElementById("tab").rows; //on récupère les lignes du tableau
-	var hauteur = arrayLignes.length;//on peut donc appliquer la propriété length
+	var hauteur = arrayLignes.length-1;//length -1 car th ne nous interess pas
 
 
-	for(var i=1; i<hauteur; i++){
-
-		var idBuyer = parseInt(document.getElementById(i.toString()+"0").value);
-		var amountBuyerPayed = parseFloat(document.getElementById(i.toString()+"1").value);
+	for(var i=0; i<hauteur; i++){
+		var idBuyer = parseInt(document.getElementById(i.toString()+"select").value);
+		var amountBuyerPayed = parseFloat(document.getElementById(i+"total").value);
 
 		// on compte combien de personne sont concernees par le payement
 		var nbChecked = 0;
 		for(var j=0; j<tabPerson.length; j++){
-			if(document.getElementById(i.toString()+(j+2).toString()).checked){
+			if(document.getElementById(i.toString()+j.toString()).checked){
 				nbChecked++;
 			}
 		}
 		var amountPerson = (amountBuyerPayed/nbChecked); //.toFixed(1); //prix par personne
-
+		var positionBuyer=-1;
+		//on veut determiner la position de colonne du buyer
+		for(var p=0; p<tabPerson.length; p++){
+			var idPerson = parseInt(document.getElementById("th"+p.toString()).value);
+			if(idBuyer == idPerson){
+				positionBuyer = p;
+			}
+		}
+		if(positionBuyer == -1){
+			alert(" ERREUR position pers.");
+		}
 		//est ce que le buyer a payer pour lui meme?
-		if (document.getElementById(i.toString()+(idBuyer+2)).checked == true ){ //si celui qui a payé est coché
+		if (document.getElementById(i.toString()+positionBuyer).checked == true ){ //si celui qui a payé est coché
 			amountBuyerPayed -= amountPerson; //alors on lui soustrait sa part
 		}
 
-		tabExpense[idBuyer] += amountBuyerPayed;
+		tabExpense[positionBuyer] += amountBuyerPayed;
 		for(var k=0; k<tabPerson.length; k++){
-			if(document.getElementById(i.toString()+(k+2).toString()).checked && (idBuyer != k) ){
+			if(document.getElementById(i.toString()+k.toString()).checked && (positionBuyer != k) ){
 				tabExpense[k] -= amountPerson;
 			}
 		}
