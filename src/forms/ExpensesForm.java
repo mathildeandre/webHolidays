@@ -58,25 +58,29 @@ public class ExpensesForm extends Exception {
     	 for(int i=0; i<nbLines; i++){
     		 RowExpenses rowE = new RowExpenses();
 
-        	 int idRow = Integer.parseInt(request.getParameter(i+"idRow"));
-
+        	 
+        	 String idRowStr = request.getParameter(i+"idRow");
+        	 System.out.println("ID ROW STR !! :"+idRowStr);
         	 String idNameBuyer = request.getParameter(i+"select");
         	 
         	 String[] infoBuyer = idNameBuyer.split("-");
         	 int idBuyer = Integer.parseInt(infoBuyer[0]); // id
         	 String nameBuyer = infoBuyer[1]; // name
+
+        	 String amountStr = request.getParameter(i+"total");
         	 
-        	 int amount = Integer.parseInt(request.getParameter(i+"total"));
+        	 int amount = Integer.parseInt(amountStr);
         	 /* TODO il faudra gerer les caractere non compatibles (accents..etc) */
         	 String descript = request.getParameter(i+"descript");
         	 
-        	 
-        	 if(idRow == -1){ /* la row existait pas dans la base */
+        	 int idRow;
+        	 if(idRowStr.equalsIgnoreCase("-1")){ /* la row existait pas dans la base */
         		 idRow = expensesDao.createNewRow(idBuyer, amount, descript, idGroup);
         		 //TODO createNewRow a du etre modifier en mode static ... =( a revoir
         		 
         	 }
         	 else{ /* la row existait deja */
+        		 idRow = Integer.parseInt(idRowStr);
         		 expensesDao.updateRow(idRow, idBuyer, amount, descript);
         		 expensesDao.deleteBeneficiaries(idRow);
         	 }
@@ -94,9 +98,18 @@ public class ExpensesForm extends Exception {
         	 
         	 //traitement de chaque personnes
         	 for(int j=0; j<nbPersons; j++){
+
+//        		 if(i==nbLines-1){
+//        			 System.err.println("hey"+j);
+//                	 String heyCheck = request.getParameter("hey"+j);
+//            		 System.out.println("HEY : "+heyCheck);
+//        		 }
+        		 
+        		 
         		 int idPerson = Integer.parseInt(request.getParameter("th"+j));
             	 String isChecked = request.getParameter(""+i+j);
             	 if (isChecked == null){
+            		 System.out.println("aie checkbox null");
             		 //System.out.println("ligne : "+i+", person : "+j+" NA PAS coché");
             	 }
             	 else if (isChecked.equalsIgnoreCase("on")){

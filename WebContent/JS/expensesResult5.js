@@ -1,16 +1,11 @@
 
-/* nouveau type de calculation : remplace les fichiers "calculationResult_basic.js" & "calculationResult_optimisation.js" */
-
-var tabCouple;
-var tabExpense;
-
 function calculationResult(){
 	creationTabExpense();
 	//afficheTab(tabExpense, "tab expense : ");
 
 	creationTabCouple();
 	//afficheTab(tabCouple, "tab couple : ");
-	
+
 	afficheResult();
 }
 
@@ -26,6 +21,7 @@ function afficheTab(tab, str){
 
 
 function afficheResult(){
+	alert("ON ET DES OUF");
 	var text = '';
 	for(var k=0; k<tabCouple.length; k++){
 		text += tabPerson[tabCouple[k][2]] + " -> " + tabCouple[k][1] + "€ to "+ tabPerson[tabCouple[k][0]] + "</br>\n";

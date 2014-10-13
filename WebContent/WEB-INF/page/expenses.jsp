@@ -10,8 +10,9 @@
 	
 		<TABLE  id="tab" BORDER="1" onmouseout="calculationResult()"> 
 		
-	<input type="hidden" name="nbLineHidden" value="${sessionScope.expenses.size}" >
-	<input type="hidden" name="nbMemberHidden" value="${sessionScope.group.nbPerson}" >
+	<input type="hidden" id="nbLineHidden" name="nbLineHidden" value="${sessionScope.expenses.size}" >
+	<input type="hidden" id="nbMemberHidden" name="nbMemberHidden" value="${sessionScope.group.nbPerson}" >
+	<div id="hiddenRow"></div>
 				<CAPTION> Table of expenses </CAPTION> 
 				<THEAD >
 					<TR> 
@@ -19,19 +20,22 @@
 					 <TH id="thTotal">Total</TH> 
 					 
 			     	<c:forEach var="member" items="${sessionScope.group.listMembers}" varStatus="nbCol">
-			    		<th class="thTotal" ><input name="th${nbCol.index}" type="hidden" value="${member.id}"> ${member.name}</th> 
+			    		<th class="thTotal" > ${member.name}</th> 
+			    		<input id="th${nbCol.index}" name="th${nbCol.index}" type="hidden" value="${member.id}">
+			    		<input id="thName${nbCol.index}" name="thName${nbCol.index}" type="hidden" value="${member.name}">
 			    	</c:forEach>
 			    	
 					 <TH >Everybody</TH> 
 					 <TH >Description</TH>
 					</TR>
 				</THEAD>
-				<TBODY>
+				<TBODY id="tbody">
 				
 					<c:forEach var="rowExpenses" items="${sessionScope.expenses.listRowExpenses}" varStatus="nbLine">
 						<tr>
 						
 							<input type="hidden" name="${nbLine.index}idRow" value="${rowExpenses.id}" >
+							
 							<td><select id="${nbLine.index}select" name="${nbLine.index}select">
 									<c:forEach var="member" items="${sessionScope.group.listMembers}" >
 										
@@ -52,7 +56,8 @@
 							<c:forEach var="member" items="${sessionScope.group.listMembers}" varStatus="nbCol" >
 								<c:set var="benef" value="${member.id}"> </c:set>
 								<td><input id="${nbLine.index}${nbCol.index}" name="${nbLine.index}${nbCol.index}" type="checkbox" 
-								onclick="verifAllRow('${nbLine.index}')" onmouseover="checkBoxMouseOver('${nbLine.index}${nbCol.index}')" ${rowExpenses.mapCheckBox[benef]} ></td>
+								onclick="verifAllRow('${nbLine.index}')" 
+								onmouseover="checkBoxMouseOver('${nbLine.index}${nbCol.index}')" ${rowExpenses.mapCheckBox[benef]} ></td>
 							</c:forEach>
 							<td></td>
 							<td><textarea  class="textRed" id="${nbLine.index}descript" name="${nbLine.index}descript" 
@@ -76,8 +81,9 @@
 <div id="buttonsForTab">
 
 
-	<input id="addRow" type="submit" value="Add new row" class="newButton3D buttonRedFonce" onmouseover="changeCursor('addRow')" onclick="alert(document.getElementById('tab').innerHTML); addRow()"/>
+	<input id="addRow" type="submit" value="Add new row" class="newButton3D buttonRedFonce" onmouseover="changeCursor('addRow')" onclick="addRow()"/>
        	
+	<input id="displayINNER" type="submit" value="Display innerTab" class="newButton3D buttonRedFonce" onmouseover="changeCursor('displayINNER')" onclick="alert(document.getElementById('tab').innerHTML)"/>
 
 	
 	<div id="mouseOver" class="right" >
@@ -98,6 +104,6 @@
  </article>
 </section >
 
-<script src="JS/expenses6.js" type="text/javascript"></script>
-<script src="JS/expensesResult3.js" type="text/javascript"></script>
+<script src="JS/expenses7.js" type="text/javascript"></script>
+<script src="JS/expensesResult5.js" type="text/javascript"></script>
 		

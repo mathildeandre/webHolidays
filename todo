@@ -51,4 +51,6 @@ utile ?
 * NAME GROUP pas forcement unique!! unique juste au sein d'une personne mais sinon pas genant!
   on le reconnaitra par son admin (info bulle sur groupe : name admin) => unicite : couple nameGroup + admin
 
+* expenses : quand on ajoute des membres et que l'on va direct dans expenses les beans ne sont pas a jour
+* calculationResult A REFAIRE (expensesResult5.js)
 /***************************************/
