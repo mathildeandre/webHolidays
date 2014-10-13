@@ -36,6 +36,7 @@
 						
 							<input type="hidden" name="${nbLine.index}idRow" value="${rowExpenses.id}" >
 							
+							
 							<td><select id="${nbLine.index}select" name="${nbLine.index}select">
 									<c:forEach var="member" items="${sessionScope.group.listMembers}" >
 										

@@ -42,11 +42,10 @@ public final class RegistrationForm {
 		return resultat;
 	}
 
-	public Person registerUser(HttpServletRequest request) {
+	public Person registerUser(HttpServletRequest request, boolean isCreateBySomeoneElse) {
 		String login = getValeurChamp(request, "login");
 		String email = getValeurChamp(request, "email");
 		String pwd = getValeurChamp(request, "pwd");
-		String confirmPwd = getValeurChamp(request, "confirmPwd");
 
 		Person person = new Person();
 		try {
@@ -58,9 +57,15 @@ public final class RegistrationForm {
 			traiterEmail(email, person);
 			person.setEmail(email);
 			person.setNew(true);
-			String newPwdAdmin = traiterMotsDePasse(pwd, confirmPwd);
-			person.setPwd(newPwdAdmin);
-
+			if(! isCreateBySomeoneElse){
+				// on crypte le pwd et on verifie la confirmation
+				String confirmPwd = getValeurChamp(request, "confirmPwd");
+				String newPwdAdmin = traiterMotsDePasse(pwd, confirmPwd);
+				person.setPwd(newPwdAdmin);
+			// si la personne a été cree par quelqu'un d'autre, pas besoin de crypte le pwd
+			}else{
+				person.setPwd(pwd);
+			}
 			if (errors.isEmpty()) {
 
 				long idPerson = personDao.create(person);
@@ -80,7 +85,7 @@ public final class RegistrationForm {
 	
 	public void registerUserBySomeoneElse(HttpServletRequest request) {
 		//creation de la nouvelle personne
-		Person personToAdd = registerUser(request);
+		Person personToAdd = registerUser(request, true);
 		
 		HttpSession session = request.getSession();
 		//Person user = (Person) session.getAttribute("person");

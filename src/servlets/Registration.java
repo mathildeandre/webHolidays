@@ -43,7 +43,7 @@ public class Registration extends HttpServlet {
         RegistrationForm form = new RegistrationForm(personDAO);
 
         /* Traitement de la requête et récupération du bean en résultant */
-        Person person = form.registerUser( request );
+        Person person = form.registerUser( request, false );
         HttpSession session = request.getSession(); 
         session.setAttribute("person", person);
         request.setAttribute("errors", form.getErrors());

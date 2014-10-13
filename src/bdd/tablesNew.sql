@@ -1,15 +1,15 @@
 
-drop table PersonChecked;
-drop table ColumnDoodle;
-drop table Doodle;
-drop table PrivateThings;
-drop table PublicThings;
-drop table Beneficiaries;
-drop table RowExpenses;
-drop table BelongTo;
-drop table Groups;
-drop table ContactList;
-drop table Persons;
+	drop table PersonChecked;
+	drop table ColumnDoodle;
+	drop table Doodle;
+	drop table PrivateThings;
+	drop table PublicThings;
+	drop table Beneficiaries;
+	drop table RowExpenses;
+	drop table BelongTo;
+	drop table Groups;
+	drop table ContactList;
+	drop table Persons;
 
 CREATE TABLE Persons (
 	id_person INT(11) NOT NULL AUTO_INCREMENT,
