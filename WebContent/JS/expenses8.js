@@ -43,7 +43,7 @@ function init(){
 function addRow(){
 
 	var nbPersons = document.getElementById("nbMemberHidden").value;
-	document.getElementById("hiddenRow").innerHTML += '<input type="hidden" name="'+nbLines+'idRow" value="-1" >';
+	document.getElementById("hiddenRow").innerHTML += '<input id="th'+nbLines+'" name="th'+nbLines+'" type="hidden" value="-1">';
 	
 		var newRow = document.getElementById("tbody").insertRow(-1);
 
@@ -53,7 +53,7 @@ function addRow(){
 
 		// Add Input Amount
 		var cell1 = newRow.insertCell(1);
-		cell1.innerHTML =  '<input name="'+nbLines+'total" class="textRed"  type="number" value="0">';
+		cell1.innerHTML =  '<input id="'+nbLines+'total" name="'+nbLines+'total" class="textRed"  type="number" value="0">';
 		
 		// Add checkbox for persons
 		for(i=0; i<nbPersons; i++){

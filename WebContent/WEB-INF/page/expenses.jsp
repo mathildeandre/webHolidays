@@ -23,6 +23,7 @@
 			    		<th class="thTotal" > ${member.name}</th> 
 			    		<input id="th${nbCol.index}" name="th${nbCol.index}" type="hidden" value="${member.id}">
 			    		<input id="thName${nbCol.index}" name="thName${nbCol.index}" type="hidden" value="${member.name}">
+			    		<!-- util pr affiche Names dans Result cf expensesResult.js-->
 			    	</c:forEach>
 			    	
 					 <TH >Everybody</TH> 
@@ -52,7 +53,7 @@
 							</td>
 							
 							
-							<td><input name="${nbLine.index}total" class="textRed"  type="number" value="${rowExpenses.amount}"></td>
+							<td><input id="${nbLine.index}total" name="${nbLine.index}total" class="textRed"  type="number" value="${rowExpenses.amount}"></td>
 							
 							<c:forEach var="member" items="${sessionScope.group.listMembers}" varStatus="nbCol" >
 								<c:set var="benef" value="${member.id}"> </c:set>
