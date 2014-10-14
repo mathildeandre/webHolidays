@@ -1,5 +1,5 @@
 
- 
+  <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
  	<section id="sectionNavDoodle">
  		<h2 id="h2navDoodle">Choose your doodle</h2>
 		<ul>
@@ -28,10 +28,12 @@
 	
 	<article>
 	<h2>Wishes of the group</h2>
-		
-		<form method="post" action="doodleServlet?action=saveDodle">    	
+		<form method="post" action="doodleServlet?action=saveDoodle">    	
 		
 			<TABLE id="tab" BORDER="1"> 
+			
+			<input type="hidden" id="nbMembers" name="nbMembers" value="${fn:length(sessionScope.group.listMembers)}" >
+				<c:set var="numDoodle" value="1"></c:set>
 				<c:choose>
    					 <c:when test="${requestScope.numDoodle != null}">
    					 	 <c:set var="numDoodle" value="${requestScope.numDoodle}"></c:set>
@@ -39,14 +41,24 @@
 						<CAPTION>${sessionScope.doodles[numDoodle-1].nameDoodle}</CAPTION> 
     				</c:when>
    				<c:otherwise>
-        			<CAPTION>${sessionScope.doodles[0].nameDoodle}</CAPTION> 
-        			
+        			<CAPTION>${sessionScope.doodles[numDoodle-1].nameDoodle}</CAPTION>        			
     			</c:otherwise>
 				</c:choose>
+				
+        		<input type="hidden" id="idDoodleHidden" name="idDoodleHidden" value="${numDoodle}" >
+        		<input type="hidden" id="nameDoodleHidden" name="nameDoodleHidden" value="${sessionScope.doodles[numDoodle-1].nameDoodle}" >
+        		
+				<input type="hidden" id="nbColumn" name="nbColumn" value="${sessionScope.doodles[numDoodle-1].size}" >
 			<THEAD>
 				<TR> 
 				 <TH> Names </TH> 
-				 <c:set var="courentDoodle" value="${sessionScope.doodles[0]}"></c:set>
+				 <c:set var="currentDoodle" value="${sessionScope.doodles[numDoodle-1]}"></c:set>
+				 <c:forEach var="colDoodle" items="${currentDoodle.listColDoodle}" varStatus="numCol">
+						<TH>
+						<input type="hidden" name="${numCol.index+1}idCol" value="${colDoodle.id}" >
+						
+						<input id="${numCol.index+1}title" name="${numCol.index+1}title" type="text" value="${colDoodle.name}" ></TH> 
+				</c:forEach>
 				 
 				 </TR>
 			</THEAD>
@@ -54,15 +66,26 @@
 			<TBODY>
 			
 				<c:forEach var="member" items="${sessionScope.group.listMembers}" varStatus="numLine">
+				<input id="${numLine.index+1}idP" name="${numLine.index+1}idP" type="hidden" value="${member.id}"></td>
+				
 				<TR>
 				
-				<td><input name="" class="textRed"  type="text" value="${member.name}"></td>
+				<td>
+				
+				<input id="${numLine.index+1}name" name="${numLine.index+1}name" class="textRed"  type="text" value="${member.name}"></td>
+				
+					<c:forEach var="nbCol" begin="1" end="${currentDoodle.size}" varStatus="numCol">
+						 <c:set var="currentCol" value="${currentDoodle.listColDoodle[numCol.index-1]}"></c:set>
+						<td><input class="roundedTwo" type="checkbox" name="${numCol.index}${numLine.index+1}" id="${numCol.index}${numLine.index+1}" ${currentCol.mapCheckBox[member.id]}></td> '; 
+					</c:forEach>
 				
 				</TR>
 				</c:forEach>
 				
 			</TBODY>
 		</TABLE>
+		<input id="saveDoodle" type="submit" value="Save Doodle" class="newButton3D buttonRedFonce right" 
+				onmouseover="changeCursor('saveDoodle')"/>
 		</form>
 		
 	</article>
@@ -132,5 +155,5 @@
 </style>
 
 
-<script src="JS/doodle1.js" type="text/javascript"></script>
+<script src="JS/doodle6.js" type="text/javascript"></script>
 <script src="JS/doodleTab.js" type="text/javascript"></script>

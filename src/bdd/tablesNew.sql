@@ -95,7 +95,7 @@ CREATE TABLE Doodle (
 );
 
 CREATE TABLE ColumnDoodle (
-	id_column INT(11) NOT NULL,
+	id_column INT(11) NOT NULL AUTO_INCREMENT,
 	name_column VARCHAR(50) NOT NULL,
 	id_doodle INT(11) NOT NULL,
 	is_checkBox TINYINT(1),

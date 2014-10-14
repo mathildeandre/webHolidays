@@ -16,6 +16,7 @@ import dao.DoodleDao;
 import dao.ExpensesDao;
 import dao.GroupDao;
 import dao.PersonDao;
+import beans.ColDoodle;
 import beans.Doodle;
 import beans.Expenses;
 import beans.Group;
@@ -83,6 +84,13 @@ public class GroupServlet extends HttpServlet {
        // recuperation des doodle
        DoodleForm doodForm = new DoodleForm(doodleDAO);
        ArrayList<Doodle> listDoodles = doodForm.getDoodles(request, group);
+       for(int i=0; i<listDoodles.size(); i++){
+    	   ArrayList<ColDoodle> listCol = listDoodles.get(i).getListColDoodle();
+    	   for(int j=0; j<listCol.size(); j++){
+        	   System.out.println("nameChecked : "+listCol.get(j).getName());
+    		   
+    	   }
+       }
        session.setAttribute("doodles", listDoodles);
        request.setAttribute("errorsDoodle", doodForm.getErrors());
        

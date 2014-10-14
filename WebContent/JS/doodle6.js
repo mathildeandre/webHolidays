@@ -4,17 +4,19 @@ dateFormat: 'dd/mm/yy'});
 }
 
 /* declaration des variables */
+/*
 var theRowNumber = 1;
 var theColumnNumber = 1;
 var tabPerson=["emiel","matthijs","fabian","kiki","aina","mathilde"]; 
-var init = true;
+var init = true; */
 
 
 
 /* start */
+/*
 for(var i=0; i<tabPerson.length; i++){
 	addPersonne(tabPerson[i]);
-}
+} */
 //addRow()
 /* fin start */
 
@@ -58,6 +60,9 @@ function reset(){
 	location.href='calculation_holiday.html?tabPerson='+tabPerson;
 }
 
+
+
+
 function addRow(){
 	var name = document.getElementById("name");
 	addPersonne(name.value);
@@ -81,21 +86,21 @@ function addRow(){
 
 function addColumn(){
 
+	
+	var nbLines = document.getElementById("nbMembers").value;
+
+	var nbCol = document.getElementById("nbColumn").value;
+	
 	var dateRad = document.getElementById("date");
 	var textRad = document.getElementById("text");
 	var arrayLines = document.getElementById("tab").rows;
-
-
-
-
-
+	
 	if(textRad.checked==false && dateRad.checked==false){
 		alert("Veulliez cochez un des choix");
 	}
 
 	else{
-
-
+		
 		var tr = document.getElementById('tab').tHead.children[0];
 		var th = document.createElement('th');
 
@@ -105,15 +110,20 @@ function addColumn(){
 				alert("veulliez entrez un titre de colonne");
 			}else{
 				var id;
-				for(i=1; i<theRowNumber; i++){
-					id = i +""+ theColumnNumber;
-					var cell = arrayLines[i].insertCell(theColumnNumber);
-					cell.innerHTML += '<div class="roundedTwo"> <input type="checkbox" value="None" id="'+id+'" name="check"> <label for="'+id+'"></label> </div> '; 
+				var idCol = nbCol ;
+				idCol++
+				alert(idCol);
+				for(i=1; i<=nbLines; i++){
+					id = i +""+ nbCol;
+					var cell = arrayLines[i].insertCell(idCol);
+					cell.innerHTML +=  '<input id="'+idCol+i+'" name="'+idCol+i+'" type="checkbox" > ';
+
 				}
-				th.innerHTML = text;
+				/* th.innerHTML += '<input type="hidden" name="'+(idCol)+'idCol" value="'+(idCol)+'">'; */
+				th.innerHTML += '<input id="'+(idCol)+'title" name="'+(idCol)+'title" type="text" value='+text+' > '; 
+
 				tr.appendChild(th);
-				
-				theColumnNumber++;
+				nbCol++;
 			}
 		}
 		else if(dateRad.checked){
@@ -123,17 +133,18 @@ function addColumn(){
 				alert("Selectionnez une date de début et une date de fin");
 			}else{
 				var id;
-				for(i=1; i<theRowNumber; i++){
-					id = i +""+ theColumnNumber;
-					var cell = arrayLines[i].insertCell(theColumnNumber);
-					cell.innerHTML += '<div class="roundedTwo"> <input type="checkbox" value="None" id="'+id+'" name="check"> <label for="'+id+'"></label> </div> '; 
+				for(i=1; i<=nbLines; i++){
+					id = i +""+ nbCol;
+					var cell = arrayLines[i].insertCell(1);
+					cell.innerHTML +=  '<div > <input id="'+nbCol+1+'" name="'+nbCol+1+'" type="checkbox" value="None" > </div> '; 
 				}
 				th.innerHTML = 'Du '+dateS+' au ' +dateE;
 				tr.appendChild(th);
-
-				theColumnNumber++;
+				nbCol++;
 			}
 		}
+		
+		document.getElementById("nbColumn").value = nbCol;
 
 	}
 

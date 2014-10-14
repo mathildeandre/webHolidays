@@ -1299,7 +1299,7 @@ to { line-height:0px;}*/
 
 /**************************************** CHECKBOX *********/
 #sectionDoodle input[type=checkbox] {
-		visibility: hidden;
+		/* visibility: hidden; */
 }
 
 /* ROUNDED TWO */
