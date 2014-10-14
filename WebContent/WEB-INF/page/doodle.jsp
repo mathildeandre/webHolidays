@@ -31,33 +31,31 @@
 		<form method="post" action="doodleServlet?action=saveDoodle">    	
 		
 			<TABLE id="tab" BORDER="1"> 
-			
 			<input type="hidden" id="nbMembers" name="nbMembers" value="${fn:length(sessionScope.group.listMembers)}" >
-				<c:set var="numDoodle" value="1"></c:set>
+				<c:set var="numDoodleInList" value="0"></c:set>
 				<c:choose>
-   					 <c:when test="${requestScope.numDoodle != null}">
-   					 	 <c:set var="numDoodle" value="${requestScope.numDoodle}"></c:set>
+   					 <c:when test="${requestScope.numDoodleInList != null}">
+   					 	
+   					 	 <c:set var="numDoodleInList" value="${requestScope.numDoodleInList}"></c:set>
    					 
-						<CAPTION>${sessionScope.doodles[numDoodle-1].nameDoodle}</CAPTION> 
+						<CAPTION>${sessionScope.doodles[numDoodleInList].nameDoodle}</CAPTION> 
     				</c:when>
    				<c:otherwise>
-        			<CAPTION>${sessionScope.doodles[numDoodle-1].nameDoodle}</CAPTION>        			
+        			<CAPTION>${sessionScope.doodles[numDoodleInList].nameDoodle}</CAPTION>        			
     			</c:otherwise>
 				</c:choose>
-				
-        		<input type="hidden" id="idDoodleHidden" name="idDoodleHidden" value="${numDoodle}" >
-        		<input type="hidden" id="nameDoodleHidden" name="nameDoodleHidden" value="${sessionScope.doodles[numDoodle-1].nameDoodle}" >
-        		
-				<input type="hidden" id="nbColumn" name="nbColumn" value="${sessionScope.doodles[numDoodle-1].size}" >
+        		<input type="hidden" id="idDoodleHidden" name="idDoodleHidden" value="${sessionScope.doodles[numDoodleInList].idDoodle}" >
+        		<input type="hidden" id="nameDoodleHidden" name="nameDoodleHidden" value="${sessionScope.doodles[numDoodleInList].nameDoodle}" >	
+				<input type="hidden" id="nbColumn" name="nbColumn" value="${sessionScope.doodles[numDoodleInList].size}" >
 			<THEAD>
 				<TR> 
 				 <TH> Names </TH> 
-				 <c:set var="currentDoodle" value="${sessionScope.doodles[numDoodle-1]}"></c:set>
+				 <c:set var="currentDoodle" value="${sessionScope.doodles[numDoodleInList]}"></c:set>
 				 <c:forEach var="colDoodle" items="${currentDoodle.listColDoodle}" varStatus="numCol">
 						<TH>
 						<input type="hidden" name="${numCol.index+1}idCol" value="${colDoodle.id}" >
 						
-						<input id="${numCol.index+1}title" name="${numCol.index+1}title" type="text" value="${colDoodle.name}" ></TH> 
+						<input id="${numCol.index+1}title" name="${numCol.index+1}title" type="hidden" value="${colDoodle.name}" >${colDoodle.name}</TH> 
 				</c:forEach>
 				 
 				 </TR>
@@ -76,7 +74,7 @@
 				
 					<c:forEach var="nbCol" begin="1" end="${currentDoodle.size}" varStatus="numCol">
 						 <c:set var="currentCol" value="${currentDoodle.listColDoodle[numCol.index-1]}"></c:set>
-						<td><input class="roundedTwo" type="checkbox" name="${numCol.index}${numLine.index+1}" id="${numCol.index}${numLine.index+1}" ${currentCol.mapCheckBox[member.id]}></td> '; 
+						<td><input class="roundedTwo" type="checkbox" name="${numCol.index}${numLine.index+1}" id="${numCol.index}${numLine.index+1}" ${currentCol.mapCheckBox[member.id]}></td> 
 					</c:forEach>
 				
 				</TR>
@@ -155,5 +153,5 @@
 </style>
 
 
-<script src="JS/doodle6.js" type="text/javascript"></script>
+<script src="JS/doodle7.js" type="text/javascript"></script>
 <script src="JS/doodleTab.js" type="text/javascript"></script>

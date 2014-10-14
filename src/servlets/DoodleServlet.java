@@ -106,6 +106,7 @@ public class DoodleServlet extends HttpServlet {
 
 		for(int i=0; i<listDoodles.size(); i++){
 			Doodle doodle = listDoodles.get(i);
+			System.out.println("nameDoodle : "+doodle.getNameDoodle());
 			/*
 			ColDoodle col = doodle.getListColDoodle().get(0);
 			HashMap<Long, String> map = col.getMapCheckBox();
@@ -113,7 +114,7 @@ public class DoodleServlet extends HttpServlet {
 				System.out.println(map.containsKey(1));
 			}*/
 			if(listDoodles.get(i).getNameDoodle().equalsIgnoreCase(nameDood)){
-				request.setAttribute("numDoodle", doodle.getIdDoodle());
+				request.setAttribute("numDoodleInList", i);
 			}
 		}
 
