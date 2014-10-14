@@ -112,7 +112,6 @@ function addColumn(){
 				var id;
 				var idCol = nbCol ;
 				idCol++
-				alert(idCol);
 				for(i=1; i<=nbLines; i++){
 					id = i +""+ nbCol;
 					var cell = arrayLines[i].insertCell(idCol);
@@ -133,12 +132,17 @@ function addColumn(){
 				alert("Selectionnez une date de début et une date de fin");
 			}else{
 				var id;
+				var idCol = nbCol;
+				idCol++;
 				for(i=1; i<=nbLines; i++){
 					id = i +""+ nbCol;
-					var cell = arrayLines[i].insertCell(1);
-					cell.innerHTML +=  '<div > <input id="'+nbCol+1+'" name="'+nbCol+1+'" type="checkbox" value="None" > </div> '; 
+					var cell = arrayLines[i].insertCell(idCol);
+					cell.innerHTML +=  '<input id="'+idCol+i+'" name="'+idCol+i+'" type="checkbox" > ';
+
 				}
-				th.innerHTML = 'Du '+dateS+' au ' +dateE;
+				th.innerHTML += '<input id="'+(idCol)+'title" name="'+(idCol)+'title" type="hidden" value="Du '+dateS+' au '+dateE+'" > Du '+dateS+' au '+dateE+' '; 
+				
+				/* th.innerHTML = 'Du '+dateS+' au ' +dateE; */
 				tr.appendChild(th);
 				nbCol++;
 			}
