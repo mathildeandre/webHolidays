@@ -31,13 +31,3 @@
 	</article>
 </div>
 </section>
-
-
-
-
-
-<SCRIPT>
-    function popup(page) {
-      window.open (page, 'hello', config='height=100, width=400, toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, directories=no, status=no');
-    }
-  </SCRIPT>

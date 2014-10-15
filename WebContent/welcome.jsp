@@ -77,6 +77,6 @@ HTML5 sont employees. -->
 <footer id="footerWelcome" >Copyright © - Tous droits reserves<br/> Nous contacter : fabiensauce@orange.fr</footer>
 
 <script src="JS/actionJS/welcomeChanging.js" type="text/javascript"></script>
-<script src="JS/actionJS/actionInputText.js" type="text/javascript"></script>
+<script src="JS/actionJS/actionInputText1.js" type="text/javascript"></script>
 
 </body>

@@ -92,7 +92,7 @@ HTML5 sont employées. -->
 
     
 <script src="JS/actionJS/navChanging.js" type="text/javascript"></script>
-<script src="JS/actionJS/actionInputText.js" type="text/javascript"></script>
+<script src="JS/actionJS/actionInputText1.js" type="text/javascript"></script>
 
 </body>
 </html>

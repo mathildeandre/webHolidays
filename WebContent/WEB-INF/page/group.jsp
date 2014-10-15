@@ -76,7 +76,6 @@
 	</article>
  </section >
 
-<script src="JS/actionJS/actionInputText.js" type="text/javascript"></script>
 <script src="JS/group.js" type="text/javascript"></script>
 
 

@@ -3,12 +3,14 @@ function changeCursor(id) {
                 document.getElementById(id).style.cursor='pointer';
 }
 
+/*
 document.addEventListener('keydown', function(event) {
     if(event.keyCode == 13) {
     	var focusedElement = document.activeElement;
         alert("element who was focused : "+focusedElement.innerHTML);
     }
 });
+*/
 
 
 function inputTextBlur(id,value){
@@ -72,12 +74,7 @@ function inputTextFocusPwd(id, color){
 		inputName.type = "password";
 	}
 }
-function e(){
-
-	alert("e ... BOOM1");
-}
 function emptyAll(id1,text1,id2,text2,id3,text3,id4,text4){
-	alert("BOOM1");
 	var inputName1 = document.getElementById(id1);
 	var inputName2 = document.getElementById(id2);
 	var inputName3 = document.getElementById(id3);

@@ -17,4 +17,3 @@
 	</article>
  </section >
  
-<script src="../actionJS/navChanging.js" type="text/javascript"></script>

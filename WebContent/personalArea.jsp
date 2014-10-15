@@ -52,8 +52,8 @@ HTML5 sont employees. -->
 	    <legend><h2 class="text3Dfonce" >My Group</h2></legend>
 	    <div id="fieldMyGroups" class="aroundBlack">
 	    
-	    <c:forEach var="group" items="${requestScope['listGroups']}">
-	    		<li id="liGroup" onmouseover="changeCursor('liGroup')" onclick="location.href='/webHolidays/group?action=connectGroup&nameGroup=${group.name}'" > ${group.name}</li> 
+	    <c:forEach var="group" items="${requestScope['listGroups']}" varStatus="i">
+	    		<li title="nameADMIN" id="liGroup${i.index}" onmouseover="changeCursor('liGroup${i.index}')" onclick="location.href='/webHolidays/group?action=connectGroup&nameGroup=${group.name}'" > ${group.name}</li> 
 	    </c:forEach>
 	    
 		</div>
@@ -224,7 +224,7 @@ HTML5 sont employees. -->
 <!-- 
 <script src="JS/actionJS/personalAreaChanging.js" type="text/javascript"></script>
 -->
-<script src="JS/actionJS/actionInputText.js" type="text/javascript"></script>
+<script src="JS/actionJS/actionInputText1.js" type="text/javascript"></script>
 
 
 </body>
