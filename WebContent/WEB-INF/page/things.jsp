@@ -7,10 +7,10 @@
 	  	<fieldset> 
 	    <legend><h2>Personals things</h2></legend>
    		<div id="fieldPersonalThings" class="aroundWhite">
-			 - rope <br>
-			 - climbing shoes <br>
-			 - powder <br>
-			 - food <br>
+   		
+   			<c:forEach var="thing" items="${sessionScope.things.listThingPersonal}">
+				<div> - ${thing.name}</div>
+			</c:forEach>
 		</div>
 		</fieldset>
 		

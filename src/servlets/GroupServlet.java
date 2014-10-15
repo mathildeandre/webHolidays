@@ -21,6 +21,7 @@ import beans.Doodle;
 import beans.Expenses;
 import beans.Group;
 import beans.Person;
+import beans.Things;
 import forms.ConnexionForm;
 import forms.DoodleForm;
 import forms.ExpensesForm;
@@ -101,6 +102,9 @@ public class GroupServlet extends HttpServlet {
        session.setAttribute("expenses", expenses);
        request.setAttribute("errorsExpenses", expForm.getErrors());
 
+       Things things = new Things();
+       session.setAttribute("things", things);
+       
        
 
        if(form.getErrors().isEmpty()){

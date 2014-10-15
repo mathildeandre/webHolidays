@@ -1,9 +1,9 @@
-
+/* comment */
 	drop table PersonChecked;
 	drop table ColumnDoodle;
 	drop table Doodle;
-	drop table PrivateThings;
-	drop table PublicThings;
+	drop table PersonalThings;
+	drop table GroupThings;
 	drop table Beneficiaries;
 	drop table RowExpenses;
 	drop table BelongTo;
@@ -18,6 +18,7 @@ CREATE TABLE Persons (
 	pwd_person VARCHAR(90) NOT NULL,
 	mail_person VARCHAR(50),
 	is_new TINYINT(1),
+	has_been_created TINYINT(1),
 	PRIMARY KEY (id_person),
 	UNIQUE (login_person)
 );
@@ -66,8 +67,8 @@ CREATE TABLE Beneficiaries (
 	FOREIGN KEY (id_benef) REFERENCES Persons(id_person)
 );
 
-CREATE TABLE PrivateThings (
-	id_thing INT(11) NOT NULL,
+CREATE TABLE PersonalThings (
+	id_thing INT(11) NOT NULL AUTO_INCREMENT,
 	name_thing VARCHAR(50) NOT NULL,
 	id_group INT(11) NOT NULL,
 	PRIMARY KEY (id_thing),
@@ -75,8 +76,8 @@ CREATE TABLE PrivateThings (
 	FOREIGN KEY (id_group) REFERENCES Groups(id_group)
 );
 
-CREATE TABLE PublicThings (
-	id_thing INT(11) NOT NULL,
+CREATE TABLE GroupThings (
+	id_thing INT(11) NOT NULL AUTO_INCREMENT,
 	name_thing VARCHAR(50) NOT NULL,
 	id_group INT(11) NOT NULL,
 	id_person INT(11) NOT NULL,
