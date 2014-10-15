@@ -53,18 +53,18 @@ function addRow(){
 
 		// Add Input Amount
 		var cell1 = newRow.insertCell(1);
-		cell1.innerHTML =  '<input id="'+nbLines+'total" name="'+nbLines+'total" class="textRed"  type="number" value="0">';
+		cell1.innerHTML =  '<input id="'+nbLines+'total" name="'+nbLines+'total" class="textRed"  type="number" value="0" onchange="calculationResult()">';
 		
 		// Add checkbox for persons
 		for(i=0; i<nbPersons; i++){
 			var cell = newRow.insertCell(i+2);
-			cell.innerHTML =  '<input id="'+nbLines+i+'" name="'+nbLines+i+'" type="checkbox" onclick="verifRowAll(\''+nbLines+'\',\''+nbPersons+'\')"  onmouseover="checkBoxMouseOver(\''+nbLines+i+'\')" >';
+			cell.innerHTML =  '<input id="'+nbLines+i+'" name="'+nbLines+i+'" type="checkbox" onclick="verifRowAll(\''+nbLines+'\',\''+nbPersons+'\')"  onmouseover="checkBoxMouseOver(\''+nbLines+i+'\')" onchange="calculationResult()">';
 			cell.style.width= "300px";
 		}
 
 		// Add button checkAllTheRow
 		var cellButtonAll = newRow.insertCell(parseInt(nbPersons)+2);
-		cellButtonAll.innerHTML ='<label for="all'+nbLines+'" >All </label><input type="checkbox" id="all'+nbLines+'" onclick="checkAllRow(\''+nbLines+'\',\''+nbPersons+'\')">';
+		cellButtonAll.innerHTML ='<label for="all'+nbLines+'" >All </label><input type="checkbox" id="all'+nbLines+'" onclick="checkAllRow(\''+nbLines+'\',\''+nbPersons+'\')" onchange="calculationResult()">';
 		/*permet de mettre toutes les cells All avec background*/
 		//cellButtonAll.style.backgroundColor = "#FF8080";
 
@@ -86,7 +86,7 @@ function addRow(){
 
 /* depends of "addRow()" */
 function createTextSelect(rowNumber, nbPers){
-	var text = '<select id="'+rowNumber+'select" name="'+rowNumber+'select">';
+	var text = '<select id="'+rowNumber+'select" name="'+rowNumber+'select" onchange="calculationResult()">';
 	for(i=0; i<nbPers; i++){
 		var idPers = document.getElementById("th"+i).value;
 		var namePers = document.getElementById("thName"+i).value;

@@ -107,29 +107,32 @@ function creationTabExpense(){
 				nbChecked++;
 			}
 		}
-		var amountPerson = (amountBuyerPayed/nbChecked); //.toFixed(1); //prix par personne
-		var positionBuyer=-1;
-		//on veut determiner la position de colonne du buyer
-		for(var p=0; p<tabPerson.length; p++){
-			var idPerson = parseInt(document.getElementById("th"+p.toString()).value);
-			if(idBuyer == idPerson){
-				positionBuyer = p;
+		if(nbChecked > 0){
+			var amountPerson = (amountBuyerPayed/nbChecked); //.toFixed(1); //prix par personne
+			var positionBuyer=-1;
+			//on veut determiner la position de colonne du buyer
+			for(var p=0; p<tabPerson.length; p++){
+				var idPerson = parseInt(document.getElementById("th"+p.toString()).value);
+				if(idBuyer == idPerson){
+					positionBuyer = p;
+				}
 			}
-		}
-		if(positionBuyer == -1){
-			alert(" ERREUR position pers.");
-		}
-		//est ce que le buyer a payer pour lui meme?
-		if (document.getElementById(i.toString()+positionBuyer).checked == true ){ //si celui qui a payé est coché
-			amountBuyerPayed -= amountPerson; //alors on lui soustrait sa part
-		}
+			if(positionBuyer == -1){
+				alert(" ERREUR position pers.");
+			}
+			//est ce que le buyer a payer pour lui meme?
+			if (document.getElementById(i.toString()+positionBuyer).checked == true ){ //si celui qui a payé est coché
+				amountBuyerPayed -= amountPerson; //alors on lui soustrait sa part
+			}
 
-		tabExpense[positionBuyer] += amountBuyerPayed;
-		for(var k=0; k<tabPerson.length; k++){
-			if(document.getElementById(i.toString()+k.toString()).checked && (positionBuyer != k) ){
-				tabExpense[k] -= amountPerson;
+			tabExpense[positionBuyer] += amountBuyerPayed;
+			for(var k=0; k<tabPerson.length; k++){
+				if(document.getElementById(i.toString()+k.toString()).checked && (positionBuyer != k) ){
+					tabExpense[k] -= amountPerson;
+				}
 			}
 		}
+		
 	}
 }
 

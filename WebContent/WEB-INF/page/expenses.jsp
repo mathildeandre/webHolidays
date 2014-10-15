@@ -8,7 +8,7 @@
 	<form method="post" action="expensesServlet?action=saveTab">    	
 	
 	
-		<TABLE  id="tab" BORDER="1" onmouseout="calculationResult()"> 
+		<TABLE  id="tab" BORDER="1" > <!--onmouseout="calculationResult()"  -->
 		
 	<input type="hidden" id="nbLineHidden" name="nbLineHidden" value="${sessionScope.expenses.size}" >
 	<input type="hidden" id="nbMemberHidden" name="nbMemberHidden" value="${sessionScope.group.nbPerson}" >
@@ -38,7 +38,7 @@
 							<input type="hidden" name="${nbLine.index}idRow" value="${rowExpenses.id}" >
 							
 							
-							<td><select id="${nbLine.index}select" name="${nbLine.index}select">
+							<td><select id="${nbLine.index}select" name="${nbLine.index}select" onchange="calculationResult()">
 									<c:forEach var="member" items="${sessionScope.group.listMembers}" >
 										
 										<c:set var="selected" value=""></c:set>
@@ -53,17 +53,17 @@
 							</td>
 							
 							
-							<td><input id="${nbLine.index}total" name="${nbLine.index}total" class="textRed"  type="number" value="${rowExpenses.amount}"></td>
+							<td><input id="${nbLine.index}total" name="${nbLine.index}total" class="textRed"  type="number" value="${rowExpenses.amount}" onchange="calculationResult()"></td>
 							
 							<c:forEach var="member" items="${sessionScope.group.listMembers}" varStatus="nbCol" >
 								<c:set var="benef" value="${member.id}"> </c:set>
 								<td><input id="${nbLine.index}${nbCol.index}" name="${nbLine.index}${nbCol.index}" type="checkbox" 
-								onclick="verifRowAll('${nbLine.index}','${sessionScope.group.nbPerson}')" 
+								onclick="verifRowAll('${nbLine.index}','${sessionScope.group.nbPerson}')" onchange="calculationResult()"
 								onmouseover="checkBoxMouseOver('${nbLine.index}${nbCol.index}')" ${rowExpenses.mapCheckBox[benef]} ></td>
 							</c:forEach>
 							
 						
-							<td><label for="all${nbLine.index}" >All </label><input type="checkbox" id="all${nbLine.index}"  onclick="checkAllRow('${nbLine.index}','${sessionScope.group.nbPerson}')">
+							<td><label for="all${nbLine.index}" >All </label><input type="checkbox" id="all${nbLine.index}"  onclick="checkAllRow('${nbLine.index}','${sessionScope.group.nbPerson}')" onchange="calculationResult()">
 							</td>
 							
 							<td><textarea  class="textRed" id="${nbLine.index}descript" name="${nbLine.index}descript" 
@@ -110,6 +110,6 @@
  </article>
 </section >
 
-<script src="JS/expenses8.js" type="text/javascript"></script>
-<script src="JS/expensesResult6.js" type="text/javascript"></script>
+<script src="JS/expenses9.js" type="text/javascript"></script>
+<script src="JS/expensesResult7.js" type="text/javascript"></script>
 		
