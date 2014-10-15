@@ -43,8 +43,8 @@ function init(){
 function addRow(){
 
 	var nbPersons = document.getElementById("nbMemberHidden").value;
-	document.getElementById("hiddenRow").innerHTML += '<input id="th'+nbLines+'" name="th'+nbLines+'" type="hidden" value="-1">';
-	
+	//document.getElementById("hiddenRow").innerHTML += '<input id="th'+nbLines+'" name="th'+nbLines+'" type="hidden" value="-1">';
+	document.getElementById("hiddenRow").innerHTML += '<input name="'+nbLines+'idRow" type="hidden" value="-1" >';
 		var newRow = document.getElementById("tbody").insertRow(-1);
 
 		// Add Select
@@ -90,6 +90,7 @@ function createTextSelect(rowNumber, nbPers){
 	for(i=0; i<nbPers; i++){
 		var idPers = document.getElementById("th"+i).value;
 		var namePers = document.getElementById("thName"+i).value;
+//		alert("i "+i+" - idpers "+idPers+" - namePers "+namePers);
 		text += '<option value="'+idPers+'-'+namePers+'" >'+namePers+'</option>';
 	}
 	text += '</select>';

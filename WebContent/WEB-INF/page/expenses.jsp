@@ -110,6 +110,6 @@
  </article>
 </section >
 
-<script src="JS/expenses9.js" type="text/javascript"></script>
+<script src="JS/expenses10.js" type="text/javascript"></script>
 <script src="JS/expensesResult7.js" type="text/javascript"></script>
 		

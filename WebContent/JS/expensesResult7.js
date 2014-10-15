@@ -97,7 +97,8 @@ function creationTabExpense(){
 
 
 	for(var i=0; i<hauteur; i++){
-		var idBuyer = parseInt(document.getElementById(i.toString()+"select").value);
+		//value du select = 'id-name' mais name disparait avec parseInt
+		var idBuyer = parseInt(document.getElementById(i.toString()+"select").value); 
 		var amountBuyerPayed = parseFloat(document.getElementById(i+"total").value);
 
 		// on compte combien de personne sont concernees par le payement

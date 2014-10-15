@@ -98,6 +98,16 @@
 	</servlet-mapping>
 	
 	
+	<servlet>
+		<servlet-name>ThingsServlet</servlet-name>
+		<servlet-class>servlets.ThingsServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ThingsServlet</servlet-name>
+		<url-pattern>/thingsServlet</url-pattern>
+	</servlet-mapping>
+	
+	
 	<listener>
     <listener-class>config.InitialisationDaoFactory</listener-class>
 </listener>
