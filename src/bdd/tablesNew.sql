@@ -82,8 +82,8 @@ CREATE TABLE GroupThings (
 	id_group INT(11) NOT NULL,
 	id_person INT(11) NOT NULL,
 	PRIMARY KEY (id_thing),
-	FOREIGN KEY (id_group) REFERENCES Groups(id_group),
-	FOREIGN KEY (id_person) REFERENCES Persons(id_person)
+	/*FOREIGN KEY (id_person) REFERENCES Persons(id_person),*/
+	FOREIGN KEY (id_group) REFERENCES Groups(id_group)
 );
 
 CREATE TABLE Doodle (

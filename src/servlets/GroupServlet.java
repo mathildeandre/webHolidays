@@ -16,6 +16,7 @@ import dao.DoodleDao;
 import dao.ExpensesDao;
 import dao.GroupDao;
 import dao.PersonDao;
+import dao.ThingsDao;
 import beans.ColDoodle;
 import beans.Doodle;
 import beans.Expenses;
@@ -28,6 +29,7 @@ import forms.ExpensesForm;
 import forms.GroupForm;
 import forms.PersonForm;
 import forms.RegistrationForm;
+import forms.ThingsForm;
 
 public class GroupServlet extends HttpServlet {
 	
@@ -40,6 +42,7 @@ public class GroupServlet extends HttpServlet {
     private PersonDao 	personDAO;
     private ExpensesDao expensesDAO;
     private DoodleDao doodleDAO;
+    private ThingsDao thingsDAO;
 
     public void init() throws ServletException {
         /* Récupération d'une instance de notre DAO Utilisateur */
@@ -47,6 +50,7 @@ public class GroupServlet extends HttpServlet {
         this.personDAO = ( (DAOFactory) getServletContext().getAttribute( CONF_DAO_FACTORY ) ).getPersonDao();
         this.expensesDAO = ( (DAOFactory) getServletContext().getAttribute( CONF_DAO_FACTORY ) ).getExpensesDao();
         this.doodleDAO = ( (DAOFactory) getServletContext().getAttribute( CONF_DAO_FACTORY ) ).getDoodleDao();
+        this.thingsDAO = ( (DAOFactory) getServletContext().getAttribute( CONF_DAO_FACTORY ) ).getThingsDao();
 
     }
 
@@ -102,8 +106,10 @@ public class GroupServlet extends HttpServlet {
        session.setAttribute("expenses", expenses);
        request.setAttribute("errorsExpenses", expForm.getErrors());
 
-       Things things = new Things();
+       ThingsForm thingsForm = new ThingsForm(thingsDAO);
+       Things things = thingsForm.getThings(request, group);
        session.setAttribute("things", things);
+       request.setAttribute("errorsThings", thingsForm.getErrors());
        
        
 

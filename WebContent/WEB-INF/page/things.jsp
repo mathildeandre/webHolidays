@@ -34,34 +34,33 @@
 	  	<fieldset> 
 	    <legend><h2>Group things</h2></legend>
    		<div id="fieldGroupThings" class="aroundWhite">
-			 - pasta	<select id="thingsListContacts" class="textPurple">
-								<option>emiel</option>
-								<option>matthijs</option>
-								<option>fabian</option>
-								<option>kiki</option>
-							</select>
-			 <br> 
-			 - cheese	<select id="thingsListContacts" class="textPurple">
-								<option>emiel</option>
-								<option>matthijs</option>
-								<option>fabian</option>
-								<option>kiki</option>
-							</select>
-			 <br> 
-			 - braid	<select id="thingsListContacts" class="textPurple">
-								<option>emiel</option>
-								<option>matthijs</option>
-								<option>fabian</option>
-								<option>kiki</option>
-							</select>
-			 <br> 
-			 - car	<select id="thingsListContacts" class="textPurple">
-								<option>emiel</option>
-								<option>matthijs</option>
-								<option>fabian</option>
-								<option>kiki</option>
-							</select>
-			 <br> 
+   		
+   		
+   		<!--  onchange="alert('id thing :  ${thingGroup.id}, idPerson : ${thingGroup.idPerson}')" -->
+   		<form id="formGroupThing" method="post" action="thingsServlet?action=changeGroupThing">
+   		
+   			<input type="hidden" id="nameSelect" name="nameSelect" value="" >
+   			
+   			<c:forEach var="thingGroup" items="${sessionScope.things.listThingGroup}" varStatus="i">
+				<div> - ${thingGroup.name} 
+					<select name="${thingGroup.id}-${i.index}" class="textPurple" 
+						onchange="submitSelect('${thingGroup.id}-${i.index}')">
+						<option value="-1" >nobody</option> 
+						<c:forEach var="member" items="${sessionScope.group.listMembers}">
+							<c:set var="selected" value=""></c:set>
+							<c:if test="${thingGroup.idPerson == member.id}">
+								<c:set var="selected" value="selected"></c:set>
+							</c:if>
+		    				<option value="${member.id}" ${selected}> ${member.name}</option> 
+		    			</c:forEach>
+	    	
+					</select>
+				
+				
+				</div>
+			</c:forEach>
+		</form>
+			
 		</div>
 		</fieldset>
 		
@@ -85,5 +84,13 @@
 	
 
  </section >
+<script type="text/javascript">
+function submitSelect(nameSelect){
+	document.getElementById('nameSelect').value = nameSelect;
+	document.forms["formGroupThing"].submit();
+}
+<!--
 
+//-->
+</script>
 <script src="JS/things.js" type="text/javascript"></script>

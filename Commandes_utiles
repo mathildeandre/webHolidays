@@ -4,9 +4,13 @@ MYSQL
 Se connecter : mysql -u root -p
 
 Montrer bd : show databases ;
+utiliser une bdd : use nameBdd; => use bdd_holidays;
+
+Montrer tables : show tables;
+
+
+Importer fichier dans bd : mysql -u root -p base_de_donnees < fichier_dump
+
+$: mysql -u root -p bdd_holidays < /home/fabi/workspace/webHolidays/src/bdd/tablesNew.sql
 
 Créer bdd : CREATE DATABASE bdd_holidays DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
-
-Importer fichier dans bd : mysql -h root -u base_de_donnees < fichier_dump
-
-
