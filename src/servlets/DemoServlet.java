@@ -39,10 +39,11 @@ public class DemoServlet extends HttpServlet {
 			System.out.println("BIENVENUE DANS LA DEMO!");
 
 			HttpSession session = request.getSession(); 
-
-			session.setAttribute("displayErrorGroup", "You cannot add or create in the member section\n It is the DEMO");
-			session.setAttribute("displayErrorExpenses", "You cannot save the tab\n It is the DEMO");
-			session.setAttribute("displayErrorThings", "You cannot add in the things section\n It is the DEMO");
+			//attention les \n ne fonctionnent pas..
+			session.setAttribute("displayErrorGroup", "You cannot add or create in the member section");
+			session.setAttribute("displayErrorExpenses", "You cannot save the tab");
+			session.setAttribute("displayErrorThings", "You cannot add things");
+			session.setAttribute("displayErrorDemo", " >>> It is a DEMO!");
 			
 			if(request.getParameter("action") != null && request.getParameter("action").equals("init")){
 		    	

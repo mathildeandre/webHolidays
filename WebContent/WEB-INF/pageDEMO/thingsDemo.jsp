@@ -29,7 +29,7 @@
          		
 			<input id="addPersonalThing" type="submit" class="newButton3D buttonThing buttonPurpleClair" 
 				onmouseover="changeCursor('addPersonalThing')" value="Add Thing"
-				onclick="alert('${sessionScope.displayErrorThings}')" />
+				onclick="alert('${sessionScope.displayErrorThings}\n${sessionScope.displayErrorDemo}')" />
        	</form>
        	
 	</article>
@@ -102,7 +102,7 @@
          		onblur="inputTextBlur('inputGroupThing','Thing')" required >
 			<input id="addGroupThing" type="submit" class="newButton3D buttonThing buttonPurpleClair" 
 				onmouseover="changeCursor('addGroupThing')" value="Add Thing"
-				onclick="alert('${sessionScope.displayErrorThings}')"/>
+				onclick="alert('${sessionScope.displayErrorThings}\n${sessionScope.displayErrorDemo}')"/>
        	</form>
        	
 	</article>

@@ -31,19 +31,19 @@
 			</select>
 		
 		<input id="addMember" type="submit" value="Add member" class="newButton3D buttonGroup buttonOrangeClair" 
-				onmouseover="changeCursor('addMember')" onclick="alert('${sessionScope.displayErrorGroup}')"/>
+				onmouseover="changeCursor('addMember')" onclick="alert('${sessionScope.displayErrorGroup}\n${sessionScope.displayErrorDemo}')"/>
        </form>
        
 		<h2 class="" >Add another person</h2>
 		
 		<div  class="aroundWhite">Search existing person : </div>
 		 <span class="textRed">${requestScope.errors['searchPerson']}</span>
-       	<form method="post" action=demoServlet?action=submit&page=groupDemo">
+       	<form method="post" action="demoServlet?action=submit&page=groupDemo">
 	      <input id="searchPerson" class="textGrey"  name="searchPerson" type="text" value="Login of the person" 
          onfocus="inputTextFocus('searchPerson', 'Orange')" onblur="inputTextBlur('searchPerson','Login of the person')" required >
          
 		<input id="addPerson" type="submit" value="Add person" class="newButton3D buttonGroup buttonOrangeClair" 
-			onmouseover="changeCursor('addPerson')" onclick="alert('${sessionScope.displayErrorGroup}')"/>
+			onmouseover="changeCursor('addPerson')" onclick="alert('${sessionScope.displayErrorGroup}\n${sessionScope.displayErrorDemo}')"/>
        	</form>
        	
        	</br>
@@ -73,7 +73,7 @@
          onfocus="inputTextFocus('emailPerson', 'Orange')" onblur="inputTextBlur('emailPerson','Email (optional)')" >
          <span class="textRed">${requestScope.errors['emailPerson']}</span>
 		<input id="createPerson" type="submit" value="Create person" class="newButton3D buttonGroup buttonOrangeClair" onmouseover="changeCursor('createPerson')"
-			onclick="alert('${sessionScope.displayErrorGroup}')">
+			onclick="alert('${sessionScope.displayErrorGroup}\n${sessionScope.displayErrorDemo}')">
 		
        	</div>
       </form>

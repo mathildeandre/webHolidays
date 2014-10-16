@@ -4,8 +4,7 @@
    <h2 >Who's paid what for whom?</h2>
    
 
-
-	<form method="post" action="expensesServlet?action=saveTab">    	
+	<form method="post" action="demoServlet?action=submit&page=expensesDemo">    	
 	
 	
 		<TABLE  id="tab" BORDER="1" > <!--onmouseout="calculationResult()"  -->
@@ -80,7 +79,7 @@
 		
 		<input id="saveTab" type="submit" value="Save Tab" class="newButton3D right" 
 				onmouseover="changeCursor('saveTab')"
-				onclick="alert('${sessionScope.displayErrorExpenses}')"/>
+				onclick="alert('${sessionScope.displayErrorExpenses}\n${sessionScope.displayErrorDemo}')"/>
 	</form>
 	
 	
