@@ -6,7 +6,7 @@
     <meta charset='utf-8' />
     <link rel="shortcut icon" href="images/tree3.png" />
     
-	<link rel="stylesheet" type="text/css" href="CSS/all12.css" />
+	<link rel="stylesheet" type="text/css" href="CSS/all13.css" />
    <!--<link rel="stylesheet" type="text/css" href="CSS/police.css" />
     <link rel="stylesheet" type="text/css" href="CSS/3D1.css" />
     <link rel="stylesheet" type="text/css" href="CSS/stylePersonalArea.css" />-->
@@ -48,12 +48,17 @@ HTML5 sont employees. -->
 		
 		
 	<article id="myGroups" class="inline"  >
-	  	<fieldset> 
+	  	<fieldset > 
 	    <legend><h2 class="text3Dfonce" >My Group</h2></legend>
 	    <div id="fieldMyGroups" class="aroundBlack">
 	    
 	    <c:forEach var="group" items="${sessionScope['listGroups']}" varStatus="i">
-	    		<li title="Admin : ${group.loginAdmin}" id="liGroup${i.index}" onmouseover="changeCursor('liGroup${i.index}')" onclick="location.href='/webHolidays/group?action=connectGroup&nameGroup=${group.name}'" > ${group.name}</li> 
+	    		<li id="liGroup${i.index}" class="forBubble"
+	    		onmouseover="changeCursor('liGroup${i.index}')" 
+	    		onclick="location.href='/webHolidays/group?action=connectGroup&nameGroup=${group.name}'" >
+	    		${group.name}
+	    		<span id="myBubble">Admin : ${group.loginAdmin}</span> 
+	    		</li> 
 	    </c:forEach>
 	    
 		</div>

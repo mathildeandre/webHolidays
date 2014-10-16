@@ -630,6 +630,27 @@ color: #000;
 	
 }
 
+#sectionPersonalArea .forBubble #myBubble{
+	display: none; 
+}
+#sectionPersonalArea .forBubble:hover  #myBubble{
+	/*display: block;
+	left: 15vw; */
+	display: inline;
+  	position: absolute;
+	
+   	margin-left : 3vw;
+ 	text-shadow:0 0;
+   
+	padding : 0.7vw;
+	font-size: 0.9vw;
+
+	color:white;
+	background:rgba(151,152,255,0.9);/*url("../images/pins.jpg") ;*/
+	border:1px solid white;
+	border-radius: 0.5vw;
+}
+
 #sectionPersonalArea #hint{
 	margin-top:1vw;
 	font-size: 1.5vw;
@@ -644,7 +665,8 @@ color: #000;
 	margin-top:5vw;
 	margin-left:2vw;
 	height:100vw;
-	/*width:40vw;*/  
+	/*width:40vw;*/ 
+	 
 }
 
 
@@ -665,10 +687,11 @@ color: #000;
 	border-left:6px dotted #5C5CFF;
 }
 
-#sectionPersonalArea #fieldMyGroups{
-	overflow-y: hidden,scroll;
-	overflow-x: hidden;
-	max-height: 20vw;
+#sectionPersonalArea #fieldMyGroups{	
+	overflow-y: hidden,scroll; /* si probleme enlever hidden..*/
+	overflow-x: hidden,scroll;
+	max-height: 30vw;
+	width: 22vw;
 	padding-left:2vw; 
 	font-size: 1.5vw;
 }
