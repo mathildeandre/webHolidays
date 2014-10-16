@@ -57,7 +57,6 @@ public class Login extends HttpServlet {
         }
         else{
         	//TODO gerer les erreurs
-
             request.setAttribute("errors", errors);
             this.getServletContext().getRequestDispatcher( "/welcome.jsp" ).forward( request, response );
         }

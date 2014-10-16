@@ -10,7 +10,7 @@ public class Group {
     private Timestamp dateInscription;
     private ArrayList<Person> listMembers;
     private int nbPerson;
-    private int idAdmin;
+    private String loginAdmin;
 
     public Long getId() {
         return id;
@@ -62,10 +62,11 @@ public class Group {
 	public int getNbPerson() {
 		return nbPerson;
 	}
-	public int getIdAdmin() {
-		return idAdmin;
+	public String getLoginAdmin() {
+		return loginAdmin;
 	}
-	public void setIdAdmin(int idAdmin) {
-		this.idAdmin = idAdmin;
+	public void setLoginAdmin(String loginAdmin) {
+		this.loginAdmin = loginAdmin;
 	}
+	
 }

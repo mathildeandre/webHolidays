@@ -15,8 +15,10 @@ import dao.GroupDao;
 import dao.PersonDao;
 import beans.Group;
 import beans.Person;
+import beans.Things;
 import forms.ConnexionForm;
 import forms.GroupForm;
+import forms.ThingsForm;
 
 public class CreationGroup extends HttpServlet {
 	
@@ -48,7 +50,8 @@ public class CreationGroup extends HttpServlet {
         Map<String, String> errors = form.getErrors();
 
     	request.setAttribute("group", group);
-
+    	
+		
         if(errors.isEmpty()){
             this.getServletContext().getRequestDispatcher( "/persoArea?action=display" ).forward( request, response );
         }

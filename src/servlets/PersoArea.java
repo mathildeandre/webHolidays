@@ -83,7 +83,11 @@ public class PersoArea extends HttpServlet {
 			listGroups = form.getGroups(request);
 			String error = form.getError();
 			if (error == null) {
-				request.setAttribute("listGroups", listGroups);
+
+		    	HttpSession session = request.getSession(); 
+				session.setAttribute("listGroups", listGroups);
+				//request.setAttribute("listGroups", listGroups);
+				
 				this.getServletContext().getRequestDispatcher("/personalArea.jsp").forward(request, response);
 
 			} else {

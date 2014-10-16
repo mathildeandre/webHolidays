@@ -173,7 +173,7 @@ public class PersonDao {
 		    }
 	}
 	
-     private static final String SQL_SELECT_GROUPS = "select Groups.id_group, Groups.name_group, Groups.date_inscription"
+     private static final String SQL_SELECT_GROUPS = "select Groups.id_group, Groups.name_group, Groups.login_admin, Groups.date_inscription"
      		+ " from BelongTo, Groups where BelongTo.id_person=? "
 		+ "AND Groups.id_group=BelongTo.id_group";
 
@@ -189,16 +189,18 @@ public class PersonDao {
 		        connexion = (Connection) daoFactory.getConnection();
 		        preparedStatement = initialisationRequetePreparee( connexion, SQL_SELECT_GROUPS, false, person.getId());
 		        resultSetGroup = preparedStatement.executeQuery();
-		        String nameGroup;
+		        String nameGroup, loginAdmin;
 		        long idGroup;
 		        Timestamp date;
 		        while ( resultSetGroup.next() ) {
 		    	    Group group = new Group();
 		        	idGroup = resultSetGroup.getInt("id_group");
 		        	nameGroup = resultSetGroup.getString("name_group");
+		        	loginAdmin = resultSetGroup.getString("login_admin");
 		        	date = resultSetGroup.getTimestamp("date_inscription");
 		        	group.setName(nameGroup);
 		        	group.setId(idGroup);
+		        	group.setLoginAdmin(loginAdmin);
 		        	group.setDateInscription(date);
 		        	listGroups.add(group);
 		        }

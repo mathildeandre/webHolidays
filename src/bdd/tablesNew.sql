@@ -1,15 +1,17 @@
 /* comment */
-	drop table PersonChecked;
-	drop table ColumnDoodle;
-	drop table Doodle;
-	drop table PersonalThings;
-	drop table GroupThings;
-	drop table Beneficiaries;
-	drop table RowExpenses;
-	drop table BelongTo;
-	drop table Groups;
-	drop table ContactList;
-	drop table Persons;
+
+drop table PersonChecked;
+drop table ColumnDoodle;
+drop table Doodle;
+drop table PersonalThings;
+drop table GroupThings;
+drop table Beneficiaries;
+drop table RowExpenses;
+drop table BelongTo;
+drop table Groups;
+drop table ContactList;
+drop table Persons;
+
 
 CREATE TABLE Persons (
 	id_person INT(11) NOT NULL AUTO_INCREMENT,
@@ -23,6 +25,7 @@ CREATE TABLE Persons (
 	UNIQUE (login_person)
 );
 
+
 CREATE TABLE ContactList (
 	id_person1 INT(11) NOT NULL,
 	id_person2 INT(11) NOT NULL,
@@ -34,11 +37,10 @@ CREATE TABLE ContactList (
 CREATE TABLE  Groups (
  id_group INT( 11 ) NOT NULL AUTO_INCREMENT ,
  name_group VARCHAR( 50 ) NOT NULL ,
- id_admin INT ( 11 ) NOT NULL ,
+ login_admin VARCHAR( 50 ) NOT NULL ,
  date_inscription DATETIME NOT NULL ,
  PRIMARY KEY ( id_group ),
- FOREIGN KEY (id_admin) REFERENCES Persons(id_person),
- UNIQUE ( name_group )
+ FOREIGN KEY (login_admin) REFERENCES Persons(login_person)
 );
 
 CREATE TABLE BelongTo (

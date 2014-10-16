@@ -49,19 +49,33 @@ public final class GroupForm {
         Person person = (Person) session.getAttribute("person");
         
         long idPers = person.getId();
-
+        String loginPerson = person.getLogin();
         Group group = new Group();
         try {
 
             //traiterPseudo( pseudoAdmin );
-        	boolean nameIsNew = groupDao.checkGroup(nameG);
+			
+	    	ArrayList<Group> listGroups =  (ArrayList<Group>) session.getAttribute("listGroups");
+        	//ArrayList<Group> listGroups = (ArrayList<Group>) request.getAttribute("listGroups");
+        	
+        	boolean nameIsNew = true;//groupDao.checkGroup(nameG);
+        	System.out.println("name demandé :"+nameG);
+        	for (Group grp : listGroups){
+
+            	System.out.println("list names :"+grp.getName());
+        		if(grp.getName().equalsIgnoreCase(nameG)){
+        			nameIsNew = false;
+        		}
+        		
+        	
+        	}
         	if(!nameIsNew){
         		errors.put("createGroup", "The name of the group already exists");
         	}
         	if(errors.isEmpty()){
-                group.setIdAdmin((int) idPers);
+                group.setLoginAdmin(loginPerson);
         		group.setName(nameG);
-        		long idGroup = groupDao.createGroup(group, idPers);
+        		long idGroup = groupDao.createGroup(group, loginPerson);
         		if ( idGroup != 0 ) {
         			System.out.println( "Succès de l'ajout de groupe.");
         			group.setId(idGroup);
