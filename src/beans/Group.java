@@ -10,6 +10,7 @@ public class Group {
     private Timestamp dateInscription;
     private ArrayList<Person> listMembers;
     private int nbPerson;
+    private int idAdmin;
 
     public Long getId() {
         return id;
@@ -60,5 +61,11 @@ public class Group {
     // TODO function deleteMembers
 	public int getNbPerson() {
 		return nbPerson;
+	}
+	public int getIdAdmin() {
+		return idAdmin;
+	}
+	public void setIdAdmin(int idAdmin) {
+		this.idAdmin = idAdmin;
 	}
 }

@@ -49,7 +49,7 @@ public class PersonForm {
 		    		boolean personExists = personDao.findUser(person, login);
 
 		    		if (personExists) {
-		    			groupDao.registerGroup(person.getId(), group.getId());
+		    			groupDao.registerGroup(person.getId(), group.getId(), 0);
 		    			group.addPersonIntoListMembers(person);
 		    			System.out.println("Succès de la recherche.");
 		    		} else {

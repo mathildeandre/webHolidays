@@ -59,13 +59,14 @@ public final class GroupForm {
         		errors.put("createGroup", "The name of the group already exists");
         	}
         	if(errors.isEmpty()){
+                group.setIdAdmin((int) idPers);
         		group.setName(nameG);
-        		long idGroup = groupDao.createGroup(group);
+        		long idGroup = groupDao.createGroup(group, idPers);
         		if ( idGroup != 0 ) {
         			System.out.println( "Succès de l'ajout de groupe.");
         			group.setId(idGroup);
             	
-        			groupDao.registerGroup(idPers, idGroup);
+        			groupDao.registerGroup(idPers, idGroup, 1);
         		} else {
             	 System.out.println( "Échec de l'inscription.");
         		}

@@ -13,8 +13,8 @@
 
 CREATE TABLE Persons (
 	id_person INT(11) NOT NULL AUTO_INCREMENT,
-	name_person VARCHAR(50) NOT NULL,
 	login_person VARCHAR(50) NOT NULL,
+	name_person VARCHAR(50) NOT NULL,
 	pwd_person VARCHAR(90) NOT NULL,
 	mail_person VARCHAR(50),
 	is_new TINYINT(1),
@@ -34,15 +34,17 @@ CREATE TABLE ContactList (
 CREATE TABLE  Groups (
  id_group INT( 11 ) NOT NULL AUTO_INCREMENT ,
  name_group VARCHAR( 50 ) NOT NULL ,
+ id_admin INT ( 11 ) NOT NULL ,
  date_inscription DATETIME NOT NULL ,
  PRIMARY KEY ( id_group ),
+ FOREIGN KEY (id_admin) REFERENCES Persons(id_person),
  UNIQUE ( name_group )
 );
 
 CREATE TABLE BelongTo (
 	id_person INT(11) NOT NULL,
     id_group INT( 11 ) NOT NULL,
-	is_admin TINYINT(1),
+	has_rights TINYINT(1),
 	PRIMARY KEY (id_person, id_group),
 	FOREIGN KEY (id_person) REFERENCES Persons(id_person),
 	FOREIGN KEY (id_group) REFERENCES Groups(id_group)

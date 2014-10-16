@@ -98,7 +98,7 @@ public final class RegistrationForm {
 				//personDao.addContact(contact, user);
 				
 				// et dans belongTo
-				groupDao.registerGroup(personToAdd.getId(), group.getId());
+				groupDao.registerGroup(personToAdd.getId(), group.getId(), 0);
 				group.addPersonIntoListMembers(personToAdd);
 			}catch (DAOException e){
 				errors.put("registerUser", "Échec de l'inscription : une erreur imprévue est survenue, merci de réessayer dans quelques instants.");

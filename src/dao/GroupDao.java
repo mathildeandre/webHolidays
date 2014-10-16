@@ -24,12 +24,12 @@ public class GroupDao {
 	
 	
 	
-	private static final String SQL_INSERT = "INSERT INTO Groups (name_group, date_inscription) VALUES (?, NOW())";
+	private static final String SQL_INSERT = "INSERT INTO Groups (name_group, date_inscription, id_admin) VALUES (?, NOW(), ?)";
 	private static final String SQL_SELECT_NAME = "SELECT id_group FROM Groups WHERE name_group=?";
 
 
 	/* Implémentation de la méthode définie dans l'interface UtilisateurDao */
-	public long createGroup( Group group ) throws DAOException {
+	public long createGroup( Group group, long idAmdin ) throws DAOException {
 		System.out.println("creation group !!!!!!!!!!!!!!!!!!!");
 	    Connection connexion = null;
 	    PreparedStatement preparedStatementInsert = null;
@@ -42,7 +42,7 @@ public class GroupDao {
 	        connexion = (Connection) daoFactory.getConnection();
 	        
 	        
-	        preparedStatementSelect = initialisationRequetePreparee( connexion, SQL_SELECT_NAME, false, group.getName());
+	        preparedStatementSelect = initialisationRequetePreparee( connexion, SQL_SELECT_NAME, false, group.getName(), idAmdin);
 	        resultSetName = preparedStatementSelect.executeQuery();
 
 	        if ( resultSetName.next() ) {
@@ -76,9 +76,9 @@ public class GroupDao {
 	    }
 	}
 	
-	private static final String SQL_INSERT_BELONG = "INSERT INTO BelongTo (id_person, id_group) VALUES (?,?)";
+	private static final String SQL_INSERT_BELONG = "INSERT INTO BelongTo (id_person, id_group) VALUES (?,?, ?)";
 
-	public void registerGroup(long idPers, long idGroup) throws DAOException {
+	public void registerGroup(long idPers, long idGroup, int hasRights) throws DAOException {
 		Connection connexion = null;
 	    PreparedStatement preparedStatementGroup = null;
 	    ResultSet resultSetGroup = null;
@@ -90,7 +90,7 @@ public class GroupDao {
 		   // PreparedStatement preparedStatement = (PreparedStatement) connexion.prepareStatement( SQL_SELECT_GROUP, Statement.NO_GENERATED_KEYS );
 		   // preparedStatement.setString(1, nameGroup);
 	     
-	        preparedStatementGroup = initialisationRequetePreparee( connexion, SQL_INSERT_BELONG, false, idPers, idGroup );
+	        preparedStatementGroup = initialisationRequetePreparee( connexion, SQL_INSERT_BELONG, false, idPers, idGroup, hasRights );
 	        int statut = preparedStatementGroup.executeUpdate();
 
 	        if ( statut == 0) {
