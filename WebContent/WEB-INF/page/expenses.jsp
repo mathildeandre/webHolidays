@@ -89,8 +89,9 @@
 
 	<input id="addRow" type="submit" value="Add new row" class="newButton3D buttonRedFonce" onmouseover="changeCursor('addRow')" onclick="addRow()"/>
        	
+    <!-- pour afficher le contenu du tab.innerHTML
 	<input id="displayINNER" type="submit" value="Display innerTab" class="newButton3D buttonRedFonce" onmouseover="changeCursor('displayINNER')" onclick="alert(document.getElementById('tab').innerHTML)"/>
-
+   	-->
 	
 	<div id="mouseOver" class="right" >
 		<input  id="theCheckBoxMouseOver" type="checkbox" width="100%" height="200px">
