@@ -6,7 +6,7 @@
     <meta charset='utf-8' />
     <link rel="shortcut icon" href="images/tree3.png" />
     
-	<link rel="stylesheet" type="text/css" href="CSS/all13.css" />
+	<link rel="stylesheet" type="text/css" href="CSS/all14.css" />
    <!--<link rel="stylesheet" type="text/css" href="CSS/police.css" />
     <link rel="stylesheet" type="text/css" href="CSS/3D1.css" />
     <link rel="stylesheet" type="text/css" href="CSS/stylePersonalArea.css" />-->
@@ -161,6 +161,8 @@ HTML5 sont employees. -->
 	<article id="myProfil" class="inline"  >
 		 <h2 class="text3Dfonce">My Profil</h2>
 		 
+<div id="profilInvisible">
+
 		 <form method="post" action="persoArea?action=modifyLogin">
 		 <div class="aroundBlack">Login : </div>
 		 
@@ -219,9 +221,34 @@ HTML5 sont employees. -->
          <input id="confirmModifyPwd" type="submit" value="Modify Password" class="newButton3D buttonBlueFonce" onmouseover="changeCursor('confirmModifyPwd')" />
 		 </div>
 		 </form>
+	</div>
+	<div id="profilVisible">
+		</br>
+		<div><span class="aroundBlack">Login :  </span>${sessionScope.person.login}</div>
+		</br>
+		<div><span class="aroundBlack">Name :  </span>${sessionScope.person.name}</div>
+		</br>
+		<div><span class="aroundBlack">Email :  </span>${sessionScope.person.email}</div>
+		</br>
+		<div><span class="aroundBlack">Password :  </span>hihi ;)</div>
+		<c:if test="${requestScope.actionDone == 'modifyPwd'}" >
+			<div class="textGreen">  The change of pwd has been successful </div>
+		</c:if> 
+		<div class="textRed">${requestScope.errors['oldPwd']}</div>
+		
+		</br>
+		</br>
+		
+		<div class="newButton3D buttonBlueFonce" onclick="modifyDisplay()">Modify Profil</div>
+
+	</div>
 	</article>
 	
 </div>
+
+
+
+
 </section>
 
 <footer id="footerPersonalArea">Copyright © - Tous droits reserves<br/> Nous contacter : fabiensauce@orange.fr</footer>
@@ -229,6 +256,12 @@ HTML5 sont employees. -->
 <!-- 
 <script src="JS/actionJS/personalAreaChanging.js" type="text/javascript"></script>
 -->
+<script type="text/javascript">
+function modifyDisplay(){
+	document.getElementById('profilInvisible').style.display = "block";
+	document.getElementById('profilVisible').style.display = "none";
+}
+</script>
 <script src="JS/actionJS/actionInputText1.js" type="text/javascript"></script>
 
 
