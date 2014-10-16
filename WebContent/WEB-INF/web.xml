@@ -107,6 +107,17 @@
 		<url-pattern>/thingsServlet</url-pattern>
 	</servlet-mapping>
 	
+	<servlet>
+		<servlet-name>DemoServlet</servlet-name>
+		<servlet-class>servlets.DemoServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>DemoServlet</servlet-name>
+		<url-pattern>/demoServlet</url-pattern>
+	</servlet-mapping>
+	
+	
 	
 	<listener>
     <listener-class>config.InitialisationDaoFactory</listener-class>

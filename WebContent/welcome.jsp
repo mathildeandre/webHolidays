@@ -39,7 +39,11 @@ HTML5 sont employees. -->
 
 <section id="sectionWelcome" class="line" >
 	<article id="demo" class="inline"  >
-		 <h2 id="buttonDemo" class="newButton3D buttonBlueFonce" onmouseover="changeCursor('buttonDemo')" onclick="location.href='index.jsp?page=homepage'">DEMO </br> reach directly </br> the website </h2>
+	
+	
+		 <form method="post" action="demoServlet?action=init">
+		 	<input id="buttonDemo" type="submit" value="       DEMO       " class="newButton3D buttonBlueFonce" onmouseover="changeCursor('buttonDemo')">
+		 </form>
 	</article>
 	
 	<article id="registration" class="inline">
