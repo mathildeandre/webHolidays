@@ -70,6 +70,18 @@ HTML5 sont employées. -->
 	<%@include file="/WEB-INF/page/meals.jsp"%>
 <%
 	}
+    else if (request.getParameter("page").equals("starter")) { %>
+   <%
+   	}
+    else if (request.getParameter("page").equals("courses")) { %>
+   	<%@include file="/WEB-INF/page/courses.jsp"%>
+   <%
+   	}
+
+    else if (request.getParameter("page").equals("planningMeals")) { %>
+   	<%@include file="/WEB-INF/page/planningMeals.jsp"%>
+   <%
+   	}
     else if (request.getParameter("page").equals("expenses")) { %>
 	<%@include file="/WEB-INF/page/expenses.jsp"%>
 <%

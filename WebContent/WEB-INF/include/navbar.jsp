@@ -8,7 +8,7 @@ onclick='location.href=\"index.jsp?page=group\"'" />
 <c:set var = "currentDoodle" value="id='liDoodle' onmouseover='changeCursor(\"liDoodle\")' 
 onclick='location.href=\"index.jsp?page=doodle\"'; 'alert(\"ceci nest pas un onlaod\")' " />
 <c:set var = "currentMeals" value="id='liMeals' onmouseover='changeCursor(\"liMeals\")' 
-onclick='location.href=\"index.jsp?page=homepage\"'" />
+onclick='location.href=\"index.jsp?page=meals\"'" />
 <c:set var = "currentExpenses" value="id='liExpenses' onmouseover='changeCursor(\"liExpenses\")' 
 onclick='location.href=\"index.jsp?page=expenses\"'" />
 <c:set var = "currentThings" value="id='liThings' onmouseover='changeCursor(\"liThings\")' 
