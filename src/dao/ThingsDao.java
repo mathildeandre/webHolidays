@@ -129,20 +129,28 @@ private static final String SQL_INSERT_PERSONAL_THING = "INSERT INTO PersonalThi
 	
 private static final String SQL_INSERT_GROUP_THING = "INSERT INTO GroupThings (name_thing, id_group, id_person) VALUES (?, ?, ?)";
 	
-	public void insertIntoGroupThings(String namePersoTh, int idPerson, Long idGroup){
+	public Long insertIntoGroupThings(String namePersoTh, int idPerson, Long idGroup){
 		Connection connexion = null;
 	    PreparedStatement preparedStatement = null;
+	    ResultSet valeursAutoGenerees = null;
 	    
 		try {
 		        /* Récupération d'une connexion depuis la Factory */
 		        connexion = (Connection) daoFactory.getConnection();
-		        preparedStatement = initialisationRequetePreparee( connexion, SQL_INSERT_GROUP_THING, false, namePersoTh, idGroup, idPerson);
+		        preparedStatement = initialisationRequetePreparee( connexion, SQL_INSERT_GROUP_THING, true, namePersoTh, idGroup, idPerson);
 		        preparedStatement.executeUpdate();
 		       
+		        valeursAutoGenerees = preparedStatement.getGeneratedKeys();
+			  	if ( valeursAutoGenerees.next() ) {
+			      	return valeursAutoGenerees.getLong( 1 );
+			  	} else {
+			       	throw new DAOException( "Échec de la création de l'utilisateur en base, aucun ID auto-généré retourné." );
+			  	}
+			  	
 		    } catch ( SQLException e ) {
 		        throw new DAOException( e );
 		    } finally {
-		        fermeturesSilencieuses(preparedStatement, connexion );
+		        fermeturesSilencieuses( valeursAutoGenerees, preparedStatement, connexion );
 		    }
 		
 	}

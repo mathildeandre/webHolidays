@@ -27,7 +27,11 @@ function inputTextFocus(id, color){
 	}
 	var inputName = document.getElementById(id);
 	//indexOf return la position du string trouvé, -1 si pas trouve    //if(inputName.className == "textGrey"){
-	if(inputName.className.indexOf("textGrey") > -1){  
+	if(inputName.className.indexOf("textGrey") > -1 ){  
+		inputName.className = "text"+color; //inputName.setAttribute("id","name");
+		inputName.value = ""; //inputName.setAttribute("value","");
+	}
+	if(inputName.className.indexOf("textBlack") > -1){  
 		inputName.className = "text"+color; //inputName.setAttribute("id","name");
 		inputName.value = ""; //inputName.setAttribute("value","");
 	}

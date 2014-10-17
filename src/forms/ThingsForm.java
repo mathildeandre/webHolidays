@@ -114,14 +114,16 @@ public class ThingsForm extends Exception {
     	
     	String namePersoTh = request.getParameter("inputGroupThing");
     	System.out.println("name thing : "+namePersoTh);
-    	thingGroup.setName(namePersoTh);
     	int idPerson = -1;
+    	thingGroup.setName(namePersoTh);
+    	thingGroup.setIdPerson(idPerson);
     	
 	    Long idGroup = group.getId();
 	    
     	try {
 
-        	thingsDao.insertIntoGroupThings(namePersoTh, idPerson, idGroup);
+        	Long idThing = thingsDao.insertIntoGroupThings(namePersoTh, idPerson, idGroup);
+        	thingGroup.setId(idThing);
          } catch ( DAOException e ) {
              errors.put("getThings", "Échec de la selection de personal thing : une erreur imprévue est survenue, merci de réessayer dans quelques instants.");
              e.printStackTrace();

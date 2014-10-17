@@ -252,14 +252,14 @@ HTML5 sont employees. -->
 <!-- 
 <script src="JS/actionJS/personalAreaChanging.js" type="text/javascript"></script>
 -->
+
+<script src="JS/actionJS/actionInputText1.js" type="text/javascript"></script>
 <script type="text/javascript">
 function modifyDisplay(){
 	document.getElementById('profilInvisible').style.display = "block";
 	document.getElementById('profilVisible').style.display = "none";
 }
 </script>
-<script src="JS/actionJS/actionInputText1.js" type="text/javascript"></script>
-
 
 </body>
 
