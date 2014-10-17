@@ -95,6 +95,7 @@
 	
 		<div id="divAddColumn" class="aroundWhite">Add a column : </div>
 		
+		
 		<div class="line">
 			<div class="inline">
 				<div id="divDate" class="line">

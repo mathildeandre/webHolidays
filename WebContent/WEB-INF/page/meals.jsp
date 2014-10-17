@@ -1,15 +1,16 @@
 
-<section class="images">
-	<h1> What do we eat tonight ?? </h1>
+
+<section id="sectionMeals" class="section">
+	<h1 id="h1Meals" class="h1"> What do we eat tonight ?? </h1>
 	<div id="navRepas">
 	<ul>
-	 <li id="entree" ><a href="entree.html">Starter</a></li>
-	 <li id="plat" ><a href="plat.html">Course</a></li>
+	 <li id="starter" ><a href="index.jsp?page=starter">Starter</a></li>
+	 <li id="course" ><a href="index.jsp?page=courses">Course</a></li>
 	 <li id="dessert" ><a href="dessert.html">Dessert</a></li>
 	</ul>
 	</div>
 	
-	 <a id="planning" href="dessert.html">Create a planning</a>
+	 <a id="planningMeals" href="index.jsp?page=planningMeals">Create a planning</a>
  </section >
  
  <section class="contenu">
@@ -17,3 +18,9 @@
 	</article>
  </section >
  
+<script src="../actionJS/navChanging.js" type="text/javascript"></script>
+
+
+</body>
+
+

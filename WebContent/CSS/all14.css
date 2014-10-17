@@ -1688,6 +1688,257 @@ input[type="checkbox"].css-checkbox {
 
 
 
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx styleMeals   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+
+#sectionMeals{  
+}
+
+#h1Meals{
+	color:#853385;
+}
+
+#navRepas{ 
+   	white-space: nowrap; 
+    margin-left: 0;
+}
+
+
+#navRepas ul{ 
+    display: inline-block;
+    margin-left: 0;
+    *display: inline; /* IE7 */
+    *zoom:1;  /* IE7 */ 
+    list-style: none;
+    width: 100%;
+    padding:0px;
+}
+
+#navRepas ul li {
+
+    display: inline-block;
+    *display: inline;
+    *zoom:1;
+    width: 20%;
+    height:120px;
+    line-height:150px;
+    border-radius: 10%;
+margin-left:3%; 
+
+ border:2px solid;
+ border-color:#DCDCDC ;
+
+ text-decoration:none;
+ text-align:center;
+	background-size:100%;
+	background-repeat:no-repeat;
+ }
+
+#navRepas ul li a{
+
+	color: white;
+    text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000; 
+	font-family:Comic Sans MS;
+	font-size:x-large;
+
+}
+
+#navRepas ul li:first-child {
+    background-image: url("../images/entree.jpg");
+}
+
+#navRepas ul li:nth-child(2) { 
+	background-image: url("../images/plat.jpg");
+}
+
+#navRepas ul li:nth-child(3) {
+	background-image: url("../images/dessert.jpg");
+}
+
+#navRepas ul li:hover {
+background-position: center;
+ border-color:#696969 ;
+ color: white;
+    text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000; 
+ } 
+
+#navRepas ul li a:hover {
+ color: white;
+    text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000; 
+ } 
+
+#navRepas ul li:first-child:hover {
+	background-image: url("../images/entree2.jpg");
+	background-size:80%;
+	background-repeat:no-repeat;
+}
+
+#navRepas ul li:nth-child(2):hover { 
+	background-image: url("../images/plat2.jpg");
+	background-size:80%;
+	background-repeat:no-repeat;
+}
+
+#navRepas ul li:nth-child(3):hover { 
+	background-image: url("../images/dessert2.jpg");
+	background-size:100%;
+	background-repeat:no-repeat;
+}
+
+
+#planningMeals{
+
+    display: inline-block;
+    *display: inline;
+    *zoom:1;
+    width: 25%;
+    height:120px;
+    line-height:120px;
+    border-radius: 10%;
+	margin-left:25%; 
+
+	border:2px solid;
+	border-color:#DCDCDC ;
+
+	text-decoration:none;
+	text-align:center;
+	background-size:100%;
+	background-repeat:no-repeat;
+
+	color: white;
+    text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000; 
+	font-family:Comic Sans MS;
+	font-size:larger;
+	
+	
+    background-image: url("../images/aliments.png");
+	background-size:100%;
+}
+
+#planningMeals:hover{
+    background-image: url("../images/aliments.png");
+    background-position: center;
+	background-size:100%;
+}
+
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx styleCourses xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
+#sectionMeals{
+	
+}
+
+.receipe{
+	border:3px solid chocolate;/*bleu clair*/   /* blueviolet*/
+	border-radius: 20px ;
+	height: 650px;
+	width: 70%;
+	margin-left: 20%;
+	margin-top: 10px;
+	opacity:1;
+	color: white;
+    text-shadow:
+    -0.5px -0.5px 0 #000,
+    0.5px -0.5px 0 #000,
+    -0.5px 0.5px 0 #000,
+    0.5px 0.5px 0 #000; 
+	font-family:Comic Sans MS;
+	background-repeat:no-repeat, repeat;
+	background-size:30%, 100%;
+	background-position:5% 15%, top left;
+}
+
+#burgers{
+	background-image:url("../images/burger2.jpg"), url("../images/burger.jpg");
+	
+}
+
+#lasagna{
+	background-image:url("../images/lasagne2.jpg"),url("../images/lasagne.jpg");
+}
+
+#ingredients{
+	margin-left:40%;
+	font-style:bold;
+	font-size:large;  
+}
+
+#preparation{
+	margin-left:10%;
+	font-style:bold;
+	font-size:large;
+}
+
+
+#navCourses ul{
+	/* position: fixed; */
+	float: left;
+	padding: 10px ;
+	margin: 0px; 
+    list-style-type: none;
+	margin-left:20px;
+    padding: 0;
+}
+
+#navCourses ul li{
+	border:3px solid chocolate;/*bleu clair*/   /* blueviolet*/
+	border-radius: 30px ;
+	width:100%;
+	margin-left:20px;
+	margin-top:5px;
+
+}
+
+#navCourses ul li a{
+	margin-left:20px;
+	color:black;
+}
+
+/*************** stylePlanning ***********************************************/
+#sectionPlanning{
+	margin-left:3vw;
+	width:90vw;
+}
+
+
+#formatPlanning{
+	border:5px solid blue;/*#853385*/
+	border-radius: 0.5vw;
+}
+
+#myPlanning{
+	
+	position: absolute;
+	margin-top:5vw;
+	margin-left:10vw;
+	/*width:20vw;*/
+	padding-left:3vw; 
+	border-left:6px dotted #5C5CFF;
+}
+
+#boxReceipe{
+	border:5px solid blue;/*#853385*/
+	border-radius: 0.5vw;
+}
+
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx fin styleMeals  xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
 
 
 
@@ -1796,6 +2047,7 @@ h1, h2{
 	padding:0.9vw 0.7vw;
 	font-size: 1.3vw;
 }
+
 
 
 
