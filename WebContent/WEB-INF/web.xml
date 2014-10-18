@@ -10,6 +10,7 @@
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
   
+ 
 
 	
 	<servlet>
@@ -117,6 +118,15 @@
 		<url-pattern>/demoServlet</url-pattern>
 	</servlet-mapping>
 	
+	<servlet>
+		<servlet-name>Planning</servlet-name>
+		<servlet-class>servlets.Planning</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Planning</servlet-name>
+		<url-pattern>/planning</url-pattern>
+	</servlet-mapping>
 	
 	
 	<listener>
