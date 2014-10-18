@@ -27,51 +27,6 @@ public class PersonDao {
     }
 	
 	
-	/*On recupere ici tout les contact de la list d'une person */
-	 // possible : Select * from ContactList where id_person1 = 2 OR id_person2 = 2;
-	private static final String SQL_SELECT_CONTACT_LIST = 
-			"(SELECT id_person, login_person, name_person, mail_person "
-			+ "FROM ContactList, Persons  "
-			+ "WHERE id_person1 = ? AND id_person2 = Persons.id_person) "
-		+ "UNION "
-			+ "(SELECT id_person, login_person, name_person, mail_person "
-			+ "FROM ContactList, Persons  "
-			+ "WHERE id_person2 = ? AND id_person1 = Persons.id_person)";
-
-	public ArrayList<Person> getContactList(Person person) throws DAOException {
-	    Connection connexion = null;
-	    PreparedStatement preparedStatement = null;
-	    ResultSet resultSetPersons = null;
-	    
-	    ArrayList<Person> listContact = new ArrayList<Person>();
-	    
-		try {
-		        connexion = (Connection) daoFactory.getConnection();
-		        preparedStatement = initialisationRequetePreparee( connexion, SQL_SELECT_CONTACT_LIST, false, person.getId(), person.getId());
-		        resultSetPersons = preparedStatement.executeQuery();
-
-		        while ( resultSetPersons.next() ) {
-		        	Long idPerson = resultSetPersons.getLong("id_person");
-		        	String loginPerson = resultSetPersons.getString("login_person");
-		        	String namePerson = resultSetPersons.getString("name_person");
-		        	String emailPerson = resultSetPersons.getString("mail_person");
-		        	
-		        	Person personContact = new Person();
-		        	personContact.setId(idPerson);
-		        	personContact.setLogin(loginPerson);
-		        	personContact.setName(namePerson);
-		        	personContact.setEmail(emailPerson);
-		        	
-		        	listContact.add(personContact);
-		        }
-		    } catch ( SQLException e ) {
-		        throw new DAOException( e );
-		    } finally {
-		        fermeturesSilencieuses( resultSetPersons, preparedStatement, connexion );
-		    }
-
-        return listContact;
-	}
 
 	private static final String SQL_INSERT = "INSERT INTO Persons (name_person, login_person, pwd_person, mail_person, is_new) VALUES (?, ?, ?, ?, ?)";
 

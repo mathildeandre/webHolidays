@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import dao.ContactListDao;
 import dao.DAOException;
 import dao.DAOFactory;
 import dao.GroupDao;
@@ -18,6 +19,7 @@ import dao.PersonDao;
 import beans.Group;
 import beans.Person;
 import forms.ConnexionForm;
+import forms.ContactListForm;
 import forms.RegistrationForm;
 
 public class PersoArea extends HttpServlet {
@@ -29,11 +31,14 @@ public class PersoArea extends HttpServlet {
 
     private GroupDao     groupDAO;
     private PersonDao     personDAO;
+	private ContactListDao contactListDao;
 
     public void init() throws ServletException {
         /* Récupération d'une instance de notre DAO Utilisateur */
         this.groupDAO = ( (DAOFactory) getServletContext().getAttribute( CONF_DAO_FACTORY ) ).getGroupDao();
         this.personDAO = ( (DAOFactory) getServletContext().getAttribute( CONF_DAO_FACTORY ) ).getPersonDao();
+        this.contactListDao = ( (DAOFactory) getServletContext().getAttribute( CONF_DAO_FACTORY ) ).getContactListDao();
+        
        
     }
     
@@ -94,6 +99,39 @@ public class PersoArea extends HttpServlet {
 				// traiter l'erreur et afficher un beau message sur le site
 			}
 		}
+		else if(request.getParameter("action") != null && request.getParameter("action")
+				.equalsIgnoreCase("addExistingPerson")) {
+			
+			HttpSession session = request.getSession(); 
+	        ArrayList<Person> contactList = (ArrayList<Person>) session.getAttribute("contactList");
+			ContactListForm contactListForm = new ContactListForm(contactListDao);
+	        contactListForm.addExistingPerson(request, contactList);
+	        
+	        session.setAttribute("contactList", contactList);
+	        
+	        this.getServletContext().getRequestDispatcher( "/persoArea?action=display" ).forward( request, response );  
+		}
+		else if(request.getParameter("action") != null && request.getParameter("action")
+				.equalsIgnoreCase("deletePersonList")) {
+
+	        
+	        // enregistrement de la personne pour la section
+	        HttpSession session = request.getSession(); 
+	        ArrayList<Person> contactList = (ArrayList<Person>) session.getAttribute("contactList");
+			ContactListForm contactListForm = new ContactListForm(contactListDao);
+			//on modifie contactList dans le fonction deletePersonList direct
+	        contactListForm.deletePersonList(request, contactList);
+	        
+	        session.setAttribute("contactList", contactList);
+	        
+	        this.getServletContext().getRequestDispatcher( "/persoArea?action=display" ).forward( request, response ); 
+		}
+		else if(request.getParameter("action") != null && request.getParameter("action")
+				.equalsIgnoreCase("addContactIntoGroup")) {
+
+	        
+	        }
+		
 
     }
 	

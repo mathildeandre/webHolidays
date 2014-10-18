@@ -11,12 +11,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import dao.ContactListDao;
 import dao.DAOFactory;
 import dao.GroupDao;
 import dao.PersonDao;
 import beans.Group;
 import beans.Person;
 import forms.ConnexionForm;
+import forms.ContactListForm;
 import forms.RegistrationForm;
 
 public class Login extends HttpServlet {
@@ -28,11 +30,13 @@ public class Login extends HttpServlet {
 
     private GroupDao     groupDAO;
     private PersonDao     personDAO;
+	private ContactListDao contactListDao;
 
     public void init() throws ServletException {
         /* Récupération d'une instance de notre DAO Utilisateur */
         this.groupDAO = ( (DAOFactory) getServletContext().getAttribute( CONF_DAO_FACTORY ) ).getGroupDao();
         this.personDAO = ( (DAOFactory) getServletContext().getAttribute( CONF_DAO_FACTORY ) ).getPersonDao();
+        this.contactListDao = ( (DAOFactory) getServletContext().getAttribute( CONF_DAO_FACTORY ) ).getContactListDao();
        
     }
 
@@ -50,7 +54,8 @@ public class Login extends HttpServlet {
         
         /* generer list Contact qui contient des persons avec comme info :
          * id, name, login, email*/
-        ArrayList<Person> contactList = form.getContactList(person);
+        ContactListForm contactListForm = new ContactListForm(contactListDao);
+        ArrayList<Person> contactList = contactListForm.getContactList(person);
         
         // enregistrement de la personne pour la section
         HttpSession session = request.getSession(); 

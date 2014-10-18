@@ -93,4 +93,7 @@ public class DAOFactory {
     public ThingsDao getThingsDao() {
         return new ThingsDao( this );
     }
+    public ContactListDao getContactListDao() {
+        return new ContactListDao( this );
+    }
 }

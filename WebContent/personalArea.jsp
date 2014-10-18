@@ -93,7 +93,7 @@ HTML5 sont employees. -->
         
 		 </br>
 		 <div  class="bold">Search existing person : </div>
-       	<form method="post" action="searchPerson">
+       	<form method="post" action="persoArea?action=addExistingPerson">
 	      <input id="PAsearchPerson" class="textBlack"  name="PAsearchPerson" type="text" value="Login of the person" 
          onfocus="inputTextFocus('PAsearchPerson', 'Blue')" onblur="inputTextBlur('PAsearchPerson','Login of the person')" required >
 		<input id="PAaddPerson" type="submit" value="Add person" class="newButton3D buttonBlueFonce" onmouseover="changeCursor('PAaddPerson')"/>
@@ -121,10 +121,10 @@ HTML5 sont employees. -->
        	 -->
        	 
        	<div  class="bold">Delete a contact : </div>
-       <form method="post" action="deletePersonList">
-	       <select id="listContactsDelete" id="listContactsDelete" class="textBlack">
-		       	<c:forEach var="contactPerson" items="${sessionScope.contactList}">
-		    		<option value="${contactPerson.id}"> ${contactPerson.login}</option> 
+       <form method="post" action="persoArea?action=deletePersonList">
+	       <select id="listContactsDelete" name="listContactsDelete" class="textBlack">
+		       	<c:forEach var="contactPerson" items="${sessionScope.contactList}" varStatus="i">
+		    		<option value="${contactPerson.id}-${i.index}"> ${contactPerson.login}</option> 
 		    	</c:forEach>
 			</select>
 		

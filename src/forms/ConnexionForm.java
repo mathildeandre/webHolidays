@@ -18,7 +18,7 @@ import dao.PersonDao;
 public class ConnexionForm {
 
 
-    private String              resultat;
+    private String resultat;
     private String error;
     private Map<String, String> errors          = new HashMap<String, String>();
     private PersonDao     personDao;
@@ -35,19 +35,7 @@ public class ConnexionForm {
     }
 	
 	
-	public ArrayList<Person> getContactList(Person person){
-		ArrayList<Person> listContact = new ArrayList<Person>();
-		try {
-			listContact = personDao.getContactList(person);
-			
-        } catch ( DAOException e ) {
-            resultat = "Échec de l'inscription : une erreur imprévue est survenue, merci de réessayer dans quelques instants.";
-            e.printStackTrace();
-            return null;
-        }
-		
-		return listContact;
-	}
+	
 	
 	public Person connectUser(HttpServletRequest request){
 		    String login = request.getParameter("coLogin");
