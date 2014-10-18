@@ -76,22 +76,11 @@ HTML5 sont employees. -->
 		<fieldset class="fieldSet">
 	    <legend><h2 class="text3Dfonce" >My Contacts</h2></legend>
 	    <div id="fieldMyContact" >
-			 - emiel <br>
-			 - matthijs <br>
-			 - fabian <br>
-			 - kiki <br>
-			 - emiel <br>
-			 - matthijs <br>
-			 - fabian <br>
-			 - kiki <br>
-			 - emiel <br>
-			 - matthijs <br>
-			 - fabian <br>
-			 - kiki <br>
-			 - emiel <br>
-			 - matthijs <br>
-			 - fabian <br>
-			 - kiki <br>
+	    
+	    	<c:forEach var="contactPerson" items="${sessionScope.contactList}">
+	    		<div > ${contactPerson.login} (name : ${contactPerson.name})</div> 
+	    	</c:forEach>
+			
 		</div>
 		</fieldset>
 		<!-- 
@@ -133,11 +122,10 @@ HTML5 sont employees. -->
        	 
        	<div  class="bold">Delete a contact : </div>
        <form method="post" action="deletePersonList">
-	       <select id="listContacts" class="textBlack">
-				<option>emiel</option>
-				<option>matthijs</option>
-				<option>fabian</option>
-				<option>kiki</option>
+	       <select id="listContactsDelete" id="listContactsDelete" class="textBlack">
+		       	<c:forEach var="contactPerson" items="${sessionScope.contactList}">
+		    		<option value="${contactPerson.id}"> ${contactPerson.login}</option> 
+		    	</c:forEach>
 			</select>
 		
 		<input id="deleteContact" type="submit" value="Delete contact" class="newButton3D buttonBlueFonce" onmouseover="changeCursor('deleteContact')"/>

@@ -2,6 +2,7 @@ package servlets;
 
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Map;
 
 import javax.servlet.ServletException;
@@ -47,9 +48,14 @@ public class Login extends HttpServlet {
         Person person = form.connectUser( request );
         Map<String, String> errors = form.getErrors();
         
+        /* generer list Contact qui contient des persons avec comme info :
+         * id, name, login, email*/
+        ArrayList<Person> contactList = form.getContactList(person);
+        
         // enregistrement de la personne pour la section
         HttpSession session = request.getSession(); 
         session.setAttribute("person", person);
+        session.setAttribute("contactList", contactList);
       
 
         if(errors.isEmpty()){

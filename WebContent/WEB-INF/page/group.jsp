@@ -20,11 +20,10 @@
 	<article id="articleAddMember" class="inline">
 		<h2 class="" >Add person from your contact list</h2>
        	<form method="post" action="addFromList">
-	       <select id="groupListContacts" class="textOrange">
-				<option>emiel</option>
-				<option>matthijs</option>
-				<option>fabian</option>
-				<option>kiki</option>
+			<select id="groupListContacts" id="groupListContacts" class="textOrange">
+		       	<c:forEach var="contactPerson" items="${sessionScope.contactList}">
+		    		<option value="${contactPerson.id}"> ${contactPerson.login}</option> 
+		    	</c:forEach>
 			</select>
 		
 		<input id="addMember" type="submit" value="Add member" class="newButton3D buttonGroup buttonOrangeClair" onmouseover="changeCursor('addMember')"/>
