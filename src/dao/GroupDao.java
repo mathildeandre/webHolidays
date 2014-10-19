@@ -157,10 +157,11 @@ public class GroupDao {
 	}
 
 	private static final String SQL_SELECT_MEMBERS = 
-			"SELECT Persons.id_person, name_person, login_person, pwd_person, mail_person, is_new "
+			"SELECT Persons.id_person, name_person, login_person, has_rights, pwd_person, mail_person, is_new, pwd_newbie "
 			+ "FROM BelongTo,Persons "
 			+ "WHERE BelongTo.id_group = ? "
-			+ "AND BelongTo.id_person = Persons.id_person";
+			+ "AND BelongTo.id_person = Persons.id_person";	
+	
 	
 	public ArrayList<Person> getMembers(Group group){
 		Connection connexion = null;
@@ -184,7 +185,9 @@ public class GroupDao {
 	        	
 	        	person.setPwd(resultSetGroup.getString("pwd_person"));
 	        	person.setEmail(resultSetGroup.getString("mail_person"));
-	        	person.setNew(resultSetGroup.getBoolean("is_new"));
+	        	person.setIsNew(resultSetGroup.getInt("is_new"));
+	        	person.setPwdNewbie(resultSetGroup.getString("pwd_newbie"));
+	        	person.setHasRights(resultSetGroup.getInt("has_rights"));
 	        	listMembers.add(person);
 	        }
 	    } catch ( SQLException e ) {

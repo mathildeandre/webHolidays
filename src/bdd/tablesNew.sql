@@ -20,7 +20,7 @@ CREATE TABLE Persons (
 	pwd_person VARCHAR(90) NOT NULL,
 	mail_person VARCHAR(50),
 	is_new TINYINT(1),
-	has_been_created TINYINT(1),
+	pwd_newbie VARCHAR(50),
 	PRIMARY KEY (id_person),
 	UNIQUE (login_person)
 );

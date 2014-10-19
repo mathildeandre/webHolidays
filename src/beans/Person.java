@@ -4,11 +4,12 @@ public class Person {
 
     private Long      id;
     private String    name;
-   
 	private String    login;
     private String    pwd;
     private String    email;
-    private boolean isNew;
+    private int isNew; //0 ou 1
+    private int hasRights; // 0 ou 1, is not in the SQL table
+    private String pwdNewbie;
     
     
 	public Long getId() {
@@ -44,12 +45,25 @@ public class Person {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public boolean isNew() {
+	public int getIsNew() {
 		return isNew;
 	}
-	public void setNew(boolean isNew) {
+	public void setIsNew(int isNew) {
 		this.isNew = isNew;
 	}
+	public int getHasRights() {
+		return hasRights;
+	}
+	public void setHasRights(int hasRights) {
+		this.hasRights = hasRights;
+	}
+	public String getPwdNewbie() {
+		return pwdNewbie;
+	}
+	public void setPwdNewbie(String pwdNewbie) {
+		this.pwdNewbie = pwdNewbie;
+	}
+	
 
     
 }

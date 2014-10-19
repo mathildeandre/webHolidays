@@ -56,7 +56,7 @@ public final class RegistrationForm {
 			person.setLogin(login);
 			traiterEmail(email, person);
 			person.setEmail(email);
-			person.setNew(true);
+			person.setIsNew(1);
 			if(! isCreateBySomeoneElse){
 				// on crypte le pwd et on verifie la confirmation
 				String confirmPwd = getValeurChamp(request, "confirmPwd");

@@ -12,12 +12,24 @@
 	     	<c:forEach var="member" items="${sessionScope.group.listMembers}">
 	     		
 	     		<c:set var="admin" value=""></c:set>
+	     		<c:set var="hasRights" value=""></c:set>
+	     		<c:set var="pwdNewbie" value=""></c:set>
+	     		
+	     		<c:if test="${sessionScope.isAdmin == 1}" >
+	     			<c:if test="${member.hasRights == 1}" >
+		     			<c:set var="hasRights" value="(has_rights)"></c:set>
+	     			</c:if>
+		     		<c:set var="pwdNewbie" value="${member.pwdNewbie}"></c:set>
+	     		</c:if>
+	     		
+	     		
 	     		<c:if test="${sessionScope.group.loginAdmin eq member.login}" >
 	     			<c:set var="admin" value="(admin)"></c:set>
+		     		<c:set var="hasRights" value=""></c:set>
 	     		</c:if>
 	     		
 										
-	    		<li > ${member.name} ${member.email}  ${admin} </li> 
+	    		<li > ${member.name} ${member.email} ${pwdNewbie} ${admin}${hasRights} </li> 
 	    	</c:forEach>
 	    
 		</div>

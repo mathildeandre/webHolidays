@@ -28,7 +28,7 @@ public class PersonDao {
 	
 	
 
-	private static final String SQL_INSERT = "INSERT INTO Persons (name_person, login_person, pwd_person, mail_person, is_new) VALUES (?, ?, ?, ?, ?)";
+	private static final String SQL_INSERT = "INSERT INTO Persons (name_person, login_person, pwd_person, mail_person, is_new, pwd_newbie) VALUES (?, ?, ?, ?, ?, ?)";
 
 	/* Implémentation de la méthode définie dans l'interface UtilisateurDao */
 	public long create( Person person ) throws DAOException {
@@ -40,7 +40,7 @@ public class PersonDao {
 	    try {
 	        /* Récupération d'une connexion depuis la Factory */
 	        connexion = (Connection) daoFactory.getConnection();
-	        preparedStatement = initialisationRequetePreparee( connexion, SQL_INSERT, true, person.getName(), person.getLogin(), person.getPwd(), person.getEmail(), person.isNew());
+	        preparedStatement = initialisationRequetePreparee( connexion, SQL_INSERT, true, person.getName(), person.getLogin(), person.getPwd(), person.getEmail(), 1, "");
 	        int statut = preparedStatement.executeUpdate();
 	        /* Analyse du statut retourné par la requête d'insertion */
 	        if ( statut == 0 ) {
@@ -104,12 +104,16 @@ public class PersonDao {
 		        	long id = resultSetLogin.getLong("id_person");
 		        	String name = resultSetLogin.getString("name_person");
 		        	String email = resultSetLogin.getString("mail_person");
+		        	int isNew = resultSetLogin.getInt("is_new");
+		        	String pwdNewbie = resultSetLogin.getString("pwd_newbie");
 		        	
 		        	person.setId(id);
 		        	person.setName(name);
 		        	person.setLogin(login);
 		        	person.setEmail(email);
-		        	person.setNew(false);
+		        	person.setIsNew(isNew);
+		        	person.setPwdNewbie(pwdNewbie);
+		        	
 		            return true;
 		        } else {
 		        	return false;	
@@ -147,13 +151,15 @@ public class PersonDao {
 		            	long idP = resultSetPerson.getInt("id_person");
 		            	String nameP = resultSetPerson.getString("name_person");
 		            	String emailP = resultSetPerson.getString("mail_person");
-		            	boolean isNew = resultSetPerson.getBoolean("is_new");
+			        	int isNew = resultSetPerson.getInt("is_new");
+			        	String pwdNewbie = resultSetPerson.getString("pwd_newbie");
 		            	person.setId(idP);
 		            	person.setName(nameP);
 		            	person.setLogin(login);
 		            	person.setEmail(emailP);
 		            	person.setPwd(pwd);
-		            	person.setNew(isNew);
+			        	person.setIsNew(isNew);
+			        	person.setPwdNewbie(pwdNewbie);
 		            	// le pwd correspond bien à celui du login
 		                System.out.println("Personne crée !");
 		            	return true;
@@ -279,6 +285,8 @@ public class PersonDao {
 		try {
 			/* Récupération d'une connexion depuis la Factory */
 			connexion = (Connection) daoFactory.getConnection();
+			
+			
 			preparedStatement = initialisationRequetePreparee(connexion,
 					SQL_UPDATE_PWD, false, newPwd, person.getId());
 			preparedStatement.executeUpdate();
@@ -290,30 +298,7 @@ public class PersonDao {
 		}
 	}
 	
-//	private static final String SQL_SELECT_GROUP = "SELECT BelongTo.id_Group FROM BelongTo, Groups WHERE Groups.name_group=? AND BelongTo.id_group = Groups.id_group AND BelongTo.id_person=?";
-//
-//	public long findGroup(String nameGroup, Person person) throws DAOException {
-//		Connection connexion = null;
-//		PreparedStatement preparedStatement = null;
-//	    ResultSet resultSetGroup = null;
-//
-//		try {
-//			/* Récupération d'une connexion depuis la Factory */
-//			connexion = (Connection) daoFactory.getConnection();
-//			preparedStatement = initialisationRequetePreparee(connexion,
-//					SQL_SELECT_GROUP, false, nameGroup, person.getId());
-//			resultSetGroup = preparedStatement.executeQuery();
-//			if(resultSetGroup.next()){
-//				long idGroup = resultSetGroup.getInt("id_group");
-//				return idGroup;
-//			}
-//		} catch (SQLException e) {
-//			throw new DAOException(e);
-//		} finally {
-//			fermeturesSilencieuses(preparedStatement, connexion);
-//		}
-//		return 0;
-//	}
+
 	
 	private static final String SQL_INSERT_CONTACT = "INSERT INTO ContactList (id_person1, id_person2) VALUES (?, ?)";
 
@@ -341,42 +326,48 @@ public class PersonDao {
 	private static final String SQL_SELECT_CONTACTS = "SELECT * FROM ContactList, Persons WHERE ContactList.id_person1=? "
 			+ "AND Persons.id_person=ContactList.id_person2";
 	
-	public ArrayList<Person> getContacts(Person person) throws DAOException {
-		Connection connexion = null;
-		PreparedStatement preparedStatement = null;
-	    ResultSet resultSetContacts = null;
-	    long     idC;
-	    String    nameC;
-	    String    emailC;
-	    boolean isNewC;
-	    
-	    ArrayList<Person> listContacts = new ArrayList<Person>();
-
-		try {
-			/* Récupération d'une connexion depuis la Factory */
-			connexion = (Connection) daoFactory.getConnection();
-			preparedStatement = initialisationRequetePreparee(connexion,
-					SQL_INSERT_CONTACT, false, person.getId());
-			resultSetContacts = preparedStatement.executeQuery();
-			while ( resultSetContacts.next() ) {
-	    	    Person contact = new Person();
-	        	idC = (long) resultSetContacts.getInt("id_person2");
-	        	nameC = resultSetContacts.getString("name_person");
-	        	emailC = resultSetContacts.getString("name_person");
-	        	isNewC = true;
-	        	person.setId(idC);
-	        	person.setName(nameC);
-	        	person.setEmail(emailC);
-	        	person.setNew(isNewC);
-	        	listContacts.add(contact);
-	        }
-	        return listContacts;
-		} catch (SQLException e) {
-			throw new DAOException(e);
-		} finally {
-			fermeturesSilencieuses(preparedStatement, connexion);
-		}
-	}
+//	public ArrayList<Person> getContacts(Person person) throws DAOException {
+//		Connection connexion = null;
+//		PreparedStatement preparedStatement = null;
+//	    ResultSet resultSetContacts = null;
+//	    long     idC;
+//	    String    nameC;
+//	    String    emailC;
+//	    boolean isNewC;
+//	    
+//	    ArrayList<Person> listContacts = new ArrayList<Person>();
+//
+//		try {
+//			/* Récupération d'une connexion depuis la Factory */
+//			connexion = (Connection) daoFactory.getConnection();
+//			
+//			preparedStatement = initialisationRequetePreparee( connexion, SQL_SELECT_CONTACTS, false, person.getId());
+//			resultSetContacts = preparedStatement.executeQuery();
+//
+//	        
+////			preparedStatement = initialisationRequetePreparee(connexion,
+////					SQL_INSERT_CONTACT, false, person.getId());
+////			resultSetContacts = preparedStatement.executeQuery();
+//			while ( resultSetContacts.next() ) {
+//	    	    Person contact = new Person();
+//	        	idC = (long) resultSetContacts.getInt("id_person2");
+//	        	nameC = resultSetContacts.getString("name_person");
+//	        	emailC = resultSetContacts.getString("name_person");
+//	        	isNewC = true;
+//	        	
+//	        	person.setId(idC);
+//	        	person.setName(nameC);
+//	        	person.setEmail(emailC);
+//	        	//person.setNew(isNewC);
+//	        	listContacts.add(contact);
+//	        }
+//	        return listContacts;
+//		} catch (SQLException e) {
+//			throw new DAOException(e);
+//		} finally {
+//			fermeturesSilencieuses(preparedStatement, connexion);
+//		}
+//	}
 	
 	
 	
