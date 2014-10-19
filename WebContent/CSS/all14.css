@@ -1910,9 +1910,20 @@ background-position: center;
 }
 
 /*************** stylePlanning ***********************************************/
+
+#sectionPlanning #navRepas ul li{
+    width: 20%;
+    height:120px;
+    line-height:150px;
+    border-radius: 10%;
+margin-left:3%; 
+	background-size:100%;
+} 
+
 #sectionPlanning{
 	margin-left:3vw;
 	width:90vw;
+	height: 60vw;
 }
 
 
@@ -1922,18 +1933,106 @@ background-position: center;
 }
 
 #myPlanning{
-	
 	position: absolute;
 	margin-top:5vw;
 	margin-left:10vw;
 	/*width:20vw;*/
 	padding-left:3vw; 
-	border-left:6px dotted #5C5CFF;
+	border-left:6px dotted orange;
+}
+
+#myPlanningTitle{
+	margin-left: 7vw;
+	/*
+	width: 30vw;
+	border:5px solid green;
+	border-radius: 0.5vw; */
+}
+
+
+.date{
+	font-size: 14px;
+	font-weight:bold;
+	font-style:italic;
+}
+
+
+#myPlanningContent{
+	margin-top: 0.5vw;
+	border:5px solid orange;/*#853385*/
+	border-radius: 0.5vw;
+}
+
+#lunch h2, #dinner h2{
+	margin-left: 2vw;
+	font-size: 16px;
+	text-decoration: underline;
+}
+
+#lunch ul li, #dinner ul li{
+	margin-left:3vw;
+}
+
+#starterLunchDrop, #courseLunchDrop, #dessertLunchDrop, #starterDinnerDrop, #courseDinnerDrop, #dessertDinnerDrop{
+	margin-top: 10px;
+	width:10vw;
+	heigth: 100vw;
+	padding:10px;
+	border:2px solid orange;
+}
+
+#dayPlanning{
+	/* margin-left:7vw; */
+	/*
+	border:5px solid yellow;
+	border-radius: 0.5vw; */
+}
+
+#lunch{
+	margin-top:0.5vw;
+	border-top:5px dotted orange;/*#853385*/
 }
 
 #boxReceipe{
 	border:5px solid blue;/*#853385*/
 	border-radius: 0.5vw;
+}
+
+#actualDay h2{
+	margin-left: 5vw;
+	font-size: 16px;
+	
+}
+#previousDayButton{
+	margin-top: 0.5vw;
+   margin-right: 7px;
+  margin-left: 1vw;
+  line-height:3vw;
+  width: 8vw;
+  border-bottom:1px solid gray;
+  box-shadow:inset 0 0.5em 0.5em 0 rgba(0,0,0,0.1),
+    inset 0 -1em 0 0 rgba(255,255,255,0.1);
+  
+  font-size:20px;
+  font-weight:bold;
+  font-style:italic;
+  color:orange;
+}
+
+
+#nextDayButton{
+  margin-right: 7px;
+  margin-left: 5vw;
+  line-height:3vw;
+  width: 8vw;
+  border-bottom:1px solid gray;
+  box-shadow:inset 0 0.5em 0.5em 0 rgba(0,0,0,0.1),
+    inset 0 -1em 0 0 rgba(255,255,255,0.1);
+  
+  font-size:20px;
+  font-weight:bold;
+  font-style:italic;
+  color:orange;
 }
 
 /*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/

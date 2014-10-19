@@ -2,12 +2,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 
-<style>
-#div1 {width:60px;height:20px;padding:10px;border:1px solid red;}
-
-#div2 {width:60px;height:10px;padding:10px;border:1px solid red;}
-</style>
-
 <section id="sectionPlanning" class="section line">
 
 <article id="formatPlanning">
@@ -26,20 +20,20 @@
 	</div>
 </form>
 
-	
 		
 </article>		
 
 <c:if test="${not empty requestScope.planningCreated}">
 	<h1> My planning </h1>
  
- <article id="navRepas" class="inline">
+ <article id="sectionReceipe" class="inline">
+ 	<div id="navRepas">
 	<ul>
 	 <li id="starter" ><a href="index.jsp?page=starter">Starter</a></li>
 	 <li id="course" ><a href="index.jsp?page=courses">Course</a></li>
 	 <li id="dessert" ><a href="dessert.html">Dessert</a></li>
 	</ul>
- 
+ 	</div>
  	<div id="receipe">
  	
 
@@ -56,37 +50,51 @@
 </article>
  
  <article id="myPlanning" class="inline">
-	<h1> create your planning</br>
+ 	<div id="myPlanningTitle">
 	
-	 From : <input id="debutC" name="startDate" type="hidden" > ${requestScope.startDate}
-	 To : <input id="debutC" name="startDate" type="hidden" > ${requestScope.endDate}
+	<input id="debutC" name="startDate" type="hidden" >  From  <span class="date"> ${requestScope.startDate} </span>
+	<input id="debutC" name="startDate" type="hidden" >  to <span class="date"> ${requestScope.endDate} </span>
 	 
-	 <div class="line">
-	 <div class="inline">
-		<input id="previousDay" type="submit" value="previous" class="newButton3D buttonGreenClair" onmouseover="changeCursor('previousDay')" onclick="previousDay()"/>
-	</div>
-	<div id="actualDay" class="inline">
-			lundi 20/09
-	</div>
-	<div class="inline">
-		<input id="nextDay" type="submit" value="next" class="newButton3D buttonGreenClair" onmouseover="changeCursor('nextDay')" onclick="nextDayFunc()"/>
-	</div>
-	</div>
+	 </div>
+	 
+	 <div id="myPlanningContent">
+	 
+		<div id="dayPlanning" class="line">
+	 		<div class="inline">
+				<input id="previousDayButton" type="submit" value="previous"  onmouseover="changeCursor('previousDayButton')" onclick="previousDay()"/>
+			</div>
+		
+			<div id="actualDay" class="inline">
+				<h2> lundi 20/09 </h2>
+			</div>
+			<div class="inline">
+				<input id="nextDayButton" type="submit" value="next"  onmouseover="changeCursor('nextDayButton')" onclick="nextDayFunc()"/>
+			</div>
+		</div>
 	 
 	
 
-	<div id="lunch"> Lunch 
+		<div id="lunch"> 
+		<h2> Lunch </h2>
 
 		<ul>
-	 		<li id="starter">Starter <div id="div1" class="inline" ondrop="drop(event)" ondragover="allowDrop(event)"></div></li>
-	 		<li id="course" >Course <div id="div2" class="inline" ondrop="drop(event)" ondragover="allowDrop(event)"></div></li>
-	 		<li id="dessert"> Dessert <div id="div2" class="inline" ondrop="drop(event)" ondragover="allowDrop(event)"></div></li>
+	 		<li id="starterLunch">Starter <div id="starterLunchDrop" class="inline" ondrop="drop(event)" ondragover="allowDrop(event)"></div></li>
+	 		<li id="courseLunch" >Course <div id="courseLunchDrop" class="inline" ondrop="drop(event)" ondragover="allowDrop(event)"></div></li>
+	 		<li id="dessertLunch"> Dessert <div id="dessertLunchDrop" class="inline" ondrop="drop(event)" ondragover="allowDrop(event)"></div></li>
 		</ul>
-	</div>
+		</div>
 
 
-<div id="dinner"> Dinner</div>
+		<div id="dinner"> 
+		<h2> Dinner </h2>
+		<ul>
+	 		<li id="starter">Starter <div id="starterDinnerDrop" class="inline" ondrop="drop(event)" ondragover="allowDrop(event)"></div></li>
+	 		<li id="course" >Course <div id="courseDinnerDrop" class="inline" ondrop="drop(event)" ondragover="allowDrop(event)"></div></li>
+	 		<li id="dessert"> Dessert <div id="dessertDinnerDrop" class="inline" ondrop="drop(event)" ondragover="allowDrop(event)"></div></li>
+		</ul>
+		</div>
  
+ 	</div>
  	
 	</article>
 </c:if>		
