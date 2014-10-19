@@ -19,10 +19,10 @@
 	
 	<article id="articleAddMember" class="inline">
 		<h2 class="" >Add person from your contact list</h2>
-       	<form method="post" action="addFromList">
-			<select id="groupListContacts" id="groupListContacts" class="textOrange">
+       	<form method="post" action="group?action=addContactIntoGroup">
+			<select id="groupListContacts" name="groupListContacts" class="textOrange">
 		       	<c:forEach var="contactPerson" items="${sessionScope.contactList}">
-		    		<option value="${contactPerson.id}"> ${contactPerson.login}</option> 
+		    		<option value="${contactPerson.login}"> ${contactPerson.login}</option> 
 		    	</c:forEach>
 			</select>
 		

@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import dao.ContactListDao;
 import dao.DAOFactory;
 import dao.DoodleDao;
 import dao.ExpensesDao;
@@ -24,6 +25,7 @@ import beans.Group;
 import beans.Person;
 import beans.Things;
 import forms.ConnexionForm;
+import forms.ContactListForm;
 import forms.DoodleForm;
 import forms.ExpensesForm;
 import forms.GroupForm;
@@ -43,6 +45,7 @@ public class GroupServlet extends HttpServlet {
     private ExpensesDao expensesDAO;
     private DoodleDao doodleDAO;
     private ThingsDao thingsDAO;
+	private ContactListDao contactListDao;
 
     public void init() throws ServletException {
         /* Récupération d'une instance de notre DAO Utilisateur */
@@ -51,6 +54,7 @@ public class GroupServlet extends HttpServlet {
         this.expensesDAO = ( (DAOFactory) getServletContext().getAttribute( CONF_DAO_FACTORY ) ).getExpensesDao();
         this.doodleDAO = ( (DAOFactory) getServletContext().getAttribute( CONF_DAO_FACTORY ) ).getDoodleDao();
         this.thingsDAO = ( (DAOFactory) getServletContext().getAttribute( CONF_DAO_FACTORY ) ).getThingsDao();
+        this.contactListDao = ( (DAOFactory) getServletContext().getAttribute( CONF_DAO_FACTORY ) ).getContactListDao();
 
     }
 
@@ -65,16 +69,46 @@ public class GroupServlet extends HttpServlet {
 	
 	public void doPost( HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException {
        if(request.getParameter("action") != null){
+    	   Person personAdded = new Person();
     	   if(request.getParameter("action").equalsIgnoreCase("createPerson")){
-    		   createPerson(request, response);
+    		   personAdded = createPerson(request, response);
+    		   if(personAdded != null){
+        		   addNewMemberInContactLists(request, response, personAdded);
+    		   }
     	   }
     	   else if(request.getParameter("action").equalsIgnoreCase("searchPerson")){
-    		   searchPerson(request, response);
-    		
+
+    		   String login = request.getParameter("searchPerson");
+    		   personAdded = searchPerson(request, response, login);
+    		   if(personAdded != null){
+        		   addNewMemberInContactLists(request, response, personAdded);
+    		   }
     	   }
+    	   else if(request.getParameter("action").equalsIgnoreCase("addContactIntoGroup")){
+
+    		   String login = request.getParameter("groupListContacts");
+    		   personAdded = searchPerson(request, response, login);
+    	   }
+    	   
+    	   //on ajoute le nouveau membre du groupe dans la list de contact de chaque membre du groupe
+    	   if(personAdded != null){
+    		   addNewMemberInContactLists(request, response, personAdded);
+		   }
+    	   
+    	   
        }
 
     }
+	
+
+	private void addNewMemberInContactLists(HttpServletRequest request, HttpServletResponse response, Person personAdded ) throws ServletException, IOException {
+		HttpSession session = request.getSession(); 
+		Group group = (Group) session.getAttribute("group");
+		ContactListForm contactListForm = new ContactListForm(contactListDao);
+		contactListForm.addNewMemberInContactLists(group, personAdded);
+		
+	}
+	
 	
 	private void connectGroup(HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException {
 		//on est censé se retrouver la lorsque lon a clique sur un nom de groupe
@@ -122,9 +156,9 @@ public class GroupServlet extends HttpServlet {
        }	
 	}
 	
-	private void createPerson(HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException {
+	private Person createPerson(HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException {
 		RegistrationForm form = new RegistrationForm(personDAO, groupDAO);
-		form.registerUserBySomeoneElse(request);
+		Person personAdded = form.registerUserBySomeoneElse(request);
 		Map<String, String> errors = form.getErrors();
 		//la modif de login s'est bien passée
 		if(errors.isEmpty()){
@@ -138,11 +172,17 @@ public class GroupServlet extends HttpServlet {
 			this.getServletContext().getRequestDispatcher("/index.jsp?page=group").forward(request, response);
 
 		}
+		return personAdded;
 	}
 	
-	private void searchPerson(HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException {
+	private Person searchPerson(HttpServletRequest request, HttpServletResponse response, String login) throws ServletException, IOException {
 		PersonForm form = new PersonForm(personDAO, groupDAO);
-		form.searchPerson(request);
+
+
+	    HttpSession session = request.getSession();
+	    Group group = (Group) session.getAttribute("group");
+	    
+		Person personAdded = form.searchPerson(group, login);
 		Map<String, String> errors = form.getErrors();
 		//la modif de login s'est bien passée
 		if(errors.isEmpty()){
@@ -156,6 +196,8 @@ public class GroupServlet extends HttpServlet {
 			this.getServletContext().getRequestDispatcher("/index.jsp?page=group").forward(request, response);
 
 		}
+
+		return personAdded;
 	}
 	
 //	private void displayGroup(HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException {

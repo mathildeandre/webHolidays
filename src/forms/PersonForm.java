@@ -34,14 +34,12 @@ public class PersonForm {
         error = null;
     }
 	
-	public void searchPerson(HttpServletRequest request){
-		    String login = request.getParameter("searchPerson");
+	public Person searchPerson(Group group, String login){
 
-		    HttpSession session = request.getSession();
-		    Group group = (Group) session.getAttribute("group");
 		    boolean isAlreadyInListMembers = group.containsMember(login);
 		    if(isAlreadyInListMembers){
 		    	errors.put("searchPerson", "the person is already in your list of members");
+		    	return null;
 		    }else{
 
 		    	Person person = new Person();
@@ -52,16 +50,17 @@ public class PersonForm {
 		    			groupDao.registerGroup(person.getId(), group.getId(), 0);
 		    			group.addPersonIntoListMembers(person);
 		    			System.out.println("Succès de la recherche.");
+		    			return person;
 		    		} else {
 		    			System.out.println("Échec de la recherche de login.");
 		    			errors.put("searchPerson", "the person you're looking for doesn't exist");
+		    			return null;
 		    		}
 		    	} catch (DAOException e) {
-		    		errors.put(
-		    				"searchPerson",
-		    				"Échec de la recherche : une erreur imprévue est survenue, merci de réessayer dans quelques instants.");
+		    		errors.put("searchPerson","Échec de la recherche : une erreur imprévue est survenue, merci de réessayer dans quelques instants.");
 		    		e.printStackTrace();
 		    	}
+		    	return null;
 		    }
 	}
 

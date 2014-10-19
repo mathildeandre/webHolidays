@@ -74,6 +74,7 @@ public final class RegistrationForm {
 				System.out.println("Succès de l'inscription.");
 			} else {
 				System.out.println("Échec de l'inscription.");
+				return null;
 			}
 		} catch (DAOException e) {
 			resultat = "Échec de l'inscription : une erreur imprévue est survenue, merci de réessayer dans quelques instants.";
@@ -83,7 +84,7 @@ public final class RegistrationForm {
 		return person;
 	}
 	
-	public void registerUserBySomeoneElse(HttpServletRequest request) {
+	public Person registerUserBySomeoneElse(HttpServletRequest request) {
 		//creation de la nouvelle personne
 		Person personToAdd = registerUser(request, true);
 		
@@ -105,6 +106,7 @@ public final class RegistrationForm {
 				e.printStackTrace();
 			}
 		}
+		return personToAdd;
 	}
 
 	public Person modifyLogin(HttpServletRequest request) {

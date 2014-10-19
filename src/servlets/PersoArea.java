@@ -108,7 +108,11 @@ public class PersoArea extends HttpServlet {
 	        contactListForm.addExistingPerson(request, contactList);
 	        
 	        session.setAttribute("contactList", contactList);
-	        
+
+	        Map<String, String> errors = contactListForm.getErrors();
+	        String errorStr = errors.get("addExistingPerson");
+
+            request.setAttribute("error", errorStr);
 	        this.getServletContext().getRequestDispatcher( "/persoArea?action=display" ).forward( request, response );  
 		}
 		else if(request.getParameter("action") != null && request.getParameter("action")
@@ -126,14 +130,39 @@ public class PersoArea extends HttpServlet {
 	        
 	        this.getServletContext().getRequestDispatcher( "/persoArea?action=display" ).forward( request, response ); 
 		}
-		else if(request.getParameter("action") != null && request.getParameter("action")
-				.equalsIgnoreCase("addContactIntoGroup")) {
-
-	        
-	        }
+//		else if(request.getParameter("action") != null && request.getParameter("action")
+//				.equalsIgnoreCase("addContactIntoGroup")) {
+//			
+//			HttpSession session = request.getSession(); 
+//	        ArrayList<Person> contactList = (ArrayList<Person>) session.getAttribute("contactList");
+//	        Group group = (Group) session.getAttribute("group");
+//
+//			ContactListForm contactListForm = new ContactListForm(contactListDao, groupDAO);
+//
+//	        contactListForm.addContactIntoGroup(request, contactList, group);
+//	        session.setAttribute("group", group);
+//	        
+//	        this.getServletContext().getRequestDispatcher( "/persoArea?action=display" ).forward( request, response ); 
+//		
+//		}
 		
 
     }
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	private void modifyLogin(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{

@@ -92,7 +92,7 @@ HTML5 sont employees. -->
         -->
         
 		 </br>
-		 <div  class="bold">Search existing person : </div>
+		 <div  class="bold">Add an existing person : </div>
        	<form method="post" action="persoArea?action=addExistingPerson">
 	      <input id="PAsearchPerson" class="textBlack"  name="PAsearchPerson" type="text" value="Login of the person" 
          onfocus="inputTextFocus('PAsearchPerson', 'Blue')" onblur="inputTextBlur('PAsearchPerson','Login of the person')" required >
@@ -100,6 +100,8 @@ HTML5 sont employees. -->
        	</form>
        	
        	
+		 
+		 <div class="textRed">${requestScope.error}</div>
        	<!-- 
        	<div  class="aroundBlack">Create yourself a person : </div>
        	<form method="post" action="searchPerson">
