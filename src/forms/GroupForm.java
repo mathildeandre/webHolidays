@@ -18,7 +18,6 @@ import dao.PersonDao;
 
 public final class GroupForm {
 
-    private static final String ALGO_CHIFFREMENT = "SHA-256";
 
     private String              resultat;
     private Map<String, String> errors          = new HashMap<String, String>();
@@ -40,6 +39,35 @@ public final class GroupForm {
         return resultat;
     }
 
+    public int hasRight(Long idGroup, Long idPerson){
+    	int hasR = 0;
+    	try {
+        	hasR = groupDao.hasRight(idGroup,idPerson);
+        	
+		} catch (DAOException e) {
+			errors.put("addRights", "Échec dans l'ajout de droit..");
+			e.printStackTrace();
+		}
+    	
+    	return hasR;
+    }
+    
+    public void addRights(Long idGroup, int idPersonNewRights){
+    	try {
+			groupDao.updateRights(1, idGroup,idPersonNewRights);
+		} catch (DAOException e) {
+			errors.put("addRights", "Échec dans l'ajout de droit..");
+			e.printStackTrace();
+		}
+    }
+    public void removeRights(Long idGroup, int idPersonNewRights){
+    	try {
+			groupDao.updateRights(0, idGroup,idPersonNewRights);
+		} catch (DAOException e) {
+			errors.put("addRights", "Échec dans l'ajout de droit..");
+			e.printStackTrace();
+		}
+    }
     public Group createGroup( HttpServletRequest request ) {
     	
         String nameG = request.getParameter("groupName" );
@@ -86,7 +114,8 @@ public final class GroupForm {
         		}
         	}
         } catch ( DAOException e ) {
-            resultat = "Échec de l'inscription : une erreur imprévue est survenue, merci de réessayer dans quelques instants.";
+            resultat = "Échec de l'inscription : une erreur imprévue est survenue, "
+            		+ "merci de réessayer dans quelques instants.";
             e.printStackTrace();
         }
         return group;
@@ -105,7 +134,8 @@ public final class GroupForm {
 		} catch (DAOException e) {
 			errors.put(
 					"getContact",
-					"Échec de la selection des contacts: une erreur imprévue est survenue, merci de réessayer dans quelques instants.");
+					"Échec de la selection des contacts: une erreur imprévue est survenue, "
+					+ "merci de réessayer dans quelques instants.");
 			e.printStackTrace();
 			return null;
 		}
@@ -123,7 +153,8 @@ public final class GroupForm {
 		} catch (DAOException e) {
 			errors.put(
 					"getContact",
-					"Échec de la selection des contacts: une erreur imprévue est survenue, merci de réessayer dans quelques instants.");
+					"Échec de la selection des contacts: une erreur imprévue est survenue, "
+					+ "merci de réessayer dans quelques instants.");
 			e.printStackTrace();
 			return null;
 		}

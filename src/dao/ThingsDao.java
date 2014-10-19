@@ -3,19 +3,12 @@ package dao;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.HashMap;
-
-import org.jasypt.util.password.ConfigurablePasswordEncryptor;
 
 import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.PreparedStatement;
-import com.mysql.jdbc.Statement;
 
 import static dao.DAOUtilitaire.*;
-import beans.Expenses;
 import beans.Group;
-import beans.Person;
-import beans.RowExpenses;
 import beans.ThingGroup;
 import beans.ThingPersonal;
 import beans.Things;

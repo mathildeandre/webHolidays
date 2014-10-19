@@ -9,21 +9,26 @@
 	    <div id="fieldMyComposition" class="aroundWhite">
 	    
 	    
-	     	<c:forEach var="members" items="${sessionScope.group.listMembers}">
-	    		<li > ${members.name}</li> 
+	     	<c:forEach var="member" items="${sessionScope.group.listMembers}">
+	    		<li > ${member.name}</li> 
 	    	</c:forEach>
 	    
 		</div>
 		</fieldset>
 	</article>
 	
+<c:if test="${requestScope.hasRight == 1}" >
+	
+	
 	<article id="articleAddMember" class="inline">
+	
 		<h2 class="" >Add person from your contact list</h2>
+		
        	<form method="post" action="group?action=addContactIntoGroup">
 			<select id="groupListContacts" name="groupListContacts" class="textOrange">
 		       	<c:forEach var="contactPerson" items="${sessionScope.contactList}">
 		    		<option value="${contactPerson.login}"> ${contactPerson.login}</option> 
-		    	</c:forEach>
+	    		</c:forEach>
 			</select>
 		
 		<input id="addMember" type="submit" value="Add member" class="newButton3D buttonGroup buttonOrangeClair" onmouseover="changeCursor('addMember')"/>
@@ -31,7 +36,7 @@
        
 		<h2 class="" >Add another person</h2>
 		
-		<div  class="aroundWhite">Search existing person : </div>
+		<div  class="aroundWhite">Add existing person : </div>
 		 <span class="textRed">${requestScope.errors['searchPerson']}</span>
        	<form method="post" action="group?action=searchPerson">
 	      <input id="searchPerson" class="textGrey"  name="searchPerson" type="text" value="Login of the person" 
@@ -71,8 +76,33 @@
 		
        	</div>
       </form>
+      
+      
+		<h2 class="" >Add/Remove full rights to a member</h2>
+		
+     	<form method="post" action="group?action=addHasRights">
+			<select id="addHasRights" name="addHasRights" class="textOrange">
+				<c:forEach var="member" items="${sessionScope.group.listMembers}">
+		    		<option value="${member.id }"> ${members.name}</option> 
+		    	</c:forEach>
+			</select>
+		
+			<input id="addRights" type="submit" value="Add rights" class="newButton3D buttonGroup buttonOrangeClair" onmouseover="changeCursor('addRights')"/>
+       	</form>
+       
+       	<form method="post" action="group?action=removeHasRights">
+			<select id="removeHasRights" name="removeHasRights" class="textOrange">
+				<c:forEach var="member" items="${sessionScope.group.listMembers}">
+		    		<option value="${member.id }"> ${members.name}</option> 
+		    	</c:forEach>
+			</select>
+		
+			<input id="removeRights" type="submit" value="Add rights" class="newButton3D buttonGroup buttonOrangeClair" onmouseover="changeCursor('removeRights')"/>
+       	</form>
        	
 	</article>
+	
+</c:if> 
  </section >
 
 <script src="JS/group.js" type="text/javascript"></script>

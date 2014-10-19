@@ -4,11 +4,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import org.jasypt.util.password.ConfigurablePasswordEncryptor;
-
 import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.PreparedStatement;
-import com.mysql.jdbc.Statement;
 
 import static dao.DAOUtilitaire.*;
 import beans.Group;
@@ -26,8 +23,6 @@ public class GroupDao {
 	
 	private static final String SQL_INSERT = "INSERT INTO Groups (name_group, date_inscription, login_admin) VALUES (?, NOW(), ?)";
 	
-
-
 	/* Implémentation de la méthode définie dans l'interface UtilisateurDao */
 	public long createGroup( Group group, String loginAmdin ) throws DAOException {
 		System.out.println("creation group !!!!!!!!!!!!!!!!!!!");
@@ -160,6 +155,50 @@ public class GroupDao {
 		return listMembers;
 	}
 	
+private static final String SQL_UPDATE_RIGHTS = "UPDATE BelongTo SET has_rights=? WHERE id_person=? AND id_group=?";
+	
+	public void updateRights(int right, Long idGroup, int idPersonNewRights){
+		Connection connexion = null;
+	    PreparedStatement preparedStatement = null;
+	    
+		try {
+		        /* Récupération d'une connexion depuis la Factory */
+		        connexion = (Connection) daoFactory.getConnection();
+		        preparedStatement = initialisationRequetePreparee( connexion, SQL_UPDATE_RIGHTS, false, right, idPersonNewRights, idGroup);
+		        preparedStatement.executeUpdate();
+		       
+		    } catch ( SQLException e ) {
+		        throw new DAOException( e );
+		    } finally {
+		        fermeturesSilencieuses(preparedStatement, connexion );
+		    }
+	}
 	
 	
+	private static final String SQL_SELECT_RIGHTS = "SELECT has_rights FROM BelongTo WHERE id_person = ? AND id_group = ?";
+
+	public int hasRight(Long idGroup, Long idPerson) throws DAOException {
+		Connection connexion = null;
+	    PreparedStatement preparedStatementBelongTo = null;
+	    ResultSet resultSetBelongTo = null;
+
+	    try {
+	        /* Récupération d'une connexion depuis la Factory */
+	        connexion = (Connection) daoFactory.getConnection();
+	     
+	        preparedStatementBelongTo = initialisationRequetePreparee( connexion, SQL_SELECT_GROUP, false, idPerson, idGroup);
+	        resultSetBelongTo = preparedStatementBelongTo.executeQuery();
+
+	        if ( resultSetBelongTo.next()) {
+	        	return resultSetBelongTo.getInt("has_rights");
+	        }
+	        else{
+	        	return 0;
+	        }
+	    } catch ( SQLException e ) {
+	        throw new DAOException( e );
+	    } finally {
+	        fermeturesSilencieuses( resultSetBelongTo, preparedStatementBelongTo, connexion );
+	    }
+	}
 }

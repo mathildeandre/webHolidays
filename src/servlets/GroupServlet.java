@@ -88,12 +88,27 @@ public class GroupServlet extends HttpServlet {
 
     		   String login = request.getParameter("groupListContacts");
     		   personAdded = searchPerson(request, response, login);
+    		   
+    		 //on ajoute le nouveau membre du groupe dans la list de contact de chaque membre du groupe
+        	   if(personAdded != null){
+        		   addNewMemberInContactLists(request, response, personAdded);
+    		   }
     	   }
+    	   else if(request.getParameter("action").equalsIgnoreCase("addHasRights")){
+    		   	HttpSession session = request.getSession(); 
+    		   	Group group = (Group) session.getAttribute("group");
+    			int idPersonNewRights = Integer.parseInt(request.getParameter("addHasRights"));
+    			GroupForm groupForm = new GroupForm(groupDAO);
+    			groupForm.addRights(group.getId(), idPersonNewRights);
+    	   }
+    	   else if(request.getParameter("action").equalsIgnoreCase("removeHasRights")){
+	   		   	HttpSession session = request.getSession(); 
+	   		   	Group group = (Group) session.getAttribute("group");
+	   			int idPersonNewRights = Integer.parseInt(request.getParameter("removeHasRights"));
+	   			GroupForm groupForm = new GroupForm(groupDAO);
+	   			groupForm.removeRights(group.getId(), idPersonNewRights);
+   	   }
     	   
-    	   //on ajoute le nouveau membre du groupe dans la list de contact de chaque membre du groupe
-    	   if(personAdded != null){
-    		   addNewMemberInContactLists(request, response, personAdded);
-		   }
     	   
     	   
        }
@@ -144,6 +159,12 @@ public class GroupServlet extends HttpServlet {
        Things things = thingsForm.getThings(request, group);
        session.setAttribute("things", things);
        request.setAttribute("errorsThings", thingsForm.getErrors());
+       
+       Person person = (Person) session.getAttribute("person");
+       GroupForm groupForm = new GroupForm(groupDAO);
+       int hasRight = groupForm.hasRight(group.getId(), person.getId());
+       //hasRight sera 1 ou 0
+       session.setAttribute("hasRight", hasRight);
        
        
 

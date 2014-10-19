@@ -52,8 +52,7 @@ HTML5 sont employees. -->
 	    <div id="fieldMyGroups" >
 	    
 	    <c:forEach var="group" items="${sessionScope['listGroups']}" varStatus="i">
-	    		<li id="liGroup${i.index}" class="forBubble"
-	    		onmouseover="changeCursor('liGroup${i.index}')" 
+	    		<li id="liGroup${i.index}" class="forBubble" onmouseover="changeCursor('liGroup${i.index}')" 
 	    		onclick="location.href='/webHolidays/group?action=connectGroup&nameGroup=${group.name}'" >
 	    		${group.name}
 	    		<span id="myBubble">Admin : ${group.loginAdmin}</span> 
@@ -201,6 +200,11 @@ HTML5 sont employees. -->
          <input id="confirmModifyPwd" type="submit" value="Modify Password" class="newButton3D buttonBlueFonce" onmouseover="changeCursor('confirmModifyPwd')" />
 		 </div>
 		 </form>
+		 
+		 </br>
+		 </br>
+		 
+		 <span class="newButton3D buttonBlueFonce buttonModifyProfil" onclick="unModifyDisplay()">Cancel</span>
 	</div>
 	
 	<div id="profilVisible">
@@ -248,6 +252,10 @@ HTML5 sont employees. -->
 function modifyDisplay(){
 	document.getElementById('profilInvisible').style.display = "block";
 	document.getElementById('profilVisible').style.display = "none";
+}
+function unModifyDisplay(){
+	document.getElementById('profilVisible').style.display = "block";
+	document.getElementById('profilInvisible').style.display = "none";
 }
 </script>
 

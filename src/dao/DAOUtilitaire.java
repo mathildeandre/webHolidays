@@ -4,8 +4,6 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import beans.Group;
-
 import com.mysql.jdbc.PreparedStatement;
 import com.mysql.jdbc.Statement;
 
