@@ -6,7 +6,6 @@ function functionDatepicker(){
 tabDays=["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"]; 
 
 
-
 function allowDrop(ev) {
     ev.preventDefault();
 }
@@ -16,10 +15,14 @@ function drag(ev) {
 }
 
 function drop(ev) {
-    ev.preventDefault();
     var data=ev.dataTransfer.getData("text/html");
-    ev.target.appendChild(document.getElementById(data).cloneNode(true));
+	if(ev.target.hasChildNodes()){
+		ev.target.parentNode.replaceChild(document.getElementById(data).cloneNode(true), ev.target);
+	}
+    ev.preventDefault();
+    ev.target.appendChild(document.getElementById(data).cloneNode(true)); 
 }
+
 
 function checkRadio(id){
 	if(id=="date"){
