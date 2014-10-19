@@ -1981,6 +1981,12 @@ background-position: center;
 	text-decoration: underline;
 }
 
+#actualDay{
+	margin-left: 3vw;
+	font-size: 16px;
+	
+}
+
 #lunch ul li, #dinner ul li{
 	margin-left:3vw;
 }
@@ -2010,11 +2016,7 @@ background-position: center;
 	border-radius: 0.5vw;
 }
 
-#actualDay h2{
-	margin-left: 5vw;
-	font-size: 16px;
-	
-}
+
 #previousDayButton{
 	margin-top: 0.5vw;
    margin-right: 7px;

@@ -10,12 +10,11 @@
 <form method="post" action="planning?action=createPlanning">
 	<div class="line">
 		<div id="divDate" class="inline">
-			From : <input type="text" id="startDate" name="startDate" class="datepick textGreen">  
-			to : <input type="text" id="finC" name="endDate" class="datepick textGreen" >
+			From : <input type="text" id="chooseStartDate" name="chooseStartDate" class="datepick textGreen">  
+			to : <input type="text" id="chooseSendDate" name="chooseEndDate" class="datepick textGreen" >
 		</div>
 		<div class="inline">
-		<input id="createPlanning" type="submit" value="Create" class="newButton3D buttonGreenClair" onmouseover="changeCursor('createPlanning')"
-		/>
+		<input id="createPlanning" type="submit" value="Create" class="newButton3D buttonGreenClair" onmouseover="changeCursor('createPlanning')" />
 		</div>
 	</div>
 </form>
@@ -38,11 +37,11 @@
  	
 
  		
-	 <div id="drag1" draggable="true" ondragstart="drag(event)"> Burger </div> 
+	 <div id="dragBurger" draggable="true" ondragstart="drag(event)"> Burger </div> 
 	 
-	 <div id="drag2" draggable="true" ondragstart="drag(event)"> Lasagna </div> 
+	 <div id="dragLasagna" draggable="true" ondragstart="drag(event)"> Lasagna </div> 
 	 
-	 <div id="drag3" draggable="true" ondragstart="drag(event)"> Pasta </div> 
+	 <div id="dragPasta" draggable="true" ondragstart="drag(event)"> Pasta </div> 
 	 
  	
  	</div>
@@ -52,8 +51,8 @@
  <article id="myPlanning" class="inline">
  	<div id="myPlanningTitle">
 	
-	<input id="debutC" name="startDate" type="hidden" >  From  <span class="date"> ${requestScope.startDate} </span>
-	<input id="debutC" name="startDate" type="hidden" >  to <span class="date"> ${requestScope.endDate} </span>
+	<input id="startDate" name="startDate" type="hidden"  value="${requestScope.startDate}">  From  <span class="date"> ${requestScope.startDate} </span>
+	<input id="endDate" name="endDate" type="hidden" value="${requestScope.endDate}">  to <span class="date"> ${requestScope.endDate} </span>
 	 
 	 </div>
 	 
@@ -64,8 +63,8 @@
 				<input id="previousDayButton" type="submit" value="previous"  onmouseover="changeCursor('previousDayButton')" onclick="previousDay()"/>
 			</div>
 		
-			<div id="actualDay" class="inline">
-				<h2> lundi 20/09 </h2>
+			<div class="inline">
+				<h2 id="actualDay">${requestScope.startDay} ${requestScope.startDate}</h2>
 			</div>
 			<div class="inline">
 				<input id="nextDayButton" type="submit" value="next"  onmouseover="changeCursor('nextDayButton')" onclick="nextDayFunc()"/>

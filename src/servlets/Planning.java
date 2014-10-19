@@ -2,7 +2,13 @@ package servlets;
 
 
 import java.io.IOException;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.Map;
 
 import javax.servlet.ServletException;
@@ -43,6 +49,8 @@ public class Planning extends HttpServlet {
     private ExpensesDao expensesDAO;
     private DoodleDao doodleDAO;
     private ThingsDao thingsDAO;
+    
+    String[] tabDays = {"Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"}; 
 
     public void init() throws ServletException {
         /* Récupération d'une instance de notre DAO Utilisateur */
@@ -62,11 +70,25 @@ public class Planning extends HttpServlet {
 	public void doPost( HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException {
 		if(request.getParameter("action")!=null){
 		     if(request.getParameter("action").equalsIgnoreCase(("createPlanning"))){
-		    	 String startDate = request.getParameter("startDate");
-		    	 System.out.println( "ACTION"+startDate);
 		    	 request.setAttribute("planningCreated", "true");
-		    	 request.setAttribute("startDate", request.getParameter("startDate"));
-		    	 request.setAttribute("endDate", request.getParameter("endDate"));
+		    	 
+		    	 String date = request.getParameter("chooseStartDate");
+		    	  SimpleDateFormat format1=new SimpleDateFormat("dd/MM/yyyy");
+		    	  Date dt1 = null;
+		    	  String day = null;
+					try {
+						dt1 = format1.parse(date);
+						int numDay = dt1.getDay();
+						day = tabDays[numDay-1];
+					} catch (ParseException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+		    	 
+
+			     request.setAttribute("startDay", day);
+		    	 request.setAttribute("startDate",date);
+		    	 request.setAttribute("endDate", request.getParameter("chooseEndDate"));
 		 		this.getServletContext().getRequestDispatcher("/index.jsp?page=planningMeals").forward(request, response);
 
 		     }

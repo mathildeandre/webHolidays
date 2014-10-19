@@ -10,8 +10,6 @@
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
   
- 
-
 	
 	<servlet>
 		<servlet-name>Connexion</servlet-name>
