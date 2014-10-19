@@ -115,6 +115,47 @@ public class GroupDao {
 	}
 	
 
+	
+	private static final String SQL_SELECT_GETGROUP = 
+			"SELECT Groups.id_group, name_group, login_admin, has_rights "
+			+ "FROM BelongTo, Groups "
+			+ "WHERE BelongTo.id_group = ? "
+			+ "AND id_person= ? "
+			+ "AND Groups.id_group = BelongTo.id_group";
+	
+	public Group getGroupAndVERIF(int idGroup, Long idPerson){
+		Connection connexion = null;
+	    PreparedStatement preparedStatementGroup = null;
+	    ResultSet resultSetGroup = null;
+
+	    try {
+	        /* Récupération d'une connexion depuis la Factory */
+	        connexion = (Connection) daoFactory.getConnection();
+	        
+		   // PreparedStatement preparedStatement = (PreparedStatement) connexion.prepareStatement( SQL_SELECT_GROUP, Statement.NO_GENERATED_KEYS );
+		   // preparedStatement.setString(1, nameGroup);
+	     
+	        preparedStatementGroup = initialisationRequetePreparee( connexion, SQL_SELECT_GETGROUP, false, idGroup, idPerson);
+	        resultSetGroup = preparedStatementGroup.executeQuery();
+
+	        if (resultSetGroup.next()) {
+	        	Group group = new Group();
+	        	group.setId(resultSetGroup.getLong("Groups.id_group"));
+	        	group.setName(resultSetGroup.getString("name_group"));
+	        	group.setLoginAdmin(resultSetGroup.getString("login_admin"));
+	        	
+	        	return group;
+	        }
+	        else{
+	        	return null;
+	        }
+	    } catch ( SQLException e ) {
+	        throw new DAOException( e );
+	    } finally {
+	        fermeturesSilencieuses( resultSetGroup, preparedStatementGroup, connexion );
+	    }
+	}
+
 	private static final String SQL_SELECT_MEMBERS = 
 			"SELECT Persons.id_person, name_person, login_person, pwd_person, mail_person, is_new "
 			+ "FROM BelongTo,Persons "
@@ -186,7 +227,7 @@ private static final String SQL_UPDATE_RIGHTS = "UPDATE BelongTo SET has_rights=
 	        /* Récupération d'une connexion depuis la Factory */
 	        connexion = (Connection) daoFactory.getConnection();
 	     
-	        preparedStatementBelongTo = initialisationRequetePreparee( connexion, SQL_SELECT_GROUP, false, idPerson, idGroup);
+	        preparedStatementBelongTo = initialisationRequetePreparee( connexion, SQL_SELECT_RIGHTS, false, idPerson, idGroup);
 	        resultSetBelongTo = preparedStatementBelongTo.executeQuery();
 
 	        if ( resultSetBelongTo.next()) {

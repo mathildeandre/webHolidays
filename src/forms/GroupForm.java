@@ -43,6 +43,7 @@ public final class GroupForm {
     	int hasR = 0;
     	try {
         	hasR = groupDao.hasRight(idGroup,idPerson);
+        	System.out.println("has right ???????????????,"+ hasR);
         	
 		} catch (DAOException e) {
 			errors.put("addRights", "Échec dans l'ajout de droit..");

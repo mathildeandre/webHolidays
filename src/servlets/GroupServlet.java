@@ -100,6 +100,8 @@ public class GroupServlet extends HttpServlet {
     			int idPersonNewRights = Integer.parseInt(request.getParameter("addHasRights"));
     			GroupForm groupForm = new GroupForm(groupDAO);
     			groupForm.addRights(group.getId(), idPersonNewRights);
+    			
+    			this.getServletContext().getRequestDispatcher("/index.jsp?page=group").forward(request, response);
     	   }
     	   else if(request.getParameter("action").equalsIgnoreCase("removeHasRights")){
 	   		   	HttpSession session = request.getSession(); 
@@ -107,6 +109,8 @@ public class GroupServlet extends HttpServlet {
 	   			int idPersonNewRights = Integer.parseInt(request.getParameter("removeHasRights"));
 	   			GroupForm groupForm = new GroupForm(groupDAO);
 	   			groupForm.removeRights(group.getId(), idPersonNewRights);
+
+				this.getServletContext().getRequestDispatcher("/index.jsp?page=group").forward(request, response);
    	   }
     	   
     	   
@@ -164,7 +168,14 @@ public class GroupServlet extends HttpServlet {
        GroupForm groupForm = new GroupForm(groupDAO);
        int hasRight = groupForm.hasRight(group.getId(), person.getId());
        //hasRight sera 1 ou 0
+       System.out.println("SECOND CHANCE has right ??? "+hasRight);
        session.setAttribute("hasRight", hasRight);
+       
+       int isAdmin = 0;
+       if(group.getLoginAdmin().equals(person.getLogin())){ //cest que c ladmin
+           isAdmin = 1;
+       }
+       session.setAttribute("isAdmin", isAdmin);
        
        
 

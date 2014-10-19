@@ -190,15 +190,13 @@ public class PersonDao {
 		        connexion = (Connection) daoFactory.getConnection();
 		        preparedStatement = initialisationRequetePreparee( connexion, SQL_SELECT_GROUPS, false, person.getId());
 		        resultSetGroup = preparedStatement.executeQuery();
-		        String nameGroup, loginAdmin;
-		        long idGroup;
-		        Timestamp date;
+
 		        while ( resultSetGroup.next() ) {
 		    	    Group group = new Group();
-		        	idGroup = resultSetGroup.getInt("id_group");
-		        	nameGroup = resultSetGroup.getString("name_group");
-		        	loginAdmin = resultSetGroup.getString("login_admin");
-		        	date = resultSetGroup.getTimestamp("date_inscription");
+		        	long idGroup = resultSetGroup.getInt("id_group");
+		        	String nameGroup = resultSetGroup.getString("name_group");
+		        	String loginAdmin = resultSetGroup.getString("login_admin");
+		        	Timestamp date = resultSetGroup.getTimestamp("date_inscription");
 		        	group.setName(nameGroup);
 		        	group.setId(idGroup);
 		        	group.setLoginAdmin(loginAdmin);
@@ -292,31 +290,30 @@ public class PersonDao {
 		}
 	}
 	
-	private static final String SQL_SELECT_GROUP = "SELECT BelongTo.id_Group FROM BelongTo, Groups WHERE Groups.name_group=?"
-			+ " AND BelongTo.id_group = Groups.id_group AND BelongTo.id_person=?";
-
-	public long findGroup(String nameGroup, Person person) throws DAOException {
-		Connection connexion = null;
-		PreparedStatement preparedStatement = null;
-	    ResultSet resultSetGroup = null;
-
-		try {
-			/* Récupération d'une connexion depuis la Factory */
-			connexion = (Connection) daoFactory.getConnection();
-			preparedStatement = initialisationRequetePreparee(connexion,
-					SQL_SELECT_GROUP, false, nameGroup, person.getId());
-			resultSetGroup = preparedStatement.executeQuery();
-			if(resultSetGroup.next()){
-				long idGroup = resultSetGroup.getInt("id_group");
-				return idGroup;
-			}
-		} catch (SQLException e) {
-			throw new DAOException(e);
-		} finally {
-			fermeturesSilencieuses(preparedStatement, connexion);
-		}
-		return 0;
-	}
+//	private static final String SQL_SELECT_GROUP = "SELECT BelongTo.id_Group FROM BelongTo, Groups WHERE Groups.name_group=? AND BelongTo.id_group = Groups.id_group AND BelongTo.id_person=?";
+//
+//	public long findGroup(String nameGroup, Person person) throws DAOException {
+//		Connection connexion = null;
+//		PreparedStatement preparedStatement = null;
+//	    ResultSet resultSetGroup = null;
+//
+//		try {
+//			/* Récupération d'une connexion depuis la Factory */
+//			connexion = (Connection) daoFactory.getConnection();
+//			preparedStatement = initialisationRequetePreparee(connexion,
+//					SQL_SELECT_GROUP, false, nameGroup, person.getId());
+//			resultSetGroup = preparedStatement.executeQuery();
+//			if(resultSetGroup.next()){
+//				long idGroup = resultSetGroup.getInt("id_group");
+//				return idGroup;
+//			}
+//		} catch (SQLException e) {
+//			throw new DAOException(e);
+//		} finally {
+//			fermeturesSilencieuses(preparedStatement, connexion);
+//		}
+//		return 0;
+//	}
 	
 	private static final String SQL_INSERT_CONTACT = "INSERT INTO ContactList (id_person1, id_person2) VALUES (?, ?)";
 

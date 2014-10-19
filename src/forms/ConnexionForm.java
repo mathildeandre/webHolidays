@@ -61,25 +61,27 @@ public class ConnexionForm {
 	}
 	
 	public Group connectGroup(HttpServletRequest request){
-	    String nameGroup = request.getParameter("nameGroup");
+	    int idGroup = Integer.parseInt(request.getParameter("idGroup"));
 	    HttpSession session = request.getSession();
 	    Person person = (Person) session.getAttribute("person");
 
-        Group group = new Group();
         try {
-        	long idGroup = personDao.findGroup(nameGroup, person);
-        	group.setName(nameGroup);
-        	group.setId(idGroup);
-        	
+        	//idPerson permet de verifier si ce groupe est accessible depuis cett person
+        	Group group = groupDao.getGroupAndVERIF(idGroup, person.getId());
+        	if(group == null){
+        		errors.put("connectGroup", "Usurpation de group : la person n'a pas acces a ce group");
+        		return null;
+        	}
         	ArrayList<Person> listMembers = groupDao.getMembers(group);
             group.setListMembers(listMembers);
+            
+            return group;
             
         } catch ( DAOException e ) {
             errors.put("connectGroup", "Échec de l'inscription : une erreur imprévue est survenue, merci de réessayer dans quelques instants.");
             e.printStackTrace();
             return null;
         }
-        return group;
 }
 	
 	public ArrayList<Group> getGroups(HttpServletRequest request){
@@ -90,7 +92,7 @@ public class ConnexionForm {
 
         try {
        
-        	listGroups = (ArrayList<Group>) personDao.getGroups(person).clone();
+        	listGroups = personDao.getGroups(person);
         	return listGroups;
         } catch ( DAOException e ) {
             error = "Échec de la selection des groupes: une erreur imprévue est survenue, merci de réessayer dans quelques instants.";

@@ -53,7 +53,7 @@ HTML5 sont employees. -->
 	    
 	    <c:forEach var="group" items="${sessionScope['listGroups']}" varStatus="i">
 	    		<li id="liGroup${i.index}" class="forBubble" onmouseover="changeCursor('liGroup${i.index}')" 
-	    		onclick="location.href='/webHolidays/group?action=connectGroup&nameGroup=${group.name}'" >
+	    		onclick="location.href='/webHolidays/group?action=connectGroup&idGroup=${group.id}'" >
 	    		${group.name}
 	    		<span id="myBubble">Admin : ${group.loginAdmin}</span> 
 	    		</li> 

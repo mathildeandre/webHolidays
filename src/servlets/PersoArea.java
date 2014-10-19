@@ -82,10 +82,8 @@ public class PersoArea extends HttpServlet {
 				.equalsIgnoreCase("display")) {
 			// recuperer liste des groupes de la personne
 			ConnexionForm form = new ConnexionForm(personDAO);
-			ArrayList<Group> listGroups = new ArrayList<>();
-			// HttpSession session = request.getSession();
-			// Person person = (Person) session.getAttribute("person");
-			listGroups = form.getGroups(request);
+
+			ArrayList<Group> listGroups = form.getGroups(request);
 			String error = form.getError();
 			if (error == null) {
 
