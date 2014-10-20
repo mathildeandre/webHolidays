@@ -40,7 +40,7 @@ public class PersonDao {
 	    try {
 	        /* Récupération d'une connexion depuis la Factory */
 	        connexion = (Connection) daoFactory.getConnection();
-	        preparedStatement = initialisationRequetePreparee( connexion, SQL_INSERT, true, person.getName(), person.getLogin(), person.getPwd(), person.getEmail(), 1, "");
+	        preparedStatement = initialisationRequetePreparee( connexion, SQL_INSERT, true, person.getName(), person.getLogin(), person.getPwd(), person.getEmail(), 1, person.getPwdNewbie());
 	        int statut = preparedStatement.executeUpdate();
 	        /* Analyse du statut retourné par la requête d'insertion */
 	        if ( statut == 0 ) {
@@ -276,7 +276,7 @@ public class PersonDao {
 		}
 	}
 	
-	private static final String SQL_UPDATE_PWD = "UPDATE Persons SET pwd_person=? WHERE id_person=?";
+	private static final String SQL_UPDATE_PWD = "UPDATE Persons SET pwd_person=?, pwd_newbie='' WHERE id_person=?";
 
 	public void modifyPwd(Person person, String newPwd) throws DAOException {
 		Connection connexion = null;

@@ -6,7 +6,7 @@
     <meta charset='utf-8' />
     <link rel="shortcut icon" href="images/tree3.png" />
     
-	<link rel="stylesheet" type="text/css" href="CSS/all14.css" />
+	<link rel="stylesheet" type="text/css" href="CSS/all15.css" />
    <!--<link rel="stylesheet" type="text/css" href="CSS/police.css" />
     <link rel="stylesheet" type="text/css" href="CSS/3D1.css" />
     <link rel="stylesheet" type="text/css" href="CSS/stylePersonalArea.css" />-->
@@ -39,6 +39,11 @@ HTML5 sont employees. -->
 
 
 <section id="sectionPersonalArea" class="line" >
+
+<c:if test="${sessionScope.person.pwdNewbie != ''}" >
+<script type="text/javascript">alert("Your account has been created by someone else, please change your password in the \"modify profil\" section!");</script>
+</c:if>
+
 <div id="sousSectionPA">
 		<!-- <div id="hint" class="aroundBlack">
 		In order to create your first group : fill up "Group name", 
@@ -186,15 +191,15 @@ HTML5 sont employees. -->
 		</c:if> 
 		<div class="textRed">${requestScope.errors['oldPwd']}</div>
 		 <div class="bold">Change Password :</div>
-		  <div><input id="oldPwd" class="textBlack inline"  name="oldPwd" type="text" value="Old Password" 
+		  <div><input id="oldPwd" class="textGrey inline"  name="oldPwd" type="text" value="Old Password" 
          onfocus="inputTextFocusPwd('oldPwd', 'White')" onblur="inputTextBlurPwd('oldPwd','Old Password')" required >
          </div>
 		<div class="textRed">${requestScope.errors['pwd']}</div>
-		  <div><input id="newPwd" class="textBlack inline"  name="newPwd" type="text" value="New Password" 
+		  <div><input id="newPwd" class="textGrey inline"  name="newPwd" type="text" value="New Password" 
          onfocus="inputTextFocusPwd('newPwd', 'White')" onblur="inputTextBlurPwd('newPwd','New Password')" required >
          </div>
 		<div class="textRed">${requestScope.errors['confirmPwd']}</div>
-		  <div><input id="confirmNewPwd" class="textBlack inline"  name="confirmNewPwd" type="text" value="Confirm New Pwd" 
+		  <div><input id="confirmNewPwd" class="textGrey inline"  name="confirmNewPwd" type="text" value="Confirm New Pwd" 
          onfocus="inputTextFocusPwd('confirmNewPwd', 'White')" onblur="inputTextBlurPwd('confirmNewPwd','Confirm New Pwd')" required >
          
          <input id="confirmModifyPwd" type="submit" value="Modify Password" class="newButton3D buttonBlueFonce" onmouseover="changeCursor('confirmModifyPwd')" />

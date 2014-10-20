@@ -233,7 +233,9 @@ public class PersoArea extends HttpServlet {
 		Map<String, String> errors = form.getErrors();
 		//la modif de login s'est bien passée
 		if(errors.isEmpty()){
+			person.setPwdNewbie("");
 			session.setAttribute("person", person);
+			person.setPwdNewbie("");
 			request.setAttribute("actionDone", "modifyPwd");
 			this.getServletContext().getRequestDispatcher("/persoArea?action=display").forward(request, response);
 		}

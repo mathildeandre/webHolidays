@@ -53,7 +53,14 @@ public final class GroupForm {
     	return hasR;
     }
     
-    public void addRights(Long idGroup, int idPersonNewRights){
+    public void addRights(Group group, int idPersonNewRights){
+    	//on a pas besoin de renvoyer le group, en modifiant ca le modifie aussi dans la session etc..
+    	for(int i=0; i<group.getNbPerson(); i++){
+    		if(group.getListMembers().get(i).getId() == idPersonNewRights){
+    			group.getListMembers().get(i).setHasRights(1);
+    		}
+    	}
+    	Long idGroup = group.getId();
     	try {
 			groupDao.updateRights(1, idGroup,idPersonNewRights);
 		} catch (DAOException e) {
@@ -61,7 +68,13 @@ public final class GroupForm {
 			e.printStackTrace();
 		}
     }
-    public void removeRights(Long idGroup, int idPersonNewRights){
+    public void removeRights(Group group, int idPersonNewRights){
+    	for(int i=0; i<group.getNbPerson(); i++){
+    		if(group.getListMembers().get(i).getId() == idPersonNewRights){
+    			group.getListMembers().get(i).setHasRights(0);
+    		}
+    	}
+    	Long idGroup = group.getId();
     	try {
 			groupDao.updateRights(0, idGroup,idPersonNewRights);
 		} catch (DAOException e) {
@@ -142,24 +155,24 @@ public final class GroupForm {
 		}
 	}
     
-	public ArrayList<Person> getContacts(HttpServletRequest request) {
-
-		HttpSession session = request.getSession();
-		Person person = (Person) session.getAttribute("person");
-		ArrayList<Person> listContacts = new ArrayList<Person>();
-
-		try {
-			listContacts = personDao.getContacts(person);
-			return listContacts;
-		} catch (DAOException e) {
-			errors.put(
-					"getContact",
-					"Échec de la selection des contacts: une erreur imprévue est survenue, "
-					+ "merci de réessayer dans quelques instants.");
-			e.printStackTrace();
-			return null;
-		}
-	}
+//	public ArrayList<Person> getContacts(HttpServletRequest request) {
+//
+//		HttpSession session = request.getSession();
+//		Person person = (Person) session.getAttribute("person");
+//		ArrayList<Person> listContacts = new ArrayList<Person>();
+//
+//		try {
+//			listContacts = personDao.getContacts(person);
+//			return listContacts;
+//		} catch (DAOException e) {
+//			errors.put(
+//					"getContact",
+//					"Échec de la selection des contacts: une erreur imprévue est survenue, "
+//					+ "merci de réessayer dans quelques instants.");
+//			e.printStackTrace();
+//			return null;
+//		}
+//	}
 
    
 }

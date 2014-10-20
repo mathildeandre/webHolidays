@@ -68,13 +68,19 @@ public class GroupServlet extends HttpServlet {
     }
 	
 	public void doPost( HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException {
-       if(request.getParameter("action") != null){
+		HttpSession session = request.getSession(); 
+		
+		if(request.getParameter("action") != null){
     	   Person personAdded = new Person();
     	   if(request.getParameter("action").equalsIgnoreCase("createPerson")){
     		   personAdded = createPerson(request, response);
     		   if(personAdded != null){
         		   addNewMemberInContactLists(request, response, personAdded);
+        		   
+        		   ArrayList<Person> contactList = (ArrayList<Person>) session.getAttribute("contactList");
+        		   contactList.add(personAdded);
     		   }
+   				this.getServletContext().getRequestDispatcher("/index.jsp?page=group").forward(request, response);
     	   }
     	   else if(request.getParameter("action").equalsIgnoreCase("searchPerson")){
 
@@ -82,7 +88,11 @@ public class GroupServlet extends HttpServlet {
     		   personAdded = searchPerson(request, response, login);
     		   if(personAdded != null){
         		   addNewMemberInContactLists(request, response, personAdded);
+        		   ArrayList<Person> contactList = (ArrayList<Person>) session.getAttribute("contactList");
+        		   contactList.add(personAdded);
     		   }
+
+   				this.getServletContext().getRequestDispatcher("/index.jsp?page=group").forward(request, response);
     	   }
     	   else if(request.getParameter("action").equalsIgnoreCase("addContactIntoGroup")){
 
@@ -93,30 +103,26 @@ public class GroupServlet extends HttpServlet {
         	   if(personAdded != null){
         		   addNewMemberInContactLists(request, response, personAdded);
     		   }
+
+   				this.getServletContext().getRequestDispatcher("/index.jsp?page=group").forward(request, response);
     	   }
     	   else if(request.getParameter("action").equalsIgnoreCase("addHasRights")){
-    		   	HttpSession session = request.getSession(); 
     		   	Group group = (Group) session.getAttribute("group");
     			int idPersonNewRights = Integer.parseInt(request.getParameter("addHasRights"));
     			GroupForm groupForm = new GroupForm(groupDAO);
-    			groupForm.addRights(group.getId(), idPersonNewRights);
+    			groupForm.addRights(group, idPersonNewRights);
     			
     			this.getServletContext().getRequestDispatcher("/index.jsp?page=group").forward(request, response);
     	   }
     	   else if(request.getParameter("action").equalsIgnoreCase("removeHasRights")){
-	   		   	HttpSession session = request.getSession(); 
 	   		   	Group group = (Group) session.getAttribute("group");
 	   			int idPersonNewRights = Integer.parseInt(request.getParameter("removeHasRights"));
 	   			GroupForm groupForm = new GroupForm(groupDAO);
-	   			groupForm.removeRights(group.getId(), idPersonNewRights);
+	   			groupForm.removeRights(group, idPersonNewRights);
 
 				this.getServletContext().getRequestDispatcher("/index.jsp?page=group").forward(request, response);
-   	   }
-    	   
-    	   
-    	   
+    	   }
        }
-
     }
 	
 

@@ -14,3 +14,7 @@ Importer fichier dans bd : mysql -u root -p base_de_donnees < fichier_dump
 $: mysql -u root -p bdd_holidays < /home/fabi/workspace/webHolidays/src/bdd/tablesNew.sql
 
 Créer bdd : CREATE DATABASE bdd_holidays DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+
+
+ps -ef | grep java
+kill -9 numPID

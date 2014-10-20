@@ -57,15 +57,23 @@ public final class RegistrationForm {
 			traiterEmail(email, person);
 			person.setEmail(email);
 			person.setIsNew(1);
-			if(! isCreateBySomeoneElse){
+
+			
+			person.setPwdNewbie("");
+			if(!isCreateBySomeoneElse){
 				// on crypte le pwd et on verifie la confirmation
 				String confirmPwd = getValeurChamp(request, "confirmPwd");
-				String newPwdAdmin = traiterMotsDePasse(pwd, confirmPwd);
-				person.setPwd(newPwdAdmin);
-			// si la personne a été cree par quelqu'un d'autre, pas besoin de crypte le pwd
-			}else{
-				person.setPwd(pwd);
+				traiterMotsDePasse(pwd, confirmPwd);
 			}
+			else {
+			// si la personne a été cree par quelqu'un d'autre on ajout pwdNewbie
+				person.setPwdNewbie(pwd);
+			}
+
+			String newPwdAdmin  = cryptePwd(pwd);
+			person.setPwd(newPwdAdmin);
+			
+			
 			if (errors.isEmpty()) {
 
 				long idPerson = personDao.create(person);
@@ -82,6 +90,74 @@ public final class RegistrationForm {
 			return null;
 		}
 		return person;
+	}
+	
+	/*
+	 * Appel à la validation des mots de passe reçus, chiffrement du mot de
+	 * passe et initialisation de la propriété motDePasse du bean
+	 */
+	private void traiterMotsDePasse(String pwd, String confirmation) {
+		try {
+				validationMotsDePasse(pwd, confirmation);
+		} catch (FormValidationException e) {
+			System.out.println("mauvais mdp");
+
+			errors.put("pwd", e.getMessage());
+		} catch (SecondException e) {
+
+			errors.put("confirmPwd", e.getMessage());
+		}
+
+		/*
+		 * Utilisation de la bibliothèque Jasypt pour chiffrer le mot de passe
+		 * efficacement.
+		 * 
+		 * L'algorithme SHA-256 est ici utilisé, avec par défaut un salage
+		 * aléatoire et un grand nombre d'itérations de la fonction de hashage.
+		 * 
+		 * La String retournée est de longueur 56 et contient le hash en Base64.
+		 */
+//		ConfigurablePasswordEncryptor passwordEncryptor = new ConfigurablePasswordEncryptor();
+//		passwordEncryptor.setAlgorithm(ALGO_CHIFFREMENT);
+//		passwordEncryptor.setPlainDigest(false);
+//		String pwdChiffre = passwordEncryptor.encryptPassword(pwd);
+//
+//		return pwdChiffre;
+	}
+	private String cryptePwd(String pwd){
+		ConfigurablePasswordEncryptor passwordEncryptor = new ConfigurablePasswordEncryptor();
+		passwordEncryptor.setAlgorithm(ALGO_CHIFFREMENT);
+		passwordEncryptor.setPlainDigest(false);
+		String pwdChiffre = passwordEncryptor.encryptPassword(pwd);
+
+		return pwdChiffre;
+	}
+	/* Validation des mots de passe */
+	private void validationMotsDePasse(String motDePasse, String confirmation)
+			throws FormValidationException, SecondException {
+		if (motDePasse != null && confirmation != null) {
+			if (!motDePasse.equals(confirmation)) {
+				System.out
+						.println("Les mots de passe entrés sont différents, merci de les saisir à nouveau.");
+				throw new SecondException("Password different from the first");
+			} else if (motDePasse.length() < 3) {
+				System.out
+						.println("Les mots de passe doivent contenir au moins 3 caractères.");
+				throw new FormValidationException(
+						"Les mots de passe doivent contenir au moins 3 caractères.");
+			}
+		}
+		// TODO verifier que le pwd est unique dans le group
+		// else if(){
+		//
+		// }
+
+		else {
+			System.out
+					.println("Merci de saisir et confirmer votre mot de passe.");
+			throw new FormValidationException(
+					"Merci de saisir et confirmer votre mot de passe.");
+		}
 	}
 	
 	public Person registerUserBySomeoneElse(HttpServletRequest request) {
@@ -190,7 +266,8 @@ public final class RegistrationForm {
         		errors.put("oldPwd", "wrong password");
         	}else{
         		// if yes we check that the pwd and the confirmPwd are the same
-    			cryptedPwd = traiterMotsDePasse(newPwd, confirmNewPwd);
+        		traiterMotsDePasse(newPwd, confirmNewPwd);
+    			cryptedPwd = cryptePwd(newPwd);
     			if(errors.isEmpty()){
     				// if everything ok we insert in the database
     				personDao.modifyPwd(person, cryptedPwd);
@@ -295,66 +372,7 @@ public final class RegistrationForm {
 		}
 	}
 
-	/*
-	 * Appel à la validation des mots de passe reçus, chiffrement du mot de
-	 * passe et initialisation de la propriété motDePasse du bean
-	 */
-	private String traiterMotsDePasse(String pwd, String confirmation) {
-		try {
-			validationMotsDePasse(pwd, confirmation);
-		} catch (FormValidationException e) {
-			System.out.println("mauvais mdp");
-
-			errors.put("pwd", e.getMessage());
-		} catch (SecondException e) {
-
-			errors.put("confirmPwd", e.getMessage());
-		}
-
-		/*
-		 * Utilisation de la bibliothèque Jasypt pour chiffrer le mot de passe
-		 * efficacement.
-		 * 
-		 * L'algorithme SHA-256 est ici utilisé, avec par défaut un salage
-		 * aléatoire et un grand nombre d'itérations de la fonction de hashage.
-		 * 
-		 * La String retournée est de longueur 56 et contient le hash en Base64.
-		 */
-		ConfigurablePasswordEncryptor passwordEncryptor = new ConfigurablePasswordEncryptor();
-		passwordEncryptor.setAlgorithm(ALGO_CHIFFREMENT);
-		passwordEncryptor.setPlainDigest(false);
-		String pwdChiffre = passwordEncryptor.encryptPassword(pwd);
-
-		return pwdChiffre;
-	}
-
-	/* Validation des mots de passe */
-	private void validationMotsDePasse(String motDePasse, String confirmation)
-			throws FormValidationException, SecondException {
-		if (motDePasse != null && confirmation != null) {
-			if (!motDePasse.equals(confirmation)) {
-				System.out
-						.println("Les mots de passe entrés sont différents, merci de les saisir à nouveau.");
-				throw new SecondException("Password different from the first");
-			} else if (motDePasse.length() < 3) {
-				System.out
-						.println("Les mots de passe doivent contenir au moins 3 caractères.");
-				throw new FormValidationException(
-						"Les mots de passe doivent contenir au moins 3 caractères.");
-			}
-		}
-		// TODO verifier que le pwd est unique dans le group
-		// else if(){
-		//
-		// }
-
-		else {
-			System.out
-					.println("Merci de saisir et confirmer votre mot de passe.");
-			throw new FormValidationException(
-					"Merci de saisir et confirmer votre mot de passe.");
-		}
-	}
+	
 
 	/*
 	 * Méthode utilitaire qui retourne null si un champ est vide, et son contenu

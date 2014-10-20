@@ -19,7 +19,11 @@
 	     			<c:if test="${member.hasRights == 1}" >
 		     			<c:set var="hasRights" value="(has_rights)"></c:set>
 	     			</c:if>
-		     		<c:set var="pwdNewbie" value="${member.pwdNewbie}"></c:set>
+	     			
+	     			<c:if test="${member.pwdNewbie != ''}" >
+		     			<c:set var="pwdNewbie" value="(pwd: ${member.pwdNewbie})"></c:set>
+					</c:if>
+
 	     		</c:if>
 	     		
 	     		
@@ -46,7 +50,10 @@
      	<form method="post" action="group?action=addHasRights">
 			<select id="addHasRights" name="addHasRights" class="textOrange">
 				<c:forEach var="member" items="${sessionScope.group.listMembers}">
-		    		<option value="${member.id }"> ${member.name} </option> 
+					<c:if test="${member.hasRights == 0}" >
+		    			<option value="${member.id }"> ${member.name} </option> 
+	     			</c:if>
+	     			
 		    	</c:forEach>
 			</select>
 		
@@ -56,7 +63,11 @@
        	<form method="post" action="group?action=removeHasRights">
 			<select id="removeHasRights" name="removeHasRights" class="textOrange">
 				<c:forEach var="member" items="${sessionScope.group.listMembers}">
-		    		<option value="${member.id}"> ${member.name}</option> 
+					<c:if test="${member.hasRights == 1}" >
+						<c:if test="${member.login != sessionScope.group.loginAdmin}" >
+		    				<option value="${member.id }"> ${member.name} </option> 
+	     				</c:if>
+	     			</c:if>
 		    	</c:forEach>
 			</select>
 		
