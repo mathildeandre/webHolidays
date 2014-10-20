@@ -1,5 +1,7 @@
 /* comment */
 
+drop table Ingredients;
+drop table Recipes;
 drop table PersonChecked;
 drop table ColumnDoodle;
 drop table Doodle;
@@ -116,6 +118,25 @@ CREATE TABLE PersonChecked (
 	PRIMARY KEY (id_columnDoodle, id_person),
 	FOREIGN KEY (id_columnDoodle) REFERENCES ColumnDoodle(id_column),
 	FOREIGN KEY (id_person) REFERENCES Persons(id_person)
+);
+
+CREATE TABLE Recipes (
+	id_recipe INT(11) NOT NULL AUTO_INCREMENT,
+	name_recipe VARCHAR(50) NOT NULL,
+	nb_person INT(11) NOT NULL,
+	description VARCHAR(250),
+   type ENUM('starter', 'course', 'dessert'),
+	PRIMARY KEY (id_recipe)
+);
+
+CREATE TABLE Ingredients (
+	id_ingredient INT(11) NOT NULL AUTO_INCREMENT,
+	name_ingredient VARCHAR(50) NOT NULL,
+	quantity INT(11),
+	unity ENUM('unit', 'kg', 'gram'),
+	id_recipe INT(11),
+	PRIMARY KEY (id_ingredient),
+	FOREIGN KEY (id_recipe) REFERENCES Recipes(id_Recipe)
 );
 
 

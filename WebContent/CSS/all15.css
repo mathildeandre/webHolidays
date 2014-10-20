@@ -1999,6 +1999,14 @@ background-position: center;
 	border:2px solid orange;
 }
 
+.dropZone{
+	margin-top: 10px;
+	width:10vw;
+	heigth: 100vw;
+	padding:10px;
+	border:2px solid orange;
+}
+
 #dayPlanning{
 	/* margin-left:7vw; */
 	/*
