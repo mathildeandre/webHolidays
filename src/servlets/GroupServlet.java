@@ -71,50 +71,30 @@ public class GroupServlet extends HttpServlet {
 		HttpSession session = request.getSession(); 
 		
 		if(request.getParameter("action") != null){
-    	   Person personAdded = new Person();
-    	   if(request.getParameter("action").equalsIgnoreCase("createPerson")){
-    		   personAdded = createPerson(request, response);
-    		   if(personAdded != null){
-        		   addNewMemberInContactLists(request, response, personAdded);
-        		   
-        		   ArrayList<Person> contactList = (ArrayList<Person>) session.getAttribute("contactList");
-        		   contactList.add(personAdded);
-    		   }
-   				this.getServletContext().getRequestDispatcher("/index.jsp?page=group").forward(request, response);
-    	   }
-    	   else if(request.getParameter("action").equalsIgnoreCase("searchPerson")){
+    	   
+    	   	if(request.getParameter("action").equalsIgnoreCase("createPerson")){
+    		   createPerson(request, response);
+    		  
+    	   	}else if(request.getParameter("action").equalsIgnoreCase("searchPerson")){
 
     		   String login = request.getParameter("searchPerson");
-    		   personAdded = searchPerson(request, response, login);
-    		   if(personAdded != null){
-        		   addNewMemberInContactLists(request, response, personAdded);
-        		   ArrayList<Person> contactList = (ArrayList<Person>) session.getAttribute("contactList");
-        		   contactList.add(personAdded);
-    		   }
+    		   searchPerson(request, response, login, false);
+    		  
 
-   				this.getServletContext().getRequestDispatcher("/index.jsp?page=group").forward(request, response);
-    	   }
-    	   else if(request.getParameter("action").equalsIgnoreCase("addContactIntoGroup")){
+    	   	}else if(request.getParameter("action").equalsIgnoreCase("addContactIntoGroup")){
 
     		   String login = request.getParameter("groupListContacts");
-    		   personAdded = searchPerson(request, response, login);
+    		   searchPerson(request, response, login, true);
     		   
-    		 //on ajoute le nouveau membre du groupe dans la list de contact de chaque membre du groupe
-        	   if(personAdded != null){
-        		   addNewMemberInContactLists(request, response, personAdded);
-    		   }
 
-   				this.getServletContext().getRequestDispatcher("/index.jsp?page=group").forward(request, response);
-    	   }
-    	   else if(request.getParameter("action").equalsIgnoreCase("addHasRights")){
+    	   	}else if(request.getParameter("action").equalsIgnoreCase("addHasRights")){
     		   	Group group = (Group) session.getAttribute("group");
     			int idPersonNewRights = Integer.parseInt(request.getParameter("addHasRights"));
     			GroupForm groupForm = new GroupForm(groupDAO);
     			groupForm.addRights(group, idPersonNewRights);
     			
     			this.getServletContext().getRequestDispatcher("/index.jsp?page=group").forward(request, response);
-    	   }
-    	   else if(request.getParameter("action").equalsIgnoreCase("removeHasRights")){
+    	   	}else if(request.getParameter("action").equalsIgnoreCase("removeHasRights")){
 	   		   	Group group = (Group) session.getAttribute("group");
 	   			int idPersonNewRights = Integer.parseInt(request.getParameter("removeHasRights"));
 	   			GroupForm groupForm = new GroupForm(groupDAO);
@@ -195,10 +175,22 @@ public class GroupServlet extends HttpServlet {
 	}
 	
 	private Person createPerson(HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException {
+
+	    HttpSession session = request.getSession();
+	    
 		RegistrationForm form = new RegistrationForm(personDAO, groupDAO);
 		Person personAdded = form.registerUserBySomeoneElse(request);
 		Map<String, String> errors = form.getErrors();
 		//la modif de login s'est bien passée
+		
+		 if(personAdded != null){
+  		   addNewMemberInContactLists(request, response, personAdded);
+  		   
+  		   ArrayList<Person> contactList = (ArrayList<Person>) session.getAttribute("contactList");
+  		   contactList.add(personAdded);
+		   }
+		 
+		 
 		if(errors.isEmpty()){
 			request.setAttribute("createPerson", "The person has been add to the members of the group !");
 			this.getServletContext().getRequestDispatcher("/index.jsp?page=group").forward(request, response);
@@ -213,7 +205,7 @@ public class GroupServlet extends HttpServlet {
 		return personAdded;
 	}
 	
-	private Person searchPerson(HttpServletRequest request, HttpServletResponse response, String login) throws ServletException, IOException {
+	private Person searchPerson(HttpServletRequest request, HttpServletResponse response, String login, boolean isFromContactList) throws ServletException, IOException {
 		PersonForm form = new PersonForm(personDAO, groupDAO);
 
 
@@ -223,6 +215,18 @@ public class GroupServlet extends HttpServlet {
 		Person personAdded = form.searchPerson(group, login);
 		Map<String, String> errors = form.getErrors();
 		//la modif de login s'est bien passée
+
+		//on ajoute le nouveau membre du groupe dans la list de contact de chaque membre du groupe
+		 if(personAdded != null){
+  		   addNewMemberInContactLists(request, response, personAdded);
+	  		 if(!isFromContactList){
+				 ArrayList<Person> contactList = (ArrayList<Person>) session.getAttribute("contactList");
+				   contactList.add(personAdded);
+			 }
+		 }
+		 
+  	   
+  	   
 		if(errors.isEmpty()){
 			request.setAttribute("searchPerson", "The person has been add to the members of the group !");
 			this.getServletContext().getRequestDispatcher("/index.jsp?page=group").forward(request, response);
