@@ -1711,7 +1711,6 @@ input[type="checkbox"].css-checkbox {
     *display: inline; /* IE7 */
     *zoom:1;  /* IE7 */ 
     list-style: none;
-    width: 100%;
     padding:0px;
 }
 
@@ -1720,23 +1719,22 @@ input[type="checkbox"].css-checkbox {
     display: inline-block;
     *display: inline;
     *zoom:1;
-    width: 20%;
-    height:120px;
-    line-height:150px;
+     width: 20vw; 
+    height:10vw;
+    line-height:10vw;
     border-radius: 10%;
-margin-left:3%; 
+   margin-left:3%; 
 
  border:2px solid;
  border-color:#DCDCDC ;
 
  text-decoration:none;
  text-align:center;
-	background-size:100%;
+	background-size:20vw;
 	background-repeat:no-repeat;
  }
 
 #navRepas ul li a{
-
 	color: white;
     text-shadow:
     -1px -1px 0 #000,
@@ -1745,7 +1743,6 @@ margin-left:3%;
     1px 1px 0 #000; 
 	font-family:Comic Sans MS;
 	font-size:x-large;
-
 }
 
 #navRepas ul li:first-child {
@@ -1782,19 +1779,19 @@ background-position: center;
 
 #navRepas ul li:first-child:hover {
 	background-image: url("../images/entree2.jpg");
-	background-size:80%;
+	background-size:20vw;
 	background-repeat:no-repeat;
 }
 
 #navRepas ul li:nth-child(2):hover { 
 	background-image: url("../images/plat2.jpg");
-	background-size:80%;
+	background-size:20vw;
 	background-repeat:no-repeat;
 }
 
 #navRepas ul li:nth-child(3):hover { 
 	background-image: url("../images/dessert2.jpg");
-	background-size:100%;
+	background-size:20vw;
 	background-repeat:no-repeat;
 }
 
@@ -1910,15 +1907,30 @@ background-position: center;
 }
 
 /*************** stylePlanning ***********************************************/
+#sectionPlanning #navRepas ul li {
+     width: 10vw; 
+    height:7vw;
+    line-height:8vw;
+	background-size:10vw;
+ }
+ 
+ #sectionPlanning #navRepas ul li:first-child{
+	background-size:13vw;
+}
+ 
+ #sectionPlanning #navRepas ul li:first-child:hover {
+	background-size:10vw;
+}
 
-#sectionPlanning #navRepas ul li{
-    width: 20%;
-    height:120px;
-    line-height:150px;
-    border-radius: 10%;
-margin-left:3%; 
-	background-size:100%;
+#sectionPlanning #navRepas ul li:nth-child(2):hover { 
+	background-size:12vw;
+}
+
+#navRepas ul li:nth-child(3):hover { 
+	background-size:10vw;
 } 
+
+
 
 #sectionPlanning{
 	margin-left:3vw;
@@ -1969,6 +1981,12 @@ margin-left:3%;
 	text-decoration: underline;
 }
 
+#actualDay{
+	margin-left: 3vw;
+	font-size: 16px;
+	
+}
+
 #lunch ul li, #dinner ul li{
 	margin-left:3vw;
 }
@@ -1998,11 +2016,7 @@ margin-left:3%;
 	border-radius: 0.5vw;
 }
 
-#actualDay h2{
-	margin-left: 5vw;
-	font-size: 16px;
-	
-}
+
 #previousDayButton{
 	margin-top: 0.5vw;
    margin-right: 7px;
@@ -2034,6 +2048,9 @@ margin-left:3%;
   font-style:italic;
   color:orange;
 }
+
+
+
 
 /*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
 /*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx fin styleMeals  xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
