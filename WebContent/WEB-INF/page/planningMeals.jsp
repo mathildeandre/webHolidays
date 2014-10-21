@@ -60,7 +60,7 @@
 	 
 		<div id="dayPlanning" class="line">
 	 		<div class="inline">
-				<input id="previousDayButton" type="submit" value="previous"  onmouseover="changeCursor('previousDayButton')" onclick="previousDay()"/>
+				<input id="previousDayButton" type="submit" value="previous"  onmouseover="changeCursor('previousDayButton')" onclick="previousDayFunc()"/>
 			</div>
 		
 			<div class="inline">
@@ -75,11 +75,10 @@
 
 		<div id="lunch"> 
 		<h2> Lunch </h2>
-
 		<ul>
-	 		<li id="starterLunch">Starter <div id="starterLunchDrop" class="inline" ondrop="drop(event)" ondragover="allowDrop(event)"></div></li>
-	 		<li id="courseLunch" >Course <div id="courseLunchDrop" class="inline" ondrop="drop(event)" ondragover="allowDrop(event)"></div></li>
-	 		<li id="dessertLunch"> Dessert <div id="dessertLunchDrop" class="inline" ondrop="drop(event)" ondragover="allowDrop(event)"></div></li>
+	 		<li id="starterLunch">Starter <div id="starterLunchDrop_${requestScope.startDay} ${requestScope.startDate}" class="inline dropZone" ondrop="drop(event)" ondragover="allowDrop(event)"></div></li>
+	 		<li id="courseLunch" >Course <div id="courseLunchDrop_${requestScope.startDay} ${requestScope.startDate}" class="inline dropZone" ondrop="drop(event)" ondragover="allowDrop(event)"></div></li>
+	 		<li id="dessertLunch"> Dessert <div id="dessertLunchDrop_${requestScope.startDay} ${requestScope.startDate}" class="inline dropZone" ondrop="drop(event)" ondragover="allowDrop(event)"></div></li>
 		</ul>
 		</div>
 
@@ -87,9 +86,9 @@
 		<div id="dinner"> 
 		<h2> Dinner </h2>
 		<ul>
-	 		<li id="starter">Starter <div id="starterDinnerDrop" class="inline" ondrop="drop(event)" ondragover="allowDrop(event)"></div></li>
-	 		<li id="course" >Course <div id="courseDinnerDrop" class="inline" ondrop="drop(event)" ondragover="allowDrop(event)"></div></li>
-	 		<li id="dessert"> Dessert <div id="dessertDinnerDrop" class="inline" ondrop="drop(event)" ondragover="allowDrop(event)"></div></li>
+	 		<li id="starter">Starter <div id="starterDinnerDrop_${requestScope.startDay} ${requestScope.startDate}" class="inline dropZone" ondrop="drop(event)" ondragover="allowDrop(event)"></div></li>
+	 		<li id="course" >Course <div id="courseDinnerDrop_${requestScope.startDay} ${requestScope.startDate}" class="inline dropZone" ondrop="drop(event)" ondragover="allowDrop(event)"></div></li>
+	 		<li id="dessert"> Dessert <div id="dessertDinnerDrop_${requestScope.startDay} ${requestScope.startDate}" class="inline dropZone" ondrop="drop(event)" ondragover="allowDrop(event)"></div></li>
 		</ul>
 		</div>
  
