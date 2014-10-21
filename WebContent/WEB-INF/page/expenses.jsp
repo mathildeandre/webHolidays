@@ -87,7 +87,12 @@
 <div id="buttonsForTab">
 
 
-	<input id="addRow" type="submit" value="Add new row" class="newButton3D buttonRedFonce" onmouseover="changeCursor('addRow')" onclick="addRow()"/>
+	<input id="addRow" type="submit" value="Add new row" class="newButton3D buttonRedFonce" 
+			onmouseover="changeCursor('addRow')" onclick="addRow()"/> 	
+       	
+	<input id="removeLastRow" type="submit" value="Remove last row" class="newButton3D buttonRedFonce" 
+			onmouseover="changeCursor('removeLastRow')" onclick="removeLastRow()"/>
+       	
        	
     <!-- pour afficher le contenu du tab.innerHTML
 	<input id="displayINNER" type="submit" value="Display innerTab" class="newButton3D buttonRedFonce" onmouseover="changeCursor('displayINNER')" onclick="alert(document.getElementById('tab').innerHTML)"/>

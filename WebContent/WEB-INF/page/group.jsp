@@ -43,8 +43,19 @@
 	<c:if test="${sessionScope.isAdmin == 1}" >
 		
 		<h2 class="" >Delete a member</h2>
-		..
 		
+		<form method="post" action="group?action=deleteMember">
+			<select id="deleteMember" name="deleteMember" class="textOrange">
+				<c:forEach var="member" items="${sessionScope.group.listMembers}">
+	     			<c:if test="${member.login != sessionScope.group.loginAdmin}" >
+		    			<option value="${member.id }"> ${member.name} </option> 
+	     			</c:if>
+		    	</c:forEach>
+			</select>
+		
+			<input id="submitDeleteMember" type="submit" value="Remove member from Group" class="newButton3D buttonGroup buttonOrangeClair" onmouseover="changeCursor('submitDeleteMember')"/>
+       	</form>
+       	
 		<h2 class="" >Add/Remove full rights to a member</h2>
 		
      	<form method="post" action="group?action=addHasRights">

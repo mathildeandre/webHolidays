@@ -39,6 +39,14 @@ public final class GroupForm {
         return resultat;
     }
 
+    public void deleteMember(Group group, int idPersonToRemove){
+    	try {
+			groupDao.deleteMember(group.getId(), idPersonToRemove);
+		} catch (DAOException e) {
+			errors.put("addRights", "Échec dans l'ajout de droit..");
+			e.printStackTrace();
+		}
+    }
     public int hasRight(Long idGroup, Long idPerson){
     	int hasR = 0;
     	try {

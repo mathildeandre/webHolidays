@@ -38,7 +38,9 @@ function init(){
 
 
 /******************************** ROW ************************************/
-
+function removeLastRow(){
+	
+}
 
 function addRow(){
 

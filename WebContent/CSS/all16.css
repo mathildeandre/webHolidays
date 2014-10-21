@@ -1046,7 +1046,7 @@ to { line-height:0px;}*/
 #sectionGroup{
 	color:black; /*#803300; orange très fonce */
 	/*height:650px; /*car les article sont absolute*/
-	height:50vw; /*car les article sont absolute*/
+	height:60vw; /*car les article sont absolute*/
 	
 	margin-left:10vw;
 }
@@ -1097,7 +1097,7 @@ to { line-height:0px;}*/
 }
 */
 
-#groupListContacts,#searchPerson, #loginPerson, #pwdPerson, #emailPerson{
+#groupListContacts,#searchPerson, #loginPerson, #pwdPerson, #emailPerson, #addHasRights, #removeHasRights, #deleteMember{
 	
 	padding : 0.3vw;
 	padding-left : 0.8vw;
@@ -1112,6 +1112,9 @@ to { line-height:0px;}*/
 	border:1px solid rgba(251,100,0,0.8);
 	border-radius: 0.5vw;
 	
+}
+#deleteMember{
+	width:8vw;
 }
 #groupListContacts{
 	/*height:38px;*/

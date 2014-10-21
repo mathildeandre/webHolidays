@@ -19,7 +19,24 @@ public class GroupDao {
         this.daoFactory = daoFactory;
     }
 	
+	private static final String SQL_DELETE_MEMBER = "DELETE FROM BelongTo WHERE id_group = ? AND id_person = ?";
 	
+	public void deleteMember(Long idGroup, int idMemberToDelete){
+		Connection connexion = null;
+	    PreparedStatement preparedStatement = null;
+	    
+		try {
+		        /* Récupération d'une connexion depuis la Factory */
+		        connexion = (Connection) daoFactory.getConnection();
+		        preparedStatement = initialisationRequetePreparee( connexion, SQL_DELETE_MEMBER, false, idGroup, idMemberToDelete);
+		        preparedStatement.executeUpdate();
+		       
+		    } catch ( SQLException e ) {
+		        throw new DAOException( e );
+		    } finally {
+		        fermeturesSilencieuses(preparedStatement, connexion );
+		    }
+	}
 	
 	private static final String SQL_INSERT = "INSERT INTO Groups (name_group, date_inscription, login_admin) VALUES (?, NOW(), ?)";
 	

@@ -101,7 +101,22 @@ public class GroupServlet extends HttpServlet {
 	   			groupForm.removeRights(group, idPersonNewRights);
 
 				this.getServletContext().getRequestDispatcher("/index.jsp?page=group").forward(request, response);
+    	   }else if(request.getParameter("action").equalsIgnoreCase("deleteMember")){
+	   		   	Group group = (Group) session.getAttribute("group");
+	   			int idPersonToRemove = Integer.parseInt(request.getParameter("deleteMember"));
+	   			for(int i=0; i<group.getNbPerson(); i++){
+	   				if(group.getListMembers().get(i).getId() == idPersonToRemove){
+	   		   			group.removePersonFromListMembers(i);
+	   				}
+	   			}
+	   			
+	   			GroupForm groupForm = new GroupForm(groupDAO);
+	   			groupForm.deleteMember(group, idPersonToRemove);
+	   			
+	   			this.getServletContext().getRequestDispatcher("/index.jsp?page=group").forward(request, response);
+	   	    	
     	   }
+    	   	
        }
     }
 	

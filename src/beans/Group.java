@@ -40,6 +40,11 @@ public class Group {
     	listMembers.add(person);
     	nbPerson ++;
     }
+
+    public void removePersonFromListMembers(int index){
+    	listMembers.remove(index);
+    	nbPerson --;
+    }
     
     public boolean containsMember(String login){
     	for(int i=0; i<listMembers.size(); i++){
