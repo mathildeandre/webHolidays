@@ -30,16 +30,22 @@
        	
        	</br>
        	
-       	<form method="post" action="thingsServlet?action=deletePersonalThing">
-			<select id="deletePersonalThing" name="deletePersonalThing" class="textPurple">
-				<c:forEach var="thing" items="${sessionScope.things.listThingPersonal}">
-					<option> - ${thing.name}</option>
-				</c:forEach>
-			</select>
-		
-			<input id="submitDeletePersonalThing" type="submit" value="Delete personal thing" class="newButton3D buttonThing buttonPurpleClair" onmouseover="changeCursor('submitDeletePersonalThing')"/>
-       	</form>
+       	<c:if test="${sessionScope.isAdmin == 1}" >
        	
+       		<c:if test="${sessionScope.things.sizePerso > 0}" >
+	       	<form method="post" action="thingsServlet?action=deletePersonalThing">
+				<select id="deletePersonalThing" name="deletePersonalThing" class="textPurple">
+					<c:forEach var="thing" items="${sessionScope.things.listThingPersonal}">
+						<option value="${thing.id}">${thing.name}</option>
+					</c:forEach>
+				</select>
+			
+				<input id="submitDeletePersonalThing" type="submit" value="Delete personal thing" 
+				class="newButton3D buttonThing buttonPurpleClair" 
+				onmouseover="changeCursor('submitDeletePersonalThing')"/>
+	       	</form>
+       		</c:if> 
+       	</c:if> 
 	</article>
 	
 	<article id="articleGroupThings" class="inline">
@@ -91,16 +97,20 @@
        	
        	</br>
        	
-       		<form method="post" action="thingsServlet?action=deleteGroupThing">
-			<select id="deleteGroupThing" name="deleteGroupThing" class="textPurple">
-				<c:forEach var="thing" items="${sessionScope.things.listThingGroup}">
-					<option> - ${thing.name}</option>
-				</c:forEach>
-			</select>
-		
-			<input id="submitDeleteGroupThing" type="submit" value="Delete group thing" class="newButton3D buttonThing buttonPurpleClair" onmouseover="changeCursor('submitDeleteGroupThing')"/>
-       	</form>
-       	
+       	<c:if test="${sessionScope.isAdmin == 1}" >
+       		<c:if test="${sessionScope.things.sizeGroup > 0}" >
+       		
+	       		<form method="post" action="thingsServlet?action=deleteGroupThing">
+				<select id="deleteGroupThing" name="deleteGroupThing" class="textPurple">
+					<c:forEach var="thing" items="${sessionScope.things.listThingGroup}">
+						<option value="${thing.id}">${thing.name}</option>
+					</c:forEach>
+				</select>
+			
+				<input id="submitDeleteGroupThing" type="submit" value="Delete group thing" class="newButton3D buttonThing buttonPurpleClair" onmouseover="changeCursor('submitDeleteGroupThing')"/>
+	       		</form>
+       		</c:if>
+       	</c:if>
 	</article>
 	
 	

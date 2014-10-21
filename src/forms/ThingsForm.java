@@ -48,6 +48,53 @@ public class ThingsForm extends Exception {
     }
     
     
+    public void deletePersonalThing(HttpServletRequest request, Things things){
+   
+    			int idThingToDelete = Integer.parseInt(request.getParameter("deletePersonalThing"));
+    	 	    System.out.println("idToDelete :"+idThingToDelete);
+    	 	   ArrayList<ThingPersonal> listThingPersonal = things.getListThingPersonal();
+    	 	   for(int i=0; i<listThingPersonal.size(); i++){
+    	 		   if(listThingPersonal.get(i).getId() == idThingToDelete){
+    	 			  things.removePersonalThing(i);
+    	 		   }
+    	 	   }
+    	 	   
+    	 	    //TODO verifier que idThingPerson soit bien -1 ou parmi un des idMember du group
+    	 	    //		verifier que idThingGroup possede sont id group correspond a sont group courant
+    	 	   
+    	 	    
+    	 	    try {
+
+    	       	thingsDao.deletePersonalThing(idThingToDelete);
+    	        } catch ( DAOException e ) {
+    	            errors.put("getThings", "Échec de la selection de personal thing : une erreur imprévue est survenue, merci de réessayer dans quelques instants.");
+    	            e.printStackTrace();
+    	        }
+    	
+    }
+    public void deleteGroupThing(HttpServletRequest request, Things things){
+    	int idThingToDelete = Integer.parseInt(request.getParameter("deleteGroupThing"));
+ 	    
+ 	   ArrayList<ThingGroup> listThingGroup = things.getListThingGroup();
+ 	   for(int i=0; i<listThingGroup.size(); i++){
+ 		   if(listThingGroup.get(i).getId() == idThingToDelete){
+ 			  things.removeGroupThing(i);;
+ 		   }
+ 	   }
+ 	   
+ 	    //TODO verifier que idThingPerson soit bien -1 ou parmi un des idMember du group
+ 	    //		verifier que idThingGroup possede sont id group correspond a sont group courant
+ 	   
+ 	    
+ 	    try {
+
+       	thingsDao.deleteGroupThing(idThingToDelete);
+        } catch ( DAOException e ) {
+            errors.put("getThings", "Échec de la selection de Group thing : une erreur imprévue est survenue, merci de réessayer dans quelques instants.");
+            e.printStackTrace();
+        }
+    }
+    
     public Things modifySelectGroupThing(HttpServletRequest request, Things things, Group group){
     	String nameSelect = request.getParameter("nameSelect");
  	    String[] infoNameS = nameSelect.split("-");
@@ -96,7 +143,8 @@ public class ThingsForm extends Exception {
     	
     	try {
 
-        	thingsDao.insertIntoPersonalThings(namePersoTh, idGroup);
+    		Long idThing =  thingsDao.insertIntoPersonalThings(namePersoTh, idGroup);
+    		thingPersonal.setId(idThing);
          } catch ( DAOException e ) {
              errors.put("getThings", "Échec de la selection de personal thing : une erreur imprévue est survenue, merci de réessayer dans quelques instants.");
              e.printStackTrace();

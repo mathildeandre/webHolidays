@@ -14,13 +14,18 @@ public class Things {
 	public Things(){
 		listThingPersonal = new ArrayList<ThingPersonal>();
 		listThingGroup = new ArrayList<ThingGroup>();
-		
+		sizePerso = 0;
+		sizeGroup = 0;
 	}
 	
 
     public void addPersonalThing(ThingPersonal thingPersonal){
     	listThingPersonal.add(thingPersonal);
     	sizePerso ++;
+    }
+    public void removePersonalThing(int index){
+    	listThingPersonal.remove(index);
+    	sizePerso --;
     }
 	public ArrayList<ThingPersonal> getListThingPersonal() {
 		return listThingPersonal;
@@ -34,6 +39,10 @@ public class Things {
     public void addGroupThing(ThingGroup thingGroup){
     	listThingGroup.add(thingGroup);
     	sizeGroup ++;
+    }
+    public void removeGroupThing(int index){
+    	listThingGroup.remove(index);
+    	sizeGroup --;
     }
 	public ArrayList<ThingGroup> getListThingGroup() {
 		return listThingGroup;

@@ -21,6 +21,43 @@ public class ThingsDao {
     }
 	
 	
+private static final String SQL_DELETE_PERSONAL_THING = "DELETE FROM PersonalThings WHERE id_thing = ?";
+	
+	public void deletePersonalThing(int idThingToDelete){
+		Connection connexion = null;
+	    PreparedStatement preparedStatement = null;
+	    
+		try {
+		        /* Récupération d'une connexion depuis la Factory */
+		        connexion = (Connection) daoFactory.getConnection();
+		        preparedStatement = initialisationRequetePreparee( connexion, SQL_DELETE_PERSONAL_THING, false, idThingToDelete);
+		        preparedStatement.executeUpdate();
+		       
+		    } catch ( SQLException e ) {
+		        throw new DAOException( e );
+		    } finally {
+		        fermeturesSilencieuses(preparedStatement, connexion );
+		    }
+	}
+private static final String SQL_DELETE_GROUP_THING = "DELETE FROM GroupThings WHERE id_thing = ?";
+	
+	public void deleteGroupThing(int idThingToDelete){
+		Connection connexion = null;
+	    PreparedStatement preparedStatement = null;
+	    
+		try {
+		        /* Récupération d'une connexion depuis la Factory */
+		        connexion = (Connection) daoFactory.getConnection();
+		        preparedStatement = initialisationRequetePreparee( connexion, SQL_DELETE_GROUP_THING, false, idThingToDelete);
+		        preparedStatement.executeUpdate();
+		       
+		    } catch ( SQLException e ) {
+		        throw new DAOException( e );
+		    } finally {
+		        fermeturesSilencieuses(preparedStatement, connexion );
+		    }
+	}
+	
 	
 
 	private static final String SQL_SELECT_PERSONAL_THINGS = 
@@ -58,8 +95,10 @@ public class ThingsDao {
 			ArrayList<ThingPersonal> listThingPersonal = new ArrayList<ThingPersonal>();
 			while (resultSetPersoThings.next()) {
 				ThingPersonal thPerso = new ThingPersonal();
-				
+
+				Long idPersoThing = resultSetPersoThings.getLong("id_thing");
 				String nameThing = resultSetPersoThings.getString("name_thing");
+				thPerso.setId(idPersoThing);
 				thPerso.setName(nameThing);
 				listThingPersonal.add(thPerso);
 			}
@@ -101,20 +140,28 @@ public class ThingsDao {
 	
 private static final String SQL_INSERT_PERSONAL_THING = "INSERT INTO PersonalThings (name_thing, id_group) VALUES (?, ?)";
 	
-	public void insertIntoPersonalThings(String namePersoTh, Long idGroup){
+	public Long insertIntoPersonalThings(String namePersoTh, Long idGroup){
 		Connection connexion = null;
 	    PreparedStatement preparedStatement = null;
+	    ResultSet valeursAutoGenerees = null;
 	    
 		try {
 		        /* Récupération d'une connexion depuis la Factory */
 		        connexion = (Connection) daoFactory.getConnection();
-		        preparedStatement = initialisationRequetePreparee( connexion, SQL_INSERT_PERSONAL_THING, false, namePersoTh, idGroup);
+		        preparedStatement = initialisationRequetePreparee( connexion, SQL_INSERT_PERSONAL_THING, true, namePersoTh, idGroup);
 		        preparedStatement.executeUpdate();
 		       
+		        valeursAutoGenerees = preparedStatement.getGeneratedKeys();
+			  	if ( valeursAutoGenerees.next() ) {
+			      	return valeursAutoGenerees.getLong( 1 );
+			  	} else {
+			       	throw new DAOException( "Échec de la création de l'utilisateur en base, aucun ID auto-généré retourné." );
+			  	}
+			  	
 		    } catch ( SQLException e ) {
 		        throw new DAOException( e );
 		    } finally {
-		        fermeturesSilencieuses(preparedStatement, connexion );
+		        fermeturesSilencieuses(valeursAutoGenerees, preparedStatement, connexion );
 		    }
 		 
 	}

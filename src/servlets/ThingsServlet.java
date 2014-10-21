@@ -2,6 +2,7 @@ package servlets;
 
 
 import java.io.IOException;
+import java.util.Enumeration;
 import java.util.Map;
 
 import javax.servlet.ServletException;
@@ -43,23 +44,77 @@ public class ThingsServlet extends HttpServlet {
 	public void doGet( HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException{
 	}
 	
-	public void doPost( HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException {
-		
+	public void doPost(HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException {
 		if(request.getParameter("action") != null){
-	    	   if(request.getParameter("action").equalsIgnoreCase("addPersonalThing")){
+			
+	    	   	if(request.getParameter("action").equalsIgnoreCase("addPersonalThing")){
 	    		   addPersonalThing(request, response);
-	    	   }
+	    	   	}
 
-	    	   else if(request.getParameter("action").equalsIgnoreCase("addGroupThing")){
+	    	   	else if(request.getParameter("action").equalsIgnoreCase("addGroupThing")){
 	    		   addGroupThing(request, response);
-	    	   }
-	    	   else if(request.getParameter("action").equalsIgnoreCase("changeGroupThing")){
-	    		   modifySelectGroupThing(request, response);}
-	       }
+	    	   	}
+	    	   	else if(request.getParameter("action").equalsIgnoreCase("changeGroupThing")){
+	    		   modifySelectGroupThing(request, response);
+	       		}
+			   	else if(request.getParameter("action").equalsIgnoreCase("deletePersonalThing")){
+		    		   deletePersonalThing(request, response);
+		   		}
+			   	else if(request.getParameter("action").equalsIgnoreCase("deleteGroupThing")){
+		    		   deleteGroupThing(request, response);
+				}
+		}
+		
 
     }
-	
-	
+	private void deletePersonalThing(HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException {
+		HttpSession session = request.getSession(); 
+	    
+	    Things things = (Things) session.getAttribute("things");
+		ThingsForm form = new ThingsForm(thingsDAO);
+	    
+		form.deletePersonalThing(request, things);
+		
+		Map<String, String> errors = form.getErrors();
+    	if(errors.isEmpty()){
+			//request.setAttribute("createPerson", "The person has been add to the members of the group !");
+			this.getServletContext().getRequestDispatcher("/index.jsp?page=things").forward(request, response);
+		}
+		//la modif n'a pas marche
+		else{
+			//erreur a traitée dans personalArea
+			request.setAttribute("errors", errors);
+			this.getServletContext().getRequestDispatcher("/index.jsp?page=things").forward(request, response);
+
+		}
+	}
+	private void deleteGroupThing(HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException {
+
+		HttpSession session = request.getSession(); 
+	    
+	    Things things = (Things) session.getAttribute("things");
+		ThingsForm form = new ThingsForm(thingsDAO);
+		
+		
+	    
+		form.deleteGroupThing(request, things);
+		
+		
+		
+		
+		Map<String, String> errors = form.getErrors();
+    	if(errors.isEmpty()){
+			//request.setAttribute("createPerson", "The person has been add to the members of the group !");
+			this.getServletContext().getRequestDispatcher("/index.jsp?page=things").forward(request, response);
+		}
+		//la modif n'a pas marche
+		else{
+			//erreur a traitée dans personalArea
+			request.setAttribute("errors", errors);
+			this.getServletContext().getRequestDispatcher("/index.jsp?page=things").forward(request, response);
+
+		}
+	}
 	private void modifySelectGroupThing(HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException {
 
 		HttpSession session = request.getSession(); 

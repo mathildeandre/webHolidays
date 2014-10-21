@@ -112,6 +112,8 @@
 	    <div id="fieldResultExpenses" class="aroundWhite">
 		</div>
 		</fieldset>
+		
+		-> ajouter des traces de qui a fait quel changement..
 
  </article>
 </section >
