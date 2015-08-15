@@ -1703,13 +1703,14 @@ input[type="checkbox"].css-checkbox {
 }
 
 #navRepas{ 
+	border:4px solid blue;/*bleu clair*/   /* blueviolet*/
    	white-space: nowrap; 
     margin-left: 0;
 }
 
 
 #navRepas ul{ 
-    display: inline-block;
+	border:4px solid chocolate;/*bleu clair*/   /* blueviolet*/
     margin-left: 0;
     *display: inline; /* IE7 */
     *zoom:1;  /* IE7 */ 
@@ -1718,22 +1719,22 @@ input[type="checkbox"].css-checkbox {
 }
 
 #navRepas ul li {
-
-    display: inline-block;
+	border:4px solid yellow;/*bleu clair*/   /* blueviolet*/
+    display: inline-block; 
     *display: inline;
     *zoom:1;
-     width: 20vw; 
-    height:10vw;
+     width: 20%; 
+    height:20%;
     line-height:10vw;
-    border-radius: 10%;
-   margin-left:3%; 
+     border-radius: 10%; 
+   margin-left:3%;  
 
- border:2px solid;
- border-color:#DCDCDC ;
+ /*border:2px solid;
+ border-color:#DCDCDC; */
 
  text-decoration:none;
  text-align:center;
-	background-size:20vw;
+	background-size:100%;
 	background-repeat:no-repeat;
  }
 
@@ -1760,42 +1761,32 @@ input[type="checkbox"].css-checkbox {
 	background-image: url("../images/dessert.jpg");
 }
 
+#navRepas ul li:nth-child(4) {
+	background-image: url("../images/breakfast.jpg");
+}
+
 #navRepas ul li:hover {
-background-position: center;
- border-color:#696969 ;
- color: white;
-    text-shadow:
-    -1px -1px 0 #000,
-    1px -1px 0 #000,
-    -1px 1px 0 #000,
-    1px 1px 0 #000; 
  } 
 
 #navRepas ul li a:hover {
- color: white;
-    text-shadow:
-    -1px -1px 0 #000,
-    1px -1px 0 #000,
-    -1px 1px 0 #000,
-    1px 1px 0 #000; 
+	background-size:100%;
+	background-repeat:no-repeat;
  } 
 
 #navRepas ul li:first-child:hover {
 	background-image: url("../images/entree2.jpg");
-	background-size:20vw;
-	background-repeat:no-repeat;
 }
 
 #navRepas ul li:nth-child(2):hover { 
 	background-image: url("../images/plat2.jpg");
-	background-size:20vw;
-	background-repeat:no-repeat;
 }
 
 #navRepas ul li:nth-child(3):hover { 
 	background-image: url("../images/dessert2.jpg");
-	background-size:20vw;
-	background-repeat:no-repeat;
+}
+
+#navRepas ul li:nth-child(4):hover { 
+	background-image: url("../images/dessert2.jpg");
 }
 
 
