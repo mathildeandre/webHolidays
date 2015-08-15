@@ -1719,6 +1719,15 @@ input[type="checkbox"].css-checkbox {
 }
 
 #navRepas ul li {
+	color: white;
+    text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000; 
+	font-family:Comic Sans MS;
+	font-size:larger;
+	
 	border:4px solid yellow;/*bleu clair*/   /* blueviolet*/
     display: inline-block; 
     *display: inline;
@@ -1735,25 +1744,17 @@ input[type="checkbox"].css-checkbox {
  text-decoration:none;
  text-align:center;
 	background-size:100%;
-	background-repeat:no-repeat;
+	background-repeat:repeat;
  }
 
-#navRepas ul li a{
-	color: white;
-    text-shadow:
-    -1px -1px 0 #000,
-    1px -1px 0 #000,
-    -1px 1px 0 #000,
-    1px 1px 0 #000; 
-	font-family:Comic Sans MS;
-	font-size:x-large;
-}
+
 
 #navRepas ul li:first-child {
     background-image: url("../images/entree.jpg");
+    
 }
 
-#navRepas ul li:nth-child(2) { 
+#navRepas ul li:nth-child(2) {
 	background-image: url("../images/plat.jpg");
 }
 
@@ -1766,12 +1767,11 @@ input[type="checkbox"].css-checkbox {
 }
 
 #navRepas ul li:hover {
- } 
-
-#navRepas ul li a:hover {
 	background-size:100%;
 	background-repeat:no-repeat;
  } 
+
+
 
 #navRepas ul li:first-child:hover {
 	background-image: url("../images/entree2.jpg");
@@ -1820,7 +1820,6 @@ input[type="checkbox"].css-checkbox {
 	
 	
     background-image: url("../images/aliments.png");
-	background-size:100%;
 }
 
 #planningMeals:hover{

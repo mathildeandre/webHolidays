@@ -7,9 +7,9 @@
 	<div id="navRepas">
 	<ul>
 	 <li id="starter"  onmouseover="changeCursor('starter')" onclick="location.href='index.jsp?page=starter'"> Starter</li>
-	 <li id="course" ><a href="index.jsp?page=courses">Course</a></li>
-	 <li id="dessert" ><a href="dessert.html">Dessert</a></li>
-	 <li id="breakfast" ><a href="breakfast.html">Breakfast</a></li>
+	 <li id="course" onmouseover="changeCursor('course')" onclick="index.jsp?page=courses">Course</li>
+	 <li id="dessert" onmouseover="changeCursor('dessert')" onclick="dessert.html">Dessert</li>
+	 <li id="breakfast" onmouseover="changeCursor('breakfast')" onclick="breakfast.html">Breakfast</li>
 	</ul>
 	</div>
 	
