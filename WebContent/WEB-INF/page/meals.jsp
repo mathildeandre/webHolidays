@@ -6,7 +6,7 @@
 	 <a id="planningMeals" href="index.jsp?page=planningMeals">Create a planning</a>
 	<div id="navRepas">
 	<ul>
-	 <li id="starter" ><a href="index.jsp?page=starter">Starter</a></li>
+	 <li id="starter"  onmouseover="changeCursor('starter')" onclick="location.href='index.jsp?page=starter'"> Starter</li>
 	 <li id="course" ><a href="index.jsp?page=courses">Course</a></li>
 	 <li id="dessert" ><a href="dessert.html">Dessert</a></li>
 	 <li id="breakfast" ><a href="breakfast.html">Breakfast</a></li>
